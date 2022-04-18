@@ -1,20 +1,19 @@
 import logo from './logo.svg'
 import './App.css'
 import { Canvas } from '@react-three/fiber'
-import Site from './Site'
-
+import Plan from './Plan'
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
+      <div className='App-header'>
         <Canvas>
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <Site position={[-1.2, 0, 0]} />
-          <Site position={[1.2, 0, 0]} />
+          <ambientLight intensity={0.3} />
+          <pointLight position={[10, 100, 100]} angle={90} castShadow />
+          {/* <ambientLight intensity={0.3} />
+        <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
+          <Plan />
         </Canvas>
-      </header>
+      </div>
     </div>
   )
 }
