@@ -1,0 +1,48 @@
+.label {
+	position: absolute;
+  opacity: 0.6;
+  padding: 20px 25px;
+  border-radius: 5px;
+	transform: scale(1, 1);
+}
+
+.line {
+	position: absolute;
+	width: 5px;
+  height: 80px;
+	top: -50px;
+	right: 10px;
+  border-right: 4px solid white;
+  -moz-transform: skew(-40deg);
+	-webkit-transform: skew(-40deg);
+	transform: skew(-40deg);
+}
+
+.tag {
+  /* opacity: 1; */
+font-weight: bold;
+  text-transform: uppercase;
+  background: #202035;
+  color: white;
+  text-align: left;
+  position: absolute;
+  transform: translate3d(-80%, -200%, 10px);
+  padding: 20px 25px;
+  border-radius: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 200ms ease-out;
+
+}
+
+.hover {
+  font-size: 40px;
+  background-color: green;
+  cursor: pointer;
+}
+
+.tag:hover {
+  font-size: 40px;
+  background-color: green;
+  cursor: pointer;
+}
