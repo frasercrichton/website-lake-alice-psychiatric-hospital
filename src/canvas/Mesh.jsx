@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Html } from '@react-three/drei'
+import './Mesh.css'
 import Label from './Label'
 const facilities = {
   Maximum_Security_Block: 'Maximum Security Block',
@@ -27,7 +28,6 @@ const Mesh = ({
   hoverName
 }) => {
   const mesh = useRef()
-  const html = useRef()
   const isAnnotation = node.name.includes('Annotation')
   const facilityName = node.name.replace('_Annotation', '')
   const isFacility = typeof facilities[facilityName] !== 'undefined'
@@ -37,7 +37,7 @@ const Mesh = ({
 
   const meshEvents = isFacility
     ? {
-        onClick: e => setClicked({ id: facilityName, mesh: e }),
+        onClick: e => setClicked(facilityName),
         onPointerOver: e => hoverAction(facilityName, e),
         onPointerOut: e => hoverAction('', e)
       }
@@ -66,9 +66,8 @@ const Mesh = ({
       )}
       {isAnnotation && isFacility && (
         <Html
-          ref={html}
-          // transform
-          // sprite
+          transform
+          sprite
           // rotation={[Math.PI / 2, 0, 0]}
           distanceFactor={100}
           position={[node.position.x, node.position.y, node.position.z]}
@@ -78,7 +77,7 @@ const Mesh = ({
             text={facilities[facilityName]}
             hoverAction={hoverAction}
             hoverName={hoverName}
-            // onClick={(mesh) => setClicked(mesh)}
+            setClicked={setClicked}
           />
         </Html>
       )}

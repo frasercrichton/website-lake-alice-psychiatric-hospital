@@ -1,8 +1,12 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './Label.css'
-const Label = ({ text, hoverAction, hoverName, id }) => {
-  const tag = useRef()
-
+const Label = ({
+  text,
+  setClicked,
+  hoverAction,
+  hoverName,
+  id
+}) => {
   const facilityName = id.replace('_Annotation', '')
   const isHover = facilityName === hoverName
   const tagClass = isHover ? 'tag hover' : 'tag'
@@ -11,9 +15,8 @@ const Label = ({ text, hoverAction, hoverName, id }) => {
     <div className='label'>
       <div className='line'></div>
       <div
-        ref={tag}
         className={tagClass}
-        // onClick={e => setClicked(e)}
+        onClick={e => setClicked(facilityName)}
         onMouseOver={e => hoverAction(facilityName, e)}
         onMouseOut={e => hoverAction('', e)}
       >

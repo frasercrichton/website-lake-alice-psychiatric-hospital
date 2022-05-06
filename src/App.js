@@ -3,13 +3,14 @@ import './App.css'
 import { Canvas, useThree, Camera } from '@react-three/fiber'
 import Plan from './canvas/Plan'
 import SideBar from './SideBar'
+import Map from './Map'
+import Header from './Header'
 function App () {
   return (
     <div className='App'>
       <div className='App-header'>
-        <div className='map'>
-        <img width='150px' src='https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg' />
-        </div>
+        <Header />
+        <Map />
         <Canvas camera={{ position: [0, 100, 200], rotateY: 45 }}>
           <Suspense fallback={null}>
             <ambientLight intensity={0.3} />
@@ -19,8 +20,8 @@ function App () {
             <Plan />
           </Suspense>
         </Canvas>
+        <SideBar />
       </div>
-      <SideBar />
     </div>
   )
 }
