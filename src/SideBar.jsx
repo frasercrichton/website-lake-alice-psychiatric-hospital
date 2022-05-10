@@ -1,29 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './SideBar.css'
 import Image from './components/Image'
+import Button from './components/Button'
 import resources from './side-bar-images.json'
+const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
+const FOLDER = '3d-visualisation/'
 
-const Header = props => {
-  const [isActive, setActive] = useState(false)
+const SideBar = ({ selectedFacility, setSelectedFacility }) => {
+  const resource = resources[selectedFacility]
 
-  const resource = resources[1]
-  const url = 'https://d10yslqdemxz8r.cloudfront.net/'
-  const folder = '3d-visualisation/'
-  const imageUrl = url + folder + resource.url
-  const modalState = () => setActive(!isActive)
+  const imageUrl = image => CDN_URL + FOLDER + image.url
+
+  const isSideBarActiveToggle =
+    selectedFacility !== '' ? 'side-bar-wrapper active' : 'side-bar-wrapper'
+  const images = resource.images.map(image => (
+    <Image key={image.id} url={imageUrl(image)} caption={image.caption} />
+  ))
+
   return (
-    <div className='side-bar-wrapper'>
+    <div className={isSideBarActiveToggle}>
       <div className='side-bar-menu'>
-        <div><h2>Maximum Security Unit</h2></div>
-
-        <Image url={imageUrl} caption={resource.caption} />
-
-        <div className='close' onClick={e => modalState()}>
-          close
+        <div>
+          <h2>{resource.title}</h2>
         </div>
+        <div>{resource.text}</div>
+        <div>{images}</div>
+        {/*
+         */}
+        <Button action={setSelectedFacility} />
       </div>
     </div>
   )
 }
 
-export default Header
+export default SideBar

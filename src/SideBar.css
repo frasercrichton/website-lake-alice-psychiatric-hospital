@@ -4,19 +4,16 @@ top: 135px;
 right: 30px;
 width: 330px;
   color: white;
-  background-color: black;
+  background-color: rgba(0,0,0,0.2);
   overflow: hidden;
   padding: 12px;
+  display: none; 
 }
 
-/* 
-.side-bar-menu {
-    position: relative;
-    height: 100%;
-    width: 25%;
-} */
+.active {
+  display: block;
+}
 
-.caption {
-  font-size: 11px;
-  font-style: italic;
+.side-bar-wrapper img {  
+  opacity: 1;
 }

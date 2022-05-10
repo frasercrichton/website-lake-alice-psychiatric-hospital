@@ -2,21 +2,22 @@ import React from 'react'
 import './Label.css'
 const Label = ({
   text,
-  setClicked,
+  isClicked,
+  setSelectedFacility,
   hoverAction,
   hoverName,
   id
 }) => {
   const facilityName = id.replace('_Annotation', '')
   const isHover = facilityName === hoverName
-  const tagClass = isHover ? 'tag hover' : 'tag'
+  const tagClass = isClicked || isHover ? 'tag active' : 'tag'
 
   return (
     <div className='label'>
       <div className='line'></div>
       <div
         className={tagClass}
-        onClick={e => setClicked(facilityName)}
+        onClick={e => setSelectedFacility(facilityName)}
         onMouseOver={e => hoverAction(facilityName, e)}
         onMouseOut={e => hoverAction('', e)}
       >

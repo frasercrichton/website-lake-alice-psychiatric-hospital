@@ -1,103 +1,67 @@
-[
-    {
-      "caption": "Notes: Large scale plan showing the Lake Alice Hospital, Lake Alice, Hickson and William and the surrounding farm land. Scale: 1:4000. Drawn by: Wanganui City Council. Shows the following streets: Lake Alice Road. Activity: Survey/Mapping. http://archivescentral.org.nz/rangitikei_dc/images/show/6946-lake-alice-mental-hospital-site-plan",
-      "url": "fc-20191225-00001-lake-alice-plan-RDC_00256_44.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Lake Alice Mental Hospital, Whanganui. Ref: WA-72417-F. Alexander Turnbull Library, Wellington, New Zealand. /records/22826645 https://natlib.govt.nz/records/22826645",
-      "url": "fc-20200215-00009-fc-20191225-00001-lake-alice-from-the-air.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Ground Floor",
-      "url": "fc-20200427-00002-Scan.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Upper Floor",
-      "url": "fc-20210619-00006-Scan 2.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Upper Floor",
-      "url": "fc-20210621-00007-Scan 1.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Plan",
-      "url": "fc-20210827-00001-Scan-Edit.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Eleven Bed Villas",
-      "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 10.56.35 AM.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Eleven Bed Villas",
-      "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 11.00.15 AM.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Date     [ca 1934] Ref     1/4-020299-F Description      Dr Theodore Gray, circa 1934, photographed by S P Andrew Ltd.      Quantity: 1 b&w original negative(s).      Physical Description: Film negative Access restrictions     Partly restricted - Please use surrogate in place of original Part of     S P Andrew Ltd :Portrait negatives Format     1 b&w original negative(s), Negatives, Film negative   https://natlib.govt.nz/records/22493576?search%5Bi%5D%5Bname_authority_id%5D=-179722&search%5Bpath%5D=items",
-      "url": "fc-20210827-00001-mini_magick20210827-1-ctz1mq-Edit.jpg",
-       "id": ""
-    },
-    {
+{
+  "Maximum_Security_Block": {
+    "title": "Maximum Security Block",
+    "text": "The Maximum Security Block was built in XXXX and when it opened briefly held prisoners who had been involved in teh Mt Eden Prison riot of XXXX. The Block was also used as punishment for the children held at Lake Alice.",
+    "images": [
+      {
 
-      "caption": "Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised",
-      "url": "fc-20210828-00001-FL25129125-Edit.jpg",
-      "id": "Maximum_Security_Block"
-    },
-    {
-      "caption": "Title:     Title: Mental Hospitals. Publicity Caption: General view of Lake Alice Psychiatric Hospital, Marton. Taken from Security wing tower. Photographer: Mr Cleal.      Archway Item ID:R24730913      Archway Series Number:6539      Provenance:Transferred by agency AAQT      Material Type: Digitised https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129058",
-      "url": "fc-20210828-00001-FL25129155.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.      Archway Item ID:R24730915      Archway Series Number:6539      Provenance:Transferred by agency AAQT      Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143",
-      "url": "fc-20210828-00001-FL25129159.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Lake Alice Hospital, Bulls - School building 1976 - building floor plans (including information if on same sheet as floor plan) - [copy a]      Archway Item ID:R23379005      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119725",
-      "url": "fc-20210828-00001-FL59130397.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans.      Archway Item ID:R23379028      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE61510110",
-      "url": "fc-20210828-00001-FL61510179.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans.      Archway Item ID:R23379027      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised",
-      "url": "fc-20210828-00001-FL61510349.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Title: Mental Hospitals. Publicity Caption: New staff quarters at Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.      Archway Item ID:R24730917      Archway Series Number:6539      Provenance:Transferred by agency AAQT      Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129129",
-      "url": "fc-20210828-00002-FL25129161.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Lake Alice Hospital, Bulls - Villa 8 - building floor plans (including information if on same sheet as floor plan) - [copy a]      Archway Item ID:R23378995      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE61510098",
-      "url": "fc-20210828-00003-FL61510208.jpg",
-       "id": ""
-    },
-    {
-      "caption": "Title:     Lake Alice Hospital, Bulls - Disturbed patients villa - building floor plans (including information if on same sheet as floor plan) - [copy a]      Archway Item ID:R23378991      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119710",
-      "url": "fc-20210828-00008-FL59130374(1).jpg",
-       "id": ""
-    },
-    {
-      "caption": "Upper Floor",
-      "url": "fc-20210829-00001-vlc.jpg",
-       "id": ""
-    },
-    {
-      "caption": "",
-      "url": "fc-20220425-00025-Screen Shot 2022-04-25 at 10.15.47 PM.jpg",
-       "id": ""
-    }
-  ]
+        "caption": "Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised",
+        "url": "fc-20210828-00001-FL25129125-Edit.jpg",
+        "id": "Maximum_Security_Block"
+      },
+      {
+        "caption": "Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans. Archway Item ID:R23379028 Archway Series Number:24040 Provenance:ABZK Material Type: Digitised https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE61510110",
+        "url": "fc-20210828-00001-FL61510179.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans. Archway Item ID:R23379027 Archway Series Number:24040 Provenance:ABZK Material Type: Digitised",
+        "url": "fc-20210828-00001-FL61510349.jpg",
+         "id": ""
+      }  
+    ]
+  },
+  "Administrative_Building":{
+    "title": "Admin Block",
+    "text": ".",
+    "images": [
+      {
+        "caption": "Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal. Archway Item ID:R24730915 Archway Series Number:6539 Provenance:Transferred by agency AAQT Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143",
+        "url": "fc-20210828-00001-FL25129159.jpg",
+         "id": "Administrative_Building"
+      }  
+    ] 
+  },
+  "Villa_14":{
+    "title": "Villa 14 - Disturbed patients villa",
+    "text": ".",
+    "images": [
+      {
+        "caption": "Title:     Lake Alice Hospital, Bulls - Disturbed patients villa - building floor plans (including information if on same sheet as floor plan) - [copy a]      Archway Item ID:R23378991      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised  https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119710",
+        "url": "fc-20210828-00008-FL59130374(1).jpg",
+         "id": ""
+      } 
+    ] 
+  },
+  "Villas_9_-_18":{
+    "title": "Villas 9 - 18 - Eleven Bed Villas",
+    "text": "The Eleven Bed villas were originally intended as intensive therapy units Dr Theodore Gray",
+    "images": [
+      {
+        "caption": "Eleven Bed Villas",
+        "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 10.56.35 AM.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Dr Theodore Gray, circa 1934, photographed by S P Andrew Ltd. Physical Description: Film negative Access restrictions Partly restricted - Please use surrogate in place of original Part of S P Andrew Ltd :Portrait negatives Format 1 b&w original negative(s), Negatives, Film negative Date [ca 1934] Ref 1/4-020299-F https://natlib.govt.nz/records/22493576?search%5Bi%5D%5Bname_authority_id%5D=-179722&search%5Bpath%5D=items",
+        "url": "fc-20210827-00001-mini_magick20210827-1-ctz1mq-Edit.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Eleven Bed Villas",
+        "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 11.00.15 AM.jpg",
+         "id": ""
+      } 
+    ] 
+  }
+}
