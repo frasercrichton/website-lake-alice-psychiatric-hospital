@@ -17,3 +17,13 @@ width: 330px;
 .side-bar-wrapper img {  
   opacity: 1;
 }
+
+.material-symbols-outlined {
+  position: absolute;
+  right: 0px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}

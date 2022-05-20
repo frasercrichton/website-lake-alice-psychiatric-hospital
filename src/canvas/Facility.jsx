@@ -2,16 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { Html } from '@react-three/drei'
 import './Facility.css'
 import Label from './Label'
-
-const significantFacilities = {
-  Administrative_Building: 'Administrative Building',
-  Maximum_Security_Block: 'Maximum Security Block',
-  "Doctors'_Houses": "Doctors' Villas",
-  "Villa_7_-_Girls'_Unit": "Girls' Unit",
-  "Villa_8_-__Boys'_Unit": "Boys' Unit",
-  Villa_14: 'Disturbed Patients Villa',
-  'Villas_9_-_18': 'Eleven Bed Villas'
-}
+import significantFacilities from '../data/significantFacilities.json'
 
 const facilities = {
   Administrative_Building: 'Administrative Building',

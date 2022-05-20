@@ -19,6 +19,7 @@ const SideBar = ({ selectedFacility, setSelectedFacility }) => {
 
   return (
     <div className={isSideBarActiveToggle}>
+      <span onClick={e => setSelectedFacility('')} class='material-symbols-outlined'>close</span>
       <div className='side-bar-menu'>
         <div>
           <h2>{resource.title}</h2>

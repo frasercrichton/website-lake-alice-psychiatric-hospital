@@ -3,7 +3,6 @@ import './App.css'
 import { Canvas } from '@react-three/fiber'
 import HospitalLayout from './canvas/HospitalLayout'
 import SideBar from './SideBar'
-import Map from './Map'
 import Header from './Header'
 import Menu from './Menu'
 import Content from './Content'
@@ -16,9 +15,8 @@ function App () {
     <div className='App'>
       <div className='App-header'>
         <Header />
-        <Content content={content} setContent={setContent}/>
-        <Map />
-        <Menu setContent={setContent}/>
+        <Content content={content} setContent={setContent} />
+        <Menu setContent={setContent} />
         <Canvas camera={{ position: [0, 100, 200], rotateY: 45 }}>
           <Suspense fallback={null}>
             <pointLight position={[10, 250, 150]} angle={70} castShadow />
