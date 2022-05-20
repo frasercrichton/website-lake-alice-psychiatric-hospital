@@ -38,6 +38,7 @@
   "devDependencies": {
     "@react-three/drei": "^9.4.2",
     "@react-three/fiber": "^8.0.10",
+    "react-player": "^2.10.1",
     "standard": "^16.0.4",
     "three": "^0.139.2"
   }

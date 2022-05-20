@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "${env}"
+
+  parameter-store:
+    REACT_APP_MORAL_DRIFT_CDN: REACT_APP_MORAL_DRIFT_CDN
+
+  exported-variables:
+    - REACT_APP_MORAL_DRIFT_CDN
+    
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo installing . . .
+      - yarn install      
+  build:
+    commands:
+      - echo Starting build . . .
+      - yarn run build
+artifacts:
+  files:
+    - '**/*'
+  name: "web-dist-$(date +%Y-%m-%d)"
+  base-directory: build
+
+cache:
+  paths:
+    - /root/.npm/**/*
