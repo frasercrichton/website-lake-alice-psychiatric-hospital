@@ -77,7 +77,7 @@ const Facility = ({
           // transform
           // sprite
           // rotation={[Math.PI / 2, 0, 0]}
-          zIndexRange={[100, 0]}
+          zIndexRange={[50, 0]}
           distanceFactor={100}
           position={[node.position.x, node.position.y, node.position.z]}
         >
@@ -97,6 +97,7 @@ const Facility = ({
           // transform
           // sprite
           // rotation={[Math.PI / 2, 0, 0]}
+          zIndexRange={[25, 0]}
           distanceFactor={100}
           position={[node.position.x, node.position.y, node.position.z]}
         >

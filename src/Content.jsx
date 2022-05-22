@@ -4,21 +4,19 @@ import Button from './components/Button'
 const Content = ({ content, setContent }) => {
   const url = 'https://vimeo.com/565389024'
 
-  const wrapperClass =
-    content !== '' ? 'content-wrapper active' : 'content-wrapper'
   return (
-    <div className={wrapperClass}>
+    <div key='content' className='content-wrapper active'>
       <h2>{content}</h2>
 
       {content === 'location' && (
-        <div>
+        <div key='location'>
           <img src='https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg' />
           <p>No. 7 Line, State Highway 3 2km from Bulls</p>
         </div>
       )}
 
       {content === 'testimony' && (
-        <div>
+        <div key='video'>
           <Video url={url} />
           <p>
             <a href='https://www.abuseincare.org.nz/our-progress/library/v/268/statement-of-malcolm-richards-for-lake-alice-child-and-adolescent-unit-hearing'>
@@ -33,6 +31,12 @@ const Content = ({ content, setContent }) => {
             </a>
             Witness Statements
           </p>
+        </div>
+      )}
+
+      {content === 'architecture' && (
+        <div key='architecture'>
+          text
         </div>
       )}
 

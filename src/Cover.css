@@ -1,42 +1,40 @@
-.content-wrapper {
-    opacity: 1.0;
+.cover-wrapper {
+    opacity: 1;
     position: absolute;
     top: 0px;
     right: 0px;
     width: 100%;
     height: 100%;
-    color: white;
-    background-color: black;
-    overflow: hidden;
-    
-    z-index: 2000;
+    color: black;
+    background-color: white;
+    z-index: 3000;
     display: none;
+    transition: all 300ms ease-out;
 }
 
-.content-wrapper h2{
+.cover-wrapper h2{
     text-transform: uppercase;
 }
 
-.active {
+.cover-wrapper.active {
     display: block;
 }
 
-
-.content-wrappper-enter {
+.cover-wrappper-enter {
     opacity: 0;
     /* transform: scale(0.9); */
   }
-  .content-wrappper-enter-active {
+  .cover-wrappper-enter-active {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 300ms, transform 300ms;
   }
-  .content-wrappper-exit {
+  .cover-wrappper-exit {
     opacity: 1;
     transition: opacity 300ms;
 
 }
-  .content-wrappper-exit-active {
+  .cover-wrappper-exit-active {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 300ms, transform 300ms;
