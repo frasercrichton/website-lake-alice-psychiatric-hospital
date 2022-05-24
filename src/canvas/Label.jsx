@@ -1,5 +1,6 @@
 import React from 'react'
 import './Label.css'
+import { CSSTransition } from 'react-transition-group'
 const Label = ({
   text,
   isClicked,
@@ -13,17 +14,24 @@ const Label = ({
   const tagClass = isClicked || isHover ? 'tag active' : 'tag'
 
   return (
-    <div className='label'>
-      <div className='line'></div>
-      <div
-        className={tagClass}
-        onClick={e => setSelectedFacility(facilityName)}
-        onMouseOver={e => hoverAction(facilityName, e)}
-        onMouseOut={e => hoverAction('', e)}
-      >
-        {text}
+    // <CSSTransition
+    //   in={isClicked || isHover}
+    //   timeout={500}
+    //   classNames='label'
+    //   unmountOnExit
+    // >
+      <div className={tagClass}>
+        <div className='line'></div>
+        <div
+          className='tag active'
+          onClick={e => setSelectedFacility(facilityName)}
+          onMouseOver={e => hoverAction(facilityName, e)}
+          onMouseOut={e => hoverAction('', e)}
+        >
+          {text}
+        </div>
       </div>
-    </div>
+    // </CSSTransition>
   )
 }
 

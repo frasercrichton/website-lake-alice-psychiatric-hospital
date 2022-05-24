@@ -9,9 +9,11 @@ const Cover = ({ coverActive, setCoverActive }) => {
       classNames='cover-wrappper'
       unmountOnExit
     >
-      <div key='cover-wrapper' className='cover-wrapper active'>
+      <div key='cover-wrapper' className='cover-wrapper'>
+        <h2>The Moral Drift</h2>
         <h2>Lake Alice Psychiatric Hospital - Child and Adolescent Unit</h2>
-        content that may disturb
+        
+        <i>content that may disturb</i>
         <div>
           <Button action={e => setCoverActive(!coverActive)} />
         </div>

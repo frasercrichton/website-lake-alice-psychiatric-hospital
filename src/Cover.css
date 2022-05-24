@@ -8,16 +8,11 @@
     color: black;
     background-color: white;
     z-index: 3000;
-    display: none;
     transition: all 300ms ease-out;
 }
 
 .cover-wrapper h2{
     text-transform: uppercase;
-}
-
-.cover-wrapper.active {
-    display: block;
 }
 
 .cover-wrappper-enter {

@@ -52,7 +52,7 @@ const Menu = ({ setContent, selectedFacility, setSelectedFacility }) => {
             key='testimony'
             action={e => setContent('testimony')}
             id='testimony'
-            label='Testimony'
+            label='Testimony: Malcolm Richards'
           />
         </ul>
       </div>

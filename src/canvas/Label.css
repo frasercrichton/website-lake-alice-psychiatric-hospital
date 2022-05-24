@@ -54,3 +54,23 @@ font-weight: bold;
   cursor: pointer;
   opacity: 1
 }
+
+.label-wrappper-enter {
+  opacity: 0;
+  /* transform: scale(0.9); */
+}
+.label-wrappper-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.label-wrappper-exit {
+  opacity: 1;
+  transition: opacity 300ms;
+
+}
+.label-wrappper-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

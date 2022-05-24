@@ -10,17 +10,11 @@
     overflow: hidden;
     
     z-index: 2000;
-    display: none;
 }
 
 .content-wrapper h2{
     text-transform: uppercase;
 }
-
-.active {
-    display: block;
-}
-
 
 .content-wrappper-enter {
     opacity: 0;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import './SideBar.css'
 import Image from './components/Image'
 import Button from './components/Button'
@@ -11,13 +11,20 @@ const SideBar = ({ selectedFacility, setSelectedFacility }) => {
 
   const imageUrl = image => CDN_URL + FOLDER + image.url
 
-  const images = resource.images.map(image => (
-    <Image key={image.id} url={imageUrl(image)} caption={image.caption} />
-  ))
+  const images = resource.images !== undefined
+    ? resource.images.map(image => (
+      <Image key={image.id} url={imageUrl(image)} caption={image.caption} />
+      ))
+    : null
 
   return (
-    <div className='side-bar-wrapper active'>
-      <span onClick={e => setSelectedFacility('')} class='material-symbols-outlined'>close</span>
+    <div className='side-bar-wrapper'>
+      <span
+        onClick={e => setSelectedFacility('')}
+        class='material-symbols-outlined'
+      >
+        close
+      </span>
       <div className='side-bar-menu'>
         <div>
           <h2>{resource.title}</h2>
