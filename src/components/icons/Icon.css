@@ -1,0 +1,28 @@
+.icon-wrapper {
+  color: white;
+  padding: 10px 0;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  height: 55px;
+  width: 55px;
+}
+
+.material-symbols-outlined::before {
+  content: "close";
+}
+
+.material-symbols-outlined:hover::before {
+  content: "close";
+  font-style: bold;
+  color: black;
+  background-color: white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL'0,
+    'wght'400,
+    'GRAD'0,
+    'opsz'48
+}

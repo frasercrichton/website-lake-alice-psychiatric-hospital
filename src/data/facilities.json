@@ -1,0 +1,67 @@
+{
+  "Administrative_Building": {
+    "id": "Administrative_Building",
+    "name": "Administrative Building",
+    "type": "not-significant"
+  },
+  "Maximum_Security_Block": {
+    "id": "Maximum_Security_Block",
+    "name": "Maximum Security Block",
+    "type": "significant"
+  },
+  "Areas001_1" :{
+    "id": "Areas001_1",
+    "name": "Maximum Security Block",
+    "type": "significant"
+  },
+  "Doctors'_Houses": {
+    "id": "Doctors'_Houses",
+    "name": "Doctors' Villas",
+    "type": "not-significant"
+  },
+  "Villa_7_-_Girls'_Unit": {
+    "id": "Villa_7_-_Girls'_Unit",
+    "name": "Girls' Unit",
+    "type": "significant"
+  },
+  "Villa_8_-__Boys'_Unit": {
+    "id": "Villa_8_-__Boys'_Unit",
+    "name": "Boys' Unit",
+    "type": "significant"
+  },
+  "Villas_9_-_18": {
+    "id": "Villas_9_-_18",
+    "name": "Eleven Bed Villas",
+    "type": "significant"
+  },
+  "Staff_Quarters": {
+    "id": "Staff_Quarters",
+    "name": "Staff Quarters",
+    "type": "not-significant"
+  },
+  "Swimming_Pool": {
+    "id": "Swimming_Pool",
+    "name": "Swimming Pool",
+    "type": "not-significant"
+  },
+  "Villa_13": {
+    "id": "Villa_13",
+    "name": "Adult Patients Villa 13",
+    "type": "not-significant"
+  },
+  "Villa_14_-_Disturbed_Patients_Villa": {
+    "id": "Villa_14_-_Disturbed_Patients_Villa",
+    "name": "Disturbed Patients Villa",
+    "type": "significant"
+  },
+  "Villa_15": {
+    "id": "Villa_15",
+    "name": "Adult Patients Villa 15",
+    "type": "not-significant"
+  },
+  "Community_Hall": {
+    "id": "Community_Hall",
+    "name": "Community Hall",
+    "type": "not-significant"
+  }
+}
