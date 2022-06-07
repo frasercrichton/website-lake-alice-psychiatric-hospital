@@ -1,13 +1,15 @@
 import React from 'react'
 import './Label.css'
 import { CSSTransition } from 'react-transition-group'
+import { Html } from '@react-three/drei'
 const Label = ({
   text,
   isClicked,
   setSelectedFacility,
   hoverAction,
   hoverName,
-  id
+  id,
+  position
 }) => {
   const facilityName = id.replace('_Annotation', '')
   const isHover = facilityName === hoverName
@@ -20,10 +22,19 @@ const Label = ({
     //   classNames='label'
     //   unmountOnExit
     // >
-      <div className={tagClass}>
+    <Html
+      transform
+      sprite
+      // rotation={[Math.PI / 2, 0, 0]}
+      zIndexRange={[150, 0]}
+      distanceFactor={10}
+      position={position}
+      scale={7}
+    >
+      <div>
         <div className='line'></div>
         <div
-          className='tag active'
+          className={tagClass}
           onClick={e => setSelectedFacility(facilityName)}
           onMouseOver={e => hoverAction(facilityName, e)}
           onMouseOut={e => hoverAction('', e)}
@@ -31,6 +42,7 @@ const Label = ({
           {text}
         </div>
       </div>
+    </Html>
     // </CSSTransition>
   )
 }

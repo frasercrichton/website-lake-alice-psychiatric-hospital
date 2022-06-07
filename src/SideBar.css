@@ -1,25 +1,15 @@
 .side-bar-wrapper {  
   position: absolute;
-top: 135px;
-right: 30px;
-width: 330px;
+  top: 455px;
+  left: 30px;
+  width: 330px; 
   color: white;
   background-color: rgba(0,0,0,0.2);
-  overflow: hidden;
   padding: 12px;
+  z-index: 15;
 }
 
 
 .side-bar-wrapper img {  
   opacity: 1;
-}
-
-.material-symbols-outlined {
-  position: absolute;
-  right: 0px;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
 }

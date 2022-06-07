@@ -1,7 +1,23 @@
 
+https://vimeo.com/689154638
+
 https://vimeo.com/565389024
 Statement of Malcolm Richards for Lake Alice Child and Adolescent Unit hearing
 
+
+   <p>
+              <a href='https://www.abuseincare.org.nz/our-progress/library/v/268/statement-of-malcolm-richards-for-lake-alice-child-and-adolescent-unit-hearing'>
+                Statement of Malcolm Richards for Lake Alice Child and
+                Adolescent Unit hearing
+              </a>
+            </p>
+            <p>
+              <a href='https://www.abuseincare.org.nz/our-inquiries/abuse-in-state-psychiatric-care/public-hearing-lake-alice-child-and-adolescent-unit/'>
+                Public hearing: Lake Alice Child and Adolescent Unit Nohoanga
+                tūmatanui: Te Wāhanga Tamaiti, Taitamariki o Lake Alice
+              </a>
+              Witness Statements
+            </p>
 
 ## Available Scripts
 

@@ -2,9 +2,31 @@ import './Content.css'
 import { CSSTransition } from 'react-transition-group'
 import Video from './components/Video'
 import Button from './components/Button'
+import Icon from './components/icons/Icon'
+import Image from './components/Image'
+import Map from './map/Map'
+import resources from './data/content.json'
+const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
+const FOLDER = '3d-visualisation/'
+
 const Content = ({ content, setContent }) => {
   const url = 'https://vimeo.com/565389024'
+  const imageUrl = image => CDN_URL + FOLDER + image.url
 
+  const resource = resources[content]
+
+  // const images =
+  //   resource !== undefined || resource.images !== undefined
+  //     ? resource.images.map(image => (
+  //         <Image
+  //           id={image.id}
+  //           key={image.id}
+  //           url={imageUrl(image)}
+  //           caption={image.caption}
+  //           imageAction={setContent}
+  //         />
+  //       ))
+  //     : null
   return (
     <CSSTransition
       in={content !== ''}
@@ -12,38 +34,24 @@ const Content = ({ content, setContent }) => {
       classNames='content-wrappper'
       unmountOnExit
     >
-      <div key='content' className='content-wrapper active'>
-        <h2>{content}</h2>
-
-        {content === 'location' && (
-          <div key='location'>
-            <img src='https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg' />
-            <p>No. 7 Line, State Highway 3 2km from Bulls</p>
+      <div className='content-container'>
+        <Icon action={e => setContent('')} iconType='close' />
+        <div className='content' key='content'>
+          <div className='header-container'>
+            <h2>{content}</h2>
           </div>
-        )}
 
-        {content === 'testimony' && (
-          <div key='video'>
-            <Video url={url} />
-            <p>
-              <a href='https://www.abuseincare.org.nz/our-progress/library/v/268/statement-of-malcolm-richards-for-lake-alice-child-and-adolescent-unit-hearing'>
-                Statement of Malcolm Richards for Lake Alice Child and
-                Adolescent Unit hearing
-              </a>
-            </p>
-            <p>
-              <a href='https://www.abuseincare.org.nz/our-inquiries/abuse-in-state-psychiatric-care/public-hearing-lake-alice-child-and-adolescent-unit/'>
-                Public hearing: Lake Alice Child and Adolescent Unit Nohoanga
-                tūmatanui: Te Wāhanga Tamaiti, Taitamariki o Lake Alice
-              </a>
-              Witness Statements
-            </p>
-          </div>
-        )}
+          {/* {images} */}
+          {content === 'location' && <Map />}
 
-        {content === 'architecture' && <div key='architecture'>text</div>}
-
-        <Button action={setContent} />
+          {content === 'testimony' && (
+            <Video
+              url='https://vimeo.com/689154638'
+              caption='Malcolm Richards'
+            />
+          )}
+          <Button action={setContent} label='close' />
+        </div>
       </div>
     </CSSTransition>
   )

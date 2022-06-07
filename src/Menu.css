@@ -2,12 +2,13 @@
     font-size: 14px;
     color: white;
     position: absolute;
-    top: 135px;
+    top: 115px;
     left: 30px;
-    height: 70%;
+    /* absolute size this? */
+    height: 40%;
     width: 265px;
     opacity: 0.7;
-    z-index: 2;
+    z-index: 15;
 }
 
 .menu-wrapper div {
@@ -37,4 +38,18 @@
 .menu-wrapper h2 {
     font-size: 14px;
     text-transform: uppercase;
+}
+
+.tab {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid white;
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    width: 100px;
+}
+.tab:hover {
+    opacity: 0.4;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid white;
 }
