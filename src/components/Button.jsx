@@ -1,11 +1,11 @@
 import React from 'react'
 import './Button.css'
 
-const Button = ({ action }) => {
+const Button = ({ action, label }) => {
   return (
     <div className='button-wrapper'>
       <button className='button' onClick={e => action('')}>
-        close
+        {label}
       </button>
     </div>
   )

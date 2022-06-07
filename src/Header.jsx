@@ -5,7 +5,7 @@ const Header = props => {
   // const [hover, setHover] = useState(false)
   return (
     <div className='header'>
-      Lake Alice Psychiatric Hospital - Child and Adolescent Unit
+      Lake Alice Psychiatric Hospital
       {/* <div>Location:</div>
       <div>Villa x</div>
       <div>context</div>

@@ -1,0 +1,112 @@
+{
+  "architecture":{
+    "title": "Architecture",
+    "text": ".",
+    "id": "architecture"
+  },
+  "Areas001_1": {
+    "title": "Maximum Security Block",
+    "text": "The Maximum Security Block was built in XXXX and when it opened briefly held prisoners who had been involved in teh Mt Eden Prison riot of XXXX. The Block was also used as punishment for the children held at Lake Alice.",
+    "images": [
+      {
+
+        "caption": "Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised",
+        "url": "fc-20210828-00001-FL25129125-Edit.jpg",
+        "id": "Maximum_Security_Block"
+      },
+      {
+        "caption": "Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans. Archway Item ID:R23379028 Archway Series Number:24040 Provenance:ABZK Material Type: Digitised",
+        "original-link": "https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE61510110",
+        "url": "fc-20210828-00001-FL61510179.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans. Archway Item ID:R23379027 Archway Series Number:24040 Provenance:ABZK Material Type: Digitised",
+        "url": "fc-20210828-00001-FL61510349.jpg",
+         "id": ""
+      }  
+    ]
+  },
+  "Administrative_Building":{
+    "title": "Administrative Block",
+    "text": ".",
+    "images": [
+      {
+        "caption": "Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal. Archway Item ID:R24730915 Archway Series Number:6539 Provenance:Transferred by agency AAQT Material Type: Digitised",
+        "original-link": "https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143",
+    
+        "url": "fc-20210828-00001-FL25129159.jpg",
+         "id": "Administrative_Building"
+      }  
+    ] 
+  },
+  "Doctors'_Houses":{
+    "title": "Doctors' Houses",
+    "text": "."
+  },
+  "history":{
+    "title": "History",
+    "text": ".",
+    "id": "history"
+  },
+  "testimony":{
+    "title": "History",
+    "text": ".",
+    "id": "testimony"
+  },
+  "location":{
+    "title": "Location",
+    "text": "",
+    "images": [
+      {
+        "caption": "No. 7 Line, State Highway 3 2km from Bulls",
+      
+        "url": "https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg",
+         "id": "location"
+      }  
+    ]
+  },
+  "Villa_7_-_Girls'_Unit":{
+    "title": "Girls' Unit",
+    "text": " Villa 7"
+    
+  },
+  "Villa_8_-__Boys'_Unit":{
+    "title": "Boys' Unit",
+    "text": " Villa 8"
+  },
+  "Villa_14_-_Disturbed_Patients_Villa":{
+    "title": "Disturbed patients villa",
+    "text": "Villa 14 ",
+    "images": [
+      {
+        "caption": "Title:     Lake Alice Hospital, Bulls - Disturbed patients villa - building floor plans (including information if on same sheet as floor plan) - [copy a]      Archway Item ID:R23378991      Archway Series Number:24040      Provenance:ABZK      Material Type: Digitised",
+        "original-link": "https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119710",
+        "url": "fc-20210828-00008-FL59130374(1).jpg",
+         "id": ""
+      } 
+    ] 
+  },
+  "Villas_9_-_18":{
+    "title": "Eleven Bed Villas",
+    "text": "Villas 9 - 18 The Eleven Bed villas were originally intended as intensive therapy units Dr Theodore Gray",
+    "images": [
+      {
+        "caption": "Eleven Bed Villas",
+        "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 10.56.35 AM.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Dr Theodore Gray, circa 1934, photographed by S P Andrew Ltd. Physical Description: Film negative Access restrictions Partly restricted - Please use surrogate in place of original Part of S P Andrew Ltd :Portrait negatives Format 1 b&w original negative(s), Negatives, Film negative Date [ca 1934] Ref 1/4-020299-F",
+        "original-link": "https://natlib.govt.nz/records/22493576?search%5Bi%5D%5Bname_authority_id%5D=-179722&search%5Bpath%5D=items",
+        "url": "fc-20210827-00001-mini_magick20210827-1-ctz1mq-Edit.jpg",
+         "id": ""
+      },
+      {
+        "caption": "Eleven Bed Villas",
+        "url": "fc-20210827-00001-Screen Shot 2021-08-28 at 11.00.15 AM.jpg",
+         "id": ""
+      } 
+    ] 
+  }
+}

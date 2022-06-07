@@ -1,0 +1,17 @@
+.canvas-wrapper {
+  cursor: pointer;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  /* left: 120px; */
+  right: 0;
+
+}
+
+
+canvas {
+
+  height: 100%;
+  width: 100%;
+  /* position: absolute; */
+}

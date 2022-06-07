@@ -1,0 +1,1 @@
+https://fontawesome.com/search?q=twitter&s=solid%2Cbrands

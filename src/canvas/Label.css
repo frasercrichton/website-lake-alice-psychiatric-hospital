@@ -1,53 +1,64 @@
-.label {
-	position: absolute;
-  opacity: 0.6;
-  padding: 20px 25px;
-  border-radius: 5px;
-	transform: scale(1, 1);  
-  z-index: -1;
-}
-
 .line {
 	position: absolute;
-	width: 5px;
-  height: 140px;
-	top: -150px;
-	right: 20px;
-  border-right: 6px solid white;
-  /* -moz-transform: skew(-45deg);
-	-webkit-transform: skew(-45deg);
-	transform: skew(-45deg); */
+  height: 100px;
+  width: 2px;
+	top: 0px;
+	right: -3px;
+  border-left: 4px solid white;
+  background-color: aqua;
+  -moz-transform: skew(-40deg);
+	-webkit-transform: skew(-40deg);
+	transform: skew(-40deg);
 }
 
 .tag {
-  font-size: 32px;
-font-weight: bold;
-  text-transform: uppercase;
-  background: #202035;
-  color: white;
-  text-align: left;
   position: absolute;
-  transform: translate3d(-50%, -300%, 30px);
-  padding: 20px 25px;
+  transform: translate3d(1px, 1px, 100px);
+
+  font-size: 30px;
+  text-transform: uppercase;
+  background: white;
+  color: #202035;
+  
+  padding: 15px 50px;
   border-radius: 30px;
   white-space: nowrap;
   cursor: pointer;
   opacity: 0.6;
-  transition: background-color 0.3s ease-out;
-  z-index: -1;
+  transition: all 0.3s ease-out;
 }
 
-.label .active {
-  font-size: 40px;
-  background-color: green;
+.tag.active {
+  transition: all 0.3s ease-out;
+  /* background-color: black; */
   cursor: pointer;
   opacity: 1;
-  z-index: -1;
 }
 
+/* 
 .tag:hover {
   font-size: 40px;
   background-color: green;
   cursor: pointer;
   opacity: 1
+} */
+
+.label-wrappper-enter {
+  opacity: 0;
+  /* transform: scale(0.9); */
+}
+.label-wrappper-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.label-wrappper-exit {
+  opacity: 1;
+  transition: opacity 300ms;
+
+}
+.label-wrappper-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }

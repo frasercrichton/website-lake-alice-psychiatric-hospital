@@ -1,24 +1,25 @@
 .button {
+  flex: 1;
   padding: 0.5em 3em;
   border: 0.16em solid #FFFFFF;
   margin: 0 0.3em 0.3em 0;
-  box-sizing: border-box;
-  text-decoration:none;
-  text-transform:uppercase;
+  
+  text-decoration: none;
+  text-transform: uppercase;
   color: white;
   opacity: 0.3;
   background-color: rgba(128, 128, 128, 0.7);
-
   transition: all 300ms ease-out;
   max-width: 30em;
+  cursor: pointer;
 }
 
-@media all and (max-width:30em){
+/* @media all and (max-width:30em){
   .button {
   display:block;
   margin:0.4em auto;
   }
-} 
+}  */
 
 .button:hover {
   background-color: rgba(255, 255, 255, 0.7);

@@ -1,25 +1,52 @@
+import React, { useState } from 'react'
 import './Menu.css'
-import significantFacilities from './data/significantFacilities.json'
+import facilities from './data/facilities.json'
+import MenuItem from './components/MenuItem'
+const Menu = ({ setContent, selectedFacility, setSelectedFacility }) => {
+  const [tab, setTab] = useState('site')
 
-const Menu = ({ setContent }) => {
+  const sortStringKeys = (a, b) => {
+    console.log(a)
+    return String(a).localeCompare(b)
+  }
   return (
     <div className='menu-wrapper'>
-      <h2>Site</h2>
+      <h2>xx</h2>
+      {tab === 'site' && (
+        <div className='menu-items'>
+          <ul className='menu-items-list'>
+            {Object.values(facilities)
+              .filter(facility => facility.type === 'significant')
+              // .sort()
+              .map(value => {
+                return (
+                  <MenuItem
+                    key={value.id}
+                    action={setSelectedFacility}
+                    isActive={selectedFacility === value.id}
+                    id={value.id}
+                    label={value.name}
+                  />
+                )
+              })}
+          </ul>
+        </div>
+      )}
+
       <div className='menu-items'>
         <ul className='menu-items-list'>
-          {
-          Object.keys(significantFacilities).map((key, value) => {
-            return <li key={key}>{significantFacilities[key]}</li>
-          })
-          }
-        </ul>
-      </div>
-      <h2>Context</h2>
-      <div className='menu-items'>
-        <ul className='menu-items-list'>
-          <li onClick={e => setContent('testimony')}>Testimony</li>
-          <li onClick={e => setContent('history')}>History</li>
-          <li onClick={e => setContent('location')}>Location</li>
+          <MenuItem
+            key='location'
+            action={e => setContent('location')}
+            id='location'
+            label='Location'
+          />
+          <MenuItem
+            key='testimony'
+            action={e => setContent('testimony')}
+            id='testimony'
+            label='Testimony'
+          />
         </ul>
       </div>
     </div>
