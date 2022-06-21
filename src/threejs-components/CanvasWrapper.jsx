@@ -7,8 +7,12 @@ import HospitalLayout from './HospitalLayout'
 import angleToRadians from './angleHelper'
 import { Environment, OrbitControls } from '@react-three/drei'
 
-const CanvasWrapper = ({ selectedFacility, setSelectedFacility }) => {
-  const isClicked = selectedFacility !== ''
+const CanvasWrapper = ({
+  selectedFacility,
+  setSelectedFacility,
+  hoverName,
+  setHoverName
+}) => {
   const orbitControlesRef = useRef(null)
 
   const ZoomIn = () => {
@@ -19,7 +23,7 @@ const CanvasWrapper = ({ selectedFacility, setSelectedFacility }) => {
         let polarAngle = orbitControlesRef.current.getPolarAngle()
 
         orbitControlesRef.current.maxDistance = cameraDistance -= 0.1
-        orbitControlesRef.current.setPolarAngle(polarAngle += 0.003)
+        orbitControlesRef.current.setPolarAngle((polarAngle += 0.003))
         orbitControlesRef.current.update()
       }
     })
@@ -37,9 +41,11 @@ const CanvasWrapper = ({ selectedFacility, setSelectedFacility }) => {
             castShadow
           />
           <HospitalLayout
+           orbitControlesRef={orbitControlesRef}
             selectedFacility={selectedFacility}
             setSelectedFacility={setSelectedFacility}
-            orbitControlesRef={orbitControlesRef}
+            hoverName={hoverName}
+            setHoverName={setHoverName}
           />
         </Suspense>
         <OrbitControls

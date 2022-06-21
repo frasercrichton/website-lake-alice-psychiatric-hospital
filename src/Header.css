@@ -1,8 +1,26 @@
-.header {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    padding: 10px;
-    font-size: 28px;
+header {
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    position: sticky;
     z-index: 21;
+}
+
+nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: [col-start] 1.5fr [col-start] 0.5fr;
+    justify-items: stretch;
+}
+
+nav a {
+    align-self: center;
+    justify-self: start;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+a.about {
+    justify-self: end;
 }

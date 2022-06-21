@@ -1,4 +1,4 @@
-.menu-wrapper {
+.menu-container {
     font-size: 14px;
     color: white;
     position: absolute;
@@ -9,17 +9,18 @@
     width: 265px;
     opacity: 0.7;
     z-index: 15;
+    font-family: Alliance Mono,monospace;;
 }
 
-.menu-wrapper div {
+.menu-container div {
     opacity: 1;
 }
 
-.menu-wrapper ul {
+.menu-container ul {
     text-align: left;
 }
  
-.menu-wrapper li {
+.menu-container li {
     list-style-type: none; 
     background-color: rgba(128, 128, 128, 0.7);
     transition: background-color 300ms ease-out;
@@ -30,12 +31,12 @@
     border:0.16em solid #FFFFFF;
 }
 
-.menu-wrapper li:hover {
+.menu-container li:hover {
     background-color: rgba(255, 255, 255, 0.7);
     border: 2px solid white;
 }
 
-.menu-wrapper h2 {
+.menu-container h2 {
     font-size: 14px;
     text-transform: uppercase;
 }

@@ -1,22 +1,39 @@
-
-li .menu-item {
-  list-style-type: none; 
+div .menu-item {
   background-color: rgba(128, 128, 128, 0.7);
   transition: background-color 300ms ease-out;
   cursor: pointer;
   padding: 5px;
   margin: 5px;
   color: white;
-  border:0.16em solid #FFFFFF;
+  border: 0.16em solid #FFFFFF;
+  text-align: left;
+  width: 240px;
 }
 
-li.menu-item:hover {
+div.menu-item:hover, .menu-item.clicked {
   background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid white;
 }
 
-
-.menu-item.active {
+.menu-item.hover, .menu-item.clicked {
   background-color: rgba(255, 255, 250, 0.7);
   border: 2px solid white;
+}
+
+.menu-item .icon::before {
+  position: absolute;
+  right: 15px;
+  content: '+';
+}
+
+.menu-item.clicked .icon::before {
+  content: '-';
+}
+
+.text-panel {
+  width: 240px;
+  padding: 10px;
+  text-align: justify;
+  overflow: hidden;
+  transition: 0.5s;
 }

@@ -1,11 +1,10 @@
 .line {
 	position: absolute;
-  height: 100px;
-  width: 2px;
-	top: 0px;
-	right: -3px;
+  height: 50px;
+  width: 20px;
+	bottom: 0;
+	left: 5px;
   border-left: 4px solid white;
-  background-color: aqua;
   -moz-transform: skew(-40deg);
 	-webkit-transform: skew(-40deg);
 	transform: skew(-40deg);
@@ -13,18 +12,16 @@
 
 .tag {
   position: absolute;
-  transform: translate3d(1px, 1px, 100px);
-
+  transform: translate3d(10px, -100px, 0px);
+  padding: 15px 50px;
+  border-radius: 25px;
   font-size: 30px;
   text-transform: uppercase;
   background: white;
   color: #202035;
-  
-  padding: 15px 50px;
-  border-radius: 30px;
   white-space: nowrap;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: all 0.3s ease-out;
 }
 
@@ -32,28 +29,20 @@
   transition: all 0.3s ease-out;
   /* background-color: black; */
   cursor: pointer;
-  opacity: 1;
+  opacity: 0.7;
 }
-
-/* 
-.tag:hover {
-  font-size: 40px;
-  background-color: green;
-  cursor: pointer;
-  opacity: 1
-} */
 
 .label-wrappper-enter {
   opacity: 0;
   /* transform: scale(0.9); */
 }
 .label-wrappper-enter-active {
-  opacity: 1;
+  opacity: 0.7;
   transform: translateX(0);
   transition: opacity 300ms, transform 300ms;
 }
 .label-wrappper-exit {
-  opacity: 1;
+  opacity: 0.7;
   transition: opacity 300ms;
 
 }

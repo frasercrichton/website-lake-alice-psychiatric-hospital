@@ -2,6 +2,8 @@
   text-align: center;
   background-color: #282c34;
   color: white;
+  font-family: Alliance Platt,sans-serif;
+  font-size: 1.2rem;
 }
 
 .site-container {
@@ -12,3 +14,4 @@
   height: 100%;
   background-color: #282c34;
 }
+

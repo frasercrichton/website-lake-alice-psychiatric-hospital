@@ -6,32 +6,33 @@ import * as THREE from 'three'
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
 const FOLDER = '3d-visualisation/'
 
-const HospitalLayout = ({ selectedFacility, setSelectedFacility }) => {
+const HospitalLayout = ({
+  selectedFacility,
+  setSelectedFacility,
+  hoverName,
+  setHoverName
+}) => {
   const group = useRef()
-
-  // const { nodes, materials } = useLoader(
-  //   GLTFLoader,
-  //   CDN_URL + FOLDER + 'lake-alice-geography.gltf'
-  // )
 
   const { nodes, materials } = useLoader(
     GLTFLoader,
-    'lake-alice-geography.gltf'
+    CDN_URL + FOLDER + 'lake-alice-geography.gltf'
   )
-  const [hoverName, setHoverName] = useState('')
+  // const { nodes, materials } = useLoader(
+  //   GLTFLoader,
+  //   'lake-alice-geography.gltf'
+  // )
 
   const isClicked = selectedFacility !== ''
+    // const isHover = hoverName !== ''
 
   const Facilities = () => {
     const hoverAction = (id, e) => {
-      console.log(id)
       if (!isClicked) {
         setHoverName(id)
       }
-      // console.log(hoverName)
     }
 
-    // const isHover = hoverName !== ''
     const material = new THREE.LineBasicMaterial({
       color: 0xffffff,
       linewidth: 2,
@@ -60,8 +61,6 @@ const HospitalLayout = ({ selectedFacility, setSelectedFacility }) => {
           />
         )
       }
-
-      // }
       return null
     })
     return output

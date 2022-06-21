@@ -27,7 +27,7 @@ const Label = ({
       sprite
       // rotation={[Math.PI / 2, 0, 0]}
       zIndexRange={[150, 0]}
-      distanceFactor={10}
+      // distanceFactor={2}
       position={position}
       scale={7}
     >

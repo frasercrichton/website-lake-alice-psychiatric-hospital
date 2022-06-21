@@ -19,7 +19,7 @@ Statement of Malcolm Richards for Lake Alice Child and Adolescent Unit hearing
               Witness Statements
             </p>
 
-## Available Scripts
+## Technical
 
 In the project directory, you can run:
 

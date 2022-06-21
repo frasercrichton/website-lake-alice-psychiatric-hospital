@@ -15,15 +15,16 @@ const Facility = ({
   const mesh = useRef()
   const isAnnotation = node.name.includes('Annotation')
   const facilityId = node.name.replace('_Annotation', '')
+
+  const findFacility = id => facilities.find(facility => facility.id === id)
   const isSignificantFacility =
-    typeof facilities[facilityId] !== 'undefined' &&
-    facilities[facilityId].type === 'significant'
-  const isFacility = typeof facilities[facilityId] !== 'undefined'
+    typeof findFacility(facilityId) !== 'undefined' &&
+    findFacility(facilityId).type === 'significant'
+  const isFacility = typeof findFacility(facilityId) !== 'undefined'
 
   const isHover = facilityId === hoverName
   const isClicked = facilityId === selectedFacility
   const isActive = isClicked || isHover
-
   const meshEvents = isFacility
     ? {
         onPointerOver: e => hoverAction(facilityId, e),
@@ -45,6 +46,8 @@ const Facility = ({
       material={material}
       {...meshEvents}
       {...meshOnclick}
+      
+      // onPointerLeave={e => alert('left')}
     >
       {isFacility && (
         <meshStandardMaterial
@@ -55,10 +58,10 @@ const Facility = ({
           opacity={isActive ? 0.5 : 1}
         />
       )}
-      {isAnnotation && isSignificantFacility && (
+      {isClicked && isAnnotation && isSignificantFacility && (
         <Label
           id={node.name}
-          text={facilities[facilityId].name}
+          text={findFacility(facilityId).name}
           hoverAction={hoverAction}
           hoverName={hoverName}
           setSelectedFacility={setSelectedFacility}
@@ -70,7 +73,7 @@ const Facility = ({
       {isHover && isFacility && isAnnotation && (
         <Label
           id={node.name}
-          text={facilities[facilityId].name}
+          text={findFacility(facilityId).name}
           hoverAction={hoverAction}
           hoverName={hoverName}
           setSelectedFacility={setSelectedFacility}

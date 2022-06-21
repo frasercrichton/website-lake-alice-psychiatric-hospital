@@ -1,7 +1,6 @@
 import './Cover.css'
 import { CSSTransition } from 'react-transition-group'
 import Button from './components/Button'
-import Image from './components/Image'
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
 const FOLDER = '3d-visualisation/'
 
@@ -23,14 +22,33 @@ const Cover = ({ coverActive, setCoverActive, setContent }) => {
         {/* <div className='cover-overlay'> </div> */}
         <div className='default-cover-container'>
           <div className='cover-content'>
-            <h2>Lake Alice Psychiatric Hospital</h2>
-
-            <div className='navigation'>
-              <Button
-                action={e => action()}
-                label='Testimony'
-              />
-              <Button action={e => setCoverActive(!coverActive)} label='explore' />
+            <h2>Lake Alice</h2>
+            <div className='main-content'>
+              <p>Lake Alice Child and Adolescent Unit</p>
+              <p>
+                Suspendisse vulputate interdum velit sed iaculis. Aenean
+                fringilla mollis sem, non egestas velit viverra quis. In hac
+                habitasse platea dictumst. In consequat sodales consectetur.
+                Morbi elementum nisl non turpis faucibus elementum. Curabitur
+                nec nulla quis elit laoreet molestie. Aliquam erat volutpat.
+              </p>
+              <p>
+                Ut molestie elementum massa, et pretium elit placerat mattis.
+                Sed metus diam, gravida eu tellus ut, dignissim pellentesque
+                dui. Mauris posuere, est non venenatis porttitor, lorem nisl
+                tincidunt diam, at luctus dui libero vel erat. Praesent faucibus
+                ex non viverra ullamcorper. Nam non urna diam. Nullam efficitur
+                pellentesque blandit. Mauris imperdiet mattis turpis et dapibus.
+                Maecenas eu vulputate mauris, sit amet iaculis eros. Duis
+                sodales ante nec urna suscipit posuere vitae vel sapien. Mauris.{' '}
+              </p>
+              <div className='navigation'>
+                <Button action={e => action()} label='Testimony' />
+                <Button
+                  action={e => setCoverActive(!coverActive)}
+                  label='explore'
+                />
+              </div>
             </div>
           </div>
         </div>

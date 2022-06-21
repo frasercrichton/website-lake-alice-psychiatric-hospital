@@ -4,13 +4,14 @@ import './Header.css'
 const Header = props => {
   // const [hover, setHover] = useState(false)
   return (
-    <div className='header'>
-      Lake Alice Psychiatric Hospital
-      {/* <div>Location:</div>
-      <div>Villa x</div>
-      <div>context</div>
-      <div>image</div> */}
-    </div>
+    <header>
+      <nav>
+        <a href='/'>
+          <h1>Lake Alice</h1>
+        </a>
+        <a className='about' href='/'>About</a>
+      </nav>
+    </header>
   )
 }
 
