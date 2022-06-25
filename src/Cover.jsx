@@ -22,26 +22,11 @@ const Cover = ({ coverActive, setCoverActive, setContent }) => {
         {/* <div className='cover-overlay'> </div> */}
         <div className='default-cover-container'>
           <div className='cover-content'>
-            <h2>Lake Alice</h2>
+            <div className='header'>
+              <h1>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h1>
+              <h1>Lake Alice Child and Adolescent Unit</h1>
+            </div>
             <div className='main-content'>
-              <p>Lake Alice Child and Adolescent Unit</p>
-              <p>
-                Suspendisse vulputate interdum velit sed iaculis. Aenean
-                fringilla mollis sem, non egestas velit viverra quis. In hac
-                habitasse platea dictumst. In consequat sodales consectetur.
-                Morbi elementum nisl non turpis faucibus elementum. Curabitur
-                nec nulla quis elit laoreet molestie. Aliquam erat volutpat.
-              </p>
-              <p>
-                Ut molestie elementum massa, et pretium elit placerat mattis.
-                Sed metus diam, gravida eu tellus ut, dignissim pellentesque
-                dui. Mauris posuere, est non venenatis porttitor, lorem nisl
-                tincidunt diam, at luctus dui libero vel erat. Praesent faucibus
-                ex non viverra ullamcorper. Nam non urna diam. Nullam efficitur
-                pellentesque blandit. Mauris imperdiet mattis turpis et dapibus.
-                Maecenas eu vulputate mauris, sit amet iaculis eros. Duis
-                sodales ante nec urna suscipit posuere vitae vel sapien. Mauris.{' '}
-              </p>
               <div className='navigation'>
                 <Button action={e => action()} label='Testimony' />
                 <Button

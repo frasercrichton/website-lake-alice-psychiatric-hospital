@@ -23,8 +23,8 @@ const Label = ({
     //   unmountOnExit
     // >
     <Html
-      transform
-      sprite
+      // transform
+      // sprite
       // rotation={[Math.PI / 2, 0, 0]}
       zIndexRange={[150, 0]}
       // distanceFactor={2}

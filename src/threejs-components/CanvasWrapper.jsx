@@ -29,9 +29,14 @@ const CanvasWrapper = ({
     })
   }
 
+  const onCanvasClick = () => {
+    setSelectedFacility('')
+    setHoverName('')
+  }
+
   return (
     <div style={{ height: '100%' }}>
-      <Canvas camera={{ position: [0, 500, 400] }}>
+      <Canvas camera={{ position: [0, 500, 400] }} onPointerMissed={() => onCanvasClick()}>
         <Suspense fallback={<Loader />}>
           <pointLight position={[0, 200, 500]} castShadow />
           <ambientLight

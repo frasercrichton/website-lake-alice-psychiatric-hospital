@@ -1,21 +1,20 @@
 .line {
 	position: absolute;
-  height: 50px;
-  width: 20px;
+  height: 70px;
 	bottom: 0;
-	left: 5px;
-  border-left: 4px solid white;
-  -moz-transform: skew(-40deg);
-	-webkit-transform: skew(-40deg);
-	transform: skew(-40deg);
+	left: 25px;
+  border-left: 2px solid white;
+  -moz-transform: skew(-1deg);
+	-webkit-transform: skew(-35deg);
+	transform: skew(-35deg);
 }
 
 .tag {
   position: absolute;
-  transform: translate3d(10px, -100px, 0px);
-  padding: 15px 50px;
+  transform: translate3d(30px, -100px, 0px);
+  padding: 8px 30px 6px 30px;
   border-radius: 25px;
-  font-size: 30px;
+  font-size: 12px;
   text-transform: uppercase;
   background: white;
   color: #202035;

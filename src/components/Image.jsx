@@ -1,5 +1,5 @@
 import React from 'react'
-import './Image.css'
+import style from './Image.css'
 
 const Image = ({ caption, imageAction, id, thumbnail, url }) => {
   const imageSize = thumbnail ? '320px' : '500px'
@@ -8,14 +8,16 @@ const Image = ({ caption, imageAction, id, thumbnail, url }) => {
     <div className='side-bar-menu'>
       <div>
         <img
-          className='image'
+          className={style.image}
           src={url}
           width={imageSize}
           alt={caption}
           onClick={e => imageAction(id)}
         />
       </div>
-      {caption !== undefined && <div className='caption'>Caption: {caption}</div>}
+      {caption !== undefined && (
+        <div className={style.caption}>Caption: {caption}</div>
+      )}
     </div>
   )
 }

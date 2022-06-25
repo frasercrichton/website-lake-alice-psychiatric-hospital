@@ -43,6 +43,11 @@
   overflow-x: hidden;
   overflow-y: auto;
   row-gap: 200px;
+
+}
+
+.cover-content .header {
+  margin-top: 170px;
 }
 
 .main-content{

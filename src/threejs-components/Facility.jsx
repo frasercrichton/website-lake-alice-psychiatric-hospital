@@ -46,7 +46,6 @@ const Facility = ({
       material={material}
       {...meshEvents}
       {...meshOnclick}
-      
       // onPointerLeave={e => alert('left')}
     >
       {isFacility && (

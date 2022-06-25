@@ -17,14 +17,21 @@ const MenuItem = ({
 
   const activeClass = `menu-item ${clickedClassName} ${hoverClassName}`
 
+  const hoverEvents =
+    hoverAction != null
+      ? {
+          onMouseOver: e => hoverAction(id),
+          onMouseOut: e => hoverAction('')
+        }
+      : null
+
   return (
     <div className='container'>
       <div
         key={id}
         className={activeClass}
         onClick={e => clickAction(id)}
-        onMouseOver={e => hoverAction(id)}
-        onMouseOut={e => hoverAction('')}
+        {...hoverEvents}
       >
         {label}
         {isAccordion && <span className='icon'> </span>}

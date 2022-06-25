@@ -8,7 +8,7 @@
     "id": "Areas001_1",
     "name": "Maximum Security Block",
     "type": "significant",
-    "content": "The Maximum Security Block punishment for children."
+    "content": "The Maximum Security Unit opened in 1965 and was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985."
   },
   {
     "id": "Doctors'_Houses",
@@ -19,19 +19,19 @@
     "id": "Villa_7_-_Girls'_Unit",
     "name": "Girls' Unit",
     "type": "significant",
-    "content": "Villa78  - the Girls's Unit held up to 30 children."
+    "content": "Villa 6  - the Girls' Unit held up up to 10 girls by 1977."
   },
   {
     "id": "Villa_8_-__Boys'_Unit",
     "name": "Boys' Unit",
     "type": "significant",
-    "content": "Villa 8  - the Boy's Unit held up to 30 children."
+    "content": "Villa 7  - the Boys' Unit held up to 36 boys by 1977."
   },
   {
     "id": "Villas_9_-_18",
     "name": "Eleven Bed Villas",
     "type": "significant",
-    "content": "Villas 9 - 18: these units were originally intended as small, dedicated group therapy units. The first group of children at Lake Alice were held here prior to being moved to the larger x bed facilities."
+    "content": "The Eleven Bed Villas were in their time innovative units designed for intensive small group therapy with input from medical administrator Theodore Gray. In 1972 The Child and Adolescent Unit first opened in one of these units with Dr Selwyn Leeks appointed as Director."
   },
   {
     "id": "Staff_Quarters",
@@ -52,7 +52,7 @@
     "id": "Villa_14_-_Disturbed_Patients_Villa",
     "name": "Disturbed Patients' Villa",
     "type": "significant",
-    "content": "Villa 14 - adult patients with serious psychiatric issues held in close proximity to children."
+    "content": "Villa 8 - adult patients with serious psychiatric issues held in close proximity to children."
   },
   {
     "id": "Villa_15",

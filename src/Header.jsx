@@ -9,7 +9,6 @@ const Header = props => {
         <a href='/'>
           <h1>Lake Alice</h1>
         </a>
-        <a className='about' href='/'>About</a>
       </nav>
     </header>
   )

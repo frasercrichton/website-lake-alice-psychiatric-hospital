@@ -4,10 +4,10 @@ import { CSSTransition } from 'react-transition-group'
 import Video from './components/Video'
 import Button from './components/Button'
 import Icon from './components/icons/Icon'
-import Markdown from './content/Markdown'
+import Markdown from './components/Markdown'
+
 import Image from './components/Image'
 import Map from './map/Map'
-import { useRemark } from 'react-remark'
 import resources from './data/content.json'
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
 const FOLDER = '3d-visualisation/'
@@ -15,14 +15,7 @@ const FOLDER = '3d-visualisation/'
 const Content = ({ content, setContent }) => {
   const url = 'https://vimeo.com/565389024'
   const imageUrl = image => CDN_URL + FOLDER + image.url
-
   const resource = resources[content]
-
-  const [reactContent, setMarkdownSource] = useRemark()
-
-  useEffect(() => {
-    setMarkdownSource('# markdown header')
-  }, [])
 
   // const images =
   //   resource !== undefined || resource.images !== undefined
@@ -49,11 +42,10 @@ const Content = ({ content, setContent }) => {
           <div className='header-container'>
             <h2>{content}</h2>
           </div>
-          {/* <Markdown /> */}
-          {reactContent}
-          {/* {images} */}
+          {content === 'info' && (
+            <Markdown markdownContent='./content/info.md' />
+          )}
           {content === 'location' && <Map />}
-
           {content === 'testimony' && (
             <Video
               url='https://vimeo.com/689154638'
