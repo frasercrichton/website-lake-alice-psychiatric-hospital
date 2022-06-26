@@ -2,7 +2,20 @@
     font-size: small;
 }
 
-p {
+/* h2 {
+    text-align: left;
+} */
+
+a {
+
+    color: #D3D3D3;
+}
+
+a:hover {
+    color: #808080;
+}
+
+p, li {
     text-align: left;
     font-size: 1.25rem;
     line-height: 1.875rem;
@@ -11,7 +24,7 @@ p {
     margin-bottom: 23px;
 
     margin-left: calc(25% + 15px);
-margin-right: calc(25% + 15px);
+    margin-right: calc(25% + 15px);
 }
 
 img {

@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './Image.css'
 
 const Image = ({ caption, imageAction, id, thumbnail, url }) => {

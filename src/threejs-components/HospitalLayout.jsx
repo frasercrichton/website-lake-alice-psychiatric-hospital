@@ -1,34 +1,19 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { useFrame, useLoader } from '@react-three/fiber'
+import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Facility from './Facility'
 import * as THREE from 'three'
-const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-const FOLDER = '3d-visualisation/'
-
+const GLTF_LOCATION = process.env.REACT_APP_GLTF_LOCATION
 const HospitalLayout = ({
   selectedFacility,
-  setSelectedFacility,
+  handleFacilityClick,
   hoverName,
   setHoverName
 }) => {
-  const group = useRef()
+  const { nodes, materials } = useLoader(GLTFLoader, GLTF_LOCATION)
 
-  const { nodes, materials } = useLoader(
-    GLTFLoader,
-    CDN_URL + FOLDER + 'lake-alice-geography.gltf'
-  )
-  // const { nodes, materials } = useLoader(
-  //   GLTFLoader,
-  //   'lake-alice-geography.gltf'
-  // )
-
-  const isClicked = selectedFacility !== ''
-    // const isHover = hoverName !== ''
-
-  const Facilities = () => {
-    const hoverAction = (id, e) => {
-      if (!isClicked) {
+  const Facilities = ({ handleFacilityClick }) => {
+    const handleHover = (id, e) => {
+      if (!selectedFacility !== '') {
         setHoverName(id)
       }
     }
@@ -46,7 +31,7 @@ const HospitalLayout = ({
           <lineSegments geometry={nodes[key].geometry} material={material} />
         )
       }
-      // Object3D === annotations so labels only
+
       if (nodes[key].type === 'Mesh' || nodes[key].type === 'Object3D') {
         return (
           <Facility
@@ -55,8 +40,8 @@ const HospitalLayout = ({
             material={nodes[key].material}
             defaultMaterial={materials.selected}
             selectedFacility={selectedFacility}
-            setSelectedFacility={setSelectedFacility}
-            hoverAction={hoverAction}
+            handleFacilityClick={handleFacilityClick}
+            handleHover={handleHover}
             hoverName={hoverName}
           />
         )
@@ -67,8 +52,8 @@ const HospitalLayout = ({
   }
 
   return (
-    <group ref={group} dispose={null} scale={0.4}>
-      <Facilities />
+    <group dispose={null} scale={0.4}>
+      <Facilities handleFacilityClick={handleFacilityClick} />
     </group>
   )
 }

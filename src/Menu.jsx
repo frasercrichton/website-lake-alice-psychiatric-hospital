@@ -5,11 +5,11 @@ import MenuItem from './components/MenuItem'
 const Menu = ({
   setContent,
   selectedFacility,
-  setSelectedFacility,
+  handleMenuClick,
   setHoverName,
   hoverName,
   tab,
-  setTab
+  handleContextUpdate
 }) => {
   const isHovered = menuItem => hoverName === menuItem.id
 
@@ -17,16 +17,12 @@ const Menu = ({
 
   const sortedMenu = facilities.sort((a, b) => a.name.localeCompare(b.name))
 
-  const toggleContext = (e) => {
-    setSelectedFacility('')
-    setTab('context')
-  }
   return (
     <div className='menu-container'>
       <h2>
         {' '}
-        <span onClick={e => setTab('site')}>Site</span> |{' '}
-        <span onClick={e => toggleContext(e)}>Context</span>
+        <span onClick={e => handleContextUpdate('site')}>Site</span> |{' '}
+        <span onClick={e => handleContextUpdate('context')}>Context</span>
       </h2>
       {tab === 'site' && (
         <div className='menu-items'>
@@ -34,9 +30,9 @@ const Menu = ({
             return (
               <MenuItem
                 key={value.id}
-                clickAction={setSelectedFacility}
+                handleClick={handleMenuClick}
                 accordionContent={value.content}
-                hoverAction={setHoverName}
+                handleHover={setHoverName}
                 isHovered={isHovered(value)}
                 isClicked={isClicked(value)}
                 id={value.id}
@@ -52,28 +48,28 @@ const Menu = ({
           <MenuItem
             accordionContent={'value.content'}
             key='location'
-            clickAction={e => setContent('location')}
+            handleClick={e => setContent('location')}
             id='location'
             label='Location'
           />
           <MenuItem
             accordionContent={'value.content'}
             key='testimony'
-            clickAction={e => setContent('testimony')}
+            handleClick={e => setContent('testimony')}
             id='testimony'
             label='Testimony'
           />
           <MenuItem
             accordionContent={'value.content'}
             key='info'
-            clickAction={e => setContent('info')}
+            handleClick={e => setContent('info')}
             id='info'
             label='Info'
           />
           <MenuItem
             accordionContent={'value.content'}
             key='about'
-            clickAction={e => setContent('about')}
+            handleClick={e => setContent('about')}
             id='about'
             label='About'
           />

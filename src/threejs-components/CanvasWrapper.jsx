@@ -1,5 +1,4 @@
 import React, { Suspense, useRef } from 'react'
-import * as THREE from 'three'
 import './CanvasWrapper.css'
 import Loader from './Loader'
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -9,9 +8,10 @@ import { Environment, OrbitControls } from '@react-three/drei'
 
 const CanvasWrapper = ({
   selectedFacility,
-  setSelectedFacility,
+  handleFacilityClick,
   hoverName,
-  setHoverName
+  setHoverName,
+  handleCanvasClick
 }) => {
   const orbitControlesRef = useRef(null)
 
@@ -29,14 +29,12 @@ const CanvasWrapper = ({
     })
   }
 
-  const onCanvasClick = () => {
-    setSelectedFacility('')
-    setHoverName('')
-  }
-
   return (
     <div style={{ height: '100%' }}>
-      <Canvas camera={{ position: [0, 500, 400] }} onPointerMissed={() => onCanvasClick()}>
+      <Canvas
+        camera={{ position: [0, 500, 400] }}
+        onPointerMissed={() => handleCanvasClick()}
+      >
         <Suspense fallback={<Loader />}>
           <pointLight position={[0, 200, 500]} castShadow />
           <ambientLight
@@ -46,9 +44,9 @@ const CanvasWrapper = ({
             castShadow
           />
           <HospitalLayout
-           orbitControlesRef={orbitControlesRef}
+            orbitControlesRef={orbitControlesRef}
             selectedFacility={selectedFacility}
-            setSelectedFacility={setSelectedFacility}
+            handleFacilityClick={handleFacilityClick}
             hoverName={hoverName}
             setHoverName={setHoverName}
           />

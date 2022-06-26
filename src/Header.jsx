@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
 import './Header.css'
-
-const Header = props => {
-  // const [hover, setHover] = useState(false)
+import Icon from './components/icons/Icon'
+const Header = ({ handleClick, props }) => {
   return (
     <header>
       <nav>
         <a href='/'>
           <h1>Lake Alice</h1>
         </a>
+        <Icon action={e => handleClick('')} iconType='close' />
       </nav>
     </header>
   )

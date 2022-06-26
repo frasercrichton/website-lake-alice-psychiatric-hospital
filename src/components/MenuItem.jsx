@@ -1,13 +1,12 @@
-import React from 'react'
 import './MenuItem.css'
 import './Button'
 const MenuItem = ({
   isClicked,
-  clickAction,
+  handleClick,
   isHovered,
   id,
   label,
-  hoverAction,
+  handleHover,
   accordionContent
 }) => {
   const clickedClassName = isClicked ? 'clicked' : ''
@@ -18,10 +17,10 @@ const MenuItem = ({
   const activeClass = `menu-item ${clickedClassName} ${hoverClassName}`
 
   const hoverEvents =
-    hoverAction != null
+    handleHover != null
       ? {
-          onMouseOver: e => hoverAction(id),
-          onMouseOut: e => hoverAction('')
+          onMouseOver: e => handleHover(id),
+          onMouseOut: e => handleHover('')
         }
       : null
 
@@ -30,7 +29,7 @@ const MenuItem = ({
       <div
         key={id}
         className={activeClass}
-        onClick={e => clickAction(id)}
+        onClick={e => handleClick(id)}
         {...hoverEvents}
       >
         {label}

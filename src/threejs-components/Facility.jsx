@@ -8,8 +8,8 @@ const Facility = ({
   material,
   defaultMaterial: hoverMaterial,
   selectedFacility,
-  setSelectedFacility,
-  hoverAction,
+  handleFacilityClick,
+  handleHover,
   hoverName
 }) => {
   const mesh = useRef()
@@ -27,14 +27,14 @@ const Facility = ({
   const isActive = isClicked || isHover
   const meshEvents = isFacility
     ? {
-        onPointerOver: e => hoverAction(facilityId, e),
-        onPointerOut: e => hoverAction('', e)
+        onPointerOver: e => handleHover(facilityId, e),
+        onPointerOut: e => handleHover('', e)
       }
     : null
 
   const meshOnclick = isSignificantFacility
     ? {
-        onClick: e => setSelectedFacility(facilityId)
+        onClick: e => handleFacilityClick(facilityId)
       }
     : null
 
@@ -61,21 +61,20 @@ const Facility = ({
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
-          hoverAction={hoverAction}
+          hoverAction={handleHover}
           hoverName={hoverName}
-          setSelectedFacility={setSelectedFacility}
+          setSelectedFacility={handleFacilityClick}
           isClicked={isClicked}
           position={[node.position.x, node.position.y, node.position.z]}
         />
       )}
-      )
       {isHover && isFacility && isAnnotation && (
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
-          hoverAction={hoverAction}
+          hoverAction={handleHover}
           hoverName={hoverName}
-          setSelectedFacility={setSelectedFacility}
+          setSelectedFacility={handleFacilityClick}
           isClicked={isClicked}
           position={[node.position.x, node.position.y, node.position.z]}
         />

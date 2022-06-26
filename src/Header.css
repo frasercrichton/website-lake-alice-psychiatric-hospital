@@ -1,9 +1,13 @@
 header {
     font-size: 20px;
-    top: 0;
-    left: 0;
-    position: sticky;
-    z-index: 19;
+    width: 100%;
+    position: fixed;
+    z-index: 200;
+    background-color: aqua;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 nav {

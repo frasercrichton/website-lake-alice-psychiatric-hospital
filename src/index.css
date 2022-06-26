@@ -1,7 +1,10 @@
+html {
+  font-size: 100%;
+}
+
 body {
   margin: 0;
-  font-family: Alliance Platt,sans-serif;
+  font-family: Alliance Mono, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-

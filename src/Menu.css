@@ -9,7 +9,6 @@
     width: 265px;
     opacity: 0.7;
     z-index: 15;
-    font-family: Alliance Mono,monospace;;
 }
 
 .menu-container div {
@@ -19,16 +18,16 @@
 .menu-container ul {
     text-align: left;
 }
- 
+
 .menu-container li {
-    list-style-type: none; 
+    list-style-type: none;
     background-color: rgba(128, 128, 128, 0.7);
     transition: background-color 300ms ease-out;
     cursor: pointer;
     padding: 5px;
     margin: 5px;
     color: white;
-    border:0.16em solid #FFFFFF;
+    border: 0.16em solid #FFFFFF;
 }
 
 .menu-container li:hover {
@@ -49,6 +48,7 @@
     cursor: pointer;
     width: 100px;
 }
+
 .tab:hover {
     opacity: 0.4;
     background-color: rgba(255, 255, 255, 0.7);

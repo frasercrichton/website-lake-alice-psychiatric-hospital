@@ -1,6 +1,8 @@
 
 ![Selwyn Leeks](fc-20210828-00001-FL25129125-Edit.jpg)
 
+## Info
+
 Lake Alice Psychiatric Hospital was an isolated, self-contained psychiatric facility that opened in 1950 on Te Ika-a-Māui the North Island of Aotearoa New Zealand 6km outside of Marton.   
 
 The hospital was organised around a system of villas. The small eleven-bed villas were seen as advanced at the time providing intensive dedicated group therapy for patients. Some of these patients included returned servicemen suffering PTSD. Some of these servicemen died and were buried at Lake Alice in unmarked graves. The villas also included a Maximum Security Unit for the criminally insane. 

@@ -9,17 +9,22 @@ import CanvasWrapper from './threejs-components/CanvasWrapper'
 
 function App () {
   const [facility, setFacility] = useState('')
-  const [hoverName, setHoverNam] = useState('')
+  const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
 
+  const isClicked = facility !== ''
 
-  const setHoverName = (e) => {
-    
-    console.log('x', e)
-    return setHoverNam(e)
-  } 
+  const handleCanvasClick = () => {
+    setFacility('')
+    setHoverName('')
+  }
+
+  const handleContextUpdate = tab => {
+    setFacility('')
+    setTab(tab)
+  }
 
   const updatesetSelectedFacility = (facilityId) => {
     const update = facilityId === facility ? '' : facilityId
@@ -27,7 +32,7 @@ function App () {
   }
   return (
     <div className='App'>
-      <Header />
+      <Header handleClick={setContent} />
       <Cover key='cover' coverActive={coverActive} setCoverActive={setCoverActive} setContent={setContent} />
 
       {content !== '' && (
@@ -45,17 +50,18 @@ function App () {
           <CanvasWrapper
             key='canvas'
             selectedFacility={facility} 
-            setSelectedFacility={setFacility} 
+            handleFacilityClick={setFacility} 
             hoverName={hoverName} 
             setHoverName={setHoverName} 
+            handleCanvasClick={handleCanvasClick}
             />
           <Menu key='menu' 
             setContent={setContent}
             selectedFacility={facility}
-            setSelectedFacility={updatesetSelectedFacility}
+            handleMenuClick={updatesetSelectedFacility}
             hoverName={hoverName}
             tab={tab}
-            setTab={setTab}
+            handleContextUpdate={handleContextUpdate}
             />
         </div>
         // </CSSTransition>

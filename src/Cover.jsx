@@ -27,6 +27,11 @@ const Cover = ({ coverActive, setCoverActive, setContent }) => {
               <h1>Lake Alice Child and Adolescent Unit</h1>
             </div>
             <div className='main-content'>
+              <div>
+                <p className='content-warning'>
+                  Graphic content warning: some of the content included here may raise difficult emotional issues.
+                </p>
+              </div>
               <div className='navigation'>
                 <Button action={e => action()} label='Testimony' />
                 <Button
