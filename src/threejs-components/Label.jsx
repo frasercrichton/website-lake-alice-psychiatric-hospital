@@ -4,8 +4,6 @@ import { Html } from '@react-three/drei'
 const Label = ({
   text,
   isClicked,
-  setSelectedFacility,
-  hoverAction,
   hoverName,
   id,
   position
@@ -34,9 +32,6 @@ const Label = ({
         <div className='line'></div>
         <div
           className={tagClass}
-          onClick={e => setSelectedFacility(facilityName)}
-          onMouseOver={e => hoverAction(facilityName, e)}
-          onMouseOut={e => hoverAction('', e)}
         >
           {text}
         </div>

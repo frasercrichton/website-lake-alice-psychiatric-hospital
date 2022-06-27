@@ -26,31 +26,34 @@ function App () {
     setTab(tab)
   }
 
-  const updatesetSelectedFacility = (facilityId) => {
+  const handleFacilityClick = (facilityId) => {
+    setHoverName('')
     const update = facilityId === facility ? '' : facilityId
     setFacility(update)
   }
   return (
-    <div className='App'>
-      <Header handleClick={setContent} />
+    <div className='site-container'>
+
       <Cover key='cover' coverActive={coverActive} setCoverActive={setCoverActive} setContent={setContent} />
+
+      <Header handleClick={setContent} enableClose={content !== ''} />
 
       {content !== '' && (
         <Content key={content} content={content} setContent={setContent} />
       )}
 
       {(!coverActive && content === '') && (
-        // <CSSTransition
-        //   in={!coverActive}
-        //   timeout={800}
-        //   classNames='cover-wrappper'
-        //   unmountOnExit
-        // >
-        <div className='site-container'>
-          <CanvasWrapper
+        <CSSTransition
+          in={!coverActive}
+          timeout={800}
+          classNames='cover-wrappper'
+          unmountOnExit
+        >
+          <>
+           <CanvasWrapper
             key='canvas'
             selectedFacility={facility} 
-            handleFacilityClick={setFacility} 
+            handleFacilityClick={handleFacilityClick} 
             hoverName={hoverName} 
             setHoverName={setHoverName} 
             handleCanvasClick={handleCanvasClick}
@@ -58,13 +61,13 @@ function App () {
           <Menu key='menu' 
             setContent={setContent}
             selectedFacility={facility}
-            handleMenuClick={updatesetSelectedFacility}
+            handleMenuClick={handleFacilityClick}
             hoverName={hoverName}
             tab={tab}
             handleContextUpdate={handleContextUpdate}
             />
-        </div>
-        // </CSSTransition>
+            </>
+        </CSSTransition>
       )}
     </div>
   )

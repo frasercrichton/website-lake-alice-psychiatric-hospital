@@ -1,16 +1,13 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
-  color: white;
-  font-size: 1.2rem;
-}
-
 .site-container {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  font-size: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  position: fixed;
+
   background-color: #282c34;
 
 }

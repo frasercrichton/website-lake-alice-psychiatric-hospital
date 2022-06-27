@@ -19,11 +19,11 @@ const Menu = ({
 
   return (
     <div className='menu-container'>
-      <h2>
+      <div className='tab-container'>
         {' '}
-        <span onClick={e => handleContextUpdate('site')}>Site</span> |{' '}
-        <span onClick={e => handleContextUpdate('context')}>Context</span>
-      </h2>
+        <span className='tab' onClick={e => handleContextUpdate('site')}>Site</span> |{' '}
+        <span className='tab' onClick={e => handleContextUpdate('context')}>Context</span>
+      </div>
       {tab === 'site' && (
         <div className='menu-items'>
           {sortedMenu.map(value => {

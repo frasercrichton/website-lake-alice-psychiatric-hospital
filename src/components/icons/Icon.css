@@ -1,14 +1,15 @@
 .icon-wrapper {
   color: white;
-  padding: 10px 0;
-  position: absolute;
-  top: 30px;
-  right: 20px;
   height: 55px;
   width: 55px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+ }
 
 .material-symbols-outlined::before {
+  transition: 0.3s;
   content: "close";
 }
 

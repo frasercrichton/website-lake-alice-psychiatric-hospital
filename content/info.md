@@ -19,7 +19,7 @@ The Child and Adolescent Unit opened in 1972 with Dr Selwyn Leeks appointed Dire
 
 Selwyn Leeks and other staff members were free to run a system which brutalised children through seclusion in solitary confinement, as well as psychological and physical assault. Psychiatric treatments that were considered acceptable at the time were weaponised against children. For even minor behavioural infractions children received electroconvulsive therapy (ECT) or painful Paraldehyde injections. Unmodified ECT - administered to sensitive parts of the body without anaesthetic - was continually used as a punishment for bad behaviour. Sexual assault and rape also occurred in the LACAU.
 
-This regime was finally challenged in 1975 by the actions of Hakeaga (Hake) Halo one of the children in LACAU who was 13 at the time. Hake wrote an English-language letter to his family. To deceive hospital censors he drew a smiley face at the end with a Niuean speech bubble that said: "I have been given electric shock by the people, mum. The pain is very bad." His story Auckland Committee on Racism and Discrimination (ACORD)
+This regime was finally challenged in 1975 by the actions of Hakeaga (Hake) Halo one of the children in LACAU who was 13 at the time. Hake wrote an English-language letter to his family. To deceive hospital censors he drew a smiley face at the end with a Niuean speech bubble that said: "I have been given electric shock by the people, mum. The pain is very bad." His familiy took the story to Auckland Committee on Racism and Discrimination (ACORD) and it ultimately became a national headline.
 
 The investigation that followed resulted in the closure of the Child and Adolescent Unit in 1978. Leeks and other members of staff escaped police charges, however. For the next 40 years, survivors of Lake Alice had to battle for compensation and an independent inquiry. This includes Malcolm Richards who has contributed to this website and whose testimony can be heard here.
 
@@ -28,4 +28,3 @@ Only in 2021 have charges finally been laid against one member of Lake Alice sta
 Lake Alice Psychiatric Hospital closed in October 1999 and was demolished in 2016.  	 
 
 Note: all the villa numbers were changed at Lake Alice prior to 2005 the Villa numbers used on this website are based on survivors testimony. 
-

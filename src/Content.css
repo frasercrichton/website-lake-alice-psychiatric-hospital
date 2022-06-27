@@ -4,18 +4,26 @@
   z-index: 20;
   opacity: 1.0;
   color: white;
-  display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-
 }
 
 .content {
   flex: 1;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  height: 100%;
+  margin-left: calc(20% + 15px);
+  margin-right: calc(20% + 15px);
+}
+
+header-container {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .content-wrappper-enter {

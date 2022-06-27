@@ -1,20 +1,18 @@
 header {
     font-size: 20px;
     width: 100%;
-    position: fixed;
     z-index: 200;
-    background-color: aqua;
-
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
 }
 
 nav {
     width: 100%;
     display: grid;
     grid-template-columns: [col-start] 1.5fr [col-start] 0.5fr;
-    justify-items: stretch;
+    justify-items: center;
+    align-items: center;
 }
 
 nav a {
@@ -22,9 +20,10 @@ nav a {
     justify-self: start;
     color: white;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 0 40px;
+    transition: 0.3s;
 }
 
-a.about {
+.icon-wrapper {
     justify-self: end;
 }

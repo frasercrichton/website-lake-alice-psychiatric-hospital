@@ -1,14 +1,6 @@
-.markdown-container {
-    font-size: small;
-}
-
-/* h2 {
-    text-align: left;
-} */
-
 a {
-
     color: #D3D3D3;
+    transition: color 300ms;
 }
 
 a:hover {
@@ -19,12 +11,8 @@ p, li {
     text-align: left;
     font-size: 1.25rem;
     line-height: 1.875rem;
-
     letter-spacing: 0;
     margin-bottom: 23px;
-
-    margin-left: calc(25% + 15px);
-    margin-right: calc(25% + 15px);
 }
 
 img {

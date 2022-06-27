@@ -61,9 +61,7 @@ const Facility = ({
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
-          hoverAction={handleHover}
           hoverName={hoverName}
-          setSelectedFacility={handleFacilityClick}
           isClicked={isClicked}
           position={[node.position.x, node.position.y, node.position.z]}
         />
@@ -72,9 +70,7 @@ const Facility = ({
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
-          hoverAction={handleHover}
           hoverName={hoverName}
-          setSelectedFacility={handleFacilityClick}
           isClicked={isClicked}
           position={[node.position.x, node.position.y, node.position.z]}
         />
