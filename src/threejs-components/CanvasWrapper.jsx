@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from 'react'
 import './CanvasWrapper.css'
-import Loader from './Loader'
+import ThreeLoader from './ThreeLoader'
 import { Canvas, useFrame } from '@react-three/fiber'
 import HospitalLayout from './HospitalLayout'
 import angleToRadians from './angleHelper'
@@ -35,7 +35,7 @@ const CanvasWrapper = ({
         camera={{ position: [0, 500, 400] }}
         onPointerMissed={() => handleCanvasClick()}
       >
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<ThreeLoader />}>
           <pointLight position={[0, 200, 500]} castShadow />
           <ambientLight
             intensity={0.2}
