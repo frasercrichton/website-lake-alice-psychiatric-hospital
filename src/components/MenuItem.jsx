@@ -14,7 +14,7 @@ const MenuItem = ({
   const isAccordion = accordionContent !== undefined
   const isAccordionOpen = accordionContent !== undefined && clickedClassName
 
-  const activeClass = `menu-item ${clickedClassName} ${hoverClassName}`
+  const activeClass = `menu-item ${clickedClassName} ${hoverClassName}`.trim()
 
   const hoverEvents =
     handleHover != null

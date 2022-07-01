@@ -26,6 +26,14 @@ https://github.com/jsonkao/react-scrollama
 https://varun.ca/scrollytelling/
 
 
+
+fc-20220628.jpg
+
+images: 
+
+500 x 434
+
+
 ## Technical
 
 In the project directory, you can run:

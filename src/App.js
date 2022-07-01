@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
 import Header from './Header'
-import { CSSTransition } from 'react-transition-group'
 import Menu from './Menu'
 import Content from './Content'
 import Cover from './Cover'
@@ -11,10 +10,10 @@ function App () {
   const [facility, setFacility] = useState('')
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
+  const [isLoading, setLoading] = useState(true)
+
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
-
-  const isClicked = facility !== ''
 
   const handleCanvasClick = () => {
     setFacility('')
@@ -27,48 +26,42 @@ function App () {
   }
 
   const handleFacilityClick = (facilityId) => {
+    setTab('site')
     setHoverName('')
     const update = facilityId === facility ? '' : facilityId
     setFacility(update)
   }
+
+  const handleCoverClick = () => {
+    setLoading(!isLoading)
+    setCoverActive(!coverActive)
+  }
+
   return (
     <div className='site-container'>
 
-      <Cover key='cover' coverActive={coverActive} setCoverActive={setCoverActive} setContent={setContent} />
+      <Cover key='cover' coverActive={coverActive} handleCoverClick={handleCoverClick} setContent={setContent} />
 
       <Header handleClick={setContent} enableClose={content !== ''} />
 
-      {content !== '' && (
-        <Content key={content} content={content} setContent={setContent} />
-      )}
+      <Content key={content} content={content} setContent={setContent} />
 
-      {(!coverActive && content === '') && (
-        <CSSTransition
-          in={!coverActive}
-          timeout={800}
-          classNames='cover-wrappper'
-          unmountOnExit
-        >
-          <>
-           <CanvasWrapper
-            key='canvas'
-            selectedFacility={facility} 
-            handleFacilityClick={handleFacilityClick} 
-            hoverName={hoverName} 
-            setHoverName={setHoverName} 
-            handleCanvasClick={handleCanvasClick}
-            />
-          <Menu key='menu' 
-            setContent={setContent}
-            selectedFacility={facility}
-            handleMenuClick={handleFacilityClick}
-            hoverName={hoverName}
-            tab={tab}
-            handleContextUpdate={handleContextUpdate}
-            />
-            </>
-        </CSSTransition>
-      )}
+      <CanvasWrapper
+        key='canvas'
+        selectedFacility={facility}
+        handleFacilityClick={handleFacilityClick}
+        hoverName={hoverName}
+        setHoverName={setHoverName}
+        handleCanvasClick={handleCanvasClick}
+      />
+      <Menu
+        setContent={setContent}
+        selectedFacility={facility}
+        handleMenuClick={handleFacilityClick}
+        hoverName={hoverName}
+        tab={tab}
+        handleContextUpdate={handleContextUpdate}
+      />
     </div>
   )
 }

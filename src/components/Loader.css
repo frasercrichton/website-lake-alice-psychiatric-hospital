@@ -1,19 +1,28 @@
-.loader-container {
-    flex: 1;
-    display: flex;
+.image-loader-container {
+    text-align: center;
     padding: 10px;
-    color: white;
     position: absolute;
-    left: 0; 
-    top: 0; 
-    right: 0; 
-    bottom: 0;
-    background-color: #282c34;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
 }
 
 .loader {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: #ffffff transparent #ffffff transparent;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

@@ -4,7 +4,7 @@ const Image = ({ caption, imageAction, id, thumbnail, url }) => {
   const imageSize = thumbnail ? '320px' : '500px'
 
   return (
-    <div className='side-bar-menu'>
+    <div className='image-container'>
       <div>
         <img
           className={style.image}

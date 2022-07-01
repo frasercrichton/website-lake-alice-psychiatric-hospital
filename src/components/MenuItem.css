@@ -5,6 +5,7 @@ div .menu-item {
   padding: 5px;
   margin: 5px;
   color: white;
+  opacity: 0.7;
   border: 0.16em solid #FFFFFF;
   text-align: left;
   width: 240px;

@@ -46,28 +46,24 @@ const Menu = ({
       {tab === 'context' && (
         <div className='menu-items'>
           <MenuItem
-            accordionContent={'value.content'}
             key='location'
             handleClick={e => setContent('location')}
             id='location'
             label='Location'
           />
           <MenuItem
-            accordionContent={'value.content'}
             key='testimony'
             handleClick={e => setContent('testimony')}
             id='testimony'
             label='Testimony'
           />
           <MenuItem
-            accordionContent={'value.content'}
             key='info'
             handleClick={e => setContent('info')}
             id='info'
             label='Info'
           />
           <MenuItem
-            accordionContent={'value.content'}
             key='about'
             handleClick={e => setContent('about')}
             id='about'

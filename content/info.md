@@ -7,7 +7,8 @@ Lake Alice Psychiatric Hospital was an isolated, self-contained psychiatric faci
 
 The hospital was organised around a system of villas. The small eleven-bed villas were seen as advanced at the time providing intensive dedicated group therapy for patients. Some of these patients included returned servicemen suffering PTSD. Some of these servicemen died and were buried at Lake Alice in unmarked graves. The villas also included a Maximum Security Unit for the criminally insane. 
 
-![Selwyn Leeks](fc-20210828-00001-FL25129159.jpg)
+![Eleven Bed Villas](fc-20210828-00001-FL25129159.jpg)
+*Eleven Bed Villas (Photographer: Mr Cleal, NZ Archives Archway Item ID: R24730915)*
 
 In the modern context, this sounds like an unlikely place to site a unit for the care of children and adolescents. However, in 1972 Te Wāhanga Tamaiti, Taitamariki o Lake the Lake Alice Child and Adolescent Unit (LACAU) opened. This unit was notorious in its day. It served as a hub for a failed system of child State care. Rather than treating tamariki for genuine psychiatric conditions, it was used principally as a punishment for children held in a national network of state care facilities. This network expanded during the 1950s as criminal justice and social service legislation prejudicially entrapped indigenous Māori whānau after an urban drift following the Second World War. This legislation also ensnared many Pasifika and Pākehā in the care system.
 
@@ -19,6 +20,10 @@ The Child and Adolescent Unit opened in 1972 with Dr Selwyn Leeks appointed Dire
 
 Selwyn Leeks and other staff members were free to run a system which brutalised children through seclusion in solitary confinement, as well as psychological and physical assault. Psychiatric treatments that were considered acceptable at the time were weaponised against children. For even minor behavioural infractions children received electroconvulsive therapy (ECT) or painful Paraldehyde injections. Unmodified ECT - administered to sensitive parts of the body without anaesthetic - was continually used as a punishment for bad behaviour. Sexual assault and rape also occurred in the LACAU.
 
+![Malcolom Richards hand drawn testimony](fc-20210619-00006-Scan-2.jpg)
+
+*Malcolom Richards hand drawn testimony of ECT given in villa dormitory*
+
 This regime was finally challenged in 1975 by the actions of Hakeaga (Hake) Halo one of the children in LACAU who was 13 at the time. Hake wrote an English-language letter to his family. To deceive hospital censors he drew a smiley face at the end with a Niuean speech bubble that said: "I have been given electric shock by the people, mum. The pain is very bad." His familiy took the story to Auckland Committee on Racism and Discrimination (ACORD) and it ultimately became a national headline.
 
 The investigation that followed resulted in the closure of the Child and Adolescent Unit in 1978. Leeks and other members of staff escaped police charges, however. For the next 40 years, survivors of Lake Alice had to battle for compensation and an independent inquiry. This includes Malcolm Richards who has contributed to this website and whose testimony can be heard here.
@@ -27,4 +32,4 @@ Only in 2021 have charges finally been laid against one member of Lake Alice sta
 
 Lake Alice Psychiatric Hospital closed in October 1999 and was demolished in 2016.  	 
 
-Note: all the villa numbers were changed at Lake Alice prior to 2005 the Villa numbers used on this website are based on survivors testimony. 
+*Note: all the villa numbers were changed at Lake Alice prior to 2005 the Villa numbers used on this website are based on survivors testimony.* 

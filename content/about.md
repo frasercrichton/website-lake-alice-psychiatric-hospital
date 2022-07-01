@@ -6,7 +6,7 @@ This interdisciplinary project has been developed by a collective of investigati
 
 In this online phase, they attempt to visualise Te Wāhanga Tamaiti, Taitamariki o Lake Alice The Lake Alice Child and Adolescent Unit site. The State demolished Lake Alice between 2016 and 2018. 
 
-![Malclom Richards](fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg)
+![Malclom Richards](malcolm.png)
 *Malcolm Richards 2021*
 
 

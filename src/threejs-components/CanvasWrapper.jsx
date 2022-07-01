@@ -30,7 +30,7 @@ const CanvasWrapper = ({
   }
 
   return (
-    <div style={{ height: '100%' }}>
+    <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
       <Canvas
         camera={{ position: [0, 500, 400] }}
         onPointerMissed={() => handleCanvasClick()}
