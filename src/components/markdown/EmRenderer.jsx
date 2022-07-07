@@ -1,6 +1,6 @@
 import './EmRenderer.css'
 
-const EmRenderer = props => {
+const EmRenderer = ({ node, ...props }) => {
   const firstChild = props.children[0]
   const isChildString = firstChild && typeof firstChild === 'string'
 
@@ -12,7 +12,11 @@ const EmRenderer = props => {
     return <sub>{firstChild.substring(1)}</sub>
   }
 
-  return <i {...props} />
+  return (
+    <div className='caption'>
+      <i {...props} />
+    </div>
+  )
 }
 
 export default EmRenderer

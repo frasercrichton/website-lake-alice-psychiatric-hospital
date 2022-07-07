@@ -1,4 +1,10 @@
+div.caption {
+  text-align: center;
+  transform: translate(0, -50px);
+}
+
 i {
   font-size: small;
   line-height: 12px;
+  text-align: center;
 }

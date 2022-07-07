@@ -25,7 +25,7 @@ const Markdown = markdownContent => {
     <div className='markdown-container'>
       <ReactMarkdown
         transformImageUri={transformImageUri}
-        components={{ a: LinkRenderer, em: EmRenderer, img: ImageRenderer }}
+        components={{p: 'div', a: LinkRenderer, em: EmRenderer, img: ImageRenderer }}
       >
         {markdown}
       </ReactMarkdown>
