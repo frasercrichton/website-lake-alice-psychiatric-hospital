@@ -1,33 +1,34 @@
 import React from 'react'
 import { LatLng, LatLngBounds } from 'leaflet'
 import { MapContainer, TileLayer } from 'react-leaflet'
-import mapDisplay from './mapDisplay.json'
 import Marker from './Marker'
 import './Map.css'
+import AnimateZoom from './AnimateZoom'
 const MAP_BOX_KEY = process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_KEY
 const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
-const { zoom, centre, maxBounds } = mapDisplay
-const mapCentre = new LatLng(centre.latitude, centre.longitude)
-
-const mapZoomDimensions = {
-  zoomSnap: zoom.zoomSnap,
-  mapZoom: zoom.default,
-  minZoom: zoom.minZoomCityBlock,
-  maxZoom: zoom.maxZoomContinent
-}
-
-const Map = () => {
-  const { mapZoom, maxZoom, minZoom, zoomSnap } = mapZoomDimensions
+const Map = ({
+  mapZoom,
+  maxZoom,
+  minZoom,
+  zoomSnap,
+  maxBounds,
+  initialMapCentre,
+  dynamicZoom,
+  dynamicCoordinates
+}) => {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
   const bounds = new LatLngBounds(southWest, northEast)
+  const initialCentreCoordinates = new LatLng(initialMapCentre.latitude, initialMapCentre.longitude)
+  const centreCoordinates = new LatLng(dynamicCoordinates.latitude, dynamicCoordinates.longitude)
+  const marker = { fillColor: '#a9a9a9', radius: '20' }
   return (
     <div className='map-container'>
       <MapContainer
         className='map'
-        center={mapCentre}
+        center={initialCentreCoordinates}
         zoomSnap={zoomSnap}
         zoom={mapZoom}
         maxZoom={maxZoom}
@@ -47,7 +48,11 @@ const Map = () => {
           Imagery &copy;
           <a  target="_blank" rel="noreferrer" href="https://www.mapbox.com/">Mapbox</a>'
         />
-        <Marker />
+        <AnimateZoom
+          centreCoordinates={centreCoordinates}
+          zoom={dynamicZoom}
+        />
+        <Marker markerCoordinates={initialCentreCoordinates} {...marker} />
       </MapContainer>
     </div>
   )

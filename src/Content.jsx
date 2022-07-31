@@ -2,8 +2,21 @@ import './Content.css'
 import { CSSTransition } from 'react-transition-group'
 import Video from './components/Video'
 import Markdown from './components/markdown/Markdown'
-
+import mapDisplay from './map/mapDisplay.json'
 import Map from './map/Map'
+// TODO map centre shouldn't be a default
+const { zoom, centre, maxBounds } = mapDisplay
+const dynamicZoom = 6.5
+const lakeAliceCoordinates = { latitude: -40.1254336, longitude: 175.3369864 }
+const mapZoomDimensions = {
+  zoomSnap: zoom.zoomSnap,
+  mapZoom: zoom.default,
+  minZoom: zoom.minZoomCityBlock,
+  maxZoom: zoom.maxZoomContinent,
+  maxBounds: maxBounds,
+  initialMapCentre: lakeAliceCoordinates
+}
+
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
 const FOLDER = '3d-visualisation/'
 
@@ -25,7 +38,13 @@ const Content = ({ content }) => {
         {content === 'testimony' && (
           <Video url='https://vimeo.com/689154638' caption='Malcolm Richards' />
         )}
-        {content === 'location' && <Map />}
+        {content === 'location' && (
+          <Map
+            {...mapZoomDimensions}
+            dynamicZoom={dynamicZoom}
+            dynamicCoordinates={centre}
+          />
+        )}
       </div>
     </div>
   )
