@@ -11,7 +11,7 @@ const Video = ({ url, caption }) => {
   const playerRef = useRef()
 
   useEffect(() => {
-    if (playerRef.current != undefined) {
+    if (playerRef.current !== undefined) {
       const { player } = playerRef.current.getState()
       console.log(player.currentTime) // print current time
     }

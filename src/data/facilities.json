@@ -1,50 +1,51 @@
 [
   {
-    "id": "Administrative_Building",
+    "id": "AdministrativeBuilding",
     "name": "Administrative Building",
     "type": "significant"
   },
   {
-    "id": "Areas001_1",
+    "id": "MaximumSecurityBlock",
     "name": "Maximum Security Block",
     "type": "significant",
     "content": "The Maximum Security Unit opened in 1965 and was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985."
   },
+
   {
     "id": "Doctors'_Houses",
     "name": "Doctors' Villas",
     "type": "significant"
   },
   {
-    "id": "Villa_7_-_Girls'_Unit",
-    "name": "Girls' Unit",
-    "type": "significant",
-    "content": "Villa 6  - the Girls' Unit held up up to 10 girls by 1977."
-  },
-  {
-    "id": "Villa_8_-__Boys'_Unit",
+    "id": "ChildrensVillaBoys",
     "name": "Boys' Unit",
     "type": "significant",
     "content": "Villa 7  - the Boys' Unit held up to 36 boys by 1977."
   },
   {
-    "id": "Villas_9_-_18",
+    "id": "ChildrensVillaGirls",
+    "name": "Girls' Unit",
+    "type": "significant",
+    "content": "Villa 7  - the Girls' Unit held up to  10 girls by 1977."
+  },
+  {
+    "id": "ElevenBedVillas",
     "name": "Eleven Bed Villas",
     "type": "significant",
     "content": "The Eleven Bed Villas were in their time innovative units designed for intensive small group therapy with input from medical administrator Theodore Gray. In 1972 The Child and Adolescent Unit first opened in one of these units with Dr Selwyn Leeks appointed as Director."
   },
   {
-    "id": "Staff_Quarters",
+    "id": "StaffQuarters",
     "name": "Staff Quarters",
     "type": "significant"
   },
   {
-    "id": "Swimming_Pool",
+    "id": "SwimmingPool",
     "name": "Swimming Pool",
     "type": "significant"
   },
   {
-    "id": "Villa_13",
+    "id": "Villa13",
     "name": "Adult Patients' Villa",
     "type": "significant"
   },
@@ -55,12 +56,12 @@
     "content": "Villa 8 - adult patients with serious psychiatric issues held in close proximity to children."
   },
   {
-    "id": "Villa_15",
+    "id": "Villa15",
     "name": "Adult Patients' Villa",
     "type": "significant"
   },
   {
-    "id": "Community_Hall",
+    "id": "CommunityHall",
     "name": "Community Hall",
     "type": "significant"
   }

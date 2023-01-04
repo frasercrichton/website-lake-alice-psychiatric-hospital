@@ -8,7 +8,7 @@ const Label = ({
   id,
   position
 }) => {
-  const facilityName = id.replace('_Annotation', '')
+  const facilityName = id.replace('Annotation', '')
   const isHover = facilityName === hoverName
   const tagClass = isClicked || isHover ? 'tag active' : 'tag'
 

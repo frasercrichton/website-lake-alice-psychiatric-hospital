@@ -4,7 +4,7 @@
     "text": ".",
     "id": "architecture"
   },
-  "Areas001_1": {
+  "MaximumSecurityBlock": {
     "title": "Maximum Security Block",
     "text": "The Maximum Security Block was built in XXXX and when it opened briefly held prisoners who had been involved in teh Mt Eden Prison riot of XXXX. The Block was also used as punishment for the children held at Lake Alice.",
     "images": [
@@ -12,7 +12,7 @@
 
         "caption": "Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised",
         "url": "fc-20210828-00001-FL25129125-Edit.jpg",
-        "id": "Maximum_Security_Block"
+        "id": "MaximumSecurityBlock"
       },
       {
         "caption": "Lake Alice Hospital, Bulls - Top line security villa - building elevations, sections, detail plans, architectural details and schedules. Foundation and roof plans. Archway Item ID:R23379028 Archway Series Number:24040 Provenance:ABZK Material Type: Digitised",
@@ -27,7 +27,7 @@
       }  
     ]
   },
-  "Administrative_Building":{
+  "AdministrativeBuilding":{
     "title": "Administrative Block",
     "text": ".",
     "images": [
@@ -36,7 +36,7 @@
         "original-link": "https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143",
     
         "url": "fc-20210828-00001-FL25129159.jpg",
-         "id": "Administrative_Building"
+         "id": "AdministrativeBuilding"
       }  
     ] 
   },

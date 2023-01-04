@@ -5,9 +5,11 @@ import Menu from './Menu'
 import Content from './Content'
 import Cover from './Cover'
 import CanvasWrapper from './threejs-components/CanvasWrapper'
+import { Leva } from 'leva'
 
 function App () {
   const [facility, setFacility] = useState('')
+  const [camera, setCamera] = useState('')
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
@@ -30,6 +32,8 @@ function App () {
     setHoverName('')
     const update = facilityId === facility ? '' : facilityId
     setFacility(update)
+    setCamera(update + 'Camera')
+    // console.log('xxx', update)
   }
 
   const handleCoverClick = () => {
@@ -39,6 +43,7 @@ function App () {
 
   return (
     <div className='site-container'>
+    <Leva oneLineLabels />
 
       <Cover key='cover' coverActive={coverActive} handleCoverClick={handleCoverClick} setContent={setContent} />
 
@@ -53,6 +58,7 @@ function App () {
         hoverName={hoverName}
         setHoverName={setHoverName}
         handleCanvasClick={handleCanvasClick}
+        camera={camera}
       />
       <Menu
         setContent={setContent}

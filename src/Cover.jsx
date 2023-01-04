@@ -25,10 +25,10 @@ const Cover = ({ coverActive, handleCoverClick, setContent }) => {
           </div>
           <div className='main-content'>
             <div>
-              <p className='content-warning'>
+              {/* <p className='content-warning'>
                 Graphic content warning: some of the content included here may
                 raise difficult emotional issues.
-              </p>
+              </p> */}
             </div>
             <div className='navigation'>
               <Button action={e => action()} label='Testimony' />
