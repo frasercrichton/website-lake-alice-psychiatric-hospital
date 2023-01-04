@@ -1,13 +1,5 @@
 import { PerspectiveCamera } from '@react-three/drei'
-import * as THREE from 'three'
-import {
-  Environment,
-  OrbitControls,
-  AccumulativeShadows,
-  RandomizedLight,
-  Center
-} from '@react-three/drei'
-
+import { OrbitControls } from '@react-three/drei'
 
 //     {
 //         "camera" : 0,
@@ -38,9 +30,6 @@ import {
 //     }
 // ],
 
-const round = value => {
-  return value.toFixed(5)
-}
 const Camera = ({ node, activeCamera }) => {
   // console.log('CAMERA', node.name)
   // console.log('ROTATION', node.rotation._x)
@@ -48,12 +37,12 @@ const Camera = ({ node, activeCamera }) => {
   // console.log('FOV', node.fov)
   // console.log('quaternion', node.quaternion)
   const makeDefault = node.name === activeCamera
-  const quaternion = new THREE.Quaternion(
-    node.quaternion._w,
-    node.quaternion._x,
-    node.quaternion._y,
-    node.quaternion._z
-  )
+  // const quaternion = new THREE.Quaternion(
+  //   node.quaternion._w,
+  //   node.quaternion._x,
+  //   node.quaternion._y,
+  //   node.quaternion._z
+  // )
   return (
     <>
       <PerspectiveCamera

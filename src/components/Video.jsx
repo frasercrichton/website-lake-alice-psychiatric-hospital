@@ -19,7 +19,7 @@ const Video = ({ url, caption }) => {
       setLoading(!isLoading)
     }, 2000)
     return () => clearTimeout(timer)
-  }, [])
+  }, [isLoading])
 
   return (
     <div className='video-container'>

@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import './Facility.css'
 import Label from './Label'
 import facilities from '../data/facilities.json'
+import LookAndFeelControls from '../controls/LookAndFeel'
 
 const Facility = ({
   node,
@@ -39,6 +40,8 @@ const Facility = ({
       }
     : null
 
+  const lookAndFeelControls = LookAndFeelControls()
+
   return (
     <mesh
       ref={mesh}
@@ -55,7 +58,7 @@ const Facility = ({
         <meshStandardMaterial
           // metalness={0.1}
           attach='material'
-          color={isActive ? '#ec407a' : '#a2a2a2'}
+          color={isActive ? lookAndFeelControls['Selected Building'] : lookAndFeelControls['Building']}
           transparent
           opacity={1}
         />

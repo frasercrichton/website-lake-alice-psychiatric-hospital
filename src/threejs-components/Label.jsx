@@ -1,5 +1,5 @@
 import './Label.css'
-import { CSSTransition } from 'react-transition-group'
+// import { CSSTransition } from 'react-transition-group'
 import { Html } from '@react-three/drei'
 const Label = ({
   text,

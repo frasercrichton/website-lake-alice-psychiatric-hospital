@@ -1,12 +1,12 @@
 import './Cover.css'
-import { CSSTransition } from 'react-transition-group'
+// import { CSSTransition } from 'react-transition-group'
 import Button from './components/Button'
-const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-const FOLDER = '3d-visualisation/'
+// const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
+// const FOLDER = '3d-visualisation/'
 
 const Cover = ({ coverActive, handleCoverClick, setContent }) => {
-  const imageUrl =
-    CDN_URL + FOLDER + 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg'
+  // const imageUrl =
+  //   CDN_URL + FOLDER + 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg'
   const action = () => {
     handleCoverClick()
     setContent('testimony')

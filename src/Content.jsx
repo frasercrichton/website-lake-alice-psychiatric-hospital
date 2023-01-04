@@ -1,5 +1,5 @@
 import './Content.css'
-import { CSSTransition } from 'react-transition-group'
+// import { CSSTransition } from 'react-transition-group'
 import Video from './components/Video'
 import Markdown from './components/markdown/Markdown'
 import mapDisplay from './map/mapDisplay.json'

@@ -83,12 +83,12 @@
       }  
     ]
   },
-  "Villa_7_-_Girls'_Unit":{
+  "ChildrensVillaGirls":{
     "title": "Girls' Unit",
     "text": " Villa 7"
     
   },
-  "Villa_8_-__Boys'_Unit":{
+  "ChildrensVillaBoys":{
     "title": "Boys' Unit",
     "text": " Villa 8"
   },
@@ -104,7 +104,7 @@
       } 
     ] 
   },
-  "Villas_9_-_18":{
+  "ElevenBedVillas":{
     "title": "Eleven Bed Villas",
     "text": "Villas 9 - 18 The Eleven Bed villas were originally intended as intensive therapy units Dr Theodore Gray",
     "images": [

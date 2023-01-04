@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { useControls } from 'leva'
 
 const positionDefaults = {
@@ -64,11 +64,7 @@ const CameraControls = () => {
         }
       }
     }
-  }, [])
-
-  const lookAndFeel = useControls('Look and Feel', {
-    'Background Colour': '#fff'
-  })
+  }, [parameters.position.x, parameters.position.y, parameters.position.z])
 
   return useControls('Camera', options)
 }

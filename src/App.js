@@ -43,7 +43,7 @@ function App () {
 
   return (
     <div className='site-container'>
-    <Leva oneLineLabels />
+      <Leva oneLineLabels />
 
       <Cover key='cover' coverActive={coverActive} handleCoverClick={handleCoverClick} setContent={setContent} />
 

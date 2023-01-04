@@ -5,13 +5,8 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import HospitalLayout from './HospitalLayout'
 import { PerspectiveCamera } from 'three'
 import CameraControls from '../controls/CameraControls'
-import {
-  Environment,
-  OrbitControls,
-  AccumulativeShadows,
-  RandomizedLight,
-  Center
-} from '@react-three/drei'
+import angleToRadians from './angleHelper'
+import { OrbitControls, Environment } from '@react-three/drei'
 import LookAndFeelControls from '../controls/LookAndFeel'
 
 const CanvasWrapper = ({
@@ -22,7 +17,6 @@ const CanvasWrapper = ({
   handleCanvasClick,
   camera
 }) => {
-  const boxRef = useRef(null)
   const perspectiveCameraRef = useRef(null)
   const orbitControlesRef = useRef(null)
 
@@ -60,8 +54,8 @@ const CanvasWrapper = ({
     200
   )
 
-  const cameraControls = CameraControls(perspectiveCameraRef)
-  const lookAndFeelControls = LookAndFeelControls(perspectiveCameraRef)
+  const cameraControls = CameraControls()
+  const lookAndFeelControls = LookAndFeelControls()
 
   if (perspectiveCameraRef.current != null) {
     perspectiveCameraRef.current.rotation.x = cameraControls.Rotation.x
@@ -78,7 +72,10 @@ const CanvasWrapper = ({
       >
         {/* , fov: 25, fov: 25 */}
 
-        <color args={['grey']} attach='background' />
+        <color
+          args={[lookAndFeelControls['World Colour']]}
+          attach='background'
+        />
         <fog attach='fog' color={'red'} far={10000000} near={100000} />
         <Suspense fallback={<ThreeLoader />}>
           {/* <ambientLight intensity={1} /> */}
@@ -108,14 +105,10 @@ const CanvasWrapper = ({
             receiveShadow
           >
             <planeGeometry />
-            <meshStandardMaterial color={lookAndFeelControls['Background Colour']} />
+            <meshStandardMaterial
+              color={lookAndFeelControls['Background Colour']}
+            />
           </mesh>
-          <Center ref={boxRef} top position={[2.5, 10, 100]}>
-            <mesh castShadow rotation={[0, Math.PI / 4, 0]}>
-              <boxGeometry args={[50, 50, 50]} />
-              <meshStandardMaterial color='indianred' />
-            </mesh>
-          </Center>
 
           {/* penumbra={1} */}
           <HospitalLayout
@@ -128,20 +121,20 @@ const CanvasWrapper = ({
           />
         </Suspense>
         {/* <OrbitControls
-          // autoRotate
-          // autoRotateSpeed={0.3}
+          autoRotate
+          autoRotateSpeed={0.3}
           ref={orbitControlesRef}
           // target == camera.lookat
           enableZoom
           // enableRotate
           enableDamping
           dampingFactor={0.01}
-          // maxAzimuthAngle={Math.PI/4}
-          // minAzimuthAngle={Math.PI / 2}
-          // maxPolarAngle={angleToRadians(80)}
-          // minPolarAngle={angleToRadians(30)}
+          maxAzimuthAngle={Math.PI / 4}
+          minAzimuthAngle={Math.PI / 2}
+          maxPolarAngle={angleToRadians(80)}
+          minPolarAngle={angleToRadians(30)}
           maxDistance={600}
-          minDistance={10}
+          // minDistance={10}
 
           // maxZoom={10}
           // minZoom
