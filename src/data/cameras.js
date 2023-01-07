@@ -1,4 +1,4 @@
-;[
+const cameras = [
   {
     index: 'default',
     camera: {

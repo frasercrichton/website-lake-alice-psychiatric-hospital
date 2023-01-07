@@ -17,17 +17,14 @@ Globals.assign({
 const Camera = ({ camera: activeCamera }) => {
   const cameraRef = useRef(null)
   const orbitControlesRef = useRef(null)
-  // const quaternion = new THREE.Quaternion(
-  //   activeCamera.quaternion.x,
-  //   activeCamera.quaternion.y,
-  //   activeCamera.quaternion.z,
-  //   activeCamera.quaternion.w
-  // )
 
   const { camera } = useThree()
   const fromQuat = new THREE.Quaternion()
   const toQuat = new THREE.Quaternion()
-  fromQuat.copy(camera.quaternion)
+  if (cameraRef.current != undefined) {
+    fromQuat.copy(cameraRef.current.quaternion)    
+  }
+  console.log('fromQuat', fromQuat)
 
   const euler = new THREE.Euler(
     activeCamera.rotation[0],
@@ -35,21 +32,20 @@ const Camera = ({ camera: activeCamera }) => {
     activeCamera.rotation[2],
     'XYZ'
   )
-  toQuat.setFromEuler(activeCamera.rotation)
-
+  toQuat.setFromEuler(euler)
   const springs = useSpring({
     alpha: 1,
     config: { duration: 3000 },
     from: { alpha: 0 },
     position: activeCamera.position,
-    rotation: camera.rotation,
-
+    reset: true,
     onChange (cont) {
       // fov
       // camera.fov = cont.value.fov;
       // rotation
-      camera.quaternion.slerpQuaternions(fromQuat, toQuat, cont.value.alpha)
-
+      console.log('cont.value.alpha', cont.value.alpha)  
+      const cam = camera.quaternion.slerpQuaternions(fromQuat, toQuat, cont.value.alpha)
+      console.log('cam', cam)
       camera.updateProjectionMatrix()
     }
   })
@@ -74,7 +70,6 @@ const Camera = ({ camera: activeCamera }) => {
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
-        rotation={activeCamera.rotation}
         aspect={activeCamera.aspect}
         fov={activeCamera.fov}
         near={activeCamera.near}

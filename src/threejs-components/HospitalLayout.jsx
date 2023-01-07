@@ -43,7 +43,6 @@ const HospitalLayout = ({
           far: camera.far
         }
 
-console.log('camera', camera)
         cameras.set(key, cameraConfig)
       }
 

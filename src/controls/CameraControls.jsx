@@ -4,9 +4,9 @@ import angleToRadians from '../threejs-components/angleHelper'
 
 const positionDefaults = {
   value: 20,
-  min: 0,
+  min: -2000,
   max: 2000,
-  step: 1
+  step: 0.1
 }
 
 const rotationDefaults = {
