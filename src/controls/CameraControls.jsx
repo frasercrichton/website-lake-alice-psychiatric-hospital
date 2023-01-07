@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 import { useControls } from 'leva'
+import angleToRadians from '../threejs-components/angleHelper'
 
 const positionDefaults = {
   value: 20,
   min: 0,
-  max: 200,
+  max: 2000,
   step: 1
 }
 
@@ -19,11 +20,11 @@ const CameraControls = () => {
   const parameters = {
     position: {
       x: 0,
-      y: 0,
-      z: 0
+      y: 600,
+      z: 400
     },
     rotation: {
-      x: 0,
+      x: -angleToRadians(50),
       y: 0,
       z: 0
     }

@@ -1,8 +1,8 @@
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-import Camera from './Camera'
 import Facility from './Facility'
+import * as THREE from 'three'
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
 const GLB_LOCATION = 'geography-detailed.glb'
 
@@ -11,6 +11,7 @@ const HospitalLayout = ({
   handleFacilityClick,
   hoverName,
   camera,
+  cameras,
   setHoverName
 }) => {
   const { nodes, materials } = useLoader(GLTFLoader, GLB_LOCATION, loader => {
@@ -19,20 +20,31 @@ const HospitalLayout = ({
     dracoLoader.setDecoderConfig({ type: 'js' })
     loader.setDRACOLoader(dracoLoader)
   })
-  // console.log(nodes)
-  // console.log(materials)
+
   const Facilities = ({ handleFacilityClick }) => {
     const handleHover = (id, e) => {
       if (!selectedFacility !== '') {
         setHoverName(id)
       }
     }
-
     const output = Object.keys(nodes).map((key, index) => {
-      // console.log(nodes[key].type)
-
       if (nodes[key].type === 'PerspectiveCamera') {
-        return <Camera node={nodes[key]} aspectRatio activeCamera={camera} />
+        const camera = nodes[key]
+        const cameraConfig = {
+          position: [camera.position.x, camera.position.y, camera.position.z],
+          rotation: [
+            camera.rotation._x,
+            camera.rotation._y,
+            camera.rotation._z
+          ],
+          aspect: camera.aspect,
+          fov: camera.fov,
+          near: camera.near,
+          far: camera.far
+        }
+
+console.log('camera', camera)
+        cameras.set(key, cameraConfig)
       }
 
       if (nodes[key].type === 'Mesh') {

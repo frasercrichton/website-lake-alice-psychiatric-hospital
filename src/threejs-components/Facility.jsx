@@ -3,6 +3,7 @@ import './Facility.css'
 import Label from './Label'
 import facilities from '../data/facilities.json'
 import LookAndFeelControls from '../controls/LookAndFeel'
+import * as THREE from 'three'
 
 const Facility = ({
   node,
@@ -53,12 +54,14 @@ const Facility = ({
       // onPointerLeave={e => alert('left')}
       receiveShadow
       castShadow={hasShadow}
+      position={[node.position.x, node.position.y, node.position.z ]}
     >
       {isFacility && (
         <meshStandardMaterial
-          // metalness={0.1}
+          metalness={0.1}
+          side={THREE.DoubleSide}
           attach='material'
-          color={isActive ? lookAndFeelControls['Selected Building'] : lookAndFeelControls['Building']}
+          color={lookAndFeelControls['Building']}
           transparent
           opacity={1}
         />

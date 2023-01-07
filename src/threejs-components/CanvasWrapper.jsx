@@ -1,13 +1,15 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import './CanvasWrapper.css'
 import ThreeLoader from './ThreeLoader'
 import { Canvas, useFrame } from '@react-three/fiber'
 import HospitalLayout from './HospitalLayout'
-import { PerspectiveCamera } from 'three'
-import CameraControls from '../controls/CameraControls'
-import angleToRadians from './angleHelper'
-import { OrbitControls, Environment } from '@react-three/drei'
+import Camera from './Camera'
 import LookAndFeelControls from '../controls/LookAndFeel'
+import { Globals } from '@react-spring/shared'
+import * as THREE from 'three'
+Globals.assign({
+  frameLoop: 'always'
+})
 
 const CanvasWrapper = ({
   selectedFacility,
@@ -15,89 +17,58 @@ const CanvasWrapper = ({
   hoverName,
   setHoverName,
   handleCanvasClick,
-  camera
+  camera,
+  cameras
 }) => {
-  const perspectiveCameraRef = useRef(null)
-  const orbitControlesRef = useRef(null)
-
   // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
-  const ZoomIn = () => {
-    return useFrame(({ camera }) => {
-      let cameraDistance = orbitControlesRef.current.getDistance()
-
-      if (cameraDistance > 280) {
-        let polarAngle = orbitControlesRef.current.getPolarAngle()
-
-        orbitControlesRef.current.maxDistance = cameraDistance -= 0.1
-        orbitControlesRef.current.setPolarAngle((polarAngle += 0.003))
-        orbitControlesRef.current.update()
-      }
-    })
-  }
 
   const aspectRatio = {
     width: 1920,
     height: 1080
   }
 
-  const shadowPosition = [0, 100, 200]
-
-  // fov — Camera frustum vertical field of view.
-  // aspect — Camera frustum aspect ratio.
-  // near — Camera frustum near plane.
-  // far — Camera frustum far plane.
-
-  const perspectiveCamera = new PerspectiveCamera(
-    10,
-    aspectRatio.width / aspectRatio.height,
-    50,
-    200
+  const [hemiLight] = useState(
+    () => new THREE.HemisphereLight(0xffffff, 0x111111, 1)
   )
 
-  const cameraControls = CameraControls()
-  const lookAndFeelControls = LookAndFeelControls()
+  const onCreated = ({gl, scene}) => {
+    gl.setClearColor("#202020");
 
-  if (perspectiveCameraRef.current != null) {
-    perspectiveCameraRef.current.rotation.x = cameraControls.Rotation.x
-    perspectiveCameraRef.current.rotation.y = cameraControls.Rotation.y
-    perspectiveCameraRef.current.rotation.z = cameraControls.Rotation.z
+    gl.setPixelRatio(window.devicePixelRatio);
+
+    gl.toneMapping = THREE.ReinhardToneMapping; //THREE.ACESFilmicToneMapping; THREE.ReinhardToneMapping;
+
+    gl.outputEncoding = THREE.sRGBEncoding;
+
+    scene.add(hemiLight);
   }
+
+  const shadowPosition = [0, 100, 200]
+
+  const lookAndFeelControls = LookAndFeelControls()
 
   return (
     <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
       <Canvas
         shadows
-        camera={{ position: [0, 500, 400] }}
+        gl={{ antialias: true, alpha: true}}
+        onCreated={onCreated}
         onPointerMissed={() => handleCanvasClick()}
       >
-        {/* , fov: 25, fov: 25 */}
-
-        <color
-          args={[lookAndFeelControls['World Colour']]}
-          attach='background'
-        />
+        <Camera camera={camera} />
+        <color args={[lookAndFeelControls['World']]} attach='background' />
         <fog attach='fog' color={'red'} far={10000000} near={100000} />
         <Suspense fallback={<ThreeLoader />}>
-          {/* <ambientLight intensity={1} /> */}
+          <ambientLight intensity={1} />
           <spotLight
-            intensity={1}
+            intensity={3}
             position={shadowPosition}
+            color={'grey'}
             castShadow
-            shadow-mapSize-height={1024}
-            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024 * 4}
+            shadow-mapSize-width={1024 * 4}
             near={0.4}
           />
-          <group
-            ref={perspectiveCameraRef}
-            position={[
-              cameraControls.Position.x,
-              cameraControls.Position.y,
-              cameraControls.Position.z
-            ]}
-          >
-            <cameraHelper args={[perspectiveCamera]} />
-          </group>
-
           <mesh
             position-y={-2}
             rotation-x={-Math.PI * 0.5}
@@ -105,45 +76,20 @@ const CanvasWrapper = ({
             receiveShadow
           >
             <planeGeometry />
-            <meshStandardMaterial
-              color={lookAndFeelControls['Background Colour']}
-            />
+            <meshStandardMaterial color={lookAndFeelControls['Ground']} />
           </mesh>
 
           {/* penumbra={1} */}
           <HospitalLayout
-            orbitControlesRef={orbitControlesRef}
             selectedFacility={selectedFacility}
             handleFacilityClick={handleFacilityClick}
             hoverName={hoverName}
             setHoverName={setHoverName}
             camera={camera}
+            cameras={cameras}
           />
         </Suspense>
-        {/* <OrbitControls
-          autoRotate
-          autoRotateSpeed={0.3}
-          ref={orbitControlesRef}
-          // target == camera.lookat
-          enableZoom
-          // enableRotate
-          enableDamping
-          dampingFactor={0.01}
-          maxAzimuthAngle={Math.PI / 4}
-          minAzimuthAngle={Math.PI / 2}
-          maxPolarAngle={angleToRadians(80)}
-          minPolarAngle={angleToRadians(30)}
-          maxDistance={600}
-          // minDistance={10}
-
-          // maxZoom={10}
-          // minZoom
-          // zoom0
-          // zoomSpeed={0.3}
-          // update
-        /> */}
-
-        <Environment preset='park' />
+        {/* <Environment preset='park' /> */}
         {/* <ZoomIn /> */}
       </Canvas>
     </div>

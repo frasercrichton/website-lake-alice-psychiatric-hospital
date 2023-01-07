@@ -1,9 +1,15 @@
 html {
   font-size: 100%;
+  background-color: #282c34;
 }
 
+html,
 body {
-  background-color: #282c34;
+  overflow: hidden;
+}
+
+
+body {
   margin: 0;
   font-family: Alliance Mono, monospace;
   -webkit-font-smoothing: antialiased;
