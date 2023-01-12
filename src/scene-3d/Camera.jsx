@@ -5,47 +5,55 @@ import { OrbitControls, Environment } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import angleToRadians from './angleHelper'
+import CameraControls from '../controls/CameraControls'
 import { Globals } from '@react-spring/shared'
 Globals.assign({
   frameLoop: 'always'
 })
 
-// fov — Camera frustum vertical field of view.
-// aspect — Camera frustum aspect ratio.
-// near — Camera frustum near plane.
-// far — Camera frustum far plane.
+// position: new THREE.Vector3(
+//   camera.position[0],
+//   camera.position[1],
+//   camera.position[2]
+// ),
+// A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
 const Camera = ({ camera: activeCamera }) => {
   const cameraRef = useRef(null)
-  const orbitControlesRef = useRef(null)
-
+  
   const { camera } = useThree()
   const fromQuat = new THREE.Quaternion()
   const toQuat = new THREE.Quaternion()
   if (cameraRef.current != undefined) {
-    fromQuat.copy(cameraRef.current.quaternion)    
+    fromQuat.copy(cameraRef.current.quaternion)
   }
-  console.log('fromQuat', fromQuat)
 
-  const euler = new THREE.Euler(
-    activeCamera.rotation[0],
-    activeCamera.rotation[1],
-    activeCamera.rotation[2],
-    'XYZ'
+  // if (cameraRef.current != undefined) {
+  //   const cameraControls = CameraControls({cameraRef})
+  // }
+  
+  toQuat.setFromEuler(
+    new THREE.Euler(
+      activeCamera.rotation[0],
+      activeCamera.rotation[1],
+      activeCamera.rotation[2],
+      'XYZ'
+    )
   )
-  toQuat.setFromEuler(euler)
   const springs = useSpring({
+    from: { alpha: 0 },
     alpha: 1,
     config: { duration: 3000 },
-    from: { alpha: 0 },
     position: activeCamera.position,
     reset: true,
     onChange (cont) {
       // fov
       // camera.fov = cont.value.fov;
-      // rotation
-      console.log('cont.value.alpha', cont.value.alpha)  
-      const cam = camera.quaternion.slerpQuaternions(fromQuat, toQuat, cont.value.alpha)
-      console.log('cam', cam)
+      const cam = camera.quaternion.slerpQuaternions(
+        fromQuat,
+        toQuat,
+        cont.value.alpha
+      )
+// camera.zoom = 2
       camera.updateProjectionMatrix()
     }
   })
@@ -67,6 +75,7 @@ const Camera = ({ camera: activeCamera }) => {
 
   return (
     <animated.group position={springs.position}>
+      
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
@@ -76,14 +85,15 @@ const Camera = ({ camera: activeCamera }) => {
         far={activeCamera.far}
       />
 
-      {/* <OrbitControls
-        // camera={cameraRef}
+      {/* 
+      <OrbitControls
+        camera={cameraRef}
         // makeDefault
         autoRotate
         autoRotateSpeed={0.3}
         ref={orbitControlesRef}
         // target == camera.lookat
-        enableZoom
+        // enableZoom
         enableRotate
         enableDamping
         dampingFactor={0.01}

@@ -15,10 +15,8 @@ const Facility = ({
   hoverName
 }) => {
   const mesh = useRef()
-  // console.log(node.name)
-  // console.log(node)
-  const isAnnotation = node.name.includes('Annotation')
-  const facilityId = node.name.replace('Annotation', '')
+  const isAnnotation = node.name
+  const facilityId = node.name
   const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
   const findFacility = id => facilities.find(facility => facility.id === id)
   const isSignificantFacility =
@@ -27,7 +25,6 @@ const Facility = ({
   const isFacility = typeof findFacility(facilityId) !== 'undefined'
   const isHover = facilityId === hoverName
   const isClicked = facilityId === selectedFacility
-  const isActive = isClicked || isHover
   const meshEvents = isFacility
     ? {
         onPointerOver: e => handleHover(facilityId, e),
@@ -58,7 +55,7 @@ const Facility = ({
     >
       {isFacility && (
         <meshStandardMaterial
-          metalness={0.1}
+          // metalness={0.1}
           side={THREE.DoubleSide}
           attach='material'
           color={lookAndFeelControls['Building']}
@@ -66,22 +63,20 @@ const Facility = ({
           opacity={1}
         />
       )}
-      {isClicked && isAnnotation && isSignificantFacility && (
+      {isClicked && isSignificantFacility && (
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
           hoverName={hoverName}
           isClicked={isClicked}
-          position={[node.position.x, node.position.y, node.position.z]}
         />
       )}
-      {isHover && isFacility && isAnnotation && (
+      {isHover && isFacility && (
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
           hoverName={hoverName}
           isClicked={isClicked}
-          position={[node.position.x, node.position.y, node.position.z]}
         />
       )}
       )

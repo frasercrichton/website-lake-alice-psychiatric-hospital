@@ -10,7 +10,6 @@ const HospitalLayout = ({
   selectedFacility,
   handleFacilityClick,
   hoverName,
-  camera,
   cameras,
   setHoverName
 }) => {

@@ -7,6 +7,7 @@ import Camera from './Camera'
 import LookAndFeelControls from '../controls/LookAndFeel'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
+import Lighting from './Lighting'
 Globals.assign({
   frameLoop: 'always'
 })
@@ -27,31 +28,21 @@ const CanvasWrapper = ({
     height: 1080
   }
 
-  const [hemiLight] = useState(
-    () => new THREE.HemisphereLight(0xffffff, 0x111111, 1)
-  )
-
-  const onCreated = ({gl, scene}) => {
-    gl.setClearColor("#202020");
-
-    gl.setPixelRatio(window.devicePixelRatio);
-
-    gl.toneMapping = THREE.ReinhardToneMapping; //THREE.ACESFilmicToneMapping; THREE.ReinhardToneMapping;
-
-    gl.outputEncoding = THREE.sRGBEncoding;
-
-    scene.add(hemiLight);
+  const onCreated = ({ gl, scene }) => {
+    gl.setClearColor('#202020')
+    gl.setPixelRatio(window.devicePixelRatio)
+    gl.toneMapping = THREE.ReinhardToneMapping //THREE.ACESFilmicToneMapping;
+    gl.outputEncoding = THREE.sRGBEncoding
   }
-
-  const shadowPosition = [0, 100, 200]
 
   const lookAndFeelControls = LookAndFeelControls()
 
   return (
     <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
       <Canvas
-        shadows
-        gl={{ antialias: true, alpha: true}}
+        colorManagement
+        shadows={{ type: THREE.BasicShadowMap }}
+        gl={{ antialias: true, alpha: true }}
         onCreated={onCreated}
         onPointerMissed={() => handleCanvasClick()}
       >
@@ -59,16 +50,7 @@ const CanvasWrapper = ({
         <color args={[lookAndFeelControls['World']]} attach='background' />
         <fog attach='fog' color={'red'} far={10000000} near={100000} />
         <Suspense fallback={<ThreeLoader />}>
-          <ambientLight intensity={1} />
-          <spotLight
-            intensity={3}
-            position={shadowPosition}
-            color={'grey'}
-            castShadow
-            shadow-mapSize-height={1024 * 4}
-            shadow-mapSize-width={1024 * 4}
-            near={0.4}
-          />
+          <Lighting />
           <mesh
             position-y={-2}
             rotation-x={-Math.PI * 0.5}
@@ -85,12 +67,10 @@ const CanvasWrapper = ({
             handleFacilityClick={handleFacilityClick}
             hoverName={hoverName}
             setHoverName={setHoverName}
-            camera={camera}
             cameras={cameras}
           />
         </Suspense>
         {/* <Environment preset='park' /> */}
-        {/* <ZoomIn /> */}
       </Canvas>
     </div>
   )
