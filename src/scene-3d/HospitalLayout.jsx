@@ -1,15 +1,24 @@
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import Facility from './Facility'
 import * as THREE from 'three'
-const GLTF_LOCATION = process.env.REACT_APP_GLTF_LOCATION
+// const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
+const GLB_LOCATION = 'geography-detailed.glb'
+
 const HospitalLayout = ({
   selectedFacility,
   handleFacilityClick,
   hoverName,
+  cameras,
   setHoverName
 }) => {
-  const { nodes, materials } = useLoader(GLTFLoader, GLTF_LOCATION)
+  const { nodes, materials } = useLoader(GLTFLoader, GLB_LOCATION, loader => {
+    const dracoLoader = new DRACOLoader()
+    dracoLoader.setDecoderPath('draco/')
+    dracoLoader.setDecoderConfig({ type: 'js' })
+    loader.setDRACOLoader(dracoLoader)
+  })
 
   const Facilities = ({ handleFacilityClick }) => {
     const handleHover = (id, e) => {
@@ -17,22 +26,26 @@ const HospitalLayout = ({
         setHoverName(id)
       }
     }
-
-    const material = new THREE.LineBasicMaterial({
-      color: 0xffffff,
-      linewidth: 2,
-      linecap: 'round',
-      linejoin: 'round'
-    })
-
     const output = Object.keys(nodes).map((key, index) => {
-      if (nodes[key].type === 'LineSegments') {
-        return (
-          <lineSegments geometry={nodes[key].geometry} material={material} />
-        )
+      if (nodes[key].type === 'PerspectiveCamera') {
+        const camera = nodes[key]
+        const cameraConfig = {
+          position: [camera.position.x, camera.position.y, camera.position.z],
+          rotation: [
+            camera.rotation._x,
+            camera.rotation._y,
+            camera.rotation._z
+          ],
+          aspect: camera.aspect,
+          fov: camera.fov,
+          near: camera.near,
+          far: camera.far
+        }
+
+        cameras.set(key, cameraConfig)
       }
 
-      if (nodes[key].type === 'Mesh' || nodes[key].type === 'Object3D') {
+      if (nodes[key].type === 'Mesh') {
         return (
           <Facility
             key={index}
@@ -52,7 +65,7 @@ const HospitalLayout = ({
   }
 
   return (
-    <group dispose={null} scale={0.4}>
+    <group>
       <Facilities handleFacilityClick={handleFacilityClick} />
     </group>
   )

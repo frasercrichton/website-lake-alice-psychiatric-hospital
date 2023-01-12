@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import './Facility.css'
 import Label from './Label'
 import facilities from '../data/facilities.json'
+import LookAndFeelControls from '../controls/LookAndFeel'
+import * as THREE from 'three'
 
 const Facility = ({
   node,
@@ -13,18 +15,16 @@ const Facility = ({
   hoverName
 }) => {
   const mesh = useRef()
-  const isAnnotation = node.name.includes('Annotation')
-  const facilityId = node.name.replace('_Annotation', '')
-
+  const isAnnotation = node.name
+  const facilityId = node.name
+  const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
   const findFacility = id => facilities.find(facility => facility.id === id)
   const isSignificantFacility =
     typeof findFacility(facilityId) !== 'undefined' &&
     findFacility(facilityId).type === 'significant'
   const isFacility = typeof findFacility(facilityId) !== 'undefined'
-
   const isHover = facilityId === hoverName
   const isClicked = facilityId === selectedFacility
-  const isActive = isClicked || isHover
   const meshEvents = isFacility
     ? {
         onPointerOver: e => handleHover(facilityId, e),
@@ -38,6 +38,8 @@ const Facility = ({
       }
     : null
 
+  const lookAndFeelControls = LookAndFeelControls()
+
   return (
     <mesh
       ref={mesh}
@@ -47,32 +49,34 @@ const Facility = ({
       {...meshEvents}
       {...meshOnclick}
       // onPointerLeave={e => alert('left')}
+      receiveShadow
+      castShadow={hasShadow}
+      position={[node.position.x, node.position.y, node.position.z ]}
     >
       {isFacility && (
         <meshStandardMaterial
-          metalness={0.1}
+          // metalness={0.1}
+          side={THREE.DoubleSide}
           attach='material'
-          color={isActive ? '#ec407a' : '#a2a2a2'}
+          color={lookAndFeelControls['Building']}
           transparent
-          opacity={isActive ? 0.5 : 1}
+          opacity={1}
         />
       )}
-      {isClicked && isAnnotation && isSignificantFacility && (
+      {isClicked && isSignificantFacility && (
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
           hoverName={hoverName}
           isClicked={isClicked}
-          position={[node.position.x, node.position.y, node.position.z]}
         />
       )}
-      {isHover && isFacility && isAnnotation && (
+      {isHover && isFacility && (
         <Label
           id={node.name}
           text={findFacility(facilityId).name}
           hoverName={hoverName}
           isClicked={isClicked}
-          position={[node.position.x, node.position.y, node.position.z]}
         />
       )}
       )

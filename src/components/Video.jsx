@@ -11,7 +11,7 @@ const Video = ({ url, caption }) => {
   const playerRef = useRef()
 
   useEffect(() => {
-    if (playerRef.current != undefined) {
+    if (playerRef.current !== undefined) {
       const { player } = playerRef.current.getState()
       console.log(player.currentTime) // print current time
     }
@@ -19,7 +19,7 @@ const Video = ({ url, caption }) => {
       setLoading(!isLoading)
     }, 2000)
     return () => clearTimeout(timer)
-  }, [])
+  }, [isLoading])
 
   return (
     <div className='video-container'>

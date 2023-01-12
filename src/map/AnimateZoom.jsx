@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useMap } from 'react-leaflet'
 
 const AnimateZoom = ({ centreCoordinates, zoom }) => {
@@ -11,6 +11,6 @@ const AnimateZoom = ({ centreCoordinates, zoom }) => {
         duration: 10
       })
     }, 4000)
-  }, [])
+  }, [centreCoordinates, map, zoom])
 }
 export default AnimateZoom

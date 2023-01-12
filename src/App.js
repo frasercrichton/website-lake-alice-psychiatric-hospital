@@ -4,10 +4,24 @@ import Header from './Header'
 import Menu from './Menu'
 import Content from './Content'
 import Cover from './Cover'
-import CanvasWrapper from './threejs-components/CanvasWrapper'
+import CanvasWrapper from './scene-3d/CanvasWrapper'
+import { Leva } from 'leva'
+import angleToRadians from './scene-3d/angleHelper'
+import Loader from './components/Loader'
 
 function App () {
   const [facility, setFacility] = useState('')
+  const cameraConfig = {
+    position: [0, 600, 400],
+    rotation: [-angleToRadians(50), 0, 0],
+    aspect: 1,
+    fov: 80,
+    near: 10,
+    far: 10000
+  }
+
+  const [camera, setCamera] = useState(cameraConfig)
+  const cameras = new Map()
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
@@ -25,11 +39,16 @@ function App () {
     setTab(tab)
   }
 
-  const handleFacilityClick = (facilityId) => {
+  const handleFacilityClick = facilityId => {
     setTab('site')
     setHoverName('')
-    const update = facilityId === facility ? '' : facilityId
-    setFacility(update)
+    const activeFacility = facilityId === facility ? '' : facilityId
+    setFacility(activeFacility)
+    const activeCamera = cameras.get(activeFacility + 'Camera')
+    if (activeCamera) {
+      setCamera(activeCamera)
+    }
+    // default camera
   }
 
   const handleCoverClick = () => {
@@ -39,8 +58,14 @@ function App () {
 
   return (
     <div className='site-container'>
-
-      <Cover key='cover' coverActive={coverActive} handleCoverClick={handleCoverClick} setContent={setContent} />
+      <Leva oneLineLabels />
+      <Loader />
+      <Cover
+        key='cover'
+        coverActive={coverActive}
+        handleCoverClick={handleCoverClick}
+        setContent={setContent}
+      />
 
       <Header handleClick={setContent} enableClose={content !== ''} />
 
@@ -53,6 +78,8 @@ function App () {
         hoverName={hoverName}
         setHoverName={setHoverName}
         handleCanvasClick={handleCanvasClick}
+        camera={camera}
+        cameras={cameras}
       />
       <Menu
         setContent={setContent}

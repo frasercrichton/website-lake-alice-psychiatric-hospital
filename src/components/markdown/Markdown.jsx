@@ -19,7 +19,7 @@ const Markdown = markdownContent => {
       .then(md => {
         setMarkdown(md)
       })
-  }, [])
+  }, [markdownContent.markdownContent])
 
   return (
     <div className='markdown-container'>
