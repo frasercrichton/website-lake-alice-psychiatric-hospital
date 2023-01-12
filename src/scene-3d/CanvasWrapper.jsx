@@ -37,11 +37,13 @@ const CanvasWrapper = ({
 
   const lookAndFeelControls = LookAndFeelControls()
 
+  // shadows={{ type: THREE.BasicShadowMap }}
+
   return (
     <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
       <Canvas
-        colorManagement
-        shadows={{ type: THREE.BasicShadowMap }}
+        colormanagement='true'
+        shadows
         gl={{ antialias: true, alpha: true }}
         onCreated={onCreated}
         onPointerMissed={() => handleCanvasClick()}

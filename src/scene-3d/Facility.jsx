@@ -57,9 +57,9 @@ const Facility = ({
         <meshStandardMaterial
           // metalness={0.1}
           side={THREE.DoubleSide}
-          attach='material'
+          // attach='material'
           color={lookAndFeelControls['Building']}
-          transparent
+          // transparent
           opacity={1}
         />
       )}
