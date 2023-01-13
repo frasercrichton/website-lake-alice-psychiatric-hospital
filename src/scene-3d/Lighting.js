@@ -1,5 +1,4 @@
-import React, { Suspense, useRef, useState } from 'react'
-import * as THREE from 'three'
+import React from 'react'
 import LightingControls from '../controls/LightingControls'
 
 // const lightingControls = LightingControls()
@@ -7,7 +6,6 @@ import LightingControls from '../controls/LightingControls'
 const Lighting = ({}) => {
   const lightingControls = LightingControls()
   const shadowPosition = [0, 100, 200]
-  console.log(lightingControls['Ambient Intensity'])
   return (
     <>
       <ambientLight intensity={lightingControls['Ambient Intensity']} />
