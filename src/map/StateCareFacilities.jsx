@@ -1,12 +1,20 @@
 import React from 'react'
-import Marker from './Marker'
-import stateCareFacilities from '../data/state-care-facilities.json '
+import Marker from './components/Marker'
+import Line from './components/Line'
+import { LatLng } from 'leaflet'
+import stateCareFacilities from '../data/state-care-facilities.json'
 
-const StateCareFacilities = () => {
-  return (
-    <div className='map-container'>
-      <Marker markerCoordinates={initialCentreCoordinates} {...marker} />
-    </div>
-  )
+const StateCareFacilities = lineCentre => {
+  const marker = { fillColor: '#000000', radius: '5' }
+
+  return stateCareFacilities.map((item, index) => {
+    const coordinates = new LatLng(item[1], item[2])
+    return (
+      <>
+        <Marker markerCoordinates={coordinates} title={item[0]} {...marker} />
+        <Line lineCentre={lineCentre} markerCoordinates={coordinates} />
+      </>
+    )
+  })
 }
 export default StateCareFacilities
