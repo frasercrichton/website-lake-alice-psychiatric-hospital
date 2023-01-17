@@ -9,7 +9,6 @@ const Label = ({
 }) => {
   const isHover = id === hoverName
   const tagClass = isClicked || isHover ? 'tag active' : 'tag'
-  // console.log(position)
   return (
     // <CSSTransition
     //   in={isClicked || isHover}

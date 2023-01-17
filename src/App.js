@@ -11,7 +11,7 @@ import Loader from './components/Loader'
 
 function App () {
   const [facility, setFacility] = useState('')
-  const cameraConfig = {
+  const defaultCameraConfig = {
     position: [0, 600, 400],
     rotation: [-angleToRadians(50), 0, 0],
     aspect: 1,
@@ -20,7 +20,7 @@ function App () {
     far: 10000
   }
 
-  const [camera, setCamera] = useState(cameraConfig)
+  const [camera, setCamera] = useState(defaultCameraConfig)
   const cameras = new Map()
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
@@ -45,8 +45,12 @@ function App () {
     const activeFacility = facilityId === facility ? '' : facilityId
     setFacility(activeFacility)
     const activeCamera = cameras.get(activeFacility + 'Camera')
+    
     if (activeCamera) {
       setCamera(activeCamera)
+    }
+    else {
+      setCamera(defaultCameraConfig)
     }
     // default camera
   }

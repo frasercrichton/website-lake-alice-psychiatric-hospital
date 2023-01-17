@@ -9,57 +9,15 @@ const positionDefaults = {
   step: 0.1
 }
 
-const rotationDefaults = {
-  value: 0,
-  min: -Math.PI,
-  max: Math.PI,
-  step: 0.1
+const parameters = {
+  position: {
+    x: 0,
+    y: 600,
+    z: 400
+  }
 }
 
 const LightingControls = () => {
-  // const lightingDefaults = {
-  //   min: 0,
-  //   max: 10,
-  //   step: 0.1
-  // }
-
-  // const parameters = {
-  //   'Ambient Light': {
-  //     Intensity: 1,
-  //   },
-  //  }
-
-  // const options = useMemo(() => {
-  //   return {
-  //     Ambient: {
-  //       value: {
-  //         Intensity: 1,
-  //       },
-  //       Intensity: {
-  //         ...lightingDefaults
-  //       },
-  //     }
-  // }}, [])
-
-  // const parameters = {
-  //   position: {
-  //     x: 0,
-  //     y: 600,
-  //     z: 400
-  //   },
-  //   rotation: {
-  //     x: -angleToRadians(50),
-  //     y: 0,
-  //     z: 0
-  //   }
-  // }
-  // return {
-  //     'Ground': '#ffffff',
-  //     'World': '#343333',
-  //     Building: '#979797',
-  //     'Selected Building': '#c15f5f'
-  //   }
-
   const options = useMemo(() => {
     return {
       'Ambient Intensity': {
@@ -81,6 +39,34 @@ const LightingControls = () => {
         min: 0,
         max: 10,
         step: 0.1
+      },
+      'Spotlight Angle': {
+        value: Math.PI / 3,
+        min: 0,
+        max: Math.PI / 3,
+        step: 0.1
+      },
+      'Spotlight Position': {
+        value: {
+          x: 0,
+          y: 400,
+          z: 100
+        },
+        x: {
+          min: 0,
+          max: 1000,
+          step: 10
+        },
+        y: {
+          min: 0,
+          max: 1000,
+          step: 10
+        },
+        z: {
+          min: 0,
+          max: 1000,
+          step: 10
+        }
       }
     }
   }, [])
