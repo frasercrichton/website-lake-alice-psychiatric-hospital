@@ -5,7 +5,7 @@ const Header = ({ handleClick, enableClose, props }) => {
     <header>
       <nav>
         <a href='/'>
-          <h1>Lake Alice</h1>
+          <h1>Lake Alice Psychiatric Hospital</h1>
         </a>
         {enableClose && <Icon action={e => handleClick('')} iconType='close' />}
       </nav>

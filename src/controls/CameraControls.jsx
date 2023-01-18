@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useControls } from 'leva'
-import angleToRadians from '../scene-3d/angleHelper'
+import angleToRadians from '../3d-world/angleHelper'
 
 const positionDefaults = {
   value: 20,

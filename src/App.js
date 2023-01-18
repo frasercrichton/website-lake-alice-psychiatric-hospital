@@ -4,9 +4,9 @@ import Header from './Header'
 import Menu from './Menu'
 import Content from './Content'
 import Cover from './Cover'
-import CanvasWrapper from './scene-3d/CanvasWrapper'
+import CanvasWrapper from './3d-world/Canvas'
 import { Leva } from 'leva'
-import angleToRadians from './scene-3d/angleHelper'
+import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader'
 
 function App () {
@@ -45,11 +45,10 @@ function App () {
     const activeFacility = facilityId === facility ? '' : facilityId
     setFacility(activeFacility)
     const activeCamera = cameras.get(activeFacility + 'Camera')
-    
+
     if (activeCamera) {
       setCamera(activeCamera)
-    }
-    else {
+    } else {
       setCamera(defaultCameraConfig)
     }
     // default camera
