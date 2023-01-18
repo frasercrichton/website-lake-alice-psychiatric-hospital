@@ -1,7 +1,7 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense } from 'react'
 import './Canvas.css'
 import ThreeLoader from './ThreeLoader'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import HospitalLayout from './HospitalLayout'
 import Camera from './Camera'
 import LookAndFeelControls from '../controls/LookAndFeel'
@@ -22,17 +22,10 @@ const CanvasWrapper = ({
   camera,
   cameras
 }) => {
-  // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
   const aspectRatio = {
     width: 1920,
     height: 1080
   }
-
-  const onCreated = ({ gl, scene }) => {
-    gl.setClearColor('#202020')
-    // gl.setPixelRatio(window.devicePixelRatio)
-  }
-
   const lookAndFeelControls = LookAndFeelControls()
   const defaultOutputEncoding = THREE.sRGBEncoding
   return (
@@ -47,9 +40,9 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 2,
-          pixelRatio: window.devicePixelRatio
+          pixelRatio: window.devicePixelRatio,
+          clearColor: lookAndFeelControls['World']
         }}
-        onCreated={onCreated}
         onPointerMissed={() => handleCanvasClick()}
       >
         <Camera camera={camera} />

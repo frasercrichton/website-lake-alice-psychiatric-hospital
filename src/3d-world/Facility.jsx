@@ -56,7 +56,7 @@ const Facility = ({
         <meshPhongMaterial
           metalness={1}
           side={THREE.DoubleSide}
-          // attach='material'
+          attach='material'
           color={lookAndFeelControls['Building']}
           // transparent
           opacity={1}

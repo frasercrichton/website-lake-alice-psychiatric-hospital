@@ -10,6 +10,7 @@ import { Globals } from '@react-spring/shared'
 Globals.assign({
   frameLoop: 'always'
 })
+// https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
 
 // position: new THREE.Vector3(
 //   camera.position[0],
@@ -83,7 +84,7 @@ const Camera = ({ camera: activeCamera }) => {
         near={activeCamera.near}
         far={activeCamera.far}
       />
-{/* 
+      {/* 
       <OrbitControls
         enableZoom
         enableRotate
