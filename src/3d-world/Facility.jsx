@@ -49,6 +49,8 @@ const Facility = ({
       {...meshEvents}
       {...meshOnclick}
       // onPointerLeave={e => alert('left')}
+      side={THREE.FrontSide}
+          
       receiveShadow
       castShadow={hasShadow}
       position={[node.position.x, y, node.position.z]}
