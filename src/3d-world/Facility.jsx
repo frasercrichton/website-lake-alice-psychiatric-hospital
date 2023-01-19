@@ -38,7 +38,7 @@ const Facility = ({
     : null
 
   const lookAndFeelControls = LookAndFeelControls()
-  console.log('material', material)
+
   return (
     <mesh
       ref={mesh}

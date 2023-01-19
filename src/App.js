@@ -9,23 +9,25 @@ import { Leva } from 'leva'
 import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader'
 
+const defaultCameraConfig = {
+  position: [0, 600, 400],
+  rotation: [-angleToRadians(50), 0, 0],
+  aspect: 1,
+  fov: 80,
+  near: 10,
+  far: 10000
+}
+
 function App () {
   const [facility, setFacility] = useState('')
-  const defaultCameraConfig = {
-    position: [0, 600, 400],
-    rotation: [-angleToRadians(50), 0, 0],
-    aspect: 1,
-    fov: 80,
-    near: 10,
-    far: 10000
-  }
+  // const [hash, setHash] = useState(() => window.location.hash)
+  const hash = window.location.hash
 
   const [camera, setCamera] = useState(defaultCameraConfig)
   const cameras = new Map()
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
-
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
 
@@ -61,7 +63,8 @@ function App () {
 
   return (
     <div className='site-container'>
-      <Leva oneLineLabels />
+      {hash === 'debug' && <Leva oneLineLabels />}
+
       <Loader />
       <Cover
         key='cover'

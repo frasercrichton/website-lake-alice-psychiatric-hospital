@@ -26,6 +26,8 @@ const CanvasWrapper = ({
     width: 1920,
     height: 1080
   }
+  const hash = window.location.hash
+
   const lookAndFeelControls = LookAndFeelControls()
   const defaultOutputEncoding = THREE.sRGBEncoding
   return (
