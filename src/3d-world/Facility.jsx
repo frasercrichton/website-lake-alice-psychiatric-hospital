@@ -38,6 +38,7 @@ const Facility = ({
     : null
 
   const lookAndFeelControls = LookAndFeelControls()
+  const y = hasShadow ? node.position.y - 0.5 : node.position.y
 
   return (
     <mesh
@@ -50,7 +51,7 @@ const Facility = ({
       // onPointerLeave={e => alert('left')}
       receiveShadow
       castShadow={hasShadow}
-      position={[node.position.x, node.position.y, node.position.z]}
+      position={[node.position.x, y, node.position.z]}
     >
       {isFacility && (
         <meshPhongMaterial
