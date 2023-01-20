@@ -8,6 +8,8 @@ import CanvasWrapper from './scene-3d/CanvasWrapper'
 import { Leva } from 'leva'
 import angleToRadians from './scene-3d/angleHelper'
 import Loader from './components/Loader'
+import ScrollWrapper from './ScrollWrapper'
+import { InView, useInView } from 'react-intersection-observer'
 
 function App () {
   const [facility, setFacility] = useState('')
@@ -56,40 +58,21 @@ function App () {
     setCoverActive(!coverActive)
   }
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0.5,
+    initialInView: false,
+    onChange: (inView, ref, entry) => {
+      console.log('ccc', entry)
+    },
+  })
   return (
-    <div className='site-container'>
-      <Leva oneLineLabels />
-      <Loader />
-      <Cover
-        key='cover'
-        coverActive={coverActive}
-        handleCoverClick={handleCoverClick}
-        setContent={setContent}
-      />
-
-      <Header handleClick={setContent} enableClose={content !== ''} />
-
-      <Content key={content} content={content} setContent={setContent} />
-
-      <CanvasWrapper
-        key='canvas'
-        selectedFacility={facility}
-        handleFacilityClick={handleFacilityClick}
-        hoverName={hoverName}
-        setHoverName={setHoverName}
-        handleCanvasClick={handleCanvasClick}
-        camera={camera}
-        cameras={cameras}
-      />
-      <Menu
-        setContent={setContent}
-        selectedFacility={facility}
-        handleMenuClick={handleFacilityClick}
-        hoverName={hoverName}
-        tab={tab}
-        handleContextUpdate={handleContextUpdate}
-      />
-    </div>
+    <ScrollWrapper inView={inView}>
+      <div ref={ref} className='inview-block'>
+        <h2>
+          Element is inside the viewport: <strong>{inView.toString()}</strong>
+        </h2>
+      </div>
+    </ScrollWrapper>
   )
 }
 
