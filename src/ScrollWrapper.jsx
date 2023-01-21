@@ -12,7 +12,6 @@ const defaultStyle: CSSProperties = {
 }
 
 const ScrollWrapper = ({ children, style, inView, ...props }) => {
-  console.log(inView)
   return (
     <div {...props}>
       <Status inView={inView} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './Header'
 import Menu from './Menu'
@@ -10,7 +10,8 @@ import angleToRadians from './scene-3d/angleHelper'
 import Loader from './components/Loader'
 import ScrollWrapper from './ScrollWrapper'
 import { InView, useInView } from 'react-intersection-observer'
-
+import data from './config/chapters-data'
+import Card from './Cards'
 function App () {
   const [facility, setFacility] = useState('')
   const cameraConfig = {
@@ -24,6 +25,8 @@ function App () {
 
   const [camera, setCamera] = useState(cameraConfig)
   const cameras = new Map()
+  const [cameraName, setCameraName] = useState('')
+
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
@@ -57,23 +60,11 @@ function App () {
     setLoading(!isLoading)
     setCoverActive(!coverActive)
   }
+  console.log('cameraName xxx', cameraName)
 
-  const { ref, inView, entry } = useInView({
-    threshold: 0.5,
-    initialInView: false,
-    onChange: (inView, ref, entry) => {
-      console.log('ccc', entry)
-    },
+  return data['/site'].slides.map((item, index) => {
+    return <Card setCameraName={setCameraName} item={item} index />
   })
-  return (
-    <ScrollWrapper inView={inView}>
-      <div ref={ref} className='inview-block'>
-        <h2>
-          Element is inside the viewport: <strong>{inView.toString()}</strong>
-        </h2>
-      </div>
-    </ScrollWrapper>
-  )
 }
 
 export default App
