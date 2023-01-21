@@ -42,7 +42,7 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 2,
-          pixelRatio: window.devicePixelRatio,
+          pixelRatio: Math.min(window.devicePixelRatio, 2),
           clearColor: lookAndFeelControls['World']
         }}
         onPointerMissed={() => handleCanvasClick()}
