@@ -1,9 +1,9 @@
 import './Content.css'
 // import { CSSTransition } from 'react-transition-group'
-import Video from './components/Video'
-import Markdown from './components/markdown/Markdown'
-import mapDisplay from './map/mapDisplay.json'
-import Map from './map/Map'
+import Video from '../components/Video'
+import Markdown from '../components/markdown/Markdown'
+import mapDisplay from '../map/mapDisplay.json'
+import Map from '../map/Map'
 // TODO map centre shouldn't be a default
 const { zoom, centre, maxBounds } = mapDisplay
 const dynamicZoom = 6.5

@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './Header'
 import Menu from './Menu'
-import Content from './Content'
+import Content from './main-content/Content'
 import Cover from './Cover'
 import CanvasWrapper from './scene-3d/CanvasWrapper'
 import { Leva } from 'leva'
 import angleToRadians from './scene-3d/angleHelper'
 import Loader from './components/Loader'
-import ScrollWrapper from './ScrollWrapper'
-import { InView, useInView } from 'react-intersection-observer'
-import data from './config/chapters-data'
-import Card from './Cards'
+import data from './config/section-content'
+import Section from './main-content/Section'
 function App () {
   const [facility, setFacility] = useState('')
   const cameraConfig = {
@@ -22,15 +20,11 @@ function App () {
     near: 10,
     far: 10000
   }
-
-  const [camera, setCamera] = useState(cameraConfig)
   const cameras = new Map()
-  const [cameraName, setCameraName] = useState('')
-
+  const [camera, setCamera] = useState(cameraConfig)
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
-
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
 
@@ -43,6 +37,8 @@ function App () {
     setFacility('')
     setTab(tab)
   }
+
+  const isContentActive = tab !== 'site' && content !== ''
 
   const handleFacilityClick = facilityId => {
     setTab('site')
@@ -60,11 +56,49 @@ function App () {
     setLoading(!isLoading)
     setCoverActive(!coverActive)
   }
-  console.log('cameraName xxx', cameraName)
 
-  return data['/site'].slides.map((item, index) => {
-    return <Card setCameraName={setCameraName} item={item} index />
-  })
+  const sections = () => {
+    return data['/site'].slides.map((item, index) => {
+      return <Section setCamera={setCamera} item={item} index />
+    })
+  }
+
+  return (
+    <>
+      {/* <Loader /> */}
+      <Cover
+        key='cover'
+        coverActive={coverActive}
+        handleCoverClick={handleCoverClick}
+        setContent={setContent}
+      />
+      <Header handleClick={setContent} enableClose={content !== ''} />
+
+      {isContentActive && (
+        <Content key={content} content={content} setContent={setContent} />
+      )}
+
+      <CanvasWrapper
+        key='canvas'
+        selectedFacility={facility}
+        handleFacilityClick={handleFacilityClick}
+        hoverName={hoverName}
+        setHoverName={setHoverName}
+        handleCanvasClick={handleCanvasClick}
+        camera={camera}
+        cameras={cameras}
+      />
+      <Menu
+        setContent={setContent}
+        selectedFacility={facility}
+        handleMenuClick={handleFacilityClick}
+        hoverName={hoverName}
+        tab={tab}
+        handleContextUpdate={handleContextUpdate}
+      />
+      <div className='scroller'>{sections()}</div>
+    </>
+  )
 }
 
 export default App

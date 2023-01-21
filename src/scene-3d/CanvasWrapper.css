@@ -2,9 +2,8 @@
   cursor: pointer;
   position: fixed;
   background-color: #282c34;
-
+  z-index: 100;
 }
-
 
 canvas {
   height: 100%;
