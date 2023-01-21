@@ -10,6 +10,7 @@ import { Globals } from '@react-spring/shared'
 Globals.assign({
   frameLoop: 'always'
 })
+// https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
 
 // position: new THREE.Vector3(
 //   camera.position[0],
@@ -19,10 +20,15 @@ Globals.assign({
 // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
 const Camera = ({ camera: activeCamera }) => {
   const cameraRef = useRef(null)
-  
   const { camera } = useThree()
+  // controls = new THREE.OrbitControls( camera, renderer.domElement )
   const fromQuat = new THREE.Quaternion()
   const toQuat = new THREE.Quaternion()
+
+  const hash = window.location.hash
+
+  console.log('hash', hash)
+  const cameraState = useThree(state => state.camera)
   if (cameraRef.current != undefined) {
     fromQuat.copy(cameraRef.current.quaternion)
   }
@@ -30,7 +36,7 @@ const Camera = ({ camera: activeCamera }) => {
   // if (cameraRef.current != undefined) {
   //   const cameraControls = CameraControls({cameraRef})
   // }
-  
+
   toQuat.setFromEuler(
     new THREE.Euler(
       activeCamera.rotation[0],
@@ -53,7 +59,7 @@ const Camera = ({ camera: activeCamera }) => {
         toQuat,
         cont.value.alpha
       )
-// camera.zoom = 2
+      // camera.zoom = 2
       camera.updateProjectionMatrix()
     }
   })
@@ -75,7 +81,6 @@ const Camera = ({ camera: activeCamera }) => {
 
   return (
     <animated.group position={springs.position}>
-      
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault
@@ -84,32 +89,33 @@ const Camera = ({ camera: activeCamera }) => {
         near={activeCamera.near}
         far={activeCamera.far}
       />
+      {hash === '#debug' && (
+        <OrbitControls
+          camera={cameraState}
+          // enableZoom
+          // enableRotate
+          maxDistance={5000}
+          minDistance={10}
+          // maxZoom={1}
+          // zoom
+          autoRotate
+          autoRotateSpeed={0.3}
 
-      {/* 
-      <OrbitControls
-        camera={cameraRef}
-        // makeDefault
-        autoRotate
-        autoRotateSpeed={0.3}
-        ref={orbitControlesRef}
-        // target == camera.lookat
-        // enableZoom
-        enableRotate
-        enableDamping
-        dampingFactor={0.01}
-        maxAzimuthAngle={Math.PI / 4}
-        minAzimuthAngle={Math.PI / 2}
-        maxPolarAngle={angleToRadians(80)}
-        minPolarAngle={angleToRadians(30)}
-        maxDistance={600}
-        minDistance={10}
-
-        // maxZoom={10}
-        // minZoom
-        // // zoom0
-        // zoomSpeed={0.3}
-        // update
-      /> */}
+          // enableDamping
+          // dampingFactor={0.01}
+          // maxAzimuthAngle={Math.PI / 4}
+          // minAzimuthAngle={Math.PI / 2}
+          // maxPolarAngle={angleToRadians(80)}
+          // minPolarAngle={angleToRadians(30)}
+          // makeDefault
+          // // ref={orbitControlesRef}
+          // target == camera.lookat
+          // minZoom
+          // // zoom0
+          // zoomSpeed={0.3}
+          // update
+        />
+      )}
     </animated.group>
   )
 }

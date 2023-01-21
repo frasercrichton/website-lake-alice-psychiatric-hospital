@@ -10,11 +10,16 @@
     "type": "significant",
     "content": "The Maximum Security Unit opened in 1965 and was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985."
   },
-
   {
     "id": "Doctors'_Houses",
     "name": "Doctors' Villas",
     "type": "significant"
+  },
+  {
+    "id": "ChildrensVilla",
+    "name": "Childrens' Unit",
+    "type": "significant",
+    "content": "Boys ."
   },
   {
     "id": "ChildrensVillaBoys",

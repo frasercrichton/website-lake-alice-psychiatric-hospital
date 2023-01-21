@@ -12,7 +12,9 @@ const StateCareFacilities = lineCentre => {
     return (
       <>
         <Marker markerCoordinates={coordinates} title={item[0]} {...marker} />
-        <Line lineCentre={lineCentre} markerCoordinates={coordinates} />
+        {item[3] && (
+          <Line lineCentre={lineCentre} markerCoordinates={coordinates} />
+        )}
       </>
     )
   })

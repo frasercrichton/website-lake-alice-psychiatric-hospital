@@ -11,14 +11,15 @@ div .menu-item {
   width: 240px;
 }
 
-div.menu-item:hover, .menu-item.clicked {
-  background-color: rgba(255, 255, 255, 0.7);
+div.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid white;
 }
 
-.menu-item.hover, .menu-item.clicked {
-  background-color: rgba(255, 255, 250, 0.7);
+.menu-item.clicked {
+  background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid white;
+  opacity: 1; 
 }
 
 .menu-item .icon::before {

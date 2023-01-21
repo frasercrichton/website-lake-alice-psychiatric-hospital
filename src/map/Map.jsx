@@ -30,8 +30,6 @@ const Map = ({
     dynamicCoordinates.latitude,
     dynamicCoordinates.longitude
   )
-  const marker = { fillColor: '#a9a9a9', radius: '20' }
-  // const map = useMap()
   const [fillOpacity, setFillOpacity] = useState('0')
 
   function ZoomEnd ({ fillOpacity, setFillOpacity }) {
@@ -71,10 +69,12 @@ const Map = ({
         <AnimateZoom centreCoordinates={centreCoordinates} zoom={dynamicZoom} />
         {fillOpacity !== '0' && (
           <>
+            {/* Lake Alice Location Marker */}
             <Marker
               markerCoordinates={initialCentreCoordinates}
               fillOpacity={fillOpacity}
-              {...marker}
+              fillColor='#a9a9a9'
+              radius='20'
             />
             <StateCareFacilities lineCentre={initialCentreCoordinates} />
           </>
