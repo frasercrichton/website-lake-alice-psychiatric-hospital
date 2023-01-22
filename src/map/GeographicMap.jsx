@@ -3,13 +3,13 @@ import { LatLng, LatLngBounds } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import Marker from './components/Marker'
 import StateCareFacilities from './StateCareFacilities'
-import './Map.css'
+import './GeographicMap.css'
 import AnimateZoom from './AnimateZoom'
 const MAP_BOX_KEY = process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_KEY
 const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
-const Map = ({
+function GeographicMap ({
   mapZoom,
   maxZoom,
   minZoom,
@@ -18,7 +18,7 @@ const Map = ({
   initialMapCentre,
   dynamicZoom,
   dynamicCoordinates
-}) => {
+}) {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
   const bounds = new LatLngBounds(southWest, northEast)
@@ -83,4 +83,4 @@ const Map = ({
     </div>
   )
 }
-export default Map
+export default GeographicMap

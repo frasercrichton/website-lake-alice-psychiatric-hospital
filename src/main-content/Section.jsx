@@ -2,7 +2,7 @@ import React, { useState, useEffect, CSSProperties } from 'react'
 import './Section.css'
 import { InView, useInView } from 'react-intersection-observer'
 
-function Section ({ setCamera, item, index }) {
+function Section ({ setSectionInView, setCamera, item, index }) {
   const { ref, inView, entry } = useInView({
     // key: index,
     threshold: 0.5,
@@ -10,7 +10,7 @@ function Section ({ setCamera, item, index }) {
 
     onChange: (inView, ref, entry) => {
       if (inView) {
-        setCamera(item.camera)
+        setSectionInView(item)
       }
     }
   })
@@ -32,9 +32,7 @@ function Section ({ setCamera, item, index }) {
       </div>
       <div key={index} style={{ ...defaultStyle }} className='content-block'>
         <div>{item.header}</div>
-        <div style={{ width: '50%' }}>
-          {item.text}
-        </div>
+        <div style={{ width: '50%' }}>{item.text}</div>
       </div>
     </div>
   )

@@ -20,7 +20,6 @@ const CanvasWrapper = ({
   setHoverName,
   handleCanvasClick,
   camera,
-  cameras
 }) => {
   const aspectRatio = {
     width: 1920,
@@ -63,7 +62,6 @@ const CanvasWrapper = ({
             handleFacilityClick={handleFacilityClick}
             hoverName={hoverName}
             setHoverName={setHoverName}
-            cameras={cameras}
           />
         </Suspense>
       </Canvas>

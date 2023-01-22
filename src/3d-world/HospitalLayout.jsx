@@ -9,7 +9,6 @@ const HospitalLayout = ({
   selectedFacility,
   handleFacilityClick,
   hoverName,
-  cameras,
   setHoverName
 }) => {
   const { nodes, materials } = useLoader(GLTFLoader, GLB_LOCATION, loader => {
@@ -26,6 +25,7 @@ const HospitalLayout = ({
       }
     }
     const output = Object.keys(nodes).map((key, index) => {
+      
       if (nodes[key].type === 'PerspectiveCamera') {
         const camera = nodes[key]
         const cameraConfig = {
@@ -41,7 +41,6 @@ const HospitalLayout = ({
           far: camera.far
         }
 
-        cameras.set(key, cameraConfig)
       }
 
       if (nodes[key].type === 'Mesh') {

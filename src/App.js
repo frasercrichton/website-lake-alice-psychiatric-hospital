@@ -10,6 +10,20 @@ import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader'
 import data from './config/section-content'
 import Section from './main-content/Section'
+import mapDisplay from './map/mapDisplay.json'
+import GeographicMap from './map/GeographicMap'
+
+const { zoom, centre, maxBounds } = mapDisplay
+const dynamicZoom = 6.5
+const lakeAliceCoordinates = { latitude: -40.1254336, longitude: 175.3369864 }
+const mapZoomDimensions = {
+  zoomSnap: zoom.zoomSnap,
+  mapZoom: zoom.default,
+  minZoom: zoom.minZoomCityBlock,
+  maxZoom: zoom.maxZoomContinent,
+  maxBounds: maxBounds,
+  initialMapCentre: lakeAliceCoordinates
+}
 
 const defaultCameraConfig = {
   position: [0, 600, 400],
@@ -26,12 +40,17 @@ function App () {
   const hash = window.location.hash
 
   const [camera, setCamera] = useState(defaultCameraConfig)
-  const cameras = new Map()
+  const [sectionInView, setSectionInView] = useState('')
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
+
+  useEffect(() => {
+    console.log()
+    setCamera(sectionInView.camera)
+  }, [sectionInView])
 
   const handleCanvasClick = () => {
     setFacility('')
@@ -50,14 +69,10 @@ function App () {
     setHoverName('')
     const activeFacility = facilityId === facility ? '' : facilityId
     setFacility(activeFacility)
-    const activeCamera = cameras.get(activeFacility + 'Camera')
 
-    if (activeCamera) {
-      setCamera(activeCamera)
-    } else {
+    if (!camera) {
       setCamera(defaultCameraConfig)
     }
-    // default camera
   }
 
   const handleCoverClick = () => {
@@ -67,10 +82,10 @@ function App () {
 
   const sections = () => {
     return data['/site'].slides.map((item, index) => {
-      return <Section setCamera={setCamera} item={item} index />
+      return <Section setSectionInView={setSectionInView} item={item} index />
     })
   }
-
+  console.log('view', sectionInView)
   return (
     <div className='site-container'>
       {hash === 'debug' && <Leva oneLineLabels />}
@@ -88,16 +103,26 @@ function App () {
         <Content key={content} content={content} setContent={setContent} />
       )}
 
-      <CanvasWrapper
-        key='canvas'
-        selectedFacility={facility}
-        handleFacilityClick={handleFacilityClick}
-        hoverName={hoverName}
-        setHoverName={setHoverName}
-        handleCanvasClick={handleCanvasClick}
-        camera={camera}
-        cameras={cameras}
-      />
+      {sectionInView.view === '3d' && (
+        <CanvasWrapper
+          key='canvas'
+          selectedFacility={facility}
+          handleFacilityClick={handleFacilityClick}
+          hoverName={hoverName}
+          setHoverName={setHoverName}
+          handleCanvasClick={handleCanvasClick}
+          camera={camera}
+        />
+      )}
+
+      {sectionInView.view === 'map' && (
+        <GeographicMap
+          {...mapZoomDimensions}
+          dynamicZoom={dynamicZoom}
+          dynamicCoordinates={centre}
+        />
+      )}
+
       <Menu
         setContent={setContent}
         selectedFacility={facility}
