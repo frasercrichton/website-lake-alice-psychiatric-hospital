@@ -21,7 +21,7 @@ const Marker = ({
       radius={radius}
       stroke={stroke}
     >
-      {title !== '' && <Tooltip permanent>{title}</Tooltip>}
+      {/* {title !== '' && <Tooltip permanent>{title}</Tooltip>} */}
     </CircleMarker>
   )
 }

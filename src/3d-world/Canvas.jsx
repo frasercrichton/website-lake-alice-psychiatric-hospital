@@ -48,10 +48,14 @@ const CanvasWrapper = ({
           toneMappingExposure: 1.5,
           pixelRatio: Math.min(window.devicePixelRatio, 2),
           clearColor: lookAndFeelControls['World'],
-          sizes: sizes
+          shadowMap: {autoUpdate: false, needsUpdate: true}, // static scene where lights don't move no need to update
+          sizes: sizes,
         }}
         onPointerMissed={() => handleCanvasClick()}
       >
+        {/*           
+                  antialias: true, - only add if there is antialiasing needed
+        powerPreference: 'high-performance',  only set if there are frane rate issues */}
         <Camera camera={camera} />
         <color args={[lookAndFeelControls['World']]} attach='background' />
         <Suspense fallback={<ThreeLoader />}>

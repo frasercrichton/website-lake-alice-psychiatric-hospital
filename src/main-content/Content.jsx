@@ -38,13 +38,6 @@ const Content = ({ content }) => {
         {content === 'testimony' && (
           <Video url='https://vimeo.com/689154638' caption='Malcolm Richards' />
         )}
-        {content === 'location' && (
-          <GeographicMap
-            {...mapZoomDimensions}
-            dynamicZoom={dynamicZoom}
-            dynamicCoordinates={centre}
-          />
-        )}
       </div>
     </div>
   )

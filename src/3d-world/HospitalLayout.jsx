@@ -18,6 +18,8 @@ const HospitalLayout = ({
     loader.setDRACOLoader(dracoLoader)
   })
 
+
+  //  TODO - create building material etc once and pass the refreence
   const Facilities = ({ handleFacilityClick }) => {
     const handleHover = (id, e) => {
       if (!selectedFacility !== '') {

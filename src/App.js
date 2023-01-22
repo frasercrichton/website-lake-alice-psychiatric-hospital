@@ -12,6 +12,7 @@ import data from './config/section-content'
 import Section from './main-content/Section'
 import mapDisplay from './map/mapDisplay.json'
 import GeographicMap from './map/GeographicMap'
+import Stats from 'stats.js'
 
 const { zoom, centre, maxBounds } = mapDisplay
 const dynamicZoom = 6.5
@@ -33,6 +34,11 @@ const defaultCameraConfig = {
   near: 10,
   far: 10000
 }
+
+const stats = new Stats()
+stats.showPanel(0)
+document.body.appendChild(stats.dom)
+
 
 function App () {
   const [facility, setFacility] = useState('')
