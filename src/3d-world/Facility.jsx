@@ -15,7 +15,6 @@ const Facility = ({
   hoverName
 }) => {
   const mesh = useRef()
-  const isAnnotation = node.name
   const facilityId = node.name
   const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
   const findFacility = id => facilities.find(facility => facility.id === id)
@@ -39,27 +38,30 @@ const Facility = ({
     : null
 
   const lookAndFeelControls = LookAndFeelControls()
+  const y = hasShadow ? node.position.y - 0.5 : node.position.y
 
   return (
     <mesh
       ref={mesh}
       name={facilityId}
       geometry={node.geometry}
-      material={material}
+      material={node.material}
       {...meshEvents}
       {...meshOnclick}
       // onPointerLeave={e => alert('left')}
+      side={THREE.FrontSide}
+          
       receiveShadow
       castShadow={hasShadow}
-      position={[node.position.x, node.position.y, node.position.z ]}
+      position={[node.position.x, y, node.position.z]}
     >
       {isFacility && (
-        <meshStandardMaterial
-          // metalness={0.1}
+        <meshPhongMaterial
+          metalness={1}
           side={THREE.DoubleSide}
           attach='material'
           color={lookAndFeelControls['Building']}
-          transparent
+          // transparent
           opacity={1}
         />
       )}

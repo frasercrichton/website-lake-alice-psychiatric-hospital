@@ -16,7 +16,7 @@ function Section ({ setCamera, item, index }) {
   })
 
   const defaultStyle: CSSProperties = {
-    height: '101vh',
+    verticalAlign: 'top',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -26,15 +26,17 @@ function Section ({ setCamera, item, index }) {
     color: '#fff'
   }
   return (
-    <>
+    <div style={{ height: '101vh' }}>
       <div key={('x-', index)} ref={ref} className='inview-block'>
+        x
       </div>
-
       <div key={index} style={{ ...defaultStyle }} className='content-block'>
-        <h2>{item.header}</h2>
-        <div style={{ width: '50%' }}>{item.text}</div>
+        <div>{item.header}</div>
+        <div style={{ width: '50%' }}>
+          {item.text}
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
