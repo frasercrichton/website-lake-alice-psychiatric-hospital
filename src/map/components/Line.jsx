@@ -7,7 +7,7 @@ const Line = ({ lineCentre, markerCoordinates }) => {
       className='map-line'
       key={1}
       positions={[
-        [lineCentre.lineCentre.lat, lineCentre.lineCentre.lng],
+        [lineCentre.lat, lineCentre.lng],
         [markerCoordinates.lat, markerCoordinates.lng]
       ]}
       color={'grey'}

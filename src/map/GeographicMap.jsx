@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { LatLng, LatLngBounds } from 'leaflet'
-import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
+import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet'
 import Marker from './components/Marker'
 import StateCareFacilities from './StateCareFacilities'
 import './GeographicMap.css'
@@ -10,14 +10,9 @@ const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
 function GeographicMap ({
-  mapZoom,
-  maxZoom,
-  minZoom,
-  zoomSnap,
+  visibleMapLayers,
   maxBounds,
-  initialMapCentre,
-  dynamicZoom,
-  dynamicCoordinates
+  initialMapCentre
 }) {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
@@ -26,37 +21,36 @@ function GeographicMap ({
     initialMapCentre.latitude,
     initialMapCentre.longitude
   )
-  const centreCoordinates = new LatLng(
-    dynamicCoordinates.latitude,
-    dynamicCoordinates.longitude
-  )
-  const [fillOpacity, setFillOpacity] = useState('0')
 
-  function ZoomEnd ({ fillOpacity, setFillOpacity }) {
-    const mapEvents = useMapEvents({
-      zoomend: () => {
-        setFillOpacity('0.7')
-      }
-    })
-    return null
+  // function ZoomEnd ({ fillOpacity, setFillOpacity }) {
+  //   const mapEvents = useMapEvents({
+  //     zoomend: () => {
+  //       setFillOpacity('0.7')
+  //     }
+  //   })
+  //   return null
+  // }
+
+  // TODO transition
+  function FitBounds () {
+    const map = useMap()
+    useEffect(() => {
+      map.fitBounds(bounds)
+    }, [maxBounds])
   }
 
   return (
     <div className='map-container'>
       <MapContainer
         className='map'
-        center={initialCentreCoordinates}
-        zoomSnap={zoomSnap}
-        zoom={mapZoom}
-        maxZoom={maxZoom}
-        minZoom={minZoom}
+        zoomControl={false}
         touchZoom={false}
         scrollWheelZoom={false}
         maxBounds={bounds}
-        fitBounds={maxBounds}
+        // fitBounds={maxBounds}
         attributionControl={false}
       >
-        <ZoomEnd fillOpacity={fillOpacity} setFillOpacity={setFillOpacity} />
+        <FitBounds />
         <TileLayer
           url={`https://api.mapbox.com/styles/v1/${MAP_BOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${MAP_BOX_KEY}&fresh=true`}
           attribution='Map data &copy;
@@ -66,19 +60,19 @@ function GeographicMap ({
           Imagery &copy;
           <a  target="_blank" rel="noreferrer" href="https://www.mapbox.com/">Mapbox</a>'
         />
-        <AnimateZoom centreCoordinates={centreCoordinates} zoom={dynamicZoom} />
-        {fillOpacity !== '0' && (
-          <>
-            {/* Lake Alice Location Marker */}
-            <Marker
-              markerCoordinates={initialCentreCoordinates}
-              fillOpacity={fillOpacity}
-              fillColor='#a9a9a9'
-              radius='20'
-            />
-            <StateCareFacilities lineCentre={initialCentreCoordinates} />
-          </>
-        )}
+        <>
+          {/* Lake Alice Location Marker */}
+          <Marker
+            markerCoordinates={initialCentreCoordinates}
+            // fillOpacity={fillOpacity}
+            fillColor='#a9a9a9'
+            radius='20'
+          />
+          <StateCareFacilities
+            visibleMapLayers={visibleMapLayers}
+            lineCentre={initialCentreCoordinates}
+          />
+        </>
       </MapContainer>
     </div>
   )

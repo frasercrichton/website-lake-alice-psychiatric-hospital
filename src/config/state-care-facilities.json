@@ -1,0 +1,164 @@
+[
+  {
+    "facility": "Kohitere Boy's Training Centre (1/1/1965)",
+    "latitude": -40.6310718,
+    "longitude": 175.2549856,
+    "feeder": true,
+    "opened": "1/1/1906"
+  },
+  {
+    "facility": "Hokio Beach School",
+    "latitude": -40.593763,
+    "longitude": 175.191754,
+    "opened": "1/1/1945",
+    "feeder": true
+  },
+  {
+    "facility": "Epuni (Awakairangi Lower Hutt)",
+    "latitude": -41.2047946,
+    "longitude": 174.9112202,
+    "opened": "1/1/1959",
+    "feeder": false
+  },
+  {
+    "facility": "Beck House (Ahuriri Napier)",
+    "latitude": -39.387985,
+    "longitude": 176.8245523,
+    "opened": "1/1/1977",
+    "feeder": false
+  },
+  {
+    "facility": "Holdsworth (Whanganui)",
+    "latitude": -39.9111424,
+    "longitude": 175.0276511,
+    "opened": "1/1/1971",
+    "feeder": true
+  },
+  {
+    "facility": "Ōwairaka Boys' Home",
+    "latitude": -36.8937188,
+    "longitude": 174.711323,
+    "opened": "1/1/1958",
+    "feeder": false
+  },
+  {
+    "facility": "Stanmore Road Boys' Home",
+    "latitude": -43.5264989,
+    "longitude": 172.654868,
+    "opened": "1/1/1940",
+    "feeder": false
+  },
+  {
+    "facility": "Lookout Point Boys' Home (Ōtepoti Dunedin)",
+    "latitude": -45.8955184,
+    "longitude": 170.4632508,
+    "opened": "1/1/1938",
+    "feeder": false
+  },
+  {
+    "facility": "Melville Boys' Home (Kirikiriroa Hamilton)",
+    "latitude": -37.8146701,
+    "longitude": 175.2605536,
+    "opened": "1/1/1959",
+    "feeder": false
+  },
+  {
+    "facility": "Wesleydale Boys' Home (Tāmaki Makaurau Auckland)",
+    "latitude": -36.893735,
+    "longitude": 174.7025682,
+    "opened": "1/1/1976",
+    "closed": "1/1/1985",
+    "feeder": false
+  },
+  {
+    "facility": "Fareham House (Paetūmōkai Featherston)",
+    "latitude": -41.1076203,
+    "longitude": 175.3308658,
+    "opened": "1/1/1944",
+    "feeder": false
+  },
+  {
+    "facility": "Kingslea (Ōtautahi Christchurch)",
+    "latitude": -43.5044776,
+    "longitude": 172.6670116,
+    "opened": "1/1/1965",
+    "feeder": false
+  },
+  {
+    "facility": "Weymouth (Tāmaki Makaurau Auckland)",
+    "latitude": -37.0367257,
+    "longitude": 174.8668855,
+    "opened": "1/1/1973",
+    "feeder": false
+  },
+  {
+    "facility": "Bollard Girls’ Home (Tāmaki Makaurau Auckland)",
+    "latitude": -36.8979074,
+    "longitude": 174.7033321,
+    "opened": "1/1/1972",
+    "feeder": false
+  },
+  {
+    "facility": "Allendale Girls' Home",
+    "latitude": -36.8927778,
+    "longitude": 174.9325335,
+    "opened": "1/1/1961",
+    "feeder": false
+  },
+  {
+    "facility": "Strathmore Girls’ Home (Ōtautahi Christchurch)",
+    "latitude": -43.5496018,
+    "longitude": 172.6431064,
+    "feeder": false
+  },
+  {
+    "facility": "Dey Street (Kirikiriroa Hamilton)",
+    "latitude": -37.7912426,
+    "longitude": 175.3035478,
+    "opened": "1/1/1970",
+    "feeder": false
+  },
+  {
+    "facility": "Elliot Street (Ōtepoti Dunedin)",
+    "latitude": -45.8964355,
+    "longitude": 170.525908,
+    "opened": "1/1/1921",
+    "closed": "1/1/1972",
+    "feeder": false
+  },
+  {
+    "facility": "Margaret Street (Te Papaioea Palmerston North)",
+    "latitude": -40.3445648,
+    "longitude": 175.6300665,
+    "opened": "1/1/1946",
+    "feeder": false
+  },
+  {
+    "facility": "Miramar (Te Whanganui-a-Tara Wellington)",
+    "latitude": -41.3128907,
+    "longitude": 174.8016346,
+    "opened": "1/1/1950",
+    "feeder": false
+  },
+  {
+    "facility": "Moerangi Treks",
+    "latitude": -38.3026775,
+    "longitude": 176.5075098,
+    "opened": "1/1/1993",
+    "feeder": false
+  },
+  {
+    "facility": "Whakapakari (Great Barrier Island)",
+    "latitude": -36.1992371,
+    "longitude": 175.2884516,
+    "feeder": false
+  },
+  {
+    "facility": "Salisbury School (Whakatū Nelson)",
+    "latitude": -41.3377583,
+    "longitude": 173.1930835,
+    "feeder": false,
+    "opened": "1/1/1916",
+    "closed": "1/1/1998"
+  }
+]

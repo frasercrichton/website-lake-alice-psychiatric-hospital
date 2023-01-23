@@ -1,6 +1,6 @@
 import React from 'react'
 import './Menu.css'
-import facilities from './data/facilities.json'
+import facilities from './config/facilities.json'
 import MenuItem from './components/MenuItem'
 const Menu = ({
   setContent,

@@ -10,21 +10,9 @@ import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader'
 import data from './config/section-content'
 import Section from './main-content/Section'
-import mapDisplay from './map/mapDisplay.json'
 import GeographicMap from './map/GeographicMap'
 import Stats from 'stats.js'
-
-const { zoom, centre, maxBounds } = mapDisplay
-const dynamicZoom = 6.5
 const lakeAliceCoordinates = { latitude: -40.1254336, longitude: 175.3369864 }
-const mapZoomDimensions = {
-  zoomSnap: zoom.zoomSnap,
-  mapZoom: zoom.default,
-  minZoom: zoom.minZoomCityBlock,
-  maxZoom: zoom.maxZoomContinent,
-  maxBounds: maxBounds,
-  initialMapCentre: lakeAliceCoordinates
-}
 
 const defaultCameraConfig = {
   position: [0, 600, 400],
@@ -35,26 +23,37 @@ const defaultCameraConfig = {
   far: 10000
 }
 
-const stats = new Stats()
-stats.showPanel(0)
-document.body.appendChild(stats.dom)
+const hash = window.location.hash
 
+if (hash === '#debug') {
+  const stats = new Stats()
+  stats.showPanel(0)
+  document.body.appendChild(stats.dom)
+}
 
 function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
-  const hash = window.location.hash
-
   const [camera, setCamera] = useState(defaultCameraConfig)
+  // TODO -  useState('') >  useState(null)
   const [sectionInView, setSectionInView] = useState('')
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [isLoading, setLoading] = useState(true)
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
+  const mapZoomDimensions = {
+    maxBounds: sectionInView.map ? sectionInView.map.bounds : null,
+    initialMapCentre: lakeAliceCoordinates
+  }
+
+  const centre = sectionInView.map ? sectionInView.map.centre : null
+  const visibleMapLayers =
+    sectionInView.map && sectionInView.map.visibleMapLayers
+      ? sectionInView.map.visibleMapLayers
+      : null
 
   useEffect(() => {
-    console.log()
     setCamera(sectionInView.camera)
   }, [sectionInView])
 
@@ -91,7 +90,7 @@ function App () {
       return <Section setSectionInView={setSectionInView} item={item} index />
     })
   }
-  console.log('view', sectionInView)
+
   return (
     <div className='site-container'>
       {hash === 'debug' && <Leva oneLineLabels />}
@@ -123,9 +122,8 @@ function App () {
 
       {sectionInView.view === 'map' && (
         <GeographicMap
+          visibleMapLayers={visibleMapLayers}
           {...mapZoomDimensions}
-          dynamicZoom={dynamicZoom}
-          dynamicCoordinates={centre}
         />
       )}
 

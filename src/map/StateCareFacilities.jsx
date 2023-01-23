@@ -2,17 +2,23 @@ import React from 'react'
 import Marker from './components/Marker'
 import Line from './components/Line'
 import { LatLng } from 'leaflet'
-import stateCareFacilities from '../data/state-care-facilities.json'
+// TODO inject
+import stateCareFacilities from '../config/state-care-facilities.json'
 
-const StateCareFacilities = lineCentre => {
+const StateCareFacilities = ({ visibleMapLayers, lineCentre }) => {
+  // console.log('visibleMapLayers', visibleMapLayers.pathways)
   const marker = { fillColor: '#000000', radius: '5' }
-
-  return stateCareFacilities.map((item, index) => {
-    const coordinates = new LatLng(item[1], item[2])
+  const isPathways = visibleMapLayers && visibleMapLayers.pathways
+  return stateCareFacilities.map((facility, index) => {
+    const coordinates = new LatLng(facility.latitude, facility.longitude)
     return (
       <>
-        <Marker markerCoordinates={coordinates} title={item[0]} {...marker} />
-        {item[3] && (
+        <Marker
+          markerCoordinates={coordinates}
+          title={facility.facility}
+          {...marker}
+        />
+        {facility.feeder && isPathways && (
           <Line lineCentre={lineCentre} markerCoordinates={coordinates} />
         )}
       </>
@@ -20,3 +26,8 @@ const StateCareFacilities = lineCentre => {
   })
 }
 export default StateCareFacilities
+
+// visibleMapLayers: { sectionInView.visibleMapLayers.pathways
+//   centrePoint: true,
+//   pathways: true
+// }

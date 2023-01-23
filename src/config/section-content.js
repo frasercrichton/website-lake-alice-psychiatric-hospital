@@ -68,7 +68,60 @@ const data = {
       {
         index: 5,
         header: 'Location',
-        text: 'The Map',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+        view: 'map',
+        map: {
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-40.131247, 175.324802],
+            northEast: [-40.121239, 175.347301]
+          }
+        }
+      },
+      {
+        index: 6,
+        header: 'Aotearoa',
+        text: 'The Aotearoa',
+        view: 'map',
+        map: {
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-40.212047, 175.12928],
+            northEast: [-40.051928, 175.489254]
+          }
+        }
+      },
+
+      {
+        index: 7,
+        header: 'Aotearoa Pathways',
+        text: 'The Map Aotearoa',
+        view: 'map',
+        map: {
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-41.453020, 173.111572],
+            northEast: [-39.719863, 177.264404]
+          },
+          visibleMapLayers: {
+            centrePoint: true,
+            pathways: true
+          }
+        }
+      },
+      {
+        index: 8,
+        header: 'Aotearoa Wide',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
         map: {
           centre: {
@@ -78,10 +131,6 @@ const data = {
           bounds: {
             southWest: [-45.59589790007943, 157.09106084377453],
             northEast: [-35.574503782518356, 189.78093879433226]
-          },
-          visibleMapLayers: {
-            the_48: 0,
-            small_settlements: 0.9
           }
         }
       }
@@ -89,7 +138,6 @@ const data = {
   }
 }
 export default data
-
 
 // "location":{
 //   "title": "Location",
@@ -99,6 +147,8 @@ export default data
 //       "caption": "No. 7 Line, State Highway 3 2km from Bulls",
 //       "url": "https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg",
 //        "id": "location"
-//     }  
+//     }
 //   ]
 // },
+
+//

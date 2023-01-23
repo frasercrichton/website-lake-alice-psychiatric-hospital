@@ -7,7 +7,7 @@ const Marker = ({
   title,
   fill,
   fillColor,
-  fillOpacity,
+  // fillOpacity,
   radius,
   stroke
 }) => {
@@ -17,11 +17,11 @@ const Marker = ({
       center={markerCoordinates}
       fill={fill}
       fillColor={fillColor}
-      fillOpacity={fillOpacity}
+      // fillOpacity={fillOpacity}
       radius={radius}
       stroke={stroke}
     >
-      {/* {title !== '' && <Tooltip permanent>{title}</Tooltip>} */}
+      {title !== '' && <Tooltip permanent>{title}</Tooltip>}
     </CircleMarker>
   )
 }

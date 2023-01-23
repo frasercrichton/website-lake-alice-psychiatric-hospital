@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './Facility.css'
 import Label from './Label'
-import facilities from '../data/facilities.json'
+import facilities from '../config/facilities.json'
 import LookAndFeelControls from '../controls/LookAndFeel'
 import * as THREE from 'three'
 
@@ -50,7 +50,6 @@ const Facility = ({
       {...meshOnclick}
       // onPointerLeave={e => alert('left')}
       side={THREE.FrontSide}
-          
       receiveShadow
       castShadow={hasShadow}
       position={[node.position.x, y, node.position.z]}

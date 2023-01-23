@@ -18,7 +18,6 @@ const HospitalLayout = ({
     loader.setDRACOLoader(dracoLoader)
   })
 
-
   //  TODO - create building material etc once and pass the refreence
   const Facilities = ({ handleFacilityClick }) => {
     const handleHover = (id, e) => {
@@ -27,7 +26,6 @@ const HospitalLayout = ({
       }
     }
     const output = Object.keys(nodes).map((key, index) => {
-      
       if (nodes[key].type === 'PerspectiveCamera') {
         const camera = nodes[key]
         const cameraConfig = {
@@ -42,7 +40,6 @@ const HospitalLayout = ({
           near: camera.near,
           far: camera.far
         }
-
       }
 
       if (nodes[key].type === 'Mesh') {
