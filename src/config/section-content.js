@@ -67,7 +67,7 @@ const data = {
       },
       {
         index: 5,
-        header: 'Location',
+        header: 'Lake Alice Site',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
         map: {
@@ -76,15 +76,16 @@ const data = {
             longitude: 173.4506545
           },
           bounds: {
-            southWest: [-40.131247, 175.324802],
-            northEast: [-40.121239, 175.347301]
+            southWest: [-40.128745, 175.33124],
+            northEast: [-40.123741, 175.342489]
           }
         }
       },
       {
         index: 6,
-        header: 'Aotearoa',
-        text: 'The Aotearoa',
+        header: 'Lake Alice Isolation',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+
         view: 'map',
         map: {
           centre: {
@@ -97,11 +98,10 @@ const data = {
           }
         }
       },
-
       {
         index: 7,
-        header: 'Aotearoa Pathways',
-        text: 'The Map Aotearoa',
+        header: 'Lake Alice Pathways',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
         map: {
           centre: {
@@ -109,12 +109,18 @@ const data = {
             longitude: 173.4506545
           },
           bounds: {
-            southWest: [-41.453020, 173.111572],
-            northEast: [-39.719863, 177.264404]
+            southWest: [-40.770142, 173.887482],
+            northEast: [-39.489205, 176.767273]
           },
           visibleMapLayers: {
             centrePoint: true,
-            pathways: true
+            pathways: true,
+            labels: [
+              'Hokio Beach School',
+              'Holdsworth (Whanganui)',
+              "Kohitere Boy's Training Centre (1/1/1965)"
+            ],
+            sites: ['all']
           }
         }
       },
@@ -131,6 +137,30 @@ const data = {
           bounds: {
             southWest: [-45.59589790007943, 157.09106084377453],
             northEast: [-35.574503782518356, 189.78093879433226]
+          },
+          visibleMapLayers: {
+            centrePoint: true,
+            sites: ['all']
+          }
+        }
+      },
+      {
+        index: 9,
+        header: 'Australia',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+        view: 'map',
+        map: {
+          zoom: 5,
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-51.481383, 100.810547],
+            northEast: [-6.620957, 192.963867]
+          },
+          visibleMapLayers: {
+            sites: ['none']
           }
         }
       }
@@ -139,6 +169,7 @@ const data = {
 }
 export default data
 
+//
 // "location":{
 //   "title": "Location",
 //   "text": "",
@@ -152,3 +183,5 @@ export default data
 // },
 
 //
+// southWest: [-40.770142, 173.887482],
+// northEast: [-39.489205, 176.767273]

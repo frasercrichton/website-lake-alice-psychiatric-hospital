@@ -31,8 +31,8 @@ function Section ({ setSectionInView, setCamera, item, index }) {
         x
       </div>
       <div key={index} style={{ ...defaultStyle }} className='content-block'>
-        <div>{item.header}</div>
-        <div style={{ width: '50%' }}>{item.text}</div>
+        <div style={{ color: 'black'}}>{item.header}</div>
+        <div style={{ width: '50%', color: 'black' }}>{item.text}</div>
       </div>
     </div>
   )

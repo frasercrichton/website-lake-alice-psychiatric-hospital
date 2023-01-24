@@ -42,6 +42,8 @@ function App () {
   const [isLoading, setLoading] = useState(true)
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
+  const [scrollProgress, setScrollProgress] = useState(0.3)
+
   const mapZoomDimensions = {
     maxBounds: sectionInView.map ? sectionInView.map.bounds : null,
     initialMapCentre: lakeAliceCoordinates
@@ -54,6 +56,11 @@ function App () {
       : null
 
   useEffect(() => {
+    const sectionTotalCount = data['/site'].slides.length
+    console.log('sectionTotalCount', sectionTotalCount)
+    console.log('sectionInView.index', sectionInView.index)
+    const sectionCurrentIndex = sectionInView.index
+    setScrollProgress( sectionCurrentIndex/sectionTotalCount)
     setCamera(sectionInView.camera)
   }, [sectionInView])
 
@@ -102,7 +109,7 @@ function App () {
         handleCoverClick={handleCoverClick}
         setContent={setContent}
       />
-      <Header handleClick={setContent} enableClose={content !== ''} />
+      <Header scrollProgress={scrollProgress} handleClick={setContent} enableClose={content !== ''} />
 
       {isContentActive && (
         <Content key={content} content={content} setContent={setContent} />
