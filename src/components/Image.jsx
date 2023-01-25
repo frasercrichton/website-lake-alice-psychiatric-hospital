@@ -1,6 +1,6 @@
 import style from './Image.css'
 
-const Image = ({ caption, imageAction, id, thumbnail, url }) => {
+const Image = ({ caption = '', imageAction, id, thumbnail, url }) => {
   const imageSize = thumbnail ? '320px' : '500px'
 
   return (
@@ -9,12 +9,12 @@ const Image = ({ caption, imageAction, id, thumbnail, url }) => {
         <img
           className={style.image}
           src={url}
-          width={imageSize}
+          // width={imageSize}
           alt={caption}
           onClick={e => imageAction(id)}
         />
       </div>
-      {caption !== undefined && (
+      {caption !== '' && (
         <div className={style.caption}>Caption: {caption}</div>
       )}
     </div>

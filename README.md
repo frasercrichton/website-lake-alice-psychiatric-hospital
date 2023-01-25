@@ -68,3 +68,45 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js
+
+
+## Sources
+
+Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
+Archway Item ID:R24730915
+Archway Series Number:6539
+https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143
+
+
+Title: Mental Hospitals. Publicity Caption: Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal.
+Archway Item ID:R24730910
+Archway Series Number:6539
+
+Title: Mental Hospitals. Publicity Caption: Mural, painted by inmate, day room maximum security block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
+Archway Item ID:R24730911
+Archway Series Number:6539
+https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129055
+
+Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
+Archway Item ID:R24730915
+Archway Series Number:6539
+ https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143
+
+
+Lake Alice eleven bed villas, Lake Alice Hospital c.a. 1948 Ministry of Health 
+C399174 H10 1 227 296 
+
+
+
+
+Date
+    13 December 1979
+Ref
+    EP/1979/4377/19-F
+Description
+    A former Commissioner of Police, Ken Burnside, and his wife Nancy inspect the ranks of the 72 police cadets at a ceremony in Upper Hutt. Photographed by Evening Post staff photographer Ross Giblin 13 December 1979.
+
+    Mr and Mrs Burnside are the joint patrons of the graduating wing, the first wing to be named after the couple.
+Part of
+    Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers / Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin
+https://natlib.govt.nz/records/22875316

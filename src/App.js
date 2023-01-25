@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import Header from './Header'
-import Menu from './Menu'
-import Content from './main-content/Content'
-import Cover from './Cover'
-import CanvasWrapper from './3d-world/Canvas'
+import Header from './Header.jsx'
+import Menu from './Menu.jsx'
+import Content from './main-content/Content.jsx'
+import Cover from './Cover.jsx'
+import CanvasWrapper from './3d-world/Canvas.jsx'
 import { Leva } from 'leva'
 import angleToRadians from './3d-world/angleHelper'
-import Loader from './components/Loader'
-import data from './config/section-content'
-import Section from './main-content/Section'
-import GeographicMap from './map/GeographicMap'
+import Loader from './components/Loader.jsx'
+import data from './config/chapters'
+import GeographicMap from './map/GeographicMap.jsx'
 import Stats from 'stats.js'
+import Chapters from './main-content/Chapters.jsx'
 const lakeAliceCoordinates = { latitude: -40.1254336, longitude: 175.3369864 }
 
 const defaultCameraConfig = {
@@ -46,7 +46,6 @@ function App () {
 
   const mapZoomDimensions = {
     maxBounds: sectionInView.map ? sectionInView.map.bounds : null,
-    initialMapCentre: lakeAliceCoordinates
   }
 
   const centre = sectionInView.map ? sectionInView.map.centre : null
@@ -60,7 +59,7 @@ function App () {
     console.log('sectionTotalCount', sectionTotalCount)
     console.log('sectionInView.index', sectionInView.index)
     const sectionCurrentIndex = sectionInView.index
-    setScrollProgress( sectionCurrentIndex/sectionTotalCount)
+    setScrollProgress(sectionCurrentIndex / sectionTotalCount)
     setCamera(sectionInView.camera)
   }, [sectionInView])
 
@@ -92,12 +91,6 @@ function App () {
     setCoverActive(!coverActive)
   }
 
-  const sections = () => {
-    return data['/site'].slides.map((item, index) => {
-      return <Section setSectionInView={setSectionInView} item={item} index />
-    })
-  }
-
   return (
     <div className='site-container'>
       {hash === 'debug' && <Leva oneLineLabels />}
@@ -109,7 +102,11 @@ function App () {
         handleCoverClick={handleCoverClick}
         setContent={setContent}
       />
-      <Header scrollProgress={scrollProgress} handleClick={setContent} enableClose={content !== ''} />
+      <Header
+        scrollProgress={scrollProgress}
+        handleClick={setContent}
+        enableClose={content !== ''}
+      />
 
       {isContentActive && (
         <Content key={content} content={content} setContent={setContent} />
@@ -142,7 +139,8 @@ function App () {
         tab={tab}
         handleContextUpdate={handleContextUpdate}
       />
-      <div className='scroller'>{sections()}</div>
+
+      <Chapters chapters={data['/site']} setSectionInView={setSectionInView} />
     </div>
   )
 }

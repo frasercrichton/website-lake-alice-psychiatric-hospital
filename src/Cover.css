@@ -10,7 +10,7 @@
   flex-direction: column;
   overflow: hidden;
   text-align: center;
-  z-index: 400;
+  z-index: 500;
   visibility: hidden;
   opacity: 0;
   transition: visibility 1s, opacity 1s linear;

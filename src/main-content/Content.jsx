@@ -1,9 +1,8 @@
 import './Content.css'
 // import { CSSTransition } from 'react-transition-group'
-import Video from '../components/Video'
-import Markdown from '../components/markdown/Markdown'
+import Video from '../components/Video.jsx'
+import Markdown from '../components/markdown/Markdown.jsx'
 import mapDisplay from '../map/mapDisplay.json'
-import GeographicMap from '../map/GeographicMap'
 // TODO map centre shouldn't be a default
 const { zoom, centre, maxBounds } = mapDisplay
 const dynamicZoom = 6.5
@@ -33,7 +32,7 @@ const Content = ({ content }) => {
           </div>
         )}
         {(content === 'info' || content === 'about') && (
-          <Markdown markdownContent={CDN_URL + FOLDER + content + '.md'} />
+          <Markdown markdownContent={`${CDN_URL}${FOLDER}${content}.md`} />
         )}
         {content === 'testimony' && (
           <Video url='https://vimeo.com/689154638' caption='Malcolm Richards' />

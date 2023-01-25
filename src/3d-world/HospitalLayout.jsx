@@ -1,7 +1,7 @@
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-import Facility from './Facility'
+import Facility from './Facility.jsx'
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
 const GLB_LOCATION = 'geography-detailed.glb'
 

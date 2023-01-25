@@ -1,7 +1,7 @@
 import ReactPlayer from 'react-player'
 import React, { useRef, useState, useEffect } from 'react'
 import './Video.css'
-import Loader from './Loader'
+import Loader from './Loader.jsx'
 // import '~video-react/dist/video-react.css'
 // import myVideo from 'https://vimeo.com/689154638'
 
@@ -11,6 +11,7 @@ const Video = ({ url, caption }) => {
   const playerRef = useRef()
 
   useEffect(() => {
+    // current should not be undefined here
     if (playerRef.current !== undefined) {
       const { player } = playerRef.current.getState()
       console.log(player.currentTime) // print current time

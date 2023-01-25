@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './ImageRenderer.css'
-import Loader from '../Loader'
+import Loader from '../Loader.jsx'
 
 const Image = ({ alt, src, title }) => {
   const [isLoaded, setIsLoaded] = useState(false)

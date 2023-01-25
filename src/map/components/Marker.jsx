@@ -4,31 +4,37 @@ import './Marker.css'
 
 const Marker = ({
   markerCoordinates,
-  title,
+  label,
   fill,
   fillColor,
-  // fillOpacity,
+  fillOpacity,
   radius,
-  stroke
+  stroke,
+  strokeColor
 }) => {
   return (
     <CircleMarker
+      key={markerCoordinates.lat}
       className='map-circle-marker'
       center={markerCoordinates}
       fill={fill}
       fillColor={fillColor}
-      fillOpacity={1}
+      fillOpacity={fillOpacity}
       radius={radius}
+      color={strokeColor}
       stroke={stroke}
     >
-      {title && <Tooltip permanent>{title}</Tooltip>}
+      {label && <Tooltip permanent>{label}</Tooltip>}
     </CircleMarker>
   )
 }
 Marker.defaultProps = {
+  radius: 10,
   fill: true,
+  fillOpacity: 1,
+  fillColor: '#000000',
   stroke: false,
-  fillColor: '#000000'
+  strokeColor: '#ff0000'
 }
 
 export default Marker

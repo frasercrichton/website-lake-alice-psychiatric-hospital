@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import './Facility.css'
-import Label from './Label'
+import Label from './Label.jsx'
 import facilities from '../config/facilities.json'
-import LookAndFeelControls from '../controls/LookAndFeel'
+import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 import * as THREE from 'three'
 
 const Facility = ({

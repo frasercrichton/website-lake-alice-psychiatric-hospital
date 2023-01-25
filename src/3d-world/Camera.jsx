@@ -32,7 +32,7 @@ const Camera = ({ camera: activeCamera }) => {
   if (cameraRef.current != undefined) {
     fromQuat.copy(cameraRef.current.quaternion)
   }
-
+// TODOadduseffect for useref
   // if (cameraRef.current != undefined) {
   //   const cameraControls = CameraControls({cameraRef})
   // }

@@ -1,9 +1,10 @@
-import React, { useRef } from 'react'
-import EnvironmentControls from '../controls/EnvironmentControls'
-import ShadowCameraControls from '../controls/ShadowCameraControls'
-import DirectionalLightControls from '../controls/DirectionalLightControls'
+import React, { useRef, useState  } from 'react'
+import EnvironmentControls from '../controls/EnvironmentControls.jsx'
+import ShadowCameraControls from '../controls/ShadowCameraControls.jsx'
+import DirectionalLightControls from '../controls/DirectionalLightControls.jsx'
 import * as THREE from 'three'
 import { useThree } from '@react-three/fiber'
+
 
 const Lighting = () => {
   const spotlightRef = useRef()
@@ -13,6 +14,8 @@ const Lighting = () => {
   const { scene } = useThree()
   const shadowCameraExtent = shadowCameraControls['Extent']
 
+  const { x, setX } = useState()
+  // add useeffect for useref
   if (spotlightRef.current) {
     const light = spotlightRef.current
     light.shadow.camera.near = shadowCameraControls['Near']

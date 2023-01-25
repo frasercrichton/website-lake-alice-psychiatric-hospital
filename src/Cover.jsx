@@ -5,8 +5,6 @@ import Button from './components/Button'
 // const FOLDER = '3d-visualisation/'
 
 const Cover = ({ coverActive, handleCoverClick, setContent }) => {
-  // const imageUrl =
-  //   CDN_URL + FOLDER + 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg'
   const action = () => {
     handleCoverClick()
     setContent('testimony')

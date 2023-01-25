@@ -7,9 +7,3 @@
   position: fixed;
   overflow: scroll;
 }
-
-.scroller {
-  z-index: 200;
-  position: absolute;
-  width: 100%;
-}

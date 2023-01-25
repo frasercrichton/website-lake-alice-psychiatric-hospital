@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { LatLng, LatLngBounds } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet'
-import Marker from './components/Marker'
-import StateCareFacilities from './StateCareFacilities'
+import Markers from './Markers.jsx'
+import Lines from './Lines.jsx'
+import stateCareFacilities from '../config/state-care-facilities.json'
 import './GeographicMap.css'
 import AnimateZoom from './AnimateZoom'
+
 const MAP_BOX_KEY = process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_KEY
 const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
-function GeographicMap ({
-  visibleMapLayers,
-  maxBounds,
-  initialMapCentre
-}) {
+function GeographicMap ({ visibleMapLayers, maxBounds }) {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
   const bounds = new LatLngBounds(southWest, northEast)
-  const initialCentreCoordinates = new LatLng(
-    initialMapCentre.latitude,
-    initialMapCentre.longitude
-  )
 
+  const pathways = visibleMapLayers?.pathways
   // function ZoomEnd ({ fillOpacity, setFillOpacity }) {
   //   const mapEvents = useMapEvents({
   //     zoomend: () => {
@@ -38,6 +33,8 @@ function GeographicMap ({
       map.fitBounds(bounds)
     }, [maxBounds])
   }
+
+  console.log(visibleMapLayers?.minorPoints)
 
   return (
     <div className='map-container'>
@@ -61,17 +58,24 @@ function GeographicMap ({
           <a  target="_blank" rel="noreferrer" href="https://www.mapbox.com/">Mapbox</a>'
         />
         <>
-          {/* Lake Alice Location Marker */}
-          <Marker
-            markerCoordinates={initialCentreCoordinates}
-            // fillOpacity={fillOpacity}
-            fillColor='#a9a9a9'
-            radius='20'
-          />
-          <StateCareFacilities
-            visibleMapLayers={visibleMapLayers}
-            lineCentre={initialCentreCoordinates}
-          />
+          {visibleMapLayers && (
+            <>
+              {pathways && (
+                <Lines
+                  items={stateCareFacilities}
+                  target={{
+                    label: 'Lake Alice',
+                    latitude: -40.1260585,
+                    longitude: 175.330563
+                  }}
+                />
+              )}
+              <Markers
+                majorPoints={visibleMapLayers.majorPoints}
+                minorPoints={visibleMapLayers?.minorPoints}
+              />
+            </>
+          )}
         </>
       </MapContainer>
     </div>

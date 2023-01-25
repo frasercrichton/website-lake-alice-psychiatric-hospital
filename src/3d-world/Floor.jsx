@@ -1,5 +1,5 @@
 import React from 'react'
-import LookAndFeelControls from '../controls/LookAndFeel'
+import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 
 const Floor = () => {
   const lookAndFeelControls = LookAndFeelControls()
