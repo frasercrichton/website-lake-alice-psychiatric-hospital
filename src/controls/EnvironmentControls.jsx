@@ -20,14 +20,20 @@ const parameters = {
 const LightingControls = () => {
   const options = useMemo(() => {
     return {
-      'Hemisphere Intensity': {
+      Near: {
+        value: 10,
+        min: 0,
+        max: 10000,
+        step: 1
+      },
+      HemisphereIntensity: {
         value: 0.6,
         min: 0,
         max: 10,
         step: 0.1
       },
-      'Hemisphere Sky Colour': '#ffffff',
-      'Hemisphere Ground Colour': '#111111'
+      skyColour: '#ffffff',
+      groundColour: '#111111'
     }
   }, [])
 

@@ -46,6 +46,7 @@ function GeographicMap ({ visibleMapLayers, maxBounds }) {
         maxBounds={bounds}
         // fitBounds={maxBounds}
         attributionControl={false}
+        antialias={true} // check
       >
         <FitBounds />
         <TileLayer

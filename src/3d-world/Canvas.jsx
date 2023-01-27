@@ -1,14 +1,10 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import './Canvas.css'
-import ThreeLoader from './ThreeLoader'
 import { Canvas } from '@react-three/fiber'
-import HospitalLayout from './HospitalLayout.jsx'
-import Camera from './Camera.jsx'
 import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
-import Environment from './Environment.jsx'
-import Floor from './Floor.jsx'
+import Experience from './Experience'
 Globals.assign({
   frameLoop: 'always'
 })
@@ -20,6 +16,7 @@ const CanvasWrapper = ({
   setHoverName,
   handleCanvasClick,
   camera,
+  isRotating
 }) => {
   const aspectRatio = {
     width: 1920,
@@ -39,6 +36,7 @@ const CanvasWrapper = ({
       <Canvas
         colormanagement='true'
         shadows
+        dpr={[1, 2]} //the default
         gl={{
           antialias: true,
           alpha: true,
@@ -46,28 +44,19 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.5,
-          pixelRatio: Math.min(window.devicePixelRatio, 2),
-          clearColor: lookAndFeelControls['World'],
-          shadowMap: {autoUpdate: false, needsUpdate: true}, // static scene where lights don't move no need to update
-          sizes: sizes,
+          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move no need to update
+          sizes: sizes
         }}
         onPointerMissed={() => handleCanvasClick()}
       >
-        {/*           
-                  antialias: true, - only add if there is antialiasing needed
-        powerPreference: 'high-performance',  only set if there are frane rate issues */}
-        <Camera camera={camera} />
-        <color args={[lookAndFeelControls['World']]} attach='background' />
-        <Suspense fallback={<ThreeLoader />}>
-          <Environment />
-          <Floor />
-          <HospitalLayout
-            selectedFacility={selectedFacility}
-            handleFacilityClick={handleFacilityClick}
-            hoverName={hoverName}
-            setHoverName={setHoverName}
-          />
-        </Suspense>
+        <Experience
+          selectedFacility={selectedFacility}
+          handleFacilityClick={handleFacilityClick}
+          hoverName={hoverName}
+          setHoverName={setHoverName}
+          camera={camera}
+          isRotating={isRotating}
+        />
       </Canvas>
     </div>
   )

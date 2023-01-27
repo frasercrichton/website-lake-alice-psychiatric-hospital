@@ -1,5 +1,11 @@
+import { useNavigate, Link } from 'react-router-dom'
+import urls from './config/navigation.jsx'
 import './Header.css'
-const Header = ({ scrollProgress, handleClick, enableClose, props }) => {
+const Header = ({ scrollProgress }) => {
+  const navigate = useNavigate()
+  const handleNavigationClick = url => {
+    navigate(url)
+  }
   return (
     <header>
       <nav className='home'>
@@ -9,27 +15,26 @@ const Header = ({ scrollProgress, handleClick, enableClose, props }) => {
       </nav>
       <nav className='main-navigation'>
         <ul>
-          <li>
-            <a href='/'>Context</a>
-          </li>
-          <li>
-            <a href='/'>Pathways</a>
-          </li>
-          <li>
-            <a href='/'>Abuse</a>
-          </li>
-          <li>
-            <a href='/'>Accountability?</a>
-          </li>
-          <li>
-            <a href='/'>The UN</a>
-          </li>
-          <li>
-            <a href='/'>About</a>
-          </li>
+          {urls.map(nav => {
+            return (
+              <li>
+                <Link
+                  // role='button'
+                  // onClick={e => handleNavigationClick(nav.url)}
+                  // href='#'
+                  to={nav.url}
+                >
+                  {nav.text}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
-      <div style={{'transform': `scaleX(${scrollProgress})` }} className='scroller-progress-bar'></div>
+      <div
+        style={{ transform: `scaleX(${scrollProgress})` }}
+        className='scroller-progress-bar'
+      ></div>
     </header>
   )
 }

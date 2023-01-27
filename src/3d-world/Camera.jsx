@@ -27,7 +27,6 @@ const Camera = ({ camera: activeCamera }) => {
 
   const hash = window.location.hash
 
-  console.log('hash', hash)
   const cameraState = useThree(state => state.camera)
   if (cameraRef.current != undefined) {
     fromQuat.copy(cameraRef.current.quaternion)

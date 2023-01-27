@@ -1,8 +1,8 @@
 import stateCareFacilities from '../config/state-care-facilities.json'
 
 const data = {
-  '/site': {
-    slides: [
+  '/context': {
+    pages: [
       {
         id: 1,
         index: 1,
@@ -16,7 +16,8 @@ const data = {
           aspect: 1,
           fov: 80,
           near: 10,
-          far: 10000
+          far: 10000,
+          isRotating: true
         }
       },
       {
@@ -74,6 +75,81 @@ const data = {
       {
         id: 5,
         index: 5,
+        header: 'Images',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+        image: {
+          src: 'fc-20210828-00001-FL25129125-Edit.jpg',
+          caption:
+            'Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised'
+        },
+        view: 'map',
+        map: {
+          zoom: 5,
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-51.481383, 100.810547],
+            northEast: [-6.620957, 192.963867]
+          },
+          visibleMapLayers: {
+            australia: true
+          }
+        }
+      },
+      {
+        id: 6,
+        index: 6,
+        header: 'Video',
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+        video: {
+          url: 'https://vimeo.com/689154638',
+          caption: 'Malcolm Richards.'
+        },
+        view: 'map',
+        map: {
+          zoom: 5,
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-51.481383, 100.810547],
+            northEast: [-6.620957, 192.963867]
+          },
+          visibleMapLayers: {
+            australia: true
+          }
+        }
+      }
+    ]
+  },
+  '/': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
+        header: 'Default',
+        text: 'Betweeen 19xx and 19xx x children were held at the Lake Alice Child and Adolescent Unit. During their time there they endured unprecedented levels of psychological, physical and sexual abuse. ',
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      }
+    ]
+  },
+  '/pathways': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
         header: 'Lake Alice Site',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
@@ -89,8 +165,8 @@ const data = {
         }
       },
       {
-        id: 6,
-        index: 6,
+        id: 2,
+        index: 2,
         header: 'Lake Alice Isolation',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
@@ -127,8 +203,8 @@ const data = {
         }
       },
       {
-        id: 7,
-        index: 7,
+        id: 3,
+        index: 3,
         header: 'Lake Alice Pathways',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
@@ -160,8 +236,8 @@ const data = {
         }
       },
       {
-        id: 8,
-        index: 8,
+        id: 4,
+        index: 4,
         header: 'Aotearoa Wide',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
@@ -180,8 +256,8 @@ const data = {
         }
       },
       {
-        id: 9,
-        index: 9,
+        id: 5,
+        index: 5,
         header: 'Australia',
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
         view: 'map',
@@ -211,31 +287,88 @@ const data = {
           }
         }
       },
+    ]
+  },
+  '/abuse': {
+    pages: [
       {
-        id: 10,
-        index: 10,
-        header: 'Images',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-        image: {
-          src: 'fc-20210828-00001-FL25129125-Edit.jpg',
-          caption:
-            'Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal. Archway Item ID:R24730910 Archway Series Number:6539 Provenance: Transferred by agency AAQT Material Type: Digitised'
-        },
-        view: 'map',
-        map: {
-          zoom: 5,
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-51.481383, 100.810547],
-            northEast: [-6.620957, 192.963867]
-          },
-          visibleMapLayers: {
-            australia: true
-          }
+        id: 1,
+        index: 1,
+        header: 'Default',
+        text: 'Betweeen 19xx and 19xx x children were held at the Lake Alice Child and Adolescent Unit. During their time there they endured unprecedented levels of psychological, physical and sexual abuse. ',
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
         }
+      }
+    ]
+  },
+  '/accountability': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
+        header: 'Default',
+        text: 'Betweeen 19xx and 19xx x children were held at the Lake Alice Child and Adolescent Unit. During their time there they endured unprecedented levels of psychological, physical and sexual abuse. ',
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      }
+    ]
+  },
+  '/the-un': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
+        header: 'Default',
+        text: 'Betweeen 19xx and 19xx x children were held at the Lake Alice Child and Adolescent Unit. During their time there they endured unprecedented levels of psychological, physical and sexual abuse. ',
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      }
+    ]
+  },
+  '/about': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
+        header: 'Default',
+        text: 'xxx',
+        view: 'markdown',
+        content: {
+          file: 'about'
+        }
+        // camera: {
+        //   name: 'default',
+        //   position: [0, 600, 400],
+        //   rotation: [-0.8726646, 0, 0],
+        //   aspect: 1,
+        //   fov: 80,
+        //   near: 10,
+        //   far: 10000
+        // }
       }
     ]
   }

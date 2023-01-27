@@ -19,6 +19,9 @@ const Label = ({
     <Html
       zIndexRange={[150, 0]}
       scale={7}
+      // position
+      // center
+      // wrapperClass
     >
       <div>
         <div className='line'></div>
