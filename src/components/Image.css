@@ -1,8 +1,21 @@
-.caption {
-  font-size: 11px;
-  font-style: italic;
+/* TODO these are global! */
+
+figure {
+  display: flex;
+  flex-flow: column;
+  width: 30vw;
+  min-width: 850px;
+  /* background-color: aqua; */
 }
 
-.image {
-  cursor: pointer;
+img {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+figcaption {
+  padding: 2px;
+  align-self: flex-start;
+  border-top: 2px solid rgb(169, 13, 94);
+  border-bottom: 2px solid rgb(169, 13, 94);
 }

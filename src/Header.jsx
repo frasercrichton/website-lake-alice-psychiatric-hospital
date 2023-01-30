@@ -8,11 +8,6 @@ const Header = ({ scrollProgress }) => {
   }
   return (
     <header>
-      <nav className='home'>
-        <a href='/'>
-          <h1>Lake Alice Psychiatric Hospital</h1>
-        </a>
-      </nav>
       <nav className='main-navigation'>
         <ul>
           {urls.map(nav => {
@@ -35,6 +30,12 @@ const Header = ({ scrollProgress }) => {
         style={{ transform: `scaleX(${scrollProgress})` }}
         className='scroller-progress-bar'
       ></div>
+        <nav className='home'>
+        <a href='/'>
+          <h1>Lake Alice Psychiatric Hospital</h1>
+        </a>
+      </nav>
+    
     </header>
   )
 }

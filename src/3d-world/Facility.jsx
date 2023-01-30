@@ -42,6 +42,7 @@ const Facility = ({
 
   return (
     <mesh
+    // TODO scale?
       ref={mesh}
       name={facilityId}
       geometry={node.geometry}

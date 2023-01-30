@@ -5,7 +5,7 @@ import EnvironmentControls from '../controls/EnvironmentControls.jsx'
 import ShadowCameraControls from '../controls/ShadowCameraControls.jsx'
 import DirectionalLightControls from '../controls/DirectionalLightControls.jsx'
 import LookAndFeelControls from '../controls/LookAndFeel.jsx'
-import { Sky } from '@react-three/drei'
+import { Sky, BakeShadows } from '@react-three/drei'
 
 const Lighting = () => {
   const directionalLight = useRef()
@@ -36,6 +36,8 @@ const Lighting = () => {
 
   return (
     <>
+      <BakeShadows />
+
       <hemisphereLight
         skyColor={skyColour}
         groundColor={groundColour}

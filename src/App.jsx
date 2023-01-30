@@ -87,13 +87,9 @@ function App () {
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
   }, [pageInView])
 
-  useEffect(() => {
-    console.log('pageInView?.camera?.isRotating', pageInView)
-
+  useEffect(() => {   
     setChapterInView(data[location.pathname])
-
     setPageInView(data[location.pathname].pages[0])
-
     setScrollProgress(0)
   }, [location])
 
@@ -108,7 +104,7 @@ function App () {
   }
 
   const isContentActive = tab !== 'site' && content !== ''
-  console.log('pageInView.file.content', pageInView?.content?.file)
+  // console.log('pageInView.file.content', pageInView?.content?.file)
 
   const handleFacilityClick = facilityId => {
     setTab('site')
@@ -143,14 +139,61 @@ function App () {
         enableClose={content !== ''}
       />
       {pageInView.view === 'markdown' && (
-        
         <Content
           key={content}
           content={pageInView.content.file}
           setContent={setContent}
         />
       )}
-
+      {/* 
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          width: '100%',
+          // backgroundColor: '#0000ff',
+          zIndex: '400',
+          height: '100vh',
+          opacity: '0.7',
+          alignItems: 'center'
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: '#000000',
+            color: '#ffffff',
+            height: '50vh',
+            opacity: '0.5',
+            align: 'center',
+            width: '50%',
+            zIndex: '400',
+            textAlign: 'center'
+          }}
+        >
+          Lake Alice Psychiatric Hospital was an isolated, self-contained
+          psychiatric facility that opened in 1950 on Te Ika-a-Māui the North
+          Island of Aotearoa New Zealand 6km outside of Marton. The hospital was
+          organised around a system of villas. The small eleven-bed villas were
+          seen as advanced at the time providing intensive dedicated group
+          therapy for patients. Some of these patients included returned
+          servicemen suffering PTSD. Some of these servicemen died and were
+          buried at Lake Alice in unmarked graves. The villas also included a
+          Maximum Security Unit for the criminally insane. In the modern
+          context, this sounds like an unlikely place to site a unit for the
+          care of children and adolescents. However, in 1972 Te Wāhanga Tamaiti,
+          Taitamariki o Lake the Lake Alice Child and Adolescent Unit (LACAU)
+          opened. This unit was notorious in its day. It served as a hub for a
+          failed system of child State care. Rather than treating tamariki for
+          genuine psychiatric conditions, it was used principally as a
+          punishment for children held in a national network of state care
+          facilities. This network expanded during the 1950s as criminal justice
+          and social service legislation prejudicially entrapped indigenous
+          Māori whānau after an urban drift following the Second World War. This
+          legislation also ensnared many Pasifika and Pākehā in the care system.
+        </div>
+      </div>
+       */}
       {pageInView.view === '3d' && (
         <Canvas
           key='canvas'
@@ -191,6 +234,7 @@ function App () {
                 <Chapter
                   chapter={chapterInView}
                   setPageInView={setPageInView}
+                  pageInView={pageInView}
                 />
               }
             />
@@ -201,7 +245,7 @@ function App () {
           exact
           path={'/'}
           element={
-            <Chapter chapter={data['context']} setPageInView={setPageInView} />
+            <Chapter chapter={chapterInView} setPageInView={setPageInView} />
           }
         />
       </Routes>

@@ -5,14 +5,15 @@ const urls = [
     next: '/pathways'
   },
   {
+    text: 'Malcolm',
+    url: '/malcolm',
+    next: 'Accountability'
+  },
+
+  {
     text: 'Pathways',
     url: '/pathways',
     next: '/abuse'
-  },
-  {
-    text: 'Abuse',
-    url: '/abuse',
-    next: 'Accountability'
   },
   {
     text: 'Accountability',
@@ -28,11 +29,6 @@ const urls = [
     text: 'About',
     url: '/about',
     next: '/context'
-  },
-  {
-    text: 'Home?',
-    url: '/',
-    next: '/'
-  },
+  }
 ]
 export default urls

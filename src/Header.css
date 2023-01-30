@@ -1,15 +1,19 @@
 header {
     font-size: 20px;
-    background-color: #282c34;
+    /* background-color: #282c34; */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 400;
+    z-index: 550;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
     height: 70px;
+}
+
+.home h1 {
+    color: #000000;
 }
 
 nav {
@@ -38,12 +42,14 @@ nav a {
     background-color: #282c34;
     height: 20px;
 }
-.main-navigation, .main-navigation  ul {
+
+.main-navigation, .main-navigation ul {
     font-size: small;
     display: flex;
-justify-content: right;
+    justify-content: right;
 }
- .main-navigation  li {
+
+.main-navigation li {
     /* font-size: x-small; */
     flex: 1;
     white-space: nowrap;

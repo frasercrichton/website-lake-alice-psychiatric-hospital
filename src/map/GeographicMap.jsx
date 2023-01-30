@@ -34,8 +34,6 @@ function GeographicMap ({ visibleMapLayers, maxBounds }) {
     }, [maxBounds])
   }
 
-  console.log(visibleMapLayers?.minorPoints)
-
   return (
     <div className='map-container'>
       <MapContainer

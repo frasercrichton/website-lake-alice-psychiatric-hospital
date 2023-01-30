@@ -1,6 +1,6 @@
-import React, { useState, useEffect, CSSProperties } from 'react'
+import React, { CSSProperties } from 'react'
 import './Page.css'
-import { InView, useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 import Video from '../components/Video.jsx'
 import Image from '../components/Image.jsx'
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
@@ -8,19 +8,20 @@ const FOLDER = '3d-visualisation'
 const transformImageUri = input =>
   /^https?:/.test(input) ? input : `${CDN_URL}${FOLDER}/${input}`
 
-const Page = ({ setPageInView, item, index }) => {
+const Page = ({ setPageInView, page }) => {
   const { ref, inView, entry } = useInView({
-    key: item.id,
+    key: page.id,
     threshold: 0.5,
     initialInView: false,
 
     onChange: (inView, ref, entry) => {
       if (inView) {
-        setPageInView(item)
+        setPageInView(page)
       }
     }
   })
-  const img = item.image ? transformImageUri(item.image.src) : null
+
+  const img = page.image ? transformImageUri(page.image.src) : null
 
   const defaultStyle: CSSProperties = {
     verticalAlign: 'top',
@@ -34,31 +35,32 @@ const Page = ({ setPageInView, item, index }) => {
     // height: item.index !== 1 ? null : '100vh'
   }
   return (
-    <div
-      key={`container-${item.id}`}
-      style={{ height: '101vh', alignItems: 'center' }}
-    >
-      <div key={`inview-block-${item.id}`} ref={ref} className='inview-block'>
+    <>
+      <div key={`inview-block-${page.id}`} ref={ref} className='inview-block'>
         x
       </div>
-      <div key={index} style={{ ...defaultStyle }} className='content-block'>
-        <div key={`header-block-${item.id}`} style={{ color: 'black' }}>
-          {item.header}
+      <div
+        key={`content-block-${page.id}`}
+        style={{ ...defaultStyle }}
+        className='content-block'
+      >
+        <div key={`header-block-${page.id}`} style={{ color: 'black' }}>
+          {page.header}
         </div>
         <div
-          key={`text-block-${item.id}`}
+          key={`text-block-${page.id}`}
           style={{ width: '50%', color: 'black' }}
         >
-          {item.text}
+          {page.text}
         </div>
-        <div key={`image-block-${item.id}`}>
-          {img != null && <Image caption={item.image.caption} url={img} />}
-        </div>
-        {item.video && (
-          <Video url={item.video.url} caption={item.video.caption} />
+        {/* <div key={`image-block-${item.id}`}> */}
+        {img != null && <Image caption={page.image.caption} url={img} />}
+        {/* </div> */}
+        {page.video && (
+          <Video url={page.video.url} caption={page.video.caption} />
         )}
       </div>
-    </div>
+    </>
   )
 }
 

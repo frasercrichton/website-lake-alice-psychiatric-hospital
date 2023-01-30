@@ -24,7 +24,7 @@ const Video = ({ url, caption }) => {
 
   return (
     <div className='video-container'>
-      <div className='player-wrapper flex-item'>
+      <figure>
         <ReactPlayer
           className='react-player'
           width='100%'
@@ -41,10 +41,10 @@ const Video = ({ url, caption }) => {
             }
           }}
           onReady={e => setLoading(isLoading)}
-        /> 
-      </div>
-      <div className='video-caption flex-item'>{caption}</div>
-      {isLoading && <Loader />}
+        />
+        <figcaption className='caption'>{caption}</figcaption>
+        {isLoading && <Loader />}
+      </figure>
     </div>
   )
 }
