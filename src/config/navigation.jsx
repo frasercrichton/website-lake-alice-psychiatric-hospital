@@ -1,15 +1,20 @@
 const urls = [
   {
-    text: 'Context',
-    url: '/context',
-    next: '/pathways'
+    text: 'Introduction',
+    url: '/introduction',
+    next: '/context'
   },
+
   {
     text: 'Malcolm',
     url: '/malcolm',
     next: 'Accountability'
   },
-
+  {
+    text: 'Context',
+    url: '/context',
+    next: '/pathways'
+  },
   {
     text: 'Pathways',
     url: '/pathways',
@@ -18,11 +23,6 @@ const urls = [
   {
     text: 'Accountability',
     url: '/accountability',
-    next: '/the-un'
-  },
-  {
-    text: 'The UN',
-    url: '/the-un',
     next: '/about'
   },
   {

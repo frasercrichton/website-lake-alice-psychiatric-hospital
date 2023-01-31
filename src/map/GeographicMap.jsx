@@ -3,7 +3,6 @@ import { LatLng, LatLngBounds } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet'
 import Markers from './Markers.jsx'
 import Lines from './Lines.jsx'
-import stateCareFacilities from '../config/state-care-facilities.json'
 import './GeographicMap.css'
 import AnimateZoom from './AnimateZoom'
 
@@ -15,8 +14,8 @@ function GeographicMap ({ visibleMapLayers, maxBounds }) {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
   const bounds = new LatLngBounds(southWest, northEast)
-
-  const pathways = visibleMapLayers?.pathways
+  //  visibleMapLayers?.lines.target
+  // visibleMapLayers?.lines.points
   // function ZoomEnd ({ fillOpacity, setFillOpacity }) {
   //   const mapEvents = useMapEvents({
   //     zoomend: () => {
@@ -59,19 +58,15 @@ function GeographicMap ({ visibleMapLayers, maxBounds }) {
         <>
           {visibleMapLayers && (
             <>
-              {pathways && (
+              {visibleMapLayers.lines && (
                 <Lines
-                  items={stateCareFacilities}
-                  target={{
-                    label: 'Lake Alice',
-                    latitude: -40.1260585,
-                    longitude: 175.330563
-                  }}
+                  target={visibleMapLayers.lines.target}
+                  points={visibleMapLayers.lines.points}
                 />
               )}
               <Markers
                 majorPoints={visibleMapLayers.majorPoints}
-                minorPoints={visibleMapLayers?.minorPoints}
+                minorPoints={visibleMapLayers.minorPoints}
               />
             </>
           )}

@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef, CSSProperties } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Page from './Page.jsx'
 import './Chapter.css'
 const Chapter = ({ chapter, setPageInView }) => {
   const pages = useRef([])
 
   useEffect(() => {
-    console.log(pages)
     // for every new chapter scroll to the start of the page
     pages.current[0].scrollIntoView()
   }, [chapter])
 
+  //TODO update to forward ref
   return (
     <div className='scroller'>
       {chapter.pages.map((page, index) => {

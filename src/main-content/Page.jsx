@@ -34,6 +34,20 @@ const Page = ({ setPageInView, page }) => {
     color: '#fff'
     // height: item.index !== 1 ? null : '100vh'
   }
+
+  const introBlock = {
+    position: 'absolute',
+    top: '300px',
+    left: '0',
+    width: '100%',
+    height: '300px',
+    zIndex: '400',
+    backgroundColor: 'beige',
+    opacity: '0.6'
+  }
+
+  const introPage = page.index === 1 ? introBlock : null
+
   return (
     <>
       <div key={`inview-block-${page.id}`} ref={ref} className='inview-block'>
@@ -41,7 +55,7 @@ const Page = ({ setPageInView, page }) => {
       </div>
       <div
         key={`content-block-${page.id}`}
-        style={{ ...defaultStyle }}
+        style={{ ...defaultStyle, ...introPage }}
         className='content-block'
       >
         <div key={`header-block-${page.id}`} style={{ color: 'black' }}>

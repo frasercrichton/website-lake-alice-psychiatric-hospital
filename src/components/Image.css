@@ -3,7 +3,7 @@
 figure {
   display: flex;
   flex-flow: column;
-  width: 30vw;
+  width: 100vw;
   min-width: 850px;
   /* background-color: aqua; */
 }
@@ -11,6 +11,11 @@ figure {
 img {
   width: 100%;
   margin-bottom: 0;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
 }
 
 figcaption {
@@ -18,4 +23,14 @@ figcaption {
   align-self: flex-start;
   border-top: 2px solid rgb(169, 13, 94);
   border-bottom: 2px solid rgb(169, 13, 94);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

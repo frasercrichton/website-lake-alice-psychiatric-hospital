@@ -6,4 +6,10 @@
   height: 100%;
   position: fixed;
   overflow: scroll;
+  overflow-x: hidden;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
 }

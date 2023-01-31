@@ -13,27 +13,26 @@ const Markers = ({ majorPoints, minorPoints }) => {
   const minorPointStyle = {
     fillColor: '#000000',
     radius: '5',
-    stroke: false,
+    stroke: false
+  }
+
+  const getMarker = (point, style) => {
+    const coordinates = new LatLng(point.latitude, point.longitude)
+    return (
+      <Marker markerCoordinates={coordinates} label={point.label} {...style} />
+    )
   }
 
   return (
     <>
       {majorPoints &&
         majorPoints.map(point => {
-          const coordinates = new LatLng(
-            point.latitude,
-            point.longitude
-          )
-          return <Marker markerCoordinates={coordinates} label={point.label} {...majorPointStyle} />
+          return getMarker(point, majorPointStyle)
         })}
 
       {minorPoints &&
-        minorPoints.map(coordinate => {
-          const coordinates = new LatLng(
-            coordinate.latitude,
-            coordinate.longitude
-          )
-          return <Marker markerCoordinates={coordinates} {...minorPointStyle} />
+        minorPoints.map(point => {
+          return getMarker(point, minorPointStyle)
         })}
     </>
   )

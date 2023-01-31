@@ -1,7 +1,6 @@
 import React from 'react'
 import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
-import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
 import Experience from './Experience'
@@ -22,9 +21,6 @@ const CanvasWrapper = ({
     width: 1920,
     height: 1080
   }
-  const hash = window.location.hash
-
-  const lookAndFeelControls = LookAndFeelControls()
   const defaultOutputEncoding = THREE.sRGBEncoding
   const sizes = {
     width: window.innerWidth,

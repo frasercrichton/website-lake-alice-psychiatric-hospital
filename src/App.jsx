@@ -86,8 +86,13 @@ function App () {
     setCamera(pageInView.camera)
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
   }, [pageInView])
-
-  useEffect(() => {   
+  console.log('location', location)
+  useEffect(() => {
+    if (location.pathname === '/') {
+      // setChapterInView(data['/'])
+      // setPageInView(data[location.pathname].pages[0])
+        
+    }
     setChapterInView(data[location.pathname])
     setPageInView(data[location.pathname].pages[0])
     setScrollProgress(0)
@@ -122,9 +127,11 @@ function App () {
     setCoverActive(!coverActive)
   }
 
+  const isLevaHidden = hash !== '#debug'
+
   return (
     <div className='site-container'>
-      {hash === 'debug' && <Leva oneLineLabels collapsed />}
+      <Leva oneLineLabels collapsed hidden={isLevaHidden} />
 
       <Loader />
       <Cover
@@ -245,7 +252,11 @@ function App () {
           exact
           path={'/'}
           element={
-            <Chapter chapter={chapterInView} setPageInView={setPageInView} />
+            <Chapter
+              chapter={chapterInView}
+              setPageInView={setPageInView}
+              pageInView={pageInView}
+            />
           }
         />
       </Routes>

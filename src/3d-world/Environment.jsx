@@ -13,26 +13,26 @@ const Lighting = () => {
   const shadowCameraControls = ShadowCameraControls()
   const { scene } = useThree()
   const shadowCameraExtent = shadowCameraControls['Extent']
-
-  const { x, setX } = useState()
   const { World } = LookAndFeelControls()
 
   const { Near, HemisphereIntensity, skyColour, groundColour } =
     EnvironmentControls()
 
-  // add useeffect for useref
-  if (directionalLight.current) {
-    const light = directionalLight.current
-    light.shadow.camera.near = Near
-    const shadowCameraHelper = new THREE.CameraHelper(light.shadow.camera)
+  useEffect(() => {
+    directionalLight.current.shadow.camera.near = Near
+
+    const shadowCameraHelper = new THREE.CameraHelper(
+      directionalLight.current.shadow.camera
+    )
     scene.add(shadowCameraHelper)
-    // helper.update()
 
-    const helper = new THREE.DirectionalLightHelper(light, 500)
-
+    const helper = new THREE.DirectionalLightHelper(
+      directionalLight.current,
+      500
+    )
     scene.add(helper)
     helper.update()
-  }
+  }, [])
 
   return (
     <>
