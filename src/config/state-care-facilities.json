@@ -1,7 +1,7 @@
 [
   {
     "id": "kohitere",
-    "label": "Kohitere Boy's Training Centre (1/1/1965)",
+    "label": "Kohitere Boy's Training Centre",
     "latitude": -40.6310718,
     "longitude": 175.2549856,
     "opened": "1/1/1906"
@@ -15,21 +15,21 @@
   },
   {
     "id": "epuni",
-    "label": "Epuni (Awakairangi Lower Hutt)",
+    "label": "Epuni - Awakairangi Lower Hutt",
     "latitude": -41.2047946,
     "longitude": 174.9112202,
     "opened": "1/1/1959"
   },
   {
     "id": "beck-house",
-    "label": "Beck House (Ahuriri Napier)",
+    "label": "Beck House - Ahuriri Napier",
     "latitude": -39.387985,
     "longitude": 176.8245523,
     "opened": "1/1/1977"
   },
   {
     "id": "holdsworth",
-    "label": "Holdsworth (Whanganui)",
+    "label": "Holdsworth - Whanganui",
     "latitude": -39.9111424,
     "longitude": 175.0276511,
     "opened": "1/1/1971"
@@ -50,21 +50,21 @@
   },
   {
     "id": "lookout-point",
-    "label": "Lookout Point Boys' Home (Ōtepoti Dunedin)",
+    "label": "Lookout Point Boys' Home - Ōtepoti Dunedin",
     "latitude": -45.8955184,
     "longitude": 170.4632508,
     "opened": "1/1/1938"
   },
   {
     "id": "melville-boys",
-    "label": "Melville Boys' Home (Kirikiriroa Hamilton)",
+    "label": "Melville Boys' Home - Kirikiriroa Hamilton",
     "latitude": -37.8146701,
     "longitude": 175.2605536,
     "opened": "1/1/1959"
   },
   {
     "id": "wesleydale-boys",
-    "label": "Wesleydale Boys' Home (Tāmaki Makaurau Auckland)",
+    "label": "Wesleydale Boys' Home - Tāmaki Makaurau Auckland",
     "latitude": -36.893735,
     "longitude": 174.7025682,
     "opened": "1/1/1976",
@@ -72,28 +72,28 @@
   },
   {
     "id": "fareham-house",
-    "label": "Fareham House (Paetūmōkai Featherston)",
+    "label": "Fareham House - Paetūmōkai Featherston",
     "latitude": -41.1076203,
     "longitude": 175.3308658,
     "opened": "1/1/1944"
   },
   {
     "id": "kingslea",
-    "label": "Kingslea (Ōtautahi Christchurch)",
+    "label": "Kingslea - Ōtautahi Christchurch",
     "latitude": -43.5044776,
     "longitude": 172.6670116,
     "opened": "1/1/1965"
   },
   {
     "id": "weymouth",
-    "label": "Weymouth (Tāmaki Makaurau Auckland)",
+    "label": "Weymouth - Tāmaki Makaurau Auckland",
     "latitude": -37.0367257,
     "longitude": 174.8668855,
     "opened": "1/1/1973"
   },
   {
     "id": "bollard-girls",
-    "label": "Bollard Girls’ Home (Tāmaki Makaurau Auckland)",
+    "label": "Bollard Girls’ Home - Tāmaki Makaurau Auckland",
     "latitude": -36.8979074,
     "longitude": 174.7033321,
     "opened": "1/1/1972"
@@ -107,20 +107,20 @@
   },
   {
     "id": "",
-    "label": "Strathmore Girls’ Home (Ōtautahi Christchurch)",
+    "label": "Strathmore Girls’ Home - Ōtautahi Christchurch",
     "latitude": -43.5496018,
     "longitude": 172.6431064
   },
   {
     "id": "",
-    "label": "Dey Street (Kirikiriroa Hamilton)",
+    "label": "Dey Street - Kirikiriroa Hamilton",
     "latitude": -37.7912426,
     "longitude": 175.3035478,
     "opened": "1/1/1970"
   },
   {
     "id": "",
-    "label": "Elliot Street (Ōtepoti Dunedin)",
+    "label": "Elliot Street - Ōtepoti Dunedin",
     "latitude": -45.8964355,
     "longitude": 170.525908,
     "opened": "1/1/1921",
@@ -128,14 +128,14 @@
   },
   {
     "id": "",
-    "label": "Margaret Street (Te Papaioea Palmerston North)",
+    "label": "Margaret Street - Te Papaioea Palmerston North",
     "latitude": -40.3445648,
     "longitude": 175.6300665,
     "opened": "1/1/1946"
   },
   {
     "id": "",
-    "label": "Miramar (Te Whanganui-a-Tara Wellington)",
+    "label": "Miramar - Te Whanganui-a-Tara Wellington",
     "latitude": -41.3128907,
     "longitude": 174.8016346,
     "opened": "1/1/1950"
@@ -149,13 +149,13 @@
   },
   {
     "id": "",
-    "label": "Whakapakari (Great Barrier Island)",
+    "label": "Whakapakari - Aotea Great Barrier Island",
     "latitude": -36.1992371,
     "longitude": 175.2884516
   },
   {
     "id": "",
-    "label": "Salisbury School (Whakatū Nelson)",
+    "label": "Salisbury School - Whakatū Nelson",
     "latitude": -41.3377583,
     "longitude": 173.1930835,
     "opened": "1/1/1916",

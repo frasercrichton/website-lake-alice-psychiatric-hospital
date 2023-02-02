@@ -13,8 +13,6 @@ const Header = ({ scrollProgress }) => {
 
   const handleNavigationClick = url => {
     setActive(url)
-    console.log('url', url)
-
     navigate(url)
   }
   return (

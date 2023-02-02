@@ -3,3 +3,9 @@
   position: absolute;
   width: 100%;
 }
+
+.page-container {
+  min-height: 101vh;
+  align-items: center;
+  /* border: 2px solid green; */
+}

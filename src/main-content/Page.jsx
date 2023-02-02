@@ -1,12 +1,10 @@
 import React, { CSSProperties } from 'react'
 import './Page.css'
 import { useInView } from 'react-intersection-observer'
-import Video from '../components/Video.jsx'
+import VideoVimeo from '../components/VideoVimeo.jsx'
 import Image from '../components/Image.jsx'
-const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-const FOLDER = '3d-visualisation'
-const transformImageUri = input =>
-  /^https?:/.test(input) ? input : `${CDN_URL}${FOLDER}/${input}`
+import AssetUrlHelper from '../components/AssetUrlHelper.js'
+const assetUrlHelper = new AssetUrlHelper()
 
 const Page = ({ setPageInView, page }) => {
   const { ref, inView, entry } = useInView({
@@ -21,10 +19,9 @@ const Page = ({ setPageInView, page }) => {
     }
   })
 
-  const img = page.image ? transformImageUri(page.image.src) : null
+  const img = page.image ? assetUrlHelper.resolveUrl(page.image.src) : null
 
-  const defaultStyle: CSSProperties = {
-    verticalAlign: 'top',
+  const defaultStyle = {
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -32,6 +29,8 @@ const Page = ({ setPageInView, page }) => {
     justifyContent: 'center',
     // backgroundColor: '#2d1176',
     color: '#fff'
+    // backgroundColor: '#ff0000'
+    // width: 'fit-content'
     // height: item.index !== 1 ? null : '100vh'
   }
 
@@ -42,36 +41,40 @@ const Page = ({ setPageInView, page }) => {
     width: '100%',
     height: '300px',
     zIndex: '400',
-    backgroundColor: 'beige',
+    backgroundColor: '#A0A0A0',
     opacity: '0.6'
   }
 
-  const introPage = page.index === 1 ? introBlock : null
+  const introPage = page.index === 1 ? null : null
 
   return (
     <>
-      <div key={`inview-block-${page.id}`} ref={ref} className='inview-block'>
-        x
-      </div>
+      <div
+        key={`inview-block-${page.id}`}
+        ref={ref}
+        className='inview-block'
+      ></div>
       <div
         key={`content-block-${page.id}`}
         style={{ ...defaultStyle, ...introPage }}
         className='content-block'
       >
-        <div key={`header-block-${page.id}`} style={{ color: 'black' }}>
-          {page.header}
-        </div>
-        <div
-          key={`text-block-${page.id}`}
-          style={{ width: '50%', color: 'black' }}
-        >
-          {page.text}
-        </div>
-        {/* <div key={`image-block-${item.id}`}> */}
-        {img != null && <Image caption={page.image.caption} url={img} />}
-        {/* </div> */}
-        {page.video && (
-          <Video url={page.video.url} caption={page.video.caption} />
+        {page.text.style === 'scrolling' && (
+          <>
+            <div key={`header-block-${page.id}`} style={{ color: 'black' }}>
+              {page.text.header}
+            </div>
+            <div
+              key={`text-block-${page.id}`}
+              style={{ width: '50%', color: 'black' }}
+            >
+              {page.text.content}
+            </div>
+          </>
+        )}
+
+        {img != null && !page.image.static && (
+          <Image caption={page.image.caption} url={img} />
         )}
       </div>
     </>

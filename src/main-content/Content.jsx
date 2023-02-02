@@ -1,6 +1,6 @@
 import './Content.css'
 // import { CSSTransition } from 'react-transition-group'
-import Video from '../components/Video.jsx'
+import VideoVimeo from '../components/VideoVimeo.jsx'
 import Markdown from '../components/markdown/Markdown.jsx'
 import mapDisplay from '../map/mapDisplay.json'
 // TODO map centre shouldn't be a default
@@ -35,7 +35,7 @@ const Content = ({ content }) => {
           <Markdown markdownContent={`${CDN_URL}${FOLDER}${content}.md`} />
         )}
         {content === 'testimony' && (
-          <Video url='https://vimeo.com/689154638' caption='Malcolm Richards' />
+          <VideoVimeo id='689154638' caption='Malcolm Richards' />
         )}
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', imageAction, id, url }) => {
+const Image = ({ caption = '', imageAction, id, url, style }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoading = e => {
@@ -10,7 +10,7 @@ const Image = ({ caption = '', imageAction, id, url }) => {
   }
 
   return (
-    <div className='image-container'>
+    <div className='image-container' style={style}>
       <figure className='figure'>
         <img
           src={url}

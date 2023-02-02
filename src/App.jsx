@@ -18,9 +18,12 @@ import Loader from './components/Loader.jsx'
 import data from './config/chapters.js'
 import urls from './config/navigation.jsx'
 import GeographicMap from './map/GeographicMap.jsx'
+import VideoVimeo from './components/VideoVimeo.jsx'
 import Stats from 'stats.js'
 import Chapter from './main-content/Chapter.jsx'
-
+import Image from './components/Image.jsx'
+import AssetUrlHelper from './components/AssetUrlHelper.js'
+import TextBox from './components/TextBox'
 const defaultCameraConfig = {
   position: [0, 600, 400],
   rotation: [-angleToRadians(50), 0, 0],
@@ -29,6 +32,7 @@ const defaultCameraConfig = {
   near: 10,
   far: 10000
 }
+const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
 
@@ -52,6 +56,10 @@ function App () {
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
   const [scrollProgress, setScrollProgress] = useState(0.3)
+
+  const imageURL = pageInView.image
+    ? assetUrlHelper.resolveUrl(pageInView.image.src)
+    : null
 
   const mapZoomDimensions = {
     maxBounds: pageInView.map ? pageInView.map.bounds : null
@@ -86,12 +94,11 @@ function App () {
     setCamera(pageInView.camera)
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
   }, [pageInView])
-  console.log('location', location)
+
   useEffect(() => {
     if (location.pathname === '/') {
       // setChapterInView(data['/'])
       // setPageInView(data[location.pathname].pages[0])
-        
     }
     setChapterInView(data[location.pathname])
     setPageInView(data[location.pathname].pages[0])
@@ -129,6 +136,13 @@ function App () {
 
   const isLevaHidden = hash !== '#debug'
 
+  const imageContainerStyle = {
+    position: 'fixed',
+    width: '100vw',
+    display: 'flex',
+    paddingTop: '25px'
+  }
+
   return (
     <div className='site-container'>
       <Leva oneLineLabels collapsed hidden={isLevaHidden} />
@@ -152,55 +166,10 @@ function App () {
           setContent={setContent}
         />
       )}
-      {/* 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          width: '100%',
-          // backgroundColor: '#0000ff',
-          zIndex: '400',
-          height: '100vh',
-          opacity: '0.7',
-          alignItems: 'center'
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: '#000000',
-            color: '#ffffff',
-            height: '50vh',
-            opacity: '0.5',
-            align: 'center',
-            width: '50%',
-            zIndex: '400',
-            textAlign: 'center'
-          }}
-        >
-          Lake Alice Psychiatric Hospital was an isolated, self-contained
-          psychiatric facility that opened in 1950 on Te Ika-a-Māui the North
-          Island of Aotearoa New Zealand 6km outside of Marton. The hospital was
-          organised around a system of villas. The small eleven-bed villas were
-          seen as advanced at the time providing intensive dedicated group
-          therapy for patients. Some of these patients included returned
-          servicemen suffering PTSD. Some of these servicemen died and were
-          buried at Lake Alice in unmarked graves. The villas also included a
-          Maximum Security Unit for the criminally insane. In the modern
-          context, this sounds like an unlikely place to site a unit for the
-          care of children and adolescents. However, in 1972 Te Wāhanga Tamaiti,
-          Taitamariki o Lake the Lake Alice Child and Adolescent Unit (LACAU)
-          opened. This unit was notorious in its day. It served as a hub for a
-          failed system of child State care. Rather than treating tamariki for
-          genuine psychiatric conditions, it was used principally as a
-          punishment for children held in a national network of state care
-          facilities. This network expanded during the 1950s as criminal justice
-          and social service legislation prejudicially entrapped indigenous
-          Māori whānau after an urban drift following the Second World War. This
-          legislation also ensnared many Pasifika and Pākehā in the care system.
-        </div>
-      </div>
-       */}
+
+      {pageInView.text && pageInView.text?.style === 'static' && (
+        <TextBox text={pageInView.text} />
+      )}
       {pageInView.view === '3d' && (
         <Canvas
           key='canvas'
@@ -218,6 +187,21 @@ function App () {
         <GeographicMap
           visibleMapLayers={visibleMapLayers}
           {...mapZoomDimensions}
+        />
+      )}
+
+      {pageInView.video !== undefined && (
+        <VideoVimeo
+          id={pageInView.video.id}
+          caption={pageInView.video.caption}
+        />
+      )}
+
+      {pageInView.image && pageInView.image?.static && (
+        <Image
+          caption={pageInView.image.caption}
+          url={imageURL}
+          style={imageContainerStyle}
         />
       )}
 

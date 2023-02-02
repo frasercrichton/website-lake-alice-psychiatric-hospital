@@ -18,7 +18,6 @@ const Chapter = ({ chapter, setPageInView }) => {
             ref={element => (pages.current[index] = element)}
             className='page-container'
             key={`container-${page.id}`}
-            style={{ height: '101vh', alignItems: 'center' }}
           >
             <Page
               // ref={element => (pages.current[index] = element)}
