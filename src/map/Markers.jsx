@@ -20,8 +20,16 @@ const Markers = ({ majorPoints, minorPoints }) => {
   const getMarker = (point, style) => {
     const coordinates = new LatLng(point.latitude, point.longitude)
     return (
-      <Circle markerCoordinates={coordinates} label={point.label} {...style} />
-      // <Icon markerCoordinates={coordinates} label={point.label} {...style} />
+      <>
+        <Circle
+          markerCoordinates={coordinates}
+          label={point.label}
+          {...style}
+        />
+
+        {/* <Circle markerCoordinates={coordinates} {...style} />
+        <Icon markerCoordinates={coordinates} label={point.label} {...style} /> */}
+      </>
     )
   }
 

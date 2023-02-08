@@ -54,6 +54,7 @@ const Facility = ({
       receiveShadow
       castShadow={hasShadow}
       position={[node.position.x, y, node.position.z]}
+      rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >
       {isFacility && (
         <meshPhongMaterial

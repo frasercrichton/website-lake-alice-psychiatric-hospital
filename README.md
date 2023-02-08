@@ -72,6 +72,14 @@ https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-fin
 
 ## Sources
 
+FAO: Sasha Hartmann-Hughes 
+
+Kia ora Sasha,
+
+Not sure if you are still at Archives but we spoke a while back about a project I'm working on with one of the survivors of Lake Alice Child and Adolescent Unit. I'm currently working on a new version of our website and I was wondering if it would be possible to order some high resolution scans of some images? The website is non-commercial so should fit with the terms of use. If you could give me a rough idea of how much it would be for teh scans that would be great.
+
+The images are as follows:
+
 Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
 Archway Item ID:R24730915
 Archway Series Number:6539
@@ -81,22 +89,26 @@ https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE251
 Title: Mental Hospitals. Publicity Caption: Maximum security block at Lake Alice Psychiatric Hospital Marton. Photographer: Mr Cleal.
 Archway Item ID:R24730910
 Archway Series Number:6539
+https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129115
+
 
 Title: Mental Hospitals. Publicity Caption: Mural, painted by inmate, day room maximum security block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
 Archway Item ID:R24730911
 Archway Series Number:6539
 https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129055
 
-Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
-Archway Item ID:R24730915
-Archway Series Number:6539
- https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143
+Not sure how you scan but for the web I'd need something like:
 
+72 ppi
+minimum 1500px on the long edge
 
-Lake Alice eleven bed villas, Lake Alice Hospital c.a. 1948 Ministry of Health 
-C399174 H10 1 227 296 
+Unfortunately I'm currently based in UK as I had to come back last year to sort out my mum's house when she died last year so this could make things a bit tricky but hopefully not.
 
+If by chance you come across any other images of Lake Alice (there were a couple used in the final Royal Commission report of the villas that didn't have references)
 
+Ngā mihi nui,
+
+Fraser
 
 
 Date

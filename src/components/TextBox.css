@@ -1,26 +1,20 @@
 .text-box-container {
-  position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
-  /* // backgroundColor: #0000ff, */
+  /* background-color: #0000ff; */
   z-index: 350;
   height: 100vh;
   opacity: 0.7;
-  align-items: right;
 }
 
-.text-box{
+
+.text-box {
   background-color: #000000;
   color: #ffffff;
-  height: 20vh;
   opacity: 0.4;
-  align: center;
-  width: 45%;
   z-index: 350;
   text-align: center;
-  margin-left: auto;
-  margin-right: 50px;
-  margin-top: 550px;
+  height: 20vh;
+  width: 45%;
 }

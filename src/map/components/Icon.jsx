@@ -13,10 +13,13 @@ const Icon = ({
   stroke,
   strokeColor
 }) => {
-
   const div = `${label}`
 
-  const icon = divIcon({ className: 'marker', iconSize: [54, 14], html: div })
+  const icon = divIcon({
+    className: 'marker-icon',
+    iconSize: 'auto',
+    html: div
+  })
 
   return (
     <Marker
@@ -30,9 +33,7 @@ const Icon = ({
       radius={radius}
       color={strokeColor}
       stroke={stroke}
-    >
-      {/* {label && <Tooltip permanent>{label}</Tooltip>} */}
-    </Marker>
+    />
   )
 }
 Icon.defaultProps = {

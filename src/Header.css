@@ -7,6 +7,10 @@ header {
     z-index: 450;
 }
 
+nav.home {
+    background-color: aqua;
+}
+
 nav.home h1 {
     padding-left: 20px;
     color: #000000;
@@ -15,7 +19,8 @@ nav.home h1 {
     /* opacity: 0.3; */
     width: 700px;
     position: fixed;
-    top: 150px;
+    margin: 0px 0px 0px 0px;
+    /* top: 100px; */
 }
 
 nav.main-navigation {

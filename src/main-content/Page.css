@@ -4,4 +4,46 @@
 
 .inview-block {
   /* background-color: aqua; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
+
+.page-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: blue; */
+  align-items: center;
+  animation: fadeIn 15s;
+  -webkit-animation: fadeIn 15s;
+  -moz-animation: fadeIn 15s;
+  -o-animation: fadeIn 15s;
+  -ms-animation: fadeIn 15s;
+
+}
+
+.scrolling-image figure {
+  width: 50vw;
+  /* height: 200px; */
+  justify-content: center;
+  flex-flow: column;
+  /* background-color: aqua; */
+}
+
+.scrolling-image figure img {
+  padding: 15px;
+}
+
+/* figure {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  width: 100vw;
+  min-width: 850px;
+  padding: 0;
+  margin: 0;
+} */

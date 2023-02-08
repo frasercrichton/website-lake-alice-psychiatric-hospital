@@ -7,6 +7,7 @@
 figure {
   display: flex;
   flex-flow: column;
+  height: 100vh;
   width: 100vw;
   min-width: 850px;
   padding: 0;
@@ -25,18 +26,9 @@ img {
 }
 
 figcaption {
-  padding: 2px;
-  align-self: flex-start;
+  padding: 10px;
+  align-self: center;
   border-top: 2px solid rgb(169, 13, 94);
   border-bottom: 2px solid rgb(169, 13, 94);
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  text-align: center;
 }

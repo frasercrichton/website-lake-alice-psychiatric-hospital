@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useMemo } from 'react'
+import { useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import urls from './config/navigation.jsx'
+import urls from './config/navigation.js'
 import './Header.css'
-const Header = ({ scrollProgress }) => {
-  const [active, setActive] = useState('')
+const Header = ({ scrollProgress, active, setActive }) => {
+  const links = useRef({})
 
-  const isClicked = url => active === url
-
-  const getClassName = url => (isClicked(url) ? `nav-item active` : `nav-item`)
+  useEffect(() => {
+    Object.values(links.current).forEach(element => {
+      element.className = 'nav-item'
+    })
+    links.current[active].className = 'nav-item active'
+  }, [active])
 
   const navigate = useNavigate()
 
@@ -19,13 +23,15 @@ const Header = ({ scrollProgress }) => {
     <header>
       <nav className='main-navigation'>
         <div className='col-4'></div>
-        {urls.map(nav => {
+        {urls.map((nav, index) => {
           return (
             <Link
+              key={nav.url}
+              ref={element => (links.current[nav.url] = element)}
               role='button'
               onClick={e => handleNavigationClick(nav.url)}
               // href='#'
-              className={getClassName(nav.url)}
+              className={'nav-item'}
               to={nav.url}
             >
               {nav.text}

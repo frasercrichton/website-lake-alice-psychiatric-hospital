@@ -5,8 +5,8 @@ import './Image.css'
 const Image = ({ caption = '', imageAction, id, url, style }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const handleLoading = e => {
-    setIsLoaded(!isLoaded)
+  const handleLoading = isLoaded => {
+    setIsLoaded(isLoaded)
   }
 
   return (

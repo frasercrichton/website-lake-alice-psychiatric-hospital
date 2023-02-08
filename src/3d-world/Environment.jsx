@@ -48,7 +48,7 @@ const Lighting = () => {
 
       {/* <ambientLight intensity={lightingControls['Ambient Intensity']} /
        */}
-      {/* <fog attach='fog' color={'red'} far={5000} near={10} /> */}
+      {/* <fog attach='fog' color={'#F1EDF2'} far={500} near={10} /> */}
       <directionalLight
         ref={directionalLight}
         castShadow

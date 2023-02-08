@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
+  useNavigate,
   Route,
   Routes,
   useLocation
@@ -16,7 +17,7 @@ import Canvas from './3d-world/Canvas.jsx'
 import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader.jsx'
 import data from './config/chapters.js'
-import urls from './config/navigation.jsx'
+import urls from './config/navigation.js'
 import GeographicMap from './map/GeographicMap.jsx'
 import VideoVimeo from './components/VideoVimeo.jsx'
 import Stats from 'stats.js'
@@ -56,7 +57,16 @@ function App () {
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
   const [scrollProgress, setScrollProgress] = useState(0.3)
+  const [active, setActive] = useState('/introduction')
+  // const [nextChapter, setNextChapter] = useState(data['/context'])
+  const navigate = useNavigate()
 
+  const setNextChapter = chapter => {
+    setActive(chapter)
+    navigate(chapter)
+  }
+
+  // setNextChapter(nextChapter)
   const imageURL = pageInView.image
     ? assetUrlHelper.resolveUrl(pageInView.image.src)
     : null
@@ -130,6 +140,8 @@ function App () {
   }
 
   const handleCoverClick = () => {
+    navigate('/introduction')
+
     setLoading(!isLoading)
     setCoverActive(!coverActive)
   }
@@ -143,11 +155,20 @@ function App () {
     paddingTop: '25px'
   }
 
+  const textBoxContainerStyle = {
+    position: 'fixed',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+  }
+
+  const textBoxStyle = {
+    margin: '50px',
+    marginTop: '550px'
+  }
+
   return (
     <div className='site-container'>
       <Leva oneLineLabels collapsed hidden={isLevaHidden} />
-
-      <Loader />
       <Cover
         key='cover'
         coverActive={coverActive}
@@ -158,6 +179,8 @@ function App () {
         scrollProgress={scrollProgress}
         handleClick={setContent}
         enableClose={content !== ''}
+        active={active}
+        setActive={setActive}
       />
       {pageInView.view === 'markdown' && (
         <Content
@@ -168,7 +191,11 @@ function App () {
       )}
 
       {pageInView.text && pageInView.text?.style === 'static' && (
-        <TextBox text={pageInView.text} />
+        <TextBox
+          text={pageInView.text}
+          textBoxContainerStyle={textBoxContainerStyle}
+          textBoxStyle={textBoxStyle}
+        />
       )}
       {pageInView.view === '3d' && (
         <Canvas
@@ -197,7 +224,7 @@ function App () {
         />
       )}
 
-      {pageInView.image && pageInView.image?.static && (
+      {pageInView.image && pageInView.image?.style === 'static' && (
         <Image
           caption={pageInView.image.caption}
           url={imageURL}
@@ -215,7 +242,6 @@ function App () {
       /> */}
       <Routes>
         {urls.map(nav => {
-          const nextChapter = ''
           return (
             <Route
               key={`route-${nav.url}`}
@@ -224,8 +250,9 @@ function App () {
               element={
                 <Chapter
                   chapter={chapterInView}
+                  nextChapter={nav.next}
                   setPageInView={setPageInView}
-                  pageInView={pageInView}
+                  setNextChapter={setNextChapter}
                 />
               }
             />
@@ -235,6 +262,17 @@ function App () {
           key={`route-default`}
           exact
           path={'/'}
+          element={
+            <Chapter
+              chapter={chapterInView}
+              setPageInView={setPageInView}
+              pageInView={pageInView}
+            />
+          }
+        />
+        <Route
+          key={`route-wild-default`}
+          path={'*'}
           element={
             <Chapter
               chapter={chapterInView}

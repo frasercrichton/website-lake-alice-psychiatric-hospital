@@ -46,7 +46,9 @@ const HospitalLayout = ({
     const output = Object.keys(nodes).map((key, index) => {
       if (nodes[key].type === 'PerspectiveCamera') {
         const camera = nodes[key]
+
         const cameraConfig = {
+          name: camera.name,
           position: [camera.position.x, camera.position.y, camera.position.z],
           rotation: [
             camera.rotation._x,
@@ -58,6 +60,7 @@ const HospitalLayout = ({
           near: camera.near,
           far: camera.far
         }
+        console.log(cameraConfig)
       }
 
       if (nodes[key].type === 'Mesh') {

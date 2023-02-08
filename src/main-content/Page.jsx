@@ -3,36 +3,39 @@ import './Page.css'
 import { useInView } from 'react-intersection-observer'
 import VideoVimeo from '../components/VideoVimeo.jsx'
 import Image from '../components/Image.jsx'
+import TextBox from '../components/TextBox'
 import AssetUrlHelper from '../components/AssetUrlHelper.js'
 const assetUrlHelper = new AssetUrlHelper()
 
-const Page = ({ setPageInView, page }) => {
-  const { ref, inView, entry } = useInView({
+const Page = ({ setPageInView, page, nextChapter, setNextChapter }) => {
+  const { ref: content, inView: contentInView } = useInView({
     key: page.id,
     threshold: 0.5,
     initialInView: false,
 
-    onChange: (inView, ref, entry) => {
+    onChange: (inView, ref) => {
+      // console.log('ref', ref.target)
+      // console.log('entry', entry)
       if (inView) {
         setPageInView(page)
       }
     }
   })
 
-  const img = page.image ? assetUrlHelper.resolveUrl(page.image.src) : null
+  const { ref: next, inView: inViewNext } = useInView({
+    key: page.id,
+    threshold: 0.5,
+    initialInView: false,
 
-  const defaultStyle = {
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // backgroundColor: '#2d1176',
-    color: '#fff'
-    // backgroundColor: '#ff0000'
-    // width: 'fit-content'
-    // height: item.index !== 1 ? null : '100vh'
-  }
+    onChange: (inView, ref) => {
+      // console.log('next', ref.target)
+      if (inView) {
+        setNextChapter(nextChapter)
+      }
+    }
+  })
+
+  const img = page.image ? assetUrlHelper.resolveUrl(page.image.src) : null
 
   const introBlock = {
     position: 'absolute',
@@ -47,36 +50,39 @@ const Page = ({ setPageInView, page }) => {
 
   const introPage = page.index === 1 ? null : null
 
+  const textBoxStyle = {
+    margin: '50px'
+    // marginTop: '550px'
+  }
+
   return (
     <>
       <div
         key={`inview-block-${page.id}`}
-        ref={ref}
+        ref={content}
         className='inview-block'
       ></div>
-      <div
-        key={`content-block-${page.id}`}
-        style={{ ...defaultStyle, ...introPage }}
-        className='content-block'
-      >
-        {page.text.style === 'scrolling' && (
-          <>
-            <div key={`header-block-${page.id}`} style={{ color: 'black' }}>
-              {page.text.header}
-            </div>
-            <div
-              key={`text-block-${page.id}`}
-              style={{ width: '50%', color: 'black' }}
-            >
-              {page.text.content}
-            </div>
-          </>
+      <div key={`content-block-${page.id}`} className='page-content-container'>
+        {page.text?.style === 'scrolling' && (
+          <TextBox text={page.text} textBoxStyle={textBoxStyle} />
         )}
-
-        {img != null && !page.image.static && (
-          <Image caption={page.image.caption} url={img} />
+        {img != null && page.image.style === 'scrolling' && (
+          <div
+            className='scrolling-image'
+            style={{ width: '50%', display: 'flex', flexDirection: 'column' }}
+          >
+            <Image caption={page.image.caption} url={img} />
+          </div>
         )}
       </div>
+      {nextChapter && (
+        <div
+          className='inview-next-block'
+          style={{ height: `80vw` }}
+          key={`next-block-${page.id}`}
+          ref={next}
+        ></div>
+      )}
     </>
   )
 }
