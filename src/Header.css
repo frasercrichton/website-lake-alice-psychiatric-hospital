@@ -1,30 +1,60 @@
 header {
-    font-size: 20px;
+    font-size: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 200;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #282c34;
+    z-index: 450;
 }
 
-nav {
+nav.home {
+    background-color: aqua;
+}
+
+nav.home h1 {
+    padding-left: 20px;
+    color: #000000;
+    /* text-shadow: #ffffff 1px 0 10px; */
+    background-color: #ffffff;
+    /* opacity: 0.3; */
+    width: 700px;
+    position: fixed;
+    margin: 0px 0px 0px 0px;
+    /* top: 100px; */
+}
+
+nav.main-navigation {
+    font-size: 19px;
     width: 100%;
     display: grid;
-    grid-template-columns: [col-start] 1.5fr [col-start] 0.5fr;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: 40% auto;
+    grid-auto-flow: column;
+    background-color: #282c34;
+    justify-items: stretch;
+    align-items: stretch;
+    text-transform: uppercase;
 }
 
-nav a {
-    align-self: center;
-    justify-self: start;
-    color: white;
-    text-decoration: none;
-    padding: 0 40px;
-    transition: 0.3s;
+nav.main-navigation a {
+    transition-property: color, background-color;
+    transition-timing-function: ease;
+    transition-duration: .2s;
+    padding: .55em 1rem .4em;
 }
 
-.icon-wrapper {
-    justify-self: end;
+nav.main-navigation>[class*="col"] {
+    display: block;
+    box-sizing: border-box;
+}
+
+.main-navigation a:hover, .main-navigation .active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.scroller-progress-bar {
+    height: 10px;
+    background-color: red;
+    transform-origin: top left;
+    transition: transform 1s ease-in-out;
 }

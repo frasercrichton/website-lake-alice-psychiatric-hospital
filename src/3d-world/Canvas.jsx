@@ -1,14 +1,9 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import './Canvas.css'
-import ThreeLoader from './ThreeLoader'
 import { Canvas } from '@react-three/fiber'
-import HospitalLayout from './HospitalLayout'
-import Camera from './Camera'
-import LookAndFeelControls from '../controls/LookAndFeel'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
-import Environment from './Environment'
-import Floor from './Floor'
+import Experience from './Experience'
 Globals.assign({
   frameLoop: 'always'
 })
@@ -20,46 +15,44 @@ const CanvasWrapper = ({
   setHoverName,
   handleCanvasClick,
   camera,
-  cameras
+  isRotating
 }) => {
   const aspectRatio = {
     width: 1920,
     height: 1080
   }
-  const hash = window.location.hash
-
-  const lookAndFeelControls = LookAndFeelControls()
   const defaultOutputEncoding = THREE.sRGBEncoding
+  const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }
+
   return (
     <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
       <Canvas
         colormanagement='true'
         shadows
+        dpr={[1, 2]} //the default
         gl={{
           antialias: true,
           alpha: true,
           physicallyCorrectLights: true,
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 2,
-          pixelRatio: Math.min(window.devicePixelRatio, 2),
-          clearColor: lookAndFeelControls['World']
+          toneMappingExposure: 1.5,
+          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move no need to update
+          sizes: sizes
         }}
         onPointerMissed={() => handleCanvasClick()}
       >
-        <Camera camera={camera} />
-        <color args={[lookAndFeelControls['World']]} attach='background' />
-        <Suspense fallback={<ThreeLoader />}>
-          <Environment />
-          <Floor />
-          <HospitalLayout
-            selectedFacility={selectedFacility}
-            handleFacilityClick={handleFacilityClick}
-            hoverName={hoverName}
-            setHoverName={setHoverName}
-            cameras={cameras}
-          />
-        </Suspense>
+        <Experience
+          selectedFacility={selectedFacility}
+          handleFacilityClick={handleFacilityClick}
+          hoverName={hoverName}
+          setHoverName={setHoverName}
+          camera={camera}
+          isRotating={isRotating}
+        />
       </Canvas>
     </div>
   )

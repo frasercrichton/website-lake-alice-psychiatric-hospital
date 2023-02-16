@@ -1,9 +1,9 @@
 import './Content.css'
 // import { CSSTransition } from 'react-transition-group'
-import Video from './components/Video'
-import Markdown from './components/markdown/Markdown'
-import mapDisplay from './map/mapDisplay.json'
-import Map from './map/Map'
+import VideoVimeo from '../components/VideoVimeo.jsx'
+import Markdown from '../components/markdown/Markdown.jsx'
+import AssetUrlHelper from '../components/AssetUrlHelper'
+import mapDisplay from '../map/mapDisplay.json'
 // TODO map centre shouldn't be a default
 const { zoom, centre, maxBounds } = mapDisplay
 const dynamicZoom = 6.5
@@ -17,13 +17,11 @@ const mapZoomDimensions = {
   initialMapCentre: lakeAliceCoordinates
 }
 
-const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-const FOLDER = '3d-visualisation/'
-
 const Content = ({ content }) => {
   const className =
     content !== '' ? 'content-container active' : 'content-container'
-
+  const assetUrlHelper = new AssetUrlHelper
+  
   return (
     <div className={className}>
       <div className='content'>
@@ -33,17 +31,10 @@ const Content = ({ content }) => {
           </div>
         )}
         {(content === 'info' || content === 'about') && (
-          <Markdown markdownContent={CDN_URL + FOLDER + content + '.md'} />
+          <Markdown markdownContent={assetUrlHelper.resolveUrl(`${content}.md`, '3d-visualisation')} />
         )}
         {content === 'testimony' && (
-          <Video url='https://vimeo.com/689154638' caption='Malcolm Richards' />
-        )}
-        {content === 'location' && (
-          <Map
-            {...mapZoomDimensions}
-            dynamicZoom={dynamicZoom}
-            dynamicCoordinates={centre}
-          />
+          <VideoVimeo id='689154638' caption='Malcolm Richards' />
         )}
       </div>
     </div>

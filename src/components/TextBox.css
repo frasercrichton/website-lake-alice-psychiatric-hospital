@@ -1,0 +1,37 @@
+.text-box-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: #0000ff; */
+  z-index: 350;
+  height: 100vh;
+  opacity: 0.7;
+  /* z-index: 380; */
+}
+
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: #ffffff;
+  opacity: 0.4;
+  text-align: center;
+  /* height: 20vh; */
+  width: 45%;
+  z-index: 380;
+}
+
+.text-box .source {
+  background-color: #000000;
+  text-align: right;
+  display: inline-block;
+}
+
+
+.text-box .source a {
+  font-style: italic;
+  font-size: medium;
+  color: #ffffff;
+
+}

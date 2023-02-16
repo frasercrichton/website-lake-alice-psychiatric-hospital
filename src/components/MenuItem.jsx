@@ -1,5 +1,5 @@
 import './MenuItem.css'
-import './Button'
+import './Button.jsx'
 const MenuItem = ({
   isClicked,
   handleClick,
@@ -7,12 +7,12 @@ const MenuItem = ({
   id,
   label,
   handleHover,
-  accordionContent
+  accordionContent = ''
 }) => {
   const clickedClassName = isClicked ? 'clicked' : ''
   const hoverClassName = isHovered ? 'hover' : ''
-  const isAccordion = accordionContent !== undefined
-  const isAccordionOpen = accordionContent !== undefined && clickedClassName
+  const isAccordion = accordionContent !== ''
+  const isAccordionOpen = accordionContent !== '' && clickedClassName
 
   const activeClass = `menu-item ${clickedClassName} ${hoverClassName}`.trim()
 

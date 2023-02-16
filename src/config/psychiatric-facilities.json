@@ -1,0 +1,237 @@
+[
+  {
+    "label": "Porirua Hospital",
+    "latitude": -41.1404088,
+    "longitude": 174.8293619
+  },
+  {
+    "label": "Porirua Lunatic Asylum",
+    "latitude": -41.141037,
+    "longitude": 174.831952
+  },
+  {
+    "label": "Seaview Asylum",
+    "latitude": -42.7084539,
+    "longitude": 170.9734809
+  },
+  {
+    "label": "Karori Lunatic Asylum ",
+    "latitude": -41.284682,
+    "longitude": 174.741601
+  },
+  {
+    "label": "Oakley Hospital",
+    "latitude": -36.880774,
+    "longitude": 174.7055693
+  },
+  {
+    "label": "Kingseat Hospital",
+    "latitude": -37.1299176,
+    "longitude": 174.8007884
+  },
+  {
+    "label": "Tokanui Hospital",
+    "latitude": -38.0718962,
+    "longitude": 175.3312397
+  },
+  {
+    "label": "Lake Alice Psychiatric Hospital",
+    "latitude": -40.1229317,
+    "longitude": 175.2319842
+  },
+  {
+    "label": "Campbell Park Otago",
+    "latitude": -44.8473995,
+    "longitude": 170.5411083
+  },
+  {
+    "label": "Seacliff Lunatic Asylum - Dunedin Ōtepoti",
+    "latitude": -45.6662673,
+    "longitude": 170.5701653
+  },
+  {
+    "label": "Hawksbury/Cherry Farm Hospital",
+    "latitude": -45.617534,
+    "longitude": 170.637782
+  },
+  {
+    "label": "Kingseat Psychiatric Hospital",
+    "latitude": -37.1296991,
+    "longitude": 174.7984848
+  },
+  {
+    "label": "Mount View Lunatic Asylum",
+    "latitude": -41.306114,
+    "longitude": 174.7810835
+  },
+  {
+    "label": "Wakari Hospital",
+    "latitude": -45.858994,
+    "longitude": 170.472783
+  },
+  {
+    "label": "Ashburn Hall/Clinic - Dunedin Ōtepoti",
+    "latitude": -45.8521082,
+    "longitude": 170.4555717
+  },
+  {
+    "label": "Auckland Hospital (including the Connelly Unit and Te Whetu Tawera)",
+    "latitude": -36.8605068,
+    "longitude": 174.7674006
+  },
+  {
+    "label": "Aspell House - Plimmerton",
+    "latitude": -41.0734036,
+    "longitude": 174.8417632
+  },
+  {
+    "label": "Barrett St Hospital - New Plymouth Ngāmotu",
+    "latitude": -39.064121,
+    "longitude": 174.06688
+  },
+  {
+    "label": "Braemar Hospital (Nelson)",
+    "latitude": -41.2899138,
+    "longitude": 173.26715
+  },
+  {
+    "label": "Bexley Clinic (Auckland)",
+    "latitude": -36.8830791,
+    "longitude": 174.8046149
+  },
+  {
+    "label": "Buchanan Clinic (Auckland)",
+    "latitude": -36.8729408,
+    "longitude": 174.7102071
+  },
+  {
+    "label": "Calvary Hospital (Christchurch)",
+    "latitude": -43.5205153,
+    "longitude": 172.6325207
+  },
+  {
+    "label": "Dunedin Public Hospital, Dunedin",
+    "latitude": -45.8702018,
+    "longitude": 170.5064939
+  },
+  {
+    "label": "Gisborne Hospital",
+    "latitude": -38.6380038,
+    "longitude": 178.0029293
+  },
+  {
+    "label": "Hastings Hospital (Hawke’s Bay)",
+    "latitude": -39.6359615,
+    "longitude": 176.8240444
+  },
+  {
+    "label": "Hillmorton Hospital (Christchurch)",
+    "latitude": -43.5479201,
+    "longitude": 172.5887403
+  },
+  {
+    "label": "Hutt Hospital (Te Whare Ahuru) (Lower Hutt)",
+    "latitude": -41.2044069,
+    "longitude": 174.9225753
+  },
+  {
+    "label": "Kenepuru Hospital (Porirua)",
+    "latitude": -41.2237699,
+    "longitude": 174.7427485
+  },
+  {
+    "label": "Kew Hospital (Invercargill)",
+    "latitude": -46.4375323,
+    "longitude": 168.356414
+  },
+  {
+    "label": "Kimberley Hospital (Levin)",
+    "latitude": -40.6517293,
+    "longitude": 175.267617
+  },
+  {
+    "label": "Mangere Psychopaedic Hospital (Auckland)",
+    "latitude": -36.9842053,
+    "longitude": 174.748083
+  },
+  {
+    "label": "Mason Clinic (Auckland)",
+    "latitude": -36.8750973,
+    "longitude": 174.7042219
+  },
+  {
+    "label": "Middlemore Hospital (Tiaho Mai) (Auckland)",
+    "latitude": -36.9603873,
+    "longitude": 174.8353669
+  },
+  {
+    "label": "Nelson Hospital Ngawhatu Hospital",
+    "latitude": -41.328068,
+    "longitude": 173.232851
+  },
+  {
+    "label": "North Shore Hospital (Taharoto) (Auckland)",
+    "latitude": -36.7811891,
+    "longitude": 174.7551995
+  },
+  {
+    "label": "Orokanui Hospital (Dunedin)",
+    "latitude": -45.776918,
+    "longitude": 170.6014367
+  },
+  {
+    "label": "Palmerston North Hospital (Manawaroa)",
+    "latitude": -40.3389386,
+    "longitude": 175.6184321
+  },
+  {
+    "label": "Princess Margaret Hospital (Christchurch)",
+    "latitude": -43.5707427,
+    "longitude": 172.6184992
+  },
+  {
+    "label": "Queen Mary Hospital (Hanmer)",
+    "latitude": -42.5212003,
+    "longitude": 172.8251348
+  },
+  {
+    "label": "Rotorua Hospital",
+    "latitude": -38.1370328,
+    "longitude": 176.2286507
+  },
+  {
+    "label": "Selwyn Hospital (Auckland)",
+    "latitude": -36.8667,
+    "longitude": 174.6965879
+  },
+  {
+    "label": "Sunnyside Hospital (Christchurch)",
+    "latitude": -43.547924,
+    "longitude": 172.5887403
+  },
+  {
+    "label": "Taranaki Base Hospital (New Plymouth)",
+    "latitude": -39.0727293,
+    "longitude": 174.0540686
+  },
+  {
+    "label": "Tauranga Hospital",
+    "latitude": -37.7079139,
+    "longitude": 176.1457266
+  },
+  {
+    "label": "Templeton Hospital (Christchurch)",
+    "latitude": -43.5337943,
+    "longitude": 172.423883
+  },
+  {
+    "label": "Te Whare Mahana (Golden Bay)",
+    "latitude": -40.8515191,
+    "longitude": 172.8041532
+  },
+  {
+    "label": "Thames Hospital",
+    "latitude": -37.1384546,
+    "longitude": 175.5417582
+  }
+]

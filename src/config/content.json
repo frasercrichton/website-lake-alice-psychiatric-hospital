@@ -59,30 +59,7 @@
     "text": ".",
     "id": "testimony"
   },
-  "info":{
-    "title": "Info",
-    "text": "Betweeen 19xx and 19xx x children were held at the Lake Alice Child and Adolescent Unit. During their time there they endured unprecedntented levels of psychological, physical and sexual abuse. ",
-    "id": "info",
-    "images": [
-      {
-        "caption": "Malcolm",
-      
-        "url": "https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20210619-00006-Scan 2.jpg",
-         "id": "location"
-      }  
-    ]
-  },
-  "location":{
-    "title": "Location",
-    "text": "",
-    "images": [
-      {
-        "caption": "No. 7 Line, State Highway 3 2km from Bulls",
-        "url": "https://d10yslqdemxz8r.cloudfront.net/3d-visualisation/fc-20220425-00025-Screen%20Shot%202022-04-25%20at%2010.15.47%20PM.jpg",
-         "id": "location"
-      }  
-    ]
-  },
+ 
   "ChildrensVillaGirls":{
     "title": "Girls' Unit",
     "text": " Villa 7"

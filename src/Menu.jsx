@@ -1,7 +1,7 @@
 import React from 'react'
 import './Menu.css'
-import facilities from './data/facilities.json'
-import MenuItem from './components/MenuItem'
+import facilities from './config/facilities.json'
+import MenuItem from './components/MenuItem.jsx'
 const Menu = ({
   setContent,
   selectedFacility,

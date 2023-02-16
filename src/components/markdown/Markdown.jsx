@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import './Markdown.css'
-import LinkRenderer from './LinkRenderer'
-import EmRenderer from './EmRenderer'
-import ImageRenderer from './ImageRenderer'
+import LinkRenderer from './LinkRenderer.jsx'
+import EmRenderer from './EmRenderer.jsx'
+// import ImageRenderer from './ImageRenderer.jsx'
 const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
 const FOLDER = '3d-visualisation'
 
@@ -25,7 +25,8 @@ const Markdown = markdownContent => {
     <div className='markdown-container'>
       <ReactMarkdown
         transformImageUri={transformImageUri}
-        components={{p: 'div', a: LinkRenderer, em: EmRenderer, img: ImageRenderer }}
+        //   components={{p: 'div', a: LinkRenderer, em: EmRenderer, img: ImageRenderer }}
+        components={{ p: 'div', a: LinkRenderer, em: EmRenderer }}
       >
         {markdown}
       </ReactMarkdown>

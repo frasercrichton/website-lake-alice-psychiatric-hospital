@@ -27,12 +27,11 @@ const Camera = ({ camera: activeCamera }) => {
 
   const hash = window.location.hash
 
-  console.log('hash', hash)
   const cameraState = useThree(state => state.camera)
   if (cameraRef.current != undefined) {
     fromQuat.copy(cameraRef.current.quaternion)
   }
-
+// TODOadduseffect for useref
   // if (cameraRef.current != undefined) {
   //   const cameraControls = CameraControls({cameraRef})
   // }

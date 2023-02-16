@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import './Facility.css'
-import Label from './Label'
-import facilities from '../data/facilities.json'
-import LookAndFeelControls from '../controls/LookAndFeel'
+import Label from './Label.jsx'
+import facilities from '../config/facilities.json'
+import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 import * as THREE from 'three'
 
 const Facility = ({
@@ -42,6 +42,7 @@ const Facility = ({
 
   return (
     <mesh
+    // TODO scale?
       ref={mesh}
       name={facilityId}
       geometry={node.geometry}
@@ -50,10 +51,10 @@ const Facility = ({
       {...meshOnclick}
       // onPointerLeave={e => alert('left')}
       side={THREE.FrontSide}
-          
       receiveShadow
       castShadow={hasShadow}
       position={[node.position.x, y, node.position.z]}
+      rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >
       {isFacility && (
         <meshPhongMaterial

@@ -1,16 +1,16 @@
 import React from 'react'
 import { Polyline } from 'react-leaflet'
 import './Line.css'
-const Line = ({ lineCentre, markerCoordinates }) => {
+const Line = ({ start, end }) => {
   return (
     <Polyline
       className='map-line'
+      color={'#ff0000'}
       key={1}
       positions={[
-        [lineCentre.lineCentre.lat, lineCentre.lineCentre.lng],
-        [markerCoordinates.lat, markerCoordinates.lng]
+        [start.lat, start.lng],
+        [end.lat, end.lng]
       ]}
-      color={'grey'}
     />
   )
 }

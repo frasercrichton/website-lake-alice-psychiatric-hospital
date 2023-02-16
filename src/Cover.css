@@ -1,20 +1,20 @@
 .cover-container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: white;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   text-align: center;
-  color: white;
-  z-index: 300;
+  z-index: 500;
   visibility: hidden;
   opacity: 0;
-  background-color: #666666;
   transition: visibility 1s, opacity 1s linear;
+  position: fixed;
 }
 
 .active {
@@ -23,11 +23,9 @@
 }
 
 .default-cover-container {
-  background-color: #666666;
+  /* overflow: hidden; */
   background-size: 100%;
-
-  /* background-attachment: fixed; */
-
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-image: url('https://d10yslqdemxz8r.cloudfront.net/images/FL25129142.jpg');
@@ -39,24 +37,35 @@
 }
 
 .cover-content {
-  height: 100%;
-  flex: 1;
+  /* height: 100%; */
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 800px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  row-gap: 200px;
-
+  /* overflow: hidden; */
 }
 
-.cover-content .header {
-  margin-top: 170px;
+.cover-content  {
+  animation: fadeIn 6s;
+  -webkit-animation: fadeIn 6s;
+  -moz-animation: fadeIn 6s;
+  -o-animation: fadeIn 6s;
+  -ms-animation: fadeIn 6s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .main-content {
-  margin-top: 100px;
-  margin-bottom: 200px;
-
+  /* background-color: beige; */
 }
 
 .content-warning {
@@ -80,14 +89,12 @@
   border: 0.16em solid #FFFFFF;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
   opacity: 0.4;
   text-align: center;
   background-color: rgba(0, 0, 0, 1);
   transition: all 300ms ease-out;
   height: 5em;
 }
-
 
 .button:hover {
   background-color: rgba(200, 200, 200, 0.7);
@@ -108,5 +115,4 @@
     align-items: center;
     height: 100%;
   }
-
 }
