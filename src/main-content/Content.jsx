@@ -2,6 +2,7 @@ import './Content.css'
 // import { CSSTransition } from 'react-transition-group'
 import VideoVimeo from '../components/VideoVimeo.jsx'
 import Markdown from '../components/markdown/Markdown.jsx'
+import AssetUrlHelper from '../components/AssetUrlHelper'
 import mapDisplay from '../map/mapDisplay.json'
 // TODO map centre shouldn't be a default
 const { zoom, centre, maxBounds } = mapDisplay
@@ -16,13 +17,11 @@ const mapZoomDimensions = {
   initialMapCentre: lakeAliceCoordinates
 }
 
-const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-const FOLDER = '3d-visualisation/'
-
 const Content = ({ content }) => {
   const className =
     content !== '' ? 'content-container active' : 'content-container'
-
+  const assetUrlHelper = new AssetUrlHelper
+  
   return (
     <div className={className}>
       <div className='content'>
@@ -32,7 +31,7 @@ const Content = ({ content }) => {
           </div>
         )}
         {(content === 'info' || content === 'about') && (
-          <Markdown markdownContent={`${CDN_URL}${FOLDER}${content}.md`} />
+          <Markdown markdownContent={assetUrlHelper.resolveUrl(`${content}.md`, '3d-visualisation')} />
         )}
         {content === 'testimony' && (
           <VideoVimeo id='689154638' caption='Malcolm Richards' />

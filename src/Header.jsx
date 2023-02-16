@@ -15,9 +15,9 @@ const Header = ({ scrollProgress, active, setActive }) => {
 
   const navigate = useNavigate()
 
-  const handleNavigationClick = url => {
-    setActive(url)
-    navigate(url)
+  const handleNavigationClick = nav => {
+    setActive(nav.url)
+    navigate(nav.url)
   }
   return (
     <header>
@@ -29,7 +29,7 @@ const Header = ({ scrollProgress, active, setActive }) => {
               key={nav.url}
               ref={element => (links.current[nav.url] = element)}
               role='button'
-              onClick={e => handleNavigationClick(nav.url)}
+              onClick={e => handleNavigationClick(nav)}
               // href='#'
               className={'nav-item'}
               to={nav.url}

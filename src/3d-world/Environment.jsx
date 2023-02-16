@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
 import { useThree } from '@react-three/fiber'
 import EnvironmentControls from '../controls/EnvironmentControls.jsx'

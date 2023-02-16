@@ -1,8 +1,6 @@
 export default class AssetUrlHelper {
-  resolveUrl (input) {
+  resolveUrl (resourceName, folderPrefix) {
     const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-    const FOLDER = '3d-visualisation'
-
-    return /^https?:/.test(input) ? input : `${CDN_URL}${FOLDER}/${input}`
+    return /^https?:/.test(resourceName) ? resourceName : `${CDN_URL}${folderPrefix}/${resourceName}`
   }
 }

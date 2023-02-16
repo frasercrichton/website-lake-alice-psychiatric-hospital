@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { LatLng, LatLngBounds } from 'leaflet'
 import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet'
-import Markers from './Markers.jsx'
+import Circles from './Circles.jsx'
 import Lines from './Lines.jsx'
 import './GeographicMap.css'
 import AnimateZoom from './AnimateZoom'
@@ -64,7 +64,7 @@ function GeographicMap ({ visibleMapLayers, maxBounds }) {
                   points={visibleMapLayers.lines.points}
                 />
               )}
-              <Markers
+              <Circles
                 majorPoints={visibleMapLayers.majorPoints}
                 minorPoints={visibleMapLayers.minorPoints}
               />

@@ -3,16 +3,15 @@ import Circle from './components/Circle.jsx'
 import Icon from './components/Icon.jsx'
 import { LatLng } from 'leaflet'
 
-const Markers = ({ majorPoints, minorPoints }) => {
+const Circles = ({ majorPoints, minorPoints }) => {
   const majorPointStyle = {
-    fillColor: '#000000',
-    radius: '25',
-    stroke: true,
-    strokeColor: '#ff0000'
+    fillColor: '#ffffff',
+    radius: '25'
+    // stroke: true,
+    // strokeColor: '#ff0000'
   }
-
   const minorPointStyle = {
-    fillColor: '#000000',
+    fillColor: minorPoints?.colour ? minorPoints.colour : '#ffffff',
     radius: '5',
     stroke: false
   }
@@ -27,8 +26,7 @@ const Markers = ({ majorPoints, minorPoints }) => {
           {...style}
         />
 
-        {/* <Circle markerCoordinates={coordinates} {...style} />
-        <Icon markerCoordinates={coordinates} label={point.label} {...style} /> */}
+        {/* <Icon markerCoordinates={coordinates} label={point.label} {...style} /> */}
       </>
     )
   }
@@ -41,10 +39,10 @@ const Markers = ({ majorPoints, minorPoints }) => {
         })}
 
       {minorPoints &&
-        minorPoints.map(point => {
+        minorPoints.points.map(point => {
           return getMarker(point, minorPointStyle)
         })}
     </>
   )
 }
-export default Markers
+export default Circles

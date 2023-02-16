@@ -32,3 +32,18 @@ figcaption {
   border-bottom: 2px solid rgb(169, 13, 94);
   text-align: center;
 }
+
+
+.image-container .source {
+  background-color: #000000;
+  text-align: right;
+  display: inline-block;
+}
+
+
+.image-container .source a {
+  font-style: italic;
+  font-size: medium;
+  color: #ffffff;
+
+}

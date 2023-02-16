@@ -18,11 +18,11 @@ const urls = [
   {
     text: 'Pathways',
     url: '/pathways',
-    next: '/accountability'
+    next: '/justice'
   },
   {
-    text: 'Accountability',
-    url: '/accountability',
+    text: 'Justice',
+    url: '/justice',
     next: '/about'
   },
   {

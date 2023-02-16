@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import Page from './Page.jsx'
 import './Chapter.css'
-const Chapter = ({ chapter, setPageInView, nextChapter, setNextChapter }) => {
+const Chapter = ({ chapter, nextChapter, setPageInView, setNextChapter }) => {
   const pages = useRef([])
-
+  
   useEffect(() => {
     // for every new chapter scroll to the start of the page
     pages.current[0].scrollIntoView()

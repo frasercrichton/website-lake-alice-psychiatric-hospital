@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useNavigate,
-  Route,
-  Routes,
-  useLocation
-} from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserView } from 'react-device-detect'
 import { Leva } from 'leva'
 import './App.css'
 import Header from './Header.jsx'
@@ -16,7 +10,7 @@ import Cover from './Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
 import angleToRadians from './3d-world/angleHelper'
 import Loader from './components/Loader.jsx'
-import data from './config/chapters.js'
+import chapters from './config/chapters.js'
 import urls from './config/navigation.js'
 import GeographicMap from './map/GeographicMap.jsx'
 import VideoVimeo from './components/VideoVimeo.jsx'
@@ -25,6 +19,7 @@ import Chapter from './main-content/Chapter.jsx'
 import Image from './components/Image.jsx'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
 import TextBox from './components/TextBox'
+import MobileCover from './main-content/MobileView'
 const defaultCameraConfig = {
   position: [0, 600, 400],
   rotation: [-angleToRadians(50), 0, 0],
@@ -47,7 +42,7 @@ function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
   const [camera, setCamera] = useState(defaultCameraConfig)
-  const [chapterInView, setChapterInView] = useState(data['/context'])
+  const [chapterInView, setChapterInView] = useState(chapters['/context'])
   // TODO -  useState('') >  useState(null)
   const [pageInView, setPageInView] = useState('')
   const [hoverName, setHoverName] = useState('')
@@ -57,18 +52,18 @@ function App () {
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
   const [scrollProgress, setScrollProgress] = useState(0.3)
-  const [active, setActive] = useState('/introduction')
-  // const [nextChapter, setNextChapter] = useState(data['/context'])
+  const [activeChapter, setActiveChapter] = useState('/introduction')
+  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
   const navigate = useNavigate()
 
-  const setNextChapter = chapter => {
-    setActive(chapter)
+  const updateChapter = chapter => {
+    setActiveChapter(chapter)
     navigate(chapter)
   }
 
   // setNextChapter(nextChapter)
   const imageURL = pageInView.image
-    ? assetUrlHelper.resolveUrl(pageInView.image.src)
+    ? assetUrlHelper.resolveUrl(pageInView.image.src, '3d-visualisation')
     : null
 
   const mapZoomDimensions = {
@@ -110,8 +105,8 @@ function App () {
       // setChapterInView(data['/'])
       // setPageInView(data[location.pathname].pages[0])
     }
-    setChapterInView(data[location.pathname])
-    setPageInView(data[location.pathname].pages[0])
+    setChapterInView(chapters[location.pathname])
+    setPageInView(chapters[location.pathname].pages[0])
     setScrollProgress(0)
   }, [location])
 
@@ -168,71 +163,73 @@ function App () {
 
   return (
     <div className='site-container'>
-      <Leva oneLineLabels collapsed hidden={isLevaHidden} />
-      <Cover
-        key='cover'
-        coverActive={coverActive}
-        handleCoverClick={handleCoverClick}
-        setContent={setContent}
-      />
-      <Header
-        scrollProgress={scrollProgress}
-        handleClick={setContent}
-        enableClose={content !== ''}
-        active={active}
-        setActive={setActive}
-      />
-      {pageInView.view === 'markdown' && (
-        <Content
-          key={content}
-          content={pageInView.content.file}
+      <BrowserView>
+        <Leva oneLineLabels collapsed hidden={isLevaHidden} />
+        <Cover
+          key='cover'
+          coverActive={coverActive}
+          handleCoverClick={handleCoverClick}
           setContent={setContent}
         />
-      )}
-
-      {pageInView.text && pageInView.text?.style === 'static' && (
-        <TextBox
-          text={pageInView.text}
-          textBoxContainerStyle={textBoxContainerStyle}
-          textBoxStyle={textBoxStyle}
+        <Header
+          scrollProgress={scrollProgress}
+          handleClick={setContent}
+          enableClose={content !== ''}
+          active={activeChapter}
+          setActive={setActiveChapter}
         />
-      )}
-      {pageInView.view === '3d' && (
-        <Canvas
-          key='canvas'
-          selectedFacility={facility}
-          handleFacilityClick={handleFacilityClick}
-          hoverName={hoverName}
-          setHoverName={setHoverName}
-          handleCanvasClick={handleCanvasClick}
-          camera={camera}
-          isRotating={isRotating}
-        />
-      )}
+        {pageInView.view === 'markdown' && (
+          <Content
+            key={content}
+            content={pageInView.content.file}
+            setContent={setContent}
+          />
+        )}
 
-      {pageInView.view === 'map' && (
-        <GeographicMap
-          visibleMapLayers={visibleMapLayers}
-          {...mapZoomDimensions}
-        />
-      )}
+        {pageInView.text && pageInView.text?.style === 'static' && (
+          <TextBox
+            text={pageInView.text}
+            textBoxContainerStyle={textBoxContainerStyle}
+            textBoxStyle={textBoxStyle}
+          />
+        )}
+        {pageInView.view === '3d' && (
+          <Canvas
+            key='canvas'
+            selectedFacility={facility}
+            handleFacilityClick={handleFacilityClick}
+            hoverName={hoverName}
+            setHoverName={setHoverName}
+            handleCanvasClick={handleCanvasClick}
+            camera={camera}
+            isRotating={isRotating}
+          />
+        )}
 
-      {pageInView.video !== undefined && (
-        <VideoVimeo
-          id={pageInView.video.id}
-          caption={pageInView.video.caption}
-        />
-      )}
+        {pageInView.view === 'map' && (
+          <GeographicMap
+            visibleMapLayers={visibleMapLayers}
+            {...mapZoomDimensions}
+          />
+        )}
 
-      {pageInView.image && pageInView.image?.style === 'static' && (
-        <Image
-          caption={pageInView.image.caption}
-          url={imageURL}
-          style={imageContainerStyle}
-        />
-      )}
+        {pageInView.video !== undefined && (
+          <VideoVimeo
+            id={pageInView.video.id}
+            caption={pageInView.video.caption}
+          />
+        )}
 
-      {/* <Menu
+        {pageInView.image && pageInView.image?.style === 'static' && (
+          <Image
+            caption={pageInView.image.caption}
+            url={imageURL}
+            style={imageContainerStyle}
+            source={pageInView.image.source}
+          />
+        )}
+
+        {/* <Menu
         setContent={setContent}
         selectedFacility={facility}
         handleMenuClick={handleFacilityClick}
@@ -240,48 +237,53 @@ function App () {
         tab={tab}
         handleContextUpdate={handleContextUpdate}
       /> */}
-      <Routes>
-        {urls.map(nav => {
-          return (
-            <Route
-              key={`route-${nav.url}`}
-              exact
-              path={nav.url}
-              element={
-                <Chapter
-                  chapter={chapterInView}
-                  nextChapter={nav.next}
-                  setPageInView={setPageInView}
-                  setNextChapter={setNextChapter}
-                />
-              }
-            />
-          )
-        })}
-        <Route
-          key={`route-default`}
-          exact
-          path={'/'}
-          element={
-            <Chapter
-              chapter={chapterInView}
-              setPageInView={setPageInView}
-              pageInView={pageInView}
-            />
-          }
-        />
-        <Route
-          key={`route-wild-default`}
-          path={'*'}
-          element={
-            <Chapter
-              chapter={chapterInView}
-              setPageInView={setPageInView}
-              pageInView={pageInView}
-            />
-          }
-        />
-      </Routes>
+        <Routes>
+          <Route
+            key={`route-default`}
+            path='/'
+            element={
+              <Chapter
+                chapter={chapterInView}
+                nextChapter='/malcolm'
+                setPageInView={setPageInView}
+                pageInView={pageInView}
+              />
+            }
+          />
+          {urls.map(nav => {
+            return (
+              <Route
+                key={`route-${nav.url}`}
+                exact
+                path={nav.url}
+                element={
+                  <Chapter
+                    chapter={chapterInView}
+                    nextChapter={nav.next}
+                    setPageInView={setPageInView}
+                    setNextChapter={updateChapter}
+                  />
+                }
+              />
+            )
+          })}
+
+          <Route
+            // key={`route-wild-default`}
+            // exact
+            path='*'
+            nextChapter='/malcolm'
+            element={
+              <Chapter
+                chapter={chapterInView}
+                setPageInView={setPageInView}
+                pageInView={pageInView}
+              />
+            }
+          />
+        </Routes>
+      </BrowserView>
+      <MobileCover />
     </div>
   )
 }

@@ -1,8 +1,7 @@
 import './Cover.css'
 // import { CSSTransition } from 'react-transition-group'
 import Button from './components/Button'
-// const CDN_URL = process.env.REACT_APP_MORAL_DRIFT_CDN
-// const FOLDER = '3d-visualisation/'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Cover = ({ coverActive, handleCoverClick, setContent }) => {
   const action = () => {
@@ -14,14 +13,14 @@ const Cover = ({ coverActive, handleCoverClick, setContent }) => {
 
   return (
     <div key='cover-container' className={className}>
-      {/* <div className='cover-overlay'> </div> */}
       <div className='default-cover-container'>
         <div className='cover-content'>
-          <div className='header'>
-            <h1>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h1>
-            <h1>Lake Alice Child and Adolescent Unit</h1>
-          </div>
           <div className='main-content'>
+            <div className='header'>
+              <h1>Lake Alice Psychiatric Hospital</h1>
+              <h2>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h2>
+              <h2>Lake Alice Child and Adolescent Unit</h2>
+            </div>
             <div>
               {/* <p className='content-warning'>
                 Graphic content warning: some of the content included here may
@@ -29,8 +28,22 @@ const Cover = ({ coverActive, handleCoverClick, setContent }) => {
               </p> */}
             </div>
             <div className='navigation'>
-              <Button action={e => action()} label='Testimony' />
-              <Button action={e => handleCoverClick()} label='explore' />
+              <Link
+                role='button'
+                onClick={e => e => action()}
+                className={'nav-item'}
+                to='/testimony'
+              >
+                <Button action={e => action()} label='Testimony' />
+              </Link>
+              <Link
+                role='button'
+                onClick={e => e => handleCoverClick()}
+                className={'nav-item'}
+                to='/introduction'
+              >
+                <Button action={e => handleCoverClick()} label='explore' />
+              </Link>
             </div>
           </div>
         </div>

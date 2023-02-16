@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import './Page.css'
 import { useInView } from 'react-intersection-observer'
 import VideoVimeo from '../components/VideoVimeo.jsx'
@@ -28,14 +28,15 @@ const Page = ({ setPageInView, page, nextChapter, setNextChapter }) => {
     initialInView: false,
 
     onChange: (inView, ref) => {
-      // console.log('next', ref.target)
       if (inView) {
         setNextChapter(nextChapter)
       }
     }
   })
 
-  const img = page.image ? assetUrlHelper.resolveUrl(page.image.src) : null
+  const img = page.image
+    ? assetUrlHelper.resolveUrl(page.image.src, '3d-visualisation')
+    : null
 
   const introBlock = {
     position: 'absolute',
@@ -61,7 +62,7 @@ const Page = ({ setPageInView, page, nextChapter, setNextChapter }) => {
         key={`inview-block-${page.id}`}
         ref={content}
         className='inview-block'
-      ></div>
+      />
       <div key={`content-block-${page.id}`} className='page-content-container'>
         {page.text?.style === 'scrolling' && (
           <TextBox text={page.text} textBoxStyle={textBoxStyle} />
@@ -71,7 +72,11 @@ const Page = ({ setPageInView, page, nextChapter, setNextChapter }) => {
             className='scrolling-image'
             style={{ width: '50%', display: 'flex', flexDirection: 'column' }}
           >
-            <Image caption={page.image.caption} url={img} />
+            <Image
+              caption={page.image.caption}
+              source={page.image.source}
+              url={img}
+            />
           </div>
         )}
       </div>

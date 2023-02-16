@@ -60,7 +60,7 @@ const HospitalLayout = ({
           near: camera.near,
           far: camera.far
         }
-        console.log(cameraConfig)
+        // console.log(cameraConfig)
       }
 
       if (nodes[key].type === 'Mesh') {
