@@ -66,8 +66,15 @@ const data = {
       {
         id: 1,
         index: 1,
+        image: {
+          src: 'site-animated.gif',
+          style: 'static'
+        }
+      },
+      {
+        id: 2,
+        index: 2,
         text: {
-          header: 'Introduction',
           content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
         },
@@ -80,21 +87,7 @@ const data = {
         id: 2,
         index: 2,
         text: {
-          header: 'Introduction',
-          content: 'xxx',
-          style: 'static'
-        },
-        image: {
-          src: 'site-animated.gif',
-          style: 'static'
-        }
-      },
-      {
-        id: 2,
-        index: 2,
-        text: {
-          header: 'Introduction',
-          content: 'xxx',
+          content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
         },
         view: '3d',
@@ -228,6 +221,29 @@ const data = {
       {
         id: 5,
         index: 5,
+        image: {
+          src: 'fc-20130307-00001-2013P_Pi293_006718.jpg',
+          style: 'scrolling',
+          caption:
+            'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
+          source:
+            'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000,
+          isRotating: true
+        }
+      },
+      {
+        id: 6,
+        index: 6,
         text: {
           header: '5 - First night',
           content:
@@ -254,8 +270,8 @@ const data = {
         }
       },
       {
-        id: 6,
-        index: 6,
+        id: 7,
+        index: 7,
         text: {
           header: '6 - A Typical day',
           content:
@@ -277,8 +293,8 @@ const data = {
       },
 
       {
-        id: 7,
-        index: 7,
+        id: 8,
+        index: 8,
         text: {
           header: '7 - ECT',
           content:
@@ -299,8 +315,8 @@ const data = {
         }
       },
       {
-        id: 8,
-        index: 8,
+        id: 9,
+        index: 9,
         text: {
           header: '8 - ECT - Villa',
           content:
@@ -327,8 +343,8 @@ const data = {
         }
       },
       {
-        id: 9,
-        index: 9,
+        id: 10,
+        index: 10,
         text: {
           header: '9 - Escape',
           content:
@@ -371,8 +387,8 @@ const data = {
         }
       },
       {
-        id: 10,
-        index: 10,
+        id: 11,
+        index: 11,
         text: {
           header: '10 - Consequences',
           content:
@@ -393,8 +409,8 @@ const data = {
         }
       },
       {
-        id: 11,
-        index: 11,
+        id: 12,
+        index: 12,
         text: {
           header: '11 - Afterwards',
           content:
@@ -415,8 +431,8 @@ const data = {
         }
       },
       {
-        id: 12,
-        index: 12,
+        id: 13,
+        index: 13,
         text: {
           header: '12 - Runaway',
           content:
@@ -434,65 +450,6 @@ const data = {
               //   longitude: 175.3369864
               // }
             ],
-            minorPoints: {
-              points: [
-                {
-                  label: 'Waipawa',
-                  latitude: -39.9182277,
-                  longitude: 176.4211438
-                },
-                {
-                  label: 'Waipukurau',
-                  latitude: -40.0309529,
-                  longitude: 176.5278439
-                },
-                {
-                  label: 'Pahiatua',
-                  latitude: -40.7491005,
-                  longitude: 176.1375833
-                },
-                {
-                  label: 'Napier',
-                  latitude: -39.4794044,
-                  longitude: 176.7985016
-                },
-                {
-                  label: 'Welsford',
-                  latitude: -36.2858116,
-                  longitude: 174.4447237
-                },
-                {
-                  label: 'Kaiwaka',
-                  latitude: -36.2160784,
-                  longitude: 174.3493232
-                },
-                {
-                  label: 'Auckland North Shore',
-                  latitude: -36.7494681,
-                  longitude: 174.5825004
-                },
-                {
-                  label: 'Auckland HospitalConnelly Unit',
-                  latitude: -36.8605068,
-                  longitude: 174.7674006
-                },
-                {
-                  label: 'South Auckland',
-                  latitude: -36.9914801,
-                  longitude: 174.8690175
-                },
-                {
-                  label: 'Napier',
-                  latitude: -39.4794044,
-                  longitude: 176.7985016
-                },
-                {
-                  label: 'Hastings',
-                  latitude: -39.6394411,
-                  longitude: 176.7794575
-                }
-              ]
-            },
             lines: {
               points: [
                 {
@@ -728,10 +685,32 @@ const data = {
       {
         id: 8,
         index: 8,
+        text: {
+          content:
+            "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
+          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          name: 'MaximumSecurityBlockCamera',
+          position: [-212.70655822753906, 43.53173828125, -225.8732452392578],
+          rotation: [
+            -2.883296831393313, -0.013562286618653132, -3.1379996244759334
+          ],
+          aspect: 1.7777777777777777,
+          fov: 39.76070325000613,
+          near: 0.10000000149011612,
+          far: 1000
+        }
+      },
+      {
+        id: 9,
+        index: 9,
         image: {
           src: 'fc-20210828-00001-FL25129125.jpg',
           caption:
-            "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
+            'Maximum security block at Lake Alice Psychiatric Hospital Marton (Photographer: Mr Cleal).',
           source: 'Redacted-Lake-Alice-Report.pdf#page=62',
           style: 'scrolling'
         },
@@ -750,8 +729,8 @@ const data = {
         }
       },
       {
-        id: 9,
-        index: 9,
+        id: 10,
+        index: 10,
         text: {
           header: '9 - Staff on Site',
           content:
@@ -772,8 +751,8 @@ const data = {
         }
       },
       {
-        id: 10,
-        index: 10,
+        id: 11,
+        index: 11,
         text: {
           header: '7 - Adults and Children',
           content:
@@ -795,8 +774,8 @@ const data = {
         }
       },
       {
-        id: 11,
-        index: 11,
+        id: 12,
+        index: 12,
         text: {
           header: '9 - Torture',
           content:
@@ -817,8 +796,8 @@ const data = {
         }
       },
       {
-        id: 12,
-        index: 12,
+        id: 13,
+        index: 13,
         text: {
           header: '10 - Demolition',
           content:
@@ -836,35 +815,6 @@ const data = {
           fov: 39.76070325000613,
           near: 0.10000000149011612,
           far: 1000
-        }
-      }
-    ]
-  },
-  '/': {
-    pages: [
-      {
-        id: 1,
-        index: 1,
-        text: {
-          header: 'Introduction',
-          content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-          style: 'static'
-        },
-
-        image: {
-          src: 'site-animated.gif'
-        },
-        // view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
         }
       }
     ]
@@ -1380,6 +1330,35 @@ const data = {
         //   near: 10,
         //   far: 10000
         // }
+      }
+    ]
+  },
+  '/': {
+    pages: [
+      {
+        id: 1,
+        index: 1,
+        text: {
+          header: 'Introduction',
+          content:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+          style: 'static'
+        },
+
+        image: {
+          src: 'site-animated.gif'
+        },
+        // view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000,
+          isRotating: true
+        }
       }
     ]
   }

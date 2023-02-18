@@ -54,11 +54,17 @@ function App () {
   const [scrollProgress, setScrollProgress] = useState(0.3)
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
+  const [stepProgress, setStepProgress] = useState(null)
+
   const navigate = useNavigate()
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
     navigate(chapter)
+  }
+
+  const updateStepProgress = progressCount => {
+    setStepProgress(progressCount)
   }
 
   // setNextChapter(nextChapter)
@@ -152,13 +158,16 @@ function App () {
 
   const textBoxContainerStyle = {
     position: 'fixed',
-    alignItems: 'flex-end',
-    justifyContent: 'center'
+    // alignItems: 'flex-end',
+    justifyContent: 'center',
+    fontSize: '50px',
+    opacity: 1
   }
 
   const textBoxStyle = {
     margin: '50px',
-    marginTop: '550px'
+    opacity: 1
+    // marginTop: '550px'
   }
 
   return (
@@ -191,6 +200,8 @@ function App () {
             text={pageInView.text}
             textBoxContainerStyle={textBoxContainerStyle}
             textBoxStyle={textBoxStyle}
+            stepProgress={stepProgress}
+            isAnimated
           />
         )}
         {pageInView.view === '3d' && (
@@ -210,6 +221,7 @@ function App () {
           <GeographicMap
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
+            stepProgress={stepProgress}
           />
         )}
 
@@ -247,6 +259,8 @@ function App () {
                 nextChapter='/malcolm'
                 setPageInView={setPageInView}
                 pageInView={pageInView}
+                stepProgress={stepProgress}
+                updateStepProgress={updateStepProgress}
               />
             }
           />
@@ -262,6 +276,8 @@ function App () {
                     nextChapter={nav.next}
                     setPageInView={setPageInView}
                     setNextChapter={updateChapter}
+                    stepProgress={stepProgress}
+                    updateStepProgress={updateStepProgress}
                   />
                 }
               />
@@ -278,6 +294,7 @@ function App () {
                 chapter={chapterInView}
                 setPageInView={setPageInView}
                 pageInView={pageInView}
+                setNextChapter={updateChapter}
               />
             }
           />

@@ -1,0 +1,7 @@
+:root {
+  --percentage: 0.2;
+}
+
+.letter {
+  opacity: var(--percentage);
+}
