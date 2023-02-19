@@ -27,7 +27,7 @@ const TextBox = ({
               rel='noreferrer'
               href={new AssetUrlHelper().resolveUrl(text.source, 'documents')}
             >
-              Source
+              SOURCE
             </a>
           </div>
         )}

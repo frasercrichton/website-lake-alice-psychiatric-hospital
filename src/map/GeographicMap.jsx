@@ -62,7 +62,6 @@ function GeographicMap ({ visibleMapLayers, maxBounds, stepProgress }) {
                 <Lines
                   target={visibleMapLayers.lines.target}
                   points={visibleMapLayers.lines.points}
-                  stepProgress={stepProgress}
                 />
               )}
               <Circles

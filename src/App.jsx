@@ -41,20 +41,24 @@ if (hash === '#debug') {
 function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
-  const [camera, setCamera] = useState(defaultCameraConfig)
+  const [pageCamera, setPageCamera] = useState(defaultCameraConfig)
+  const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
+
+  // Page and chapter State
   const [chapterInView, setChapterInView] = useState(chapters['/context'])
-  // TODO -  useState('') >  useState(null)
-  const [pageInView, setPageInView] = useState('')
-  const [hoverName, setHoverName] = useState('')
-  const [content, setContent] = useState('')
+  const [activeChapter, setActiveChapter] = useState('/introduction')
+  const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
+  // Scrollarama state
+  const [scrollProgress, setScrollProgress] = useState(0.3)
+  const [stepProgress, setStepProgress] = useState(null)
+
+  const [hoverName, setHoverName] = useState('')
+  const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
-  const [scrollProgress, setScrollProgress] = useState(0.3)
-  const [activeChapter, setActiveChapter] = useState('/introduction')
   const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
-  const [stepProgress, setStepProgress] = useState(null)
 
   const navigate = useNavigate()
 
@@ -84,7 +88,8 @@ function App () {
   const location = useLocation()
 
   useEffect(() => {
-    const sectionTotalCount = chapterInView.pages.length
+    // -1 to account for the double 'introduction' pages
+    const sectionTotalCount = chapterInView.pages.length - 1
     const sectionCurrentIndex = pageInView.index
     // if 0 no progress
     // if 1 > percentage
@@ -102,8 +107,15 @@ function App () {
     // )
 
     setScrollProgress(sectionCurrentIndex / sectionTotalCount)
-    setCamera(pageInView.camera)
+    setPageCamera(pageInView.camera)
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
+    // hacky way to avoid camera bounce after into
+
+    if (pageInView.camera?.duration !== cameraMoveDuration) {
+      setCameraMoveDuration(pageInView.camera?.duration)
+
+      console.log(cameraMoveDuration)
+    }
   }, [pageInView])
 
   useEffect(() => {
@@ -135,8 +147,8 @@ function App () {
     const activeFacility = facilityId === facility ? '' : facilityId
     setFacility(activeFacility)
 
-    if (!camera) {
-      setCamera(defaultCameraConfig)
+    if (!pageCamera) {
+      setPageCamera(defaultCameraConfig)
     }
   }
 
@@ -151,9 +163,10 @@ function App () {
 
   const imageContainerStyle = {
     position: 'fixed',
-    width: '100vw',
-    display: 'flex',
-    paddingTop: '25px'
+    // width: '100vw',
+    // height: '100vh',
+    display: 'flex'
+    // paddingTop: '25px'
   }
 
   const textBoxContainerStyle = {
@@ -184,8 +197,8 @@ function App () {
           scrollProgress={scrollProgress}
           handleClick={setContent}
           enableClose={content !== ''}
-          active={activeChapter}
-          setActive={setActiveChapter}
+          activeChapter={activeChapter}
+          setActiveChapter={setActiveChapter}
         />
         {pageInView.view === 'markdown' && (
           <Content
@@ -212,7 +225,8 @@ function App () {
             hoverName={hoverName}
             setHoverName={setHoverName}
             handleCanvasClick={handleCanvasClick}
-            camera={camera}
+            pageCamera={pageCamera}
+            cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
           />
         )}
@@ -255,7 +269,7 @@ function App () {
             path='/'
             element={
               <Chapter
-                chapter={chapterInView}
+                chapterInView={chapterInView}
                 nextChapter='/malcolm'
                 setPageInView={setPageInView}
                 pageInView={pageInView}
@@ -272,8 +286,9 @@ function App () {
                 path={nav.url}
                 element={
                   <Chapter
-                    chapter={chapterInView}
+                    chapterInView={chapterInView}
                     nextChapter={nav.next}
+                    pageInView={pageInView}
                     setPageInView={setPageInView}
                     setNextChapter={updateChapter}
                     stepProgress={stepProgress}
@@ -291,7 +306,7 @@ function App () {
             nextChapter='/malcolm'
             element={
               <Chapter
-                chapter={chapterInView}
+                chapterInView={chapterInView}
                 setPageInView={setPageInView}
                 pageInView={pageInView}
                 setNextChapter={updateChapter}

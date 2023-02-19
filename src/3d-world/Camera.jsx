@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import * as THREE from 'three'
-import { useSpring, animated, config } from '@react-spring/three'
-import { OrbitControls, Environment } from '@react-three/drei'
+import { useSpring, animated } from '@react-spring/three'
+import { OrbitControls } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import angleToRadians from './angleHelper'
@@ -18,48 +18,52 @@ Globals.assign({
 //   camera.position[2]
 // ),
 // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
-const Camera = ({ camera: activeCamera }) => {
-  const cameraRef = useRef(null)
-  const { camera } = useThree()
+const hash = window.location.hash
+
+const Camera = ({ pageCamera, cameraMoveDuration = 2000 }) => {
+  const currentCamera = useThree(state => state.camera)
   // controls = new THREE.OrbitControls( camera, renderer.domElement )
+
   const fromQuat = new THREE.Quaternion()
   const toQuat = new THREE.Quaternion()
 
-  const hash = window.location.hash
-
-  const cameraState = useThree(state => state.camera)
-  if (cameraRef.current != undefined) {
-    fromQuat.copy(cameraRef.current.quaternion)
-  }
-// TODOadduseffect for useref
-  // if (cameraRef.current != undefined) {
-  //   const cameraControls = CameraControls({cameraRef})
-  // }
+  fromQuat.copy(currentCamera.quaternion)
+  // fromQuat.setFromEuler(
+  //   new THREE.Euler(
+  //     pageCamera.rotation[0],
+  //     pageCamera.rotation[1],
+  //     pageCamera.rotation[2],
+  //     'XYZ'
+  //   )
+  // )
 
   toQuat.setFromEuler(
     new THREE.Euler(
-      activeCamera.rotation[0],
-      activeCamera.rotation[1],
-      activeCamera.rotation[2],
+      pageCamera.rotation[0],
+      pageCamera.rotation[1],
+      pageCamera.rotation[2],
       'XYZ'
     )
   )
+
   const springs = useSpring({
     from: { alpha: 0 },
     alpha: 1,
-    config: { duration: 3000 },
-    position: activeCamera.position,
+    config: { duration: cameraMoveDuration },
+    position: pageCamera.position,
     reset: true,
     onChange (cont) {
+      // console.log('fromQuat', fromQuat)
+      // console.log('toQuat', toQuat)
+      // // camera.zoom = 2
       // fov
       // camera.fov = cont.value.fov;
-      const cam = camera.quaternion.slerpQuaternions(
+      currentCamera.quaternion.slerpQuaternions(
         fromQuat,
         toQuat,
         cont.value.alpha
       )
-      // camera.zoom = 2
-      camera.updateProjectionMatrix()
+      currentCamera.updateProjectionMatrix()
     }
   })
 
@@ -81,16 +85,15 @@ const Camera = ({ camera: activeCamera }) => {
   return (
     <animated.group position={springs.position}>
       <PerspectiveCamera
-        ref={cameraRef}
         makeDefault
-        aspect={activeCamera.aspect}
-        fov={activeCamera.fov}
-        near={activeCamera.near}
-        far={activeCamera.far}
+        aspect={pageCamera.aspect}
+        fov={pageCamera.fov}
+        near={pageCamera.near}
+        far={pageCamera.far}
       />
       {hash === '#debug' && (
         <OrbitControls
-          camera={cameraState}
+          camera={currentCamera}
           // enableZoom
           // enableRotate
           maxDistance={5000}

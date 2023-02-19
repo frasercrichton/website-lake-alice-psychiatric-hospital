@@ -3,20 +3,20 @@ import { useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import urls from './config/navigation.js'
 import './Header.css'
-const Header = ({ scrollProgress, active, setActive }) => {
+const Header = ({ scrollProgress, activeChapter, setActiveChapter }) => {
   const links = useRef({})
 
   useEffect(() => {
     Object.values(links.current).forEach(element => {
       element.className = 'nav-item'
     })
-    links.current[active].className = 'nav-item active'
-  }, [active])
+    links.current[activeChapter].className = 'nav-item active'
+  }, [activeChapter])
 
   const navigate = useNavigate()
 
   const handleNavigationClick = nav => {
-    setActive(nav.url)
+    setActiveChapter(nav.url)
     navigate(nav.url)
   }
   return (

@@ -2,13 +2,21 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Scrollama, Step } from 'react-scrollama'
 import Page from './Page.jsx'
 import './Chapter.css'
-const Chapter = ({ chapter, nextChapter, setPageInView, setNextChapter, stepProgress, updateStepProgress }) => {
+const Chapter = ({
+  chapterInView,
+  nextChapter,
+  pageInView,
+  setPageInView,
+  setNextChapter,
+  stepProgress,
+  updateStepProgress
+}) => {
   const scroller = useRef(null)
+
   useEffect(() => {
     // for every new chapter scroll to the start of the page
     scroller.current.scrollIntoView()
-  }, [chapter])
-
+  }, [chapterInView])
 
   const onStepEnter = ({ data }) => {
     if (nextChapter && data === -1) {
@@ -17,7 +25,7 @@ const Chapter = ({ chapter, nextChapter, setPageInView, setNextChapter, stepProg
       return
     }
 
-    setPageInView(chapter.pages[data])
+    setPageInView(chapterInView.pages[data])
 
     // {
     //   element, // The DOM node of the step that was triggered
@@ -54,21 +62,27 @@ const Chapter = ({ chapter, nextChapter, setPageInView, setNextChapter, stepProg
         offset='1'
         debug
       >
-        {chapter.pages.map((page, index) => {
+        {chapterInView.pages.map((page, index) => {
           return (
             <Step data={index} key={index}>
               <div
-                key={`container-${chapter.key}-${page.id}`}
+                key={`container-${chapterInView.key}-${page.id}`}
                 className='page-container'
               >
-                <Page key={page.id} page={page} stepProgress={stepProgress} />
+                <Page
+                  key={page.id}
+                  page={page}
+                  stepProgress={stepProgress}
+                  pageInView={pageInView}
+                  isIntroduction={index === 0}
+                />
               </div>
             </Step>
           )
         })}
         {nextChapter && (
           <Step data={-1} key={-1}>
-            <div>end</div>
+            <div style={{ height: '1%' }}> end</div>
           </Step>
         )}
       </Scrollama>

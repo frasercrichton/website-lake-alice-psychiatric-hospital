@@ -1,53 +1,49 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React from 'react'
 import Line from './components/Line.jsx'
 import Circle from './components/Circle.jsx'
 import { LatLng } from 'leaflet'
 
-const Lines = ({ points, target, stepProgress }) => {
-  const [activeLines, setActiveLines] = useState([])
+const minorPointStyle = {
+  fillColor: '#ffffff',
+  radius: '5',
+  stroke: false
+}
 
-  const minorPointStyle = {
-    fillColor: '#ffffff',
-    radius: '5',
-    stroke: false
-  }
-
-  const pointSeries = points.map((point, index) => {
-    if (index === 0) {
-      return null
-    }
-
-    const startCoordinates = new LatLng(point.latitude, point.longitude)
-
-    return (
-      <>
-        <Line
-          key={`line-${index}`}
-          start={startCoordinates}
-          end={
-            new LatLng(points[index - 1].latitude, points[index - 1].longitude)
-          }
-        />
-        <Circle
-          markerCoordinates={startCoordinates}
-          label={point.label}
-          {...minorPointStyle}
-        />
-      </>
-    )
-  })
-
-  const xPoints = useMemo(() => pointSeries, [pointSeries])
-
-  useEffect(() => {
-    const pointIndex = Math.ceil(points.length * stepProgress)
-    const index = pointIndex < points.length ? pointIndex : points.length
-    const item = xPoints[index]
-    setActiveLines([...activeLines, item])
-  }, [stepProgress])
-
+const Lines = ({ points, target }) => {
   if (!target) {
-    return activeLines
+    return points.map((point, index) => {
+      const startCoordinates = new LatLng(point.latitude, point.longitude)
+
+      if (index === 0) {
+        return (
+          <Circle
+            markerCoordinates={startCoordinates}
+            label={point.label}
+            {...minorPointStyle}
+          />
+        )
+      }
+
+      return (
+        <>
+          <Circle
+            markerCoordinates={startCoordinates}
+            label={point.label}
+            {...minorPointStyle}
+          />
+          <Line
+            key={`line-${index}`}
+            start={startCoordinates}
+            end={
+              new LatLng(
+                points[index - 1].latitude,
+                points[index - 1].longitude
+              )
+            }
+          />
+        </>
+      )
+    })
   }
 
   return points.map((point, index) => {

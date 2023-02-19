@@ -12,14 +12,15 @@ const Experience = ({
   handleFacilityClick,
   hoverName,
   setHoverName,
-  camera,
+  pageCamera,
+  cameraMoveDuration,
   isRotating
 }) => {
   const { World } = LookAndFeelControls()
 
   return (
     <>
-      <Camera camera={camera} />
+      <Camera pageCamera={pageCamera} cameraMoveDuration={cameraMoveDuration} />
       <color args={[World]} attach='background' />
       <Environment />
       <Floor />

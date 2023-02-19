@@ -51,7 +51,7 @@ const data = {
   '/testimony': {
     pages: [
       {
-        id: 1,
+        id: 'testimony-introduction-1',
         index: 1,
         video: {
           type: 'vimeo',
@@ -64,16 +64,32 @@ const data = {
   '/introduction': {
     pages: [
       {
-        id: 1,
+        id: 'introduction-introduction-1',
         index: 1,
+        text: {
+          content: 'Introduction'
+        },
         image: {
           src: 'site-animated.gif',
-          style: 'static'
+          style: 'static',
+          caption: ''
         }
       },
       {
-        id: 2,
-        index: 2,
+        id: 'introduction-introduction-2',
+        index: 1,
+        text: {
+          content: 'Introduction'
+        },
+        image: {
+          src: 'site-animated.gif',
+          style: 'static',
+          caption: ''
+        }
+      },
+      {
+        id: '3',
+        index: 3,
         text: {
           content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
@@ -84,8 +100,8 @@ const data = {
         }
       },
       {
-        id: 2,
-        index: 2,
+        id: '4',
+        index: 4,
         text: {
           content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
@@ -106,29 +122,43 @@ const data = {
   '/malcolm': {
     pages: [
       {
-        id: 1,
+        id: 'malcolm-introduction-1',
         index: 1,
+        text: {
+          content: 'Malcolm'
+        },
         image: {
           src: 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg',
-          style: 'scrolling',
-          caption:
-            'Malcolm Richards spent three months at the Lake Alice Child and Adolescent Unit in 1975 when he was 15. During his time at Lake Alice Malcolm was subjected to Electroconvulsive therapy (ECT) used as punishment and sexual abuse. For almost fifty years Malcolm and the other survivors of Lake Alice have battled against the State for accountability and redress.'
-        },
-        view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
+          style: 'static'
         }
       },
       {
-        id: 2,
+        id: 'malcolm-introduction-2',
+        index: 1,
+        text: {
+          content: 'Malcolm'
+        },
+        image: {
+          src: 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg',
+          style: 'static'
+        }
+      },
+      {
+        id: 'malcolm-1',
         index: 2,
+        text: {
+          content:
+            'Malcolm Richards spent three months at the Lake Alice Child and Adolescent Unit in 1975 when he was 15. During his time at Lake Alice Malcolm was subjected to Electroconvulsive therapy (ECT) used as punishment and sexual abuse. For almost fifty years Malcolm and the other survivors of Lake Alice have battled against the State for accountability and redress.',
+          style: 'scrolling'
+        },
+        image: {
+          src: 'fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg',
+          style: 'static'
+        }
+      },
+      {
+        id: '2',
+        index: 3,
         text: {
           header: '2 - Family',
           content:
@@ -150,8 +180,8 @@ const data = {
         }
       },
       {
-        id: 3,
-        index: 3,
+        id: '3',
+        index: 4,
         text: {
           header: '3 - Pathway',
           content:
@@ -197,8 +227,8 @@ const data = {
         }
       },
       {
-        id: 4,
-        index: 4,
+        id: '4',
+        index: 5,
         text: {
           header: '4 - Arrival',
           content:
@@ -212,6 +242,7 @@ const data = {
             157.77755737304688, 33.061851501464844, -367.64495849609375
           ],
           rotation: [-2.635556573701771, 0.9033575420263746, 2.713050423139778],
+          duration: 0,
           aspect: 1.7777777777777777,
           fov: 39.76070325000613,
           near: 0.10000000149011612,
@@ -219,8 +250,8 @@ const data = {
         }
       },
       {
-        id: 5,
-        index: 5,
+        id: '5',
+        index: 6,
         image: {
           src: 'fc-20130307-00001-2013P_Pi293_006718.jpg',
           style: 'scrolling',
@@ -242,8 +273,8 @@ const data = {
         }
       },
       {
-        id: 6,
-        index: 6,
+        id: '6',
+        index: 7,
         text: {
           header: '5 - First night',
           content:
@@ -270,8 +301,8 @@ const data = {
         }
       },
       {
-        id: 7,
-        index: 7,
+        id: '7',
+        index: 8,
         text: {
           header: '6 - A Typical day',
           content:
@@ -293,8 +324,8 @@ const data = {
       },
 
       {
-        id: 8,
-        index: 8,
+        id: 'malcolm-8',
+        index: 9,
         text: {
           header: '7 - ECT',
           content:
@@ -315,8 +346,8 @@ const data = {
         }
       },
       {
-        id: 9,
-        index: 9,
+        id: 'malcolm-9',
+        index: 10,
         text: {
           header: '8 - ECT - Villa',
           content:
@@ -343,8 +374,8 @@ const data = {
         }
       },
       {
-        id: 10,
-        index: 10,
+        id: 'malcolm-10',
+        index: 11,
         text: {
           header: '9 - Escape',
           content:
@@ -387,8 +418,8 @@ const data = {
         }
       },
       {
-        id: 11,
-        index: 11,
+        id: 'malcolm-11',
+        index: 12,
         text: {
           header: '10 - Consequences',
           content:
@@ -409,8 +440,8 @@ const data = {
         }
       },
       {
-        id: 12,
-        index: 12,
+        id: 'malcolm-12',
+        index: 13,
         text: {
           header: '11 - Afterwards',
           content:
@@ -431,8 +462,39 @@ const data = {
         }
       },
       {
-        id: 13,
-        index: 13,
+        id: 'malcolm-13',
+        index: 14,
+        text: {
+          header: '13 - Runaway',
+          content: 'Waipawa',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  label: 'Waipawa',
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-14',
+        index: 15,
         text: {
           header: '12 - Runaway',
           content:
@@ -456,9 +518,74 @@ const data = {
                   label: 'Waipawa',
                   latitude: -39.9182277,
                   longitude: 176.4211438
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-15',
+        index: 16,
+        text: {
+          header: '15 - Waipukurau',
+          content: 'Waipukurau',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
                 },
                 {
                   label: 'Waipukurau',
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-16',
+        index: 17,
+        text: {
+          header: '12 - Runaway',
+          content:
+            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
                   latitude: -40.0309529,
                   longitude: 176.5278439
                 },
@@ -466,9 +593,90 @@ const data = {
                   label: 'Pahiatua',
                   latitude: -40.7491005,
                   longitude: 176.1375833
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-17',
+        index: 18,
+        text: {
+          header: '12 - Runaway',
+          content:
+            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
                 },
                 {
                   label: 'Napier',
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-18',
+        index: 19,
+        text: {
+          header: '12 - Welsford',
+          content: 'Welsford',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
                   latitude: -39.4794044,
                   longitude: 176.7985016
                 },
@@ -476,14 +684,166 @@ const data = {
                   label: 'Welsford',
                   latitude: -36.2858116,
                   longitude: 174.4447237
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-19',
+        index: 20,
+        text: {
+          header: '19 - Kaiwaka',
+          content: 'Kaiwaka',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
                 },
                 {
                   label: 'Kaiwaka',
                   latitude: -36.2160784,
                   longitude: 174.3493232
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-20',
+        index: 21,
+        text: {
+          header: '12 - Runaway',
+          content:
+            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
                 },
                 {
                   label: 'Auckland North Shore',
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-21',
+        index: 22,
+        text: {
+          header: '12 - Runaway',
+          content:
+            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
                   latitude: -36.7494681,
                   longitude: 174.5825004
                 },
@@ -492,14 +852,261 @@ const data = {
                     'Auckland Hospital (including the Connelly Unit and Te Whetu Tawera)',
                   latitude: -36.8605068,
                   longitude: 174.7674006
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-22',
+        index: 23,
+        text: {
+          header:
+            '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+          content: 'The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  label:
+                    'The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-23',
+        index: 24,
+        text: {
+          header: '23 - South Auckland',
+          content: 'South Auckland',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
                 },
                 {
                   label: 'South Auckland',
                   latitude: -36.9914801,
                   longitude: 174.8690175
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-24',
+        index: 25,
+        text: {
+          header: '24 - Napier',
+          content: 'Napier',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
+                },
+                {
+                  latitude: -36.9914801,
+                  longitude: 174.8690175
                 },
                 {
                   label: 'Napier',
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-25',
+        index: 26,
+        text: {
+          header: '25 - Hastings',
+          content: 'Hastings. ',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...northIsland,
+          visibleMapLayers: {
+            majorPoints: [
+              // {
+              //   label: 'Lake Alice',
+              //   latitude: -40.1254336,
+              //   longitude: 175.3369864
+              // }
+            ],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
+                },
+                {
+                  latitude: -36.9914801,
+                  longitude: 174.8690175
+                },
+                {
                   latitude: -39.4794044,
                   longitude: 176.7985016
                 },
@@ -518,13 +1125,10 @@ const data = {
   '/context': {
     pages: [
       {
-        id: 1,
+        id: 'context-introduction-1',
         index: 1,
         text: {
-          header: 'Context',
-          content: '',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=70',
-          style: 'scrolling'
+          content: 'Context'
         },
         view: '3d',
         camera: {
@@ -539,7 +1143,25 @@ const data = {
         }
       },
       {
-        id: 2,
+        id: 'context-introduction-2',
+        index: 1,
+        text: {
+          content: 'Context'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000,
+          isRotating: true
+        }
+      },
+      {
+        id: 'context-2',
         index: 2,
         text: {
           header: '2 - Adult Psychiatric Facility',
@@ -551,6 +1173,7 @@ const data = {
         view: '3d',
         camera: {
           name: 'ElevenBedVilla',
+          duration: 0,
           position: [100.01496887207031, 3.294312000274658, -332.5577087402344],
           rotation: [
             3.1176579502008677, -0.9424030014672574, 3.1222640413920724
@@ -562,7 +1185,7 @@ const data = {
         }
       },
       {
-        id: 3,
+        id: 'context-3',
         index: 3,
         image: {
           src: 'fc-20210828-00001-FL25129159.jpg',
@@ -587,7 +1210,7 @@ const data = {
       },
 
       {
-        id: 4,
+        id: 'context-4',
         index: 4,
         text: {
           header: '3 - 12-bed Villas',
@@ -611,7 +1234,7 @@ const data = {
         }
       },
       {
-        id: 5,
+        id: 'context-5',
         index: 5,
         text: {
           header: "4 - 12-bed Villas - Children's unit",
@@ -635,7 +1258,7 @@ const data = {
       },
 
       {
-        id: 6,
+        id: 'context-6',
         index: 6,
         text: {
           header: '6 - Girls Unit',
@@ -660,7 +1283,7 @@ const data = {
         }
       },
       {
-        id: 7,
+        id: 'context-7',
         index: 7,
         text: {
           header: '8 - Maximum Security Villa',
@@ -683,7 +1306,7 @@ const data = {
         }
       },
       {
-        id: 8,
+        id: 'context-8',
         index: 8,
         text: {
           content:
@@ -705,7 +1328,7 @@ const data = {
         }
       },
       {
-        id: 9,
+        id: 'context-9',
         index: 9,
         image: {
           src: 'fc-20210828-00001-FL25129125.jpg',
@@ -729,7 +1352,7 @@ const data = {
         }
       },
       {
-        id: 10,
+        id: 'context-10',
         index: 10,
         text: {
           header: '9 - Staff on Site',
@@ -751,7 +1374,7 @@ const data = {
         }
       },
       {
-        id: 11,
+        id: 'context-11',
         index: 11,
         text: {
           header: '7 - Adults and Children',
@@ -774,7 +1397,7 @@ const data = {
         }
       },
       {
-        id: 12,
+        id: 'context-12',
         index: 12,
         text: {
           header: '9 - Torture',
@@ -796,7 +1419,7 @@ const data = {
         }
       },
       {
-        id: 13,
+        id: 'context-13',
         index: 13,
         text: {
           header: '10 - Demolition',
@@ -822,16 +1445,11 @@ const data = {
   '/pathways': {
     pages: [
       {
-        id: 1,
+        id: 'pathways-introduction-1',
         index: 1,
         text: {
-          header: '1- Intro',
-          content:
-            "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655,000 people who went through care 200, 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
-          source: 'Abuse-in-Care-Volume-One.pdf#14',
-          style: 'scrolling'
+          content: 'Pathways'
         },
-
         view: '3d',
         camera: {
           name: 'default',
@@ -844,8 +1462,45 @@ const data = {
         }
       },
       {
-        id: 2,
-        index: 2,
+        id: 'pathways-introduction-2',
+        index: 1,
+        text: {
+          content: 'Pathways'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [160, 460, -220],
+          rotation: [-1.7, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'pathways-2',
+        index: 3,
+        text: {
+          content:
+            "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655,000 people who went through care 200, 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
+          source: 'Abuse-in-Care-Volume-One.pdf#14',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [160, 460, -220],
+          rotation: [-1.7, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'pathways-3',
+        index: 4,
         text: {
           header: '2 - Home',
           content:
@@ -866,8 +1521,8 @@ const data = {
         }
       },
       {
-        id: 2,
-        index: 2,
+        id: 'pathways-4',
+        index: 5,
         text: {
           header: '2 - Home',
           content:
@@ -881,8 +1536,8 @@ const data = {
         }
       },
       {
-        id: 3,
-        index: 3,
+        id: 'pathways-5',
+        index: 6,
         text: {
           header: '3 - State Residences - Lake Alice hub',
           content:
@@ -949,8 +1604,8 @@ const data = {
         }
       },
       {
-        id: 4,
-        index: 4,
+        id: 'pathways-6',
+        index: 7,
         text: {
           header: 'Kohitere',
           content:
@@ -1011,8 +1666,8 @@ const data = {
       },
 
       {
-        id: 5,
-        index: 5,
+        id: 'pathways-7',
+        index: 8,
         text: {
           header: '4 - State Residences',
           content:
@@ -1030,8 +1685,8 @@ const data = {
         }
       },
       {
-        id: 6,
-        index: 6,
+        id: 'pathways-8',
+        index: 9,
         text: {
           header: '5 - Foster Care and Family Homes',
           content:
@@ -1045,8 +1700,8 @@ const data = {
         }
       },
       {
-        id: 7,
-        index: 7,
+        id: 'pathways-9',
+        index: 10,
         text: {
           header: '6 - Hospital',
           content:
@@ -1067,8 +1722,8 @@ const data = {
         }
       },
       {
-        id: 8,
-        index: 8,
+        id: 'pathways-10',
+        index: 11,
         text: {
           header: '6 - Numbers',
           content:
@@ -1082,8 +1737,8 @@ const data = {
         }
       },
       {
-        id: 9,
-        index: 9,
+        id: 'pathways-11',
+        index: 12,
         text: {
           header: '7 - Ages',
           content:
@@ -1098,8 +1753,8 @@ const data = {
         }
       },
       {
-        id: 10,
-        index: 10,
+        id: 'pathways-12',
+        index: 13,
         text: {
           header: '8 - Maori and Pasifika',
           content:
@@ -1120,8 +1775,8 @@ const data = {
         }
       },
       {
-        id: 11,
-        index: 11,
+        id: 'pathways-13',
+        index: 14,
         text: {
           header: '9 - Gender',
           content:
@@ -1135,8 +1790,8 @@ const data = {
         }
       },
       {
-        id: 12,
-        index: 12,
+        id: 'pathways-14',
+        index: 15,
         text: {
           header: '10 - Impact',
           content:
@@ -1153,13 +1808,11 @@ const data = {
   '/justice': {
     pages: [
       {
-        id: 1,
+        id: 'justice-introduction-1',
         index: 1,
         view: '3d',
         text: {
-          header: 'The Lake',
-          content: '',
-          style: 'static'
+          content: 'Justice'
         },
         camera: {
           name: 'default',
@@ -1172,36 +1825,48 @@ const data = {
         }
       },
       {
-        id: 2,
-        index: 2,
-        image: {
-          src: 'fc-20200523-00009-final-report-of-clas-2015.jpg',
-          source: '',
-          caption: 'Gallen Report'
-        },
-
+        id: 'justice-introduction-2',
+        index: 1,
         view: '3d',
+        text: {
+          content: 'Justice'
+        },
         camera: {
           name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
+          position: [-310, 400, 200],
+          rotation: [-1.7, 0, 0],
           aspect: 1,
-          fov: 80,
+          fov: 70,
           near: 10,
           far: 10000
         }
       },
       {
-        id: 3,
-        index: 3,
-
-        image: {
-          src: 'fc-20200523-00009-final-report-of-clas-2015.jpg',
-          caption: 'Gallen Report',
-          source: '',
+        id: 'justice-introduction-2',
+        index: 1,
+        view: '3d',
+        text: {
+          content: 'Justice'
+        },
+        camera: {
+          name: 'default',
+          position: [-310, 400, 200],
+          rotation: [-1.7, 0, 0],
+          aspect: 1,
+          fov: 70,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-2',
+        index: 2,
+        text: {
+          header: '1 - Intro',
+          content:
+            'Whilst the experiences of the children at Lake Alice were horrific at the time their experiences as adults of trying to gain accountability against the perpetrators of abuse and redress from the State have an equally horrific aspect.',
           style: 'scrolling'
         },
-
         view: '3d',
         camera: {
           name: 'default',
@@ -1214,135 +1879,454 @@ const data = {
         }
       },
       {
-        id: 4,
+        id: 'justice-3',
+        index: 3,
+        text: {
+          header: '2 - Complaints',
+          content:
+            'As early as 1973 there was a complaint of abuse at Lake Alice. In 1974 acting chief educational psychologist Don Brown raised concerns about the improper use of ECT with Dr Sydney Pugmire  the hospital’s medical superintendent.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=40'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-4',
         index: 4,
         text: {
-          header: 'Australia',
+          header: '3 - CCHR',
           content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-          style: 'scrolling'
+            "Lake Alice's isolation contributed to the lack of oversight of Leeks and other staff members. Although independent (?) inspections did occur, as Malcolm recalls staff prepared for them by threatening the children with ECT. The Citizens Commission on Human Rights (CCHR) gained access to Lake Alice in 1976 and were able to raise concerns in national media over how the children there were treated.",
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=40'
         },
-        view: 'map',
-        map: {
-          zoom: 5,
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-51.481383, 100.810547],
-            northEast: [-6.620957, 192.963867]
-          },
-          visibleMapLayers: {
-            minorPoints: {
-              points: [
-                {
-                  label: 'Lake Alice',
-                  latitude: -40.1254336,
-                  longitude: 175.3369864
-                },
-                {
-                  label: 'Melbourne',
-                  latitude: -37.971237,
-                  longitude: 144.4926947
-                }
-              ]
-            },
-            lines: {
-              target: {
-                label: 'Melbourne',
-                latitude: -37.971237,
-                longitude: 144.4926947
-              },
-              points: [
-                {
-                  label: 'Lake Alice',
-                  latitude: -40.1254336,
-                  longitude: 175.3369864
-                }
-              ]
-            }
-          }
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
         }
       },
       {
-        id: 5,
+        id: 'justice-5',
         index: 5,
-        image: {
-          src: 'fc-20220628.jpg',
-          caption: 'Committee Against Torture',
-          source: '',
+        text: {
+          header: '4 - Whistleblower',
+          content:
+            'In 1976 fourteen year-old Hake Halo and whistle blower Lyn Fry brought conditions at Lake Alice to national attention. Fry was a Department of Education psychologist who had recommended Hakeagapuletama be sent to Hokio Beach School in December 1974. Instead, the Department of Social Welfare sent Hake to Lake Alice. When Fry learned this she approached the Auckland Committee on Racism and Discrimination (ACORD). ',
+          style: 'scrolling',
+          source:
+            'Witness-statement-of-Oliver-Sutherland-for-Lake-Alice-Child-and-Adolescent-Unit-hearing-v2-1.pdf#page=4'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-6',
+        index: 6,
+        text: {
+          header: '5 - Hake Halo',
+          content:
+            "Hake had already attempted to raise the alarm about Lake Alice. The children at Lake Alice had to write letters home in English. Hakeagapuletama added a drawing of a smiling stickman to his letter with a speech bubble that said: “Fakasoka he faoa au, mo huki au, mamahi, tagi au”. In English this means: “Mum, the people are giving me electric shocks and injections, it’s painful, I’m crying”. Dr Oliver Sutherland from the Auckland Committee on Racism and Discrimination (ACORD) met with the family after Lyn Fry alerted ACORD to what was happening at Lake Alice. Sutherland introduced the family to New Zealand Herald's Medical Correspondent, Peter Trickett. *The front-page feature published on the 15 December 1976 that Trickett wrote lead to questions being raised in Parliament and eventually a national Inquiry.*",
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=173'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-7',
+        index: 7,
+        text: {
+          header: '6 - Inquiries 1976',
+          content:
+            'A series of inquiries followed including an Ombudsman inquiry and a Medical Council Inquiry.',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          zoom: 5,
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-51.481383, 100.810547],
-            northEast: [-6.620957, 192.963867]
-          },
-          visibleMapLayers: {
-            minorPoints: {
-              points: [
-                {
-                  label: 'Lake Alice',
-                  latitude: -40.1254336,
-                  longitude: 175.3369864
-                },
-                {
-                  label: 'Melbourne',
-                  latitude: -37.971237,
-                  longitude: 144.4926947
-                }
-              ]
-            }
-          }
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-8',
+        index: 8,
+        text: {
+          header: '7 - Court cases',
+          content:
+            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW  (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice.1529 From early 1997, lawyer Grant Cameron also began discussions with  the Crown on behalf of a large group of Lake Alice survivors.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-9',
+        index: 9,
+        text: {
+          header: '8 - First Police Investigation 1977 - 1978',
+          content:
+            'The first NZ Police investigation begins in 1977 lead by Detective Senior Sergeant, Rob Butler. Butler interviews Leeks first who describes the complainants and other children as "really the bottom-of-the-barrel kids from Hokio, Kohitere and Holdsworth, who could not manage them. They were anti-social and destructive kids”. Only ten days after, having spoken to three of the six complainants and no staff members Butler says he believes there is “no possibility of [laying] criminal charges”. He still has no expert medical opinion. Staff were then interviewed but allegations were not always put to them. Another 44 children that Leeks gave ECT to were never contacted. His report concluded evidence was insufficient for charges under the Mental Health Act 1969. NZ Police\'s legal advisor also made the same conclusion.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-10',
+        index: 10,
+        text: {
+          header: '9 - Police Bias',
+          content:
+            "Throughout their investigations in this period police displayed bias against the survivors as credible witnesses, mirroring Leeks' view  of the children as  “bottom-of-the-barrel kids” who were “anti-social and  destructive”. Racism, ableism, homophobia and transphobia all played a part in this.",
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=314'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-11',
+        index: 11,
+        text: {
+          header: '10 - 2001 -The Gallen Report',
+          content:
+            'In 2001, High Court judge Sir Rodney Gallen determines how the $6.5 million would  be distributed among the 95 claimants. Gallen also wrote a report to accompany the compensation. Crown Law attempted to block publication of the report but this was overturned by the High Court and parts of the report that summarised claimants’ evidence were published. In his report retired High Court judge, Sir Rodney Gallen details children living in unimaginable terror at an institution intended for care. It includes many horrific and disturbing revelations. At Lake Alice the hospital used Electroconvulsive Therapy (ECT) as an aversion therapy to punish anything from poor school work to running away. An ECT unit had been brought into the dining room to encourage children to eat their meals if they were reluctant. Several claimants reported ECT being administered to their genitals, imposed when accused of unacceptable sexual behaviour. In addition to ECT the drug paraldehyde, administered by painful injection, was also used as a form of punishment. Children were held naked in solitary confinement with only a mattress and a bucket for toilet facilities. Children were also placed with criminally insane adults as punishment; one 15-year-old boy was locked in a wooden cage with a seriously disturbed adult patient. Many of the children experienced sexual abuse by both staff and adult patients. The report found the majority of children at Lake Alice had behavioural rather than psychiatric issues. Gallen found that these incidents, taken with corroborative evidence, lead him to conclude that these incidents did occur.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=267'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-12',
+        index: 12,
+        text: {
+          header: '11 - The Apology',
+          content:
+            'On the 7 October 2001, Prime Minister Helen Clark and Health Minister Annette King make a qualified apology to each of the 95 claimants for the abuse they suffered.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=285'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-13',
+        index: 13,
+        text: {
+          header: '12 - Second Police Investigation  2003 - 2005',
+          content:
+            'In 2003, Grant Cameron passes the survivors witness statements and files to NZ Police and asks them to investigate the allegations of criminal conduct. Superintendent Graham Emery reviewed the files and believes there are "public interest reasons" for an investigation. 15 months pass Detective  Superintendent Larry Reid is assigned the investigation. Reid doesn\'t believe the investigation is warranted and says so when he contacts the Deputy Solicitor-General Ms Nicola Crutchley, at Crown Law in June 2003. He only passes one file - Hake Halo\'s - to the Deputy Solicitor-General which means the systemic nature of abuse at Lake Alice is not apparent. 10 months pass and the Deputy Solicitor-General finds "insufficient evidence" for laying criminal charges. She does recommend further police conduct further investigation particularly over teh use of ECT. NZ Police fail to do this until 2006.  2004 Inspector Jim Taare interviews Hake Halo and finds sufficent evidence to start a criminal investigation. His report has gone missing. More files including survovor testimony goes "missing" including a surivors statement alleging Leeks raped her. Reid misinterprets Crown Law\'s advice saying they have advised against invetsigating teh use of the ECT machine. Reid doesn\'t contact or interview any of the survivors and none of the six staff accused of abuse. Reid told the Royal Commission that he failed to investigate further as without corrobaroative evidence it was only the word of the survivors and his opinion was that they were not credible witnesses. Even though he hadn\'t interviewed any of them. NZ Police dismiss complaints against Dr Selwyn Leeks and staff at Lake Alice.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=307'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-13',
+        index: 13,
+        text: {
+          header: '13 - Australia',
+          content:
+            "In 2003, The Victorian medical board receive legal advice saying it has jurisdiction to investigate Leek's past at Lake Alice. The board were asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks is fit to practise. Separately, in 2004 the Victorian Medical Practitioners Board also investigate claims in Australia by a former female patient accusing Leeks of sexual misconduct when he treated her for anxiety in Melbourne in 1979-80. After a three year investigation, the Victorian Medical Practitioners Board bring thirty-nine disciplinary charges against Leeks. Leeks agrees to stop working as a psychiatrist on the eve of the disciplinary hearing by the Victorian Medical Practitioners Board. By agreeing not to work anymore Leeks escapes a full public investigation.",
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-14',
+        index: 14,
+        text: {
+          header: '13 - Third Police Investigation 2006 - 2010',
+          content:
+            'Back in New Zealand, Detective Superintendent Malcolm Burgess inherits the investigation from Reid. His plan for a comprehensive investigation is rejected by Assistant Commissioner Peter Marshall and Detective Superintendent Nick Perry as they believe it would take up too many resources. Burgess and Perry decide to focus on Leeks and the misuse of the ECT machine. The allegations against the other staff, and of wider sexual and physical abuse, use of Paraldyhde are not investigated. Again the police fail to speak to the complainants - they only speak with one after the complainant instigated contact and don\'t speak with another who also instigated contact. Again, multiple allegations of sexual assault and rape including that Leeks had raped one of the survivors were dismissed and no interviews were conducted. Without interviewing survivors making a decision about the credibility of their evidence appears deeply flawed but that is exactly what NZ Police did. Staff were interviewed this time but in a "general way" and in regard to Leeks and ECT not the other allegations.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=308'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-15',
+        index: 15,
+        text: {
+          header: '14 - Fourth Police Investigation - 2018 - 2021',
+          content:
+            'In 2017 the National Adult Sexual Assault Team became aware of the Lake Alice file as a result of an Official Information Act request made by an investigative journalist. NZ Police decide to investigate the sexual complaints made by three of the survivors including Malcolm who they had previously dismissed in November 2018 and *when he first reported to them*. The United Nations Committee against Torture released its decision in December 2019 that New Zealand had been in breach of its obligations under the Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment by failing to investigate Mr Zentveld’s complaint. At this point NZ Police decide to launch a wider investigation into all of the Lake Alice allegations.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=316'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
+        }
+      },
+      {
+        id: 'justice-16',
+        index: 16,
+        text: {
+          header: '15 - United Nations Committee Against Torture',
+          content:
+            'Although New Zealand didn\'t ratify the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment the United Nations Committee against Torture recognises that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights. In each of its reports to the UN 1992, 1997 and 2002 the Crown made no mention of survivors complaints or the police investigation into Lake Alice. It wasn\'t until 2010 that the Crown acknowlegded there was "improper treatment" at Lake Alice. In the same year, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN send a please explain letter to the NZ Government. The Govt respond by saying the police act independently and complaints should be made through the Independent Police Complaints Authority. In 2019, the committee found in favour of Lake Alice survivor Paul Zentveld, saying New Zealand had failed to adequately investigate his complaint and failed to provide fair and adequate redress for the abuse he suffered. And then, in 12 May 2022 Malcolm Richards complaint to the committee was also recognised.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          name: 'default',
+          position: [0, 600, 400],
+          rotation: [-0.8726646, 0, 0],
+          aspect: 1,
+          fov: 80,
+          near: 10,
+          far: 10000
         }
       }
+      // {
+      //   id: 'justice-3',
+      //   index: 3,
+
+      //   image: {
+      //     src: 'fc-20200523-00009-final-report-of-clas-2015.jpg',
+      //     caption: 'Gallen Report',
+      //     source: '',
+      //     style: 'scrolling'
+      //   },
+
+      //   view: '3d',
+      //   camera: {
+      //     name: 'default',
+      //     position: [0, 600, 400],
+      //     rotation: [-0.8726646, 0, 0],
+      //     aspect: 1,
+      //     fov: 80,
+      //     near: 10,
+      //     far: 10000
+      //   }
+      // },
+      // {
+      //   id: 'justice-4',
+      //   index: 4,
+      //   text: {
+      //     header: 'Australia',
+      //     content:
+      //       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+      //     style: 'scrolling'
+      //   },
+      //   view: 'map',
+      //   map: {
+      //     zoom: 5,
+      //     centre: {
+      //       latitude: -40.7670087,
+      //       longitude: 173.4506545
+      //     },
+      //     bounds: {
+      //       southWest: [-51.481383, 100.810547],
+      //       northEast: [-6.620957, 192.963867]
+      //     },
+      //     visibleMapLayers: {
+      //       minorPoints: {
+      //         points: [
+      //           {
+      //             label: 'Lake Alice',
+      //             latitude: -40.1254336,
+      //             longitude: 175.3369864
+      //           },
+      //           {
+      //             label: 'Melbourne',
+      //             latitude: -37.971237,
+      //             longitude: 144.4926947
+      //           }
+      //         ]
+      //       },
+      //       lines: {
+      //         target: {
+      //           label: 'Melbourne',
+      //           latitude: -37.971237,
+      //           longitude: 144.4926947
+      //         },
+      //         points: [
+      //           {
+      //             label: 'Lake Alice',
+      //             latitude: -40.1254336,
+      //             longitude: 175.3369864
+      //           }
+      //         ]
+      //       }
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 'justice-5',
+      //   index: 5,
+      //   image: {
+      //     src: 'fc-20220628.jpg',
+      //     caption: 'Committee Against Torture',
+      //     source: '',
+      //     style: 'scrolling'
+      //   },
+      //   view: 'map',
+      //   map: {
+      //     zoom: 5,
+      //     centre: {
+      //       latitude: -40.7670087,
+      //       longitude: 173.4506545
+      //     },
+      //     bounds: {
+      //       southWest: [-51.481383, 100.810547],
+      //       northEast: [-6.620957, 192.963867]
+      //     },
+      //     visibleMapLayers: {
+      //       minorPoints: {
+      //         points: [
+      //           {
+      //             label: 'Lake Alice',
+      //             latitude: -40.1254336,
+      //             longitude: 175.3369864
+      //           },
+      //           {
+      //             label: 'Melbourne',
+      //             latitude: -37.971237,
+      //             longitude: 144.4926947
+      //           }
+      //         ]
+      //       }
+      //     }
+      //   }
+      // }
     ]
   },
   '/about': {
     pages: [
       {
-        id: 1,
+        id: 'about-introduction-1',
         index: 1,
         text: {
-          header: 'About',
-          content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-          style: 'scrolling'
+          content: 'About'
         },
 
         view: 'markdown',
         content: {
           file: 'about'
         }
-        // camera: {
-        //   name: 'default',
-        //   position: [0, 600, 400],
-        //   rotation: [-0.8726646, 0, 0],
-        //   aspect: 1,
-        //   fov: 80,
-        //   near: 10,
-        //   far: 10000
-        // }
       }
     ]
   },
   '/': {
     pages: [
       {
-        id: 1,
+        id: 'root-introduction-1',
         index: 1,
         text: {
-          header: 'Introduction',
-          content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-          style: 'static'
+          content: 'Introduction'
         },
 
         image: {
