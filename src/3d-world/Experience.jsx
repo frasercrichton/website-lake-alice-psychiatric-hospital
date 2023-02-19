@@ -14,13 +14,14 @@ const Experience = ({
   setHoverName,
   pageCamera,
   cameraMoveDuration,
-  isRotating
+  isRotating,
+  pageScrollProgress
 }) => {
   const { World } = LookAndFeelControls()
 
   return (
     <>
-      <Camera pageCamera={pageCamera} cameraMoveDuration={cameraMoveDuration} />
+      <Camera pageCamera={pageCamera} cameraMoveDuration={cameraMoveDuration} pageScrollProgress={pageScrollProgress} />
       <color args={[World]} attach='background' />
       <Environment />
       <Floor />

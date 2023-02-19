@@ -5,7 +5,12 @@ import AssetUrlHelper from '../components/AssetUrlHelper.js'
 import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
-const Page = ({ page, stepProgress, isIntroduction, pageInView }) => {
+const Page = ({
+  page,
+  isIntroduction,
+  pageInView,
+  pageScrollProgress
+}) => {
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -41,7 +46,7 @@ const Page = ({ page, stepProgress, isIntroduction, pageInView }) => {
         <TextBox
           text={page.text}
           textBoxStyle={textBoxStyle}
-          stepProgress={stepProgress}
+          pageScrollProgress={pageScrollProgress}
         />
       )}
       {img != null && page.image.style === 'scrolling' && (

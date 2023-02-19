@@ -20,7 +20,7 @@ Globals.assign({
 // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
 const hash = window.location.hash
 
-const Camera = ({ pageCamera, cameraMoveDuration = 2000 }) => {
+const Camera = ({ pageCamera, cameraMoveDuration = 2000, pageScrollProgress }) => {
   const currentCamera = useThree(state => state.camera)
   // controls = new THREE.OrbitControls( camera, renderer.domElement )
 

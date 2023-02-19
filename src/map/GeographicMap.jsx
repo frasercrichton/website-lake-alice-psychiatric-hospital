@@ -10,7 +10,7 @@ const MAP_BOX_KEY = process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_KEY
 const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
-function GeographicMap ({ visibleMapLayers, maxBounds, stepProgress }) {
+function GeographicMap ({ visibleMapLayers, maxBounds, pageScrollProgress }) {
   const southWest = new LatLng(maxBounds.southWest[0], maxBounds.southWest[1])
   const northEast = new LatLng(maxBounds.northEast[0], maxBounds.northEast[1])
   const bounds = new LatLngBounds(southWest, northEast)

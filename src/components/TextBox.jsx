@@ -6,7 +6,7 @@ import './TextBox.css'
 const TextBox = ({
   text,
   textBoxStyle,
-  stepProgress,
+  pageScrollProgress,
   textBoxContainerStyle,
   isAnimated = false
 }) => {
@@ -16,7 +16,7 @@ const TextBox = ({
         <div>{text.header}</div>
         <div className='text-box-content'>
           {isAnimated && (
-            <AnimatedText text={text.content} stepProgress={stepProgress} />
+            <AnimatedText text={text.content} stepProgress={pageScrollProgress} />
           )}
           {!isAnimated && text.content}
         </div>

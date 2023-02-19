@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Scrollama, Step } from 'react-scrollama'
 import Page from './Page.jsx'
 import './Chapter.css'
+
 const Chapter = ({
   chapterInView,
   nextChapter,
   pageInView,
   setPageInView,
   setNextChapter,
-  stepProgress,
+  pageScrollProgress,
   updateStepProgress
 }) => {
   const scroller = useRef(null)
@@ -72,7 +73,7 @@ const Chapter = ({
                 <Page
                   key={page.id}
                   page={page}
-                  stepProgress={stepProgress}
+                  stepProgress={pageScrollProgress}
                   pageInView={pageInView}
                   isIntroduction={index === 0}
                 />

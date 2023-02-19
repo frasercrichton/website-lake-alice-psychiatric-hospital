@@ -16,7 +16,8 @@ const CanvasWrapper = ({
   handleCanvasClick,
   pageCamera,
   cameraMoveDuration,
-  isRotating
+  isRotating,
+  pageScrollProgress
 }) => {
   const aspectRatio = {
     width: 1920,
@@ -54,6 +55,7 @@ const CanvasWrapper = ({
           pageCamera={pageCamera}
           cameraMoveDuration={cameraMoveDuration}
           isRotating={isRotating}
+          pageScrollProgress={pageScrollProgress}
         />
       </Canvas>
     </div>

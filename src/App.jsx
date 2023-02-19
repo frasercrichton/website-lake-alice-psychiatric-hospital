@@ -52,7 +52,7 @@ function App () {
   const [isLoading, setLoading] = useState(true)
   // Scrollarama state
   const [scrollProgress, setScrollProgress] = useState(0.3)
-  const [stepProgress, setStepProgress] = useState(null)
+  const [pageScrollProgress, setPageScrollProgress] = useState(null)
 
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
@@ -68,7 +68,7 @@ function App () {
   }
 
   const updateStepProgress = progressCount => {
-    setStepProgress(progressCount)
+    setPageScrollProgress(progressCount)
   }
 
   // setNextChapter(nextChapter)
@@ -213,7 +213,7 @@ function App () {
             text={pageInView.text}
             textBoxContainerStyle={textBoxContainerStyle}
             textBoxStyle={textBoxStyle}
-            stepProgress={stepProgress}
+            pageScrollProgress={pageScrollProgress}
             isAnimated
           />
         )}
@@ -228,6 +228,7 @@ function App () {
             pageCamera={pageCamera}
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
+            pageScrollProgress={pageScrollProgress}
           />
         )}
 
@@ -235,7 +236,7 @@ function App () {
           <GeographicMap
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
-            stepProgress={stepProgress}
+            pageScrollProgress={pageScrollProgress}
           />
         )}
 
@@ -273,7 +274,7 @@ function App () {
                 nextChapter='/malcolm'
                 setPageInView={setPageInView}
                 pageInView={pageInView}
-                stepProgress={stepProgress}
+                pageScrollProgress={pageScrollProgress}
                 updateStepProgress={updateStepProgress}
               />
             }
@@ -291,7 +292,7 @@ function App () {
                     pageInView={pageInView}
                     setPageInView={setPageInView}
                     setNextChapter={updateChapter}
-                    stepProgress={stepProgress}
+                    pageScrollProgress={pageScrollProgress}
                     updateStepProgress={updateStepProgress}
                   />
                 }
