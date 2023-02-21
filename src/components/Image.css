@@ -14,8 +14,8 @@ figure {
 }
 
 img {
-  object-fit: cover;
-  /* width: 100%; */
+
+  /* object-fit: cover;   */
   margin-bottom: 0;
   animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
@@ -33,7 +33,6 @@ figcaption {
   text-align: center;
 }
 
-
 .source {
   background-color: #ffffff;
   opacity: 0.7;
@@ -41,7 +40,6 @@ figcaption {
   text-align: center;
   display: inline-block;
 }
-
 
 .source a {
   font-style: italic;

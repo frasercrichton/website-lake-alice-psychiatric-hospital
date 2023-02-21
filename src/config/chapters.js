@@ -1,5 +1,6 @@
 import stateCareFacilities from '../config/state-care-facilities.json'
 import psychiatricFacilities from '../config/psychiatric-facilities.json'
+import cameras from '../config/cameras.js'
 
 const stateCareUnlabeled = stateCareFacilities.filter(function (facility) {
   delete facility.label
@@ -65,7 +66,6 @@ const data = {
     pages: [
       {
         id: 'introduction-introduction-1',
-        index: 1,
         text: {
           content: 'Introduction'
         },
@@ -77,7 +77,6 @@ const data = {
       },
       {
         id: 'introduction-introduction-2',
-        index: 1,
         text: {
           content: 'Introduction'
         },
@@ -89,7 +88,6 @@ const data = {
       },
       {
         id: '3',
-        index: 3,
         text: {
           content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
@@ -101,7 +99,6 @@ const data = {
       },
       {
         id: '4',
-        index: 4,
         text: {
           content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
           style: 'static'
@@ -123,7 +120,6 @@ const data = {
     pages: [
       {
         id: 'malcolm-introduction-1',
-        index: 1,
         text: {
           content: 'Malcolm'
         },
@@ -134,7 +130,6 @@ const data = {
       },
       {
         id: 'malcolm-introduction-2',
-        index: 1,
         text: {
           content: 'Malcolm'
         },
@@ -145,7 +140,6 @@ const data = {
       },
       {
         id: 'malcolm-1',
-        index: 2,
         text: {
           content:
             'Malcolm Richards spent three months at the Lake Alice Child and Adolescent Unit in 1975 when he was 15. During his time at Lake Alice Malcolm was subjected to Electroconvulsive therapy (ECT) used as punishment and sexual abuse. For almost fifty years Malcolm and the other survivors of Lake Alice have battled against the State for accountability and redress.',
@@ -157,8 +151,7 @@ const data = {
         }
       },
       {
-        id: '2',
-        index: 3,
+        id: 'malcolm-2',
         text: {
           header: '2 - Family',
           content:
@@ -180,8 +173,7 @@ const data = {
         }
       },
       {
-        id: '3',
-        index: 4,
+        id: 'malcolm-3',
         text: {
           header: '3 - Pathway',
           content:
@@ -227,8 +219,7 @@ const data = {
         }
       },
       {
-        id: '4',
-        index: 5,
+        id: 'malcolm-4',
         text: {
           header: '4 - Arrival',
           content:
@@ -236,22 +227,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ChildrensVillaGirlsCamera',
-          position: [
-            157.77755737304688, 33.061851501464844, -367.64495849609375
-          ],
-          rotation: [-2.635556573701771, 0.9033575420263746, 2.713050423139778],
-          duration: 0,
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: cameras.boysVilla
       },
       {
-        id: '5',
-        index: 6,
+        id: 'malcolm-5',
         image: {
           src: 'fc-20130307-00001-2013P_Pi293_006718.jpg',
           style: 'scrolling',
@@ -261,26 +240,34 @@ const data = {
             'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
-        }
+        camera: cameras.boysVilla
       },
       {
-        id: '6',
-        index: 7,
+        id: 'malcolm-6',
+        // text: {
+        //   header: '4 - Arrival',
+        //   content:
+        //     "Malcolm was left at the Boys' Villa by his mum with Dr Selwyn Leeks - the Director of the unit. Neither Malcolm nor his mother were made aware of or asked to consent to Electroconvulsive therapy. ",
+        //   style: 'scrolling'
+        // },
+        view: '3d',
+        camera: cameras.boysVilla
+      },
+      {
+        id: 'malcolm-7',
         text: {
           header: '5 - First night',
           content:
             "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
           style: 'scrolling'
         },
+        view: '3d',
+        camera: {
+          ...cameras.boysVillaAbove
+        }
+      },
+      {
+        id: 'malcolm-8',
         image: {
           src: 'fc-20210621-00007-Scan 1.jpg',
           caption:
@@ -289,20 +276,20 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.boysVillaAbove
         }
       },
       {
-        id: '7',
-        index: 8,
+        id: 'malcolm-9',
+        content:
+          "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
+        view: '3d',
+        camera: {
+          ...cameras.boysVillaAbove
+        }
+      },
+      {
+        id: 'malcolm-10',
         text: {
           header: '6 - A Typical day',
           content:
@@ -311,21 +298,12 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.dayRoomBoysVilla
         }
       },
 
       {
-        id: 'malcolm-8',
-        index: 9,
+        id: 'malcolm-11',
         text: {
           header: '7 - ECT',
           content:
@@ -333,27 +311,23 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.adultVilla }
       },
       {
-        id: 'malcolm-9',
-        index: 10,
+        id: 'malcolm-12',
         text: {
           header: '8 - ECT - Villa',
           content:
             '"I was in a ward with other people getting ECT three times a week where they’d bring the trolley down one side and up the other and save the children to last and just put you to sleep and give you ECT to the head. The wait for your turn was worse than the ECT. It wasn’t worse than having ECT while you were awake - that pain is indescribable. If you are old enough to have an old black and white TV and transmission used to end and the end of the night and the TV would make a real buzzing noise and you’d see the black and white speckles on the screen that’s exactly what you saw in your eyes while the current was going through. The pain was horrendous." Recovery was as excruciating; "like you\'d been in a ring with a boxer".',
           style: 'scrolling'
         },
+        view: '3d',
+        camera: {
+          ...cameras.adultVilla
+        }
+      },
+      {
+        id: 'malcolm-13',
         image: {
           src: 'fc-20210619-00006-Scan 2.jpg ',
           caption:
@@ -362,20 +336,18 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.adultVilla
         }
       },
       {
-        id: 'malcolm-10',
-        index: 11,
+        id: 'malcolm-13',
+        view: '3d',
+        camera: {
+          ...cameras.adultVilla
+        }
+      },
+      {
+        id: 'malcolm-14',
         text: {
           header: '9 - Escape',
           content:
@@ -418,8 +390,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-11',
-        index: 12,
+        id: 'malcolm-15',
         text: {
           header: '10 - Consequences',
           content:
@@ -427,21 +398,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.boysVilla }
       },
       {
-        id: 'malcolm-12',
-        index: 13,
+        id: 'malcolm-16',
         text: {
           header: '11 - Afterwards',
           content:
@@ -449,21 +409,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ChildrensVillaAbove',
-          position: [
-            40.091243743896484, 52.727787017822266, -331.4974365234375
-          ],
-          rotation: [-1.5707963614591278, 0, 1.5816991776824212],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.adultVilla }
       },
       {
-        id: 'malcolm-13',
-        index: 14,
+        id: 'malcolm-17',
         text: {
           header: '13 - Runaway',
           content: 'Waipawa',
@@ -493,8 +442,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-14',
-        index: 15,
+        id: 'malcolm-18',
         text: {
           header: '12 - Runaway',
           content:
@@ -525,8 +473,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-15',
-        index: 16,
+        id: 'malcolm-19',
         text: {
           header: '15 - Waipukurau',
           content: 'Waipukurau',
@@ -560,8 +507,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-16',
-        index: 17,
+        id: 'malcolm-20',
         text: {
           header: '12 - Runaway',
           content:
@@ -600,8 +546,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-17',
-        index: 18,
+        id: 'malcolm-21',
         text: {
           header: '12 - Runaway',
           content:
@@ -644,8 +589,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-18',
-        index: 19,
+        id: 'malcolm-22',
         text: {
           header: '12 - Welsford',
           content: 'Welsford',
@@ -691,8 +635,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-19',
-        index: 20,
+        id: 'malcolm-23',
         text: {
           header: '19 - Kaiwaka',
           content: 'Kaiwaka',
@@ -742,8 +685,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-20',
-        index: 21,
+        id: 'malcolm-24',
         text: {
           header: '12 - Runaway',
           content:
@@ -798,8 +740,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-21',
-        index: 22,
+        id: 'malcolm-25',
         text: {
           header: '12 - Runaway',
           content:
@@ -859,8 +800,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-22',
-        index: 23,
+        id: 'malcolm-26',
         text: {
           header:
             '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
@@ -920,8 +860,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-23',
-        index: 24,
+        id: 'malcolm-27',
         text: {
           header: '23 - South Auckland',
           content: 'South Auckland',
@@ -983,8 +922,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-24',
-        index: 25,
+        id: 'malcolm-28',
         text: {
           header: '24 - Napier',
           content: 'Napier',
@@ -1050,8 +988,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-25',
-        index: 26,
+        id: 'malcolm-29',
         text: {
           header: '25 - Hastings',
           content: 'Hastings. ',
@@ -1126,43 +1063,22 @@ const data = {
     pages: [
       {
         id: 'context-introduction-1',
-        index: 1,
         text: {
           content: 'Context'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
-        }
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'context-introduction-2',
-        index: 1,
         text: {
           content: 'Context'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
-        }
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'context-2',
-        index: 2,
         text: {
           header: '2 - Adult Psychiatric Facility',
           content:
@@ -1171,47 +1087,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ElevenBedVilla',
-          duration: 0,
-          position: [100.01496887207031, 3.294312000274658, -332.5577087402344],
-          rotation: [
-            3.1176579502008677, -0.9424030014672574, 3.1222640413920724
-          ],
-          aspect: 1.7777777777777777,
-          fov: 22.89519204617112,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'context-3',
-        index: 3,
-        image: {
-          src: 'fc-20210828-00001-FL25129159.jpg',
-          caption: 'The original eleven bed villas Archway Item ID: R24730915 ',
-          source:
-            'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143',
-          style: 'scrolling'
-        },
-
-        view: '3d',
-        camera: {
-          name: 'ElevenBedVilla',
-          position: [100.01496887207031, 3.294312000274658, -332.5577087402344],
-          rotation: [
-            3.1176579502008677, -0.9424030014672574, 3.1222640413920724
-          ],
-          aspect: 1.7777777777777777,
-          fov: 22.89519204617112,
-          near: 0.10000000149011612,
-          far: 1000
-        }
-      },
-
-      {
-        id: 'context-4',
-        index: 4,
         text: {
           header: '3 - 12-bed Villas',
           content:
@@ -1221,21 +1100,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'ChildrensVilla',
-          position: [89.609375, 6.064056873321533, -348.9563903808594],
-          rotation: [
-            -3.0338610420757726, 1.2408248061486113, 3.039651924990452
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.twelveBedVillasWide }
       },
       {
-        id: 'context-5',
-        index: 5,
+        id: 'context-4',
         text: {
           header: "4 - 12-bed Villas - Children's unit",
           content:
@@ -1244,22 +1112,28 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=62'
         },
         view: '3d',
-        camera: {
-          name: 'MaximumSecurityBlockCamera',
-          position: [-212.70655822753906, 43.53173828125, -225.8732452392578],
-          rotation: [
-            -2.883296831393313, -0.013562286618653132, -3.1379996244759334
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.TwelveBedVilla }
       },
+      {
+        id: 'context-5',
+        image: {
+          src: 'fc-20210828-00001-FL25129159.jpg',
+          caption: 'The original twelve bed villas Archway Item ID: R24730915 ',
+          source:
+            'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143',
+          style: 'scrolling'
+        },
 
+        view: '3d',
+        camera: { ...cameras.TwelveBedVilla }
+      },
+      {
+        id: 'context-5',
+        view: '3d',
+        camera: { ...cameras.TwelveBedVilla }
+      },
       {
         id: 'context-6',
-        index: 6,
         text: {
           header: '6 - Girls Unit',
           content:
@@ -1284,7 +1158,6 @@ const data = {
       },
       {
         id: 'context-7',
-        index: 7,
         text: {
           header: '8 - Maximum Security Villa',
           content:
@@ -1293,43 +1166,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'MaximumSecurityBlockCamera',
-          position: [-212.70655822753906, 43.53173828125, -225.8732452392578],
-          rotation: [
-            -2.883296831393313, -0.013562286618653132, -3.1379996244759334
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.maximumSecurity }
       },
       {
         id: 'context-8',
-        index: 8,
-        text: {
-          content:
-            "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
-          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          name: 'MaximumSecurityBlockCamera',
-          position: [-212.70655822753906, 43.53173828125, -225.8732452392578],
-          rotation: [
-            -2.883296831393313, -0.013562286618653132, -3.1379996244759334
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
-      },
-      {
-        id: 'context-9',
-        index: 9,
         image: {
           src: 'fc-20210828-00001-FL25129125.jpg',
           caption:
@@ -1339,21 +1179,27 @@ const data = {
         },
 
         view: '3d',
-        camera: {
-          name: 'MaximumSecurityBlockCamera',
-          position: [-212.70655822753906, 43.53173828125, -225.8732452392578],
-          rotation: [
-            -2.883296831393313, -0.013562286618653132, -3.1379996244759334
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.maximumSecurityClose }
       },
       {
+        id: 'context-9',
+        view: '3d',
+        camera: { ...cameras.maximumSecurityClose }
+      },
+
+      {
         id: 'context-10',
-        index: 10,
+        text: {
+          content:
+            "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
+          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.boysVilla }
+      },
+      {
+        id: 'context-11',
         text: {
           header: '9 - Staff on Site',
           content:
@@ -1362,20 +1208,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'cam 3',
-          position: [-230.4385986328125, 97.69420623779297, -577.187255859375],
-          rotation: [
-            -2.5898855475579845, -0.26382684672755846, -2.9824475943743254
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.doctorsVillas
         }
       },
       {
-        id: 'context-11',
-        index: 11,
+        id: 'context-12',
         text: {
           header: '7 - Adults and Children',
           content:
@@ -1397,8 +1234,7 @@ const data = {
         }
       },
       {
-        id: 'context-12',
-        index: 12,
+        id: 'context-13',
         text: {
           header: '9 - Torture',
           content:
@@ -1407,20 +1243,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'cam 6',
-          position: [54.55931091308594, 7.695420265197754, -360.82073974609375],
-          rotation: [
-            -2.9441580154277016, 1.1303687398238607, 2.962599070455075
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.adultVilla
         }
       },
       {
-        id: 'context-13',
-        index: 13,
+        id: 'context-14',
         text: {
           header: '10 - Demolition',
           content:
@@ -1429,15 +1256,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'cam 6',
-          position: [54.55931091308594, 7.695420265197754, -360.82073974609375],
-          rotation: [
-            -2.9441580154277016, 1.1303687398238607, 2.962599070455075
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
+          ...cameras.default
         }
       }
     ]
@@ -1446,68 +1265,33 @@ const data = {
     pages: [
       {
         id: 'pathways-introduction-1',
-        index: 1,
         text: {
           content: 'Pathways'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [160, 460, -220],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
-        }
+        camera: { ...cameras.default }
       },
       {
         id: 'pathways-introduction-2',
-        index: 1,
         text: {
           content: 'Pathways'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [160, 460, -220],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
-        }
+        camera: { ...cameras.default }
       },
       {
         id: 'pathways-2',
-        index: 3,
         text: {
           content:
-            "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655,000 people who went through care 200, 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
+            "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655 000 people who went through care 200 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
           source: 'Abuse-in-Care-Volume-One.pdf#14',
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'default',
-          position: [160, 460, -220],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
-        }
+        camera: { ...cameras.default }
       },
       {
         id: 'pathways-3',
-        index: 4,
-        text: {
-          header: '2 - Home',
-          content:
-            'The most common referral to Lake Alice for children was from home.',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=69',
-          style: 'scrolling'
-        },
         view: 'map',
         map: {
           centre: {
@@ -1522,7 +1306,6 @@ const data = {
       },
       {
         id: 'pathways-4',
-        index: 5,
         text: {
           header: '2 - Home',
           content:
@@ -1537,7 +1320,6 @@ const data = {
       },
       {
         id: 'pathways-5',
-        index: 6,
         text: {
           header: '3 - State Residences - Lake Alice hub',
           content:
@@ -1605,7 +1387,6 @@ const data = {
       },
       {
         id: 'pathways-6',
-        index: 7,
         text: {
           header: 'Kohitere',
           content:
@@ -1667,7 +1448,6 @@ const data = {
 
       {
         id: 'pathways-7',
-        index: 8,
         text: {
           header: '4 - State Residences',
           content:
@@ -1686,7 +1466,6 @@ const data = {
       },
       {
         id: 'pathways-8',
-        index: 9,
         text: {
           header: '5 - Foster Care and Family Homes',
           content:
@@ -1701,7 +1480,6 @@ const data = {
       },
       {
         id: 'pathways-9',
-        index: 10,
         text: {
           header: '6 - Hospital',
           content:
@@ -1723,7 +1501,6 @@ const data = {
       },
       {
         id: 'pathways-10',
-        index: 11,
         text: {
           header: '6 - Numbers',
           content:
@@ -1738,7 +1515,6 @@ const data = {
       },
       {
         id: 'pathways-11',
-        index: 12,
         text: {
           header: '7 - Ages',
           content:
@@ -1754,7 +1530,6 @@ const data = {
       },
       {
         id: 'pathways-12',
-        index: 13,
         text: {
           header: '8 - Maori and Pasifika',
           content:
@@ -1776,7 +1551,6 @@ const data = {
       },
       {
         id: 'pathways-13',
-        index: 14,
         text: {
           header: '9 - Gender',
           content:
@@ -1791,7 +1565,6 @@ const data = {
       },
       {
         id: 'pathways-14',
-        index: 15,
         text: {
           header: '10 - Impact',
           content:
@@ -1809,58 +1582,36 @@ const data = {
     pages: [
       {
         id: 'justice-introduction-1',
-        index: 1,
         view: '3d',
         text: {
           content: 'Justice'
         },
         camera: {
-          name: 'default',
-          position: [-310, 400, 200],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 70,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-introduction-2',
-        index: 1,
         view: '3d',
         text: {
           content: 'Justice'
         },
         camera: {
-          name: 'default',
-          position: [-310, 400, 200],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 70,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-introduction-2',
-        index: 1,
         view: '3d',
         text: {
           content: 'Justice'
         },
         camera: {
-          name: 'default',
-          position: [-310, 400, 200],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 70,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-2',
-        index: 2,
         text: {
           header: '1 - Intro',
           content:
@@ -1869,18 +1620,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-3',
-        index: 3,
         text: {
           header: '2 - Complaints',
           content:
@@ -1890,18 +1634,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-4',
-        index: 4,
         text: {
           header: '3 - CCHR',
           content:
@@ -1911,18 +1648,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-5',
-        index: 5,
         text: {
           header: '4 - Whistleblower',
           content:
@@ -1933,18 +1663,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-6',
-        index: 6,
         text: {
           header: '5 - Hake Halo',
           content:
@@ -1954,18 +1677,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-7',
-        index: 7,
         text: {
           header: '6 - Inquiries 1976',
           content:
@@ -1974,18 +1690,11 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
         id: 'justice-8',
-        index: 8,
         text: {
           header: '7 - Court cases',
           content:
@@ -1994,13 +1703,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2014,13 +1717,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2035,13 +1732,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2056,13 +1747,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2077,13 +1762,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2098,13 +1777,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2118,13 +1791,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2137,15 +1804,15 @@ const data = {
           style: 'scrolling',
           source: 'Redacted-Lake-Alice-Report.pdf#page=308'
         },
+        image: {
+          caption: 'Lake Alice Investigation Completed - No Charges Laid.png',
+          src: 'Lake Alice Investigation Completed - No Charges Laid.png',
+          style: 'scrolling'
+        },
+
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2158,15 +1825,16 @@ const data = {
           style: 'scrolling',
           source: 'Redacted-Lake-Alice-Report.pdf#page=316'
         },
+        image: {
+          caption:
+            'Operation Lake Alice concluded - criminal charges filed.png',
+          src: 'Operation Lake Alice concluded - criminal charges filed.png',
+          style: 'scrolling'
+        },
+
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       },
       {
@@ -2181,127 +1849,9 @@ const data = {
         },
         view: '3d',
         camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
+          ...cameras.theLake
         }
       }
-      // {
-      //   id: 'justice-3',
-      //   index: 3,
-
-      //   image: {
-      //     src: 'fc-20200523-00009-final-report-of-clas-2015.jpg',
-      //     caption: 'Gallen Report',
-      //     source: '',
-      //     style: 'scrolling'
-      //   },
-
-      //   view: '3d',
-      //   camera: {
-      //     name: 'default',
-      //     position: [0, 600, 400],
-      //     rotation: [-0.8726646, 0, 0],
-      //     aspect: 1,
-      //     fov: 80,
-      //     near: 10,
-      //     far: 10000
-      //   }
-      // },
-      // {
-      //   id: 'justice-4',
-      //   index: 4,
-      //   text: {
-      //     header: 'Australia',
-      //     content:
-      //       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
-      //     style: 'scrolling'
-      //   },
-      //   view: 'map',
-      //   map: {
-      //     zoom: 5,
-      //     centre: {
-      //       latitude: -40.7670087,
-      //       longitude: 173.4506545
-      //     },
-      //     bounds: {
-      //       southWest: [-51.481383, 100.810547],
-      //       northEast: [-6.620957, 192.963867]
-      //     },
-      //     visibleMapLayers: {
-      //       minorPoints: {
-      //         points: [
-      //           {
-      //             label: 'Lake Alice',
-      //             latitude: -40.1254336,
-      //             longitude: 175.3369864
-      //           },
-      //           {
-      //             label: 'Melbourne',
-      //             latitude: -37.971237,
-      //             longitude: 144.4926947
-      //           }
-      //         ]
-      //       },
-      //       lines: {
-      //         target: {
-      //           label: 'Melbourne',
-      //           latitude: -37.971237,
-      //           longitude: 144.4926947
-      //         },
-      //         points: [
-      //           {
-      //             label: 'Lake Alice',
-      //             latitude: -40.1254336,
-      //             longitude: 175.3369864
-      //           }
-      //         ]
-      //       }
-      //     }
-      //   }
-      // },
-      // {
-      //   id: 'justice-5',
-      //   index: 5,
-      //   image: {
-      //     src: 'fc-20220628.jpg',
-      //     caption: 'Committee Against Torture',
-      //     source: '',
-      //     style: 'scrolling'
-      //   },
-      //   view: 'map',
-      //   map: {
-      //     zoom: 5,
-      //     centre: {
-      //       latitude: -40.7670087,
-      //       longitude: 173.4506545
-      //     },
-      //     bounds: {
-      //       southWest: [-51.481383, 100.810547],
-      //       northEast: [-6.620957, 192.963867]
-      //     },
-      //     visibleMapLayers: {
-      //       minorPoints: {
-      //         points: [
-      //           {
-      //             label: 'Lake Alice',
-      //             latitude: -40.1254336,
-      //             longitude: 175.3369864
-      //           },
-      //           {
-      //             label: 'Melbourne',
-      //             latitude: -37.971237,
-      //             longitude: 144.4926947
-      //           }
-      //         ]
-      //       }
-      //     }
-      //   }
-      // }
     ]
   },
   '/about': {
@@ -2311,8 +1861,32 @@ const data = {
         index: 1,
         text: {
           content: 'About'
+        }
+      },
+      {
+        id: 'about-introduction-2',
+        index: 1,
+        text: {
+          content: 'About'
+        }
+      },
+      {
+        id: 'about-1',
+        index: 2,
+        text: {
+          content: 'About'
         },
-
+        view: 'markdown',
+        content: {
+          file: 'about'
+        }
+      },
+      {
+        id: 'about-1',
+        index: 3,
+        text: {
+          content: 'About'
+        },
         view: 'markdown',
         content: {
           file: 'about'
@@ -2328,7 +1902,6 @@ const data = {
         text: {
           content: 'Introduction'
         },
-
         image: {
           src: 'site-animated.gif'
         },
@@ -2347,4 +1920,9 @@ const data = {
     ]
   }
 }
+// chapter
+
+// page
+//
+
 export default data

@@ -1,16 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from '../components/Image.jsx'
 import TextBox from '../components/TextBox.jsx'
 import AssetUrlHelper from '../components/AssetUrlHelper.js'
+import Content from './Content.jsx'
 import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
-const Page = ({
-  page,
-  isIntroduction,
-  pageInView,
-  pageScrollProgress
-}) => {
+const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -52,7 +48,7 @@ const Page = ({
       {img != null && page.image.style === 'scrolling' && (
         <div
           className='scrolling-image'
-          style={{ width: '50%', display: 'flex', flexDirection: 'column' }}
+          style={{ width: '50%', display: 'flex', flexDirection: 'column', height: '200px' }}
         >
           <Image
             caption={page.image.caption}
@@ -60,6 +56,12 @@ const Page = ({
             url={img}
           />
         </div>
+      )}
+      {page.view === 'markdown' && (
+        <Content
+          key={page.id}
+          content={page.content.file}
+        />
       )}
     </div>
   )

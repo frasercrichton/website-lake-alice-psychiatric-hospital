@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import { Leva } from 'leva'
@@ -37,7 +37,7 @@ if (hash === '#debug') {
   stats.showPanel(0)
   document.body.appendChild(stats.dom)
 }
-
+console.log(chapters)
 function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
@@ -51,7 +51,7 @@ function App () {
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
   // Scrollarama state
-  const [scrollProgress, setScrollProgress] = useState(0.3)
+  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
 
   const [hoverName, setHoverName] = useState('')
@@ -106,7 +106,7 @@ function App () {
     //   sectionCurrentIndex + (1 / sectionTotalCount) * 100
     // )
 
-    setScrollProgress(sectionCurrentIndex / sectionTotalCount)
+    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
     setPageCamera(pageInView.camera)
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
     // hacky way to avoid camera bounce after into
@@ -125,7 +125,7 @@ function App () {
     }
     setChapterInView(chapters[location.pathname])
     setPageInView(chapters[location.pathname].pages[0])
-    setScrollProgress(0)
+    setHeaderScrollProgress(0)
   }, [location])
 
   const handleCanvasClick = () => {
@@ -194,20 +194,13 @@ function App () {
           setContent={setContent}
         />
         <Header
-          scrollProgress={scrollProgress}
+          scrollProgress={headerScrollProgress}
           handleClick={setContent}
           enableClose={content !== ''}
           activeChapter={activeChapter}
           setActiveChapter={setActiveChapter}
         />
-        {pageInView.view === 'markdown' && (
-          <Content
-            key={content}
-            content={pageInView.content.file}
-            setContent={setContent}
-          />
-        )}
-
+        
         {pageInView.text && pageInView.text?.style === 'static' && (
           <TextBox
             text={pageInView.text}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Scrollama, Step } from 'react-scrollama'
 import Page from './Page.jsx'
 import './Chapter.css'
@@ -25,8 +25,10 @@ const Chapter = ({
       // setPageInView(chapter.pages[data])
       return
     }
-
-    setPageInView(chapterInView.pages[data])
+    // a very hacky way of dealing with the intro page
+    // there are 2 intro pages so the scroll is slow and smooth
+    const index = data <= 2 ? 1 : data - 1
+    setPageInView({ index, ...chapterInView.pages[data] })
 
     // {
     //   element, // The DOM node of the step that was triggered

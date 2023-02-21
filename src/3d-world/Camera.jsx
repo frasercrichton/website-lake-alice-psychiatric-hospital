@@ -23,7 +23,7 @@ const hash = window.location.hash
 const Camera = ({ pageCamera, cameraMoveDuration = 2000, pageScrollProgress }) => {
   const currentCamera = useThree(state => state.camera)
   // controls = new THREE.OrbitControls( camera, renderer.domElement )
-
+    // state.camera.lookAt(0, 0, 0)
   const fromQuat = new THREE.Quaternion()
   const toQuat = new THREE.Quaternion()
 

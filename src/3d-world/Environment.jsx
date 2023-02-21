@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
-import { useThree } from '@react-three/fiber'
+// import { useThree } from '@react-three/fiber'
 import EnvironmentControls from '../controls/EnvironmentControls.jsx'
 import ShadowCameraControls from '../controls/ShadowCameraControls.jsx'
 import DirectionalLightControls from '../controls/DirectionalLightControls.jsx'
@@ -11,8 +11,7 @@ const Lighting = () => {
   const directionalLight = useRef()
   const { Intensity, Position } = DirectionalLightControls()
   const shadowCameraControls = ShadowCameraControls()
-  const { scene } = useThree()
-  const shadowCameraExtent = shadowCameraControls['Extent']
+  const shadowCameraExtent = shadowCameraControls.Extent
   const { World } = LookAndFeelControls()
 
   const { Near, HemisphereIntensity, skyColour, groundColour } =
@@ -21,17 +20,17 @@ const Lighting = () => {
   useEffect(() => {
     directionalLight.current.shadow.camera.near = Near
 
-    const shadowCameraHelper = new THREE.CameraHelper(
-      directionalLight.current.shadow.camera
-    )
-    scene.add(shadowCameraHelper)
+    // const shadowCameraHelper = new THREE.CameraHelper(
+    //   directionalLight.current.shadow.camera
+    // )
+    // scene.add(shadowCameraHelper)
 
-    const helper = new THREE.DirectionalLightHelper(
-      directionalLight.current,
-      500
-    )
-    scene.add(helper)
-    helper.update()
+    // const helper = new THREE.DirectionalLightHelper(
+    //   directionalLight.current,
+    //   500
+    // )
+    // scene.add(helper)
+    // helper.update()
   }, [])
 
   return (
@@ -63,8 +62,8 @@ const Lighting = () => {
         shadow-camera-right={shadowCameraExtent}
         shadow-camera-bottom={-shadowCameraExtent}
         shadow-camera-left={-shadowCameraExtent}
-        // shadow-camera-near={shadowCameraControls['Near']}
-        shadow-camera-far={shadowCameraControls['Far']}
+        // shadow-camera-near={shadowCameraControls.Near}
+        shadow-camera-far={shadowCameraControls.Far}
       />
     </>
   )
