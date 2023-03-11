@@ -1,94 +1,72 @@
-import React, { CSSProperties, useEffect, useState } from 'react'
-import './Page.css'
-import { useInView } from 'react-intersection-observer'
-import VideoVimeo from '../components/VideoVimeo.jsx'
+import React, { useEffect, useState } from 'react'
 import Image from '../components/Image.jsx'
-import TextBox from '../components/TextBox'
+import TextBox from '../components/TextBox.jsx'
 import AssetUrlHelper from '../components/AssetUrlHelper.js'
+import Content from './Content.jsx'
+import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
-const Page = ({ setPageInView, page, nextChapter, setNextChapter }) => {
-  const { ref: content, inView: contentInView } = useInView({
-    key: page.id,
-    threshold: 0.5,
-    initialInView: false,
+const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
+  const [introActive, setIntroActive] = useState(true)
 
-    onChange: (inView, ref) => {
-      // console.log('ref', ref.target)
-      // console.log('entry', entry)
-      if (inView) {
-        setPageInView(page)
-      }
+  useEffect(() => {
+    if (pageInView.id?.includes('introduction')) {
+      setIntroActive(true)
+    } else {
+      setIntroActive(false)
     }
-  })
+  }, [pageInView])
 
-  const { ref: next, inView: inViewNext } = useInView({
-    key: page.id,
-    threshold: 0.5,
-    initialInView: false,
-
-    onChange: (inView, ref) => {
-      if (inView) {
-        setNextChapter(nextChapter)
-      }
-    }
-  })
+  const introClassName = introActive
+    ? 'active content-introduction'
+    : 'content-introduction'
 
   const img = page.image
     ? assetUrlHelper.resolveUrl(page.image.src, '3d-visualisation')
     : null
 
-  const introBlock = {
-    position: 'absolute',
-    top: '300px',
-    left: '0',
-    width: '100%',
-    height: '300px',
-    zIndex: '400',
-    backgroundColor: '#A0A0A0',
-    opacity: '0.6'
-  }
-
-  const introPage = page.index === 1 ? null : null
-
   const textBoxStyle = {
-    margin: '50px'
+    margin: '50px',
+    width: '45%'
+
     // marginTop: '550px'
   }
-
   return (
-    <>
-      <div
-        key={`inview-block-${page.id}`}
-        ref={content}
-        className='inview-block'
-      />
-      <div key={`content-block-${page.id}`} className='page-content-container'>
-        {page.text?.style === 'scrolling' && (
-          <TextBox text={page.text} textBoxStyle={textBoxStyle} />
-        )}
-        {img != null && page.image.style === 'scrolling' && (
-          <div
-            className='scrolling-image'
-            style={{ width: '50%', display: 'flex', flexDirection: 'column' }}
-          >
-            <Image
-              caption={page.image.caption}
-              source={page.image.source}
-              url={img}
-            />
-          </div>
-        )}
-      </div>
-      {nextChapter && (
-        <div
-          className='inview-next-block'
-          style={{ height: `80vw` }}
-          key={`next-block-${page.id}`}
-          ref={next}
-        ></div>
+    <div key={`content-block-${page.id}`} className='page-content-container'>
+      {isIntroduction && (
+        <div className={introClassName}>
+          <h1>{page.text.content}</h1>
+        </div>
       )}
-    </>
+      {page.text?.style === 'scrolling' && (
+        <TextBox
+          text={page.text}
+          textBoxStyle={textBoxStyle}
+          pageScrollProgress={pageScrollProgress}
+        />
+      )}
+      {img != null && page.image.style === 'scrolling' && (
+        <div className='scrolling-image'>
+          <Image
+            caption={page.image.caption}
+            source={page.image.source}
+            url={img}
+          />
+        </div>
+      )}
+      {img != null && page.image.style === 'document' && (
+        <div className='document'>
+          <Image
+            caption={page.image.caption}
+            source={page.image.source}
+            url={img}
+          />
+        </div>
+      )}
+      {page.view === 'markdown' && (
+        <Content key={page.id} content={page.content.file} />
+      )}
+    </div>
   )
 }
 

@@ -1,12 +1,25 @@
-import AssetUrlHelper from './AssetUrlHelper'
+import React from 'react'
+import AssetUrlHelper from './AssetUrlHelper.js'
+import AnimatedText from './AnimatedText.jsx'
 import './TextBox.css'
 
-const TextBox = ({ text, textBoxContainerStyle, textBoxStyle }) => {
+const TextBox = ({
+  text,
+  textBoxStyle,
+  pageScrollProgress,
+  textBoxContainerStyle,
+  isAnimated = false
+}) => {
   return (
     <div className='text-box-container' style={textBoxContainerStyle}>
       <div className='text-box' style={textBoxStyle}>
-        <div>{text.header}</div>
-        <div>{text.content}</div>
+        {/* <div>{text.header}</div> */}
+        <div className='text-box-content'>
+          {isAnimated && (
+            <AnimatedText text={text.content} stepProgress={pageScrollProgress} />
+          )}
+          {!isAnimated && text.content}
+        </div>
         {text.source && (
           <div className='source'>
             <a
@@ -14,7 +27,7 @@ const TextBox = ({ text, textBoxContainerStyle, textBoxStyle }) => {
               rel='noreferrer'
               href={new AssetUrlHelper().resolveUrl(text.source, 'documents')}
             >
-              Source
+              SOURCE
             </a>
           </div>
         )}

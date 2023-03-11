@@ -1,49 +1,55 @@
-.inview-block {
-  height: '1%',
-}
-
-.inview-block {
-  /* background-color: aqua; */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
 .page-content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: blue; */
   align-items: center;
-  animation: fadeIn 15s;
+  height: 100vh;
+
+  /* animation: fadeIn 15s;
   -webkit-animation: fadeIn 15s;
   -moz-animation: fadeIn 15s;
   -o-animation: fadeIn 15s;
-  -ms-animation: fadeIn 15s;
+  -ms-animation: fadeIn 15s; */
 
+}
+
+.document {
+  /* background-color: aqua; */
 }
 
 .scrolling-image figure {
   width: 50vw;
-  /* height: 200px; */
   justify-content: center;
   flex-flow: column;
-  /* background-color: aqua; */
 }
 
-.scrolling-image figure img {
+.document figure {
+  width: 50vw;
+  align-items: center;
+}
+
+.document figure img, .scrolling-image figure img {
   padding: 15px;
+  /* height and object-fit: contain makes the image responsive to the container */
+  height: 80vh;
+  object-fit: contain;
 }
 
-/* figure {
+.content-introduction {
+  align-items: center;
+  background-color: #000;
+  color: #ffffff;
+  opacity: 0;
   display: flex;
-  flex-flow: column;
   height: 100vh;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 1.5s linear;
   width: 100vw;
-  min-width: 850px;
-  padding: 0;
-  margin: 0;
-} */
+
+}
+
+.content-introduction.active {
+  opacity: 0.5;
+}

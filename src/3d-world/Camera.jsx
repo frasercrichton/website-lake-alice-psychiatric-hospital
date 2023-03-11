@@ -1,12 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { useSpring, animated, config } from '@react-spring/three'
-import { OrbitControls, Environment } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
+import { useThree, useFrame } from '@react-three/fiber'
 import angleToRadians from './angleHelper'
 import CameraControls from '../controls/CameraControls'
 import { Globals } from '@react-spring/shared'
+import gsap from 'gsap'
+
 Globals.assign({
   frameLoop: 'always'
 })
@@ -18,50 +19,65 @@ Globals.assign({
 //   camera.position[2]
 // ),
 // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
-const Camera = ({ camera: activeCamera }) => {
-  const cameraRef = useRef(null)
-  const { camera } = useThree()
-  // controls = new THREE.OrbitControls( camera, renderer.domElement )
-  const fromQuat = new THREE.Quaternion()
-  const toQuat = new THREE.Quaternion()
+const hash = window.location.hash
 
-  const hash = window.location.hash
+const getFromQuaternion = currentCamera => {
+  const fromQuaternion = new THREE.Quaternion()
+  fromQuaternion.copy(currentCamera.quaternion)
+  return fromQuaternion
+}
 
-  const cameraState = useThree(state => state.camera)
-  if (cameraRef.current != undefined) {
-    fromQuat.copy(cameraRef.current.quaternion)
-  }
-// TODOadduseffect for useref
-  // if (cameraRef.current != undefined) {
-  //   const cameraControls = CameraControls({cameraRef})
-  // }
-
-  toQuat.setFromEuler(
+const getToQuaternion = pageCamera => {
+  const toQuaternion = new THREE.Quaternion()
+  toQuaternion.setFromEuler(
     new THREE.Euler(
-      activeCamera.rotation[0],
-      activeCamera.rotation[1],
-      activeCamera.rotation[2],
+      pageCamera.rotation[0],
+      pageCamera.rotation[1],
+      pageCamera.rotation[2],
       'XYZ'
     )
   )
-  const springs = useSpring({
-    from: { alpha: 0 },
-    alpha: 1,
-    config: { duration: 3000 },
-    position: activeCamera.position,
-    reset: true,
-    onChange (cont) {
-      // fov
-      // camera.fov = cont.value.fov;
-      const cam = camera.quaternion.slerpQuaternions(
+  return toQuaternion
+}
+
+const Camera = ({
+  pageCamera,
+  cameraMoveDuration = 2000,
+  pageScrollProgress
+}) => {
+  const cameraGroup = useRef()
+  const currentCamera = useThree(state => state.camera)
+  const clock = useThree(state => state.clock)
+  // controls = new THREE.OrbitControls( camera, renderer.domElement )
+  // state.camera.lookAt(0, 0, 0)
+  // const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
+  
+  // This is hack but hey at least I'm not using Spring
+  let alpha = 0
+  useFrame((state, delta) => {
+    const fromQuat = getFromQuaternion(currentCamera)
+    const toQuat = getToQuaternion(pageCamera)
+
+    if (state.clock.elapsedTime < 3) {
+      currentCamera.quaternion.slerpQuaternions(
         fromQuat,
         toQuat,
-        cont.value.alpha
+        (alpha += 0.05 * delta)
       )
-      // camera.zoom = 2
-      camera.updateProjectionMatrix()
+      currentCamera.updateProjectionMatrix()
     }
   })
+
+  useEffect(() => {
+    clock.start()
+    gsap.to(cameraGroup.current.position, {
+      duration: 3,
+      delay: 0,
+      x: pageCamera.position[0],
+      y: pageCamera.position[1],
+      z: pageCamera.position[2]
+    })
+  }, [pageCamera])
 
   // const ZoomIn = () => {
   //   return useFrame(({ camera }) => {
@@ -79,18 +95,17 @@ const Camera = ({ camera: activeCamera }) => {
   // }
 
   return (
-    <animated.group position={springs.position}>
+    <group ref={cameraGroup}>
       <PerspectiveCamera
-        ref={cameraRef}
         makeDefault
-        aspect={activeCamera.aspect}
-        fov={activeCamera.fov}
-        near={activeCamera.near}
-        far={activeCamera.far}
+        aspect={pageCamera.aspect}
+        fov={pageCamera.fov}
+        near={pageCamera.near}
+        far={pageCamera.far}
       />
       {hash === '#debug' && (
         <OrbitControls
-          camera={cameraState}
+          camera={currentCamera}
           // enableZoom
           // enableRotate
           maxDistance={5000}
@@ -115,7 +130,7 @@ const Camera = ({ camera: activeCamera }) => {
           // update
         />
       )}
-    </animated.group>
+    </group>
   )
 }
 

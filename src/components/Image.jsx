@@ -14,7 +14,6 @@ const Image = ({ caption = '', imageAction, id, url, source, style }) => {
       <figure className='figure'>
         <img
           src={url}
-          // width={imageSize}
           alt={caption}
           onClick={e => imageAction(id)}
           onLoad={e => handleLoading(true)}
@@ -25,11 +24,7 @@ const Image = ({ caption = '', imageAction, id, url, source, style }) => {
         {!isLoaded && <Loader />}
         {source && (
           <div className='source'>
-            <a
-              target='_blank'
-              rel='noreferrer'
-              href={source}
-            >
+            <a target='_blank' rel='noreferrer' href={source}>
               Source
             </a>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import { Leva } from 'leva'
@@ -37,28 +37,39 @@ if (hash === '#debug') {
   stats.showPanel(0)
   document.body.appendChild(stats.dom)
 }
-
+// console.log(chapters)
 function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
-  const [camera, setCamera] = useState(defaultCameraConfig)
+  const [pageCamera, setPageCamera] = useState(defaultCameraConfig)
+  const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
+
+  // Page and chapter State
   const [chapterInView, setChapterInView] = useState(chapters['/context'])
-  // TODO -  useState('') >  useState(null)
-  const [pageInView, setPageInView] = useState('')
-  const [hoverName, setHoverName] = useState('')
-  const [content, setContent] = useState('')
+  const [activeChapter, setActiveChapter] = useState('/introduction')
+  const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
+  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
+
+  // Scrollarama state
+  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
+  const [pageScrollProgress, setPageScrollProgress] = useState(null)
+
+  const [hoverName, setHoverName] = useState('')
+  const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
-  const [scrollProgress, setScrollProgress] = useState(0.3)
-  const [activeChapter, setActiveChapter] = useState('/introduction')
-  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
+
   const navigate = useNavigate()
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
     navigate(chapter)
+  }
+
+  const updateStepProgress = progressCount => {
+    setPageScrollProgress(progressCount)
   }
 
   // setNextChapter(nextChapter)
@@ -78,7 +89,8 @@ function App () {
   const location = useLocation()
 
   useEffect(() => {
-    const sectionTotalCount = chapterInView.pages.length
+    // -1 to account for the double 'introduction' pages
+    const sectionTotalCount = chapterInView.pages.length - 1
     const sectionCurrentIndex = pageInView.index
     // if 0 no progress
     // if 1 > percentage
@@ -95,9 +107,22 @@ function App () {
     //   sectionCurrentIndex + (1 / sectionTotalCount) * 100
     // )
 
-    setScrollProgress(sectionCurrentIndex / sectionTotalCount)
-    setCamera(pageInView.camera)
+    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
+    // Only update the camera if it's a new camera
+    if (pageInView?.camera?.name !== pageCamera?.name) {
+      console.log(pageInView?.camera?.name)
+      console.log(pageCamera?.name)
+    
+      setPageCamera(pageInView.camera)
+    }
+    // setPageCamera(pageInView.camera)
+
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
+    // hacky way to avoid camera bounce after into
+
+    if (pageInView.camera?.duration !== cameraMoveDuration) {
+      setCameraMoveDuration(pageInView.camera?.duration)
+    }
   }, [pageInView])
 
   useEffect(() => {
@@ -107,7 +132,7 @@ function App () {
     }
     setChapterInView(chapters[location.pathname])
     setPageInView(chapters[location.pathname].pages[0])
-    setScrollProgress(0)
+    setHeaderScrollProgress(0)
   }, [location])
 
   const handleCanvasClick = () => {
@@ -129,8 +154,8 @@ function App () {
     const activeFacility = facilityId === facility ? '' : facilityId
     setFacility(activeFacility)
 
-    if (!camera) {
-      setCamera(defaultCameraConfig)
+    if (!pageCamera) {
+      setPageCamera(defaultCameraConfig)
     }
   }
 
@@ -145,20 +170,24 @@ function App () {
 
   const imageContainerStyle = {
     position: 'fixed',
-    width: '100vw',
-    display: 'flex',
-    paddingTop: '25px'
+    // width: '100vw',
+    // height: '100vh',
+    display: 'flex'
+    // paddingTop: '25px'
   }
 
   const textBoxContainerStyle = {
     position: 'fixed',
-    alignItems: 'flex-end',
-    justifyContent: 'center'
+    // alignItems: 'flex-end',
+    justifyContent: 'center',
+    fontSize: '50px',
+    opacity: 1
   }
 
   const textBoxStyle = {
     margin: '50px',
-    marginTop: '550px'
+    opacity: 1
+    // marginTop: '550px'
   }
 
   return (
@@ -172,25 +201,20 @@ function App () {
           setContent={setContent}
         />
         <Header
-          scrollProgress={scrollProgress}
+          scrollProgress={headerScrollProgress}
           handleClick={setContent}
           enableClose={content !== ''}
-          active={activeChapter}
-          setActive={setActiveChapter}
+          activeChapter={activeChapter}
+          setActiveChapter={setActiveChapter}
         />
-        {pageInView.view === 'markdown' && (
-          <Content
-            key={content}
-            content={pageInView.content.file}
-            setContent={setContent}
-          />
-        )}
 
         {pageInView.text && pageInView.text?.style === 'static' && (
           <TextBox
             text={pageInView.text}
             textBoxContainerStyle={textBoxContainerStyle}
             textBoxStyle={textBoxStyle}
+            pageScrollProgress={pageScrollProgress}
+            isAnimated
           />
         )}
         {pageInView.view === '3d' && (
@@ -201,8 +225,10 @@ function App () {
             hoverName={hoverName}
             setHoverName={setHoverName}
             handleCanvasClick={handleCanvasClick}
-            camera={camera}
+            pageCamera={pageCamera}
+            cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
+            pageScrollProgress={pageScrollProgress}
           />
         )}
 
@@ -210,6 +236,7 @@ function App () {
           <GeographicMap
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
+            pageScrollProgress={pageScrollProgress}
           />
         )}
 
@@ -243,10 +270,12 @@ function App () {
             path='/'
             element={
               <Chapter
-                chapter={chapterInView}
+                chapterInView={chapterInView}
                 nextChapter='/malcolm'
                 setPageInView={setPageInView}
                 pageInView={pageInView}
+                pageScrollProgress={pageScrollProgress}
+                updateStepProgress={updateStepProgress}
               />
             }
           />
@@ -258,10 +287,13 @@ function App () {
                 path={nav.url}
                 element={
                   <Chapter
-                    chapter={chapterInView}
+                    chapterInView={chapterInView}
                     nextChapter={nav.next}
+                    pageInView={pageInView}
                     setPageInView={setPageInView}
                     setNextChapter={updateChapter}
+                    pageScrollProgress={pageScrollProgress}
+                    updateStepProgress={updateStepProgress}
                   />
                 }
               />
@@ -275,9 +307,10 @@ function App () {
             nextChapter='/malcolm'
             element={
               <Chapter
-                chapter={chapterInView}
+                chapterInView={chapterInView}
                 setPageInView={setPageInView}
                 pageInView={pageInView}
+                setNextChapter={updateChapter}
               />
             }
           />

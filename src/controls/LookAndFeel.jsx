@@ -4,9 +4,9 @@ import { useControls } from 'leva'
 const LookAndFeelControls = () => {
   const options = useMemo(() => {
     return {
-      'Ground': '#ffffff',
-      'World': '#343333',
-      Building: '#979797',
+      Ground: '#999999',
+      World: '#343333',
+      Building: '#ffffff',
       'Selected Building': '#c15f5f'
     }
   }, [])

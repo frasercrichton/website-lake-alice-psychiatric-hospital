@@ -7,11 +7,14 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "gsap": "^3.11.4",
+    "intersection-observer": "^0.12.2",
     "leva": "^0.9.34",
     "react": "^18.0.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "react-scrollama": "^2.3.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -45,7 +48,6 @@
     "@react-three/drei": "^9.51.11",
     "@react-three/fiber": "^8.9.2",
     "leaflet": "^1.8.0",
-    "react-intersection-observer": "^9.4.1",
     "react-leaflet": "^4.0.0",
     "react-markdown": "^8.0.3",
     "react-player": "^2.10.1",

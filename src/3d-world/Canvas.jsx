@@ -14,8 +14,10 @@ const CanvasWrapper = ({
   hoverName,
   setHoverName,
   handleCanvasClick,
-  camera,
-  isRotating
+  pageCamera,
+  cameraMoveDuration,
+  isRotating,
+  pageScrollProgress
 }) => {
   const aspectRatio = {
     width: 1920,
@@ -28,7 +30,7 @@ const CanvasWrapper = ({
   }
 
   return (
-    <div className='canvas-wrapper' style={{ height: '100%', width: '100%' }}>
+    <div className='canvas-wrapper'>
       <Canvas
         colormanagement='true'
         shadows
@@ -50,8 +52,10 @@ const CanvasWrapper = ({
           handleFacilityClick={handleFacilityClick}
           hoverName={hoverName}
           setHoverName={setHoverName}
-          camera={camera}
+          pageCamera={pageCamera}
+          cameraMoveDuration={cameraMoveDuration}
           isRotating={isRotating}
+          pageScrollProgress={pageScrollProgress}
         />
       </Canvas>
     </div>

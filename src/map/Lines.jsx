@@ -1,30 +1,47 @@
 import React from 'react'
 import Line from './components/Line.jsx'
-import { useSpring, animated } from '@react-spring/web'
+import Circle from './components/Circle.jsx'
 import { LatLng } from 'leaflet'
 
-const Lines = ({ points, target }) => {
-  const springs = useSpring({
-    from: { x: 0 },
-    to: { x: 100 }
-  })
+const minorPointStyle = {
+  fillColor: '#ffffff',
+  radius: '5',
+  stroke: false
+}
 
+const Lines = ({ points, target }) => {
   if (!target) {
     return points.map((point, index) => {
-      if (index === 0) {
-        return null
-      }
-
       const startCoordinates = new LatLng(point.latitude, point.longitude)
 
+      if (index === 0) {
+        return (
+          <Circle
+            markerCoordinates={startCoordinates}
+            label={point.label}
+            {...minorPointStyle}
+          />
+        )
+      }
+
       return (
-        <Line
-          key={`line-${index}`}
-          start={startCoordinates}
-          end={
-            new LatLng(points[index - 1].latitude, points[index - 1].longitude)
-          }
-        />
+        <>
+          <Circle
+            markerCoordinates={startCoordinates}
+            label={point.label}
+            {...minorPointStyle}
+          />
+          <Line
+            key={`line-${index}`}
+            start={startCoordinates}
+            end={
+              new LatLng(
+                points[index - 1].latitude,
+                points[index - 1].longitude
+              )
+            }
+          />
+        </>
       )
     })
   }
