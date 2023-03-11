@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: blue; */
   align-items: center;
   height: 100vh;
 
@@ -14,15 +13,24 @@
 
 }
 
+.document {
+  /* background-color: aqua; */
+}
+
 .scrolling-image figure {
   width: 50vw;
   justify-content: center;
   flex-flow: column;
 }
 
-.scrolling-image figure img {
+.document figure {
+  width: 50vw;
+  align-items: center;
+}
+
+.document figure img, .scrolling-image figure img {
   padding: 15px;
-  /* this makes the image responsive to the container */
+  /* height and object-fit: contain makes the image responsive to the container */
   height: 80vh;
   object-fit: contain;
 }
@@ -43,15 +51,5 @@
 }
 
 .content-introduction.active {
-  opacity: 0.8;
+  opacity: 0.5;
 }
-
-/* figure {
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-  width: 100vw;
-  min-width: 850px;
-  padding: 0;
-  margin: 0;
-} */

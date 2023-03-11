@@ -46,10 +46,16 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
         />
       )}
       {img != null && page.image.style === 'scrolling' && (
-        <div
-          className='scrolling-image'
-          style={{ width: '50%', display: 'flex', flexDirection: 'column', height: '200px' }}
-        >
+        <div className='scrolling-image'>
+          <Image
+            caption={page.image.caption}
+            source={page.image.source}
+            url={img}
+          />
+        </div>
+      )}
+      {img != null && page.image.style === 'document' && (
+        <div className='document'>
           <Image
             caption={page.image.caption}
             source={page.image.source}
@@ -58,10 +64,7 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
         </div>
       )}
       {page.view === 'markdown' && (
-        <Content
-          key={page.id}
-          content={page.content.file}
-        />
+        <Content key={page.id} content={page.content.file} />
       )}
     </div>
   )

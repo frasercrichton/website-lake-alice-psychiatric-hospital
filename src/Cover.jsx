@@ -21,12 +21,6 @@ const Cover = ({ coverActive, handleCoverClick, setContent }) => {
               <h2>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h2>
               <h2>Lake Alice Child and Adolescent Unit</h2>
             </div>
-            <div>
-              {/* <p className='content-warning'>
-                Graphic content warning: some of the content included here may
-                raise difficult emotional issues.
-              </p> */}
-            </div>
             <div className='navigation'>
               <Link
                 role='button'

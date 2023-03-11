@@ -37,12 +37,39 @@ const Facility = ({
       }
     : null
 
+  const materialX = new THREE.MeshPhongMaterial({
+    color: 0xff0000, // red (can also use a CSS color string here)
+    flatShading: true
+  })
+
+  const lakeMaterial = new THREE.MeshStandardMaterial({
+    color: 0xff0000, // red (can also use a CSS color string here)
+    flatShading: true,
+    metalness: 0.42399996519088745,
+    roughness: 0.31599998474121094
+    
+  })
+
+  const roadMaterial = new THREE.MeshStandardMaterial({
+    color: 0xff0000, // red (can also use a CSS color string here)
+    flatShading: true,
+    metalness: 0.42399996519088745,
+    roughness: 1
+    // {
+    //   "isColor": true,
+    //   "r": 0.09850652515888214,
+    //   "g": 0.09850652515888214,
+    //   "b": 0.09850652515888214
+    // }
+  })
+
   const lookAndFeelControls = LookAndFeelControls()
   const y = hasShadow ? node.position.y - 0.5 : node.position.y
 
+  // console.log(node.material)
   return (
     <mesh
-    // TODO scale?
+      // TODO scale?
       ref={mesh}
       name={facilityId}
       geometry={node.geometry}

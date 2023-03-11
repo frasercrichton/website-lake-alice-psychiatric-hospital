@@ -89,7 +89,18 @@ const data = {
       {
         id: '3',
         text: {
-          content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
+          content: 'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
+          style: 'static'
+        },
+        image: {
+          src: 'site-animated.gif',
+          style: 'static'
+        }
+      },
+      {
+        id: '3',
+        text: {
+          content: 'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
           style: 'static'
         },
         image: {
@@ -100,10 +111,32 @@ const data = {
       {
         id: '4',
         text: {
-          content: 'Lake Alice Child and Adolescent Unit opened in 197x.',
+          content: 'In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors\' complaints of abuse.',
           style: 'static'
         },
+        image: {
+          src: 'site-animated.gif',
+          style: 'static'
+        }
+      },
+      {
+        id: '4',
+        text: {
+          content: 'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
+          style: 'static'
+        },
+        image: {
+          src: 'site-animated.gif',
+          style: 'static'
+        }
+      },
+      {
+        id: '5',
         view: '3d',
+        text: {
+          content: 'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
+          style: 'static'
+        },
         camera: {
           name: 'default',
           position: [160, 460, -220],
@@ -314,6 +347,17 @@ const data = {
         camera: { ...cameras.adultVilla }
       },
       {
+        id: 'malcolm-1x',
+        image: {
+          src: 'large_1980_1389.jpg',
+          captions: 'ECT machine.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.adultVilla }
+      },
+
+      {
         id: 'malcolm-12',
         text: {
           header: '8 - ECT - Villa',
@@ -476,7 +520,8 @@ const data = {
         id: 'malcolm-19',
         text: {
           header: '15 - Waipukurau',
-          content: 'Waipukurau',
+          content:
+            'After running away from home Malcolm initially lived under a bridge at Waipukurau.',
           style: 'scrolling'
         },
         view: 'map',
@@ -511,7 +556,7 @@ const data = {
         text: {
           header: '12 - Runaway',
           content:
-            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+            'Malcolm found his way to Pahiatua and worked on a dairy farm.',
           style: 'scrolling'
         },
         view: 'map',
@@ -548,9 +593,9 @@ const data = {
       {
         id: 'malcolm-21',
         text: {
-          header: '12 - Runaway',
+          header: '12 - Napier',
           content:
-            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+            'His next move was to Napier where he worked in a factory. Napier was also the first place where Malcolm reported his experience at Lake Alice to the police.',
           style: 'scrolling'
         },
         view: 'map',
@@ -592,7 +637,7 @@ const data = {
         id: 'malcolm-22',
         text: {
           header: '12 - Welsford',
-          content: 'Welsford',
+          content: 'Moved to Welsford and found more dairy farming work.',
           style: 'scrolling'
         },
         view: 'map',
@@ -638,7 +683,7 @@ const data = {
         id: 'malcolm-23',
         text: {
           header: '19 - Kaiwaka',
-          content: 'Kaiwaka',
+          content: 'Moved to Kaiwaka and worked on a dairy farm.',
           style: 'scrolling'
         },
         view: 'map',
@@ -689,7 +734,7 @@ const data = {
         text: {
           header: '12 - Runaway',
           content:
-            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+            'Moved to the North Shore at Auckland and worked drain laying.',
           style: 'scrolling'
         },
         view: 'map',
@@ -744,7 +789,7 @@ const data = {
         text: {
           header: '12 - Runaway',
           content:
-            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+       '',
           style: 'scrolling'
         },
         view: 'map',
@@ -1112,7 +1157,7 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=62'
         },
         view: '3d',
-        camera: { ...cameras.TwelveBedVilla }
+        camera: { ...cameras.twelveBedVilla }
       },
       {
         id: 'context-5',
@@ -1125,12 +1170,12 @@ const data = {
         },
 
         view: '3d',
-        camera: { ...cameras.TwelveBedVilla }
+        camera: { ...cameras.twelveBedVilla }
       },
       {
         id: 'context-5',
         view: '3d',
-        camera: { ...cameras.TwelveBedVilla }
+        camera: { ...cameras.twelveBedVilla }
       },
       {
         id: 'context-6',
@@ -1807,7 +1852,7 @@ const data = {
         image: {
           caption: 'Lake Alice Investigation Completed - No Charges Laid.png',
           src: 'Lake Alice Investigation Completed - No Charges Laid.png',
-          style: 'scrolling'
+          style: 'document'
         },
 
         view: '3d',
@@ -1850,6 +1895,57 @@ const data = {
         view: '3d',
         camera: {
           ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-x',
+        text: {
+          header: 'Australia',
+          content:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          zoom: 5,
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-51.481383, 100.810547],
+            northEast: [-6.620957, 192.963867]
+          },
+          visibleMapLayers: {
+            minorPoints: {
+              points: [
+                {
+                  label: 'Lake Alice',
+                  latitude: -40.1254336,
+                  longitude: 175.3369864
+                },
+                {
+                  label: 'Melbourne',
+                  latitude: -37.971237,
+                  longitude: 144.4926947
+                }
+              ]
+            },
+            lines: {
+              target: {
+                label: 'Melbourne',
+                latitude: -37.971237,
+                longitude: 144.4926947
+              },
+              points: [
+                {
+                  label: 'Lake Alice',
+                  latitude: -40.1254336,
+                  longitude: 175.3369864
+                }
+              ]
+            }
+          }
         }
       }
     ]

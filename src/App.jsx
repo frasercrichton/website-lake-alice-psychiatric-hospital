@@ -37,7 +37,7 @@ if (hash === '#debug') {
   stats.showPanel(0)
   document.body.appendChild(stats.dom)
 }
-console.log(chapters)
+// console.log(chapters)
 function App () {
   const [facility, setFacility] = useState('')
   // const [hash, setHash] = useState(() => window.location.hash)
@@ -107,14 +107,20 @@ function App () {
     // )
 
     setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
-    setPageCamera(pageInView.camera)
+    // Only update the camera if it's a new camera
+    if (pageInView?.camera?.name !== pageCamera?.name) {
+      console.log(pageInView?.camera?.name)
+      console.log(pageCamera?.name)
+    
+      setPageCamera(pageInView.camera)
+    }
+    // setPageCamera(pageInView.camera)
+
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
     // hacky way to avoid camera bounce after into
 
     if (pageInView.camera?.duration !== cameraMoveDuration) {
       setCameraMoveDuration(pageInView.camera?.duration)
-
-      console.log(cameraMoveDuration)
     }
   }, [pageInView])
 
@@ -200,7 +206,7 @@ function App () {
           activeChapter={activeChapter}
           setActiveChapter={setActiveChapter}
         />
-        
+
         {pageInView.text && pageInView.text?.style === 'static' && (
           <TextBox
             text={pageInView.text}

@@ -13,7 +13,7 @@ const TextBox = ({
   return (
     <div className='text-box-container' style={textBoxContainerStyle}>
       <div className='text-box' style={textBoxStyle}>
-        <div>{text.header}</div>
+        {/* <div>{text.header}</div> */}
         <div className='text-box-content'>
           {isAnimated && (
             <AnimatedText text={text.content} stepProgress={pageScrollProgress} />
