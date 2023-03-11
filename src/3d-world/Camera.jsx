@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { useSpring, animated } from '@react-spring/three'
 import { OrbitControls } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber'
 import angleToRadians from './angleHelper'
 import CameraControls from '../controls/CameraControls'
 import { Globals } from '@react-spring/shared'
+import gsap from 'gsap'
+
 Globals.assign({
   frameLoop: 'always'
 })
@@ -20,13 +21,13 @@ Globals.assign({
 // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
 const hash = window.location.hash
 
-const getFromQuaternion = (currentCamera) => {
+const getFromQuaternion = currentCamera => {
   const fromQuaternion = new THREE.Quaternion()
   fromQuaternion.copy(currentCamera.quaternion)
   return fromQuaternion
 }
 
-const getToQuaternion = (pageCamera) => {
+const getToQuaternion = pageCamera => {
   const toQuaternion = new THREE.Quaternion()
   toQuaternion.setFromEuler(
     new THREE.Euler(
@@ -44,45 +45,39 @@ const Camera = ({
   cameraMoveDuration = 2000,
   pageScrollProgress
 }) => {
+  const cameraGroup = useRef()
   const currentCamera = useThree(state => state.camera)
+  const clock = useThree(state => state.clock)
   // controls = new THREE.OrbitControls( camera, renderer.domElement )
   // state.camera.lookAt(0, 0, 0)
-  // const AnimatedPerspectiveCamera = animated(PerspectiveCamera)  
-    
-  useFrame((state, delta) =>
-  {
+  // const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
+  
+  // This is hack but hey at least I'm not using Spring
+  let alpha = 0
+  useFrame((state, delta) => {
+    const fromQuat = getFromQuaternion(currentCamera)
+    const toQuat = getToQuaternion(pageCamera)
 
-  // cameraMoveDuration = 2000,
-console.log('state.clock.elapsedTime', state.clock.elapsedTime)
-
-    console.log('delta', delta)
-
-    })
-
-
-
-  const springs = useSpring({
-    from: { alpha: 0 },
-    alpha: 1,
-    config: { duration: cameraMoveDuration },
-    position: pageCamera.position,
-    reset: true,
-    onChange (cont) {
-      // console.log('fromQuat', fromQuat)
-      // console.log('toQuat', toQuat)
-      // // camera.zoom = 2
-      // fov
-      // camera.fov = cont.value.fov;
-      const fromQuat = getFromQuaternion(currentCamera)
-      const toQuat = getToQuaternion(pageCamera)
+    if (state.clock.elapsedTime < 3) {
       currentCamera.quaternion.slerpQuaternions(
         fromQuat,
         toQuat,
-        cont.value.alpha
+        (alpha += 0.05 * delta)
       )
       currentCamera.updateProjectionMatrix()
     }
   })
+
+  useEffect(() => {
+    clock.start()
+    gsap.to(cameraGroup.current.position, {
+      duration: 3,
+      delay: 0,
+      x: pageCamera.position[0],
+      y: pageCamera.position[1],
+      z: pageCamera.position[2]
+    })
+  }, [pageCamera])
 
   // const ZoomIn = () => {
   //   return useFrame(({ camera }) => {
@@ -100,7 +95,7 @@ console.log('state.clock.elapsedTime', state.clock.elapsedTime)
   // }
 
   return (
-    <animated.group position={springs.position}>
+    <group ref={cameraGroup}>
       <PerspectiveCamera
         makeDefault
         aspect={pageCamera.aspect}
@@ -135,7 +130,7 @@ console.log('state.clock.elapsedTime', state.clock.elapsedTime)
           // update
         />
       )}
-    </animated.group>
+    </group>
   )
 }
 

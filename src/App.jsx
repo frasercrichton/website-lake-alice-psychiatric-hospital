@@ -50,6 +50,8 @@ function App () {
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
+  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
+
   // Scrollarama state
   const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
@@ -58,7 +60,6 @@ function App () {
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
-  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
 
   const navigate = useNavigate()
 
