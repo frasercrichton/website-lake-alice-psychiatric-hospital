@@ -4,14 +4,12 @@ import { BrowserView } from 'react-device-detect'
 import { Leva } from 'leva'
 import './App.css'
 import Header from './Header.jsx'
-import Menu from './Menu.jsx'
-import Content from './main-content/Content.jsx'
 import Cover from './Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
-import angleToRadians from './3d-world/angleHelper'
+import angleToRadians from './3d-world/angleHelper.jsx'
+import urls from './config/navigation.js'
 import Loader from './components/Loader.jsx'
 import chapters from './config/chapters.js'
-import urls from './config/navigation.js'
 import GeographicMap from './map/GeographicMap.jsx'
 import VideoVimeo from './components/VideoVimeo.jsx'
 import Stats from 'stats.js'
@@ -37,29 +35,31 @@ if (hash === '#debug') {
   stats.showPanel(0)
   document.body.appendChild(stats.dom)
 }
-// console.log(chapters)
-function App () {
-  const [facility, setFacility] = useState('')
-  // const [hash, setHash] = useState(() => window.location.hash)
-  const [pageCamera, setPageCamera] = useState(defaultCameraConfig)
-  const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
 
+function App () {
   // Page and chapter State
-  const [chapterInView, setChapterInView] = useState(chapters['/context'])
+  const [chapterInView, setChapterInView] = useState(chapters['/introduction'])
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
-  const [isRotating, setIsRotating] = useState(true)
-  const [isLoading, setLoading] = useState(true)
-  const [nextChapter, setNextChapter] = useState(chapters['/introduction'])
+  const [nextChapter, setNextChapter] = useState(chapters['/malcolm'])
 
   // Scrollarama state
   const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
 
+  // 3D Model
+  const [facility, setFacility] = useState('')
+  const [pageCamera, setPageCamera] = useState(defaultCameraConfig)
+  const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
+  const [isRotating, setIsRotating] = useState(true)
+  const [isLoading, setLoading] = useState(true)
+
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
   const [tab, setTab] = useState('site')
+
+  const isLevaHidden = hash !== '#debug'
 
   const navigate = useNavigate()
 
@@ -72,7 +72,6 @@ function App () {
     setPageScrollProgress(progressCount)
   }
 
-  // setNextChapter(nextChapter)
   const imageURL = pageInView.image
     ? assetUrlHelper.resolveUrl(pageInView.image.src, '3d-visualisation')
     : null
@@ -95,41 +94,24 @@ function App () {
     // if 0 no progress
     // if 1 > percentage
 
-    // console.log('sectionTotalCount', sectionTotalCount)
-    // console.log('sectionCurrentIndex', sectionCurrentIndex)
-
-    // console.log(
-    //   'sectionCurrentIndex / sectionTotalCount',
-    //   sectionCurrentIndex / sectionTotalCount
-    // )
-    // console.log(
-    //   'sectionCurrentIndex + 1/ sectionTotalCount',
-    //   sectionCurrentIndex + (1 / sectionTotalCount) * 100
-    // )
-
     setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
     // Only update the camera if it's a new camera
     if (pageInView?.camera?.name !== pageCamera?.name) {
       console.log(pageInView?.camera?.name)
       console.log(pageCamera?.name)
-    
+
       setPageCamera(pageInView.camera)
     }
-    // setPageCamera(pageInView.camera)
 
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
-    // hacky way to avoid camera bounce after into
 
+    // hacky way to avoid camera bounce after into
     if (pageInView.camera?.duration !== cameraMoveDuration) {
       setCameraMoveDuration(pageInView.camera?.duration)
     }
   }, [pageInView])
 
   useEffect(() => {
-    if (location.pathname === '/') {
-      // setChapterInView(data['/'])
-      // setPageInView(data[location.pathname].pages[0])
-    }
     setChapterInView(chapters[location.pathname])
     setPageInView(chapters[location.pathname].pages[0])
     setHeaderScrollProgress(0)
@@ -146,8 +128,7 @@ function App () {
   }
 
   const isContentActive = tab !== 'site' && content !== ''
-  // console.log('pageInView.file.content', pageInView?.content?.file)
-
+  
   const handleFacilityClick = facilityId => {
     setTab('site')
     setHoverName('')
@@ -165,8 +146,6 @@ function App () {
     setLoading(!isLoading)
     setCoverActive(!coverActive)
   }
-
-  const isLevaHidden = hash !== '#debug'
 
   const imageContainerStyle = {
     position: 'fixed',
@@ -266,14 +245,15 @@ function App () {
       /> */}
         <Routes>
           <Route
-            key={`route-default`}
+            key={'route-default'}
             path='/'
             element={
               <Chapter
                 chapterInView={chapterInView}
-                nextChapter='/malcolm'
-                setPageInView={setPageInView}
+                nextChapter='/introduction'
+                setNextChapter={updateChapter}
                 pageInView={pageInView}
+                setPageInView={setPageInView}
                 pageScrollProgress={pageScrollProgress}
                 updateStepProgress={updateStepProgress}
               />
@@ -289,8 +269,8 @@ function App () {
                   <Chapter
                     chapterInView={chapterInView}
                     nextChapter={nav.next}
-                    pageInView={pageInView}
                     setPageInView={setPageInView}
+                    pageInView={pageInView}
                     setNextChapter={updateChapter}
                     pageScrollProgress={pageScrollProgress}
                     updateStepProgress={updateStepProgress}
@@ -300,7 +280,7 @@ function App () {
             )
           })}
 
-          <Route
+          {/* <Route
             // key={`route-wild-default`}
             // exact
             path='*'
@@ -313,7 +293,7 @@ function App () {
                 setNextChapter={updateChapter}
               />
             }
-          />
+          /> */}
         </Routes>
       </BrowserView>
       <MobileCover />

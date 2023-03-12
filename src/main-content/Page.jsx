@@ -7,6 +7,8 @@ import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
+  const { pageId, text, image, content, view } = page
+
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -21,10 +23,6 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
     ? 'active content-introduction'
     : 'content-introduction'
 
-  const img = page.image
-    ? assetUrlHelper.resolveUrl(page.image.src, '3d-visualisation')
-    : null
-
   const textBoxStyle = {
     margin: '50px',
     width: '45%'
@@ -32,40 +30,30 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
     // marginTop: '550px'
   }
   return (
-    <div key={`content-block-${page.id}`} className='page-content-container'>
+    <div key={`content-block-${pageId}`} className='page-content-container'>
       {isIntroduction && (
         <div className={introClassName}>
-          <h1>{page.text.content}</h1>
+          <h1>{text.content}</h1>
         </div>
       )}
-      {page.text?.style === 'scrolling' && (
+      {text?.style === 'scrolling' && (
         <TextBox
-          text={page.text}
+          text={text}
           textBoxStyle={textBoxStyle}
           pageScrollProgress={pageScrollProgress}
         />
       )}
-      {img != null && page.image.style === 'scrolling' && (
-        <div className='scrolling-image'>
-          <Image
-            caption={page.image.caption}
-            source={page.image.source}
-            url={img}
-          />
-        </div>
-      )}
-      {img != null && page.image.style === 'document' && (
-        <div className='document'>
-          <Image
-            caption={page.image.caption}
-            source={page.image.source}
-            url={img}
-          />
-        </div>
-      )}
-      {page.view === 'markdown' && (
-        <Content key={page.id} content={page.content.file} />
-      )}
+      {image != null &&
+        (image.style === 'scrolling' || image.style === 'document') && (
+          <div className={`${image.style}-image`}>
+            <Image
+              caption={image.caption}
+              source={image.source}
+              url={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
+            />
+          </div>
+        )}
+      {view === 'markdown' && <Content key={pageId} content={content.file} />}
     </div>
   )
 }
