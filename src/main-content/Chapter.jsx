@@ -15,11 +15,8 @@ const Chapter = ({
   setHasPageReset
 }) => {
   const scroller = useRef(null)
-  const introductionPages = useRef({})
 
   useEffect(() => {
-    console.log('introductionPages.current', introductionPages)
-    console.log(pageScrollProgress)
     // for every new chapter scroll to the start of the page
     if (hasPageReset) {
       scroller.current.scrollIntoView()
