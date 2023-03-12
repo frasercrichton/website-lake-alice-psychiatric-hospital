@@ -44,7 +44,9 @@ const Header = ({
       <div
         style={{ transform: `scaleX(${scrollProgress})` }}
         className='scroller-progress-bar'
-      ></div>
+      >
+        &nbsp;
+      </div>
       <nav className='home'>
         <a href='/'>
           <h1>Lake Alice Psychiatric Hospital</h1>

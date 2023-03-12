@@ -17,7 +17,6 @@ const Chapter = ({
   const scroller = useRef(null)
 
   useEffect(() => {
-    console.log(pageScrollProgress)
     // for every new chapter scroll to the start of the page
     if (hasPageReset) {
       scroller.current.scrollIntoView()
@@ -29,6 +28,7 @@ const Chapter = ({
   const onStepEnter = ({ data }) => {
     if (nextChapter && data === -1) {
       setNextChapter(nextChapter)
+      setHasPageReset(true)
       return
     }
     // a very hacky way of dealing with the intro page
@@ -55,7 +55,7 @@ const Chapter = ({
   }
 
   return (
-    <div ref={scroller} className='scroller'>
+    <div className='scroller'>
       <Scrollama
         onStepEnter={onStepEnter}
         onStepExit={onStepExit}
@@ -65,12 +65,14 @@ const Chapter = ({
         debug
       >
         {chapterInView.pages.map((page, index) => {
+          // console.log((introductionPages.current[page.id]))
           return (
             <Step data={index} key={index}>
               <div
                 key={`container-${chapterInView.key}-${page.id}`}
                 className='page-container'
               >
+                {index === 0 && <div ref={scroller}/>}
                 <Page
                   key={page.id}
                   page={page}

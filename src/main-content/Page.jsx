@@ -8,6 +8,8 @@ const assetUrlHelper = new AssetUrlHelper()
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   const { pageId, text, image, content, view } = page
+  // const scroller = useRef(null)
+
 
   const [introActive, setIntroActive] = useState(true)
 
