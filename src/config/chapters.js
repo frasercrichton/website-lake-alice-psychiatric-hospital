@@ -87,7 +87,7 @@ const data = {
         }
       },
       {
-        id: '3',
+        id: 'intro-3',
         text: {
           content: 'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
           style: 'static'
@@ -98,7 +98,7 @@ const data = {
         }
       },
       {
-        id: '3',
+        id: 'intro-4',
         text: {
           content: 'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
           style: 'static'
@@ -109,7 +109,7 @@ const data = {
         }
       },
       {
-        id: '4',
+        id: 'intro-5',
         text: {
           content: 'In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors\' complaints of abuse.',
           style: 'static'
@@ -120,7 +120,7 @@ const data = {
         }
       },
       {
-        id: '4',
+        id: 'intro-6',
         text: {
           content: 'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
           style: 'static'
@@ -131,7 +131,7 @@ const data = {
         }
       },
       {
-        id: '5',
+        id: 'intro-7',
         view: '3d',
         text: {
           content: 'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
@@ -1874,7 +1874,7 @@ const data = {
           caption:
             'Operation Lake Alice concluded - criminal charges filed.png',
           src: 'Operation Lake Alice concluded - criminal charges filed.png',
-          style: 'scrolling'
+          style: 'document'
         },
 
         view: '3d',

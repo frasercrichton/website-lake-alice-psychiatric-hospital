@@ -15,6 +15,7 @@ const Chapter = ({
   const scroller = useRef(null)
 
   useEffect(() => {
+    console.log(pageScrollProgress)
     // for every new chapter scroll to the start of the page
     scroller.current.scrollIntoView()
   }, [chapterInView])
@@ -22,20 +23,12 @@ const Chapter = ({
   const onStepEnter = ({ data }) => {
     if (nextChapter && data === -1) {
       setNextChapter(nextChapter)
-      // setPageInView(chapter.pages[data])
       return
     }
     // a very hacky way of dealing with the intro page
     // there are 2 intro pages so the scroll is slow and smooth
     const index = data <= 2 ? 1 : data - 1
     setPageInView({ index, ...chapterInView.pages[data] })
-
-    // {
-    //   element, // The DOM node of the step that was triggered
-    //   data, // The data supplied to the step
-    //   direction, // 'up' or 'down'
-    //   entry, // the original `IntersectionObserver` entry
-    // }
   }
 
   const onStepExit = ({ direction, data }) => {
@@ -54,7 +47,7 @@ const Chapter = ({
   const onStepProgress = ({ progress }) => {
     updateStepProgress(progress)
   }
-  // handleSetLastScrollTop
+
   return (
     <div ref={scroller} className='scroller'>
       <Scrollama

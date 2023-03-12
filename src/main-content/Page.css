@@ -13,7 +13,7 @@
 
 }
 
-.document {
+.document-image {
   /* background-color: aqua; */
 }
 
@@ -23,12 +23,12 @@
   flex-flow: column;
 }
 
-.document figure {
+.document-image figure {
   width: 50vw;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.document figure img, .scrolling-image figure img {
+.document-image figure img, .scrolling-image figure img {
   padding: 15px;
   /* height and object-fit: contain makes the image responsive to the container */
   height: 80vh;
