@@ -3,7 +3,12 @@ import { useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import urls from './config/navigation.js'
 import './Header.css'
-const Header = ({ scrollProgress, activeChapter, setActiveChapter }) => {
+const Header = ({
+  scrollProgress,
+  activeChapter,
+  setActiveChapter,
+  navigateToChapter
+}) => {
   const links = useRef({})
 
   useEffect(() => {
@@ -13,11 +18,8 @@ const Header = ({ scrollProgress, activeChapter, setActiveChapter }) => {
     links.current[activeChapter].className = 'nav-item active'
   }, [activeChapter])
 
-  const navigate = useNavigate()
-
   const handleNavigationClick = nav => {
-    setActiveChapter(nav.url)
-    navigate(nav.url)
+    navigateToChapter(nav.url)
   }
   return (
     <header>

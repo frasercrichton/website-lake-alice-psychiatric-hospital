@@ -10,15 +10,21 @@ const Chapter = ({
   setPageInView,
   setNextChapter,
   pageScrollProgress,
-  updateStepProgress
+  updateStepProgress,
+  hasPageReset,
+  setHasPageReset
 }) => {
   const scroller = useRef(null)
 
   useEffect(() => {
     console.log(pageScrollProgress)
     // for every new chapter scroll to the start of the page
-    scroller.current.scrollIntoView()
-  }, [chapterInView])
+    if (hasPageReset) {
+      scroller.current.scrollIntoView()
+      setHasPageReset(false)
+    } 
+
+  }, [hasPageReset])
 
   const onStepEnter = ({ data }) => {
     if (nextChapter && data === -1) {

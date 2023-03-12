@@ -42,6 +42,7 @@ function App () {
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [nextChapter, setNextChapter] = useState(chapters['/malcolm'])
+  const [hasPageReset, setHasPageReset] = useState(false)
 
   // Scrollarama state
   const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
@@ -68,6 +69,22 @@ function App () {
     navigate(chapter)
   }
 
+  const navigateToChapter = name => {
+    setActiveChapter(name)
+    // setPageInView({...chapterInView.pages[data] })
+    setChapterInView(chapters[name])
+    navigate(name)
+    setHasPageReset(true)
+  }
+
+  const location = useLocation()
+
+  useEffect(() => {
+    setChapterInView(chapters[location.pathname])
+    setPageInView(chapters[location.pathname].pages[0])
+    setHeaderScrollProgress(0)
+  }, [location])
+
   const updateStepProgress = progressCount => {
     setPageScrollProgress(progressCount)
   }
@@ -84,8 +101,6 @@ function App () {
     pageInView.map && pageInView.map.visibleMapLayers
       ? pageInView.map.visibleMapLayers
       : null
-
-  const location = useLocation()
 
   useEffect(() => {
     // -1 to account for the double 'introduction' pages
@@ -111,12 +126,6 @@ function App () {
     }
   }, [pageInView])
 
-  useEffect(() => {
-    setChapterInView(chapters[location.pathname])
-    setPageInView(chapters[location.pathname].pages[0])
-    setHeaderScrollProgress(0)
-  }, [location])
-
   const handleCanvasClick = () => {
     setFacility('')
     setHoverName('')
@@ -128,7 +137,7 @@ function App () {
   }
 
   const isContentActive = tab !== 'site' && content !== ''
-  
+
   const handleFacilityClick = facilityId => {
     setTab('site')
     setHoverName('')
@@ -185,6 +194,8 @@ function App () {
           enableClose={content !== ''}
           activeChapter={activeChapter}
           setActiveChapter={setActiveChapter}
+          setPageInView={setPageInView}
+          navigateToChapter={navigateToChapter}
         />
 
         {pageInView.text && pageInView.text?.style === 'static' && (
@@ -256,6 +267,8 @@ function App () {
                 setPageInView={setPageInView}
                 pageScrollProgress={pageScrollProgress}
                 updateStepProgress={updateStepProgress}
+                hasPageReset={hasPageReset}
+                setHasPageReset={setHasPageReset}
               />
             }
           />
@@ -274,6 +287,8 @@ function App () {
                     setNextChapter={updateChapter}
                     pageScrollProgress={pageScrollProgress}
                     updateStepProgress={updateStepProgress}
+                    hasPageReset={hasPageReset}
+                    setHasPageReset={setHasPageReset}
                   />
                 }
               />
@@ -291,6 +306,8 @@ function App () {
                 setPageInView={setPageInView}
                 pageInView={pageInView}
                 setNextChapter={updateChapter}
+                                setHasPageReset={setHasPageReset}
+
               />
             }
           /> */}
