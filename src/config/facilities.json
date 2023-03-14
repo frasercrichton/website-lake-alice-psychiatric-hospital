@@ -1,14 +1,12 @@
 [
   {
     "id": "AdministrativeBuilding",
-    "name": "Administrative Building",
-    "type": "significant"
+    "name": "Administrative Building"
   },
   {
-    "id": "MaximumSecurityBlock",
+    "id": "MaximumSecurity",
     "name": "Maximum Security Block",
-    "type": "significant",
-    "content": "The Maximum Security Unit opened in 1965 and was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985."
+    "type": "significant"
   },
   {
     "id": "Doctors'_Houses",
@@ -16,28 +14,24 @@
     "type": "significant"
   },
   {
-    "id": "ChildrensVilla",
+    "id": "ChildrensVilla.002",
     "name": "Childrens' Unit",
-    "type": "significant",
-    "content": "Boys ."
+    "type": "significant"
   },
   {
-    "id": "ChildrensVillaBoys",
-    "name": "Boys' Unit",
-    "type": "significant",
-    "content": "Villa 7  - the Boys' Unit held up to 36 boys by 1977."
+    "id": "ChildrensVilla.003",
+    "name": "Villa 7 Boys' Unit",
+    "type": "significant"
   },
   {
     "id": "ChildrensVillaGirls",
-    "name": "Girls' Unit",
-    "type": "significant",
-    "content": "Villa 7  - the Girls' Unit held up to  10 girls by 1977."
+    "name": "Villa 7 Girls' Unit",
+    "type": "significant"
   },
   {
     "id": "ElevenBedVillas",
     "name": "Eleven Bed Villas",
-    "type": "significant",
-    "content": "The Eleven Bed Villas were in their time innovative units designed for intensive small group therapy with input from medical administrator Theodore Gray. In 1972 The Child and Adolescent Unit first opened in one of these units with Dr Selwyn Leeks appointed as Director."
+    "type": "significant"
   },
   {
     "id": "StaffQuarters",
@@ -46,28 +40,30 @@
   },
   {
     "id": "SwimmingPool",
-    "name": "Swimming Pool",
-    "type": "significant"
+    "name": "Swimming Pool"
   },
   {
     "id": "Villa13",
-    "name": "Adult Patients' Villa",
+    "name": "Villa 13 Adult Patients' Villa",
     "type": "significant"
   },
   {
     "id": "Villa_14_-_Disturbed_Patients_Villa",
-    "name": "Disturbed Patients' Villa",
-    "type": "significant",
-    "content": "Villa 8 - adult patients with serious psychiatric issues held in close proximity to children."
+    "name": "Villa 14 - Disturbed Patients' Villa",
+    "type": "significant"
   },
   {
     "id": "Villa15",
-    "name": "Adult Patients' Villa",
+    "name": "Villa15 Adult Patients' Villa",
     "type": "significant"
   },
   {
     "id": "CommunityHall",
-    "name": "Community Hall",
+    "name": "Community Hall"
+  },
+  {
+    "id": "SingleStaffVillas",
+    "name": "Single Staff Quarters",
     "type": "significant"
   }
 ]

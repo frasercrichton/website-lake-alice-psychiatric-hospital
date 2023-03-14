@@ -1303,7 +1303,19 @@ const data = {
         camera: {
           ...cameras.default
         }
-      }
+      },
+      {
+        id: 'context-14',
+        text: {
+          content: 'Villa Names',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.default },
+        labels: {
+          
+        }
+      },
     ]
   },
   '/pathways': {

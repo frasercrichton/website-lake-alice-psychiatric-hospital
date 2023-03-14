@@ -45,8 +45,10 @@ function App () {
   const [hasPageReset, setHasPageReset] = useState(false)
 
   // Scrollarama state
-  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
+  
+  // Navigation state
+  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
 
   // 3D Model
   const [facility, setFacility] = useState('')
@@ -55,11 +57,9 @@ function App () {
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
 
-  const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
-  const [tab, setTab] = useState('site')
-
+  
   const isLevaHidden = hash !== '#debug'
 
   const navigate = useNavigate()
@@ -112,9 +112,6 @@ function App () {
     setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
     // Only update the camera if it's a new camera
     if (pageInView?.camera?.name !== pageCamera?.name) {
-      console.log(pageInView?.camera?.name)
-      console.log(pageCamera?.name)
-
       setPageCamera(pageInView.camera)
     }
 
@@ -125,29 +122,6 @@ function App () {
       setCameraMoveDuration(pageInView.camera?.duration)
     }
   }, [pageInView])
-
-  const handleCanvasClick = () => {
-    setFacility('')
-    setHoverName('')
-  }
-
-  const handleContextUpdate = tab => {
-    setFacility('')
-    setTab(tab)
-  }
-
-  const isContentActive = tab !== 'site' && content !== ''
-
-  const handleFacilityClick = facilityId => {
-    setTab('site')
-    setHoverName('')
-    const activeFacility = facilityId === facility ? '' : facilityId
-    setFacility(activeFacility)
-
-    if (!pageCamera) {
-      setPageCamera(defaultCameraConfig)
-    }
-  }
 
   const handleCoverClick = () => {
     navigate('/introduction')
@@ -210,14 +184,10 @@ function App () {
         {pageInView.view === '3d' && (
           <Canvas
             key='canvas'
-            selectedFacility={facility}
-            handleFacilityClick={handleFacilityClick}
-            hoverName={hoverName}
-            setHoverName={setHoverName}
-            handleCanvasClick={handleCanvasClick}
             pageCamera={pageCamera}
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
+            labels={['label']}
             pageScrollProgress={pageScrollProgress}
           />
         )}
@@ -246,14 +216,6 @@ function App () {
           />
         )}
 
-        {/* <Menu
-        setContent={setContent}
-        selectedFacility={facility}
-        handleMenuClick={handleFacilityClick}
-        hoverName={hoverName}
-        tab={tab}
-        handleContextUpdate={handleContextUpdate}
-      /> */}
         <Routes>
           <Route
             key={'route-default'}

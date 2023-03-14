@@ -21,8 +21,7 @@ const Chapter = ({
     if (hasPageReset) {
       scroller.current.scrollIntoView()
       setHasPageReset(false)
-    } 
-
+    }
   }, [hasPageReset])
 
   const onStepEnter = ({ data }) => {
@@ -51,7 +50,8 @@ const Chapter = ({
   }
 
   const onStepProgress = ({ progress }) => {
-    updateStepProgress(progress)
+    // TODO state change here causes any consumers to re-render
+    // updateStepProgress(progress)
   }
 
   return (
@@ -65,14 +65,13 @@ const Chapter = ({
         debug
       >
         {chapterInView.pages.map((page, index) => {
-          // console.log((introductionPages.current[page.id]))
           return (
             <Step data={index} key={index}>
               <div
                 key={`container-${chapterInView.key}-${page.id}`}
                 className='page-container'
               >
-                {index === 0 && <div ref={scroller}/>}
+                {index === 0 && <div ref={scroller} />}
                 <Page
                   key={page.id}
                   page={page}

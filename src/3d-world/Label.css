@@ -1,17 +1,17 @@
 .line {
-	position: absolute;
-  height: 70px;
-	bottom: 0;
-	left: 25px;
+  position: absolute;
+  height: 20px;
+  bottom: 0;
+  left: 25px;
   border-left: 2px solid white;
   -moz-transform: skew(-1deg);
-	-webkit-transform: skew(-35deg);
-	transform: skew(-35deg);
+  -webkit-transform: skew(-35deg);
+  transform: skew(-35deg);
 }
 
 .tag {
   position: absolute;
-  transform: translate3d(30px, -100px, 0px);
+  transform: translate3d(0px, -50px, 0px);
   padding: 8px 30px 6px 30px;
   border-radius: 25px;
   font-size: 12px;
@@ -22,7 +22,8 @@
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s ease-out;
-user-select: none;}
+  user-select: none;
+}
 
 .tag.active {
   transition: all 0.3s ease-out;
@@ -34,16 +35,19 @@ user-select: none;}
   opacity: 0;
   /* transform: scale(0.9); */
 }
+
 .label-wrappper-enter-active {
   opacity: 0.7;
   transform: translateX(0);
   transition: opacity 300ms, transform 300ms;
 }
+
 .label-wrappper-exit {
   opacity: 0.7;
   transition: opacity 300ms;
 
 }
+
 .label-wrappper-exit-active {
   opacity: 0;
   transform: scale(0.9);
