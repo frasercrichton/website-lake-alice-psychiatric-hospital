@@ -1,21 +1,25 @@
 import { useFrame, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
+import facilities from '../config/facilities.json'
 import Facility from './Facility.jsx'
 import { useRef } from 'react'
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
 const GLB_LOCATION = 'geography-detailed.glb'
 const hash = window.location.hash
 
-const HospitalLayout = ({
-  selectedFacility,
-  handleFacilityClick,
-  hoverName,
-  setHoverName,
-  isRotating,
-  disabledMeshes
-}) => {
+const findFacility = id => {
+  const x = facilities.find(facility => facility.id === id)
+  return x?.type === 'significant' ? x : ''
+}
+
+const HospitalLayout = ({ labels, isRotating,
+  disabledMeshes }) => {
   const group = useRef()
+  // const visibleTodos = useMemo(
+  //   () => filterTodos(todos, tab),
+  //   [todos, tab``]
+  // )
 
   useFrame((state, delta) => {
     isRotating
@@ -30,16 +34,12 @@ const HospitalLayout = ({
     loader.setDRACOLoader(dracoLoader)
   })
 
-  //  TODO - create building material etc once and pass the refrence
-  const Facilities = ({ handleFacilityClick }) => {
-    const handleHover = (id, e) => {
-      if (!selectedFacility !== '') {
-        setHoverName(id)
-      }
-    }
+  //  TODO - create building material etc once and pass the reference
+  const Facilities = () => {
 
     const output = Object.keys(nodes).map((key, index) => {
       if (hash === '#debug') {
+        // this outputs Blender camera config to the console for manual cut and paste config updates
         if (nodes[key].type === 'PerspectiveCamera') {
           const camera = nodes[key]
 
@@ -64,11 +64,8 @@ const HospitalLayout = ({
           <Facility
             key={index}
             node={nodes[key]}
+            label={findFacility(nodes[key].name).name}
             defaultMaterial={materials.selected}
-            selectedFacility={selectedFacility}
-            handleFacilityClick={handleFacilityClick}
-            handleHover={handleHover}
-            hoverName={hoverName}
             disabledMeshes={disabledMeshes}
           />
         )
@@ -80,7 +77,7 @@ const HospitalLayout = ({
 
   return (
     <group ref={group}>
-      <Facilities handleFacilityClick={handleFacilityClick} />
+      <Facilities />
     </group>
   )
 }

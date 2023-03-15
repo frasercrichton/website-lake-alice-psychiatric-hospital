@@ -45,8 +45,10 @@ function App () {
   const [hasPageReset, setHasPageReset] = useState(false)
 
   // Scrollarama state
-  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
+  
+  // Navigation state
+  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
 
   // 3D Model
   const [facility, setFacility] = useState('')
@@ -56,11 +58,9 @@ function App () {
   const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
 
-  const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
-  const [tab, setTab] = useState('site')
-
+  
   const isLevaHidden = hash !== '#debug'
 
   const navigate = useNavigate()
@@ -124,29 +124,6 @@ function App () {
     }
   }, [pageInView])
 
-  const handleCanvasClick = () => {
-    setFacility('')
-    setHoverName('')
-  }
-
-  const handleContextUpdate = tab => {
-    setFacility('')
-    setTab(tab)
-  }
-
-  const isContentActive = tab !== 'site' && content !== ''
-
-  const handleFacilityClick = facilityId => {
-    setTab('site')
-    setHoverName('')
-    const activeFacility = facilityId === facility ? '' : facilityId
-    setFacility(activeFacility)
-
-    if (!pageCamera) {
-      setPageCamera(defaultCameraConfig)
-    }
-  }
-
   const handleCoverClick = () => {
     navigate('/introduction')
 
@@ -208,14 +185,10 @@ function App () {
         {pageInView.view === '3d' && (
           <Canvas
             key='canvas'
-            selectedFacility={facility}
-            handleFacilityClick={handleFacilityClick}
-            hoverName={hoverName}
-            setHoverName={setHoverName}
-            handleCanvasClick={handleCanvasClick}
             pageCamera={pageCamera}
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
+            labels={['label']}
             pageScrollProgress={pageScrollProgress}
             disabledMeshes={disabledMeshes}
           />

@@ -3,23 +3,20 @@ import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
-import Experience from './Experience'
+import Experience from './Experience.jsx'
 Globals.assign({
   frameLoop: 'always'
 })
 
 const CanvasWrapper = ({
-  selectedFacility,
-  handleFacilityClick,
-  hoverName,
-  setHoverName,
-  handleCanvasClick,
   pageCamera,
   cameraMoveDuration,
   isRotating,
+  labels,
   pageScrollProgress,
   disabledMeshes
 }) => {
+  console.log('1')
   const aspectRatio = {
     width: 1920,
     height: 1080
@@ -43,19 +40,15 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.5,
-          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move no need to update
+          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move so no need to update
           sizes: sizes
         }}
-        onPointerMissed={() => handleCanvasClick()}
       >
         <Experience
-          selectedFacility={selectedFacility}
-          handleFacilityClick={handleFacilityClick}
-          hoverName={hoverName}
-          setHoverName={setHoverName}
           pageCamera={pageCamera}
           cameraMoveDuration={cameraMoveDuration}
           isRotating={isRotating}
+          labels={labels}
           pageScrollProgress={pageScrollProgress}
           disabledMeshes={disabledMeshes}
         />

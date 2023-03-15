@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useMemo } from 'react'
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 import Label from './Label.jsx'
@@ -29,12 +29,16 @@ const Facility = ({
   disabledMeshes
 }) => {
   const mesh = useRef()
+
   const facilityId = node.name
   const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
+
   const findFacility = id => facilities.find(facility => facility.id === id)
+
   const isSignificantFacility =
     typeof findFacility(facilityId) !== 'undefined' &&
     findFacility(facilityId).type === 'significant'
+
   const isFacility = typeof findFacility(facilityId) !== 'undefined'
   const isHover = facilityId === hoverName
   const isClicked = facilityId === selectedFacility
@@ -89,7 +93,6 @@ const Facility = ({
   const lookAndFeelControls = LookAndFeelControls()
   const y = hasShadow ? calculatedPosition.y - 0.5 : calculatedPosition.y
 
-  // console.log(node.material)
   return (
     <mesh
       // TODO scale?
@@ -97,9 +100,6 @@ const Facility = ({
       name={facilityId}
       geometry={node.geometry}
       material={node.material}
-      {...meshEvents}
-      {...meshOnclick}
-      // onPointerLeave={e => alert('left')}
       side={THREE.FrontSide}
       receiveShadow
       castShadow={false}
@@ -116,23 +116,9 @@ const Facility = ({
           opacity={1}
         />
       )}
-      {isClicked && isSignificantFacility && (
-        <Label
-          id={node.name}
-          text={findFacility(facilityId).name}
-          hoverName={hoverName}
-          isClicked={isClicked}
-        />
-      )}
-      {isHover && isFacility && (
-        <Label
-          id={node.name}
-          text={findFacility(facilityId).name}
-          hoverName={hoverName}
-          isClicked={isClicked}
-        />
-      )}
-      )
+
+      {/* <Label id={node.name} text={label} position={[node.position.x, node.position.y, node.position.z]}
+      /> */}
     </mesh>
   )
 }
