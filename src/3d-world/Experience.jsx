@@ -15,7 +15,8 @@ const Experience = ({
   pageCamera,
   cameraMoveDuration,
   isRotating,
-  pageScrollProgress
+  pageScrollProgress,
+  disabledMeshes
 }) => {
   const { World } = LookAndFeelControls()
 
@@ -32,6 +33,7 @@ const Experience = ({
           hoverName={hoverName}
           setHoverName={setHoverName}
           isRotating={isRotating}
+          disabledMeshes={disabledMeshes}
         />
       </Suspense>
     </>

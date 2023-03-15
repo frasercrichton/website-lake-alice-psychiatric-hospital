@@ -54,6 +54,7 @@ function App () {
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
+  const [disabledMeshes, setDisabledMeshes] = useState([])
 
   const [hoverName, setHoverName] = useState('')
   const [content, setContent] = useState('')
@@ -112,14 +113,11 @@ function App () {
     setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
     // Only update the camera if it's a new camera
     if (pageInView?.camera?.name !== pageCamera?.name) {
-      console.log(pageInView?.camera?.name)
-      console.log(pageCamera?.name)
-
       setPageCamera(pageInView.camera)
     }
-
+    // if 3d view!
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
-
+    setDisabledMeshes(pageInView?.disable)
     // hacky way to avoid camera bounce after into
     if (pageInView.camera?.duration !== cameraMoveDuration) {
       setCameraMoveDuration(pageInView.camera?.duration)
@@ -219,6 +217,7 @@ function App () {
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
             pageScrollProgress={pageScrollProgress}
+            disabledMeshes={disabledMeshes}
           />
         )}
 
@@ -246,14 +245,6 @@ function App () {
           />
         )}
 
-        {/* <Menu
-        setContent={setContent}
-        selectedFacility={facility}
-        handleMenuClick={handleFacilityClick}
-        hoverName={hoverName}
-        tab={tab}
-        handleContextUpdate={handleContextUpdate}
-      /> */}
         <Routes>
           <Route
             key={'route-default'}
