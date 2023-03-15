@@ -22,6 +22,18 @@
     "content": "Boys ."
   },
   {
+    "id": "ChildrensVillaGroundFloor_1",
+    "name": "Childrens' Unit"
+  },
+  {
+    "id": "ChildrensVillaGroundFloor_2",
+    "name": "Childrens' Unit"
+  },
+  {
+    "id": "ChildrensVillaGroundFloor_3",
+    "name": "Childrens' Unit"
+  },
+  {
     "id": "ChildrensVillaBoys",
     "name": "Boys' Unit",
     "type": "significant",

@@ -89,7 +89,8 @@ const data = {
       {
         id: 'intro-3',
         text: {
-          content: 'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
+          content:
+            'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
           style: 'static'
         },
         image: {
@@ -100,7 +101,8 @@ const data = {
       {
         id: 'intro-4',
         text: {
-          content: 'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
+          content:
+            'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
           style: 'static'
         },
         image: {
@@ -111,7 +113,8 @@ const data = {
       {
         id: 'intro-5',
         text: {
-          content: 'In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors\' complaints of abuse.',
+          content:
+            "In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors' complaints of abuse.",
           style: 'static'
         },
         image: {
@@ -122,7 +125,8 @@ const data = {
       {
         id: 'intro-6',
         text: {
-          content: 'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
+          content:
+            'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
           style: 'static'
         },
         image: {
@@ -134,7 +138,8 @@ const data = {
         id: 'intro-7',
         view: '3d',
         text: {
-          content: 'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
+          content:
+            'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
           style: 'static'
         },
         camera: {
@@ -277,12 +282,6 @@ const data = {
       },
       {
         id: 'malcolm-6',
-        // text: {
-        //   header: '4 - Arrival',
-        //   content:
-        //     "Malcolm was left at the Boys' Villa by his mum with Dr Selwyn Leeks - the Director of the unit. Neither Malcolm nor his mother were made aware of or asked to consent to Electroconvulsive therapy. ",
-        //   style: 'scrolling'
-        // },
         view: '3d',
         camera: cameras.boysVilla
       },
@@ -788,8 +787,7 @@ const data = {
         id: 'malcolm-25',
         text: {
           header: '12 - Runaway',
-          content:
-       '',
+          content: '',
           style: 'scrolling'
         },
         view: 'map',
@@ -1242,6 +1240,50 @@ const data = {
         },
         view: '3d',
         camera: { ...cameras.boysVilla }
+      },
+      {
+        id: 'context-wip-1',
+        text: {
+          header: 'Roof',
+          content: 'The plans for the 36-bed villa were drawn up in 1944.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.boysVillaAbove
+        }
+      },
+      {
+        id: 'context-wip-2',
+        text: {
+          header: 'Top Floor',
+          content: 'The top-floor of the children\'s villa contained two 16-bed dormitories and four secure solitary cells. On the original plans there was a third dormitory but this was ultimately used as a locker room.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        disable: ['ChildrensVillaRoof001'],
+        camera: {
+          ...cameras.boysVillaAbove
+        }
+      },
+      {
+        id: 'context-wip-1',
+        text: {
+          header: 'Ground Floor',
+          content: 'The ground-floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        disable: [
+          'ChildrensVillaFirstFloor002',
+          'ChildrensVillaFirstFloor002_1',
+          'ChildrensVillaFirstFloor002_2',
+          'ChildrensVillaFirstFloor002_3',
+          'ChildrensVillaRoof001'
+        ],
+        camera: {
+          ...cameras.boysVillaAbove
+        }
       },
       {
         id: 'context-11',
