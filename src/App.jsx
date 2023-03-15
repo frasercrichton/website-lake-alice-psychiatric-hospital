@@ -56,6 +56,7 @@ function App () {
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
+  const [disabledMeshes, setDisabledMeshes] = useState([])
 
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
@@ -114,9 +115,9 @@ function App () {
     if (pageInView?.camera?.name !== pageCamera?.name) {
       setPageCamera(pageInView.camera)
     }
-
+    // if 3d view!
     pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
-
+    setDisabledMeshes(pageInView?.disable)
     // hacky way to avoid camera bounce after into
     if (pageInView.camera?.duration !== cameraMoveDuration) {
       setCameraMoveDuration(pageInView.camera?.duration)
@@ -189,6 +190,7 @@ function App () {
             isRotating={isRotating}
             labels={['label']}
             pageScrollProgress={pageScrollProgress}
+            disabledMeshes={disabledMeshes}
           />
         )}
 

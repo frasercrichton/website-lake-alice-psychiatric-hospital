@@ -12,7 +12,8 @@ const Experience = ({
   cameraMoveDuration,
   isRotating,
   labels,
-  pageScrollProgress
+  pageScrollProgress,
+  disabledMeshes
 }) => {
   const { World } = LookAndFeelControls()
 
@@ -27,7 +28,14 @@ const Experience = ({
       <Environment />
       <Floor />
       <Suspense fallback={<ThreeLoader />}>
-        <HospitalLayout labels={labels} isRotating={isRotating} />
+        <HospitalLayout
+          selectedFacility={selectedFacility}
+          handleFacilityClick={handleFacilityClick}
+          hoverName={hoverName}
+          setHoverName={setHoverName}
+          isRotating={isRotating}
+          disabledMeshes={disabledMeshes}
+        />
       </Suspense>
     </>
   )

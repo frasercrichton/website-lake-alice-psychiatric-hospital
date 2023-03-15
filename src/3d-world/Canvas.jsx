@@ -13,7 +13,8 @@ const CanvasWrapper = ({
   cameraMoveDuration,
   isRotating,
   labels,
-  pageScrollProgress
+  pageScrollProgress,
+  disabledMeshes
 }) => {
   console.log('1')
   const aspectRatio = {
@@ -49,6 +50,7 @@ const CanvasWrapper = ({
           isRotating={isRotating}
           labels={labels}
           pageScrollProgress={pageScrollProgress}
+          disabledMeshes={disabledMeshes}
         />
       </Canvas>
     </div>

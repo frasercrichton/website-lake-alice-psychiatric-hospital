@@ -13,7 +13,8 @@ const findFacility = id => {
   return x?.type === 'significant' ? x : ''
 }
 
-const HospitalLayout = ({ labels, isRotating }) => {
+const HospitalLayout = ({ labels, isRotating,
+  disabledMeshes }) => {
   const group = useRef()
   // const visibleTodos = useMemo(
   //   () => filterTodos(todos, tab),
@@ -35,6 +36,7 @@ const HospitalLayout = ({ labels, isRotating }) => {
 
   //  TODO - create building material etc once and pass the reference
   const Facilities = () => {
+
     const output = Object.keys(nodes).map((key, index) => {
       if (hash === '#debug') {
         // this outputs Blender camera config to the console for manual cut and paste config updates
@@ -64,6 +66,7 @@ const HospitalLayout = ({ labels, isRotating }) => {
             node={nodes[key]}
             label={findFacility(nodes[key].name).name}
             defaultMaterial={materials.selected}
+            disabledMeshes={disabledMeshes}
           />
         )
       }
