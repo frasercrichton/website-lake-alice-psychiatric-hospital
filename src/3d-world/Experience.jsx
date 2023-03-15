@@ -29,10 +29,6 @@ const Experience = ({
       <Floor />
       <Suspense fallback={<ThreeLoader />}>
         <HospitalLayout
-          selectedFacility={selectedFacility}
-          handleFacilityClick={handleFacilityClick}
-          hoverName={hoverName}
-          setHoverName={setHoverName}
           isRotating={isRotating}
           disabledMeshes={disabledMeshes}
         />

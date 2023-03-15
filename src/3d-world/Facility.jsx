@@ -117,8 +117,8 @@ const Facility = ({
         />
       )}
 
-      <Label id={node.name} text={label} position={[node.position.x, node.position.y, node.position.z]}
-      />
+      {/* <Label id={node.name} text={label} position={[node.position.x, node.position.y, node.position.z]}
+      /> */}
     </mesh>
   )
 }
