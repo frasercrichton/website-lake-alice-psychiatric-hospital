@@ -17,7 +17,8 @@ const CanvasWrapper = ({
   pageCamera,
   cameraMoveDuration,
   isRotating,
-  pageScrollProgress
+  pageScrollProgress,
+  disabledMeshes
 }) => {
   const aspectRatio = {
     width: 1920,
@@ -56,6 +57,7 @@ const CanvasWrapper = ({
           cameraMoveDuration={cameraMoveDuration}
           isRotating={isRotating}
           pageScrollProgress={pageScrollProgress}
+          disabledMeshes={disabledMeshes}
         />
       </Canvas>
     </div>

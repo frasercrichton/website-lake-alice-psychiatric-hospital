@@ -12,7 +12,8 @@ const HospitalLayout = ({
   handleFacilityClick,
   hoverName,
   setHoverName,
-  isRotating
+  isRotating,
+  disabledMeshes
 }) => {
   const group = useRef()
 
@@ -36,6 +37,7 @@ const HospitalLayout = ({
         setHoverName(id)
       }
     }
+
     const output = Object.keys(nodes).map((key, index) => {
       if (hash === '#debug') {
         if (nodes[key].type === 'PerspectiveCamera') {
@@ -67,6 +69,7 @@ const HospitalLayout = ({
             handleFacilityClick={handleFacilityClick}
             handleHover={handleHover}
             hoverName={hoverName}
+            disabledMeshes={disabledMeshes}
           />
         )
       }
