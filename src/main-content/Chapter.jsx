@@ -50,8 +50,9 @@ const Chapter = ({
   }
 
   const onStepProgress = ({ progress }) => {
-    // TODO state change here causes any consumers to re-render
-    // updateStepProgress(progress)
+    if (pageInView?.text?.style === 'animated') {
+      updateStepProgress(progress)
+    }
   }
 
   return (

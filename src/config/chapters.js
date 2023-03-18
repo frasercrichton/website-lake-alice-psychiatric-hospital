@@ -91,7 +91,7 @@ const data = {
         text: {
           content:
             'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
-          style: 'static'
+          style: 'animated'
         },
         image: {
           src: 'site-animated.gif',
@@ -103,7 +103,7 @@ const data = {
         text: {
           content:
             'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
-          style: 'static'
+          style: 'animated'
         },
         image: {
           src: 'site-animated.gif',
@@ -119,7 +119,7 @@ const data = {
         },
         image: {
           src: 'site-animated.gif',
-          style: 'static'
+          style: 'animated'
         }
       },
       {
@@ -127,7 +127,7 @@ const data = {
         text: {
           content:
             'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
-          style: 'static'
+          style: 'animated'
         },
         image: {
           src: 'site-animated.gif',

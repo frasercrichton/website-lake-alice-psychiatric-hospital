@@ -18,6 +18,7 @@ import Image from './components/Image.jsx'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
 import TextBox from './components/TextBox'
 import MobileCover from './main-content/MobileView'
+import { animated } from '@react-spring/web'
 const defaultCameraConfig = {
   position: [0, 600, 400],
   rotation: [-angleToRadians(50), 0, 0],
@@ -173,13 +174,13 @@ function App () {
           navigateToChapter={navigateToChapter}
         />
 
-        {pageInView.text && pageInView.text?.style === 'static' && (
+        {pageInView.text && (pageInView.text?.style === 'static' || pageInView.text?.style === 'animated') && (
           <TextBox
             text={pageInView.text}
             textBoxContainerStyle={textBoxContainerStyle}
             textBoxStyle={textBoxStyle}
             pageScrollProgress={pageScrollProgress}
-            isAnimated
+            isAnimated={pageInView?.text.style === 'animated'}
           />
         )}
         {pageInView.view === '3d' && (
