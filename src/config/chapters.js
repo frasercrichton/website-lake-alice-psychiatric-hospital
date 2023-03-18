@@ -1261,7 +1261,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ChildrensVillaRoof001'],
+        disable: ['ChildrensVillaRoof'],
         camera: {
           ...cameras.boysVillaAbove
         }
@@ -1275,11 +1275,13 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ChildrensVillaFirstFloor002',
-          'ChildrensVillaFirstFloor002_1',
-          'ChildrensVillaFirstFloor002_2',
-          'ChildrensVillaFirstFloor002_3',
-          'ChildrensVillaRoof001'
+          'ChildrensVillaFirstFloor',
+          'ChildrensVillaFirstFloor_1',
+          'ChildrensVillaFirstFloor_2',
+          'ChildrensVillaFirstFloor_3',
+          'ChildrensVillaFirstFloor_4',
+          'ChildrensVillaFirstFloor_5',
+          'ChildrensVillaRoof'
         ],
         camera: {
           ...cameras.boysVillaAbove
@@ -1368,7 +1370,7 @@ const data = {
           content: 'Pathways'
         },
         view: '3d',
-        camera: { ...cameras.default }
+        camera: { isRotating: true, ...cameras.default }
       },
       {
         id: 'pathways-introduction-2',

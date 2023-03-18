@@ -62,8 +62,9 @@ const Lighting = () => {
         shadow-camera-right={shadowCameraExtent}
         shadow-camera-bottom={-shadowCameraExtent}
         shadow-camera-left={-shadowCameraExtent}
-        // shadow-camera-near={shadowCameraControls.Near}
         shadow-camera-far={shadowCameraControls.Far}
+       // shadow-camera-near={shadowCameraControls.Near}
+       
       />
     </>
   )
