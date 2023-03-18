@@ -16,7 +16,7 @@ const CanvasWrapper = ({
   pageScrollProgress,
   disabledMeshes
 }) => {
-  console.log('1')
+
   const aspectRatio = {
     width: 1920,
     height: 1080
@@ -27,10 +27,12 @@ const CanvasWrapper = ({
     height: window.innerHeight
   }
 
+
   return (
     <div className='canvas-wrapper'>
       <Canvas
         colormanagement='true'
+        // sRGB={true}
         shadows
         dpr={[1, 2]} //the default
         gl={{

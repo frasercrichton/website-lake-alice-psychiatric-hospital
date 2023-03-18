@@ -75,7 +75,7 @@ const Camera = ({
       delay: 0,
       x: pageCamera.position[0],
       y: pageCamera.position[1],
-      z: pageCamera.position[2]
+      z: pageCamera.position[2],
     })
   }, [pageCamera])
 

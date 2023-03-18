@@ -9,8 +9,8 @@ const cameras = {
     far: 3048
   },
   boysVillaAbove: {
-    name: 'ChildrensVillaCamera001',
-    position: [82.35087585449219, 51.82072830200195, -271.903564453125],
+    name: 'ChildrensVillaCamera',
+    position: [85.19853973388672, 51.82072830200195, -269.4840087890625],
     rotation: [-1.5707965653949199, 1.6058265828178264e-12, 1.5707695048878063],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
