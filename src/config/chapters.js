@@ -1257,11 +1257,16 @@ const data = {
         id: 'context-wip-2',
         text: {
           header: 'Top Floor',
-          content: 'The top-floor of the children\'s villa contained two 16-bed dormitories and four secure solitary cells. On the original plans there was a third dormitory but this was ultimately used as a locker room.',
+          content:
+            "The top-floor of the children's villa contained two 16-bed dormitories and four secure solitary cells. On the original plans there was a third dormitory but this was ultimately used as a locker room.",
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ChildrensVillaRoof'],
+        disable: [
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2'
+        ],
         camera: {
           ...cameras.boysVillaAbove
         }
@@ -1270,7 +1275,8 @@ const data = {
         id: 'context-wip-1',
         text: {
           header: 'Ground Floor',
-          content: 'The ground-floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+          content:
+            'The ground-floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1281,7 +1287,9 @@ const data = {
           'ChildrensVillaFirstFloor_3',
           'ChildrensVillaFirstFloor_4',
           'ChildrensVillaFirstFloor_5',
-          'ChildrensVillaRoof'
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2'
         ],
         camera: {
           ...cameras.boysVillaAbove
@@ -1356,10 +1364,8 @@ const data = {
         },
         view: '3d',
         camera: { ...cameras.default },
-        labels: {
-          
-        }
-      },
+        labels: {}
+      }
     ]
   },
   '/pathways': {

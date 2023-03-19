@@ -22,6 +22,13 @@ const Facility = ({ node, disabledMeshes, label }) => {
       metalness: 0.42399996519088745,
       flatShading: false
     }),
+    roofs: new THREE.MeshStandardMaterial({
+      color: '#4f666a',
+      side: THREE.DoubleSide,
+      roughness: 0.5,
+      metalness: 0,
+      flatShading: false
+    }),
     walls: new THREE.MeshStandardMaterial({
       color: 0xcccccc,
       side: THREE.DoubleSide,
