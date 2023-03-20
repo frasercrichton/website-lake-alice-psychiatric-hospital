@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 import Label from './Label.jsx'
 import LookAndFeelControls from '../controls/LookAndFeel.jsx'
+
 import './Facility.css'
 
 const Facility = ({ node, disabledMeshes, label }) => {
@@ -11,18 +12,21 @@ const Facility = ({ node, disabledMeshes, label }) => {
 
   const materials = {
     roads: new THREE.MeshStandardMaterial({
+      name: 'roads',
       color: '#585858',
       roughness: 1,
       metalness: 0,
       flatShading: false
     }),
     'lake-surface': new THREE.MeshStandardMaterial({
+      name: 'lake-surface',
       color: 0xc000000,
       roughness: 0.31599998474121094,
       metalness: 0.42399996519088745,
       flatShading: false
     }),
     roofs: new THREE.MeshStandardMaterial({
+      name: 'roofs',
       color: '#4f666a',
       side: THREE.DoubleSide,
       roughness: 0.5,
@@ -30,11 +34,13 @@ const Facility = ({ node, disabledMeshes, label }) => {
       flatShading: false
     }),
     walls: new THREE.MeshStandardMaterial({
+      name: 'walls',
       color: 0xcccccc,
       side: THREE.DoubleSide,
       flatShading: true
     }),
     floors: new THREE.MeshStandardMaterial({
+      name: 'floors',
       color: '#4f666a',
       side: THREE.DoubleSide,
       roughness: 0.5,
@@ -42,30 +48,42 @@ const Facility = ({ node, disabledMeshes, label }) => {
       flatShading: false
     }),
     buildings: new THREE.MeshStandardMaterial({
+      name: 'buildings',
       color: '#d2c1cd',
       roughness: 0.4000000059604645,
       side: THREE.DoubleSide,
       flatShading: true
     }),
     bedframe: new THREE.MeshStandardMaterial({
+      name: 'bedframe',
       color: '#343434',
       roughness: 0.4000000059604645,
       side: THREE.DoubleSide,
       flatShading: true
     }),
     mattress: new THREE.MeshStandardMaterial({
+      name: 'mattress',
+      color: '#ffffff',
+      side: THREE.DoubleSide,
+      flatShading: true,
+      roughness: 0.4000000059604645
+    }),
+    'interior-walls': new THREE.MeshStandardMaterial({
+      name: 'interior-walls',
       color: '#ffffff',
       side: THREE.DoubleSide,
       flatShading: true,
       roughness: 0.4000000059604645
     }),
     transparent: new THREE.MeshStandardMaterial({
+      name: 'transparent',
       color: 0x00ff00,
       transparent: true,
       castShadow: false,
       opacity: 0
     }),
     default: new THREE.MeshStandardMaterial({
+      name: 'default',
       color: '#d2c1cd',
       side: THREE.DoubleSide,
       roughness: 0.4000000059604645
