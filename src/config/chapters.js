@@ -53,7 +53,6 @@ const data = {
     pages: [
       {
         id: 'testimony-introduction-1',
-        index: 1,
         video: {
           type: 'vimeo',
           id: '689154638',
@@ -119,7 +118,7 @@ const data = {
         },
         image: {
           src: 'site-animated.gif',
-          style: 'animated'
+          style: 'static'
         }
       },
       {
@@ -127,7 +126,7 @@ const data = {
         text: {
           content:
             'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
-          style: 'animated'
+          style: 'static'
         },
         image: {
           src: 'site-animated.gif',
@@ -142,15 +141,16 @@ const data = {
             'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
           style: 'static'
         },
-        camera: {
-          name: 'default',
-          position: [160, 460, -220],
-          rotation: [-1.7, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000
-        }
+        camera: cameras.default
+        // camera: {
+        //   name: 'default',
+        //   position: [160, 460, -220],
+        //   rotation: [-1.7, 0, 0],
+        //   aspect: 1,
+        //   fov: 80,
+        //   near: 10,
+        //   far: 10000
+        // }
       }
     ]
   },

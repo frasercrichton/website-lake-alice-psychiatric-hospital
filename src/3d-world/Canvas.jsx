@@ -32,7 +32,6 @@ const CanvasWrapper = ({
     <div className='canvas-wrapper'>
       <Canvas
         colormanagement='true'
-        // sRGB={true}
         shadows
         dpr={[1, 2]} //the default
         gl={{
