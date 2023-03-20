@@ -1287,6 +1287,7 @@ const data = {
           'ChildrensVillaFirstFloor_3',
           'ChildrensVillaFirstFloor_4',
           'ChildrensVillaFirstFloor_5',
+          'ChildrensVillaFirstFloor_6',
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
           'ChildrensVillaRoof_2'
