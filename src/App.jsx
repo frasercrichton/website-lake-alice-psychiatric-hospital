@@ -19,14 +19,6 @@ import AssetUrlHelper from './components/AssetUrlHelper.js'
 import TextBox from './components/TextBox'
 import MobileCover from './main-content/MobileView'
 import { animated } from '@react-spring/web'
-const defaultCameraConfig = {
-  position: [0, 600, 400],
-  rotation: [-angleToRadians(50), 0, 0],
-  aspect: 1,
-  fov: 80,
-  near: 10,
-  far: 10000
-}
 const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
@@ -47,13 +39,13 @@ function App () {
 
   // Scrollarama state
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
-  
+
   // Navigation state
   const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
 
   // 3D Model
   const [facility, setFacility] = useState('')
-  const [pageCamera, setPageCamera] = useState(defaultCameraConfig)
+  const [pageCamera, setPageCamera] = useState(null)
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(true)
   const [isLoading, setLoading] = useState(true)
@@ -61,7 +53,7 @@ function App () {
 
   const [content, setContent] = useState('')
   const [coverActive, setCoverActive] = useState(true)
-  
+
   const isLevaHidden = hash !== '#debug'
 
   const navigate = useNavigate()
@@ -110,18 +102,23 @@ function App () {
     const sectionCurrentIndex = pageInView.index
     // if 0 no progress
     // if 1 > percentage
-
     setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
-    // Only update the camera if it's a new camera
-    if (pageInView?.camera?.name !== pageCamera?.name) {
-      setPageCamera(pageInView.camera)
-    }
-    // if 3d view!
-    pageInView?.camera?.isRotating ? setIsRotating(true) : setIsRotating(false)
-    setDisabledMeshes(pageInView?.disable)
-    // hacky way to avoid camera bounce after into
-    if (pageInView.camera?.duration !== cameraMoveDuration) {
-      setCameraMoveDuration(pageInView.camera?.duration)
+
+    if (pageInView.view === '3d') {
+      // Only update the camera if it's a new camera
+
+      if (pageInView?.camera?.name !== pageCamera?.name) {
+        setPageCamera(pageInView.camera)
+      }
+
+      pageInView?.camera?.isRotating
+        ? setIsRotating(true)
+        : setIsRotating(false)
+      setDisabledMeshes(pageInView?.disable)
+      // hacky way to avoid camera bounce after into
+      if (pageInView.camera?.duration !== cameraMoveDuration) {
+        setCameraMoveDuration(pageInView.camera?.duration)
+      }
     }
   }, [pageInView])
 
@@ -174,16 +171,17 @@ function App () {
           navigateToChapter={navigateToChapter}
         />
 
-        {pageInView.text && (pageInView.text?.style === 'static' || pageInView.text?.style === 'animated') && (
-          <TextBox
-            text={pageInView.text}
-            textBoxContainerStyle={textBoxContainerStyle}
-            textBoxStyle={textBoxStyle}
-            pageScrollProgress={pageScrollProgress}
-            isAnimated={pageInView?.text.style === 'animated'}
-          />
-        )}
-        {pageInView.view === '3d' && (
+        {pageInView.text &&
+          (pageInView.text?.style === 'static' ||
+            pageInView.text?.style === 'animated') && (
+            <TextBox
+              text={pageInView.text}
+              textBoxContainerStyle={textBoxContainerStyle}
+              textBoxStyle={textBoxStyle}
+              pageScrollProgress={pageScrollProgress}
+              isAnimated={pageInView?.text.style === 'animated'}
+            />
+          )}
           <Canvas
             key='canvas'
             pageCamera={pageCamera}
@@ -193,8 +191,7 @@ function App () {
             pageScrollProgress={pageScrollProgress}
             disabledMeshes={disabledMeshes}
           />
-        )}
-
+        
         {pageInView.view === 'map' && (
           <GeographicMap
             visibleMapLayers={visibleMapLayers}
