@@ -1,17 +1,19 @@
-import stateCareFacilities from '../config/state-care-facilities.json'
-import psychiatricFacilities from '../config/psychiatric-facilities.json'
+import stateCare from '../config/state-care-facilities.json'
+import psychiatric from '../config/psychiatric-facilities.json'
 import cameras from '../config/cameras.js'
 
-const stateCareUnlabeled = stateCareFacilities.filter(function (facility) {
-  delete facility.label
-  return true
-})
+const stateCareFacilities = stateCare.sort(
+  (a, b) => parseInt(a.opened) - parseInt(b.opened)
+)
 
-const psychiatricFacilitiesUnlabeled = psychiatricFacilities.filter(function (
-  facility
-) {
-  delete facility.label
-  return true
+const psychiatricFacilities = psychiatric.sort((a, b) => {
+  if (a.label < b.label) {
+    return -1
+  }
+  if (a.label > b.label) {
+    return 1
+  }
+  return 0
 })
 
 const national = {
@@ -1377,7 +1379,7 @@ const data = {
           content: 'Pathways'
         },
         view: '3d',
-        camera: { isRotating: true, ...cameras.default }
+        camera: { ...cameras.default }
       },
       {
         id: 'pathways-introduction-2',
@@ -1423,7 +1425,14 @@ const data = {
         },
         view: 'map',
         map: {
-          ...national
+          centre: {
+            latitude: -40.7670087,
+            longitude: 173.4506545
+          },
+          bounds: {
+            southWest: [-40.128745, 175.33124],
+            northEast: [-40.123741, 175.342489]
+          }
         }
       },
       {
@@ -1505,53 +1514,53 @@ const data = {
           src: 'fc-20190219-00006-HP5-4009 (2).jpg',
           caption: 'Kohitere [Fraser Crichton]',
           style: 'static'
-        },
-        view: 'map',
-        map: {
-          ...hubLocation,
-          visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
-            minorPoints: {
-              colour: '#ff0000',
-              points: [...stateCareFacilities]
-            },
-            lines: {
-              target: {
-                // label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              },
-              points: [
-                {
-                  // "facility": "Kohitere Boy's Training Centre (1/1/1965)",
-                  latitude: -40.6310718,
-                  longitude: 175.2549856
-                },
-                {
-                  // "facility": "Hokio Beach School",
-                  latitude: -40.593763,
-                  longitude: 175.191754
-                },
-                {
-                  // "facility": "Holdsworth (Whanganui)",
-                  latitude: -39.9111424,
-                  longitude: 175.0276511
-                }
-              ]
-            },
-            labels: [
-              'Hokio Beach School',
-              'Holdsworth (Whanganui)',
-              "Kohitere Boy's Training Centre (1/1/1965)"
-            ]
-          }
         }
+        // view: 'map',
+        // map: {
+        //   ...hubLocation,
+        //   visibleMapLayers: {
+        //     majorPoints: [
+        //       {
+        //         label: 'Lake Alice',
+        //         latitude: -40.1254336,
+        //         longitude: 175.3369864
+        //       }
+        //     ],
+        //     minorPoints: {
+        //       colour: '#ff0000',
+        //       points: [...stateCareFacilities]
+        //     },
+        //     lines: {
+        //       target: {
+        //         // label: 'Lake Alice',
+        //         latitude: -40.1254336,
+        //         longitude: 175.3369864
+        //       },
+        //       points: [
+        //         {
+        //           // "facility": "Kohitere Boy's Training Centre (1/1/1965)",
+        //           latitude: -40.6310718,
+        //           longitude: 175.2549856
+        //         },
+        //         {
+        //           // "facility": "Hokio Beach School",
+        //           latitude: -40.593763,
+        //           longitude: 175.191754
+        //         },
+        //         {
+        //           // "facility": "Holdsworth (Whanganui)",
+        //           latitude: -39.9111424,
+        //           longitude: 175.0276511
+        //         }
+        //       ]
+        //     },
+        //     labels: [
+        //       'Hokio Beach School',
+        //       'Holdsworth (Whanganui)',
+        //       "Kohitere Boy's Training Centre (1/1/1965)"
+        //     ]
+        //   }
+        // }
       },
 
       {
@@ -1564,11 +1573,14 @@ const data = {
           style: 'scrolling'
         },
         view: 'map',
-
         map: {
           ...national,
           visibleMapLayers: {
-            minorPoints: { colour: '#ff0000', points: [...stateCareUnlabeled] }
+            minorPoints: {
+              colour: '#ff0000',
+              points: [...stateCareFacilities]
+            },
+            style: 'animated'
           }
         }
       },
@@ -1591,7 +1603,7 @@ const data = {
         text: {
           header: '6 - Hospital',
           content:
-            'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a mjor source of referrals.',
+            'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals.',
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1602,8 +1614,9 @@ const data = {
           visibleMapLayers: {
             minorPoints: {
               colour: '#0000ff',
-              points: [...psychiatricFacilitiesUnlabeled]
-            }
+              points: [...psychiatricFacilities]
+            },
+            style: 'animated'
           }
         }
       },

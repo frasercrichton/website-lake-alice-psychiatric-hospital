@@ -21,7 +21,7 @@ const Circle = ({
 
   return (
     <CircleMarker
-      icon={icon}
+      // icon={icon}
       key={markerCoordinates.lat}
       className='map-circle-marker'
       center={markerCoordinates}
@@ -32,7 +32,11 @@ const Circle = ({
       color={strokeColor}
       stroke={stroke}
     >
-      {label && <Tooltip direction='right' permanent>{label}</Tooltip>}
+      {label && (
+        <Tooltip direction='right' permanent>
+          {label}
+        </Tooltip>
+      )}
     </CircleMarker>
   )
 }
