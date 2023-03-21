@@ -194,6 +194,7 @@ function App () {
         
         {pageInView.view === 'map' && (
           <GeographicMap
+            pageInView={pageInView}
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
             pageScrollProgress={pageScrollProgress}
