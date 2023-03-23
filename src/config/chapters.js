@@ -1123,7 +1123,7 @@ const data = {
         camera: { ...cameras.boysVilla }
       },
       {
-        id: 'context-2',
+        id: 'context-3',
         text: {
           header: '2 - Adult Psychiatric Facility',
           content:
@@ -1135,7 +1135,7 @@ const data = {
         camera: { ...cameras.boysVilla }
       },
       {
-        id: 'context-3',
+        id: 'context-4',
         text: {
           header: '3 - 12-bed Villas',
           content:
@@ -1148,7 +1148,7 @@ const data = {
         camera: { ...cameras.twelveBedVillasWide }
       },
       {
-        id: 'context-4',
+        id: 'context-5',
         text: {
           header: "4 - 12-bed Villas - Children's unit",
           content:
@@ -1160,7 +1160,7 @@ const data = {
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-5',
+        id: 'context-6',
         image: {
           src: 'fc-20210828-00001-FL25129159.jpg',
           caption: 'The original twelve bed villas Archway Item ID: R24730915 ',
@@ -1173,12 +1173,60 @@ const data = {
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-5',
+        id: 'context-7',
         view: '3d',
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-6',
+        id: 'context-8',
+        text: {
+          header: 'Eleven Bed Villa Roof',
+          content: 'Eleven Bed Villa .',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.twelveBedVillaAbove
+        }
+      },
+      {
+        id: 'context-9',
+        text: {
+          header: 'Eleven Bed Villa Top Floor',
+          content:
+            'The first floor of the villa contained two 4-bed dormitories, two single bed rooms, a staff bedroom, toilets and washrooms.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        disable: ['ElevenBedVillaRoof020_', 'ElevenBedVillaRoof020_1'],
+        camera: {
+          ...cameras.twelveBedVillaAbove
+        }
+      },
+      {
+        id: 'context-10',
+        text: {
+          header: 'Eleven Bed Villa Ground Floor',
+          content:
+            'The ground floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        disable: [
+          'ElevenBedVillaRoof020_',
+          'ElevenBedVillaRoof020_1',
+          'ElevenBedVillaFirstFloor020_',
+          'ElevenBedVillaFirstFloor020_1',
+          'ElevenBedVillaFirstFloor020_2',
+          'ElevenBedVillaFirstFloor020_3',
+          'ElevenBedVillaFirstFloor020_4'
+        ],
+        camera: {
+          ...cameras.twelveBedVillaAbove
+        }
+      },
+      {
+        id: 'context-11',
         text: {
           header: '6 - Girls Unit',
           content:
@@ -1202,7 +1250,7 @@ const data = {
         }
       },
       {
-        id: 'context-7',
+        id: 'context-12',
         text: {
           header: '8 - Maximum Security Villa',
           content:
@@ -1214,7 +1262,7 @@ const data = {
         camera: { ...cameras.maximumSecurity }
       },
       {
-        id: 'context-8',
+        id: 'context-13',
         image: {
           src: 'fc-20210828-00001-FL25129125.jpg',
           caption:
@@ -1227,13 +1275,12 @@ const data = {
         camera: { ...cameras.maximumSecurityClose }
       },
       {
-        id: 'context-9',
+        id: 'context-14',
         view: '3d',
         camera: { ...cameras.maximumSecurityClose }
       },
-
       {
-        id: 'context-10',
+        id: 'context-15',
         text: {
           content:
             "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
@@ -1244,7 +1291,7 @@ const data = {
         camera: { ...cameras.boysVilla }
       },
       {
-        id: 'context-wip-1',
+        id: 'context-16',
         text: {
           header: 'Roof',
           content: 'The plans for the 36-bed villa were drawn up in 1944.',
@@ -1256,7 +1303,7 @@ const data = {
         }
       },
       {
-        id: 'context-wip-2',
+        id: 'context-17',
         text: {
           header: 'Top Floor',
           content:
@@ -1274,7 +1321,7 @@ const data = {
         }
       },
       {
-        id: 'context-wip-1',
+        id: 'context-18',
         text: {
           header: 'Ground Floor',
           content:
@@ -1299,7 +1346,7 @@ const data = {
         }
       },
       {
-        id: 'context-11',
+        id: 'context-19',
         text: {
           header: '9 - Staff on Site',
           content:
@@ -1312,7 +1359,7 @@ const data = {
         }
       },
       {
-        id: 'context-12',
+        id: 'context-20',
         text: {
           header: '7 - Adults and Children',
           content:
@@ -1334,7 +1381,7 @@ const data = {
         }
       },
       {
-        id: 'context-13',
+        id: 'context-21',
         text: {
           header: '9 - Torture',
           content:
@@ -1347,7 +1394,7 @@ const data = {
         }
       },
       {
-        id: 'context-14',
+        id: 'context-22',
         text: {
           header: '10 - Demolition',
           content:
@@ -1358,16 +1405,6 @@ const data = {
         camera: {
           ...cameras.default
         }
-      },
-      {
-        id: 'context-14',
-        text: {
-          content: 'Villa Names',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.default },
-        labels: {}
       }
     ]
   },
@@ -1419,7 +1456,7 @@ const data = {
         text: {
           header: '2 - Home',
           content:
-            'The most common referral to Lake Alice for children was from home.',
+            'The most common referral to Lake Alice for children was from home. Foster care homes were another source of children for Lake Alice.',
           source: 'Redacted-Lake-Alice-Report.pdf#page=69',
           style: 'scrolling'
         },
@@ -1582,20 +1619,6 @@ const data = {
             },
             style: 'animated'
           }
-        }
-      },
-      {
-        id: 'pathways-8',
-        text: {
-          header: '5 - Foster Care and Family Homes',
-          content:
-            'Foster care homes across Aotearoa were another source of children for Lake Alice.',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=67',
-          style: 'scrolling'
-        },
-        view: 'map',
-        map: {
-          ...national
         }
       },
       {

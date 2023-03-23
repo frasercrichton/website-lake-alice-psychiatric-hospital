@@ -102,6 +102,17 @@ const cameras = {
     near: 0.10000000149011612,
     far: 1000
   },
+  twelveBedVillaAbove: {
+    name: 'ElevenBedVillaCamera010',
+    position: [254.4232940673828, 31.82072830200195, -290.8634948730469],
+    rotation: [
+      -1.5707962289753654, -7.330926976578667e-9, -0.17415773961651546
+    ],
+    aspect: 1.7777777777777777,
+    fov: 39.76070325000613,
+    near: 0.10000000149011612,
+    far: 1000
+  },
   twelveBedVillasWide: {
     name: 'twelveBedVillasWide',
     position: [312.54022216796875, 24.06130599975586, -331.59326171875],
