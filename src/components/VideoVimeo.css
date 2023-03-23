@@ -1,6 +1,6 @@
 .video-container {
     position: fixed;
-    
+    background-color: #282c34;
     padding-top: 25px;
     display: flex;
     justify-content: center;
