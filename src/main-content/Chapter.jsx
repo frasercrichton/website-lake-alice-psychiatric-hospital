@@ -86,7 +86,7 @@ const Chapter = ({
         })}
         {nextChapter && (
           <Step data={-1} key={-1}>
-            <div style={{ height: '1%' }}> end</div>
+            <div style={{ height: '1%' }}></div>
           </Step>
         )}
       </Scrollama>

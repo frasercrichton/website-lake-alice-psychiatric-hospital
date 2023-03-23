@@ -1162,7 +1162,7 @@ const data = {
       {
         id: 'context-6',
         image: {
-          src: 'fc-20210828-00001-FL25129159.jpg',
+          src: 'fc-20230321-00001-R26288977-0001.jpg',
           caption: 'The original twelve bed villas Archway Item ID: R24730915 ',
           source:
             'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143',
@@ -1264,7 +1264,7 @@ const data = {
       {
         id: 'context-13',
         image: {
-          src: 'fc-20210828-00001-FL25129125.jpg',
+          src: 'fc-20230314-00003-R26288153-0001.jpg',
           caption:
             'Maximum security block at Lake Alice Psychiatric Hospital Marton (Photographer: Mr Cleal).',
           source: 'Redacted-Lake-Alice-Report.pdf#page=62',
