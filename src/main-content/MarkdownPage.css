@@ -1,0 +1,34 @@
+.markdown-page-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6%;
+  width: 100%;
+  z-index: 400;
+  color: white;
+  flex: 1;
+  flex-direction: column;
+  background-color: #282c34;
+}
+
+.markdown-page-container a {
+  text-decoration: underline;
+}
+
+.markdown-page-container .markdown {
+  width: 80vw;
+}
+
+.markdown-page-container .image {
+  cursor: default;
+}
+
+.markdown-page-container img {
+  width: 80%;
+}
+
+.markdown-page-container h2 {
+  text-transform: uppercase;
+}
