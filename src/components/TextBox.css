@@ -7,7 +7,7 @@
   opacity: 0.7;
 }
 
-.text-box {
+.text-box, .text-box-animated {
   display: flex;
   flex-direction: column;
   background-color: #000000;
@@ -15,11 +15,13 @@
   opacity: 0.7;
   padding: 3px;
   z-index: 380;
+}
 
+.text-box-animated {
+  font-size: 1.5rem;
 }
 
 .text-box .source {
-  /* background-color: #000000; */
   text-align: right;
   display: inline-block;
 }

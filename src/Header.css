@@ -7,10 +7,6 @@ header {
     z-index: 450;
 }
 
-nav.home {
-    background-color: aqua;
-}
-
 nav.home h1 {
     padding-left: 20px;
     color: #000000;

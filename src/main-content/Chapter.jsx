@@ -22,7 +22,7 @@ const Chapter = ({
       scroller.current.scrollIntoView()
       setHasPageReset(false)
     }
-  }, [hasPageReset])
+  }, [hasPageReset, setHasPageReset])
 
   const onStepEnter = ({ data }) => {
     if (nextChapter && data === -1) {

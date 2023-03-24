@@ -170,7 +170,6 @@ function App () {
           setPageInView={setPageInView}
           navigateToChapter={navigateToChapter}
         />
-
         {pageInView.text &&
           (pageInView.text?.style === 'static' ||
             pageInView.text?.style === 'animated') && (
@@ -182,16 +181,16 @@ function App () {
               isAnimated={pageInView?.text.style === 'animated'}
             />
           )}
-          <Canvas
-            key='canvas'
-            pageCamera={pageCamera}
-            cameraMoveDuration={cameraMoveDuration}
-            isRotating={isRotating}
-            labels={['label']}
-            pageScrollProgress={pageScrollProgress}
-            disabledMeshes={disabledMeshes}
-          />
-        
+        <Canvas
+          key='canvas'
+          pageCamera={pageCamera}
+          cameraMoveDuration={cameraMoveDuration}
+          isRotating={isRotating}
+          labels={['label']}
+          pageScrollProgress={pageScrollProgress}
+          disabledMeshes={disabledMeshes}
+        />
+
         {pageInView.view === 'map' && (
           <GeographicMap
             pageInView={pageInView}

@@ -16,17 +16,18 @@ const CanvasWrapper = ({
   pageScrollProgress,
   disabledMeshes
 }) => {
-
   const aspectRatio = {
     width: 1920,
     height: 1080
   }
+
   const defaultOutputEncoding = THREE.sRGBEncoding
+
   const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
+    // pixelRatio: Math.min(window.devicePixelRatio, 2)
   }
-
 
   return (
     <div className='canvas-wrapper'>
@@ -41,8 +42,8 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.5,
-          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move so no need to update
-          sizes: sizes
+          shadowMap: { autoUpdate: false, needsUpdate: true } // static scene where lights don't move so no need to update
+          // sizes: sizes
         }}
       >
         <Experience
