@@ -6,10 +6,6 @@
   height: 100vh;
 }
 
-.document-image {
-  /* background-color: aqua; */
-}
-
 .scrolling-image figure {
   width: 50vw;
   justify-content: center;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Image from '../components/Image.jsx'
 import TextBox from '../components/TextBox.jsx'
 import AssetUrlHelper from '../components/AssetUrlHelper.js'
-import Content from './Content.jsx'
+import MarkdownPage from './MarkdownPage.jsx'
 import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
@@ -53,7 +53,9 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
             />
           </div>
         )}
-      {view === 'markdown' && <Content key={pageId} content={content.file} />}
+      {view === 'markdown' && (
+        <MarkdownPage key={pageId} content={content.file} />
+      )}
     </div>
   )
 }

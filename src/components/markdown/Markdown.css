@@ -1,16 +1,16 @@
-.markdown-container > a {
+.markdown-container>a {
     color: #D3D3D3;
     transition: color 300ms;
 }
 
-.markdown-container > a:hover {
+.markdown-container>a:hover {
     color: #808080;
 }
 
-.markdown-container > div, .markdown-container > p, .markdown-container > li {
+.markdown-container>div, .markdown-container>p, .markdown-container>li {
     text-align: left;
     font-size: 1.25rem;
     line-height: 1.875rem;
     letter-spacing: 0;
-    /* margin-bottom: 23px; */
+    margin-bottom: 23px;
 }

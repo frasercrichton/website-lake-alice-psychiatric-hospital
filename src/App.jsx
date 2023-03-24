@@ -4,6 +4,7 @@ import { BrowserView } from 'react-device-detect'
 import { Leva } from 'leva'
 import './App.css'
 import Header from './Header.jsx'
+import MarkdownPage from './main-content/MarkdownPage.jsx'
 import Cover from './Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
 import angleToRadians from './3d-world/angleHelper.jsx'
@@ -65,7 +66,7 @@ function App () {
 
   const navigateToChapter = name => {
     setActiveChapter(name)
-    // setPageInView({...chapterInView.pages[data] })
+    // setPageInView({...chapterInView.pages[chapters] })
     setChapterInView(chapters[name])
     navigate(name)
     setHasPageReset(true)
@@ -235,24 +236,33 @@ function App () {
             }
           />
           {urls.map(nav => {
+            const element =
+              nav.url !== '/about' ? (
+                <Chapter
+                  chapterInView={chapterInView}
+                  nextChapter={nav.next}
+                  setPageInView={setPageInView}
+                  pageInView={pageInView}
+                  setNextChapter={updateChapter}
+                  pageScrollProgress={pageScrollProgress}
+                  updateStepProgress={updateStepProgress}
+                  hasPageReset={hasPageReset}
+                  setHasPageReset={setHasPageReset}
+                />
+              ) : (
+                <MarkdownPage
+                  key={content}
+                  fileName={pageInView?.content?.file}
+                  setContent={setContent}
+                />
+              )
+
             return (
               <Route
                 key={`route-${nav.url}`}
                 exact
                 path={nav.url}
-                element={
-                  <Chapter
-                    chapterInView={chapterInView}
-                    nextChapter={nav.next}
-                    setPageInView={setPageInView}
-                    pageInView={pageInView}
-                    setNextChapter={updateChapter}
-                    pageScrollProgress={pageScrollProgress}
-                    updateStepProgress={updateStepProgress}
-                    hasPageReset={hasPageReset}
-                    setHasPageReset={setHasPageReset}
-                  />
-                }
+                element={element}
               />
             )
           })}
