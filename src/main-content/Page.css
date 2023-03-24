@@ -4,13 +4,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
-  /* animation: fadeIn 15s;
-  -webkit-animation: fadeIn 15s;
-  -moz-animation: fadeIn 15s;
-  -o-animation: fadeIn 15s;
-  -ms-animation: fadeIn 15s; */
-
 }
 
 .document-image {
@@ -24,8 +17,9 @@
 }
 
 .document-image figure {
+  /* background-color: aqua; */
   width: 50vw;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 .document-image figure img, .scrolling-image figure img {

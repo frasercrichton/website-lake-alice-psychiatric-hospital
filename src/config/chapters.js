@@ -83,8 +83,7 @@ const data = {
         },
         image: {
           src: 'site-animated.gif',
-          style: 'static',
-          caption: ''
+          style: 'static'
         }
       },
       {
@@ -116,7 +115,7 @@ const data = {
         text: {
           content:
             "In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors' complaints of abuse.",
-          style: 'static'
+          style: 'animated'
         },
         image: {
           src: 'site-animated.gif',
@@ -128,7 +127,7 @@ const data = {
         text: {
           content:
             'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
-          style: 'static'
+          style: 'animated'
         },
         image: {
           src: 'site-animated.gif',
@@ -141,7 +140,7 @@ const data = {
         text: {
           content:
             'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
-          style: 'static'
+          style: 'animated'
         },
         camera: cameras.default
         // camera: {
@@ -1759,20 +1758,7 @@ const data = {
         text: {
           header: '1 - Intro',
           content:
-            'Whilst the experiences of the children at Lake Alice were horrific at the time their experiences as adults of trying to gain accountability against the perpetrators of abuse and redress from the State have an equally horrific aspect.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-3',
-        text: {
-          header: '2 - Complaints',
-          content:
-            'As early as 1973 there was a complaint of abuse at Lake Alice. In 1974 acting chief educational psychologist Don Brown raised concerns about the improper use of ECT with Dr Sydney Pugmire  the hospital’s medical superintendent.',
+            'Whilst the experiences of the children at Lake Alice were horrific at the time their experiences as adults of trying to gain accountability against the perpetrators of abuse and redress from the State have an equally horrific aspect. As early as 1973 there was a complaint of abuse at Lake Alice. In 1974 acting chief educational psychologist Don Brown raised concerns about the improper use of ECT with Dr Sydney Pugmire  the hospital’s medical superintendent.',
           style: 'scrolling',
           source: 'Redacted-Lake-Alice-Report.pdf#page=40'
         },
@@ -1842,7 +1828,7 @@ const data = {
         text: {
           header: '7 - Court cases',
           content:
-            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW  (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice.1529 From early 1997, lawyer Grant Cameron also began discussions with  the Crown on behalf of a large group of Lake Alice survivors.',
+            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice. From early 1997, lawyer Grant Cameron also began discussions with the Crown on behalf of a large group of Lake Alice survivors.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1851,8 +1837,21 @@ const data = {
         }
       },
       {
+        id: 'justice-8',
+        image: {
+          caption:
+            "The Court of Appeal dismisses Leoni McInroe and Paul Lucas's case against Selwyn Leeks on a technicality.",
+          src: 'fc-20230323-00001-Screenshot 2023-03-23 at 2.59.57 PM.jpg',
+          style: 'document'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-9',
-        index: 9,
         text: {
           header: '8 - First Police Investigation 1977 - 1978',
           content:
@@ -1865,8 +1864,20 @@ const data = {
         }
       },
       {
+        id: 'justice-8',
+        image: {
+          caption: 'Commissioner of Police, Ken Burnside ',
+          src: 'fc-20220710-00001-nlnzimage.jpg',
+          style: 'document'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-10',
-        index: 10,
         text: {
           header: '9 - Police Bias',
           content:
@@ -1881,7 +1892,6 @@ const data = {
       },
       {
         id: 'justice-11',
-        index: 11,
         text: {
           header: '10 - 2001 -The Gallen Report',
           content:
@@ -1896,7 +1906,6 @@ const data = {
       },
       {
         id: 'justice-12',
-        index: 12,
         text: {
           header: '11 - The Apology',
           content:
@@ -1911,7 +1920,6 @@ const data = {
       },
       {
         id: 'justice-13',
-        index: 13,
         text: {
           header: '12 - Second Police Investigation  2003 - 2005',
           content:
@@ -1926,82 +1934,10 @@ const data = {
       },
       {
         id: 'justice-13',
-        index: 13,
         text: {
           header: '13 - Australia',
           content:
             "In 2003, The Victorian medical board receive legal advice saying it has jurisdiction to investigate Leek's past at Lake Alice. The board were asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks is fit to practise. Separately, in 2004 the Victorian Medical Practitioners Board also investigate claims in Australia by a former female patient accusing Leeks of sexual misconduct when he treated her for anxiety in Melbourne in 1979-80. After a three year investigation, the Victorian Medical Practitioners Board bring thirty-nine disciplinary charges against Leeks. Leeks agrees to stop working as a psychiatrist on the eve of the disciplinary hearing by the Victorian Medical Practitioners Board. By agreeing not to work anymore Leeks escapes a full public investigation.",
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-14',
-        index: 14,
-        text: {
-          header: '13 - Third Police Investigation 2006 - 2010',
-          content:
-            'Back in New Zealand, Detective Superintendent Malcolm Burgess inherits the investigation from Reid. His plan for a comprehensive investigation is rejected by Assistant Commissioner Peter Marshall and Detective Superintendent Nick Perry as they believe it would take up too many resources. Burgess and Perry decide to focus on Leeks and the misuse of the ECT machine. The allegations against the other staff, and of wider sexual and physical abuse, use of Paraldyhde are not investigated. Again the police fail to speak to the complainants - they only speak with one after the complainant instigated contact and don\'t speak with another who also instigated contact. Again, multiple allegations of sexual assault and rape including that Leeks had raped one of the survivors were dismissed and no interviews were conducted. Without interviewing survivors making a decision about the credibility of their evidence appears deeply flawed but that is exactly what NZ Police did. Staff were interviewed this time but in a "general way" and in regard to Leeks and ECT not the other allegations.',
-          style: 'scrolling',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=308'
-        },
-        image: {
-          caption: 'Lake Alice Investigation Completed - No Charges Laid.png',
-          src: 'Lake Alice Investigation Completed - No Charges Laid.png',
-          style: 'document'
-        },
-
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-15',
-        index: 15,
-        text: {
-          header: '14 - Fourth Police Investigation - 2018 - 2021',
-          content:
-            'In 2017 the National Adult Sexual Assault Team became aware of the Lake Alice file as a result of an Official Information Act request made by an investigative journalist. NZ Police decide to investigate the sexual complaints made by three of the survivors including Malcolm who they had previously dismissed in November 2018 and *when he first reported to them*. The United Nations Committee against Torture released its decision in December 2019 that New Zealand had been in breach of its obligations under the Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment by failing to investigate Mr Zentveld’s complaint. At this point NZ Police decide to launch a wider investigation into all of the Lake Alice allegations.',
-          style: 'scrolling',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=316'
-        },
-        image: {
-          caption:
-            'Operation Lake Alice concluded - criminal charges filed.png',
-          src: 'Operation Lake Alice concluded - criminal charges filed.png',
-          style: 'document'
-        },
-
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-16',
-        index: 16,
-        text: {
-          header: '15 - United Nations Committee Against Torture',
-          content:
-            'Although New Zealand didn\'t ratify the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment the United Nations Committee against Torture recognises that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights. In each of its reports to the UN 1992, 1997 and 2002 the Crown made no mention of survivors complaints or the police investigation into Lake Alice. It wasn\'t until 2010 that the Crown acknowlegded there was "improper treatment" at Lake Alice. In the same year, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN send a please explain letter to the NZ Government. The Govt respond by saying the police act independently and complaints should be made through the Independent Police Complaints Authority. In 2019, the committee found in favour of Lake Alice survivor Paul Zentveld, saying New Zealand had failed to adequately investigate his complaint and failed to provide fair and adequate redress for the abuse he suffered. And then, in 12 May 2022 Malcolm Richards complaint to the committee was also recognised.',
-          style: 'scrolling',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=327'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-x',
-        text: {
-          header: 'Australia',
-          content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
           style: 'scrolling'
         },
         view: 'map',
@@ -2045,6 +1981,93 @@ const data = {
               ]
             }
           }
+        }
+      },
+      {
+        id: 'justice-14',
+        image: {
+          caption: 'Lake Alice Investigation Completed - No Charges Laid.png',
+          src: 'fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
+          style: 'document'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-14',
+        text: {
+          header: '13 - Third Police Investigation 2006 - 2010',
+          content:
+            'Back in New Zealand, Detective Superintendent Malcolm Burgess inherits the investigation from Reid. His plan for a comprehensive investigation is rejected by Assistant Commissioner Peter Marshall and Detective Superintendent Nick Perry as they believe it would take up too many resources. Burgess and Perry decide to focus on Leeks and the misuse of the ECT machine. The allegations against the other staff, and of wider sexual and physical abuse, use of Paraldyhde are not investigated. Again the police fail to speak to the complainants - they only speak with one after the complainant instigated contact and don\'t speak with another who also instigated contact. Again, multiple allegations of sexual assault and rape including that Leeks had raped one of the survivors were dismissed and no interviews were conducted. Without interviewing survivors making a decision about the credibility of their evidence appears deeply flawed but that is exactly what NZ Police did. Staff were interviewed this time but in a "general way" and in regard to Leeks and ECT not the other allegations.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=308'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-15',
+        index: 15,
+        image: {
+          caption:
+            'Operation Lake Alice concluded - criminal charges filed.png',
+          src: 'fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
+          style: 'document'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-15',
+        index: 15,
+        text: {
+          header: '14 - Fourth Police Investigation - 2018 - 2021',
+          content:
+            'In 2017 the National Adult Sexual Assault Team became aware of the Lake Alice file as a result of an Official Information Act request made by an investigative journalist. NZ Police decide to investigate the sexual complaints made by three of the survivors including Malcolm who they had previously dismissed in November 2018 and *when he first reported to them*. The United Nations Committee against Torture released its decision in December 2019 that New Zealand had been in breach of its obligations under the Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment by failing to investigate Mr Zentveld’s complaint. At this point NZ Police decide to launch a wider investigation into all of the Lake Alice allegations.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=316'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-15',
+        index: 15,
+        image: {
+          caption:
+            '12th June 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint against the Crown for a "Lack of prompt and impartial investigation; right to an effective domestic remedy and redress."',
+          src: 'fc-20220628.jpg',
+          style: 'document'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        index: 16,
+        text: {
+          header: '15 - United Nations Committee Against Torture',
+          content:
+            'Although New Zealand didn\'t ratify the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment the United Nations Committee against Torture recognises that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights. In each of its reports to the UN 1992, 1997 and 2002 the Crown made no mention of survivors complaints or the police investigation into Lake Alice. It wasn\'t until 2010 that the Crown acknowlegded there was "improper treatment" at Lake Alice. In the same year, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN send a please explain letter to the NZ Government. The Govt respond by saying the police act independently and complaints should be made through the Independent Police Complaints Authority. In 2019, the committee found in favour of Lake Alice survivor Paul Zentveld, saying New Zealand had failed to adequately investigate his complaint and failed to provide fair and adequate redress for the abuse he suffered. And then, in 12 May 2022 Malcolm Richards complaint to the committee was also recognised.',
+          style: 'scrolling',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
         }
       }
     ]

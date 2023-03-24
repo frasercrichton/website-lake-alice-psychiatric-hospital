@@ -10,13 +10,19 @@ const TextBox = ({
   textBoxContainerStyle,
   isAnimated = false
 }) => {
+  
+  const className = isAnimated ? 'text-box-animated' : 'text-box'
+
   return (
     <div className='text-box-container' style={textBoxContainerStyle}>
-      <div className='text-box' style={textBoxStyle}>
+      <div className={className} style={textBoxStyle}>
         {/* <div>{text.header}</div> */}
         <div className='text-box-content'>
           {isAnimated && (
-            <AnimatedText text={text.content} stepProgress={pageScrollProgress} />
+            <AnimatedText
+              text={text.content}
+              stepProgress={pageScrollProgress}
+            />
           )}
           {!isAnimated && text.content}
         </div>
