@@ -2079,37 +2079,30 @@ const data = {
         index: 1,
         text: {
           content: 'About'
-        }
-      },
-      {
-        id: 'about-introduction-2',
-        index: 1,
-        text: {
-          content: 'About'
-        }
-      },
-      {
-        id: 'about-1',
-        index: 2,
-        text: {
-          content: 'About'
-        },
-        view: 'markdown',
-        content: {
-          file: 'about'
-        }
-      },
-      {
-        id: 'about-1',
-        index: 3,
-        text: {
-          content: 'About'
         },
         view: 'markdown',
         content: {
           file: 'about'
         }
       }
+      // {
+      //   id: 'about-introduction-2',
+      //   index: 1,
+      //   text: {
+      //     content: 'About'
+      //   }
+      // },
+      // {
+      //   id: 'about-1',
+      //   index: 2,
+      //   text: {
+      //     content: 'About'
+      //   },
+      //   view: 'markdown',
+      //   content: {
+      //     file: 'about'
+      //   }
+      // }
     ]
   },
   '/': {
