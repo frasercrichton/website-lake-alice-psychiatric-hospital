@@ -5,6 +5,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 450;
+    height: 100px;
+    /* background-color: aqua; */
 }
 
 nav.home h1 {
@@ -20,6 +22,8 @@ nav.home h1 {
 }
 
 nav.main-navigation {
+    height: 50px;
+
     font-size: 19px;
     width: 100%;
     display: grid;

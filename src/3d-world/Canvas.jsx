@@ -42,8 +42,8 @@ const CanvasWrapper = ({
           outputEncoding: defaultOutputEncoding,
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.5,
-          shadowMap: { autoUpdate: false, needsUpdate: true } // static scene where lights don't move so no need to update
-          // sizes: sizes
+          shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move so no need to update
+          sizes: sizes
         }}
       >
         <Experience

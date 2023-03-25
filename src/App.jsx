@@ -209,12 +209,14 @@ function App () {
         )}
 
         {pageInView.image && pageInView.image?.style === 'static' && (
-          <Image
-            caption={pageInView.image.caption}
-            url={imageURL}
-            style={imageContainerStyle}
-            source={pageInView.image.source}
-          />
+          <div className='static-image-container'>
+            <Image
+              caption={pageInView.image.caption}
+              url={imageURL}
+              style={imageContainerStyle}
+              source={pageInView.image.source}
+            />
+          </div>
         )}
 
         <Routes>
