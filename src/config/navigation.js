@@ -2,12 +2,6 @@ const urls = [
   {
     text: 'Introduction',
     url: '/introduction',
-    next: '/malcolm'
-  },
-
-  {
-    text: 'Malcolm',
-    url: '/malcolm',
     next: '/context'
   },
   {
@@ -18,8 +12,15 @@ const urls = [
   {
     text: 'Pathways',
     url: '/pathways',
+    next: '/malcolm'
+  },
+
+  {
+    text: 'Malcolm',
+    url: '/malcolm',
     next: '/justice'
   },
+
   {
     text: 'Justice',
     url: '/justice',

@@ -142,8 +142,8 @@ const Camera = ({
           minDistance={10}
           // maxZoom={1}
           // zoom
-          autoRotate
-          autoRotateSpeed={0.3}
+          // autoRotate
+          // autoRotateSpeed={0.3}
           // enableDamping
           // dampingFactor={0.01}
           // maxAzimuthAngle={Math.PI / 4}
