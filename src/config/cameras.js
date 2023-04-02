@@ -139,7 +139,6 @@ const cameras = {
     fov: 75,
     near: 10,
     far: 10000,
-    isRotating: true
   },
   theLake: {
     name: 'The Lake',

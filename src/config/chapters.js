@@ -88,6 +88,13 @@ const data = {
       },
       {
         id: 'intro-3',
+        image: {
+          src: 'site-animated.gif',
+          style: 'static'
+        }
+      },
+      {
+        id: 'intro-4',
         text: {
           content:
             'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
@@ -99,7 +106,7 @@ const data = {
         }
       },
       {
-        id: 'intro-4',
+        id: 'intro-5',
         text: {
           content:
             'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
@@ -111,7 +118,7 @@ const data = {
         }
       },
       {
-        id: 'intro-5',
+        id: 'intro-6',
         text: {
           content:
             "In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors' complaints of abuse.",
@@ -123,7 +130,7 @@ const data = {
         }
       },
       {
-        id: 'intro-6',
+        id: 'intro-7',
         text: {
           content:
             'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
@@ -135,7 +142,7 @@ const data = {
         }
       },
       {
-        id: 'intro-7',
+        id: 'intro-8',
         view: '3d',
         text: {
           content:
@@ -143,15 +150,6 @@ const data = {
           style: 'animated'
         },
         camera: cameras.default
-        // camera: {
-        //   name: 'default',
-        //   position: [160, 460, -220],
-        //   rotation: [-1.7, 0, 0],
-        //   aspect: 1,
-        //   fov: 80,
-        //   near: 10,
-        //   far: 10000
-        // }
       }
     ]
   },
@@ -269,19 +267,6 @@ const data = {
         camera: cameras.boysVilla
       },
       {
-        id: 'malcolm-5',
-        image: {
-          src: 'fc-20130307-00001-2013P_Pi293_006718.jpg',
-          style: 'scrolling',
-          caption:
-            'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
-          source:
-            'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
-        },
-        view: '3d',
-        camera: cameras.boysVilla
-      },
-      {
         id: 'malcolm-6',
         view: '3d',
         camera: cameras.boysVilla
@@ -336,7 +321,7 @@ const data = {
       },
 
       {
-        id: 'malcolm-11',
+        id: 'malcolm-10',
         text: {
           header: '7 - ECT',
           content:
@@ -347,7 +332,7 @@ const data = {
         camera: { ...cameras.adultVilla }
       },
       {
-        id: 'malcolm-1x',
+        id: 'malcolm-11',
         image: {
           src: 'large_1980_1389.jpg',
           captions: 'ECT machine.',
@@ -384,14 +369,14 @@ const data = {
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-14',
         view: '3d',
         camera: {
           ...cameras.adultVilla
         }
       },
       {
-        id: 'malcolm-14',
+        id: 'malcolm-15',
         text: {
           header: '9 - Escape',
           content:
@@ -434,7 +419,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-15',
+        id: 'malcolm-16',
         text: {
           header: '10 - Consequences',
           content:
@@ -445,7 +430,7 @@ const data = {
         camera: { ...cameras.boysVilla }
       },
       {
-        id: 'malcolm-16',
+        id: 'malcolm-17',
         text: {
           header: '11 - Afterwards',
           content:
@@ -454,36 +439,6 @@ const data = {
         },
         view: '3d',
         camera: { ...cameras.adultVilla }
-      },
-      {
-        id: 'malcolm-17',
-        text: {
-          header: '13 - Runaway',
-          content: 'Waipawa',
-          style: 'scrolling'
-        },
-        view: 'map',
-        map: {
-          ...northIsland,
-          visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
-            lines: {
-              points: [
-                {
-                  label: 'Waipawa',
-                  latitude: -39.9182277,
-                  longitude: 176.4211438
-                }
-              ]
-            }
-          }
-        }
       },
       {
         id: 'malcolm-18',
@@ -637,7 +592,7 @@ const data = {
         id: 'malcolm-22',
         text: {
           header: '12 - Welsford',
-          content: 'Moved to Welsford and found more dairy farming work.',
+          content: 'He then moved to Welsford and found more dairy farming work.',
           style: 'scrolling'
         },
         view: 'map',
@@ -683,7 +638,7 @@ const data = {
         id: 'malcolm-23',
         text: {
           header: '19 - Kaiwaka',
-          content: 'Moved to Kaiwaka and worked on a dairy farm.',
+          content: 'From Welsford to Kaiwaka and worked on a dairy farm.',
           style: 'scrolling'
         },
         view: 'map',
@@ -785,70 +740,11 @@ const data = {
         }
       },
       {
-        id: 'malcolm-25',
-        text: {
-          header: '12 - Runaway',
-          content: '',
-          style: 'scrolling'
-        },
-        view: 'map',
-        map: {
-          ...northIsland,
-          visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
-            lines: {
-              points: [
-                {
-                  latitude: -39.9182277,
-                  longitude: 176.4211438
-                },
-                {
-                  latitude: -40.0309529,
-                  longitude: 176.5278439
-                },
-                {
-                  latitude: -40.7491005,
-                  longitude: 176.1375833
-                },
-                {
-                  latitude: -39.4794044,
-                  longitude: 176.7985016
-                },
-                {
-                  latitude: -36.2858116,
-                  longitude: 174.4447237
-                },
-                {
-                  latitude: -36.2160784,
-                  longitude: 174.3493232
-                },
-                {
-                  latitude: -36.7494681,
-                  longitude: 174.5825004
-                },
-                {
-                  label:
-                    'Auckland Hospital (including the Connelly Unit and Te Whetu Tawera)',
-                  latitude: -36.8605068,
-                  longitude: 174.7674006
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
         id: 'malcolm-26',
         text: {
           header:
             '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
-          content: 'The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+          content: 'In Auckland Malcolm PTSD from his experience at Lake Alice saw Malcolm admitted to the Connelly mental health unit. After this Malcolm lived on the street.',
           style: 'scrolling'
         },
         view: 'map',
@@ -907,7 +803,7 @@ const data = {
         id: 'malcolm-27',
         text: {
           header: '23 - South Auckland',
-          content: 'South Auckland',
+          content: 'In South Auckland Malcolm found work in a butcher\'s shop.',
           style: 'scrolling'
         },
         view: 'map',
@@ -969,7 +865,7 @@ const data = {
         id: 'malcolm-28',
         text: {
           header: '24 - Napier',
-          content: 'Napier',
+          content: 'Malcolm then moved to Napier and worked in several manual labouring jobs.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1035,7 +931,7 @@ const data = {
         id: 'malcolm-29',
         text: {
           header: '25 - Hastings',
-          content: 'Hastings. ',
+          content: 'Finally Malcolm moved to Hastings where he worked in forestry.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1111,7 +1007,7 @@ const data = {
           content: 'Context'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera }
       },
       {
         id: 'context-introduction-2',
@@ -1119,7 +1015,7 @@ const data = {
           content: 'Context'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera }
       },
       {
         id: 'context-3',
@@ -1131,7 +1027,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera }
       },
       {
         id: 'context-4',
@@ -1149,9 +1045,40 @@ const data = {
       {
         id: 'context-5',
         text: {
+          header: '2 - Adult Psychiatric Facility',
+          content:
+            'From 1971, Dr Selwyn Leeks accepted responsibility as psychiatric consultant for all patients at Lake Alice under the age of 17. He also worked at two other child health clinics, one in Whanganui and another at Palmerston North Hospital.',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.twelveBedVillasWide }
+      },
+      {
+        id: 'context-6',
+        image: {
+          src: 'fc-20130307-00001-2013P_Pi293_006718.jpg',
+          style: 'scrolling',
+          caption:
+            'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
+          source:
+            'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
+        },
+        view: '3d',
+        camera: cameras.twelveBedVillasWide
+      },
+      {
+        id: 'context-7',
+        view: '3d',
+        camera: { ...cameras.twelveBedVillasWide }
+      },
+
+      {
+        id: 'context-8',
+        text: {
           header: "4 - 12-bed Villas - Children's unit",
           content:
-            'The Lake Alice Child and Adolescent Unit was set up in 1972  in a 12-bed villa for boys which was known as villa 10. A second 12-bed villa for boys was added later in 1972 which was known as villa 11. As the number of children at Lake Alice grew these units were superseded by the larger 36-bed villas.',
+            'The Lake Alice Child and Adolescent Unit was set up in 1972 in a 12-bed villa for boys which was known as villa 10. A second 12-bed villa for boys was added later in 1972 which was known as villa 11.',
           style: 'scrolling',
           source: 'Redacted-Lake-Alice-Report.pdf#page=62'
         },
@@ -1159,7 +1086,7 @@ const data = {
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-6',
+        id: 'context-9',
         image: {
           src: 'fc-20230321-00001-R26288977-0001.jpg',
           caption: 'The original twelve bed villas Archway Item ID: R24730915 ',
@@ -1172,24 +1099,24 @@ const data = {
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-7',
+        id: 'context-10',
         view: '3d',
         camera: { ...cameras.twelveBedVilla }
       },
       {
-        id: 'context-8',
-        text: {
-          header: 'Eleven Bed Villa Roof',
-          content: 'Eleven Bed Villa .',
-          style: 'scrolling'
-        },
+        id: 'context-11',
+        // text: {
+        //   header: 'Eleven Bed Villa Roof',
+        //   content: 'Eleven Bed Villa .',
+        //   style: 'scrolling'
+        // },
         view: '3d',
         camera: {
           ...cameras.twelveBedVillaAbove
         }
       },
       {
-        id: 'context-9',
+        id: 'context-12',
         text: {
           header: 'Eleven Bed Villa Top Floor',
           content:
@@ -1203,7 +1130,7 @@ const data = {
         }
       },
       {
-        id: 'context-10',
+        id: 'context-13',
         text: {
           header: 'Eleven Bed Villa Ground Floor',
           content:
@@ -1225,7 +1152,7 @@ const data = {
         }
       },
       {
-        id: 'context-11',
+        id: 'context-14',
         text: {
           header: '6 - Girls Unit',
           content:
@@ -1249,40 +1176,10 @@ const data = {
         }
       },
       {
-        id: 'context-12',
-        text: {
-          header: '8 - Maximum Security Villa',
-          content:
-            "The Maximum Security villa opened in 1965. Otherwise known as the National Security Unit it was Aotearoa's only official psychiatric security institution. It was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985. The unit was administered separately to Lake Alice, but a significant number of children were transferred to the villa as punishment for defiant behaviour.",
-          source: 'Redacted-Lake-Alice-Report.pdf#page=112',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.maximumSecurity }
-      },
-      {
-        id: 'context-13',
-        image: {
-          src: 'fc-20230314-00003-R26288153-0001.jpg',
-          caption:
-            'Maximum security block at Lake Alice Psychiatric Hospital Marton (Photographer: Mr Cleal).',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
-          style: 'scrolling'
-        },
-
-        view: '3d',
-        camera: { ...cameras.maximumSecurityClose }
-      },
-      {
-        id: 'context-14',
-        view: '3d',
-        camera: { ...cameras.maximumSecurityClose }
-      },
-      {
         id: 'context-15',
         text: {
           content:
-            "The 36-bed villas opened in 1975 replacing the smaller 12-bed units. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
+            "As the number of children at Lake Alice grew the 11-bed units were superseded by the larger 36-bed villas. The 36-bed villas opened in 1975. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
           source: 'Redacted-Lake-Alice-Report.pdf#page=62',
           style: 'scrolling'
         },
@@ -1347,6 +1244,36 @@ const data = {
       {
         id: 'context-19',
         text: {
+          header: '8 - Maximum Security Villa',
+          content:
+            "The Maximum Security villa opened in 1965. Otherwise known as the National Security Unit it was Aotearoa's only official psychiatric security institution. It was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985. The unit was administered separately to Lake Alice, but a significant number of children were transferred to the villa as punishment for defiant behaviour.",
+          source: 'Redacted-Lake-Alice-Report.pdf#page=112',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.maximumSecurity }
+      },
+      {
+        id: 'context-20',
+        image: {
+          src: 'fc-20230314-00003-R26288153-0001.jpg',
+          caption:
+            'Maximum security block at Lake Alice Psychiatric Hospital Marton (Photographer: Mr Cleal).',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
+          style: 'scrolling'
+        },
+
+        view: '3d',
+        camera: { ...cameras.maximumSecurityClose }
+      },
+      {
+        id: 'context-21',
+        view: '3d',
+        camera: { ...cameras.maximumSecurityClose }
+      },
+      {
+        id: 'context-22',
+        text: {
           header: '9 - Staff on Site',
           content:
             'Many of the staff who worked at Lake Alice lived on site including Selwyn Leeks.',
@@ -1358,7 +1285,7 @@ const data = {
         }
       },
       {
-        id: 'context-20',
+        id: 'context-23',
         text: {
           header: '7 - Adults and Children',
           content:
@@ -1380,7 +1307,7 @@ const data = {
         }
       },
       {
-        id: 'context-21',
+        id: 'context-24',
         text: {
           header: '9 - Torture',
           content:
@@ -1393,7 +1320,7 @@ const data = {
         }
       },
       {
-        id: 'context-22',
+        id: 'context-25',
         text: {
           header: '10 - Demolition',
           content:
@@ -1543,60 +1470,13 @@ const data = {
         text: {
           header: 'Kohitere',
           content:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus error blanditiis minus. Perspiciatis dignissimos earum mollitia quasi placeat quaerat itaque dolore odio veniam, cupiditate nobis. Optio culpa minus neque porro?',
+            'Kohitere Boy’s Training Centre was part of a network of National State Care facilities. Situated several miles outside of Levin this remote facility included a secure solitary cell block. Kohitere held over 100 boys at one point and was notorious for physical and sexual abuse.',
           style: 'scrolling'
         },
         image: {
           src: 'fc-20190219-00006-HP5-4009 (2).jpg',
-          caption: 'Kohitere [Fraser Crichton]',
           style: 'static'
         }
-        // view: 'map',
-        // map: {
-        //   ...hubLocation,
-        //   visibleMapLayers: {
-        //     majorPoints: [
-        //       {
-        //         label: 'Lake Alice',
-        //         latitude: -40.1254336,
-        //         longitude: 175.3369864
-        //       }
-        //     ],
-        //     minorPoints: {
-        //       colour: '#ff0000',
-        //       points: [...stateCareFacilities]
-        //     },
-        //     lines: {
-        //       target: {
-        //         // label: 'Lake Alice',
-        //         latitude: -40.1254336,
-        //         longitude: 175.3369864
-        //       },
-        //       points: [
-        //         {
-        //           // "facility": "Kohitere Boy's Training Centre (1/1/1965)",
-        //           latitude: -40.6310718,
-        //           longitude: 175.2549856
-        //         },
-        //         {
-        //           // "facility": "Hokio Beach School",
-        //           latitude: -40.593763,
-        //           longitude: 175.191754
-        //         },
-        //         {
-        //           // "facility": "Holdsworth (Whanganui)",
-        //           latitude: -39.9111424,
-        //           longitude: 175.0276511
-        //         }
-        //       ]
-        //     },
-        //     labels: [
-        //       'Hokio Beach School',
-        //       'Holdsworth (Whanganui)',
-        //       "Kohitere Boy's Training Centre (1/1/1965)"
-        //     ]
-        //   }
-        // }
       },
 
       {
@@ -1612,6 +1492,13 @@ const data = {
         map: {
           ...national,
           visibleMapLayers: {
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
             minorPoints: {
               colour: '#ff0000',
               points: [...stateCareFacilities]
@@ -1630,10 +1517,16 @@ const data = {
           style: 'scrolling'
         },
         view: 'map',
-
         map: {
           ...national,
           visibleMapLayers: {
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
             minorPoints: {
               colour: '#0000ff',
               points: [...psychiatricFacilities]
@@ -1651,10 +1544,8 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=66',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          ...national
-        }
+        view: '3d',
+        camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
         id: 'pathways-11',
@@ -1665,11 +1556,8 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
-
-        view: 'map',
-        map: {
-          ...national
-        }
+        view: '3d',
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'pathways-12',
@@ -1680,17 +1568,8 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=74',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-40.753499, 173.821564],
-            northEast: [-39.493444, 176.855164]
-          }
-        }
+        view: '3d',
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'pathways-13',
@@ -1701,10 +1580,8 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=73',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          ...national
-        }
+        view: '3d',
+        camera: { ...cameras.boysVilla }
       },
       {
         id: 'pathways-14',
@@ -1714,10 +1591,8 @@ const data = {
             'Lake Alice had a profound life-long negative impact on the children that it was meant to help. Survivors have experienced severe mental health issues like depression and anxiety. Memory loss from ECT. Some continue to be on medication to help with PTSD. Some have committed suicide.  Survivors have experienced difficulty with relationships, education, employment and some have been incarcerated. The impact of intergenerational trauma on whānau across Aotearoa is seen in the negative statistics of over representation that are so often shared today today of incarceration and child abuse. Survivors have received minimal support from the State and yet many survivors have endured and shown incredible resiliency fighting for decades for redress and accountability.',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          ...national
-        }
+        view: '3d',
+        camera: { ...cameras.boysVilla }
       }
     ]
   },

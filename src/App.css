@@ -10,7 +10,7 @@
 
 }
 
-.static-image-container{
+.static-image-container {
   position: fixed;
   top: 50px;
   left: 0;
@@ -19,6 +19,17 @@
 a {
   color: #ffffff;
   text-decoration: none;
+}
+
+.container-3d {
+  visibility: hidden;
+  opacity: 0
+}
+
+.active {
+  transition: visibility 1s, opacity 1s linear;
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes fadeIn {
