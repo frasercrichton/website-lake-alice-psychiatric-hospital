@@ -125,31 +125,23 @@ function App () {
 
   const handleCoverClick = () => {
     navigate('/introduction')
-
     setLoading(!isLoading)
     setCoverActive(!coverActive)
   }
 
   const imageContainerStyle = {
     position: 'fixed',
-    // width: '100vw',
-    // height: '100vh',
     display: 'flex'
-    // paddingTop: '25px'
   }
 
   const textBoxContainerStyle = {
     position: 'fixed',
-    // alignItems: 'flex-end',
     justifyContent: 'center',
-    fontSize: '50px',
-    opacity: 1
+    fontSize: '50px'
   }
 
   const textBoxStyle = {
-    margin: '50px',
-    opacity: 1
-    // marginTop: '550px'
+    margin: '50px'
   }
 
   const canvasClassName =

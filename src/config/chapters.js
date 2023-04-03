@@ -91,64 +91,94 @@ const data = {
         image: {
           src: 'site-animated.gif',
           style: 'static'
-        }
+        },
       },
       {
         id: 'intro-4',
         text: {
           content:
-            'In the 1970s, the Lake Alice Child and Adolescent Unit was the hub of a system of State care across Aotearoa New Zealand that relied on physical, psychological and sexual abuse for control.',
+            'The United Nations Committee against Torture (UNCAT) found New Zealand in breach of the Convention Against Torture in 2019.',
           style: 'animated'
         },
-        image: {
-          src: 'site-animated.gif',
-          style: 'static'
-        }
+        view: '3d',
+        camera: cameras.default
       },
       {
         id: 'intro-5',
         text: {
           content:
-            'At Lake Alice Electroconvulsive therapy (ECT) and Paraldehyde injections were used as a form of aversion therapy.',
+            'New Zealand had failed to ensure a prompt and impartial investigation into allegations of systematic physical, emotional and sexual child abuse at the Lake Alice Child and Adolescent Unit.',
           style: 'animated'
         },
-        image: {
-          src: 'site-animated.gif',
-          style: 'static'
-        }
+        view: '3d',
+        camera: cameras.default
       },
       {
         id: 'intro-6',
         text: {
           content:
-            "In 2019, the United Nations recognised this as torture against children and censored the New Zealand government for its failure to respond to survivors' complaints of abuse.",
+            "The Child and Adolescent Unit opened in 1972 and closed in 1978 after allegations that Electroconvulsive therapy (ECT) and Paraldehyde 'aversion therapy' were in reality used as a form of torture to punish children with behavioural issues  in the unit.",
           style: 'animated'
         },
-        image: {
-          src: 'site-animated.gif',
-          style: 'static'
-        }
+        view: '3d',
+        camera: cameras.default
       },
       {
         id: 'intro-7',
         text: {
           content:
-            'The director of Lake Alice, Dr Selwyn Leeks, has never been held accountable and nor were any staff.',
+            'After civil cases were brought against the Crown minimal compensation was paid to a group of ninety-five survivors in 2001. Legal fees swallowed up the majority of this payment.',
           style: 'animated'
         },
-        image: {
-          src: 'site-animated.gif',
-          style: 'static'
-        }
+        view: '3d',
+        camera: cameras.default
       },
       {
         id: 'intro-8',
-        view: '3d',
         text: {
           content:
-            'Fifty years on justice remains outstanding for the survivors of Lake Alice.',
+            "Three of New Zealand's initial periodic reports to UNCAT deliberately excluded all mention of Lake Alice and the survivor's allegations or torture.",
           style: 'animated'
         },
+        view: '3d',
+        camera: cameras.default
+      },
+      {
+        id: 'intro-9',
+        text: {
+          content:
+            'Two survivors of Lake Alice have since had their complaints recognised by the United Nations - Paul Zentveld in 2020 and Malcolm Richards in 2022.',
+          style: 'animated'
+        },
+        view: '3d',
+        camera: cameras.default
+      },
+      {
+        id: 'intro-9',
+        text: {
+          content:
+            'Only in 2021 was a former member of staff charged by the police.',
+          style: 'animated'
+        },
+        view: '3d',
+        camera: cameras.default
+      },
+      {
+        id: 'intro-9',
+        text: {
+          content: 'No one has ever been convicted.',
+          style: 'animated'
+        },
+        view: '3d',
+        camera: cameras.default
+      },
+      {
+        id: 'intro-9',
+        text: {
+          content: 'New Zealand is still in breach of the convention.',
+          style: 'animated'
+        },
+        view: '3d',
         camera: cameras.default
       }
     ]
@@ -592,7 +622,8 @@ const data = {
         id: 'malcolm-22',
         text: {
           header: '12 - Welsford',
-          content: 'He then moved to Welsford and found more dairy farming work.',
+          content:
+            'He then moved to Welsford and found more dairy farming work.',
           style: 'scrolling'
         },
         view: 'map',
@@ -744,7 +775,8 @@ const data = {
         text: {
           header:
             '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
-          content: 'In Auckland Malcolm PTSD from his experience at Lake Alice saw Malcolm admitted to the Connelly mental health unit. After this Malcolm lived on the street.',
+          content:
+            'In Auckland Malcolm PTSD from his experience at Lake Alice saw Malcolm admitted to the Connelly mental health unit. After this Malcolm lived on the street.',
           style: 'scrolling'
         },
         view: 'map',
@@ -803,7 +835,7 @@ const data = {
         id: 'malcolm-27',
         text: {
           header: '23 - South Auckland',
-          content: 'In South Auckland Malcolm found work in a butcher\'s shop.',
+          content: "In South Auckland Malcolm found work in a butcher's shop.",
           style: 'scrolling'
         },
         view: 'map',
@@ -865,7 +897,8 @@ const data = {
         id: 'malcolm-28',
         text: {
           header: '24 - Napier',
-          content: 'Malcolm then moved to Napier and worked in several manual labouring jobs.',
+          content:
+            'Malcolm then moved to Napier and worked in several manual labouring jobs.',
           style: 'scrolling'
         },
         view: 'map',
@@ -931,7 +964,8 @@ const data = {
         id: 'malcolm-29',
         text: {
           header: '25 - Hastings',
-          content: 'Finally Malcolm moved to Hastings where he worked in forestry.',
+          content:
+            'Finally Malcolm moved to Hastings where he worked in forestry.',
           style: 'scrolling'
         },
         view: 'map',

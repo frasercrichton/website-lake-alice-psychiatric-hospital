@@ -18,7 +18,7 @@ const AnimatedText = ({ text, stepProgress }) => {
         <span
           className='letter'
           key={`text-${index}`}
-          style={{ '--percentage': 0, fontSize: 'large' }}
+          style={{ '--percentage': 0 }}
         >
           {char}
         </span>
@@ -28,7 +28,7 @@ const AnimatedText = ({ text, stepProgress }) => {
         <span
           className='letter'
           key={`text-${index}`}
-          style={{ '--percentage': 1 }}
+          style={{ '--percentage': 0.7 }}
         >
           {char}
         </span>
