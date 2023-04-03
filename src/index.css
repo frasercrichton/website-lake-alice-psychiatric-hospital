@@ -14,9 +14,14 @@ body,
   height: 100%;
 }
 
+@font-face {
+  font-family: "Alliance Platt";
+  src: url('fonts/Alliance-PlattRegular-FIX.otf');
+}
+
 body {
   margin: 0;
-  font-family: Alliance Mono, monospace;
+  font-family: "Alliance Platt", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
