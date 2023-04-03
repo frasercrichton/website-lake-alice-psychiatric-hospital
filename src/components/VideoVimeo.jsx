@@ -1,15 +1,10 @@
-import ReactPlayer from 'react-player'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './VideoVimeo.css'
 import Loader from './Loader.jsx'
-// import '~video-react/dist/video-react.css'
-// import myVideo from 'https://vimeo.com/689154638'
 
 const VideoVimeo = ({ id, caption }) => {
   const [isLoading, setLoading] = useState(true)
   const playerStyle = {
-    // position: 'relative',
-    // display: 'block',
     width: '95%',
     height: '95%'
   }
@@ -29,7 +24,7 @@ const VideoVimeo = ({ id, caption }) => {
           setLoading(!isLoading)
         }}
       ></iframe>
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
     </div>
   )
 }
