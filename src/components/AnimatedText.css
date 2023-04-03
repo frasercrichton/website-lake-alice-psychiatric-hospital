@@ -3,5 +3,5 @@
 }
 
 .letter {
-  opacity: var(--percentage);
+  opacity: calc(1 * var(--percentage));
 }
