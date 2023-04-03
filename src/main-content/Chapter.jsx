@@ -60,10 +60,10 @@ const Chapter = ({
       <Scrollama
         onStepEnter={onStepEnter}
         onStepExit={onStepExit}
-        progress
         onStepProgress={onStepProgress}
+        progress
         offset='1'
-        debug
+        // debug
       >
         {chapterInView.pages.map((page, index) => {
           return (

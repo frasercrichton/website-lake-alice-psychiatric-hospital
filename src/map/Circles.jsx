@@ -6,9 +6,9 @@ import { LatLng } from 'leaflet'
 const Circles = ({ majorPoints, minorPoints }) => {
   const majorPointStyle = {
     fillColor: '#ffffff',
-    radius: '25'
-    // stroke: true,
-    // strokeColor: '#ff0000'
+    radius: '10',
+    stroke: true,
+    strokeColor: '#ededed'
   }
   const minorPointStyle = {
     fillColor: minorPoints?.colour ? minorPoints.colour : '#ffffff',

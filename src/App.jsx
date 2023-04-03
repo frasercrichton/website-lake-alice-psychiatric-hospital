@@ -48,7 +48,7 @@ function App () {
   const [facility, setFacility] = useState('')
   const [pageCamera, setPageCamera] = useState(null)
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
-  const [isRotating, setIsRotating] = useState(true)
+  const [isRotating, setIsRotating] = useState(false)
   const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
 
@@ -112,7 +112,7 @@ function App () {
         setPageCamera(pageInView.camera)
       }
 
-      pageInView?.camera?.isRotating
+      pageInView?.camera?.isRotating === true
         ? setIsRotating(true)
         : setIsRotating(false)
       setDisabledMeshes(pageInView?.disable)
@@ -152,6 +152,10 @@ function App () {
     // marginTop: '550px'
   }
 
+  const canvasClassName =
+    pageInView?.view === '3d'
+      ? `container-${pageInView.view} active`
+      : 'container-3d'
   return (
     <div className='site-container'>
       <BrowserView>
@@ -182,16 +186,17 @@ function App () {
               isAnimated={pageInView?.text.style === 'animated'}
             />
           )}
-        <Canvas
-          key='canvas'
-          pageCamera={pageCamera}
-          cameraMoveDuration={cameraMoveDuration}
-          isRotating={isRotating}
-          labels={['label']}
-          pageScrollProgress={pageScrollProgress}
-          disabledMeshes={disabledMeshes}
-        />
-
+        <div className={canvasClassName}>
+          <Canvas
+            key='canvas'
+            pageCamera={pageCamera}
+            cameraMoveDuration={cameraMoveDuration}
+            isRotating={isRotating}
+            labels={['label']}
+            pageScrollProgress={pageScrollProgress}
+            disabledMeshes={disabledMeshes}
+          />
+        </div>
         {pageInView.view === 'map' && (
           <GeographicMap
             pageInView={pageInView}
@@ -200,7 +205,6 @@ function App () {
             pageScrollProgress={pageScrollProgress}
           />
         )}
-
         {pageInView.video !== undefined && (
           <VideoVimeo
             id={pageInView.video.id}
@@ -218,7 +222,6 @@ function App () {
             />
           </div>
         )}
-
         <Routes>
           <Route
             key={'route-default'}
