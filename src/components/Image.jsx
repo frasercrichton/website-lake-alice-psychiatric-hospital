@@ -21,7 +21,7 @@ const Image = ({ caption = '', imageAction, id, url, source, style }) => {
         {caption !== '' && (
           <figcaption className='caption'>{caption}</figcaption>
         )}
-        {!isLoaded && <Loader />}
+        {/* {!isLoaded && <Loader />} */}
         {source && (
           <div className='source'>
             <a target='_blank' rel='noreferrer' href={source}>
