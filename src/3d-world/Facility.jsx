@@ -75,6 +75,12 @@ const Facility = ({ node, disabledMeshes, label }) => {
       flatShading: true,
       roughness: 0.4000000059604645
     }),
+    ExteriorWalls: new THREE.MeshStandardMaterial({
+      name: 'default',
+      color: '#d2c1cd',
+      side: THREE.DoubleSide,
+      roughness: 0.4000000059604645
+    }),
     transparent: new THREE.MeshStandardMaterial({
       name: 'transparent',
       color: 0x00ff00,
