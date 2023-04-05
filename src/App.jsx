@@ -7,8 +7,7 @@ import Header from './Header.jsx'
 import MarkdownPage from './main-content/MarkdownPage.jsx'
 import Cover from './Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
-import angleToRadians from './3d-world/angleHelper.jsx'
-import urls from './config/navigation.js'
+import headerNavUrls from './config/navigation.js'
 import Loader from './components/Loader.jsx'
 import chapters from './config/chapters.js'
 import GeographicMap from './map/GeographicMap.jsx'
@@ -19,7 +18,6 @@ import Image from './components/Image.jsx'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
 import TextBox from './components/TextBox'
 import MobileCover from './main-content/MobileView'
-import { animated } from '@react-spring/web'
 const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
@@ -52,12 +50,58 @@ function App () {
   const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
 
-  const [content, setContent] = useState('')
-  const [coverActive, setCoverActive] = useState(true)
+  const [isCoverActive, setCoverActive] = useState(true)
 
   const isLevaHidden = hash !== '#debug'
 
+  // React Router
   const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    // Testimony is not included in the nav bar (probably should but needs special handling)
+    if (location.pathname === '/testimony') {
+      setCoverActive(false)
+      setChapterInView(chapters[location.pathname])
+      setPageInView(chapters[location.pathname].pages[0])
+      setHeaderScrollProgress(0)
+    }
+
+    // only update the page if the URL path is recognised
+    // this also supports reloading the page url
+    if (headerNavUrls.map(item => item.url).includes(location.pathname)) {
+      setCoverActive(false)
+      setChapterInView(chapters[location.pathname])
+      setPageInView(chapters[location.pathname].pages[0])
+      setHeaderScrollProgress(0)
+      setActiveChapter(location.pathname)
+    }
+  }, [location])
+
+  useEffect(() => {
+    // -1 to account for the double 'introduction' pages
+    const sectionTotalCount = chapterInView.pages.length - 1
+    const sectionCurrentIndex = pageInView.index
+    // if 0 no progress
+    // if 1 > percentage
+    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
+
+    if (pageInView.view === '3d') {
+      // Only update the camera if it's a new camera
+      if (pageInView?.camera?.name !== pageCamera?.name) {
+        setPageCamera(pageInView.camera)
+      }
+
+      pageInView?.camera?.isRotating === true
+        ? setIsRotating(true)
+        : setIsRotating(false)
+      setDisabledMeshes(pageInView?.disable)
+      // hacky way to avoid camera bounce after into
+      if (pageInView.camera?.duration !== cameraMoveDuration) {
+        setCameraMoveDuration(pageInView.camera?.duration)
+      }
+    }
+  }, [pageInView])
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
@@ -71,14 +115,6 @@ function App () {
     navigate(name)
     setHasPageReset(true)
   }
-
-  const location = useLocation()
-
-  useEffect(() => {
-    setChapterInView(chapters[location.pathname])
-    setPageInView(chapters[location.pathname].pages[0])
-    setHeaderScrollProgress(0)
-  }, [location])
 
   const updateStepProgress = progressCount => {
     setPageScrollProgress(progressCount)
@@ -97,36 +133,9 @@ function App () {
       ? pageInView.map.visibleMapLayers
       : null
 
-  useEffect(() => {
-    // -1 to account for the double 'introduction' pages
-    const sectionTotalCount = chapterInView.pages.length - 1
-    const sectionCurrentIndex = pageInView.index
-    // if 0 no progress
-    // if 1 > percentage
-    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
-
-    if (pageInView.view === '3d') {
-      // Only update the camera if it's a new camera
-
-      if (pageInView?.camera?.name !== pageCamera?.name) {
-        setPageCamera(pageInView.camera)
-      }
-
-      pageInView?.camera?.isRotating === true
-        ? setIsRotating(true)
-        : setIsRotating(false)
-      setDisabledMeshes(pageInView?.disable)
-      // hacky way to avoid camera bounce after into
-      if (pageInView.camera?.duration !== cameraMoveDuration) {
-        setCameraMoveDuration(pageInView.camera?.duration)
-      }
-    }
-  }, [pageInView])
-
   const handleCoverClick = () => {
-    navigate('/introduction')
     setLoading(!isLoading)
-    setCoverActive(!coverActive)
+    setCoverActive(!isCoverActive)
   }
 
   const imageContainerStyle = {
@@ -148,23 +157,23 @@ function App () {
     pageInView?.view === '3d'
       ? `container-${pageInView.view} active`
       : 'container-3d'
+
+  const containerScroll = isCoverActive
+    ? { overflow: 'hidden' }
+    : { overflow: 'scroll' }
+
   return (
-    <div className='site-container'>
+    <div className='site-container' style={containerScroll}>
       <BrowserView>
         <Leva oneLineLabels collapsed hidden={isLevaHidden} />
         <Cover
           key='cover'
-          coverActive={coverActive}
+          coverActive={isCoverActive}
           handleCoverClick={handleCoverClick}
-          setContent={setContent}
         />
         <Header
           scrollProgress={headerScrollProgress}
-          handleClick={setContent}
-          enableClose={content !== ''}
           activeChapter={activeChapter}
-          setActiveChapter={setActiveChapter}
-          setPageInView={setPageInView}
           navigateToChapter={navigateToChapter}
         />
         {pageInView.text &&
@@ -232,7 +241,7 @@ function App () {
               />
             }
           />
-          {urls.map(nav => {
+          {headerNavUrls.map(nav => {
             const element =
               nav.url !== '/about' ? (
                 <Chapter
@@ -247,11 +256,7 @@ function App () {
                   setHasPageReset={setHasPageReset}
                 />
               ) : (
-                <MarkdownPage
-                  key={content}
-                  fileName={pageInView?.content?.file}
-                  setContent={setContent}
-                />
+                <MarkdownPage fileName={pageInView?.content?.file} />
               )
 
             return (
