@@ -65,6 +65,28 @@ const data = {
   },
   '/introduction': {
     pages: [
+      // {
+      //   id: 'context-12',
+      //   text: {
+      //     header: 'Eleven Bed Villa Top Floor',
+      //     content:
+      //       'The first floor of the villa contained two 4-bed dormitories, two single bed rooms, a staff bedroom, toilets and washrooms.',
+      //     style: 'scrolling'
+      //   },
+      //   view: '3d',
+      //   disable: [
+      //     'ElevenBedVillaRoof_20',
+      //     'ElevenBedVillaRoof_20_1',
+      //     'ElevenBedVillaRoof020',
+      //     'ElevenBedVillaRoof020_1',
+      //     'ElevenBedVillaRoof020_20',
+      //     'ElevenBedVillaRoof020_21',
+      //   ],
+      //   camera: {
+      //     ...cameras.twelveBedVillasWide
+      //   }
+      // },
+
       {
         id: 'introduction-introduction-1',
         text: {
@@ -1192,7 +1214,14 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ElevenBedVillaRoof020_', 'ElevenBedVillaRoof020_1'],
+        disable: [
+          'ElevenBedVillaRoof_20',
+          'ElevenBedVillaRoof_20_1',
+          'ElevenBedVillaRoof020',
+          'ElevenBedVillaRoof020_1',
+          'ElevenBedVillaRoof020_20',
+          'ElevenBedVillaRoof020_21'
+        ],
         camera: {
           ...cameras.twelveBedVillaAbove
         }
@@ -1207,8 +1236,13 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof020_',
+          'ElevenBedVillaRoof_20',
+          'ElevenBedVillaRoof_20_1',
+          'ElevenBedVillaRoof020',
           'ElevenBedVillaRoof020_1',
+          'ElevenBedVillaRoof020_20',
+          'ElevenBedVillaRoof020_21',
+
           'ElevenBedVillaFirstFloor020_',
           'ElevenBedVillaFirstFloor020_1',
           'ElevenBedVillaFirstFloor020_2',

@@ -106,6 +106,9 @@ const Facility = ({ node, disabledMeshes, label }) => {
   }
 
   useFrame((state, delta) => {
+    // if (facilityId.includes('20')) {
+    //   console.log('xxxx', facilityId)
+    // }
     if (disabledMeshes && disabledMeshes.includes(facilityId)) {
       disabledMeshes.forEach(element => {
         if (mesh.current.name.includes(element)) {
