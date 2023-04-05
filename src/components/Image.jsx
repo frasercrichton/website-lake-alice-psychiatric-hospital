@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', imageAction, id, url, source, style }) => {
+const Image = ({ caption = '', id, url, source, style }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoading = isLoaded => {
@@ -15,7 +15,6 @@ const Image = ({ caption = '', imageAction, id, url, source, style }) => {
         <img
           src={url}
           alt={caption}
-          onClick={e => imageAction(id)}
           onLoad={e => handleLoading(true)}
         />
         {caption !== '' && (

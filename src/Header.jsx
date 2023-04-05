@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import { useRef } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import urls from './config/navigation.js'
 import './Header.css'
-const Header = ({
-  scrollProgress,
-  activeChapter,
-  setActiveChapter,
-  navigateToChapter
-}) => {
+const Header = ({ scrollProgress, activeChapter, navigateToChapter }) => {
   const links = useRef({})
 
   useEffect(() => {
@@ -32,8 +27,7 @@ const Header = ({
               ref={element => (links.current[nav.url] = element)}
               role='button'
               onClick={e => handleNavigationClick(nav)}
-              // href='#'
-              className={'nav-item'}
+              className='nav-item'
               to={nav.url}
             >
               {nav.text}

@@ -91,7 +91,7 @@ const data = {
         image: {
           src: 'site-animated.gif',
           style: 'static'
-        },
+        }
       },
       {
         id: 'intro-4',
@@ -205,6 +205,16 @@ const data = {
           style: 'static'
         }
       },
+      // {
+      //   id: 'wip-malcolm-16',
+      //   text: {
+      //     header: '10 - Consequences',
+      //     content: 'dorm',
+      //     style: 'scrolling'
+      //   },
+      //   view: '3d',
+      //   camera: { ...cameras.dormitoryVilla }
+      // },
       {
         id: 'malcolm-1',
         text: {
@@ -314,6 +324,7 @@ const data = {
           ...cameras.boysVillaAbove
         }
       },
+
       {
         id: 'malcolm-8',
         image: {
@@ -448,6 +459,8 @@ const data = {
           }
         }
       },
+
+      // dormitoryVilla
       {
         id: 'malcolm-16',
         text: {
@@ -459,6 +472,27 @@ const data = {
         view: '3d',
         camera: { ...cameras.boysVilla }
       },
+      // {
+      //   id: 'wip-malcolm-16',
+      //   text: {
+      //     header: '10 - Consequences',
+      //     content: 'xx',
+      //     style: 'scrolling'
+      //   },
+      //   view: '3d',
+      //   camera: { ...cameras.dormitoryVilla }
+      // },
+      // {
+      //   id: 'wip-malcolm-17',
+      //   text: {
+      //     header: '10 - Consequences',
+      //     content: 'cell',
+      //     style: 'scrolling'
+      //   },
+      //   view: '3d',
+      //   camera: { ...cameras.cellCamera }
+      // },
+
       {
         id: 'malcolm-17',
         text: {
