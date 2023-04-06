@@ -32,18 +32,26 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
 
     // this outputs Blender nodes and camera config to the console for manual cut and paste config updates
     console.log('Cameras ####################################')
-    cameras.forEach(camera => {
-      const cameraConfig = {
-        name: camera.name,
-        position: [camera.position.x, camera.position.y, camera.position.z],
-        rotation: [camera.rotation._x, camera.rotation._y, camera.rotation._z],
-        aspect: camera.aspect,
-        fov: camera.fov,
-        near: camera.near,
-        far: camera.far
-      }
-      console.log(cameraConfig)
-    })
+    cameras
+      .sort(function (a, b) {
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+      })
+      .forEach(camera => {
+        const cameraConfig = {
+          name: camera.name,
+          position: [camera.position.x, camera.position.y, camera.position.z],
+          rotation: [
+            camera.rotation._x,
+            camera.rotation._y,
+            camera.rotation._z
+          ],
+          aspect: camera.aspect,
+          fov: camera.fov,
+          near: camera.near,
+          far: camera.far
+        }
+        console.log(cameraConfig)
+      })
 
     console.log('Nodes ######################################')
     console.log(nodes)
