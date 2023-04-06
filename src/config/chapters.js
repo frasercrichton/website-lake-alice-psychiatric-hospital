@@ -1378,16 +1378,43 @@ const data = {
         text: {
           header: '9 - Staff on Site',
           content:
-            'Many of the staff who worked at Lake Alice lived on site including Selwyn Leeks.',
+            'Many of the staff who worked at Lake Alice lived on site - including Selwyn Leeks. This proximity posed numerous issues not least of which was that it meant whistleblowing was much less likely. Staff housing was located across the site at the North East.',
           style: 'scrolling'
         },
         view: '3d',
         camera: {
-          ...cameras.doctorsVillas
+          ...cameras.staffHousing
+        }
+      },
+
+      {
+        id: 'context-24',
+        text: {
+          header: '9 - Staff on Site',
+          content:
+            'At the south-east of the site.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.staffHousingMain
         }
       },
       {
-        id: 'context-23',
+        id: 'context-25',
+        text: {
+          header: '9 - Staff on Site',
+          content:
+            'Single staff were housed at the south of the site.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.singleStaffVillas
+        }
+      },
+      {
+        id: 'context-26',
         text: {
           header: '7 - Adults and Children',
           content:
@@ -1409,7 +1436,7 @@ const data = {
         }
       },
       {
-        id: 'context-24',
+        id: 'context-27',
         text: {
           header: '9 - Torture',
           content:
@@ -1422,7 +1449,7 @@ const data = {
         }
       },
       {
-        id: 'context-25',
+        id: 'context-28',
         text: {
           header: '10 - Demolition',
           content:

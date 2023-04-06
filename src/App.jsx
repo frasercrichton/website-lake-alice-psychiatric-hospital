@@ -107,7 +107,8 @@ function App () {
 
     if (
       pageInView.id?.includes('introduction') &&
-      location.pathname !== '/testimony'
+      location.pathname !== '/testimony' &&
+      location.pathname !== '/about'
     ) {
       setIntroActive(true)
     } else {
