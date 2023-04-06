@@ -16,6 +16,7 @@ import Stats from 'stats.js'
 import Chapter from './main-content/Chapter.jsx'
 import Image from './components/Image.jsx'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
+import Footer from './main-content/Footer'
 import TextBox from './components/TextBox'
 import MobileCover from './main-content/MobileView'
 const assetUrlHelper = new AssetUrlHelper()
@@ -50,7 +51,9 @@ function App () {
   const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
 
+  // page template
   const [isCoverActive, setCoverActive] = useState(true)
+  const [introActive, setIntroActive] = useState(true)
 
   const isLevaHidden = hash !== '#debug'
 
@@ -101,7 +104,16 @@ function App () {
         setCameraMoveDuration(pageInView.camera?.duration)
       }
     }
-  }, [pageInView])
+
+    if (
+      pageInView.id?.includes('introduction') &&
+      location.pathname !== '/testimony'
+    ) {
+      setIntroActive(true)
+    } else {
+      setIntroActive(false)
+    }
+  }, [pageInView, location])
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
@@ -286,6 +298,8 @@ function App () {
             }
           /> */}
         </Routes>
+
+        <Footer introActive={introActive} />
       </BrowserView>
       <MobileCover />
     </div>
