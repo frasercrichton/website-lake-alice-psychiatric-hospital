@@ -20,15 +20,14 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   }, [pageInView])
 
   const introClassName = introActive
-    ? 'active content-introduction'
+    ? 'content-introduction active'
     : 'content-introduction'
 
   const textBoxStyle = {
     margin: '50px',
     width: '45%'
-
-    // marginTop: '550px'
   }
+  
   return (
     <div key={`content-block-${pageId}`} className='page-content-container'>
       {isIntroduction && (
