@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
+import OSMBuildings from './OSMBuildings.jsx'
 import { useRef } from 'react'
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
 const GLB_LOCATION = 'geography-detailed.glb'
@@ -17,16 +18,12 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
       : (group.current.rotation.y = 0)
   })
 
-  const { nodes, materials } = useLoader(
-    GLTFLoader,
-    GLB_LOCATION,
-    loader => {
-      const dracoLoader = new DRACOLoader()
-      dracoLoader.setDecoderPath('draco/')
-      dracoLoader.setDecoderConfig({ type: 'js' })
-      loader.setDRACOLoader(dracoLoader)
-    }
-  )
+  const { nodes, materials } = useLoader(GLTFLoader, GLB_LOCATION, loader => {
+    const dracoLoader = new DRACOLoader()
+    dracoLoader.setDecoderPath('draco/')
+    dracoLoader.setDecoderConfig({ type: 'js' })
+    loader.setDRACOLoader(dracoLoader)
+  })
 
   if (hash === '#debug') {
     const cameras = Array.from(Object.values(nodes)).filter(element => {
@@ -55,16 +52,27 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
     console.log('############################################')
   }
 
-  const groups = Array.from(Object.values(nodes)).filter(element => {
-    return element.type === 'Group' && element.name !== 'Scene'
+  const groups = Array.from(Object.values(nodes)).filter(node => {
+    return node.type === 'Group' && node.name !== 'Scene'
   })
 
-  const meshes = Array.from(Object.values(nodes)).filter(element => {
+  const meshes = Array.from(Object.values(nodes)).filter(node => {
     // Linked Object Groups have parents that are not the Scene
     return (
-      element.type === 'Mesh' &&
-      element.parent.name === 'Scene' &&
-      element.name !== 'Scene'
+      node.type === 'Mesh' &&
+      node.parent.name === 'Scene' &&
+      node.name !== 'Scene' &&
+      node.material.name !== 'buildings'
+    )
+  })
+
+  const buildings = Array.from(Object.values(nodes)).filter(node => {
+    // Linked Object Groups have parents that are not the Scene
+    return (
+      node.type === 'Mesh' &&
+      node.parent.name === 'Scene' &&
+      node.name !== 'Scene' &&
+      node.material.name === 'buildings'
     )
   })
 
@@ -72,6 +80,7 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
     <group ref={group}>
       <Meshes meshes={meshes} disabledMeshes={disabledMeshes} />
       <Groups groups={groups} disabledMeshes={disabledMeshes} />
+      <OSMBuildings meshes={buildings} />
     </group>
   )
 }
