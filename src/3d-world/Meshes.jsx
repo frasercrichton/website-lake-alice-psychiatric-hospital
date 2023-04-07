@@ -2,8 +2,8 @@ import Facility from './Facility.jsx'
 import facilities from '../config/facilities.json'
 
 const findFacility = id => {
-  const x = facilities.find(facility => facility.id === id)
-  return x?.type === 'significant' ? x : ''
+  const facility = facilities.find(facility => facility.id === id)
+  return facility?.type === 'significant' ? facility : ''
 }
 
 const Meshes = ({ meshes, disabledMeshes }) => {
