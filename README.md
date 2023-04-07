@@ -1,7 +1,4 @@
-
-
-current unit scale
-0.083333
+# Website Lake Alice Psychiatric Hospital
 
 
 https://vimeo.com/689154638
@@ -24,20 +21,7 @@ Statement of Malcolm Richards for Lake Alice Child and Adolescent Unit hearing
               Witness Statements
             </p>
 
-
-
 https://github.com/jsonkao/react-scrollama
-
-https://varun.ca/scrollytelling/
-
-
-
-fc-20220628.jpg
-
-images: 
-
-500 x 434
-
 
 ## Technical
 
@@ -51,11 +35,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
@@ -66,19 +45,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-
 https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js
 
 
 ## Sources
-
-FAO: Sasha Hartmann-Hughes 
-
-Kia ora Sasha,
-
-Not sure if you are still at Archives but we spoke a while back about a project I'm working on with one of the survivors of Lake Alice Child and Adolescent Unit. I'm currently working on a new version of our website and I was wondering if it would be possible to order some high resolution scans of some images? The website is non-commercial so should fit with the terms of use. If you could give me a rough idea of how much it would be for teh scans that would be great.
-
-The images are as follows:
 
 Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
 Archway Item ID:R24730915
@@ -97,20 +67,6 @@ Archway Item ID:R24730911
 Archway Series Number:6539
 https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129055
 
-Not sure how you scan but for the web I'd need something like:
-
-72 ppi
-minimum 1500px on the long edge
-
-Unfortunately I'm currently based in UK as I had to come back last year to sort out my mum's house when she died last year so this could make things a bit tricky but hopefully not.
-
-If by chance you come across any other images of Lake Alice (there were a couple used in the final Royal Commission report of the villas that didn't have references)
-
-Ngā mihi nui,
-
-Fraser
-
-
 Date
     13 December 1979
 Ref
@@ -122,3 +78,4 @@ Description
 Part of
     Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers / Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin
 https://natlib.govt.nz/records/22875316
+

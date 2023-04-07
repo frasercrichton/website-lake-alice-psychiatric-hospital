@@ -227,16 +227,6 @@ const data = {
           style: 'static'
         }
       },
-      // {
-      //   id: 'wip-malcolm-16',
-      //   text: {
-      //     header: '10 - Consequences',
-      //     content: 'dorm',
-      //     style: 'scrolling'
-      //   },
-      //   view: '3d',
-      //   camera: { ...cameras.dormitoryVilla }
-      // },
       {
         id: 'malcolm-1',
         text: {
@@ -329,12 +319,12 @@ const data = {
         camera: cameras.boysVilla
       },
       {
-        id: 'malcolm-6',
+        id: 'malcolm-5',
         view: '3d',
         camera: cameras.boysVilla
       },
       {
-        id: 'malcolm-7',
+        id: 'malcolm-6',
         text: {
           header: '5 - First night',
           content:
@@ -348,7 +338,7 @@ const data = {
       },
 
       {
-        id: 'malcolm-8',
+        id: 'malcolm-7',
         image: {
           src: 'fc-20210621-00007-Scan 1.jpg',
           caption:
@@ -361,7 +351,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-9',
+        id: 'malcolm-8',
         content:
           "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
         view: '3d',
@@ -370,7 +360,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-10',
+        id: 'malcolm-9',
         text: {
           header: '6 - A Typical day',
           content:
@@ -396,17 +386,6 @@ const data = {
       },
       {
         id: 'malcolm-11',
-        image: {
-          src: 'large_1980_1389.jpg',
-          captions: 'ECT machine.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.adultVilla }
-      },
-
-      {
-        id: 'malcolm-12',
         text: {
           header: '8 - ECT - Villa',
           content:
@@ -417,6 +396,16 @@ const data = {
         camera: {
           ...cameras.adultVilla
         }
+      },
+      {
+        id: 'malcolm-12',
+        image: {
+          src: 'fc-20210828-00001-FL59130374.jpg',
+          caption: 'Layout of disturbed patients villa.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.adultVilla }
       },
       {
         id: 'malcolm-13',
@@ -431,12 +420,16 @@ const data = {
           ...cameras.adultVilla
         }
       },
+
       {
         id: 'malcolm-14',
+        image: {
+          src: 'large_1980_1389.jpg',
+          caption: 'ECT machine.',
+          style: 'scrolling'
+        },
         view: '3d',
-        camera: {
-          ...cameras.adultVilla
-        }
+        camera: { ...cameras.adultVilla }
       },
       {
         id: 'malcolm-15',
@@ -488,35 +481,25 @@ const data = {
         text: {
           header: '10 - Consequences',
           content:
-            "When he was caught trying to escape he was placed in a solitary secure cell back in the boys' unit. In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.",
+            "When he was caught trying to escape he was placed in a solitary secure cell back in the boys' unit.",
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.dormitoryVilla }
       },
-      // {
-      //   id: 'wip-malcolm-16',
-      //   text: {
-      //     header: '10 - Consequences',
-      //     content: 'xx',
-      //     style: 'scrolling'
-      //   },
-      //   view: '3d',
-      //   camera: { ...cameras.dormitoryVilla }
-      // },
-      // {
-      //   id: 'wip-malcolm-17',
-      //   text: {
-      //     header: '10 - Consequences',
-      //     content: 'cell',
-      //     style: 'scrolling'
-      //   },
-      //   view: '3d',
-      //   camera: { ...cameras.cellCamera }
-      // },
+      {
+        id: 'wip-malcolm-17',
+        text: {
+          header: '10 - Consequences',
+          content: ' In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.cellCamera }
+      },
 
       {
-        id: 'malcolm-17',
+        id: 'malcolm-18',
         text: {
           header: '11 - Afterwards',
           content:
@@ -524,10 +507,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.adultVilla }
+        camera: { ...cameras.cellCamera }
       },
       {
-        id: 'malcolm-18',
+        id: 'malcolm-19',
         text: {
           header: '12 - Runaway',
           content:
@@ -558,7 +541,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-19',
+        id: 'malcolm-20',
         text: {
           header: '15 - Waipukurau',
           content:
@@ -593,7 +576,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-20',
+        id: 'malcolm-21',
         text: {
           header: '12 - Runaway',
           content:
@@ -632,7 +615,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-21',
+        id: 'malcolm-22',
         text: {
           header: '12 - Napier',
           content:
@@ -675,7 +658,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-22',
+        id: 'malcolm-23',
         text: {
           header: '12 - Welsford',
           content:
@@ -722,7 +705,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-23',
+        id: 'malcolm-24',
         text: {
           header: '19 - Kaiwaka',
           content: 'From Welsford to Kaiwaka and worked on a dairy farm.',
@@ -772,7 +755,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-24',
+        id: 'malcolm-25',
         text: {
           header: '12 - Runaway',
           content:
@@ -1391,8 +1374,7 @@ const data = {
         id: 'context-24',
         text: {
           header: '9 - Staff on Site',
-          content:
-            'At the south-east of the site.',
+          content: 'At the south-east of the site.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1404,8 +1386,7 @@ const data = {
         id: 'context-25',
         text: {
           header: '9 - Staff on Site',
-          content:
-            'Single staff were housed at the south of the site.',
+          content: 'Single staff were housed at the south of the site.',
           style: 'scrolling'
         },
         view: '3d',
