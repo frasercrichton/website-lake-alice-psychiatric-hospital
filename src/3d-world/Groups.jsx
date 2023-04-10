@@ -1,12 +1,11 @@
 import Facility from './Facility.jsx'
-import facilities from '../config/facilities.json'
 
-const findFacility = id => {
-  const x = facilities.find(facility => facility.id === id)
-  return x?.type === 'significant' ? x : ''
-}
+const Groups = ({ groups, disabledMeshes, labels }) => {
+  const getLabel = id => {
+    const label = labels?.find(item => item.id === id)
+    return label === undefined ? undefined : label.label
+  }
 
-const Groups = ({ groups, disabledMeshes }) => {
   const childObjectOfGroups = groups.map(element => {
     const parentName = element.name
     const position = element.position
@@ -23,12 +22,12 @@ const Groups = ({ groups, disabledMeshes }) => {
     return childWithPOsition
   })
 
-  return childObjectOfGroups.flat().map(element => {
+  return childObjectOfGroups.flat().map(mesh => {
     return (
       <Facility
-        key={element.name}
-        node={element}
-        label={findFacility(element.name)}
+        key={mesh.name}
+        node={mesh}
+        label={getLabel(mesh.name)}
         disabledMeshes={disabledMeshes}
       />
     )

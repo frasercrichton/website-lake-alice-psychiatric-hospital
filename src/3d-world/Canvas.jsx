@@ -12,9 +12,9 @@ const CanvasWrapper = ({
   pageCamera,
   cameraMoveDuration,
   isRotating,
-  labels,
   pageScrollProgress,
-  disabledMeshes
+  disabledMeshes,
+  labels
 }) => {
   const aspectRatio = {
     width: 1920,

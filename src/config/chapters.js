@@ -381,6 +381,12 @@ const data = {
             "Electroconvulsive therapy (ECT) was used at Lake Alice in two ways. Modified ECT where patients were anaesthetised prior to being treated and un-modified ECT with no anaesthetic. Un-modified ECT was introduced as an aversion therapy by Leeks in 1972. Controversial even at the time aversion therapy was a punishment reward system that was used ‘treat’ addiction, homosexuality, trans-people. At Lake Alice un-modified ECT's use was far removed from any form of therapy. ECT was used as an arbitrary punishment.",
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Adult's Villa"
+          }
+        ],
         view: '3d',
         camera: { ...cameras.adultVilla }
       },
@@ -392,20 +398,16 @@ const data = {
             '"I was in a ward with other people getting ECT three times a week where they’d bring the trolley down one side and up the other and save the children to last and just put you to sleep and give you ECT to the head. The wait for your turn was worse than the ECT. It wasn’t worse than having ECT while you were awake - that pain is indescribable. If you are old enough to have an old black and white TV and transmission used to end and the end of the night and the TV would make a real buzzing noise and you’d see the black and white speckles on the screen that’s exactly what you saw in your eyes while the current was going through. The pain was horrendous." Recovery was as excruciating; "like you\'d been in a ring with a boxer".',
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Adult's Villa"
+          }
+        ],
         view: '3d',
         camera: {
           ...cameras.adultVilla
         }
-      },
-      {
-        id: 'malcolm-12',
-        image: {
-          src: 'fc-20210828-00001-FL59130374.jpg',
-          caption: 'Layout of disturbed patients villa.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.adultVilla }
       },
       {
         id: 'malcolm-13',
@@ -420,7 +422,6 @@ const data = {
           ...cameras.adultVilla
         }
       },
-
       {
         id: 'malcolm-14',
         image: {
@@ -474,8 +475,6 @@ const data = {
           }
         }
       },
-
-      // dormitoryVilla
       {
         id: 'malcolm-16',
         text: {
@@ -491,7 +490,8 @@ const data = {
         id: 'wip-malcolm-17',
         text: {
           header: '10 - Consequences',
-          content: ' In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
+          content:
+            ' In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1356,6 +1356,16 @@ const data = {
         view: '3d',
         camera: { ...cameras.maximumSecurityClose }
       },
+      // {
+      //   id: 'malcolm-12',
+      //   image: {
+      //     src: 'fc-20210828-00001-FL59130374.jpg',
+      //     caption: 'Layout of disturbed patients villa.',
+      //     style: 'scrolling'
+      //   },
+      //   view: '3d',
+      //   camera: { ...cameras.adultVilla }
+      // },
       {
         id: 'context-22',
         text: {
@@ -1364,6 +1374,12 @@ const data = {
             'Many of the staff who worked at Lake Alice lived on site - including Selwyn Leeks. This proximity posed numerous issues not least of which was that it meant whistleblowing was much less likely. Staff housing was located across the site at the North East.',
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'StaffVillas',
+            label: 'Staff Quarters'
+          }
+        ],
         view: '3d',
         camera: {
           ...cameras.staffHousing
@@ -1377,6 +1393,12 @@ const data = {
           content: 'At the south-east of the site.',
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'StaffQuarters',
+            label: 'Staff Quarters'
+          }
+        ],
         view: '3d',
         camera: {
           ...cameras.staffHousingMain
@@ -1389,6 +1411,12 @@ const data = {
           content: 'Single staff were housed at the south of the site.',
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'SingleStaffVillas',
+            label: 'Single Staff Quarters'
+          }
+        ],
         view: '3d',
         camera: {
           ...cameras.singleStaffVillas
@@ -1424,6 +1452,12 @@ const data = {
             "The use of unmodified ECT was combined with the sedative Paraldehyde - an excruciatingly painful injection - has been formally recognised in the Abuse in Care Royal Commission of Inquiry's final report on the Child and Adolescent Unit and by the United Nations Committee Against Torture.",
           style: 'scrolling'
         },
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Adult's Villa"
+          }
+        ],
         view: '3d',
         camera: {
           ...cameras.adultVilla

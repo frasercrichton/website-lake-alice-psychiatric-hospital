@@ -23,31 +23,6 @@ Statement of Malcolm Richards for Lake Alice Child and Adolescent Unit hearing
 
 https://github.com/jsonkao/react-scrollama
 
-## Technical
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js
-
-
 ## Sources
 
 Title: Mental Hospitals. Publicity Caption: Administration block, Lake Alice Psychiatric Hospital, Marton. Photographer: Mr Cleal.
@@ -79,3 +54,27 @@ Part of
     Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers / Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin
 https://natlib.govt.nz/records/22875316
 
+
+## Technical
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js

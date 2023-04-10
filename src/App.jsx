@@ -50,6 +50,7 @@ function App () {
   const [isRotating, setIsRotating] = useState(false)
   const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
+  const [labels, setLabels] = useState([])
 
   // page template
   const [isCoverActive, setCoverActive] = useState(true)
@@ -99,6 +100,7 @@ function App () {
         ? setIsRotating(true)
         : setIsRotating(false)
       setDisabledMeshes(pageInView?.disable)
+      setLabels(pageInView?.labels)
       // hacky way to avoid camera bounce after into
       if (pageInView.camera?.duration !== cameraMoveDuration) {
         setCameraMoveDuration(pageInView.camera?.duration)
@@ -206,9 +208,9 @@ function App () {
             pageCamera={pageCamera}
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
-            labels={['label']}
             pageScrollProgress={pageScrollProgress}
             disabledMeshes={disabledMeshes}
+            labels={labels}
           />
         </div>
         {pageInView.view === 'map' && (

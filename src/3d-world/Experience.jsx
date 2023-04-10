@@ -31,6 +31,7 @@ const Experience = ({
         <HospitalLayout
           isRotating={isRotating}
           disabledMeshes={disabledMeshes}
+          labels={labels}
         />
       </Suspense>
     </>

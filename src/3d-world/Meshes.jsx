@@ -1,18 +1,17 @@
 import Facility from './Facility.jsx'
-import facilities from '../config/facilities.json'
 
-const findFacility = id => {
-  const facility = facilities.find(facility => facility.id === id)
-  return facility?.type === 'significant' ? facility : ''
-}
+const Meshes = ({ meshes, disabledMeshes, labels }) => {
+  const getLabel = id => {
+    const label = labels?.find(item => item.id === id)
+    return label === undefined ? undefined : label.label
+  }
 
-const Meshes = ({ meshes, disabledMeshes }) => {
-  return meshes.map(element => {
+  return meshes.map(mesh => {
     return (
       <Facility
-        key={element.name}
-        node={element}
-        label={findFacility(element.name)}
+        key={mesh.name}
+        node={mesh}
+        label={getLabel(mesh.name)}
         disabledMeshes={disabledMeshes}
       />
     )

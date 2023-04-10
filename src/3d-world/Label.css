@@ -1,8 +1,8 @@
 .line {
   position: absolute;
-  height: 20px;
+  height: 32px;
   bottom: 0;
-  left: 25px;
+  left: -5px;
   border-left: 2px solid white;
   -moz-transform: skew(-1deg);
   -webkit-transform: skew(-35deg);
@@ -10,10 +10,6 @@
 }
 
 .tag {
-  position: absolute;
-  transform: translate3d(0px, -50px, 0px);
-  padding: 8px 30px 6px 30px;
-  border-radius: 25px;
   font-size: 12px;
   text-transform: uppercase;
   background: white;
@@ -21,6 +17,11 @@
   white-space: nowrap;
   cursor: pointer;
   opacity: 0.7;
+  
+  position: absolute;
+  transform: translate3d(0px, -60px, 10px);
+  padding: 8px 30px 6px 30px;
+  border-radius: 25px;
   transition: all 0.3s ease-out;
   user-select: none;
 }
@@ -33,7 +34,6 @@
 
 .label-wrappper-enter {
   opacity: 0;
-  /* transform: scale(0.9); */
 }
 
 .label-wrappper-enter-active {
