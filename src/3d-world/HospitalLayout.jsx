@@ -86,9 +86,9 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
 
   return (
     <group ref={group}>
-      <Meshes meshes={meshes} disabledMeshes={disabledMeshes} />
-      <Groups groups={groups} disabledMeshes={disabledMeshes} />
-      <OSMBuildings meshes={buildings} />
+      <Meshes meshes={meshes} disabledMeshes={disabledMeshes} labels={labels} />
+      <Groups groups={groups} disabledMeshes={disabledMeshes} labels={labels} />
+      <OSMBuildings meshes={buildings} labels={labels} />
     </group>
   )
 }
