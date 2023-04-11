@@ -133,11 +133,7 @@ const Facility = ({ node, disabledMeshes, label }) => {
       position={[node.position.x, y, node.position.z]}
       rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >
-      {/* <Label
-        id={node.name}
-        text={label}
-        position={[node.position.x, node.position.y, node.position.z]}
-      /> */}
+      {label && <Label id={node.name} text={label} />}
     </mesh>
   )
 }
