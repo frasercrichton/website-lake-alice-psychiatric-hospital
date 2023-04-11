@@ -2,9 +2,9 @@
   position: absolute;
   height: 32px;
   bottom: 0;
-  left: -5px;
+  left: 0px;
   border-left: 2px solid white;
-  -moz-transform: skew(-1deg);
+  -moz-transform: skew(-35deg);
   -webkit-transform: skew(-35deg);
   transform: skew(-35deg);
 }
@@ -20,7 +20,7 @@
   
   position: absolute;
   transform: translate3d(0px, -60px, 10px);
-  padding: 8px 30px 6px 30px;
+  padding: 8px 10px 6px 10px;
   border-radius: 25px;
   transition: all 0.3s ease-out;
   user-select: none;
