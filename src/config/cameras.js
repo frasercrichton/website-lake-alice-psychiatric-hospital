@@ -167,6 +167,15 @@ const cameras = {
     near: 0.10000000149011612,
     far: 1000
   },
+  sitePlan: {
+    name: 'sitePlan',
+    position: [50, 510, -220],
+    rotation: [-1.7, 0, 0],
+    aspect: 1.7777777777777777,
+    fov: 75,
+    near: 10,
+    far: 10000
+  },
   default: {
     name: 'default',
     position: [160, 460, -220],

@@ -1105,6 +1105,83 @@ const data = {
       {
         id: 'context-4',
         text: {
+          content:
+            'Lake Alice operated as a self-contained community with farm, a community hall and even a swimming pool. It was isolated from the world and particularly from oversight by Health Authorities.',
+          style: 'scrolling'
+        },
+        labels: [
+          {
+            id: 'AdministrativeBuilding',
+            label: 'Administrative Building'
+          },
+          {
+            id: 'GardenersCompound',
+            label: 'Gardeners Compound'
+          },
+          {
+            id: 'Villa13',
+            label: 'Adult Villa'
+          },
+          {
+            id: 'Villa15',
+            label: 'Adult Villa'
+          },
+          {
+            id: 'SwimmingPool',
+            label: 'Swimming Pool'
+          },
+          {
+            id: 'CommunityHall',
+            label: 'Community Hall'
+          },
+          {
+            id: 'MaximumSecurity_',
+            label: 'Maximum Security'
+          },
+          {
+            id: 'ChildrensVillaRoof001_1',
+            label: "Girls' Villa"
+          },
+          {
+            id: 'ChildrensVillaRoof_1',
+            label: "Boys' Villa"
+          },
+
+          {
+            id: 'DisturbedPatientsVilla',
+            label: 'Disturbed Patients Villa'
+          },
+          {
+            id: 'DoctorsHouses',
+            label: "Doctors' Houses"
+          },
+          {
+            id: 'TwelveBedVillas',
+            label: 'Twelve Bed Villas'
+          },
+          {
+            id: 'StoreAndWorkshops',
+            label: 'Store and Workshops'
+          },
+          {
+            id: 'StaffVillas',
+            label: 'Staff Quarters'
+          },
+          {
+            id: 'SingleStaffVillas',
+            label: 'Single Staff Quarters'
+          },
+          {
+            id: 'SewageFarm',
+            label: 'Sewage Farm'
+          }
+        ],
+        view: '3d',
+        camera: { ...cameras.sitePlan }
+      },
+      {
+        id: 'context-4',
+        text: {
           header: '3 - 12-bed Villas',
           content:
             'Originally the small 12 bed villas were intended for intensive group therapy. At the time this was a pioneering approach.',
@@ -1480,14 +1557,6 @@ const data = {
   },
   '/pathways': {
     pages: [
-      {
-        id: 'pathways-introduction-1',
-        text: {
-          content: 'Pathways'
-        },
-        view: '3d',
-        camera: { ...cameras.default }
-      },
       {
         id: 'pathways-introduction-2',
         text: {

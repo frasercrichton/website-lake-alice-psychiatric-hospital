@@ -10,7 +10,7 @@ const Groups = ({ groups, disabledMeshes, labels }) => {
     const parentName = element.name
     const position = element.position
     const rotation = element.rotation
-    const childWithPOsition = element.children.map(element => {
+    const childWithPosition = element.children.map(element => {
       const nameSuffix = element.name.split('_')[1]
       const childName = nameSuffix === undefined ? '' : nameSuffix
       const name = `${parentName}_${childName}`
@@ -19,7 +19,7 @@ const Groups = ({ groups, disabledMeshes, labels }) => {
         ...{ position: position, rotation: rotation, name: name }
       }
     })
-    return childWithPOsition
+    return childWithPosition
   })
 
   return childObjectOfGroups.flat().map(mesh => {

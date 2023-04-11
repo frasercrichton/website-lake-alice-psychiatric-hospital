@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
+import Labels from './Labels.jsx'
 import OSMBuildings from './OSMBuildings.jsx'
 import { useRef } from 'react'
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
@@ -64,6 +65,10 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
     return node.type === 'Group' && node.name !== 'Scene'
   })
 
+  const labelEmpties = Array.from(Object.values(nodes)).filter(node => {
+    return node.type === 'Object3D'
+  })
+
   const meshes = Array.from(Object.values(nodes)).filter(node => {
     // Linked Object Groups have parents that are not the Scene
     return (
@@ -86,6 +91,7 @@ const HospitalLayout = ({ labels, isRotating, disabledMeshes }) => {
 
   return (
     <group ref={group}>
+      <Labels empties={labelEmpties} labels={labels} />
       <Meshes meshes={meshes} disabledMeshes={disabledMeshes} labels={labels} />
       <Groups groups={groups} disabledMeshes={disabledMeshes} labels={labels} />
       <OSMBuildings meshes={buildings} labels={labels} />
