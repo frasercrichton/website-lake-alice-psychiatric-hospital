@@ -1453,34 +1453,33 @@ const data = {
         },
         labels: [
           {
-            id: 'StaffVillas',
-            label: 'Staff Quarters'
+            id: 'DoctorsHouses',
+            label: "Doctors' Houses"
           }
         ],
         view: '3d',
         camera: {
-          ...cameras.staffHousing
+          ...cameras.doctorsVillas
         }
       },
-
-      {
-        id: 'context-24',
-        text: {
-          header: '9 - Staff on Site',
-          content: 'At the south-east of the site.',
-          style: 'scrolling'
-        },
-        labels: [
-          {
-            id: 'StaffQuarters',
-            label: 'Staff Quarters'
-          }
-        ],
-        view: '3d',
-        camera: {
-          ...cameras.staffHousingMain
-        }
-      },
+      // {
+      //   id: 'context-24',
+      //   text: {
+      //     header: '9 - Staff on Site',
+      //     content: 'At the south-east of the site.',
+      //     style: 'scrolling'
+      //   },
+      //   labels: [
+      //     {
+      //       id: 'StaffVillas',
+      //       label: 'Staff Quarters'
+      //     }
+      //   ],
+      //   view: '3d',
+      //   camera: {
+      //     ...cameras.staffHousingMain
+      //   }
+      // },
       {
         id: 'context-25',
         text: {
