@@ -13,9 +13,8 @@
 }
 
 .document-image figure {
-  /* background-color: aqua; */
   width: 50vw;
-  /* align-items: flex-end; */
+  align-items: flex-end;
 }
 
 .document-image figure img, .scrolling-image figure img {

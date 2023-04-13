@@ -85,7 +85,6 @@ const Facility = ({ node, disabledMeshes, label }) => {
       name: 'transparent',
       color: 0x00ff00,
       transparent: true,
-      castShadow: false,
       opacity: 0
     }),
     default: new THREE.MeshStandardMaterial({
@@ -128,8 +127,8 @@ const Facility = ({ node, disabledMeshes, label }) => {
       name={facilityId}
       geometry={node.geometry}
       material={getMaterial(node.material)}
-      // receiveShadow
-      castShadow={true}
+      receiveShadow
+      castShadow
       position={[node.position.x, y, node.position.z]}
       rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >

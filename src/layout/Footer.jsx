@@ -10,7 +10,7 @@ const Footer = ({introActive}) => {
       <span className='text'>Scroll to Continue</span>
       <span className='icon up-n-down'>
         <svg
-          class='icon icon-tabler'
+          className='icon icon-tabler'
           width='30'
           height='36'
           viewBox='0 0 24 24'

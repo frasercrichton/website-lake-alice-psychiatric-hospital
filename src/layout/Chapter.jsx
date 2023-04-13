@@ -3,6 +3,10 @@ import { Scrollama, Step } from 'react-scrollama'
 import Page from './Page.jsx'
 import './Chapter.css'
 
+// Note: There's some weirdness in here around browsers on Windows not triggering
+// the step unless the offset is within the window and the last step is sized
+// in pixels to force it's height
+
 const Chapter = ({
   chapterInView,
   nextChapter,
@@ -25,6 +29,7 @@ const Chapter = ({
   }, [hasPageReset, setHasPageReset])
 
   const onStepEnter = ({ data }) => {
+    // when the scroller hits the last step (data='-1') it moves to the next chapter
     if (nextChapter && data === -1) {
       setNextChapter(nextChapter)
       setHasPageReset(true)
@@ -37,16 +42,6 @@ const Chapter = ({
   }
 
   const onStepExit = ({ direction, data }) => {
-    // {
-    //   element, // The DOM node of the step that was triggered
-    //   data, // The data supplied to the step
-    //   direction, // 'up' or 'down'
-    //   entry, // the original `IntersectionObserver` entry
-    // }
-    // && data === this.state.steps[0]
-    // if (direction === 'up') {
-    //   setCurrentStepIndex({ data: 0 })
-    // }
   }
 
   const onStepProgress = ({ progress }) => {
@@ -62,8 +57,7 @@ const Chapter = ({
         onStepExit={onStepExit}
         onStepProgress={onStepProgress}
         progress
-        offset='1'
-        // debug
+        offset='0.90' // see note at top
       >
         {chapterInView.pages.map((page, index) => {
           return (
@@ -86,7 +80,8 @@ const Chapter = ({
         })}
         {nextChapter && (
           <Step data={-1} key={-1}>
-            <div style={{ height: '1%' }}></div>
+            <div style={{ height: '200px' }}></div> 
+            {/* see note at top */}
           </Step>
         )}
       </Scrollama>
