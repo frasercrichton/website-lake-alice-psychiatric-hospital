@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
@@ -8,31 +8,11 @@ import CameraControls from '../controls/CameraControls'
 import { Globals } from '@react-spring/shared'
 import gsap from 'gsap'
 
-const defaultCameraConfig = {
-  name: 'default',
-  position: [0, 600, 400],
-  rotation: [-0.8726646, 0, 0],
-  aspect: 1,
-  fov: 80,
-  near: 10,
-  far: 10000
-  // aspect: 1.7777777777777777,
-  // fov: 39.76070325000613,
-  // near: 10,
-  // far: 10000
-}
-
 Globals.assign({
   frameLoop: 'always'
 })
 // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
 
-// position: new THREE.Vector3(
-//   camera.position[0],
-//   camera.position[1],
-//   camera.position[2]
-// ),
-// A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
 const hash = window.location.hash
 
 const Camera = ({
@@ -40,6 +20,26 @@ const Camera = ({
   cameraMoveDuration = 2000,
   pageScrollProgress
 }) => {
+  const size = { width: window.innerWidth, height: window.innerHeight }
+
+  const camAspectRatio = 16 / 9 // check if this is always the case
+
+  // A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
+  const defaultCameraConfig = {
+    name: 'default',
+    position: [0, 600, 400],
+    rotation: [-0.8726646, 0, 0],
+    aspect: size.height / size.width,
+    fov: 80,
+    near: 10,
+    far: 10000,
+    focus: 2
+    // aspect: 1.7777777777777777,
+    // fov: 39.76070325000613,
+    // near: 10,
+    // far: 10000
+  }
+
   const cameraGroup = useRef()
   const currentCamera = useThree(state => state.camera)
   const clock = useThree(state => state.clock)
@@ -63,7 +63,6 @@ const Camera = ({
     return toQuaternion
   }
 
-  const aspect = pageCamera ? pageCamera.aspect : defaultCameraConfig.aspect
   const fov = pageCamera ? pageCamera.fov : defaultCameraConfig.fov
   const near = pageCamera ? pageCamera.near : defaultCameraConfig.near
   const far = pageCamera ? pageCamera.far : defaultCameraConfig.far
@@ -72,22 +71,17 @@ const Camera = ({
   // state.camera.lookAt(0, 0, 0)
   // const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
 
-  // This is hack
   let alpha = 0
   useFrame((state, delta) => {
     if (pageCamera) {
       const fromQuat = getFromQuaternion(currentCamera)
-
       const toQuat = getToQuaternion(pageCamera)
-
-      if (state.clock.elapsedTime < 3) {
-        currentCamera.quaternion.slerpQuaternions(
-          fromQuat,
-          toQuat,
-          (alpha += 0.05 * delta)
-        )
-        currentCamera.updateProjectionMatrix()
-      }
+      currentCamera.quaternion.slerpQuaternions(
+        fromQuat,
+        toQuat,
+        (alpha += 0.05 * delta)
+      )
+      currentCamera.updateProjectionMatrix()
     }
   })
 
@@ -105,7 +99,7 @@ const Camera = ({
         z: pageCamera.position[2]
       })
     }
-  }, [pageCamera])
+  }, [pageCamera, clock, currentCamera])
 
   // const ZoomIn = () => {
   //   return useFrame(({ camera }) => {
@@ -128,7 +122,7 @@ const Camera = ({
         makeDefault
         name='default'
         rotation={defaultCameraConfig.rotation}
-        aspect={aspect}
+        aspect={defaultCameraConfig.aspect}
         fov={fov}
         near={near}
         far={far}

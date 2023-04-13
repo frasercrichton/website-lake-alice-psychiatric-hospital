@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import Label from './Label.jsx'
 import './Facility.css'
 
-const WireframeBuilding = ({ key, node, label }) => {
+const WireframeBuilding = ({ node, label }) => {
   const geometry = new THREE.EdgesGeometry(node.geometry)
   const material = new THREE.LineBasicMaterial({
     color: 0xffffff,
@@ -14,7 +14,6 @@ const WireframeBuilding = ({ key, node, label }) => {
 
   return (
     <primitive
-      key={key}
       scale={node.scale}
       name={node.name}
       object={wireframe}
