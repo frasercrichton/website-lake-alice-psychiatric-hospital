@@ -48,7 +48,7 @@ function App () {
   const [pageCamera, setPageCamera] = useState(null)
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(false)
-  const [isLoading, setLoading] = useState(true)
+  // const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
   const [labels, setLabels] = useState([])
 
@@ -99,7 +99,10 @@ function App () {
       pageInView?.camera?.isRotating === true
         ? setIsRotating(true)
         : setIsRotating(false)
+
+
       setDisabledMeshes(pageInView?.disable)
+      
       setLabels(pageInView?.labels)
       // hacky way to avoid camera bounce after into
       if (pageInView.camera?.duration !== cameraMoveDuration) {
@@ -149,7 +152,7 @@ function App () {
       : null
 
   const handleCoverClick = () => {
-    setLoading(!isLoading)
+    // setLoading(!isLoading)
     setCoverActive(!isCoverActive)
   }
 
@@ -208,7 +211,7 @@ function App () {
             pageCamera={pageCamera}
             cameraMoveDuration={cameraMoveDuration}
             isRotating={isRotating}
-            pageScrollProgress={pageScrollProgress}
+            // pageScrollProgress={pageScrollProgress}
             disabledMeshes={disabledMeshes}
             labels={labels}
           />
@@ -218,7 +221,7 @@ function App () {
             pageInView={pageInView}
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
-            pageScrollProgress={pageScrollProgress}
+            // pageScrollProgress={pageScrollProgress}
           />
         )}
         {pageInView.video !== undefined && (

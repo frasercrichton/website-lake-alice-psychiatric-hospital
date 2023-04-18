@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import './Canvas.css'
 import ThreeLoader from './ThreeLoader.jsx'
-import HospitalLayout from './HospitalLayout.jsx'
+import Model from './Model.jsx'
 import Camera from './Camera.jsx'
 import LookAndFeelControls from '../controls/LookAndFeel.jsx'
 import Environment from './Environment.jsx'
@@ -19,21 +19,35 @@ const Experience = ({
 
   return (
     <>
-      <Camera
-        pageCamera={pageCamera}
-        cameraMoveDuration={cameraMoveDuration}
-        pageScrollProgress={pageScrollProgress}
-      />
       <color args={[World]} attach='background' />
       <Environment />
       <Floor />
       <Suspense fallback={<ThreeLoader />}>
-        <HospitalLayout
+        <Model
           isRotating={isRotating}
           disabledMeshes={disabledMeshes}
           labels={labels}
         />
       </Suspense>
+      {/* 
+      <Suspense fallback={<ThreeLoader />}>
+        <Model
+          isRotating={isRotating}
+          disabledMeshes={disabledMeshes}
+          labels={labels}
+        />
+      </Suspense> */}
+      {/* 
+
+      <Suspense fallback={<ThreeLoader />}>
+        <Model
+          isRotating={isRotating}
+          disabledMeshes={disabledMeshes}
+          labels={labels}
+        />
+      </Suspense> */}
+
+      <Camera pageCamera={pageCamera} />
     </>
   )
 }

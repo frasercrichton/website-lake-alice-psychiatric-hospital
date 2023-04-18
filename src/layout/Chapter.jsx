@@ -41,8 +41,7 @@ const Chapter = ({
     setPageInView({ index, ...chapterInView.pages[data] })
   }
 
-  const onStepExit = ({ direction, data }) => {
-  }
+  const onStepExit = ({ direction, data }) => {}
 
   const onStepProgress = ({ progress }) => {
     if (pageInView?.text?.style === 'animated') {
@@ -80,7 +79,7 @@ const Chapter = ({
         })}
         {nextChapter && (
           <Step data={-1} key={-1}>
-            <div style={{ height: '200px' }}></div> 
+            <div style={{ height: '200px' }}></div>
             {/* see note at top */}
           </Step>
         )}

@@ -1,22 +1,14 @@
-import React, { useEffect, forwardRef, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 import Label from './Label.jsx'
 import './Facility.css'
 
-const Facility = ({ node, disabledMeshes, label }) => {
-  const [material, setMaterial] = useState(null)
-
-  useEffect(() => {
-    setMaterial(node.material)
-  }, [])
-
-  console.log('node.material', node.material)
+const Mesh = ({ node, label }) => {
 
   const facilityId = node.name
   const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
-  const y = hasShadow ? node.position.y - 0.5 : node.position.y
 
-  // const material = isDisabaled ? isDisabaled : material
+  const y = hasShadow ? node.position.y - 0.5 : node.position.y
 
   return (
     <mesh
@@ -34,4 +26,4 @@ const Facility = ({ node, disabledMeshes, label }) => {
   )
 }
 
-export default Facility
+export default Mesh
