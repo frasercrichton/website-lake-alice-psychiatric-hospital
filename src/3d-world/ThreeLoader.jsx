@@ -6,7 +6,7 @@ const ThreeLoader = () => {
   return (
     <Html center>
       <div className='three-loader-container'>
-        <h1>loading</h1>
+        <h1>Loading</h1>
         <Loader isLoading={loaded} />
       </div>
     </Html>

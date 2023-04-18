@@ -17,14 +17,24 @@ const Lighting = () => {
   const { Near, HemisphereIntensity, skyColour, groundColour } =
     EnvironmentControls()
 
-  useEffect(() => {
-    directionalLight.current.shadow.camera.near = Near
+  {
+    /* <Sky /> match the sun position to the directional light */
+  }
 
+  {
+    /* <ambientLight intensity={lightingControls['Ambient Intensity']} /
+     */
+  }
+  {
+    /* <fog attach='fog' color={'#F1EDF2'} far={500} near={10} /> */
+  }
+
+  useEffect(() => {
+    // directionalLight.current.shadow.camera.near = Near
     // const shadowCameraHelper = new THREE.CameraHelper(
     //   directionalLight.current.shadow.camera
     // )
     // scene.add(shadowCameraHelper)
-
     // const helper = new THREE.DirectionalLightHelper(
     //   directionalLight.current,
     //   500
@@ -35,25 +45,19 @@ const Lighting = () => {
 
   return (
     <>
-      <BakeShadows />
-
       <hemisphereLight
         skyColor={skyColour}
         groundColor={groundColour}
         intensity={HemisphereIntensity}
       />
-      {/* <Sky /> match the sun position to the directional light */}
       <Sky color={new THREE.Color(World)} />
-
-      {/* <ambientLight intensity={lightingControls['Ambient Intensity']} /
-       */}
-      {/* <fog attach='fog' color={'#F1EDF2'} far={500} near={10} /> */}
+      <BakeShadows />
       <directionalLight
         ref={directionalLight}
-        castShadow
         intensity={Intensity}
         position={[Position.x, Position.y, Position.z]}
         color='#ffffff'
+        castShadow
         shadow-normalBias={3}
         shadow-bias={0.000005}
         shadow-radius={9}
@@ -63,8 +67,7 @@ const Lighting = () => {
         shadow-camera-bottom={-shadowCameraExtent}
         shadow-camera-left={-shadowCameraExtent}
         shadow-camera-far={shadowCameraControls.Far}
-       // shadow-camera-near={shadowCameraControls.Near}
-       
+        shadow-camera-near={shadowCameraControls.Near}
       />
     </>
   )

@@ -1,3 +1,6 @@
+const fars = { site: 3000, building: 100 }
+const nears = { site: 1000, building: 10 }
+
 const cameras = {
   staffHousingSingle: {
     name: 'staffHousingSingle',
@@ -5,7 +8,7 @@ const cameras = {
     rotation: [-0.3814260821091194, -0.3742519527430261, -0.11583750777327607],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   staffHousing: {
@@ -14,7 +17,7 @@ const cameras = {
     rotation: [-1.8551968193104815, 1.1479435845965322, 1.881025963151375],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   staffHousingMain: {
@@ -23,7 +26,7 @@ const cameras = {
     rotation: [-0.38798422563226825, 0.5513942748249363, 0.21092563657678642],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   adultVilla: {
@@ -32,7 +35,7 @@ const cameras = {
     rotation: [-2.0217181008082585, 1.0382688604123456, 2.0828650332136203],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 3048
   },
   boysVilla: {
@@ -41,7 +44,7 @@ const cameras = {
     rotation: [-0.0543095532335127, 1.0312231567350039, 0.046622004958900745],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 3048
   },
   boysVillaAbove: {
@@ -50,8 +53,8 @@ const cameras = {
     rotation: [-1.5707965653949199, 1.6058265828178264e-12, 1.5707695048878063],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
-    far: 1000
+    near: 0.1,
+    far: fars.building
   },
   dormitoryVilla: {
     name: 'DormitoryCamera',
@@ -59,7 +62,7 @@ const cameras = {
     rotation: [-0.087191217135521, 0.7660508657330082, 0.060533300213158545],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   cellCamera: {
@@ -68,7 +71,7 @@ const cameras = {
     rotation: [-0.482578629102942, 0.7422889927286265, 0.34036439276294767],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   dayRoomBoysVilla: {
@@ -77,7 +80,7 @@ const cameras = {
     rotation: [3.0446525351872, 0.8633121703037142, -3.0677820746194904],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   doctorsVillas: {
@@ -86,7 +89,7 @@ const cameras = {
     rotation: [-2.362001376062758, -1.0627671463346227, -2.4292465422602767],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 3048
   },
   girlsVilla: {
@@ -95,7 +98,7 @@ const cameras = {
     rotation: [-3.141592653589793, 1.5652086160481393, -3.141592653589793],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 3048
   },
   maximumSecurity: {
@@ -104,7 +107,7 @@ const cameras = {
     rotation: [-2.883296831393313, -0.013562286618653132, -3.1379996244759334],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   maximumSecurityAbove: {
@@ -115,8 +118,8 @@ const cameras = {
     ],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
-    far: 3048
+    near: 0.1,
+    far: fars.building
   },
   maximumSecurityClose: {
     name: 'maximumSecurityCloseCamera',
@@ -124,7 +127,7 @@ const cameras = {
     rotation: [3.1124848438691752, 0.27219861036652804, -3.133762826512719],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
 
@@ -135,7 +138,7 @@ const cameras = {
     rotation: [-0.36402117979909066, 0.28158438231663213, 0.10547943676201134],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   twelveBedVilla: {
@@ -144,7 +147,7 @@ const cameras = {
     rotation: [-3.0367693081017912, -1.0550672386576285, -3.050322145786049],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   twelveBedVillaAbove: {
@@ -155,8 +158,8 @@ const cameras = {
     ],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
-    far: 1000
+    near: 0.1,
+    far: fars.building
   },
   twelveBedVillasWide: {
     name: 'twelveBedVillasWide',
@@ -164,7 +167,7 @@ const cameras = {
     rotation: [-2.892491745565581, 1.0051282948218239, 2.9300868773631823],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.10000000149011612,
+    near: 0.1,
     far: 1000
   },
   sitePlan: {
@@ -174,7 +177,7 @@ const cameras = {
     aspect: 1.7777777777777777,
     fov: 75,
     near: 10,
-    far: 10000
+    far: fars.site
   },
   default: {
     name: 'default',
@@ -183,7 +186,7 @@ const cameras = {
     aspect: 1.7777777777777777,
     fov: 75,
     near: 10,
-    far: 10000
+    far: fars.site
   },
   siteCamera: {
     name: 'siteCamera',
@@ -192,7 +195,7 @@ const cameras = {
     aspect: 1.7777777777777777,
     fov: 75,
     near: 10,
-    far: 10000
+    far: fars.site
   },
   theLake: {
     name: 'The Lake',
@@ -201,7 +204,7 @@ const cameras = {
     aspect: 1.7777777777777777,
     fov: 70,
     near: 10,
-    far: 10000
+    far: fars.site
   }
 }
 export default cameras

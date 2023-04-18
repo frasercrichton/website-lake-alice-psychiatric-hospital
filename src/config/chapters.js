@@ -1275,10 +1275,6 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof_20',
-          'ElevenBedVillaRoof_20_1',
-          'ElevenBedVillaRoof020',
-          'ElevenBedVillaRoof020_1',
           'ElevenBedVillaRoof020_20',
           'ElevenBedVillaRoof020_21'
         ],
@@ -1296,18 +1292,18 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof_20',
-          'ElevenBedVillaRoof_20_1',
-          'ElevenBedVillaRoof020',
-          'ElevenBedVillaRoof020_1',
+          // 'ElevenBedVillaRoof_20',
+          // 'ElevenBedVillaRoof_20_1',
+          // 'ElevenBedVillaRoof020',
+          // 'ElevenBedVillaRoof020_1',
           'ElevenBedVillaRoof020_20',
           'ElevenBedVillaRoof020_21',
 
-          'ElevenBedVillaFirstFloor020_',
-          'ElevenBedVillaFirstFloor020_1',
-          'ElevenBedVillaFirstFloor020_2',
-          'ElevenBedVillaFirstFloor020_3',
-          'ElevenBedVillaFirstFloor020_4'
+          // 'ElevenBedVillaFirstFloor020_',
+          // 'ElevenBedVillaFirstFloor020_1',
+          // 'ElevenBedVillaFirstFloor020_2',
+          // 'ElevenBedVillaFirstFloor020_3',
+          // 'ElevenBedVillaFirstFloor020_4'
         ],
         camera: {
           ...cameras.twelveBedVillaAbove

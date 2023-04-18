@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useMemo, useEffect } from 'react'
 import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
@@ -12,7 +12,7 @@ const CanvasWrapper = ({
   pageCamera,
   cameraMoveDuration,
   isRotating,
-  pageScrollProgress,
+  // pageScrollProgress,
   disabledMeshes,
   labels
 }) => {
@@ -20,6 +20,12 @@ const CanvasWrapper = ({
     width: 1920,
     height: 1080
   }
+
+  console.log('rerendering')
+
+  // useEffect(() => {
+  //   console.log('labels changed')
+  // }, [labels]) //pagechange
 
   const defaultOutputEncoding = THREE.sRGBEncoding
 
@@ -43,7 +49,8 @@ const CanvasWrapper = ({
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.5,
           shadowMap: { autoUpdate: false, needsUpdate: true }, // static scene where lights don't move so no need to update
-          sizes: sizes
+          sizes: sizes,
+          powerPreference: 'high-performance'
         }}
       >
         <Experience
@@ -51,7 +58,7 @@ const CanvasWrapper = ({
           cameraMoveDuration={cameraMoveDuration}
           isRotating={isRotating}
           labels={labels}
-          pageScrollProgress={pageScrollProgress}
+          // pageScrollProgress={pageScrollProgress}
           disabledMeshes={disabledMeshes}
         />
       </Canvas>
