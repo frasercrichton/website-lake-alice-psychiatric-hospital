@@ -65,28 +65,6 @@ const data = {
   },
   '/introduction': {
     pages: [
-      // {
-      //   id: 'context-12',
-      //   text: {
-      //     header: 'Eleven Bed Villa Top Floor',
-      //     content:
-      //       'The first floor of the villa contained two 4-bed dormitories, two single bed rooms, a staff bedroom, toilets and washrooms.',
-      //     style: 'scrolling'
-      //   },
-      //   view: '3d',
-      //   disable: [
-      //     'ElevenBedVillaRoof_20',
-      //     'ElevenBedVillaRoof_20_1',
-      //     'ElevenBedVillaRoof020',
-      //     'ElevenBedVillaRoof020_1',
-      //     'ElevenBedVillaRoof020_20',
-      //     'ElevenBedVillaRoof020_21',
-      //   ],
-      //   camera: {
-      //     ...cameras.twelveBedVillasWide
-      //   }
-      // },
-
       {
         id: 'introduction-introduction-1',
         text: {
@@ -120,7 +98,7 @@ const data = {
         text: {
           content:
             'The United Nations Committee against Torture (UNCAT) found New Zealand in breach of the Convention Against Torture in 2019.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -130,7 +108,7 @@ const data = {
         text: {
           content:
             'New Zealand had failed to ensure a prompt and impartial investigation into allegations of systematic physical, emotional and sexual child abuse at the Lake Alice Child and Adolescent Unit.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -140,7 +118,7 @@ const data = {
         text: {
           content:
             "The Child and Adolescent Unit opened in 1972 and closed in 1978 after allegations that Electroconvulsive therapy (ECT) and Paraldehyde 'aversion therapy' were in reality used as a form of torture to punish children with behavioural issues  in the unit.",
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -150,7 +128,7 @@ const data = {
         text: {
           content:
             'After civil cases were brought against the Crown minimal compensation was paid to a group of ninety-five survivors in 2001. Legal fees swallowed up the majority of this payment.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -160,7 +138,7 @@ const data = {
         text: {
           content:
             "Three of New Zealand's initial periodic reports to UNCAT deliberately excluded all mention of Lake Alice and the survivor's allegations or torture.",
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -170,7 +148,7 @@ const data = {
         text: {
           content:
             'Two survivors of Lake Alice have since had their complaints recognised by the United Nations - Paul Zentveld in 2020 and Malcolm Richards in 2022.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -180,7 +158,7 @@ const data = {
         text: {
           content:
             'Only in 2021 was a former member of staff charged by the police.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -189,7 +167,7 @@ const data = {
         id: 'intro-9',
         text: {
           content: 'No one has ever been convicted.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -198,7 +176,7 @@ const data = {
         id: 'intro-9',
         text: {
           content: 'New Zealand is still in breach of the convention.',
-          style: 'animated'
+          style: 'static'
         },
         view: '3d',
         camera: cameras.default
@@ -1274,10 +1252,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: [
-          'ElevenBedVillaRoof020_20',
-          'ElevenBedVillaRoof020_21'
-        ],
+        disable: ['ElevenBedVillaRoof020_12', 'ElevenBedVillaRoof020_13'],
         camera: {
           ...cameras.twelveBedVillaAbove
         }
@@ -1292,18 +1267,13 @@ const data = {
         },
         view: '3d',
         disable: [
-          // 'ElevenBedVillaRoof_20',
-          // 'ElevenBedVillaRoof_20_1',
-          // 'ElevenBedVillaRoof020',
-          // 'ElevenBedVillaRoof020_1',
-          'ElevenBedVillaRoof020_20',
-          'ElevenBedVillaRoof020_21',
-
-          // 'ElevenBedVillaFirstFloor020_',
-          // 'ElevenBedVillaFirstFloor020_1',
-          // 'ElevenBedVillaFirstFloor020_2',
-          // 'ElevenBedVillaFirstFloor020_3',
-          // 'ElevenBedVillaFirstFloor020_4'
+          'ElevenBedVillaRoof020_12',
+          'ElevenBedVillaRoof020_13',
+          'ElevenBedVillaFirstFloor020_',
+          'ElevenBedVillaFirstFloor020_1',
+          'ElevenBedVillaFirstFloor020_2',
+          'ElevenBedVillaFirstFloor020_3',
+          'ElevenBedVillaFirstFloor020_4'
         ],
         camera: {
           ...cameras.twelveBedVillaAbove

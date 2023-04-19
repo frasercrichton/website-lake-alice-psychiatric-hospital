@@ -2,6 +2,7 @@ import React, { useRef, useMemo, useEffect } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
+import gsap from 'gsap'
 import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
 import Labels from './Labels.jsx'
@@ -105,25 +106,24 @@ const staticMaterials = {
 const Model = ({ labels, isRotating, disabledMeshes }) => {
   const group = useRef()
 
-  useEffect(() => {
-    // if (facilityId.includes('20')) {
-    // console.log('xxxx', facilityId)
-    // }
-    // if (disabledMeshes && disabledMeshes.includes(facilityId)) {
-    //   disabledMeshes.forEach(element => {
-    //     if (mesh.current.name.includes(element)) {
-    //       mesh.current.material = materials.transparent
-    //       mesh.current.material.needsUpdate = true
-    //     }
-    //   })
-    // }
-  }, []) //pagechange
-
   useFrame((state, delta) => {
-    // isRotating
-    //   ? (group.current.rotation.y += delta * 0.2)
-    //   : (group.current.rotation.y = 0)
+    isRotating
+      ? (group.current.rotation.y += delta * 0.2)
+      : (group.current.rotation.y = 0)
   })
+
+  // useEffect(() => {
+  //   if (isRotating && group !== undefined) {
+  //     gsap.to(group.current.rotation, {
+  //       duration: 3,
+  //       repeat: -1,
+  //       yoyo: false,
+  //       // ease: Linear.easeNone,
+  //       // paused: false,
+  //       y: Math.PI * 1
+  //     })
+  //   }
+  // }, [isRotating]) //pagechange
 
   const { nodes } = useLoader(GLTFLoader, GLB_LOCATION, loader => {
     const dracoLoader = new DRACOLoader()
@@ -133,48 +133,10 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
   })
 
   const getMaterial = name => {
-    console.log(name)
-
-    if (name !== undefined) {
-      console.log(name)
-    }
-
-    // if (disabledMeshes !== undefined && node.material.name.includes('ElevenBedVilla')) {
-    //   console.log(disabledMeshes.includes(node.material.name))
-    // }
-
     const materialName = name === undefined ? '' : name.split('.')[0]
-    // console.log('getMaterial', material)
-    // console.log(
-    //   'getMaterial the material',
-    //   material !== '' ? materials[material] : materials.default
-    // )
-
     return materialName !== ''
       ? staticMaterials[materialName]
       : staticMaterials.default
-  }
-
-  const createMeshesFromChildren = group => {
-    const parentName = group.name
-    const position = group.position
-    const rotation = group.rotation
-    const childWithPosition = group.children.map(element => {
-      const nameSuffix = element.name.split('_')[1]
-      const childName = nameSuffix === undefined ? '' : nameSuffix
-      const name = `${parentName}_${childName}`
-
-      return {
-        ...element,
-        ...{
-          position: position,
-          rotation: rotation,
-          name: name,
-          material: getMaterial(element.material.name)
-        }
-      }
-    })
-    return childWithPosition
   }
 
   const modelMeshes = useMemo(() => {
@@ -183,6 +145,36 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       meshes: [],
       buildings: [],
       labels: []
+    }
+
+    const updateMesh = (mesh, name) => {
+      if (disabledMeshes !== undefined && disabledMeshes.includes(name)) {
+        return { ...mesh, disabledMaterial: staticMaterials.transparent }
+      }
+      return mesh
+    }
+
+    const createMeshesFromChildren = group => {
+      const parentName = group.name
+      const position = group.position
+      const rotation = group.rotation
+      const childWithPosition = group.children.map(child => {
+        // TODO update to suffix with names not numbers
+        const nameSuffix = child.name.split('_')[1]
+        const childName = nameSuffix === undefined ? '' : nameSuffix
+        const name = `${parentName}_${childName}`
+        const mesh = updateMesh(child, name)
+        return {
+          ...mesh,
+          ...{
+            position: position,
+            rotation: rotation,
+            name: name,
+            material: getMaterial(child.material.name)
+          }
+        }
+      })
+      return childWithPosition
     }
 
     Array.from(Object.values(nodes)).filter(node => {
@@ -196,10 +188,6 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       const isBuilding = isMesh && node.material.name === 'buildings'
 
       if (isGroup) {
-        // console.log('group: ', node)
-        // const x = getMaterial(node)
-        // node.material = x
-
         nodeModel.groups = [...nodeModel.groups, createMeshesFromChildren(node)]
       }
       if (isLabel) {
@@ -217,22 +205,18 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       <>
         <Meshes meshes={nodeModel.meshes} labels={labels} />
         <Labels empties={nodeModel.labels} labels={nodeModel.labels} />
-
+        {/* ### 18 - Mutualize geometries
+If you have multiple [Meshes] using the same geometry shape, create only one geometry, and use it on all the meshes: */}
         <Groups
           groups={nodeModel.groups}
           disabledMeshes={disabledMeshes}
           labels={labels}
         />
-        {/* 
-        <Groups
-          groups={nodeModel.groups}
-          disabledMeshes={disabledMeshes}
-          labels={labels}
-        /> */}
+
         <OSMBuildings meshes={nodeModel.buildings} labels={labels} />
       </>
     )
-  }, [nodes, createMeshesFromChildren])
+  }, [nodes, labels, disabledMeshes])
 
   // if (hash === '#debug') {
   //   const cameras = Array.from(Object.values(nodes)).filter(element => {

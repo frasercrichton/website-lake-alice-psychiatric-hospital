@@ -15,24 +15,24 @@ const Chapter = ({
   setNextChapter,
   pageScrollProgress,
   updateStepProgress,
-  hasPageReset,
-  setHasPageReset
+  hasChapterReset,
+  setChapterReset
 }) => {
   const scroller = useRef(null)
 
   useEffect(() => {
-    // for every new chapter scroll to the start of the page
-    if (hasPageReset) {
+    // for every new chapter scroll to the first page of the chapter
+    if (hasChapterReset) {
       scroller.current.scrollIntoView()
-      setHasPageReset(false)
+      setChapterReset(false)
     }
-  }, [hasPageReset, setHasPageReset])
+  }, [hasChapterReset, setChapterReset])
 
   const onStepEnter = ({ data }) => {
     // when the scroller hits the last step (data='-1') it moves to the next chapter
     if (nextChapter && data === -1) {
       setNextChapter(nextChapter)
-      setHasPageReset(true)
+      setChapterReset(true)
       return
     }
     // a very hacky way of dealing with the intro page

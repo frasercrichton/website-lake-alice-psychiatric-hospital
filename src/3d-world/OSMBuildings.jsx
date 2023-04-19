@@ -1,6 +1,5 @@
 import React from 'react'
 import WireframeBuilding from './WireframeBuilding.jsx'
-import './Facility.css'
 
 const OSMBuildings = ({ meshes, labels }) => {
   const getLabel = id => {
@@ -9,7 +8,13 @@ const OSMBuildings = ({ meshes, labels }) => {
   }
 
   return meshes.map(mesh => {
-    return <WireframeBuilding node={mesh} label={getLabel(mesh.name)} />
+    return (
+      <WireframeBuilding
+        key={mesh.name}
+        node={mesh}
+        label={getLabel(mesh.name)}
+      />
+    )
   })
 }
 

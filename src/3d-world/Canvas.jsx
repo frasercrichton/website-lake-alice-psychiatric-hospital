@@ -21,12 +21,6 @@ const CanvasWrapper = ({
     height: 1080
   }
 
-  console.log('rerendering')
-
-  // useEffect(() => {
-  //   console.log('labels changed')
-  // }, [labels]) //pagechange
-
   const defaultOutputEncoding = THREE.sRGBEncoding
 
   const sizes = {
@@ -42,7 +36,7 @@ const CanvasWrapper = ({
         shadows
         dpr={[1, 2]} //the default
         gl={{
-          antialias: true,
+          antialias: true, // tweak for performance
           alpha: true,
           physicallyCorrectLights: true,
           outputEncoding: defaultOutputEncoding,

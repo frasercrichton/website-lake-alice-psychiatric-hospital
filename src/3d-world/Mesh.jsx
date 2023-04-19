@@ -1,10 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react'
-import * as THREE from 'three'
+import React from 'react'
 import Label from './Label.jsx'
 import './Facility.css'
 
 const Mesh = ({ node, label }) => {
-
   const facilityId = node.name
   const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
 
