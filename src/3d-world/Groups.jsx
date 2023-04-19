@@ -14,7 +14,6 @@ const Groups = ({ groups, disabledMeshes, labels }) => {
         key={mesh.name}
         node={mesh}
         label={getLabel(mesh.name)}
-        disabledMeshes={disabledMeshes}
       />
     )
   })

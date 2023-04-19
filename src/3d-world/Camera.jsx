@@ -112,7 +112,6 @@ const Camera = ({ pageCamera }) => {
   //   return useFrame(({ camera }) => {
   //     let cameraDistance = orbitControlesRef.current.getDistance()
 
-  //     console.log('x', cameraDistance)
   //     if (cameraDistance > 280) {
   //       let polarAngle = orbitControlesRef.current.getPolarAngle()
 

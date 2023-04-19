@@ -34,8 +34,8 @@ function App () {
   const [chapterInView, setChapterInView] = useState(chapters['/introduction'])
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
-  const [nextChapter, setNextChapter] = useState(chapters['/malcolm'])
-  const [hasPageReset, setHasPageReset] = useState(false)
+  const [hasChapterReset, setHasChapterReset] = useState(false)
+  // const [hasPageReset, setHasPageReset] = useState(false)
 
   // Scrollarama state
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
@@ -44,7 +44,6 @@ function App () {
   const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
 
   // 3D Model
-  const [facility, setFacility] = useState('')
   const [pageCamera, setPageCamera] = useState(null)
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(false)
@@ -100,9 +99,8 @@ function App () {
         ? setIsRotating(true)
         : setIsRotating(false)
 
-
       setDisabledMeshes(pageInView?.disable)
-      
+
       setLabels(pageInView?.labels)
       // hacky way to avoid camera bounce after into
       if (pageInView.camera?.duration !== cameraMoveDuration) {
@@ -131,7 +129,7 @@ function App () {
     // setPageInView({...chapterInView.pages[chapters] })
     setChapterInView(chapters[name])
     navigate(name)
-    setHasPageReset(true)
+    setHasChapterReset(true)
   }
 
   const updateStepProgress = progressCount => {
@@ -201,8 +199,7 @@ function App () {
               text={pageInView.text}
               textBoxContainerStyle={textBoxContainerStyle}
               textBoxStyle={textBoxStyle}
-              pageScrollProgress={pageScrollProgress}
-              isAnimated={pageInView?.text.style === 'animated'}
+              isStatic={pageInView?.text.style === 'static'}
             />
           )}
         <div className={canvasClassName}>
@@ -254,8 +251,8 @@ function App () {
                 setPageInView={setPageInView}
                 pageScrollProgress={pageScrollProgress}
                 updateStepProgress={updateStepProgress}
-                hasPageReset={hasPageReset}
-                setHasPageReset={setHasPageReset}
+                hasChapterReset={hasChapterReset}
+                setChapterReset={setHasChapterReset}
               />
             }
           />
@@ -270,8 +267,8 @@ function App () {
                   setNextChapter={updateChapter}
                   pageScrollProgress={pageScrollProgress}
                   updateStepProgress={updateStepProgress}
-                  hasPageReset={hasPageReset}
-                  setHasPageReset={setHasPageReset}
+                  hasChapterReset={hasChapterReset}
+                  setChapterReset={setHasChapterReset}
                 />
               ) : (
                 <MarkdownPage fileName={pageInView?.content?.file} />
