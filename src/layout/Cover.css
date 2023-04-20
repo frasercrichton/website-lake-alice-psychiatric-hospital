@@ -64,7 +64,7 @@
 }
 
 .cover-container h1 {
-  font-size: 3rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: 100px;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .navigation .button {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   border: 0.16em solid #FFFFFF;
   text-decoration: none;
   text-transform: uppercase;
@@ -97,7 +97,6 @@
 }
 
 @media all and (max-width: 428px) {
-
   .default-cover-container {
     background-color: #ffffff;
     background-size: 100%;
