@@ -9,7 +9,7 @@
 
 .markdown-container>div, .markdown-container>p, .markdown-container>ul>li {
     text-align: left;
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
     line-height: 1.875rem;
     letter-spacing: 0;
     margin-bottom: 23px;

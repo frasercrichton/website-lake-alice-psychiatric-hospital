@@ -110,7 +110,7 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
     isRotating
       ? (group.current.rotation.y += delta * 0.2)
       : (group.current.rotation.y = 0)
-  })
+  }) //https://codepen.io/Meds/pen/Mbpqox
 
   // useEffect(() => {
   //   if (isRotating && group !== undefined) {

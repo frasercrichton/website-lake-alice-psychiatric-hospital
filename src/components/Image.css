@@ -23,7 +23,7 @@ img {
 }
 
 figcaption {
-  font-size: small;
+  font-size: var(--font-size-sm);
   padding: 2px;
   background-color: #ffffff;
   opacity: 0.7;
@@ -41,7 +41,7 @@ figcaption {
 
 .source a {
   font-style: italic;
-  font-size: small;
+  font-size: var(--font-size-xs);
   color: #000000;
   text-decoration: underline;
 

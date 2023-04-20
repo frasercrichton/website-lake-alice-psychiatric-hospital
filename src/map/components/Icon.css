@@ -6,7 +6,7 @@
   width: 180px;
   text-align: center;
   color: #424242;
-  font-size: 12px;
+  font-size: var(--font-size-lg);
   user-select: none;
   position: relative;
   /* top: 50%; */

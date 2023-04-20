@@ -4,7 +4,7 @@ div.caption {
 }
 
 i {
-  font-size: small;
+  font-size: var(--font-size-lg);
   line-height: 12px;
   text-align: center;
 }
