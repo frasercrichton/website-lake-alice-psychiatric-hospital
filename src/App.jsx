@@ -35,7 +35,8 @@ function App () {
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [hasChapterReset, setHasChapterReset] = useState(false)
-  // const [hasPageReset, setHasPageReset] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
+  const oddOrEvenPage = pageNumber % 2 === 0 ? 'even' : 'odd'
 
   // Scrollarama state
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
@@ -192,16 +193,32 @@ function App () {
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
+        {/*  */}
         {pageInView.text &&
           (pageInView.text?.style === 'static' ||
-            pageInView.text?.style === 'animated') && (
+            pageInView.text?.style === 'animated') &&
+          oddOrEvenPage === 'odd' && (
             <TextBox
+              pageNumber={pageNumber}
               text={pageInView.text}
               textBoxContainerStyle={textBoxContainerStyle}
               textBoxStyle={textBoxStyle}
               isStatic={pageInView?.text.style === 'static'}
             />
           )}
+          {pageInView.text &&
+          (pageInView.text?.style === 'static' ||
+            pageInView.text?.style === 'animated') &&
+          oddOrEvenPage === 'even' && (
+            <TextBox
+              pageNumber={pageNumber}
+              text={pageInView.text}
+              textBoxContainerStyle={textBoxContainerStyle}
+              textBoxStyle={textBoxStyle}
+              isStatic={pageInView?.text.style === 'static'}
+            />
+          )}
+
         <div className={canvasClassName}>
           <Canvas
             key='canvas'
@@ -253,6 +270,8 @@ function App () {
                 updateStepProgress={updateStepProgress}
                 hasChapterReset={hasChapterReset}
                 setChapterReset={setHasChapterReset}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
               />
             }
           />
@@ -269,6 +288,8 @@ function App () {
                   updateStepProgress={updateStepProgress}
                   hasChapterReset={hasChapterReset}
                   setChapterReset={setHasChapterReset}
+                  pageNumber={pageNumber}
+                  setPageNumber={setPageNumber}
                 />
               ) : (
                 <MarkdownPage fileName={pageInView?.content?.file} />

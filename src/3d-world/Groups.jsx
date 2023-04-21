@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import Facility from './Facility.jsx'
 
-const Groups = ({ groups, disabledMeshes, labels }) => {
+const Groups = ({ groups, labels }) => {
   
   const getLabel = id => {
     const label = labels?.find(item => item.id === id)

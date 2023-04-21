@@ -1,6 +1,5 @@
 import React from 'react'
 import Label from './Label.jsx'
-import './Facility.css'
 
 const Mesh = ({ node, label }) => {
   const facilityId = node.name

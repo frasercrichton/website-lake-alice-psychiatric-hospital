@@ -42,14 +42,14 @@
 }
 
 .cover-content {
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
+  animation: coverFadeIn 5s;
+  -webkit-animation: coverFadeIn 5s;
+  -moz-animation: coverFadeIn 5s;
+  -o-animation: coverFadeIn 5s;
+  -ms-animation: coverFadeIn 5s;
 }
 
-@keyframes fadeIn {
+@keyframes coverFadeIn {
   0% {
     opacity: 0.2;
   }

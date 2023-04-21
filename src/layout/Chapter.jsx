@@ -16,7 +16,9 @@ const Chapter = ({
   pageScrollProgress,
   updateStepProgress,
   hasChapterReset,
-  setChapterReset
+  setChapterReset,
+  pageNumber,
+  setPageNumber
 }) => {
   const scroller = useRef(null)
 
@@ -39,6 +41,7 @@ const Chapter = ({
     // there are 2 intro pages so the scroll is slow and smooth
     const index = data <= 2 ? 1 : data - 1
     setPageInView({ index, ...chapterInView.pages[data] })
+    setPageNumber(pageNumber + 1)
   }
 
   const onStepExit = ({ direction, data }) => {}
