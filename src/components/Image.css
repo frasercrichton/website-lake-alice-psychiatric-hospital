@@ -15,11 +15,21 @@ figure {
 
 img {
   margin-bottom: 0;
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
+  animation: imageFadeIn 5s;
+  -webkit-animation: imageFadeIn 5s;
+  -moz-animation: imageFadeIn 5s;
+  -o-animation: imageFadeIn 5s;
+  -ms-animation: imageFadeIn 5s;
+}
+
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 figcaption {

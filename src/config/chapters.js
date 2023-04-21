@@ -1252,7 +1252,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ElevenBedVillaRoof020_12', 'ElevenBedVillaRoof020_13'],
+        disable: ['ElevenBedVillaRoof020_20', 'ElevenBedVillaRoof020_21'],
         camera: {
           ...cameras.twelveBedVillaAbove
         }
@@ -1267,8 +1267,7 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof020_12',
-          'ElevenBedVillaRoof020_13',
+          'ElevenBedVillaRoof020_20', 'ElevenBedVillaRoof020_21',
           'ElevenBedVillaFirstFloor020_',
           'ElevenBedVillaFirstFloor020_1',
           'ElevenBedVillaFirstFloor020_2',
