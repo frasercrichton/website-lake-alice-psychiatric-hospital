@@ -12,6 +12,18 @@
     font-size: var(--font-size-lg);
     line-height: 1.875rem;
     letter-spacing: 0;
-    margin-bottom: 23px;
+    /* margin-bottom: 23px; */
     line-height: 1.5em;
+}
+
+.markdown-container>div, .markdown-container>p {
+    margin-bottom: 23px;
+}
+
+.markdown-container>ul {
+    padding-left: 15px;
+}
+
+.markdown-container>ul>li {
+    padding: 0px 0px;
 }
