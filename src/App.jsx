@@ -243,12 +243,6 @@ function App () {
             // pageScrollProgress={pageScrollProgress}
           />
         )}
-        {pageInView.video !== undefined && (
-          <VideoVimeo
-            id={pageInView.video.id}
-            caption={pageInView.video.caption}
-          />
-        )}
 
         {pageInView.image && pageInView.image?.style === 'static' && (
           <div className='static-image-container'>
@@ -330,6 +324,13 @@ function App () {
 
         <Footer introActive={introActive} />
       </BrowserView>
+      {pageInView.video !== undefined && (
+          <VideoVimeo
+            id={pageInView.video.id}
+            caption={pageInView.video.caption}
+          />
+        )}
+
     </div>
   )
 }
