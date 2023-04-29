@@ -2,34 +2,40 @@ const urls = [
   {
     text: 'Introduction',
     url: '/introduction',
-    next: '/context'
+    next: '/context',
+    isMobile: true
   },
   {
     text: 'Context',
     url: '/context',
-    next: '/pathways'
+    next: '/pathways',
+    isMobile: false
   },
   {
     text: 'Pathways',
     url: '/pathways',
-    next: '/malcolm'
+    next: '/malcolm',
+    isMobile: false
   },
 
   {
     text: 'Malcolm',
     url: '/malcolm',
-    next: '/justice'
+    next: '/justice',
+    isMobile: false
   },
 
   {
     text: 'Justice',
     url: '/justice',
-    next: '/about'
+    next: '/about',
+    isMobile: false
   },
   {
     text: 'About',
     url: '/about',
-    next: '/introduction'
+    next: '/introduction',
+    isMobile: true
   }
 ]
 export default urls
