@@ -151,7 +151,6 @@ function App () {
       : null
 
   const handleCoverClick = () => {
-    // setLoading(!isLoading)
     setCoverActive(!isCoverActive)
   }
 
@@ -181,6 +180,13 @@ function App () {
 
   return (
     <div className='site-container' style={containerScroll}>
+      <MobileCover
+        scrollProgress={headerScrollProgress}
+        activeChapter={activeChapter}
+        navigateToChapter={navigateToChapter}
+        pageInView={pageInView}
+      />
+
       <BrowserView>
         <Leva oneLineLabels collapsed hidden={isLevaHidden} />
         <Cover
@@ -193,7 +199,6 @@ function App () {
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
-        {/*  */}
         {pageInView.text &&
           (pageInView.text?.style === 'static' ||
             pageInView.text?.style === 'animated') &&
@@ -206,7 +211,7 @@ function App () {
               isStatic={pageInView?.text.style === 'static'}
             />
           )}
-          {pageInView.text &&
+        {pageInView.text &&
           (pageInView.text?.style === 'static' ||
             pageInView.text?.style === 'animated') &&
           oddOrEvenPage === 'even' && (
@@ -325,7 +330,6 @@ function App () {
 
         <Footer introActive={introActive} />
       </BrowserView>
-      <MobileCover />
     </div>
   )
 }

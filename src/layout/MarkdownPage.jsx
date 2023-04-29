@@ -1,11 +1,9 @@
 import Markdown from '../components/markdown/Markdown.jsx'
 import AssetUrlHelper from '../components/AssetUrlHelper'
 import './MarkdownPage.css'
+const assetUrlHelper = new AssetUrlHelper()
 
 const MarkdownPage = ({ fileName }) => {
-
-  const assetUrlHelper = new AssetUrlHelper()
-
   return (
     <div className='markdown-page-container'>
       <div className='markdown'>

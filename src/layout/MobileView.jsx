@@ -1,27 +1,45 @@
 import React from 'react'
 import { MobileView } from 'react-device-detect'
-import Cover from './Cover.jsx'
 import VideoVimeo from '../components/VideoVimeo.jsx'
+import Header from './Header.jsx'
+import MarkdownPage from './MarkdownPage.jsx'
+import './MobileView.css'
 
-const MobileCover = () => (
-  <MobileView viewClassName='mobile'>
-    {/* <Cover
-          key='cover'
-          coverActive={isCoverActive}
-          handleCoverClick={handleCoverClick}
-        /> */}
+const MobileCover = ({
+  headerScrollProgress,
+  activeChapter,
+  navigateToChapter,
+  pageInView
+}) => {
+  const { pageId, text, image, content, view } = pageInView
 
-    <h1>Lake Alice Psychiatric Hospital</h1>
-    <h2>
-      Te Wāhanga Tamaiti, Taitamariki o Lake Alice Lake Alice Child and
-      Adolescent Unit
-    </h2>
+  return (
+    <MobileView viewClassName='mobile'>
+      <Header
+        scrollProgress={headerScrollProgress}
+        activeChapter={activeChapter}
+        navigateToChapter={navigateToChapter}
+        isMobile
+      />
 
-    <VideoVimeo
-      id={689154638}
-      caption={'Malcolm Richards - Lake Alice Survivor'}
-    />
-  </MobileView>
-)
+      <div className='mobile-container'>
+        {/* <h1>Lake Alice Psychiatric Hospital</h1>
+        <h2>
+          Te Wāhanga Tamaiti, Taitamariki o Lake Alice Lake Alice Child and
+          Adolescent Unit
+        </h2> */}
+
+        {view === 'markdown' && content.file !== undefined && (
+          <MarkdownPage key={pageId} fileName={content.file} />
+        )}
+
+        <VideoVimeo
+          id={689154638}
+          caption={'Malcolm Richards - Lake Alice Survivor'}
+        />
+      </div>
+    </MobileView>
+  )
+}
 
 export default MobileCover
