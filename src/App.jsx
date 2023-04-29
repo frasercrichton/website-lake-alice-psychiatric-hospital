@@ -185,6 +185,7 @@ function App () {
         activeChapter={activeChapter}
         navigateToChapter={navigateToChapter}
         pageInView={pageInView}
+        pageNumber={pageNumber}
       />
 
       <BrowserView>
@@ -241,6 +242,12 @@ function App () {
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
             // pageScrollProgress={pageScrollProgress}
+          />
+        )}
+        {pageInView.video !== undefined && (
+          <VideoVimeo
+            id={pageInView.video.id}
+            caption={pageInView.video.caption}
           />
         )}
 
@@ -324,13 +331,6 @@ function App () {
 
         <Footer introActive={introActive} />
       </BrowserView>
-      {pageInView.video !== undefined && (
-          <VideoVimeo
-            id={pageInView.video.id}
-            caption={pageInView.video.caption}
-          />
-        )}
-
     </div>
   )
 }
