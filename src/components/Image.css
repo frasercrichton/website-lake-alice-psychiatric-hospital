@@ -1,14 +1,7 @@
-/* TODO these are global! */
-.image-container {
-  /* justify-content: center;
-  align-items: center; */
-}
-
 figure {
   display: flex;
   flex-flow: column;
   width: 100vw;
-  min-width: 850px;
   padding: 0;
   margin: 0;
 }
@@ -38,7 +31,6 @@ figcaption {
   background-color: #ffffff;
   opacity: 0.7;
   align-self: center;
-  text-align: center;
 }
 
 .source {
@@ -47,6 +39,7 @@ figcaption {
   align-self: center;
   text-align: center;
   display: inline-block;
+  text-transform: uppercase;
 }
 
 .source a {
@@ -54,9 +47,4 @@ figcaption {
   font-size: var(--font-size-xs);
   color: #000000;
   text-decoration: underline;
-
-}
-
-.source {
-  text-transform: uppercase;
 }
