@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', id, url, source, style }) => {
+const Image = ({ caption = '', src, source, style, id }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
+  console.log(source)
   const handleLoading = isLoaded => {
     setIsLoaded(isLoaded)
   }
@@ -12,11 +13,7 @@ const Image = ({ caption = '', id, url, source, style }) => {
   return (
     <div className='image-container' style={style}>
       <figure className='figure'>
-        <img
-          src={url}
-          alt={caption}
-          onLoad={e => handleLoading(true)}
-        />
+        <img src={src} alt={caption} onLoad={e => handleLoading(true)} />
         {caption !== '' && (
           <figcaption className='caption'>{caption}</figcaption>
         )}

@@ -176,7 +176,7 @@ function App () {
 
   const containerScroll = isCoverActive
     ? { overflow: 'hidden' }
-    : { overflow: 'scroll' }
+    : { 'overflow-y': 'scroll' }
 
   return (
     <div className='site-container' style={containerScroll}>
@@ -255,7 +255,7 @@ function App () {
           <div className='static-image-container'>
             <Image
               caption={pageInView.image.caption}
-              url={imageURL}
+              src={imageURL}
               style={imageContainerStyle}
               source={pageInView.image.source}
             />

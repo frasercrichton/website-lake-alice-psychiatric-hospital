@@ -27,7 +27,7 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
     margin: '50px',
     width: '45%'
   }
-  
+
   return (
     <div key={`content-block-${pageId}`} className='page-content-container'>
       {isIntroduction && (
@@ -47,8 +47,8 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
           <div className={`${image.style}-image`}>
             <Image
               caption={image.caption}
+              src={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
               source={image.source}
-              url={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
             />
           </div>
         )}

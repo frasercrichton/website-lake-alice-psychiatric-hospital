@@ -20,13 +20,3 @@ const EmRenderer = ({ node, ...props }) => {
 }
 
 export default EmRenderer
-
-// em: ({ node, ...props }) => {
-//  if ( props.children[0] && typeof props.children[0] === 'string' && props.children[0].startsWith('^')) {
-//     return <sup>{props.children[0].substring(1)}</sup>
-// }
-// if ( props.children[0] && typeof props.children[0] === 'string' && props.children[0].startsWith('~')) {
-//     return <sub>{props.children[0].substring(1)}</sub>
-// }
-// return <i {...props} />
-// },

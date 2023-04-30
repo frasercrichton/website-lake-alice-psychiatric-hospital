@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import './Markdown.css'
 import LinkRenderer from './LinkRenderer.jsx'
 import EmRenderer from './EmRenderer.jsx'
+import Image from '../Image'
 
 const Markdown = markdownContent => {
   const [markdown, setMarkdown] = useState('')
@@ -20,7 +21,9 @@ const Markdown = markdownContent => {
 
   return (
     <div className='markdown-container'>
-      <ReactMarkdown components={{ p: 'div', a: LinkRenderer, em: EmRenderer }}>
+      <ReactMarkdown
+        components={{ p: 'div', a: LinkRenderer, em: EmRenderer, img: Image }}
+      >
         {markdown}
       </ReactMarkdown>
     </div>
