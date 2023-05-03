@@ -6,9 +6,13 @@ import MarkdownPage from './MarkdownPage.jsx'
 import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
+const textBoxStyle = {
+  margin: '50px',
+  width: '45%'
+}
+
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   const { pageId, text, image, content, view } = page
-
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -23,17 +27,10 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
     ? 'content-introduction active'
     : 'content-introduction'
 
-  const textBoxStyle = {
-    margin: '50px',
-    width: '45%'
-  }
-
   return (
     <div key={`content-block-${pageId}`} className='page-content-container'>
       {isIntroduction && (
-        <div className={introClassName}>
-          <h1>{text.content}</h1>
-        </div>
+        <div className={introClassName}>{/* <h1>{text.content}</h1> */}</div>
       )}
       {text?.style === 'scrolling' && (
         <TextBox
@@ -42,16 +39,15 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
           pageScrollProgress={pageScrollProgress}
         />
       )}
-      {image != null &&
-        (image.style === 'scrolling' || image.style === 'document') && (
-          <div className={`${image.style}-image`}>
-            <Image
-              caption={image.caption}
-              src={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
-              source={image.source}
-            />
-          </div>
-        )}
+      {image != null && image.style === 'scrolling' && (
+        <div className={`${image.style}-image-container`}>
+          <Image
+            caption={image.caption}
+            src={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
+            source={image.source}
+          />
+        </div>
+      )}
       {view === 'markdown' && (
         <MarkdownPage key={pageId} content={content.file} />
       )}

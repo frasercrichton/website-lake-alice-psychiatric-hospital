@@ -1,5 +1,4 @@
-import React, { useEffect, forwardRef, useState } from 'react'
-import * as THREE from 'three'
+import React from 'react'
 import Label from './Label.jsx'
 import './Facility.css'
 

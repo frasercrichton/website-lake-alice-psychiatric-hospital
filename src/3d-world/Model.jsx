@@ -1,8 +1,7 @@
-import React, { useRef, useMemo, useEffect } from 'react'
+import React, { useRef, useMemo } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-import gsap from 'gsap'
 import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
 import Labels from './Labels.jsx'
@@ -218,40 +217,40 @@ If you have multiple [Meshes] using the same geometry shape, create only one geo
     )
   }, [nodes, labels, disabledMeshes])
 
-  // if (hash === '#debug') {
-  //   const cameras = Array.from(Object.values(nodes)).filter(element => {
-  //     return element.type === 'PerspectiveCamera' && element.name !== 'Scene'
-  //   })
+  if (hash === '#debug') {
+    const cameras = Array.from(Object.values(nodes)).filter(element => {
+      return element.type === 'PerspectiveCamera' && element.name !== 'Scene'
+    })
 
-  //   // this outputs Blender nodes and camera config to the console for manual cut and paste config updates
-  //   console.log('Cameras ####################################')
-  //   cameras
-  //     .sort(function (a, b) {
-  //       return a.name < b.name ? -1 : a.name > b.name ? 1 : 0
-  //     })
-  //     .forEach(camera => {
-  //       const cameraConfig = {
-  //         name: camera.name,
-  //         position: [camera.position.x, camera.position.y, camera.position.z],
-  //         rotation: [
-  //           camera.rotation._x,
-  //           camera.rotation._y,
-  //           camera.rotation._z
-  //         ],
-  //         aspect: camera.aspect,
-  //         fov: camera.fov,
-  //         near: camera.near,
-  //         far: camera.far
-  //       }
-  //       console.log(cameraConfig)
-  //     })
+    // this outputs Blender nodes and camera config to the console for manual cut and paste config updates
+    console.log('Cameras ####################################')
+    cameras
+      .sort(function (a, b) {
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+      })
+      .forEach(camera => {
+        const cameraConfig = {
+          name: camera.name,
+          position: [camera.position.x, camera.position.y, camera.position.z],
+          rotation: [
+            camera.rotation._x,
+            camera.rotation._y,
+            camera.rotation._z
+          ],
+          aspect: camera.aspect,
+          fov: camera.fov,
+          near: camera.near,
+          far: camera.far
+        }
+        console.log(cameraConfig)
+      })
 
-  //   console.log('Nodes ######################################')
-  //   console.log(nodes)
-  //   // console.log('Materials ######################################')
-  //   // console.log(materials)
-  //   console.log('############################################')
-  // }
+    console.log('Nodes ######################################')
+    console.log(nodes)
+    // console.log('Materials ######################################')
+    // console.log(materials)
+    console.log('############################################')
+  }
 
   return <group ref={group}>{modelMeshes}</group>
 }

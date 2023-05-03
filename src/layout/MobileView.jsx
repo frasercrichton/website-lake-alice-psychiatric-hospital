@@ -23,6 +23,14 @@ const MobileCover = ({
       />
 
       <div className='mobile-container'>
+        
+        
+        {/* 
+        
+        final-animation0001-0250.mp4 - animated childrens villa
+        10png.png - max with plan
+        */}
+
         {/* <h1>Lake Alice Psychiatric Hospital</h1>
         <h2>
           Te Wāhanga Tamaiti, Taitamariki o Lake Alice Lake Alice Child and

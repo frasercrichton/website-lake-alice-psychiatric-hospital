@@ -7,12 +7,6 @@
   overflow-x: hidden;
 }
 
-.static-image-container {
-  position: fixed;
-  top: 50px;
-  left: 0;
-}
-
 a {
   color: #ffffff;
   text-decoration: none;
@@ -27,4 +21,56 @@ a {
   transition: visibility 1s, opacity 1s linear;
   visibility: visible;
   opacity: 1;
+}
+
+/* Images: Static */
+
+.static-image-container {
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+/* Images: Document */
+
+.document-image-container {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  /* background-color: antiquewhite; */
+}
+
+.document-image-container .image-container {
+  /* background-color: black; */
+}
+
+.document-image-container figure {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* background-color: aqua; */
+}
+
+.document-image-container figcaption {
+  background-color: blue;
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+
+}
+
+.document-image-container figure img, .scrolling-image-container figure img {
+  padding: 15px;
+  /* height and object-fit: contain makes the image responsive to the container */
+  height: 80vh;
+  object-fit: contain;
 }

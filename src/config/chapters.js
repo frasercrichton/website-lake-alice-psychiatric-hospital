@@ -294,12 +294,12 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: cameras.boysVilla
+        camera: cameras.boysVillaRearCamera001
       },
       {
         id: 'malcolm-5',
         view: '3d',
-        camera: cameras.boysVilla
+        camera: cameras.boysVillaRearCamera001
       },
       {
         id: 'malcolm-6',
@@ -1267,7 +1267,8 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof020_20', 'ElevenBedVillaRoof020_21',
+          'ElevenBedVillaRoof020_20',
+          'ElevenBedVillaRoof020_21',
           'ElevenBedVillaFirstFloor020_',
           'ElevenBedVillaFirstFloor020_1',
           'ElevenBedVillaFirstFloor020_2',
@@ -1473,17 +1474,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'Cam 5',
-          position: [73.58257293701172, 6.925444602966309, -363.65118408203125],
-          rotation: [
-            -2.8804409500245396, 1.124606510517196, 2.9050370812435697
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.boysVillaRearCamera }
       },
       {
         id: 'context-27',
@@ -1734,7 +1725,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
         id: 'pathways-12',
@@ -1746,7 +1737,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
         id: 'pathways-13',
@@ -1758,7 +1749,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
         id: 'pathways-14',
@@ -1769,7 +1760,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVilla }
+        camera: { ...cameras.siteCamera, isRotating: true }
       }
     ]
   },
@@ -2137,24 +2128,6 @@ const data = {
           file: 'about'
         }
       }
-      // {
-      //   id: 'about-introduction-2',
-      //   index: 1,
-      //   text: {
-      //     content: 'About'
-      //   }
-      // },
-      // {
-      //   id: 'about-1',
-      //   index: 2,
-      //   text: {
-      //     content: 'About'
-      //   },
-      //   view: 'markdown',
-      //   content: {
-      //     file: 'about'
-      //   }
-      // }
     ]
   },
   '/': {
@@ -2183,9 +2156,5 @@ const data = {
     ]
   }
 }
-// chapter
-
-// page
-//
 
 export default data
