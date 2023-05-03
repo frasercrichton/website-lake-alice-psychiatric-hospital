@@ -2,16 +2,15 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', src, source, style, id }) => {
+const Image = ({ caption = '', src, source, id }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  console.log(source)
   const handleLoading = isLoaded => {
     setIsLoaded(isLoaded)
   }
 
   return (
-    <div className='image-container' style={style}>
+    <div className='image-container'>
       <figure className='figure'>
         <img src={src} alt={caption} onLoad={e => handleLoading(true)} />
         {caption !== '' && (

@@ -54,6 +54,18 @@ Part of
     Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers / Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin
 https://natlib.govt.nz/records/22875316
 
+## Content Configuration
+
+
+`chapters.js`
+
+## Chapter
+
+A chapter is a discrete section of content made up of pages, for example: Introduction, Context etc.
+
+## Page
+
+A page defines both scrolling text content and the background content with options for 3D model camera views, maps, images or text content.
 
 ## Technical
 

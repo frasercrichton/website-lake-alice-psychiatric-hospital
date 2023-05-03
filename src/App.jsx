@@ -154,11 +154,6 @@ function App () {
     setCoverActive(!isCoverActive)
   }
 
-  const imageContainerStyle = {
-    position: 'fixed',
-    display: 'flex'
-  }
-
   const textBoxContainerStyle = {
     position: 'fixed',
     justifyContent: 'center',
@@ -241,7 +236,6 @@ function App () {
             pageInView={pageInView}
             visibleMapLayers={visibleMapLayers}
             {...mapZoomDimensions}
-            // pageScrollProgress={pageScrollProgress}
           />
         )}
         {pageInView.video !== undefined && (
@@ -250,17 +244,17 @@ function App () {
             caption={pageInView.video.caption}
           />
         )}
-
-        {pageInView.image && pageInView.image?.style === 'static' && (
-          <div className='static-image-container'>
-            <Image
-              caption={pageInView.image.caption}
-              src={imageURL}
-              style={imageContainerStyle}
-              source={pageInView.image.source}
-            />
-          </div>
-        )}
+        {pageInView.image &&
+          (pageInView.image?.style === 'static' ||
+            pageInView.image?.style === 'document') && (
+            <div className={`${pageInView.image?.style}-image-container`}>
+              <Image
+                caption={pageInView.image.caption}
+                src={imageURL}
+                source={pageInView.image.source}
+              />
+            </div>
+          )}
         <Routes>
           <Route
             key={'route-default'}

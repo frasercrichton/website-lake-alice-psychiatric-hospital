@@ -33,10 +33,19 @@
   cursor: default;
 }
 
-.markdown-page-container img {
-  width: 80%;
-}
 
 .markdown-page-container h2 {
   text-transform: uppercase;
+}
+
+.markdown-page-container img {
+  width: 40%;
+}
+
+@media screen and (max-width: 390px) {
+
+  .markdown-page-container img {
+    width: 80%;
+  }
+
 }
