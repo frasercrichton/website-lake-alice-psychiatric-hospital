@@ -30,7 +30,9 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   return (
     <div key={`content-block-${pageId}`} className='page-content-container'>
       {isIntroduction && (
-        <div className={introClassName}>{/* <h1>{text.content}</h1> */}</div>
+        <div className={introClassName}>
+          <h1>{text.content}</h1>
+        </div>
       )}
       {text?.style === 'scrolling' && (
         <TextBox
