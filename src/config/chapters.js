@@ -1512,6 +1512,34 @@ const data = {
   },
   '/pathways': {
     pages: [
+      // {
+      //   id: 'pathways-7',
+      //   text: {
+      //     header: '4 - State Residences',
+      //     content:
+      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
+      //     source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+      //     style: 'scrolling'
+      //   },
+      //   view: 'map',
+      //   map: {
+      //     ...national,
+      //     visibleMapLayers: {
+      //       majorPoints: [
+      //         {
+      //           label: 'Lake Alice',
+      //           latitude: -40.1254336,
+      //           longitude: 175.3369864
+      //         }
+      //       ],
+      //       minorPoints: {
+      //         colour: '#ff0000',
+      //         points: [...stateCareFacilities]
+      //       },
+      //       style: 'animated'
+      //     }
+      //   }
+      // },
       {
         id: 'pathways-introduction-2',
         text: {
@@ -1646,7 +1674,6 @@ const data = {
           style: 'static'
         }
       },
-
       {
         id: 'pathways-7',
         text: {
