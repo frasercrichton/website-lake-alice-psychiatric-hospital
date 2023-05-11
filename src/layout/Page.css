@@ -1,24 +1,28 @@
 .page-content-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 100vh;
+  width: 100vw;
+  /* background-color: aliceblue; */
 }
 
 .content-introduction {
   background-color: #000;
   color: #ffffff;
   font-size: var(--font-size-2xl);
+
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
-  position: fixed;
-  opacity: 0;
-  transition: opacity 1.5s linear;
   height: 100vh;
   width: 100vw;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s linear;
+
 }
 
 .content-introduction.active {

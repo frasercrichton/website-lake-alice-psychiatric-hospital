@@ -1,232 +1,287 @@
-[
-  {
-    "label": "Porirua Hospital - Porirua",
-    "latitude": -41.1404088,
-    "longitude": 174.8293619
+{
+  "auckland": {
+    "title": "Psychiatric Facilities (Auckland)",
+    "points": [
+      {
+        "id": "bexley-clinic",
+        "label": "Bexley Clinic - Tāmaki Makaurau Auckland",
+        "latitude": -36.8830791,
+        "longitude": 174.8046149
+      },
+      {
+        "id": "buchanan-clinic",
+        "label": "Buchanan Clinic - Tāmaki Makaurau Auckland",
+        "latitude": -36.8729408,
+        "longitude": 174.7102071
+      },
+      {
+        "id": "oakley-hospital",
+        "label": "Oakley Hospital - Tāmaki Makaurau Auckland",
+        "latitude": -36.880774,
+        "longitude": 174.7055693
+      },
+      {
+        "id": "auckland-hospital",
+        "label": "Auckland Hospital - Tāmaki Makaurau Auckland",
+        "latitude": -36.8605068,
+        "longitude": 174.7674006
+      },
+      {
+        "id": "mangere-psychopaedic-hospital",
+        "label": "Mangere Psychopaedic Hospital - Tāmaki Makaurau Auckland",
+        "latitude": -36.9842053,
+        "longitude": 174.748083
+      },
+      {
+        "id": "mason-clinic",
+        "label": "Mason Clinic - Tāmaki Makaurau Auckland",
+        "latitude": -36.8750973,
+        "longitude": 174.7042219
+      },
+      {
+        "id": "middlemore-hospital",
+        "label": "Middlemore Hospital (Tiaho Mai) - Tāmaki Makaurau Auckland",
+        "latitude": -36.9603873,
+        "longitude": 174.8353669
+      },
+      {
+        "id": "selwyn-hospital",
+        "label": "Selwyn Hospital - Tāmaki Makaurau Auckland",
+        "latitude": -36.8667,
+        "longitude": 174.6965879
+      },
+      {
+        "id": "north-shore-hospital",
+        "label": "North Shore Hospital (Taharoto) - Tāmaki Makaurau Auckland",
+        "latitude": -36.7811891,
+        "longitude": 174.7551995
+      }
+    ]
   },
-  {
-    "label": "Porirua Lunatic Asylum - Porirua",
-    "latitude": -41.141037,
-    "longitude": 174.831952
+  "northIsland": {
+    "title": "Psychiatric Facilities (North Island excluding Auckland)",
+    "points": [
+      {
+        "id": "rotorua-hospital",
+        "label": "Rotorua Hospital - Te Rotorua-nui-a-Kahumatamomoe Rotorua",
+        "latitude": -38.1370328,
+        "longitude": 176.2286507
+      },
+      {
+        "id": "porirua-hospital",
+        "label": "Porirua Hospital - Porirua",
+        "latitude": -41.1404088,
+        "longitude": 174.8293619
+      },
+      {
+        "id": "porirua-lunatic-asylum",
+        "label": "Porirua Lunatic Asylum - Porirua",
+        "latitude": -41.141037,
+        "longitude": 174.831952
+      },
+      {
+        "id": "karori-lunatic-asylum",
+        "label": "Karori Lunatic Asylum - Te Whanganui-a-Tara Wellington",
+        "latitude": -41.284682,
+        "longitude": 174.741601
+      },
+      {
+        "id": "tauranga-hospital",
+        "label": "Tauranga Hospital - Tauranga",
+        "latitude": -37.7079139,
+        "longitude": 176.1457266
+      },
+      {
+        "id": "kingseat-psychiatric-hospital",
+        "label": "Kingseat Psychiatric Hospital - Karaka",
+        "latitude": -37.1299176,
+        "longitude": 174.8007884
+      },
+      {
+        "id": "kimberley-hospital",
+        "label": "Kimberley Hospital - Taitoko Levin",
+        "latitude": -40.6517293,
+        "longitude": 175.267617
+      },
+      {
+        "id": "tokanui-hospital",
+        "label": "Tokanui Hospital - Te Awamutu",
+        "latitude": -38.0718962,
+        "longitude": 175.3312397
+      },
+      {
+        "id": "thames-hospital",
+        "label": "Thames Hospital - Pārāwai Thames",
+        "latitude": -37.1384546,
+        "longitude": 175.5417582
+      },
+      {
+        "id": "aspell-house",
+        "label": "Aspell House - Plimmerton",
+        "latitude": -41.0734036,
+        "longitude": 174.8417632
+      },
+      {
+        "id": "hutt-hospital",
+        "label": "Hutt Hospital (Te Whare Ahuru) - Te Awa Kairangi ki Tai Lower Hutt",
+        "latitude": -41.2044069,
+        "longitude": 174.9225753
+      },
+      {
+        "id": "kenepuru-hospital",
+        "label": "Kenepuru Hospital - Porirua",
+        "latitude": -41.2237699,
+        "longitude": 174.7427485
+      },
+      {
+        "id": "mount-view-lunatic-asylum",
+        "label": "Mount View Lunatic Asylum - Te Whanganui-a-Tara Wellington",
+        "latitude": -41.306114,
+        "longitude": 174.7810835
+      },
+      {
+        "id": "palmerston-north-hospital",
+        "label": "Palmerston North Hospital (Manawaroa) - Te Papaioea Palmerston North",
+        "latitude": -40.3389386,
+        "longitude": 175.6184321
+      },
+      {
+        "id": "barrett-st-hospital",
+        "label": "Barrett St Hospital - New Plymouth Ngāmotu",
+        "latitude": -39.064121,
+        "longitude": 174.06688
+      },
+      {
+        "id": "taranaki-base-hospital",
+        "label": "Taranaki Base Hospital - Ngāmotu New Plymouth",
+        "latitude": -39.0727293,
+        "longitude": 174.0540686
+      },
+      {
+        "id": "gisborne-hospital",
+        "label": "Gisborne Hospital - Tūranga-nui-a-Kiwa Gisborne",
+        "latitude": -38.6380038,
+        "longitude": 178.0029293
+      },
+      {
+        "id": "hastings-hospital",
+        "label": "Hastings Hospital - Te Matau-a-Māui Hawke’s Bay",
+        "latitude": -39.6359615,
+        "longitude": 176.8240444
+      }
+    ]
   },
-  {
-    "label": "Seaview Asylum - Hokitika",
-    "latitude": -42.7084539,
-    "longitude": 170.9734809
-  },
-  {
-    "label": "Karori Lunatic Asylum - Te Whanganui-a-Tara Wellington",
-    "latitude": -41.284682,
-    "longitude": 174.741601
-  },
-  {
-    "label": "Oakley Hospital - Tāmaki Makaurau Auckland",
-    "latitude": -36.880774,
-    "longitude": 174.7055693
-  },
-  {
-    "label": "Kingseat Psychiatric Hospital - Karaka",
-    "latitude": -37.1299176,
-    "longitude": 174.8007884
-  },
-  {
-    "label": "Tokanui Hospital - Te Awamutu",
-    "latitude": -38.0718962,
-    "longitude": 175.3312397
-  },
-  {
-    "label": "Lake Alice Psychiatric Hospital",
-    "latitude": -40.1229317,
-    "longitude": 175.2319842
-  },
-  {
-    "label": "Campbell Park - Ōtākou Otago",
-    "latitude": -44.8473995,
-    "longitude": 170.5411083
-  },
-  {
-    "label": "Seacliff Lunatic Asylum - Dunedin Ōtepoti",
-    "latitude": -45.6662673,
-    "longitude": 170.5701653
-  },
-  {
-    "label": "Hawksbury/Cherry Farm Hospital",
-    "latitude": -45.617534,
-    "longitude": 170.637782
-  },
-  {
-    "label": "Mount View Lunatic Asylum - Te Whanganui-a-Tara Wellington",
-    "latitude": -41.306114,
-    "longitude": 174.7810835
-  },
-  {
-    "label": "Wakari Hospital",
-    "latitude": -45.858994,
-    "longitude": 170.472783
-  },
-  {
-    "label": "Ashburn Hall/Clinic - Dunedin Ōtepoti",
-    "latitude": -45.8521082,
-    "longitude": 170.4555717
-  },
-  {
-    "label": "Auckland Hospital (including the Connelly Unit and Te Whetu Tawera)",
-    "latitude": -36.8605068,
-    "longitude": 174.7674006
-  },
-  {
-    "label": "Aspell House - Plimmerton",
-    "latitude": -41.0734036,
-    "longitude": 174.8417632
-  },
-  {
-    "label": "Barrett St Hospital - New Plymouth Ngāmotu",
-    "latitude": -39.064121,
-    "longitude": 174.06688
-  },
-  {
-    "label": "Braemar Hospital - Nelson",
-    "latitude": -41.2899138,
-    "longitude": 173.26715
-  },
-  {
-    "label": "Bexley Clinic - Tāmaki Makaurau Auckland",
-    "latitude": -36.8830791,
-    "longitude": 174.8046149
-  },
-  {
-    "label": "Buchanan Clinic - Tāmaki Makaurau Auckland",
-    "latitude": -36.8729408,
-    "longitude": 174.7102071
-  },
-  {
-    "label": "Calvary Hospital - Ōtautahi Christchurch",
-    "latitude": -43.5205153,
-    "longitude": 172.6325207
-  },
-  {
-    "label": "Dunedin Public Hospital - Ōtepoti Dunedin",
-    "latitude": -45.8702018,
-    "longitude": 170.5064939
-  },
-  {
-    "label": "Gisborne Hospital - Tūranga-nui-a-Kiwa Gisborne",
-    "latitude": -38.6380038,
-    "longitude": 178.0029293
-  },
-  {
-    "label": "Hastings Hospital - Te Matau-a-Māui Hawke’s Bay",
-    "latitude": -39.6359615,
-    "longitude": 176.8240444
-  },
-  {
-    "label": "Hillmorton Hospital - Ōtautahi Christchurch",
-    "latitude": -43.5479201,
-    "longitude": 172.5887403
-  },
-  {
-    "label": "Hutt Hospital (Te Whare Ahuru) - Te Awa Kairangi ki Tai Lower Hutt",
-    "latitude": -41.2044069,
-    "longitude": 174.9225753
-  },
-  {
-    "label": "Kenepuru Hospital - Porirua",
-    "latitude": -41.2237699,
-    "longitude": 174.7427485
-  },
-  {
-    "label": "Kew Hospital - Waihōpai Invercargill",
-    "latitude": -46.4375323,
-    "longitude": 168.356414
-  },
-  {
-    "label": "Kimberley Hospital - Taitoko Levin",
-    "latitude": -40.6517293,
-    "longitude": 175.267617
-  },
-  {
-    "label": "Mangere Psychopaedic Hospital - Tāmaki Makaurau Auckland",
-    "latitude": -36.9842053,
-    "longitude": 174.748083
-  },
-  {
-    "label": "Mason Clinic - Tāmaki Makaurau Auckland",
-    "latitude": -36.8750973,
-    "longitude": 174.7042219
-  },
-  {
-    "label": "Middlemore Hospital (Tiaho Mai) - Tāmaki Makaurau Auckland",
-    "latitude": -36.9603873,
-    "longitude": 174.8353669
-  },
-  {
-    "label": "Nelson Hospital Ngawhatu Hospital - Whakatū Nelson",
-    "latitude": -41.328068,
-    "longitude": 173.232851
-  },
-  {
-    "label": "North Shore Hospital (Taharoto) - Tāmaki Makaurau Auckland",
-    "latitude": -36.7811891,
-    "longitude": 174.7551995
-  },
-  {
-    "label": "Orokanui Hospital - Ōtepoti Dunedin",
-    "latitude": -45.776918,
-    "longitude": 170.6014367
-  },
-  {
-    "label": "Palmerston North Hospital (Manawaroa) - Te Papaioea Palmerston North",
-    "latitude": -40.3389386,
-    "longitude": 175.6184321
-  },
-  {
-    "label": "Princess Margaret Hospital - Ōtautahi Christchurch",
-    "latitude": -43.5707427,
-    "longitude": 172.6184992
-  },
-  {
-    "label": "Queen Mary Hospital - Hanmer",
-    "latitude": -42.5212003,
-    "longitude": 172.8251348
-  },
-  {
-    "label": "Rotorua Hospital - Te Rotorua-nui-a-Kahumatamomoe Rotorua",
-    "latitude": -38.1370328,
-    "longitude": 176.2286507
-  },
-  {
-    "label": "Selwyn Hospital - Tāmaki Makaurau Auckland",
-    "latitude": -36.8667,
-    "longitude": 174.6965879
-  },
-  {
-    "label": "Sunnyside Hospital - Ōtautahi  Christchurch",
-    "latitude": -43.547924,
-    "longitude": 172.5887403
-  },
-  {
-    "label": "Taranaki Base Hospital - Ngāmotu New Plymouth",
-    "latitude": -39.0727293,
-    "longitude": 174.0540686
-  },
-  {
-    "label": "Tauranga Hospital - Tauranga",
-    "latitude": -37.7079139,
-    "longitude": 176.1457266
-  },
-  {
-    "label": "Templeton Hospital - Ōtautahi Christchurch",
-    "latitude": -43.5337943,
-    "longitude": 172.423883
-  },
-  {
-    "label": "Te Whare Mahana - Mohua Golden Bay",
-    "latitude": -40.8515191,
-    "longitude": 172.8041532
-  },
-  {
-    "label": "Thames Hospital - Pārāwai Thames",
-    "latitude": -37.1384546,
-    "longitude": 175.5417582
+  "southIsland": {
+    "title": "Psychiatric Facilities (South Island)",
+    "points": [
+      {
+        "id": "seaview-asylum",
+        "label": "Seaview Asylum - Hokitika",
+        "latitude": -42.7084539,
+        "longitude": 170.9734809
+      },
+      {
+        "id": "campbell-park",
+        "label": "Campbell Park - Ōtākou Otago",
+        "latitude": -44.8473995,
+        "longitude": 170.5411083
+      },
+      {
+        "id": "seacliff-lunatic-asylum",
+        "label": "Seacliff Lunatic Asylum - Dunedin Ōtepoti",
+        "latitude": -45.6662673,
+        "longitude": 170.5701653
+      },
+      {
+        "id": "hawksbury",
+        "label": "Hawksbury/Cherry Farm Hospital",
+        "latitude": -45.617534,
+        "longitude": 170.637782
+      },
+      {
+        "id": "wakari-hospital",
+        "label": "Wakari Hospital",
+        "latitude": -45.858994,
+        "longitude": 170.472783
+      },
+      {
+        "id": "ashburn-hall",
+        "label": "Ashburn Hall/Clinic - Dunedin Ōtepoti",
+        "latitude": -45.8521082,
+        "longitude": 170.4555717
+      },
+      {
+        "id": "braemar-hospital",
+        "label": "Braemar Hospital - Nelson",
+        "latitude": -41.2899138,
+        "longitude": 173.26715
+      },
+      {
+        "id": "calvary-hospital",
+        "label": "Calvary Hospital - Ōtautahi Christchurch",
+        "latitude": -43.5205153,
+        "longitude": 172.6325207
+      },
+      {
+        "id": "dunedin-public-hospital",
+        "label": "Dunedin Public Hospital - Ōtepoti Dunedin",
+        "latitude": -45.8702018,
+        "longitude": 170.5064939
+      },
+      {
+        "id": "hillmorton-hospital",
+        "label": "Hillmorton Hospital - Ōtautahi Christchurch",
+        "latitude": -43.5479201,
+        "longitude": 172.5887403
+      },
+      {
+        "id": "kew-hospital",
+        "label": "Kew Hospital - Waihōpai Invercargill",
+        "latitude": -46.4375323,
+        "longitude": 168.356414
+      },
+      {
+        "id": "nelson-hospital",
+        "label": "Nelson Hospital Ngawhatu Hospital - Whakatū Nelson",
+        "latitude": -41.328068,
+        "longitude": 173.232851
+      },
+      {
+        "id": "orokanui-hospital",
+        "label": "Orokanui Hospital - Ōtepoti Dunedin",
+        "latitude": -45.776918,
+        "longitude": 170.6014367
+      },
+      {
+        "id": "princess-margaret-hospital",
+        "label": "Princess Margaret Hospital - Ōtautahi Christchurch",
+        "latitude": -43.5707427,
+        "longitude": 172.6184992
+      },
+      {
+        "id": "queen-mary-hospital",
+        "label": "Queen Mary Hospital - Hanmer",
+        "latitude": -42.5212003,
+        "longitude": 172.8251348
+      },
+      {
+        "id": "sunnyside-hospital",
+        "label": "Sunnyside Hospital - Ōtautahi  Christchurch",
+        "latitude": -43.547924,
+        "longitude": 172.5887403
+      },
+      {
+        "id": "templeton-hospital",
+        "label": "Templeton Hospital - Ōtautahi Christchurch",
+        "latitude": -43.5337943,
+        "longitude": 172.423883
+      },
+      {
+        "id": "te-whare-mahana",
+        "label": "Te Whare Mahana - Mohua Golden Bay",
+        "latitude": -40.8515191,
+        "longitude": 172.8041532
+      }
+    ]
   }
-]
+}

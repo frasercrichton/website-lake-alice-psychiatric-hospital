@@ -12,6 +12,7 @@ const Labels = ({ empties, labels }) => {
       <>
         {labelText && (
           <Label
+            key={empty.name}
             id={empty.name}
             text={labelText}
             position={[empty.position.x, empty.position.y, empty.position.z]}

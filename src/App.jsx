@@ -83,22 +83,11 @@ function App () {
   }, [location])
 
   useEffect(() => {
-    // -1 to account for the double 'introduction' pages
-    const sectionTotalCount = chapterInView.pages.length - 1
-    const sectionCurrentIndex = pageInView.index
-    // if 0 no progress
-    // if 1 > percentage
-    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
-
     if (pageInView.view === '3d') {
       // Only update the camera if it's a new camera
       if (pageInView?.camera?.name !== pageCamera?.name) {
         setPageCamera(pageInView.camera)
       }
-
-      pageInView?.camera?.isRotating === true
-        ? setIsRotating(true)
-        : setIsRotating(false)
 
       setDisabledMeshes(pageInView?.disable)
 
@@ -108,7 +97,18 @@ function App () {
         setCameraMoveDuration(pageInView.camera?.duration)
       }
     }
+  }, [pageInView, cameraMoveDuration, pageCamera])
 
+  useEffect(() => {
+    // -1 to account for the double 'introduction' pages
+    const sectionTotalCount = chapterInView.pages.length - 1
+    const sectionCurrentIndex = pageInView.index
+    // if 0 no progress
+    // if 1 > percentage
+    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
+  }, [pageInView, chapterInView.pages])
+
+  useEffect(() => {
     if (
       pageInView.id?.includes('introduction') &&
       location.pathname !== '/testimony' &&
@@ -119,6 +119,14 @@ function App () {
       setIntroActive(false)
     }
   }, [pageInView, location])
+
+  useEffect(() => {
+    if (pageInView.view === '3d') {
+      pageInView?.camera?.isRotating === true
+        ? setIsRotating(true)
+        : setIsRotating(false)
+    }
+  }, [pageInView])
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
@@ -140,10 +148,6 @@ function App () {
   const imageURL = pageInView.image
     ? assetUrlHelper.resolveUrl(pageInView.image.src, '3d-visualisation')
     : null
-
-  const mapZoomDimensions = {
-    maxBounds: pageInView.map ? pageInView.map.bounds : null
-  }
 
   const visibleMapLayers =
     pageInView.map && pageInView.map.visibleMapLayers
@@ -171,7 +175,7 @@ function App () {
 
   const containerScroll = isCoverActive
     ? { overflow: 'hidden' }
-    : { 'overflow-y': 'scroll' }
+    : { overflowY: 'scroll' }
 
   return (
     <div className='site-container' style={containerScroll}>
@@ -231,11 +235,10 @@ function App () {
             labels={labels}
           />
         </div>
-        {pageInView.view === 'map' && (
+        {pageInView.view?.includes('map') && (
           <GeographicMap
-            pageInView={pageInView}
             visibleMapLayers={visibleMapLayers}
-            {...mapZoomDimensions}
+            map={pageInView.map}
           />
         )}
         {pageInView.video !== undefined && (
@@ -276,7 +279,7 @@ function App () {
             }
           />
           {headerNavUrls.map(nav => {
-            const element =
+            const chapters =
               nav.url !== '/about' ? (
                 <Chapter
                   chapterInView={chapterInView}
@@ -300,7 +303,7 @@ function App () {
                 key={`route-${nav.url}`}
                 exact
                 path={nav.url}
-                element={element}
+                element={chapters}
               />
             )
           })}
