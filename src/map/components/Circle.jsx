@@ -1,5 +1,4 @@
 import React from 'react'
-import { divIcon } from 'leaflet'
 import { CircleMarker, Tooltip } from 'react-leaflet'
 import './Circle.css'
 
@@ -13,17 +12,10 @@ const Circle = ({
   stroke,
   strokeColor
 }) => {
-  const icon = divIcon({
-    className: 'div-icon',
-    iconSize: [74, 74],
-    html: '<div>xxx</div>'
-  })
-
   return (
     <CircleMarker
-      // icon={icon}
-      key={markerCoordinates.lat}
       className='map-circle-marker'
+      key={markerCoordinates.lat}
       center={markerCoordinates}
       fill={fill}
       fillColor={fillColor}

@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 350;
   height: 100vh;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   opacity: 0.7;
   animation: textBoxFadeIn 3s;
 }
@@ -29,8 +29,7 @@
 }
 
 .text-box-static {
-  font-size: var(--font-size-lg);
-
+  font-size: var(--font-size-md);
 }
 
 .text-box .source {

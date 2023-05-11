@@ -1,16 +1,18 @@
 import { useEffect } from 'react'
 import { useMap } from 'react-leaflet'
 
-const AnimateZoom = ({ centreCoordinates, zoom }) => {
+const AnimateZoom = ({ center, zoom, bounds }) => {
   const map = useMap()
 
   useEffect(() => {
-    setTimeout(() => {
-      map.flyTo(centreCoordinates, zoom, {
-        animate: true,
-        duration: 10
-      })
-    }, 4000)
-  }, [centreCoordinates, map, zoom])
+    // map.flyTo(center, zoom, {
+    //   animate: true,
+    //   duration: 2
+    //   // speed:
+    //   // easing
+    //   // curve
+    // })
+    map.fitBounds(bounds)
+  }, [center, map, zoom, bounds])
 }
 export default AnimateZoom

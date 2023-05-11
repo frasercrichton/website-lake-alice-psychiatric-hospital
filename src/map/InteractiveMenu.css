@@ -1,0 +1,32 @@
+.map-navigation-container {
+  z-index: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  box-shadow: 2px 2px 2px #ffffff;
+  font-size: var(--font-size-xs);
+  border-radius: 10px;
+  margin-left: 5vw;
+  width: 25vw;
+}
+
+.map-navigation-container h2 {
+  font-size: var(--font-size-sm);
+  margin-left: 30px;
+}
+
+.map-navigation-container li {
+  cursor: pointer;
+  line-height: 1.7;
+  list-style: none;
+}
+
+.map-navigation-container .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.map-navigation-container li:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}

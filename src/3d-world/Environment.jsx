@@ -51,7 +51,7 @@ const Lighting = () => {
         intensity={HemisphereIntensity}
       />
       <Sky color={new THREE.Color(World)} />
-      <BakeShadows />
+      {/* <BakeShadows /> TODO */}
       <directionalLight
         ref={directionalLight}
         intensity={Intensity}

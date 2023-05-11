@@ -1,54 +1,21 @@
-import stateCare from '../config/state-care-facilities.json'
-import psychiatric from '../config/psychiatric-facilities.json'
+import stateCareFacilities from '../config/state-care-facilities.json'
+import psychiatricFacilities from '../config/psychiatric-facilities.json'
 import cameras from '../config/cameras.js'
+import locations from './locations'
 
-const stateCareFacilities = stateCare.sort(
-  (a, b) => parseInt(a.opened) - parseInt(b.opened)
-)
+const sortByOpeningYear = list =>
+  list.sort((a, b) => parseInt(a.opened) - parseInt(b.opened))
 
-const psychiatricFacilities = psychiatric.sort((a, b) => {
-  if (a.label < b.label) {
-    return -1
-  }
-  if (a.label > b.label) {
-    return 1
-  }
-  return 0
-})
-
-const national = {
-  centre: {
-    latitude: -40.7670087,
-    longitude: 173.4506545
-  },
-  bounds: {
-    southWest: [-45.59589790007943, 157.09106084377453],
-    northEast: [-35.574503782518356, 189.78093879433226]
-  }
-}
-
-const northIsland = {
-  centre: {
-    latitude: -38.384728,
-    longitude: 175.764771
-  },
-  bounds: {
-    southWest: [-42.269179, 167.530518],
-    northEast: [-35.621582, 183.317871]
-  }
-}
-// -40.692093,173.932800,-39.821194,176.009216
-// // -40.697299,173.844910,-39.826468,175.921326 further right
-const hubLocation = {
-  centre: {
-    latitude: -40.7670087,
-    longitude: 173.4506545
-  },
-  bounds: {
-    southWest: [-40.692093, 173.9328],
-    northEast: [-39.821194, 176.009216]
-  }
-}
+const sortByLabel = list =>
+  list.sort((a, b) => {
+    if (a.label < b.label) {
+      return -1
+    }
+    if (a.label > b.label) {
+      return 1
+    }
+    return 0
+  })
 
 const data = {
   '/testimony': {
@@ -227,7 +194,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -249,7 +216,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -420,14 +387,7 @@ const data = {
         },
         view: 'map',
         map: {
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-40.212047, 175.12928],
-            northEast: [-40.051928, 175.489254]
-          },
+          ...locations.lakeAliceLocal,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -469,7 +429,7 @@ const data = {
         text: {
           header: '10 - Consequences',
           content:
-            ' In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
+            'In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
           style: 'scrolling'
         },
         view: '3d',
@@ -497,7 +457,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -528,7 +488,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -563,7 +523,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -602,7 +562,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -645,7 +605,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -691,7 +651,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -742,7 +702,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -798,7 +758,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -857,7 +817,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -920,7 +880,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -987,7 +947,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...northIsland,
+          ...locations.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -1512,34 +1472,6 @@ const data = {
   },
   '/pathways': {
     pages: [
-      // {
-      //   id: 'pathways-7',
-      //   text: {
-      //     header: '4 - State Residences',
-      //     content:
-      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
-      //     source: 'Redacted-Lake-Alice-Report.pdf#page=70',
-      //     style: 'scrolling'
-      //   },
-      //   view: 'map',
-      //   map: {
-      //     ...national,
-      //     visibleMapLayers: {
-      //       majorPoints: [
-      //         {
-      //           label: 'Lake Alice',
-      //           latitude: -40.1254336,
-      //           longitude: 175.3369864
-      //         }
-      //       ],
-      //       minorPoints: {
-      //         colour: '#ff0000',
-      //         points: [...stateCareFacilities]
-      //       },
-      //       style: 'animated'
-      //     }
-      //   }
-      // },
       {
         id: 'pathways-introduction-2',
         text: {
@@ -1559,20 +1491,39 @@ const data = {
         view: '3d',
         camera: { ...cameras.default }
       },
-      {
-        id: 'pathways-3',
-        view: 'map',
-        map: {
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-40.128745, 175.33124],
-            northEast: [-40.123741, 175.342489]
-          }
-        }
-      },
+      // {
+      //   id: 'pathways-7',
+      //   text: {
+      //     header: '4 - State Residences',
+      //     content:
+      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
+      //     source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+      //     style: 'scrolling'
+      //   },
+      //   view: 'map-animated',
+      //   map: {
+      //     ...locations.national,
+      //     visibleMapLayers: {
+      //       majorPoints: [
+      //         {
+      //           label: 'Lake Alice',
+      //           latitude: -40.1254336,
+      //           longitude: 175.3369864
+      //         }
+      //       ],
+      //       minorPoints:  [...stateCareFacilities]
+      //       ,
+      //       style: 'animated'
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 'pathways-3',
+      //   view: 'map',
+      //   map: {
+      //               ...locations.national
+      //   }
+      // },
       {
         id: 'pathways-4',
         text: {
@@ -1584,14 +1535,20 @@ const data = {
         },
         view: 'map',
         map: {
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-40.128745, 175.33124],
-            northEast: [-40.123741, 175.342489]
-          }
+          ...locations.national
+        }
+      },
+      {
+        id: 'pathways-6',
+        text: {
+          header: 'Kohitere',
+          content:
+            'Kohitere Boy’s Training Centre was part of a network of National State Care facilities. Situated several miles outside of Levin this remote facility included a secure solitary cell block. Kohitere held over 100 boys at one point and was notorious for physical and sexual abuse.',
+          style: 'scrolling'
+        },
+        image: {
+          src: 'fc-20190219-00006-HP5-4009 (2).jpg',
+          style: 'static'
         }
       },
       {
@@ -1603,10 +1560,9 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
-
         view: 'map',
         map: {
-          ...hubLocation,
+          ...locations.hubLocation,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -1661,32 +1617,47 @@ const data = {
           }
         }
       },
+      // {
+      //   id: 'pathways-7',
+      //   text: {
+      //     header: '4 - State Residences',
+      //     content:
+      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
+      //     source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+      //     style: 'scrolling'
+      //   }
+      //   // view: 'map',
+      //   // map: {
+      //   //   ...locations.national,
+      //   //   visibleMapLayers: {
+      //   //     majorPoints: [
+      //   //       {
+      //   //         label: 'Lake Alice',
+      //   //         latitude: -40.1254336,
+      //   //         longitude: 175.3369864
+      //   //       }
+      //   //     ],
+      //   //     minorPoints: {
+      //   //       colour: '#ff0000',
+      //   //       points: [...stateCareFacilities]
+      //   //     },
+      //   //     style: 'static'
+      //   //   }
+      //   // }
+      // },
       {
-        id: 'pathways-6',
+        id: 'pathways-8',
         text: {
-          header: 'Kohitere',
-          content:
-            'Kohitere Boy’s Training Centre was part of a network of National State Care facilities. Situated several miles outside of Levin this remote facility included a secure solitary cell block. Kohitere held over 100 boys at one point and was notorious for physical and sexual abuse.',
-          style: 'scrolling'
-        },
-        image: {
-          src: 'fc-20190219-00006-HP5-4009 (2).jpg',
-          style: 'static'
-        }
-      },
-      {
-        id: 'pathways-7',
-        text: {
-          header: '4 - State Residences',
-          content:
-            'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
+          header: '3 - State Residences - Lake Alice hub',
+          content: 'Network of State Care facilities.',
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
         view: 'map',
         map: {
-          ...national,
+          ...locations.national,
           visibleMapLayers: {
+            type: 'interactive',
             majorPoints: [
               {
                 label: 'Lake Alice',
@@ -1695,26 +1666,40 @@ const data = {
               }
             ],
             minorPoints: {
-              colour: '#ff0000',
-              points: [...stateCareFacilities]
-            },
-            style: 'animated'
+              ...stateCareFacilities,
+              points: sortByOpeningYear(stateCareFacilities.points)
+            }
+          }
+        }
+      },
+      {
+        id: 'pathways-8',
+        view: 'map-animated',
+        map: {
+          ...locations.national,
+          visibleMapLayers: {
+            type: 'interactive',
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
+            minorPoints: {
+              ...stateCareFacilities,
+              points: sortByOpeningYear(stateCareFacilities.points)
+            }
           }
         }
       },
       {
         id: 'pathways-9',
-        text: {
-          header: '6 - Hospital',
-          content:
-            'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals.',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=70',
-          style: 'scrolling'
-        },
-        view: 'map',
+        view: 'map-animated',
         map: {
-          ...national,
+          ...locations.auckland,
           visibleMapLayers: {
+            type: 'interactive',
             majorPoints: [
               {
                 label: 'Lake Alice',
@@ -1723,10 +1708,58 @@ const data = {
               }
             ],
             minorPoints: {
-              colour: '#0000ff',
-              points: [...psychiatricFacilities]
-            },
-            style: 'animated'
+              ...psychiatricFacilities.auckland,
+              points: sortByLabel(psychiatricFacilities.auckland.points)
+            }
+          }
+        }
+      },
+      {
+        id: 'pathways-9',
+        // text: {
+        //   header: '6 - Hospital',
+        //   content:
+        //     'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals.',
+        //   source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+        //   style: 'scrolling'
+        // },
+        view: 'map-animated',
+        map: {
+          ...locations.northIsland,
+          visibleMapLayers: {
+            type: 'interactive',
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
+            minorPoints: {
+              ...psychiatricFacilities.northIsland,
+              points: sortByLabel(psychiatricFacilities.northIsland.points)
+            }
+          }
+        }
+      },
+      {
+        id: 'pathways-9',
+        view: 'map-animated',
+        map: {
+          ...locations.southIsland,
+          visibleMapLayers: {
+            type: 'interactive',
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
+            minorPoints: {
+              ...psychiatricFacilities.southIsland,
+              points: sortByLabel(psychiatricFacilities.southIsland.points)
+            }
           }
         }
       },
@@ -2012,15 +2045,7 @@ const data = {
         },
         view: 'map',
         map: {
-          zoom: 5,
-          centre: {
-            latitude: -40.7670087,
-            longitude: 173.4506545
-          },
-          bounds: {
-            southWest: [-51.481383, 100.810547],
-            northEast: [-6.620957, 192.963867]
-          },
+          ...locations.australia,
           visibleMapLayers: {
             minorPoints: {
               points: [
