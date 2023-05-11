@@ -13,6 +13,7 @@ const Header = ({
   const linkActiveClassName = isHamburgerActive ? 'display' : ''
   const mobileActiveClassName = isMobile ? 'mobile' : 'main'
   const iconName = isHamburgerActive ? 'close' : 'menu'
+
   useEffect(() => {
     if (!links.current) {
       return

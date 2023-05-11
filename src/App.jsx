@@ -41,8 +41,8 @@ function App () {
   // Scrollarama state
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
 
-  // Navigation state
-  const [headerScrollProgress, setHeaderScrollProgress] = useState(0.3)
+  // Header Navigation Scroll state
+  const [headerScrollProgress, setHeaderScrollProgress] = useState(Number(0.3))
 
   // 3D Model
   const [pageCamera, setPageCamera] = useState(null)
@@ -62,13 +62,13 @@ function App () {
   const navigate = useNavigate()
   const location = useLocation()
 
+  // this handles using the browser url address bar to navigate
   useEffect(() => {
     // Testimony is not included in the nav bar (probably should but needs special handling)
     if (location.pathname === '/testimony') {
       setCoverActive(false)
       setChapterInView(chapters[location.pathname])
       setPageInView(chapters[location.pathname].pages[0])
-      setHeaderScrollProgress(0)
     }
 
     // only update the page if the URL path is recognised
@@ -77,10 +77,17 @@ function App () {
       setCoverActive(false)
       setChapterInView(chapters[location.pathname])
       setPageInView(chapters[location.pathname].pages[0])
-      setHeaderScrollProgress(0)
       setActiveChapter(location.pathname)
     }
   }, [location])
+
+  useEffect(() => {
+    if (pageInView.view === '3d') {
+      pageInView?.camera?.isRotating === true
+        ? setIsRotating(true)
+        : setIsRotating(false)
+    }
+  }, [pageInView])
 
   useEffect(() => {
     if (pageInView.view === '3d') {
@@ -99,13 +106,20 @@ function App () {
     }
   }, [pageInView, cameraMoveDuration, pageCamera])
 
+  // Scroll progress bar state
   useEffect(() => {
     // -1 to account for the double 'introduction' pages
-    const sectionTotalCount = chapterInView.pages.length - 1
-    const sectionCurrentIndex = pageInView.index
+    const totalNumberOfPages = chapterInView.pages.length - 1
+    const currentPageNumber = pageInView.index
     // if 0 no progress
     // if 1 > percentage
-    setHeaderScrollProgress(sectionCurrentIndex / sectionTotalCount)
+    // if on About or Testimony set the progress bar to complete
+    if (totalNumberOfPages === 0) {
+      setHeaderScrollProgress(1)
+      return
+    }
+    // otherwise calculate the scroll progress
+    setHeaderScrollProgress(currentPageNumber / totalNumberOfPages)
   }, [pageInView, chapterInView.pages])
 
   useEffect(() => {
@@ -119,14 +133,6 @@ function App () {
       setIntroActive(false)
     }
   }, [pageInView, location])
-
-  useEffect(() => {
-    if (pageInView.view === '3d') {
-      pageInView?.camera?.isRotating === true
-        ? setIsRotating(true)
-        : setIsRotating(false)
-    }
-  }, [pageInView])
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
