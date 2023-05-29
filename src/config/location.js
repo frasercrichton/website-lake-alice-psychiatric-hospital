@@ -1,4 +1,4 @@
-const locations = {
+const location = {
   hubLocation: {
     zoom: 9.5,
     centre: {
@@ -88,4 +88,4 @@ const locations = {
     }
   }
 }
-export default locations
+export default location

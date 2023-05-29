@@ -7,18 +7,23 @@ import Header from './layout/Header.jsx'
 import MarkdownPage from './layout/MarkdownPage.jsx'
 import Cover from './layout/Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
-import headerNavUrls from './config/navigation.js'
 import Loader from './components/Loader.jsx'
-import chapters from './config/chapters.js'
 import GeographicMap from './map/GeographicMap.jsx'
 import VideoVimeo from './components/VideoVimeo.jsx'
-import Stats from 'stats.js'
 import Chapter from './layout/Chapter.jsx'
 import Image from './components/Image.jsx'
+import Footer from './layout/Footer.jsx'
+import TextBox from './components/TextBox.jsx'
+import MobileCover from './layout/MobileView.jsx'
+// Config
+import headerNavUrls from './config/navigation.js'
+import chapters from './config/chapters.js'
+import Stats from 'stats.js'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
-import Footer from './layout/Footer'
-import TextBox from './components/TextBox'
-import MobileCover from './layout/MobileView'
+// state
+import useStaticPageStore from './state/staticPageStore.js'
+import useHeaderScrollProgress from './state/scrollProgressStore.js'
+
 const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
@@ -33,8 +38,9 @@ function App () {
   // Page and chapter State
   const [chapterInView, setChapterInView] = useState(chapters['/introduction'])
   const [activeChapter, setActiveChapter] = useState('/introduction')
-  const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [hasChapterReset, setHasChapterReset] = useState(false)
+ 
+  const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [pageNumber, setPageNumber] = useState(0)
   const oddOrEvenPage = pageNumber % 2 === 0 ? 'even' : 'odd'
 
@@ -42,19 +48,28 @@ function App () {
   const [pageScrollProgress, setPageScrollProgress] = useState(null)
 
   // Header Navigation Scroll state
-  const [headerScrollProgress, setHeaderScrollProgress] = useState(Number(0.3))
+  const [updateHeaderScrollProgress] = useHeaderScrollProgress(
+    state => [state.updateHeaderScrollProgress]
+    // shallow
+  )
 
   // 3D Model
   const [pageCamera, setPageCamera] = useState(null)
   const [cameraMoveDuration, setCameraMoveDuration] = useState(2000)
   const [isRotating, setIsRotating] = useState(false)
-  // const [isLoading, setLoading] = useState(true)
   const [disabledMeshes, setDisabledMeshes] = useState([])
   const [labels, setLabels] = useState([])
 
   // page template
-  const [isCoverActive, setCoverActive] = useState(true)
-  const [introActive, setIntroActive] = useState(true)
+  const [isCoverActive, toggleCoverActive, setIsIntroductionPageActive] =
+    useStaticPageStore(
+      state => [
+        state.isCoverActive,
+        state.toggleCoverActive,
+        state.setIsIntroductionPageActive
+      ]
+      // shallow
+    )
 
   const isLevaHidden = hash !== '#debug'
 
@@ -66,7 +81,7 @@ function App () {
   useEffect(() => {
     // Testimony is not included in the nav bar (probably should but needs special handling)
     if (location.pathname === '/testimony') {
-      setCoverActive(false)
+      toggleCoverActive()
       setChapterInView(chapters[location.pathname])
       setPageInView(chapters[location.pathname].pages[0])
     }
@@ -74,12 +89,12 @@ function App () {
     // only update the page if the URL path is recognised
     // this also supports reloading the page url
     if (headerNavUrls.map(item => item.url).includes(location.pathname)) {
-      setCoverActive(false)
+      toggleCoverActive()
       setChapterInView(chapters[location.pathname])
       setPageInView(chapters[location.pathname].pages[0])
       setActiveChapter(location.pathname)
     }
-  }, [location])
+  }, [location, toggleCoverActive])
 
   useEffect(() => {
     if (pageInView.view === '3d') {
@@ -115,12 +130,12 @@ function App () {
     // if 1 > percentage
     // if on About or Testimony set the progress bar to complete
     if (totalNumberOfPages === 0) {
-      setHeaderScrollProgress(1)
+      updateHeaderScrollProgress(1)
       return
     }
     // otherwise calculate the scroll progress
-    setHeaderScrollProgress(currentPageNumber / totalNumberOfPages)
-  }, [pageInView, chapterInView.pages])
+    updateHeaderScrollProgress(currentPageNumber / totalNumberOfPages)
+  }, [pageInView, chapterInView.pages, updateHeaderScrollProgress])
 
   useEffect(() => {
     if (
@@ -128,11 +143,11 @@ function App () {
       location.pathname !== '/testimony' &&
       location.pathname !== '/about'
     ) {
-      setIntroActive(true)
+      setIsIntroductionPageActive(true)
     } else {
-      setIntroActive(false)
+      setIsIntroductionPageActive(false)
     }
-  }, [pageInView, location])
+  }, [pageInView, location, setIsIntroductionPageActive])
 
   const updateChapter = chapter => {
     setActiveChapter(chapter)
@@ -160,10 +175,6 @@ function App () {
       ? pageInView.map.visibleMapLayers
       : null
 
-  const handleCoverClick = () => {
-    setCoverActive(!isCoverActive)
-  }
-
   const textBoxContainerStyle = {
     position: 'fixed',
     justifyContent: 'center',
@@ -186,7 +197,6 @@ function App () {
   return (
     <div className='site-container' style={containerScroll}>
       <MobileCover
-        scrollProgress={headerScrollProgress}
         activeChapter={activeChapter}
         navigateToChapter={navigateToChapter}
         pageInView={pageInView}
@@ -195,13 +205,8 @@ function App () {
 
       <BrowserView>
         <Leva oneLineLabels collapsed hidden={isLevaHidden} />
-        <Cover
-          key='cover'
-          coverActive={isCoverActive}
-          handleCoverClick={handleCoverClick}
-        />
+        <Cover key='cover' />
         <Header
-          scrollProgress={headerScrollProgress}
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
@@ -332,7 +337,7 @@ function App () {
           /> */}
         </Routes>
 
-        <Footer introActive={introActive} />
+        <Footer />
       </BrowserView>
     </div>
   )

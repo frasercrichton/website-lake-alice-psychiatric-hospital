@@ -13,7 +13,7 @@ const textBoxStyle = {
 }
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
-  const { pageId, text, image, content, view } = page
+  const { pageId, text, image, content, view, map } = page
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -55,11 +55,8 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
         <MarkdownPage key={pageId} content={content.file} />
       )}
       {view === 'map-animated' &&
-        pageInView?.map?.visibleMapLayers?.minorPoints?.points !==
-          undefined && (
-          <InteractiveMenu
-            minorPoints={pageInView?.map?.visibleMapLayers?.minorPoints}
-          />
+        map?.visibleMapLayers?.minorPoints?.points !== undefined && (
+          <InteractiveMenu minorPoints={map?.visibleMapLayers?.minorPoints} />
         )}
     </div>
   )

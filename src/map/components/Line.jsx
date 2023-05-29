@@ -5,7 +5,7 @@ const Line = ({ start, end }) => {
   return (
     <Polyline
       className='map-line'
-      color={'#ff0000'}
+      color='#0000ff'
       key={1}
       positions={[
         [start.lat, start.lng],

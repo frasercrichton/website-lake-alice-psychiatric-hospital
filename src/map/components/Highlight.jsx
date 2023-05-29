@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Circle from './Circle.jsx'
-import useStore from '../../state/store.js'
+import useMapStore from '../../state/mapStore.js'
 import { LatLng } from 'leaflet'
 
 const Highlight = ({ points }) => {
   const [highlight, setHighlight] = useState({})
 
-  const [activeLabel] = useStore(
+  const [activeLabel] = useMapStore(
     state => [state.activeLabel, state.updateActiveLabel]
     // shallow
   )
@@ -16,9 +16,9 @@ const Highlight = ({ points }) => {
   }, [activeLabel, points])
 
   const highlightPointStyle = {
-    radius: '20',
-    stroke: true,
-    strokeColor: '#ff0000'
+    fillColor: '#ff0000',
+    iconSize: 150,
+    strokeColor: '#0000ff'
   }
 
   return (

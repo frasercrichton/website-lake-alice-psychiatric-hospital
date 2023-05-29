@@ -6,7 +6,6 @@ import MarkdownPage from './MarkdownPage.jsx'
 import './MobileView.css'
 
 const MobileCover = ({
-  headerScrollProgress,
   activeChapter,
   navigateToChapter,
   pageInView
@@ -16,7 +15,6 @@ const MobileCover = ({
   return (
     <MobileView viewClassName='mobile'>
       <Header
-        scrollProgress={headerScrollProgress}
         activeChapter={activeChapter}
         navigateToChapter={navigateToChapter}
         isMobile
