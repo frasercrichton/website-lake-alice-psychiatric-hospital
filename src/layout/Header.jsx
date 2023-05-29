@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import urls from '../config/navigation.js'
+import useHeaderScrollProgress from '../state/scrollProgressStore.js'
 import './Header.css'
-const Header = ({
-  scrollProgress,
-  activeChapter,
-  navigateToChapter,
-  isMobile = false
-}) => {
+const Header = ({ activeChapter, navigateToChapter, isMobile = false }) => {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false)
   const links = useRef({})
   const linkActiveClassName = isHamburgerActive ? 'display' : ''
   const mobileActiveClassName = isMobile ? 'mobile' : 'main'
   const iconName = isHamburgerActive ? 'close' : 'menu'
+
+  const [headerScrollProgress] = useHeaderScrollProgress(
+    state => [state.headerScrollProgress]
+    // shallow
+  )
 
   useEffect(() => {
     if (!links.current) {
@@ -72,7 +73,7 @@ const Header = ({
           })}
       </nav>
       <div
-        style={{ transform: `scaleX(${scrollProgress})` }}
+        style={{ transform: `scaleX(${headerScrollProgress})` }}
         className='scroller-progress-bar'
       >
         &nbsp;

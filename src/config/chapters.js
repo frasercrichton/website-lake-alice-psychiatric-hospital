@@ -1,7 +1,7 @@
 import stateCareFacilities from '../config/state-care-facilities.json'
 import psychiatricFacilities from '../config/psychiatric-facilities.json'
 import cameras from '../config/cameras.js'
-import locations from './locations'
+import location from './location'
 
 const sortByOpeningYear = list =>
   list.sort((a, b) => parseInt(a.opened) - parseInt(b.opened))
@@ -16,6 +16,20 @@ const sortByLabel = list =>
     }
     return 0
   })
+
+// "id": "bexley-clinic",
+//       "label": "Bexley Clinic - Tāmaki Makaurau Auckland",
+//       "latitude": -36.8830791,
+//       "longitude": 174.8046149
+
+const removeLabels = list => {
+  return list.map(({ label, ...list }) => list)
+}
+
+//   // const newArray = array.map(({dropAttr1, dropAttr2, ...keepAttrs}) => keepAttrs)
+// return list.map(({labels, ...list}) => list)
+
+//   })
 
 const data = {
   '/testimony': {
@@ -194,7 +208,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -216,7 +230,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -335,6 +349,17 @@ const data = {
         view: '3d',
         camera: { ...cameras.adultVilla }
       },
+
+      {
+        id: 'malcolm-14',
+        image: {
+          src: 'fc-20210828-00008-FL59130374(1).jpg',
+          caption: 'Disturbed Patients Villa.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.adultVilla }
+      },
       {
         id: 'malcolm-11',
         text: {
@@ -368,16 +393,6 @@ const data = {
         }
       },
       {
-        id: 'malcolm-14',
-        image: {
-          src: 'large_1980_1389.jpg',
-          caption: 'ECT machine.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.adultVilla }
-      },
-      {
         id: 'malcolm-15',
         text: {
           header: '9 - Escape',
@@ -387,7 +402,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.lakeAliceLocal,
+          ...location.lakeAliceLocal,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -457,7 +472,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -488,7 +503,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -523,7 +538,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -562,7 +577,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -605,7 +620,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -651,7 +666,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -702,7 +717,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -758,7 +773,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -817,7 +832,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -880,7 +895,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -947,7 +962,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             majorPoints: [
               // {
@@ -1017,16 +1032,20 @@ const data = {
         text: {
           content: 'Context'
         },
-        view: '3d',
-        camera: { ...cameras.siteCamera }
+        view: 'map',
+        map: {
+          ...location.national
+        }
       },
       {
         id: 'context-introduction-2',
         text: {
           content: 'Context'
         },
-        view: '3d',
-        camera: { ...cameras.siteCamera }
+        view: 'map',
+        map: {
+          ...location.national
+        }
       },
       {
         id: 'context-3',
@@ -1037,8 +1056,54 @@ const data = {
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
-        view: '3d',
-        camera: { ...cameras.siteCamera }
+        view: 'map',
+        map: {
+          ...location.national,
+          visibleMapLayers: {
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ]
+          }
+        }
+      },
+      {
+        id: 'context-4',
+        text: {
+          content:
+            'Lake Alice operated as a self-contained community with farm, a community hall and even a swimming pool. It was isolated from the world and particularly from oversight by Health Authorities.',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.lakeAliceLocal,
+          visibleMapLayers: {
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
+            minorPoints: {
+              points: [
+                {
+                  label: 'Bulls',
+                  latitude: -40.1756233,
+                  longitude: 175.3815803
+                },
+                {
+                  label: 'Marton',
+                  latitude: -40.086845,
+                  longitude: 175.3722454
+                }
+              ]
+            }
+          }
+        }
       },
       {
         id: 'context-4',
@@ -1447,7 +1512,7 @@ const data = {
         labels: [
           {
             id: 'Villa15',
-            label: "Adult's Villa"
+            label: "Disturbed Patients's Villa"
           }
         ],
         view: '3d',
@@ -1455,6 +1520,17 @@ const data = {
           ...cameras.adultVilla
         }
       },
+      {
+        id: 'context-14',
+        image: {
+          src: 'large_1980_1389.jpg',
+          caption: 'ECT machine.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.adultVilla }
+      },
+
       {
         id: 'context-28',
         text: {
@@ -1535,7 +1611,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.national
+          ...location.national
         }
       },
       {
@@ -1562,7 +1638,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.hubLocation,
+          ...location.hubLocation,
           visibleMapLayers: {
             majorPoints: [
               {
@@ -1617,45 +1693,16 @@ const data = {
           }
         }
       },
-      // {
-      //   id: 'pathways-7',
-      //   text: {
-      //     header: '4 - State Residences',
-      //     content:
-      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
-      //     source: 'Redacted-Lake-Alice-Report.pdf#page=70',
-      //     style: 'scrolling'
-      //   }
-      //   // view: 'map',
-      //   // map: {
-      //   //   ...locations.national,
-      //   //   visibleMapLayers: {
-      //   //     majorPoints: [
-      //   //       {
-      //   //         label: 'Lake Alice',
-      //   //         latitude: -40.1254336,
-      //   //         longitude: 175.3369864
-      //   //       }
-      //   //     ],
-      //   //     minorPoints: {
-      //   //       colour: '#ff0000',
-      //   //       points: [...stateCareFacilities]
-      //   //     },
-      //   //     style: 'static'
-      //   //   }
-      //   // }
-      // },
       {
         id: 'pathways-8',
         text: {
-          header: '3 - State Residences - Lake Alice hub',
           content: 'Network of State Care facilities.',
           source: 'Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
         view: 'map',
         map: {
-          ...locations.national,
+          ...location.national,
           visibleMapLayers: {
             type: 'interactive',
             majorPoints: [
@@ -1676,7 +1723,7 @@ const data = {
         id: 'pathways-8',
         view: 'map-animated',
         map: {
-          ...locations.national,
+          ...location.national,
           visibleMapLayers: {
             type: 'interactive',
             majorPoints: [
@@ -1689,6 +1736,36 @@ const data = {
             minorPoints: {
               ...stateCareFacilities,
               points: sortByOpeningYear(stateCareFacilities.points)
+            }
+          }
+        }
+      },
+      {
+        id: 'pathways-8',
+        text: {
+          content:
+            'Psychiatric Hospitals were another pathway to Lake Alice with many children referred across the national network of psychiatric care.',
+          source: 'Redacted-Lake-Alice-Report.pdf#page=70',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.national,
+          visibleMapLayers: {
+            type: 'static',
+            majorPoints: [
+              {
+                label: 'Lake Alice',
+                latitude: -40.1254336,
+                longitude: 175.3369864
+              }
+            ],
+            minorPoints: {
+              points: [
+                ...removeLabels(psychiatricFacilities.auckland.points),
+                ...removeLabels(psychiatricFacilities.northIsland.points),
+                ...removeLabels(psychiatricFacilities.southIsland.points)
+              ]
             }
           }
         }
@@ -1697,7 +1774,7 @@ const data = {
         id: 'pathways-9',
         view: 'map-animated',
         map: {
-          ...locations.auckland,
+          ...location.auckland,
           visibleMapLayers: {
             type: 'interactive',
             majorPoints: [
@@ -1716,16 +1793,9 @@ const data = {
       },
       {
         id: 'pathways-9',
-        // text: {
-        //   header: '6 - Hospital',
-        //   content:
-        //     'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals.',
-        //   source: 'Redacted-Lake-Alice-Report.pdf#page=70',
-        //   style: 'scrolling'
-        // },
         view: 'map-animated',
         map: {
-          ...locations.northIsland,
+          ...location.northIsland,
           visibleMapLayers: {
             type: 'interactive',
             majorPoints: [
@@ -1746,7 +1816,7 @@ const data = {
         id: 'pathways-9',
         view: 'map-animated',
         map: {
-          ...locations.southIsland,
+          ...location.southIsland,
           visibleMapLayers: {
             type: 'interactive',
             majorPoints: [
@@ -1971,7 +2041,7 @@ const data = {
         image: {
           caption: 'Commissioner of Police, Ken Burnside ',
           src: 'fc-20220710-00001-nlnzimage.jpg',
-          style: 'document'
+          style: 'scrolling'
         },
 
         view: '3d',
@@ -2045,7 +2115,7 @@ const data = {
         },
         view: 'map',
         map: {
-          ...locations.australia,
+          ...location.australia,
           visibleMapLayers: {
             minorPoints: {
               points: [

@@ -5,8 +5,7 @@ import { LatLng } from 'leaflet'
 
 const minorPointStyle = {
   fillColor: '#ffffff',
-  radius: '5',
-  stroke: false
+  iconSize: '50'
 }
 
 const Lines = ({ points, target }) => {

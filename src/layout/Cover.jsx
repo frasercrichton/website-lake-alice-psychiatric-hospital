@@ -1,9 +1,15 @@
 import './Cover.css'
 import Button from '../components/Button'
 import { Link } from 'react-router-dom'
+import useStaticPageStore from '../state/staticPageStore.js'
 
-const Cover = ({ coverActive, handleCoverClick }) => {
-  const className = coverActive ? 'cover-container active' : 'cover-container'
+const Cover = () => {
+  const [isCoverActive, toggleCoverActive] = useStaticPageStore(
+    state => [state.isCoverActive, state.toggleCoverActive]
+    // shallow
+  )
+
+  const className = isCoverActive ? 'cover-container active' : 'cover-container'
 
   return (
     <div key='cover-container' className={className}>
@@ -18,19 +24,19 @@ const Cover = ({ coverActive, handleCoverClick }) => {
             <div className='navigation'>
               <Link
                 role='button'
-                onClick={e => e => handleCoverClick()}
+                onClick={e => toggleCoverActive()}
                 className='nav-item'
                 to='/testimony'
               >
-                <Button action={e => handleCoverClick()} label='Testimony' />
+                <Button action={e => toggleCoverActive()} label='Testimony' />
               </Link>
               <Link
                 role='button'
-                onClick={e => e => handleCoverClick()}
+                onClick={e => toggleCoverActive()}
                 className='nav-item'
                 to='/introduction'
               >
-                <Button action={e => handleCoverClick()} label='Explore' />
+                <Button action={e => toggleCoverActive()} label='Explore' />
               </Link>
             </div>
           </div>

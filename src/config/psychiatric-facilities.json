@@ -59,7 +59,7 @@
     ]
   },
   "northIsland": {
-    "title": "Psychiatric Facilities (North Island excluding Auckland)",
+    "title": "Psychiatric Facilities (Te Ika-a-Māui North Island excluding Auckland)",
     "points": [
       {
         "id": "rotorua-hospital",
@@ -172,7 +172,7 @@
     ]
   },
   "southIsland": {
-    "title": "Psychiatric Facilities (South Island)",
+    "title": "Psychiatric Facilities (Te Waipounamu South Island)",
     "points": [
       {
         "id": "seaview-asylum",

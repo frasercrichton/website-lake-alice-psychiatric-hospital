@@ -1,9 +1,16 @@
 import React from 'react'
 import './Footer.css'
+import useStaticPageStore from '../state/staticPageStore.js'
 
-const Footer = ({introActive}) => {
+const Footer = () => {
+  const [isIntroductionPageActive] = useStaticPageStore(
+    state => [state.isIntroductionPageActive]
+    // shallow
+  )
 
-  const footerClassName = introActive ? 'footer-container active' : 'footer-container'
+  const footerClassName = isIntroductionPageActive
+    ? 'footer-container active'
+    : 'footer-container'
 
   return (
     <div className={footerClassName}>

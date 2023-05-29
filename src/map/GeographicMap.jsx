@@ -11,22 +11,21 @@ import AnimateZoom from './AnimateZoom'
 const MAP_BOX_KEY = process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_KEY
 const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
+
 const majorPointStyle = {
-  fillColor: '#ffffff',
-  radius: '10',
-  stroke: true,
-  strokeColor: '#ededed'
+  fillColor: '#ff0000',
+  iconSize: 150,
+  strokeColor: '#00ffff'
 }
 
 const minorPointStyle = {
   fillColor: '#ffffff',
-  radius: '5',
-  stroke: false
+  iconSize: 50
 }
 
 const createLatLng = item => new LatLng(item[0], item[1])
 
-function GeographicMap ({ visibleMapLayers, map }) {
+const GeographicMap = ({ visibleMapLayers, map }) => {
   const { bounds, zoom } = mapDisplay
 
   const defaultBounds = new LatLngBounds(
