@@ -28,7 +28,7 @@ img {
 figcaption {
   font-size: var(--font-size-md);
   padding: 2px;
-  background-color: #ffff;
+  background-color: #ffffff;
   opacity: 0.7;
   align-self: center;
   max-width: 80%;
