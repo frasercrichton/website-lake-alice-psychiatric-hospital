@@ -13,7 +13,9 @@ const textBoxStyle = {
 }
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
-  const { pageId, text, image, content, view, map } = page
+  const { pageId, text, image = {}, content, view, map } = page
+  const { src, style, recordID, owner, caption, sourceURL } = image
+
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -42,12 +44,14 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
           pageScrollProgress={pageScrollProgress}
         />
       )}
-      {image != null && image.style === 'scrolling' && (
-        <div className={`${image.style}-image-container`}>
+      {image != null && style === 'scrolling' && (
+        <div className={`${style}-image-container`}>
           <Image
-            caption={image.caption}
-            src={assetUrlHelper.resolveUrl(image.src, '3d-visualisation')}
-            source={image.source}
+            caption={caption}
+            src={assetUrlHelper.resolveUrl(src, '3d-visualisation')}
+            recordID={recordID}
+            owner={owner}
+            sourceURL={sourceURL}
           />
         </div>
       )}

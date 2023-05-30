@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', src, source, id }) => {
+const Image = ({ caption = '', src, recordID, sourceURL, owner, id }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoading = isLoaded => {
     setIsLoaded(isLoaded)
   }
+
+  const archwayRecordID = recordID ? `Archway Item ID: ${recordID}` : null
 
   return (
     <div className='image-container'>
@@ -17,10 +19,12 @@ const Image = ({ caption = '', src, source, id }) => {
           <figcaption className='caption'>{caption}</figcaption>
         )}
         {/* {!isLoaded && <Loader />} */}
-        {source && (
+        {sourceURL && (
           <div className='source'>
-            <a target='_blank' rel='noreferrer' href={source}>
-              Source
+            <span>{archwayRecordID} </span>
+            <span>{owner} </span>
+            <a target='_blank' rel='noreferrer' href={sourceURL}>
+              original
             </a>
           </div>
         )}
