@@ -53,8 +53,7 @@ const data = {
         },
         image: {
           src: 'site-animated.gif',
-          style: 'static',
-          caption: ''
+          style: 'static'
         }
       },
       {
@@ -302,6 +301,7 @@ const data = {
           src: 'fc-20210621-00007-Scan 1.jpg',
           caption:
             "Drawing by Malcolm Richards of the dormitory layout in the Boys' Villa.",
+          owner: 'Malcolm Richards',
           style: 'scrolling'
         },
         view: '3d',
@@ -354,7 +354,15 @@ const data = {
         id: 'malcolm-14',
         image: {
           src: 'fc-20210828-00008-FL59130374(1).jpg',
-          caption: 'Disturbed Patients Villa.',
+          caption:
+            'Lake Alice Hospital, Bulls - Disturbed patients villa - building floor plans (including information if on same sheet as floor plan) - [copy a].',
+
+          owner:
+            'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
+          recordID: 'R23378991',
+
+          sourceURL:
+            'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119710',
           style: 'scrolling'
         },
         view: '3d',
@@ -385,6 +393,7 @@ const data = {
           src: 'fc-20210619-00006-Scan 2.jpg ',
           caption:
             'Drawing by Malcolm Richards of the dormitory used for ECT. Adults were given ECT first and children last.',
+          owner: 'Malcolm Richards',
           style: 'scrolling'
         },
         view: '3d',
@@ -1214,7 +1223,8 @@ const data = {
           style: 'scrolling',
           caption:
             'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
-          source:
+          owner: 'Stuff Limited',
+          sourceURL:
             'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
         },
         view: '3d',
@@ -1242,8 +1252,11 @@ const data = {
         id: 'context-9',
         image: {
           src: 'fc-20230321-00001-R26288977-0001.jpg',
-          caption: 'The original twelve bed villas Archway Item ID: R24730915 ',
-          source:
+          caption: 'The original twelve bed villas',
+          recordID: 'R24730915',
+          owner:
+            'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
+          sourceURL:
             'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE25129143',
           style: 'scrolling'
         },
@@ -1258,11 +1271,6 @@ const data = {
       },
       {
         id: 'context-11',
-        // text: {
-        //   header: 'Eleven Bed Villa Roof',
-        //   content: 'Eleven Bed Villa .',
-        //   style: 'scrolling'
-        // },
         view: '3d',
         camera: {
           ...cameras.twelveBedVillaAbove
@@ -1412,7 +1420,11 @@ const data = {
           src: 'fc-20230314-00003-R26288153-0001.jpg',
           caption:
             'Maximum security block at Lake Alice Psychiatric Hospital Marton (Photographer: Mr Cleal).',
-          source: 'Redacted-Lake-Alice-Report.pdf#page=62',
+          recordID: 'R24730910',
+          owner:
+            'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
+          sourceURL:
+            'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE86070772',
           style: 'scrolling'
         },
 
@@ -1424,16 +1436,6 @@ const data = {
         view: '3d',
         camera: { ...cameras.maximumSecurityClose }
       },
-      // {
-      //   id: 'malcolm-12',
-      //   image: {
-      //     src: 'fc-20210828-00001-FL59130374.jpg',
-      //     caption: 'Layout of disturbed patients villa.',
-      //     style: 'scrolling'
-      //   },
-      //   view: '3d',
-      //   camera: { ...cameras.adultVilla }
-      // },
       {
         id: 'context-22',
         text: {
@@ -1453,24 +1455,6 @@ const data = {
           ...cameras.doctorsVillas
         }
       },
-      // {
-      //   id: 'context-24',
-      //   text: {
-      //     header: '9 - Staff on Site',
-      //     content: 'At the south-east of the site.',
-      //     style: 'scrolling'
-      //   },
-      //   labels: [
-      //     {
-      //       id: 'StaffVillas',
-      //       label: 'Staff Quarters'
-      //     }
-      //   ],
-      //   view: '3d',
-      //   camera: {
-      //     ...cameras.staffHousingMain
-      //   }
-      // },
       {
         id: 'context-25',
         text: {
@@ -1524,7 +1508,11 @@ const data = {
         id: 'context-14',
         image: {
           src: 'large_1980_1389.jpg',
-          caption: 'ECT machine.',
+          caption:
+            '"Ectonustim 3" electroconvulsive therapy (ECT) machine, with headset, by Ectron Ltd, England, 1958-1965.',
+          owner: 'The Board of Trustees of the Science Museum',
+          sourceURL:
+            'https://collection.sciencemuseumgroup.org.uk/objects/co134213/ectonustim-3-ect-machine-with-scalp-electrodes-english-1958-1965-medicine-electroconvulsive-therapy-ect-mental-illness',
           style: 'scrolling'
         },
         view: '3d',
@@ -1624,6 +1612,7 @@ const data = {
         },
         image: {
           src: 'fc-20190219-00006-HP5-4009 (2).jpg',
+          owner: 'Fraser Crichton 2019',
           style: 'static'
         }
       },
@@ -2039,8 +2028,13 @@ const data = {
       {
         id: 'justice-8',
         image: {
-          caption: 'Commissioner of Police, Ken Burnside ',
+          caption:
+            'Commissioner of Police, Ken Burnside. Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin. Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers. Ref: EP/1979/4377/19-F.',
           src: 'fc-20220710-00001-nlnzimage.jpg',
+          sourceURL:
+            'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE1170158',
+          recordID: '/records/22875316',
+          owner: 'Alexander Turnbull Library, Wellington, New Zealand.',
           style: 'scrolling'
         },
 
@@ -2248,31 +2242,6 @@ const data = {
         view: 'markdown',
         content: {
           file: 'about'
-        }
-      }
-    ]
-  },
-  '/': {
-    pages: [
-      {
-        id: 'root-introduction-1',
-        index: 1,
-        text: {
-          content: 'Introduction'
-        },
-        image: {
-          src: 'site-animated.gif'
-        },
-        // view: '3d',
-        camera: {
-          name: 'default',
-          position: [0, 600, 400],
-          rotation: [-0.8726646, 0, 0],
-          aspect: 1,
-          fov: 80,
-          near: 10,
-          far: 10000,
-          isRotating: true
         }
       }
     ]

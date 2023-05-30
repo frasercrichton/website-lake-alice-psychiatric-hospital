@@ -39,7 +39,7 @@ function App () {
   const [chapterInView, setChapterInView] = useState(chapters['/introduction'])
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [hasChapterReset, setHasChapterReset] = useState(false)
- 
+
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [pageNumber, setPageNumber] = useState(0)
   const oddOrEvenPage = pageNumber % 2 === 0 ? 'even' : 'odd'
@@ -265,7 +265,9 @@ function App () {
               <Image
                 caption={pageInView.image.caption}
                 src={imageURL}
-                source={pageInView.image.source}
+                owner={pageInView.image.owner}
+                recordID={pageInView.image.recordID}
+                sourceURL={pageInView.image.sourceURL}
               />
             </div>
           )}
