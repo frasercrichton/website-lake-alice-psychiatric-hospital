@@ -3,6 +3,12 @@ import psychiatricFacilities from '../config/psychiatric-facilities.json'
 import cameras from '../config/cameras.js'
 import location from './location'
 
+const lakeAliceLocation = {
+  label: 'Lake Alice',
+  latitude: -40.1254336,
+  longitude: 175.3369864
+}
+
 const sortByOpeningYear = list =>
   list.sort((a, b) => parseInt(a.opened) - parseInt(b.opened))
 
@@ -231,13 +237,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               points: [
                 {
@@ -282,7 +282,7 @@ const data = {
         camera: cameras.boysVillaRearCamera001
       },
       {
-        id: 'malcolm-6',
+        id: 'malcolm-5',
         text: {
           header: '5 - First night',
           content:
@@ -296,7 +296,7 @@ const data = {
       },
 
       {
-        id: 'malcolm-7',
+        id: 'malcolm-6',
         image: {
           src: 'fc-20210621-00007-Scan 1.jpg',
           caption:
@@ -310,7 +310,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-8',
+        id: 'malcolm-7',
         content:
           "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
         view: '3d',
@@ -319,7 +319,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-9',
+        id: 'malcolm-8',
         text: {
           header: '6 - A Typical day',
           content:
@@ -333,7 +333,7 @@ const data = {
       },
 
       {
-        id: 'malcolm-10',
+        id: 'malcolm-9',
         text: {
           header: '7 - ECT',
           content:
@@ -349,9 +349,8 @@ const data = {
         view: '3d',
         camera: { ...cameras.adultVilla }
       },
-
       {
-        id: 'malcolm-14',
+        id: 'malcolm-10',
         image: {
           src: 'fc-20210828-00008-FL59130374(1).jpg',
           caption:
@@ -388,7 +387,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-12',
         image: {
           src: 'fc-20210619-00006-Scan 2.jpg ',
           caption:
@@ -402,7 +401,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-15',
+        id: 'malcolm-13',
         text: {
           header: '9 - Escape',
           content:
@@ -413,13 +412,7 @@ const data = {
         map: {
           ...location.lakeAliceLocal,
           visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               points: [
                 {
@@ -438,7 +431,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-16',
+        id: 'malcolm-14',
         text: {
           header: '10 - Consequences',
           content:
@@ -449,7 +442,7 @@ const data = {
         camera: { ...cameras.dormitoryVilla }
       },
       {
-        id: 'wip-malcolm-17',
+        id: 'wip-malcolm-15',
         text: {
           header: '10 - Consequences',
           content:
@@ -461,7 +454,7 @@ const data = {
       },
 
       {
-        id: 'malcolm-18',
+        id: 'malcolm-16',
         text: {
           header: '11 - Afterwards',
           content:
@@ -472,7 +465,7 @@ const data = {
         camera: { ...cameras.cellCamera }
       },
       {
-        id: 'malcolm-19',
+        id: 'malcolm-17',
         text: {
           header: '12 - Runaway',
           content:
@@ -483,13 +476,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -503,7 +490,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-20',
+        id: 'malcolm-18',
         text: {
           header: '15 - Waipukurau',
           content:
@@ -514,13 +501,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -538,7 +519,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-21',
+        id: 'malcolm-19',
         text: {
           header: '12 - Runaway',
           content:
@@ -549,13 +530,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -577,7 +552,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-22',
+        id: 'malcolm-20',
         text: {
           header: '12 - Napier',
           content:
@@ -588,13 +563,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -620,7 +589,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-23',
+        id: 'malcolm-21',
         text: {
           header: '12 - Welsford',
           content:
@@ -631,13 +600,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -667,7 +630,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-24',
+        id: 'malcolm-22',
         text: {
           header: '19 - Kaiwaka',
           content: 'From Welsford to Kaiwaka and worked on a dairy farm.',
@@ -677,13 +640,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -717,7 +674,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-25',
+        id: 'malcolm-23',
         text: {
           header: '12 - Runaway',
           content:
@@ -728,13 +685,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -772,7 +723,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-26',
+        id: 'malcolm-24',
         text: {
           header:
             '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
@@ -784,13 +735,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -833,7 +778,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-27',
+        id: 'malcolm-25',
         text: {
           header: '23 - South Auckland',
           content: "In South Auckland Malcolm found work in a butcher's shop.",
@@ -843,13 +788,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -895,7 +834,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-28',
+        id: 'malcolm-26',
         text: {
           header: '24 - Napier',
           content:
@@ -906,13 +845,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -962,7 +895,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-29',
+        id: 'malcolm-27',
         text: {
           header: '25 - Hastings',
           content:
@@ -973,13 +906,7 @@ const data = {
         map: {
           ...location.northIsland,
           visibleMapLayers: {
-            majorPoints: [
-              // {
-              //   label: 'Lake Alice',
-              //   latitude: -40.1254336,
-              //   longitude: 175.3369864
-              // }
-            ],
+            majorPoints: [],
             lines: {
               points: [
                 {
@@ -1069,13 +996,7 @@ const data = {
         map: {
           ...location.national,
           visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ]
+            majorPoints: [lakeAliceLocation]
           }
         }
       },
@@ -1090,13 +1011,7 @@ const data = {
         map: {
           ...location.lakeAliceLocal,
           visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               points: [
                 {
@@ -1629,13 +1544,7 @@ const data = {
         map: {
           ...location.hubLocation,
           visibleMapLayers: {
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               points: [
                 {
@@ -1694,13 +1603,7 @@ const data = {
           ...location.national,
           visibleMapLayers: {
             type: 'interactive',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               ...stateCareFacilities,
               points: sortByOpeningYear(stateCareFacilities.points)
@@ -1715,13 +1618,7 @@ const data = {
           ...location.national,
           visibleMapLayers: {
             type: 'interactive',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               ...stateCareFacilities,
               points: sortByOpeningYear(stateCareFacilities.points)
@@ -1742,13 +1639,7 @@ const data = {
           ...location.national,
           visibleMapLayers: {
             type: 'static',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               points: [
                 ...removeLabels(psychiatricFacilities.auckland.points),
@@ -1766,13 +1657,7 @@ const data = {
           ...location.auckland,
           visibleMapLayers: {
             type: 'interactive',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               ...psychiatricFacilities.auckland,
               points: sortByLabel(psychiatricFacilities.auckland.points)
@@ -1787,13 +1672,7 @@ const data = {
           ...location.northIsland,
           visibleMapLayers: {
             type: 'interactive',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               ...psychiatricFacilities.northIsland,
               points: sortByLabel(psychiatricFacilities.northIsland.points)
@@ -1808,13 +1687,7 @@ const data = {
           ...location.southIsland,
           visibleMapLayers: {
             type: 'interactive',
-            majorPoints: [
-              {
-                label: 'Lake Alice',
-                latitude: -40.1254336,
-                longitude: 175.3369864
-              }
-            ],
+            majorPoints: [lakeAliceLocation],
             minorPoints: {
               ...psychiatricFacilities.southIsland,
               points: sortByLabel(psychiatricFacilities.southIsland.points)
@@ -1906,7 +1779,7 @@ const data = {
         }
       },
       {
-        id: 'justice-introduction-2',
+        id: 'justice-introduction-3',
         view: '3d',
         text: {
           content: 'Justice'
@@ -1916,7 +1789,8 @@ const data = {
         }
       },
       {
-        id: 'justice-2',
+        id: 'justice-1',
+        decade: '1970',
         text: {
           header: '1 - Intro',
           content:
@@ -1930,9 +1804,10 @@ const data = {
         }
       },
       {
-        id: 'justice-4',
+        id: 'justice-2',
+        decade: '1970',
         text: {
-          header: '3 - CCHR',
+          header: 'CCHR',
           content:
             "Lake Alice's isolation contributed to the lack of oversight of Leeks and other staff members. Although independent (?) inspections did occur, as Malcolm recalls staff prepared for them by threatening the children with ECT. The Citizens Commission on Human Rights (CCHR) gained access to Lake Alice in 1976 and were able to raise concerns in national media over how the children there were treated.",
           style: 'scrolling',
@@ -1944,9 +1819,10 @@ const data = {
         }
       },
       {
-        id: 'justice-5',
+        id: 'justice-3',
+        decade: '1970',
         text: {
-          header: '4 - Whistleblower',
+          header: 'Whistleblower',
           content:
             'In 1976 fourteen year-old Hake Halo and whistle blower Lyn Fry brought conditions at Lake Alice to national attention. Fry was a Department of Education psychologist who had recommended Hakeagapuletama be sent to Hokio Beach School in December 1974. Instead, the Department of Social Welfare sent Hake to Lake Alice. When Fry learned this she approached the Auckland Committee on Racism and Discrimination (ACORD). ',
           style: 'scrolling',
@@ -1959,9 +1835,10 @@ const data = {
         }
       },
       {
-        id: 'justice-6',
+        id: 'justice-4',
+        decade: '1970',
         text: {
-          header: '5 - Hake Halo',
+          header: 'Hake Halo',
           content:
             "Hake had already attempted to raise the alarm about Lake Alice. The children at Lake Alice had to write letters home in English. Hakeagapuletama added a drawing of a smiling stickman to his letter with a speech bubble that said: “Fakasoka he faoa au, mo huki au, mamahi, tagi au”. In English this means: “Mum, the people are giving me electric shocks and injections, it’s painful, I’m crying”. Dr Oliver Sutherland from the Auckland Committee on Racism and Discrimination (ACORD) met with the family after Lyn Fry alerted ACORD to what was happening at Lake Alice. Sutherland introduced the family to New Zealand Herald's Medical Correspondent, Peter Trickett. *The front-page feature published on the 15 December 1976 that Trickett wrote lead to questions being raised in Parliament and eventually a national Inquiry.*",
           style: 'scrolling',
@@ -1973,7 +1850,8 @@ const data = {
         }
       },
       {
-        id: 'justice-7',
+        id: 'justice-5',
+        decade: '1970',
         text: {
           header: '6 - Inquiries 1976',
           content:
@@ -1986,34 +1864,8 @@ const data = {
         }
       },
       {
-        id: 'justice-8',
-        text: {
-          header: '7 - Court cases',
-          content:
-            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice. From early 1997, lawyer Grant Cameron also began discussions with the Crown on behalf of a large group of Lake Alice survivors.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-8',
-        image: {
-          caption:
-            "The Court of Appeal dismisses Leoni McInroe and Paul Lucas's case against Selwyn Leeks on a technicality.",
-          src: 'fc-20230323-00001-Screenshot 2023-03-23 at 2.59.57 PM.jpg',
-          style: 'document'
-        },
-
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-9',
+        id: 'justice-6',
+        decade: '1970',
         text: {
           header: '8 - First Police Investigation 1977 - 1978',
           content:
@@ -2026,7 +1878,8 @@ const data = {
         }
       },
       {
-        id: 'justice-8',
+        id: 'justice-7',
+        decade: '1970',
         image: {
           caption:
             'Commissioner of Police, Ken Burnside. Police cadets graduation ceremony, Upper Hutt - Photograph taken by Ross Giblin. Dominion Post (Newspaper): Photographic negatives and prints of the Evening Post and Dominion newspapers. Ref: EP/1979/4377/19-F.',
@@ -2044,7 +1897,8 @@ const data = {
         }
       },
       {
-        id: 'justice-10',
+        id: 'justice-8',
+        decade: '1970',
         text: {
           header: '9 - Police Bias',
           content:
@@ -2058,7 +1912,37 @@ const data = {
         }
       },
       {
+        id: 'justice-9',
+        decade: '1990',
+        text: {
+          header: '7 - Court cases',
+          content:
+            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice. From early 1997, lawyer Grant Cameron also began discussions with the Crown on behalf of a large group of Lake Alice survivors.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-10',
+        decade: '1990',
+        image: {
+          caption:
+            "The Court of Appeal dismisses Leoni McInroe and Paul Lucas's case against Selwyn Leeks on a technicality.",
+          src: 'fc-20230323-00001-Screenshot 2023-03-23 at 2.59.57 PM.jpg',
+          style: 'scrolling'
+        },
+
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-11',
+        decade: '2000',
         text: {
           header: '10 - 2001 -The Gallen Report',
           content:
@@ -2073,6 +1957,7 @@ const data = {
       },
       {
         id: 'justice-12',
+        decade: '2000',
         text: {
           header: '11 - The Apology',
           content:
@@ -2087,6 +1972,7 @@ const data = {
       },
       {
         id: 'justice-13',
+        decade: '2000',
         text: {
           header: '12 - Second Police Investigation  2003 - 2005',
           content:
@@ -2100,7 +1986,8 @@ const data = {
         }
       },
       {
-        id: 'justice-13',
+        id: 'justice-14',
+        decade: '2000',
         text: {
           header: '13 - Australia',
           content:
@@ -2113,11 +2000,7 @@ const data = {
           visibleMapLayers: {
             minorPoints: {
               points: [
-                {
-                  label: 'Lake Alice',
-                  latitude: -40.1254336,
-                  longitude: 175.3369864
-                },
+                lakeAliceLocation,
                 {
                   label: 'Melbourne',
                   latitude: -37.971237,
@@ -2131,23 +2014,18 @@ const data = {
                 latitude: -37.971237,
                 longitude: 144.4926947
               },
-              points: [
-                {
-                  label: 'Lake Alice',
-                  latitude: -40.1254336,
-                  longitude: 175.3369864
-                }
-              ]
+              points: [lakeAliceLocation]
             }
           }
         }
       },
       {
-        id: 'justice-14',
+        id: 'justice-15',
+        decade: '2000',
         image: {
           caption: 'Lake Alice Investigation Completed - No Charges Laid.png',
           src: 'fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
-          style: 'document'
+          style: 'scrolling'
         },
 
         view: '3d',
@@ -2156,7 +2034,8 @@ const data = {
         }
       },
       {
-        id: 'justice-14',
+        id: 'justice-16',
+        decade: '2000',
         text: {
           header: '13 - Third Police Investigation 2006 - 2010',
           content:
@@ -2170,13 +2049,13 @@ const data = {
         }
       },
       {
-        id: 'justice-15',
-        index: 15,
+        id: 'justice-17',
+        decade: '2000',
         image: {
           caption:
             'Operation Lake Alice concluded - criminal charges filed.png',
           src: 'fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
-          style: 'document'
+          style: 'scrolling'
         },
 
         view: '3d',
@@ -2185,8 +2064,8 @@ const data = {
         }
       },
       {
-        id: 'justice-15',
-        index: 15,
+        id: 'justice-18',
+        decade: '2010',
         text: {
           header: '14 - Fourth Police Investigation - 2018 - 2021',
           content:
@@ -2200,13 +2079,13 @@ const data = {
         }
       },
       {
-        id: 'justice-15',
-        index: 15,
+        id: 'justice-19',
+        decade: '2020',
         image: {
           caption:
             '12th June 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint against the Crown for a "Lack of prompt and impartial investigation; right to an effective domestic remedy and redress."',
           src: 'fc-20220628.jpg',
-          style: 'document'
+          style: 'scrolling'
         },
 
         view: '3d',
@@ -2215,8 +2094,8 @@ const data = {
         }
       },
       {
-        id: 'justice-16',
-        index: 16,
+        id: 'justice-20',
+        decade: '2020',
         text: {
           header: '15 - United Nations Committee Against Torture',
           content:
@@ -2235,7 +2114,6 @@ const data = {
     pages: [
       {
         id: 'about-introduction-1',
-        index: 1,
         text: {
           content: 'About'
         },

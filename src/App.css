@@ -54,8 +54,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* background-color: aqua; */
 }
 
 .document-image-container figcaption {
