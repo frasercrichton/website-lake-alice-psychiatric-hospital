@@ -68,6 +68,6 @@ a {
 .document-image-container figure img, .scrolling-image-container figure img {
   padding: 15px;
   /* height and object-fit: contain makes the image responsive to the container */
-  height: 80vh;
+  height: 75vh;
   object-fit: contain;
 }
