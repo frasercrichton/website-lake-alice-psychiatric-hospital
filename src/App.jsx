@@ -197,8 +197,6 @@ function App () {
 
   const { text, image, video } = pageInView
 
-  console.log(pageInView)
-
   return (
     <div className='site-container' style={containerScroll}>
       <MobileCover

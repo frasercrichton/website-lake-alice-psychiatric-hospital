@@ -10,9 +10,6 @@ const InteractiveMenu = ({ minorPoints }) => {
     // shallow
   )
   useEffect(() => {
-    console.log(firstItemActive)
-
-    console.log('updating use effect')
     updateActiveLabel('')
     setFirstItemActive(!firstItemActive)
   }, [])
@@ -40,7 +37,6 @@ const InteractiveMenu = ({ minorPoints }) => {
           .map((item, index) => {
             if (activeLabel === '' && index === 0) {
               // setFirstItemActive(item.id)
-              console.log('render')
               updateActiveLabel(item.id)
             }
             if (index === 0) {
