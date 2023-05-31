@@ -14,6 +14,7 @@ import Chapter from './layout/Chapter.jsx'
 import Image from './components/Image.jsx'
 import Footer from './layout/Footer.jsx'
 import TextBox from './components/TextBox.jsx'
+import Timeline from './components/Timeline.jsx'
 import MobileCover from './layout/MobileView.jsx'
 // Config
 import headerNavUrls from './config/navigation.js'
@@ -194,6 +195,10 @@ function App () {
     ? { overflow: 'hidden' }
     : { overflowY: 'scroll' }
 
+  const { text, image, video } = pageInView
+
+  console.log(pageInView)
+
   return (
     <div className='site-container' style={containerScroll}>
       <MobileCover
@@ -210,28 +215,26 @@ function App () {
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
-        {pageInView.text &&
-          (pageInView.text?.style === 'static' ||
-            pageInView.text?.style === 'animated') &&
+        {text &&
+          (text?.style === 'static' || text?.style === 'animated') &&
           oddOrEvenPage === 'odd' && (
             <TextBox
               pageNumber={pageNumber}
-              text={pageInView.text}
+              text={text}
               textBoxContainerStyle={textBoxContainerStyle}
               textBoxStyle={textBoxStyle}
-              isStatic={pageInView?.text.style === 'static'}
+              isStatic={text.style === 'static'}
             />
           )}
-        {pageInView.text &&
-          (pageInView.text?.style === 'static' ||
-            pageInView.text?.style === 'animated') &&
+        {text &&
+          (text?.style === 'static' || text?.style === 'animated') &&
           oddOrEvenPage === 'even' && (
             <TextBox
               pageNumber={pageNumber}
-              text={pageInView.text}
+              text={text}
               textBoxContainerStyle={textBoxContainerStyle}
               textBoxStyle={textBoxStyle}
-              isStatic={pageInView?.text.style === 'static'}
+              isStatic={text.style === 'static'}
             />
           )}
 
@@ -252,25 +255,21 @@ function App () {
             map={pageInView.map}
           />
         )}
-        {pageInView.video !== undefined && (
-          <VideoVimeo
-            id={pageInView.video.id}
-            caption={pageInView.video.caption}
-          />
+        {video !== undefined && (
+          <VideoVimeo id={video.id} caption={video.caption} />
         )}
-        {pageInView.image &&
-          (pageInView.image?.style === 'static' ||
-            pageInView.image?.style === 'document') && (
-            <div className={`${pageInView.image?.style}-image-container`}>
-              <Image
-                caption={pageInView.image.caption}
-                src={imageURL}
-                owner={pageInView.image.owner}
-                recordID={pageInView.image.recordID}
-                sourceURL={pageInView.image.sourceURL}
-              />
-            </div>
-          )}
+        {image && (image?.style === 'static' || image?.style === 'document') && (
+          <div className={`${image?.style}-image-container`}>
+            <Image
+              caption={image.caption}
+              src={imageURL}
+              owner={image.owner}
+              recordID={image.recordID}
+              sourceURL={image.sourceURL}
+            />
+          </div>
+        )}
+        <Timeline decade={pageInView.decade} />
         <Routes>
           <Route
             key={'route-default'}
@@ -320,23 +319,6 @@ function App () {
               />
             )
           })}
-
-          {/* <Route
-            // key={`route-wild-default`}
-            // exact
-            path='*'
-            nextChapter='/malcolm'
-            element={
-              <Chapter
-                chapterInView={chapterInView}
-                setPageInView={setPageInView}
-                pageInView={pageInView}
-                setNextChapter={updateChapter}
-                                setHasPageReset={setHasPageReset}
-
-              />
-            }
-          /> */}
         </Routes>
 
         <Footer />
