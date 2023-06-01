@@ -168,7 +168,7 @@ function App () {
   }
 
   const imageURL = pageInView.image
-    ? assetUrlHelper.resolveUrl(pageInView.image.src, '3d-visualisation')
+    ? assetUrlHelper.resolveUrl(pageInView.image.src, 'lake-alice.space')
     : null
 
   const visibleMapLayers =
@@ -261,9 +261,10 @@ function App () {
             <Image
               caption={image.caption}
               src={imageURL}
-              owner={image.owner}
+              author={image.author}
               recordID={image.recordID}
-              sourceURL={image.sourceURL}
+              date={image.date}
+              URL={image.URL}
             />
           </div>
         )}

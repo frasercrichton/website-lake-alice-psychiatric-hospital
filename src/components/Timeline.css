@@ -1,0 +1,63 @@
+.timeline-section {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    overflow: hidden;
+    width: 18vw;
+    height: 100vh;
+    /* background-color: aqua; */
+}
+
+.timeline-section h2 {
+    color: #000000;
+    background-color: #ffffff;
+    text-align: center;
+    width: fit-content;
+    margin: 0;
+    padding: 5px;
+}
+
+.timeline-section ul {
+    margin: 0;
+}
+
+.timeline-section ul li {
+    list-style: none;
+    position: relative;
+    /* set width then set background that width */
+    width: 4px;
+    background-color: #ffffff;
+    margin: 0 12px;
+    padding-top: 5rem;
+    opacity: 0.4;
+    /* background-color: #ff0000; */
+}
+
+/* the circles */
+.timeline-section ul li::after {
+    /* The content attribute is required for pseudo-elements to render */
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    /* make it a circle */
+    border-radius: 50%;
+    background: inherit;
+}
+
+.timeline-section li.active::after, .timeline-section li.active {
+    background-color: #ff0000;
+    opacity: 1;
+}
+
+.timeline-section ul li time {
+    color: #ffffff;
+    font-weight: bold;
+    width: 40rem;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 2.5rem;
+}

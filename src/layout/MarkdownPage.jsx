@@ -9,7 +9,7 @@ const MarkdownPage = ({ fileName }) => {
       <Markdown
         markdownContent={assetUrlHelper.resolveUrl(
           `${fileName}.md`,
-          '3d-visualisation'
+          'lake-alice.space'
         )}
       />
     </div>

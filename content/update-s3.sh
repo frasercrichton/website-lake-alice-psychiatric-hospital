@@ -1,1 +1,1 @@
-aws s3 cp . s3://moral-drift-space-cdn/3d-visualisation --recursive
+aws s3 cp . s3://moral-drift-space-cdn/lake-alice.space/md --recursive
