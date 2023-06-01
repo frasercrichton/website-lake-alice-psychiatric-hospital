@@ -14,7 +14,7 @@ const textBoxStyle = {
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   const { pageId, text, image = {}, content, view, map } = page
-  const { src, style, recordID, owner, caption, sourceURL } = image
+  const { src, style, recordID, author, caption, date, URL } = image
 
   const [introActive, setIntroActive] = useState(true)
 
@@ -48,10 +48,11 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
         <div className={`${style}-image-container`}>
           <Image
             caption={caption}
-            src={assetUrlHelper.resolveUrl(src, '3d-visualisation')}
+            src={assetUrlHelper.resolveUrl(src, 'lake-alice.space')}
             recordID={recordID}
-            owner={owner}
-            sourceURL={sourceURL}
+            author={author}
+            date={date}
+            URL={URL}
           />
         </div>
       )}

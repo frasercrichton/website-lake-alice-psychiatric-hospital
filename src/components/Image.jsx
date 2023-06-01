@@ -2,14 +2,19 @@ import React, { useState } from 'react'
 import Loader from './Loader.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', src, recordID, sourceURL, owner, id }) => {
+const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoading = isLoaded => {
     setIsLoaded(isLoaded)
   }
 
-  const archwayRecordID = recordID ? `Archway Item ID: ${recordID}` : null
+  const archwayRecordID = recordID
+    ? <span>Archway Item ID: {recordID} </span>
+    : null
+
+  const formattedDate = date ? <span>{date}. </span> : null
+  const formattedAuthor = author ? <span>{author}. </span> : null
 
   return (
     <div className='image-container'>
@@ -19,11 +24,12 @@ const Image = ({ caption = '', src, recordID, sourceURL, owner, id }) => {
           <figcaption className='caption'>{caption}</figcaption>
         )}
         {/* {!isLoaded && <Loader />} */}
-        {sourceURL && (
+        {(URL || author) && (
           <div className='source'>
-            <span>{archwayRecordID} </span>
-            <span>{owner} </span>
-            <a target='_blank' rel='noreferrer' href={sourceURL}>
+            {archwayRecordID}
+            {formattedAuthor}
+            {formattedDate}
+            <a target='_blank' rel='noreferrer' href={URL}>
               original
             </a>
           </div>
