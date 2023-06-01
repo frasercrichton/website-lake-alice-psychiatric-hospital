@@ -9,7 +9,7 @@ const Timeline = ({ decade: selectedDecade }) => {
 
     return (
       <li className={className}>
-        <time>{decade}</time>
+        <time>{decade}s</time>
       </li>
     )
   })

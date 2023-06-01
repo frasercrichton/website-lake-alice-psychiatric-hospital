@@ -1848,6 +1848,24 @@ const data = {
         }
       },
       {
+        id: 'justice-4',
+        decade: '1970',
+        image: {
+          caption:
+            'Drawing by Hakeagapuletama Halo of the image he included in his letter to his mum.',
+          src: '/images/fc-20210616-00001-Hake Halo Drawing 2.jpg',
+          URL: 'https://pacificmedianetwork.com/articles/subjected-to-electric-shock-torture-as-a-teenager-a-niuean-mans-story',
+          recordID: '/records/22875316',
+          author: 'Pacific Media Network',
+          date: '16th June, 2021',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-5',
         decade: '1970',
         text: {
