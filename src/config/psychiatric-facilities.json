@@ -1,6 +1,7 @@
 {
   "auckland": {
     "title": "Psychiatric Facilities (Auckland)",
+    "id": "psychiatricCareAuckland",
     "points": [
       {
         "id": "bexley-clinic",
@@ -60,6 +61,7 @@
   },
   "northIsland": {
     "title": "Psychiatric Facilities (Te Ika-a-Māui North Island excluding Auckland)",
+    "id": "psychiatricCareNorthIsland",
     "points": [
       {
         "id": "rotorua-hospital",
@@ -173,6 +175,7 @@
   },
   "southIsland": {
     "title": "Psychiatric Facilities (Te Waipounamu South Island)",
+    "id": "psychiatricCareSouthIsland",
     "points": [
       {
         "id": "seaview-asylum",

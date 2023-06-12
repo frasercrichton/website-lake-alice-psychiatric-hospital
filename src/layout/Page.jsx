@@ -3,7 +3,7 @@ import Image from '../components/Image.jsx'
 import TextBox from '../components/TextBox.jsx'
 import AssetUrlHelper from '../components/AssetUrlHelper.js'
 import MarkdownPage from './MarkdownPage.jsx'
-import InteractiveMenu from '../map/InteractiveMenu.jsx'
+import InteractiveMenu from '../components/InteractiveMenu.jsx'
 import './Page.css'
 const assetUrlHelper = new AssetUrlHelper()
 
@@ -61,7 +61,7 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
       )}
       {view === 'map-animated' &&
         map?.visibleMapLayers?.minorPoints?.points !== undefined && (
-          <InteractiveMenu minorPoints={map?.visibleMapLayers?.minorPoints} />
+          <InteractiveMenu minorPoints={map?.visibleMapLayers?.minorPoints} pageInView={pageInView} />
         )}
     </div>
   )
