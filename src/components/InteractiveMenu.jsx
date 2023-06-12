@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react'
 import useMapStore from '../state/mapStore'
 import './InteractiveMenu.css'
 
-const InteractiveMenu = ({ minorPoints }) => {
-  const [firstItemActive, setFirstItemActive] = useState('')
-
-  const [activeLabel, updateActiveLabel] = useMapStore(
-    state => [state.activeLabel, state.updateActiveLabel]
+const InteractiveMenu = ({ minorPoints, pageInView }) => {
+  const [mapActiveLabel, updateMapActiveLabel] = useMapStore(
+    state => [state.mapActiveLabel, state.updateMapActiveLabel]
     // shallow
   )
+  const [activeLabel, setActiveLabel] = useState('')
+  
   useEffect(() => {
-    updateActiveLabel('')
-    setFirstItemActive(!firstItemActive)
-  }, [])
+    const firstPointId =
+      pageInView?.map?.visibleMapLayers?.minorPoints?.points[0].id
+    updateMapActiveLabel(firstPointId)
+    setActiveLabel(firstPointId)
+  }, [pageInView, updateMapActiveLabel])
 
   const getName = item => {
     if (item.indexOf('-') === -1) {
@@ -28,6 +30,11 @@ const InteractiveMenu = ({ minorPoints }) => {
       ? 'interactive-menu-item active'
       : 'interactive-menu-item'
 
+  const updateLabelItem = id => {
+    updateMapActiveLabel(id)
+    setActiveLabel(id)
+  }
+
   return (
     <div className='map-navigation-container'>
       {minorPoints.title !== undefined && <h2>{minorPoints.title}:</h2>}
@@ -36,18 +43,13 @@ const InteractiveMenu = ({ minorPoints }) => {
           .sort((a, b) => Number(a.opened) - Number(b.opened)) // TODO move out
           .map((item, index) => {
             if (activeLabel === '' && index === 0) {
-              // setFirstItemActive(item.id)
-              updateActiveLabel(item.id)
+              updateLabelItem(item.id)
             }
-            if (index === 0) {
-              // setFirstItemActive(item.id)
-            }
-
             return (
               <li
                 className={activeClassName(item)}
                 key={item.id}
-                onMouseEnter={element => updateActiveLabel(item.id)}
+                onMouseEnter={element => updateLabelItem(item.id)}
               >
                 {`${getName(item.label)} ${getOpeningDate(item)}`}
               </li>

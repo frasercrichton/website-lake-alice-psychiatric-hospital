@@ -3,21 +3,24 @@ import Circle from './Circle.jsx'
 import useMapStore from '../../state/mapStore.js'
 import { LatLng } from 'leaflet'
 
-const Highlight = ({ points }) => {
+const Highlight = ({ minorPoints }) => {
   const [highlight, setHighlight] = useState({})
 
-  const [activeLabel] = useMapStore(
-    state => [state.activeLabel, state.updateActiveLabel]
+  const [mapActiveLabel] = useMapStore(
+    state => [state.mapActiveLabel, state.updateMapActiveLabel]
     // shallow
   )
+
   useEffect(() => {
-    const highlightedPoint = points?.find(element => element.id === activeLabel)
+    const highlightedPoint = minorPoints?.points.find(
+      element => element.id === mapActiveLabel
+    )
     setHighlight(highlightedPoint)
-  }, [activeLabel, points])
+  }, [mapActiveLabel, minorPoints])
 
   const highlightPointStyle = {
     fillColor: '#ff0000',
-    iconSize: 150,
+    iconSize: 100,
     strokeColor: '#0000ff'
   }
 

@@ -13,8 +13,8 @@ const MAP_BOX_STYLE_ID =
   process.env.REACT_APP_MASS_INCARCERATION_MAP_BOX_STYLE_ID
 
 const majorPointStyle = {
-  fillColor: '#ff0000',
-  iconSize: 150,
+  fillColor: '#d3d3d3',
+  iconSize: 100,
   strokeColor: '#00ffff'
 }
 
@@ -93,7 +93,7 @@ const GeographicMap = ({ visibleMapLayers, map }) => {
                     mapType={visibleMapLayers.type}
                     style={minorPointStyle}
                   />
-                  <Highlight points={visibleMapLayers.minorPoints.points} />
+                  <Highlight minorPoints={visibleMapLayers.minorPoints} />
                 </>
               )}
             </>

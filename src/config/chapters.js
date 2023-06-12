@@ -1450,7 +1450,7 @@ const data = {
   '/pathways': {
     pages: [
       {
-        id: 'pathways-introduction-2',
+        id: 'pathways-introduction-1',
         text: {
           content: 'Pathways'
         },
@@ -1458,7 +1458,7 @@ const data = {
         camera: { ...cameras.default }
       },
       {
-        id: 'pathways-2',
+        id: 'pathways-1',
         text: {
           content:
             "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655 000 people who went through care 200 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
@@ -1502,7 +1502,7 @@ const data = {
       //   }
       // },
       {
-        id: 'pathways-4',
+        id: 'pathways-2',
         text: {
           header: '2 - Home',
           content:
@@ -1516,7 +1516,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-6',
+        id: 'pathways-3',
         text: {
           header: 'Kohitere',
           content:
@@ -1530,7 +1530,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-5',
+        id: 'pathways-4',
         text: {
           header: '3 - State Residences - Lake Alice hub',
           content:
@@ -1590,7 +1590,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-8',
+        id: 'pathways-5',
         text: {
           content: 'Network of State Care facilities.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
@@ -1610,7 +1610,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-8',
+        id: 'pathways-6',
         view: 'map-animated',
         map: {
           ...location.national,
@@ -1625,7 +1625,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-8',
+        id: 'pathways-7',
         text: {
           content:
             'Psychiatric Hospitals were another pathway to Lake Alice with many children referred across the national network of psychiatric care.',
@@ -1649,7 +1649,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-9',
+        id: 'pathways-8',
         view: 'map-animated',
         map: {
           ...location.auckland,
@@ -1679,7 +1679,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-9',
+        id: 'pathways-10',
         view: 'map-animated',
         map: {
           ...location.southIsland,
@@ -1694,7 +1694,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-10',
+        id: 'pathways-11',
         text: {
           header: '6 - Numbers',
           content:
@@ -1706,7 +1706,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-11',
+        id: 'pathways-12',
         text: {
           header: '7 - Ages',
           content:
@@ -1718,7 +1718,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-12',
+        id: 'pathways-13',
         text: {
           header: '8 - Maori and Pasifika',
           content:
@@ -1730,7 +1730,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-13',
+        id: 'pathways-14',
         text: {
           header: '9 - Gender',
           content:
@@ -1742,7 +1742,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-14',
+        id: 'pathways-15',
         text: {
           header: '10 - Impact',
           content:
