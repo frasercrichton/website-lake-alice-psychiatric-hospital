@@ -1108,9 +1108,9 @@ const data = {
       {
         id: 'context-4',
         text: {
-          header: '3 - 12-bed Villas',
+          header: '3 - 11-bed Villas',
           content:
-            'Originally the small 12 bed villas were intended for intensive group therapy. At the time this was a pioneering approach.',
+            'Originally the small 11 bed villas were intended for intensive group therapy. At the time this was a pioneering approach.',
           source:
             "In Defence of Theodore Gray: Architecture as a Vehicle for Re-evaluating a Doctor's Commitment to Patient Care (January 2017, Rebecca J. McLaughlan)",
           style: 'scrolling'
@@ -1153,9 +1153,9 @@ const data = {
       {
         id: 'context-8',
         text: {
-          header: "4 - 12-bed Villas - Children's unit",
+          header: "4 - 11-bed Villas - Children's unit",
           content:
-            'The Lake Alice Child and Adolescent Unit was set up in 1972 in a 12-bed villa for boys which was known as villa 10. A second 12-bed villa for boys was added later in 1972 which was known as villa 11.',
+            'The Lake Alice Child and Adolescent Unit was set up in 1972 in a 11-bed villa for boys which was known as villa 10. A second 11-bed villa for boys was added later in 1972 which was known as villa 11.',
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=62'
         },
