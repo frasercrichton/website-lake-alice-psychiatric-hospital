@@ -83,7 +83,7 @@ const data = {
         id: 'intro-4',
         text: {
           content:
-            'The United Nations Committee against Torture (UNCAT) found New Zealand in breach of the Convention Against Torture in 2019.',
+            'The United Nations Committee Against Torture (UNCAT) found New Zealand in breach of the Convention Against Torture in 2019.',
           style: 'static'
         },
         view: '3d',
@@ -103,7 +103,7 @@ const data = {
         id: 'intro-6',
         text: {
           content:
-            "The Child and Adolescent Unit opened in 1972 and closed in 1978 after allegations that Electroconvulsive therapy (ECT) and Paraldehyde 'aversion therapy' were in reality used as a form of torture to punish children with behavioural issues  in the unit.",
+            "The Child and Adolescent Unit opened in 1972 and closed around 1980 after allegations that electroconvulsive therapy (ECT) and paraldehyde 'aversion therapy' were used as a form of torture to punish children with behavioural issues in the unit.",
           style: 'static'
         },
         view: '3d',
@@ -113,7 +113,7 @@ const data = {
         id: 'intro-7',
         text: {
           content:
-            'After civil cases were brought against the Crown minimal compensation was paid to a group of ninety-five survivors in 2001. Legal fees swallowed up the majority of this payment.',
+            'The children held at Lake Alice were disproportionately Māori tamariki.',
           style: 'static'
         },
         view: '3d',
@@ -123,7 +123,7 @@ const data = {
         id: 'intro-8',
         text: {
           content:
-            "Three of New Zealand's initial periodic reports to UNCAT deliberately excluded all mention of Lake Alice and the survivor's allegations or torture.",
+            'After civil cases were brought against the Crown, minimal compensation was paid to a group of 95 survivors in 2001. Legal fees swallowed up the majority of this payment.',
           style: 'static'
         },
         view: '3d',
@@ -133,7 +133,7 @@ const data = {
         id: 'intro-9',
         text: {
           content:
-            'Two survivors of Lake Alice have since had their complaints recognised by the United Nations - Paul Zentveld in 2020 and Malcolm Richards in 2022.',
+            "Three of New Zealand's initial periodic reports to UNCAT deliberately excluded all mention of Lake Alice and the survivors’ allegations of torture.",
           style: 'static'
         },
         view: '3d',
@@ -143,7 +143,7 @@ const data = {
         id: 'intro-9',
         text: {
           content:
-            'Only in 2021 was a former member of staff charged by the police.',
+            'Two survivors of Lake Alice have since had their complaints recognised by the United Nations – Paul Zentveld in 2020 and Malcolm Richards in 2022.',
           style: 'static'
         },
         view: '3d',
@@ -152,7 +152,8 @@ const data = {
       {
         id: 'intro-9',
         text: {
-          content: 'No one has ever been convicted.',
+          content:
+            'Only in 2021 was a former member of staff charged by the police.No one has ever been convicted.',
           style: 'static'
         },
         view: '3d',
@@ -162,6 +163,16 @@ const data = {
         id: 'intro-9',
         text: {
           content: 'New Zealand is still in breach of the convention.',
+          style: 'static'
+        },
+        view: '3d',
+        camera: cameras.default
+      },
+      {
+        id: 'intro-9',
+        text: {
+          content:
+            'Fifty years on, justice remains outstanding for the survivors of Lake Alice.',
           style: 'static'
         },
         view: '3d',
@@ -195,7 +206,7 @@ const data = {
         id: 'malcolm-1',
         text: {
           content:
-            'Malcolm Richards spent three months at the Lake Alice Child and Adolescent Unit in 1975 when he was 15. During his time at Lake Alice Malcolm was subjected to Electroconvulsive therapy (ECT) used as punishment and sexual abuse. For almost fifty years Malcolm and the other survivors of Lake Alice have battled against the State for accountability and redress.',
+            "Malcolm Richards spent three months at the Lake Alice Child and Adolescent Unit in 1975 when he was 15. During his time at Lake Alice, Malcolm was subjected to electroconvulsive therapy (ECT) as punishment and was sexually abused. For almost fifty years, Malcolm - and the other survivors of Lake Alice - have battled against the state for accountability and redress. Malcolm's case has been recognised by the United Nations Committee Against Torture.",
           style: 'scrolling'
         },
         image: {
@@ -206,9 +217,9 @@ const data = {
       {
         id: 'malcolm-2',
         text: {
-          header: '2 - Family',
+          header: 'Family',
           content:
-            "Malcolm grew up in Hastings Heretaunga. At home his family life was difficult. Both his parents were physically abusive. In school Malcolm was sexually abused by his teacher. Malcolm's behaviour at home became erratic and when his father physically abused his mother Malcolm assaulted him. His mum took him to a psychiatrist in Hastings Hospital as a result of this incident.",
+            "Malcolm grew up in Hastings, Heretaunga. His family life was difficult. Both his parents were physically abusive. Malcolm's behaviour at home became disruptive and was exacerbated by being sexually abused by his teacher. This ultimately led to an incident where Malcolm assaulted his father following a domestic violence assault on Malcolm's mother. After the assault, Malcolm's mum took him to see a psychiatrist at Hastings Hospital.",
           style: 'scrolling'
         },
         view: 'map',
@@ -228,9 +239,9 @@ const data = {
       {
         id: 'malcolm-3',
         text: {
-          header: '3 - Pathway',
+          header: 'Pathway',
           content:
-            'The psychiatrist placed Malcolm under Public Trust guardianship told his mum to take him to the Lake Alice Child and Adolescent Unit for residential treatment.',
+            'The Hastings psychiatrist placed Malcolm under Public Trust guardianship and told his mum to take Malcolm to the Lake Alice Child and Adolescent Unit for residential treatment.',
           style: 'scrolling'
         },
         view: 'map',
@@ -268,9 +279,9 @@ const data = {
       {
         id: 'malcolm-4',
         text: {
-          header: '4 - Arrival',
+          header: 'Arrival',
           content:
-            "Malcolm was left at the Boys' Villa by his mum with Dr Selwyn Leeks - the Director of the unit. Neither Malcolm nor his mother were made aware of or asked to consent to Electroconvulsive therapy. ",
+            "Malcolm was left at the Boys' Villa by his mum with Dr Selwyn Leeks - the director of the unit. Neither Malcolm nor his mother were made aware of, or asked to consent to, any form of electroconvulsive therapy or aversion.",
           style: 'scrolling'
         },
         view: '3d',
@@ -284,9 +295,9 @@ const data = {
       {
         id: 'malcolm-5',
         text: {
-          header: '5 - First night',
+          header: 'First night',
           content:
-            "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
+            'Malcolm recalls being initially taken upstairs to the upstairs locker room and being made to change out of his clothes into clothes provided by Lake Alice.',
           style: 'scrolling'
         },
         view: '3d',
@@ -309,6 +320,7 @@ const data = {
           ...cameras.boysVillaAbove
         }
       },
+
       {
         id: 'malcolm-7',
         content:
@@ -318,12 +330,13 @@ const data = {
           ...cameras.boysVillaAbove
         }
       },
+
       {
         id: 'malcolm-8',
         text: {
-          header: '6 - A Typical day',
+          header: 'A Typical day',
           content:
-            'Malcolm described life in the Boys\' Villa as like being in the military "If you weren\'t on time you got punished, if you made too much noise you got punished." Punishment could mean anything from solitary confinement, ECT given without anaesthetic or painful Paraldhyde injections. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
+            'After his first day, Malcolm described life in the Boys’ Villa as like being in the military, "If you weren\'t on time, you got punished. If you made too much noise, you got punished." Punishment could mean anything from solitary confinement, ECT given without anaesthetic or painful paraldehyde injections. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
           style: 'scrolling'
         },
         view: '3d',
@@ -335,7 +348,7 @@ const data = {
       {
         id: 'malcolm-9',
         text: {
-          header: '7 - ECT',
+          header: 'ECT',
           content:
             "Electroconvulsive therapy (ECT) was used at Lake Alice in two ways. Modified ECT where patients were anaesthetised prior to being treated and un-modified ECT with no anaesthetic. Un-modified ECT was introduced as an aversion therapy by Leeks in 1972. Controversial even at the time aversion therapy was a punishment reward system that was used ‘treat’ addiction, homosexuality, trans-people. At Lake Alice un-modified ECT's use was far removed from any form of therapy. ECT was used as an arbitrary punishment.",
           style: 'scrolling'
@@ -355,7 +368,6 @@ const data = {
           src: '/images/fc-20210828-00008-FL59130374(1).jpg',
           caption:
             'Lake Alice Hospital, Bulls - Disturbed patients villa - building floor plans (including information if on same sheet as floor plan) - [copy a].',
-
           author:
             'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
           recordID: 'R23378991',
@@ -369,9 +381,9 @@ const data = {
       {
         id: 'malcolm-11',
         text: {
-          header: '8 - ECT - Villa',
+          header: 'ECT - Villa',
           content:
-            '"I was in a ward with other people getting ECT three times a week where they’d bring the trolley down one side and up the other and save the children to last and just put you to sleep and give you ECT to the head. The wait for your turn was worse than the ECT. It wasn’t worse than having ECT while you were awake - that pain is indescribable. If you are old enough to have an old black and white TV and transmission used to end and the end of the night and the TV would make a real buzzing noise and you’d see the black and white speckles on the screen that’s exactly what you saw in your eyes while the current was going through. The pain was horrendous." Recovery was as excruciating; "like you\'d been in a ring with a boxer".',
+            '“I was in a ward with other people getting ECT three times a week. They’d bring the trolley down one side and up the other, saving the children ‘til last, They just put you to sleep and gave you ECT to the head. The wait for your turn was worse than the ECT. It wasn’t worse than having ECT while you were awake - that pain is indescribable. If you are old enough to have an old black and white TV, transmission used to end at the end of the night. The TV would make a real buzzing noise and you’d see the black and white speckles on the screen. That’s exactly what you saw in your eyes while the current was going through. The pain was horrendous."',
           style: 'scrolling'
         },
         labels: [
@@ -402,9 +414,99 @@ const data = {
       {
         id: 'malcolm-13',
         text: {
-          header: '9 - Escape',
+          header: 'ECT Ward',
           content:
-            'Like a number of survivors, Malcolm attempted to escape from Lake Alice. Lake Alice was a self-sustaining community. Many staff lived on site, it had its own farm and so there was limited contact with the outside world. The remoteness of Lake Alice made it difficult for anyone to escape. "It was the ideal place for a secure unit because if someone got out of the Secure Unit they had miles to go to get anywhere. So it was very safe to put very mentally disturbed people but most of us weren\'t mentally disturbed at all."',
+            'Malcolm recalls being threatened with ECT for refusing to participate in group therapy, "I got into a few fights with boys who tried to put their hands down your pants. I got ECT for fighting with one of them.” The ward was notorious. In one incident, Leeks made children in the unit deliver ECT to another child with a modified ECT unit where the strength of the current could be dialled up. Fridays in the ward were known as “Black Friday” as Leeks typically gave ECT on that day.',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.lakeAliceLocal,
+          visibleMapLayers: {
+            majorPoints: [lakeAliceLocation],
+            minorPoints: {
+              points: [
+                {
+                  label: 'Bulls',
+                  latitude: -40.1756233,
+                  longitude: 175.3815803
+                },
+                {
+                  label: 'Marton',
+                  latitude: -40.086845,
+                  longitude: 175.3722454
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-13',
+        text: {
+          header: 'Escape',
+          content:
+            'Like a number of survivors, Malcolm attempted to escape from Lake Alice. The remoteness of Lake Alice made it difficult for anyone to escape. "It was the ideal place for a secure unit because if someone got out they had miles to go to get anywhere. So it was very safe to put very mentally disturbed people but most of us weren\'t mentally disturbed at all."',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.lakeAliceLocal,
+          visibleMapLayers: {
+            majorPoints: [lakeAliceLocation],
+            minorPoints: {
+              points: [
+                {
+                  label: 'Bulls',
+                  latitude: -40.1756233,
+                  longitude: 175.3815803
+                },
+                {
+                  label: 'Marton',
+                  latitude: -40.086845,
+                  longitude: 175.3722454
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-13',
+        text: {
+          header: 'Closest Towns',
+          content:
+            'The closest towns - Marton and Bulls - were more than 10 km away.',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.lakeAliceLocal,
+          visibleMapLayers: {
+            majorPoints: [lakeAliceLocation],
+            minorPoints: {
+              points: [
+                {
+                  label: 'Bulls',
+                  latitude: -40.1756233,
+                  longitude: 175.3815803
+                },
+                {
+                  label: 'Marton',
+                  latitude: -40.086845,
+                  longitude: 175.3722454
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-13',
+        text: {
+          header: 'Escape',
+          content:
+            "Malcolm didn't get far before he was caught. He was thrown into a solitary secure cell back in the boys' unit.",
           style: 'scrolling'
         },
         view: 'map',
@@ -432,32 +534,21 @@ const data = {
       {
         id: 'malcolm-14',
         text: {
-          header: '10 - Consequences',
+          header: 'Consequences',
           content:
-            "When he was caught trying to escape he was placed in a solitary secure cell back in the boys' unit.",
+            'In despair Malcolm attempted suicide in the cell. He was found still alive by staff who then stripped him naked and administered unmodified ECT as punishment until Malcolm passed out in pain. He was sexually assaulted whilst unconscious and then left alone to recover.',
           style: 'scrolling'
         },
         view: '3d',
         camera: { ...cameras.dormitoryVilla }
       },
-      {
-        id: 'wip-malcolm-15',
-        text: {
-          header: '10 - Consequences',
-          content:
-            'In despair Malcolm attempted suicide in the cell. He was found still alive, stripped naked,  given unmodified ECT as punishment until he passed out. He was sexually assaulted whilst unconscious and then left alone to recover.',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: { ...cameras.cellCamera }
-      },
 
       {
         id: 'malcolm-16',
         text: {
-          header: '11 - Afterwards',
+          header: 'Afterwards',
           content:
-            'After this incident Malcolm was given ECT three times a week.',
+            'After his escape attempt Malcolm was given ECT three times a week.',
           style: 'scrolling'
         },
         view: '3d',
@@ -466,9 +557,34 @@ const data = {
       {
         id: 'malcolm-17',
         text: {
-          header: '12 - Runaway',
+          header: 'Runaway',
           content:
-            "Not long after this incident Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holiday he ran away and this time wasn't caught. Malcolm's life following his experience at Lake Alice was erratic. As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and rough sleeping. He suffered PTSD and memory loss from the ECT and couldn't hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and \"a lot of time between jobs with no job or income\". ",
+            "Not long after this, Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after Christmas he ran away and this time wasn't caught.",
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.northIsland,
+          visibleMapLayers: {
+            majorPoints: [],
+            lines: {
+              points: [
+                {
+                  label: 'Waipawa',
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-17',
+        text: {
+          header: 'Waipawa',
+          content:
+            'As a runaway, he moved around the country in fear of being sent back to Lake Alice - some of his time was spent living on the street and sleeping rough. He suffered PTSD and memory loss from the ECT and couldn\'t hold down a regular job. Instead he found short-term work as a manual labourer, dairy worker and "a lot of time between jobs with no job or income".',
           style: 'scrolling'
         },
         view: 'map',
@@ -491,7 +607,7 @@ const data = {
       {
         id: 'malcolm-18',
         text: {
-          header: '15 - Waipukurau',
+          header: 'Waipukurau',
           content:
             'After running away from home Malcolm initially lived under a bridge at Waipukurau.',
           style: 'scrolling'
@@ -555,7 +671,7 @@ const data = {
         text: {
           header: '12 - Napier',
           content:
-            'His next move was to Napier where he worked in a factory. Napier was also the first place where Malcolm reported his experience at Lake Alice to the police.',
+            'His next move was to Napier where he worked in a factory. Napier was also the first place where Malcolm reported his experience at Lake Alice to the police.',
           style: 'scrolling'
         },
         view: 'map',
@@ -590,7 +706,7 @@ const data = {
       {
         id: 'malcolm-21',
         text: {
-          header: '12 - Welsford',
+          header: 'Welsford',
           content:
             'He then moved to Welsford and found more dairy farming work.',
           style: 'scrolling'
@@ -631,7 +747,7 @@ const data = {
       {
         id: 'malcolm-22',
         text: {
-          header: '19 - Kaiwaka',
+          header: 'Kaiwaka',
           content: 'From Welsford to Kaiwaka and worked on a dairy farm.',
           style: 'scrolling'
         },
@@ -724,10 +840,9 @@ const data = {
       {
         id: 'malcolm-24',
         text: {
-          header:
-            '22 - The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+          header: 'Connolly Mental Health Unit',
           content:
-            'In Auckland Malcolm PTSD from his experience at Lake Alice saw Malcolm admitted to the Connelly mental health unit. After this Malcolm lived on the street.',
+            'In Auckland, PTSD from his experience at Lake Alice saw Malcolm admitted to the Connolly Mental Health Unit. After this, Malcolm lived on the street.',
           style: 'scrolling'
         },
         view: 'map',
@@ -779,8 +894,8 @@ const data = {
       {
         id: 'malcolm-25',
         text: {
-          header: '23 - South Auckland',
-          content: "In South Auckland Malcolm found work in a butcher's shop.",
+          header: 'South Auckland',
+          content: "In South Auckland, Malcolm found work in a butcher's shop.",
           style: 'scrolling'
         },
         view: 'map',
@@ -835,7 +950,7 @@ const data = {
       {
         id: 'malcolm-26',
         text: {
-          header: '24 - Napier',
+          header: 'Napier',
           content:
             'Malcolm then moved to Napier and worked in several manual labouring jobs.',
           style: 'scrolling'
@@ -896,9 +1011,139 @@ const data = {
       {
         id: 'malcolm-27',
         text: {
-          header: '25 - Hastings',
+          header: 'Hastings',
           content:
-            'Finally Malcolm moved to Hastings where he worked in forestry.',
+            'Finally, Malcolm moved to Hastings where he worked in forestry.',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.northIsland,
+          visibleMapLayers: {
+            majorPoints: [],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
+                },
+                {
+                  latitude: -36.9914801,
+                  longitude: 174.8690175
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  label: 'Hastings',
+                  latitude: -39.6394411,
+                  longitude: 176.7794575
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-27',
+        text: {
+          header: 'Afterwards',
+          content:
+            'After escaping on a home trip, it was four years before Malcolm reported his abuse to the police. “They told me, ‘No way would any of that stuff happen in New Zealand. You are just making this up.’” The police threatened to arrest him for wasting police time.',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.northIsland,
+          visibleMapLayers: {
+            majorPoints: [],
+            lines: {
+              points: [
+                {
+                  latitude: -39.9182277,
+                  longitude: 176.4211438
+                },
+                {
+                  latitude: -40.0309529,
+                  longitude: 176.5278439
+                },
+                {
+                  latitude: -40.7491005,
+                  longitude: 176.1375833
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  latitude: -36.2858116,
+                  longitude: 174.4447237
+                },
+                {
+                  latitude: -36.2160784,
+                  longitude: 174.3493232
+                },
+                {
+                  latitude: -36.7494681,
+                  longitude: 174.5825004
+                },
+                {
+                  latitude: -36.8605068,
+                  longitude: 174.7674006
+                },
+                {
+                  latitude: -36.9914801,
+                  longitude: 174.8690175
+                },
+                {
+                  latitude: -39.4794044,
+                  longitude: 176.7985016
+                },
+                {
+                  label: 'Hastings',
+                  latitude: -39.6394411,
+                  longitude: 176.7794575
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'malcolm-27',
+        text: {
+          header: 'Malcolm today',
+          content:
+            'Today, in 2023, Malcolm still suffers from PTSD and physical symptoms from his time in Lake Alice. Malcolm was almost broken by a system that should have been there for his care and protection. Instead, Malcolm is among a small group of survivors - women, men, trans, Māori, Pasifika, Pākehā, disabled and able-bodied - who have fought for accountability and redress for more than fifty years. Their struggle for justice against the state is also a struggle for tamariki who were broken by Lake Alice.',
           style: 'scrolling'
         },
         view: 'map',
@@ -987,7 +1232,7 @@ const data = {
         text: {
           header: '2 - Adult Psychiatric Facility',
           content:
-            'Lake Alice opened in 1950 as an adult psychiatric facility and specialised in treating men returning from the war with post-traumatic stress disorder.',
+            'Lake Alice Psychiatric Hospital opened in 1950. It was originally an adult psychiatric facility specialising in treating men who had returned from the Second World War with post-traumatic stress disorder. It treated male and female patients with a spectrum of psychiatric issues including the criminally insane.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1003,7 +1248,7 @@ const data = {
         id: 'context-4',
         text: {
           content:
-            'Lake Alice operated as a self-contained community with farm, a community hall and even a swimming pool. It was isolated from the world and particularly from oversight by Health Authorities.',
+            'Located in rural farmland on Te Ika-a-Māui, the North Island, Lake Alice was a sprawling complex isolated from the world and particularly from oversight by health authorities.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1032,7 +1277,7 @@ const data = {
         id: 'context-4',
         text: {
           content:
-            'Lake Alice operated as a self-contained community with farm, a community hall and even a swimming pool. It was isolated from the world and particularly from oversight by Health Authorities.',
+            'The hospital operated as an entirely self-contained community where staff lived on-site with patients. With a farm, laundry, butchery, a community hall and latterly a school, the facility was self-sufficient and those living at Lake Alice had limited contact with the outside world.',
           style: 'scrolling'
         },
         labels: [
@@ -1108,9 +1353,9 @@ const data = {
       {
         id: 'context-4',
         text: {
-          header: '3 - 11-bed Villas',
+          header: '11-bed Villas',
           content:
-            'Originally the small 11 bed villas were intended for intensive group therapy. At the time this was a pioneering approach.',
+            "When it opened in 1950, Lake Alice's 11-bed villas were at the heart of a pioneering approach using intensive group therapy to treat adult mental illness.",
           source:
             "In Defence of Theodore Gray: Architecture as a Vehicle for Re-evaluating a Doctor's Commitment to Patient Care (January 2017, Rebecca J. McLaughlan)",
           style: 'scrolling'
@@ -1121,9 +1366,9 @@ const data = {
       {
         id: 'context-5',
         text: {
-          header: '2 - Adult Psychiatric Facility',
+          header: 'Adult Psychiatric Facility',
           content:
-            'From 1971, Dr Selwyn Leeks accepted responsibility as psychiatric consultant for all patients at Lake Alice under the age of 17. He also worked at two other child health clinics, one in Whanganui and another at Palmerston North Hospital.',
+            'From 1971, Dr Selwyn Leeks accepted responsibility as the psychiatric consultant for all patients at Lake Alice under the age of 17. Dr Sydney Pugmire remained the hospital’s medical superintendent. Leeks also worked at two other child health clinics, one in Whanganui and another at Palmerston North Hospital. Although never directly appointed, Leeks’ de facto role found him responsible for running Lake Alice’s Child and Adolescent Unit.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1149,13 +1394,24 @@ const data = {
         view: '3d',
         camera: { ...cameras.twelveBedVillasWide }
       },
-
       {
         id: 'context-8',
         text: {
           header: "4 - 11-bed Villas - Children's unit",
           content:
-            'The Lake Alice Child and Adolescent Unit was set up in 1972 in a 11-bed villa for boys which was known as villa 10. A second 11-bed villa for boys was added later in 1972 which was known as villa 11.',
+            'In 1972, the Lake Alice Child and Adolescent Unit opened. Initially, it housed a small number of boys in an 11-bed villa which was known as Villa 10. A second 11-bed villa was added later in 1972 which was known as Villa 11.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=62'
+        },
+        view: '3d',
+        camera: { ...cameras.twelveBedVilla }
+      },
+      {
+        id: 'context-8',
+        text: {
+          header: "11-bed Villas - Children's unit",
+          content:
+            'The boys - and later girls - in the Child and Adolescent Unit were a mix of Pakeha, Māori and Pasifika. Many were referred to the Unit from state care institutions across Aotearoa.',
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=62'
         },
@@ -1166,7 +1422,7 @@ const data = {
         id: 'context-9',
         image: {
           src: '/images/fc-20230321-00001-R26288977-0001.jpg',
-          caption: 'The original twelve bed villas',
+          caption: 'The original eleven bed villas',
           recordID: 'R24730915',
           author:
             'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
@@ -1195,7 +1451,7 @@ const data = {
         text: {
           header: 'Eleven Bed Villa Top Floor',
           content:
-            'The first floor of the villa contained two 4-bed dormitories, two single bed rooms, a staff bedroom, toilets and washrooms.',
+            'The first floor of the 11-bed villa comprised two 4-bed dormitories, three single bedrooms, toilets and washrooms.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1231,7 +1487,7 @@ const data = {
         text: {
           header: '6 - Girls Unit',
           content:
-            'Although the unit’s dedicated villas housed only boys, Dr Leeks also treated girls at Lake Alice.* Girls were initially housed in the adult admission villa, which accommodated both men and women, but spent their days in the unit. Later, eight to 10 girls were accommodated in one wing of the women’s villa.',
+            'Girls were initially housed in the adult admission villa - which accommodated both men and women - but spent their days in the 11-bed villa unit. Later, eight to 10 girls were accommodated in one wing of the women’s villa.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=62',
           style: 'scrolling'
         },
@@ -1254,7 +1510,7 @@ const data = {
         id: 'context-15',
         text: {
           content:
-            "As the number of children at Lake Alice grew the 11-bed units were superseded by the larger 36-bed villas. The 36-bed villas opened in 1975. The boys' villa was known as villa 7. The numbering system changed at some point in Lake Alice's history. This created confusion and has been used to undermine survivors testimony.",
+            'As the number of children in the Child and Adolescent Unit grew, the use of the 11-bed villas was superseded. In 1975, the boys were transferred to a dedicated 36-bed villa known as Villa 7.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=62',
           style: 'scrolling'
         },
@@ -1278,7 +1534,7 @@ const data = {
         text: {
           header: 'Top Floor',
           content:
-            "The top-floor of the children's villa contained two 16-bed dormitories and four secure solitary cells. On the original plans there was a third dormitory but this was ultimately used as a locker room.",
+            "The top floor of the boys' villa contained two 16-bed dormitories and four secure solitary cells. On the original plans, there was a third dormitory, but this was ultimately used as a locker room.",
           style: 'scrolling'
         },
         view: '3d',
@@ -1296,7 +1552,7 @@ const data = {
         text: {
           header: 'Ground Floor',
           content:
-            'The ground-floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+            'The ground floor of the villa had a day room, a kitchen and dining room, as well as staff quarters and an office.',
           style: 'scrolling'
         },
         view: '3d',
@@ -1316,12 +1572,13 @@ const data = {
           ...cameras.boysVillaAbove
         }
       },
+
       {
         id: 'context-19',
         text: {
-          header: '8 - Maximum Security Villa',
+          header: 'Maximum Security Villa',
           content:
-            "The Maximum Security villa opened in 1965. Otherwise known as the National Security Unit it was Aotearoa's only official psychiatric security institution. It was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985. The unit was administered separately to Lake Alice, but a significant number of children were transferred to the villa as punishment for defiant behaviour.",
+            "The adult maximum security villa opened in 1965. Otherwise known as the National Security Unit, it was Aotearoa's only official psychiatric security institution. It was first used as a temporary prison for men who had been involved in the Mount Eden Prison riot. As a psychiatric secure unit, it saw a riot by patients in 1985. The unit was administered separately to Lake Alice, but a significant number of children were transferred to the villa as punishment for defiant behaviour.",
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=112',
           style: 'scrolling'
         },
@@ -1353,9 +1610,9 @@ const data = {
       {
         id: 'context-22',
         text: {
-          header: '9 - Staff on Site',
+          header: 'Staff on Site - I',
           content:
-            'Many of the staff who worked at Lake Alice lived on site - including Selwyn Leeks. This proximity posed numerous issues not least of which was that it meant whistleblowing was much less likely. Staff housing was located across the site at the North East.',
+            'Many of the staff who worked at Lake Alice lived on-site. This proximity posed numerous issues not least of which was that it meant whistleblowing was much less likely. Staff housing was located across the site in the northeast.',
           style: 'scrolling'
         },
         labels: [
@@ -1372,7 +1629,7 @@ const data = {
       {
         id: 'context-25',
         text: {
-          header: '9 - Staff on Site',
+          header: 'Staff on Site - II',
           content: 'Single staff were housed at the south of the site.',
           style: 'scrolling'
         },
@@ -1388,11 +1645,29 @@ const data = {
         }
       },
       {
+        id: 'context-25',
+        text: {
+          header: 'Staff on Site - III',
+          content: 'Staff were housed at the north east of the site.',
+          style: 'scrolling'
+        },
+        labels: [
+          {
+            id: 'StaffVillas',
+            label: 'Staff Quarters'
+          }
+        ],
+        view: '3d',
+        camera: {
+          ...cameras.staffHousing
+        }
+      },
+      {
         id: 'context-26',
         text: {
           header: '7 - Adults and Children',
           content:
-            'Housing disturbed adults so close to children resulted in some incidents of sexual abuse of children by adult patients. This threat was used by the staff according to Malcolm, "The only time you\'d interact with an adult patient was when you were threatened with being locked in with adults in the secure unit. It was another threat on the top of the threat of ECT."',
+            'Housing disturbed adults so close to children was clearly problematic. Incidents of sexual abuse of children by adult patients occurred and this threat of abuse was also used by staff to intimidate the children.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=129',
           style: 'scrolling'
         },
@@ -1404,7 +1679,26 @@ const data = {
         text: {
           header: '9 - Torture',
           content:
-            "The use of unmodified ECT was combined with the sedative Paraldehyde - an excruciatingly painful injection - has been formally recognised in the Abuse in Care Royal Commission of Inquiry's final report on the Child and Adolescent Unit and by the United Nations Committee Against Torture.",
+            "Dr Leeks introduced 'aversion therapy' to the unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
+          style: 'scrolling'
+        },
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Disturbed Patients's Villa"
+          }
+        ],
+        view: '3d',
+        camera: {
+          ...cameras.adultVilla
+        }
+      },
+      {
+        id: 'context-27',
+        text: {
+          header: 'ECT',
+          content:
+            "At Lake Alice, Leeks used electroconvulsive therapy (ECT) and excruciatingly painful paraldehyde injections as a punishment primarily for violent and sexual misbehaviour. ECT was used at Lake Alice in two ways. 'Modified ECT', where patients were anaesthetised prior to being treated, and 'unmodified ECT' with no anaesthetic. At Lake Alice, unmodified ECT's use was far removed from any form of therapy; instead it was used as an arbitrary punishment.",
           style: 'scrolling'
         },
         labels: [
@@ -1431,13 +1725,31 @@ const data = {
         view: '3d',
         camera: { ...cameras.adultVilla }
       },
-
+      {
+        id: 'context-27',
+        text: {
+          header: 'Torture',
+          content:
+            "ECT's use as an aversion therapy is now acknowledged as torture. Both the Abuse in Care Royal Commission of Inquiry's final report and the United Nations Committee Against Torture have acknowledged that actions by Lake Alice staff under the supervision of Leeks and actions by Leeks himself constituted torture against the children held at Lake Alice.",
+          style: 'scrolling'
+        },
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Disturbed Patients's Villa"
+          }
+        ],
+        view: '3d',
+        camera: {
+          ...cameras.adultVilla
+        }
+      },
       {
         id: 'context-28',
         text: {
           header: '10 - Demolition',
           content:
-            'The Child and Adolescent Unit finally closed in 1978 and Lake Alice Psychiatric Hospital was closed in 1999. Lake Alice was finally demolished starting in 2016 and completed in 2018. The site is now a private working farm.',
+            "The Child and Adolescent Unit was closed around 1980 after an Ombudsman's inquiry into conditions at the unit. Lake Alice Psychiatric Hospital closed in 1999. Demolition of Lake Alice started in 2016 and was completed in 2018. The site is now a private working farm.",
           style: 'scrolling'
         },
         view: '3d',
@@ -1461,7 +1773,7 @@ const data = {
         id: 'pathways-1',
         text: {
           content:
-            "Many of the files that describe how children came to be at Lake Alice have been lost or destroyed. Children were placed in Lake Alice from a number of paths. Most, like Malcolm, came from family homes, many that may have been under supervision of the Department of Social Welfare. Roughly half were admitted by the Department of Social Welfare. Of these children they were referred from a mix of home, state residences, hospitals, foster homes and other contexts including faith-based residences. Residences weren't fixed so many children experienced insecurity as they were frequently moved between state, foster and home care.  These contexts also shared high levels of physical, psychological and sexual abuse. Of an estimated 655 000 people who went through care 200 000 may have been abused in care according to a report commissioned by the Royal Commission. Lake Alice was a part of a sprawling network of care contexts - it was the ultimate punishment for any children who challenged this system.",
+            'Children were referred to Lake Alice from family homes, state care residences, foster homes, hospitals and other contexts including faith-based residences.',
           source: 'Abuse-in-Care-Volume-One.pdf#14',
           style: 'scrolling'
         },
@@ -1504,9 +1816,9 @@ const data = {
       {
         id: 'pathways-2',
         text: {
-          header: '2 - Home',
+          header: 'First Cohort - Lake Alice',
           content:
-            'The most common referral to Lake Alice for children was from home. Foster care homes were another source of children for Lake Alice.',
+            'The first cohort of children arrived at Lake Alice in 1972. Many were from Kohitere Boys Training Centre, Hokio Beach School and Holdsworth. Leeks worked as a consultant at both Kohitere and Hokio.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=69',
           style: 'scrolling'
         },
@@ -1520,7 +1832,8 @@ const data = {
         text: {
           header: 'Kohitere',
           content:
-            'Kohitere Boy’s Training Centre was part of a network of National State Care facilities. Situated several miles outside of Levin this remote facility included a secure solitary cell block. Kohitere held over 100 boys at one point and was notorious for physical and sexual abuse.',
+            'Kohitere Boys Training Centre was part of the network of national state care facilities. Kohitere held more than 100 boys at one point, aged 14 to 17. Many of these boys were Māori. Situated several miles outside of Levin, this remote facility included a secure solitary cell block. The centre was notorious for physical and sexual abuse.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
         image: {
@@ -1532,9 +1845,9 @@ const data = {
       {
         id: 'pathways-4',
         text: {
-          header: '3 - State Residences - Lake Alice hub',
+          header: 'State Care Residences',
           content:
-            "The first cohort of children arrived at Lake Alice in 1972 including children from Kohitere Boys' Training Centre, Hokio Beach School and Holdsworth. Leeks worked as a consultant at both Kohitere and Hokio and he personally referred children to Lake Alice.*",
+            'By 1976, Lake Alice became a hub for a sprawling network of state care facilities across Aotearoa. The children in this network were disproportionately Māori. Many of these facilities shared high levels of physical, psychological and sexual abuse. Of an estimated 655,000 people who went through state care since the 1950s, 200,000 may have been abused in care, according to the Royal Commission. Lake Alice was a punishment for vulnerable children who challenged this system. Leeks referred to them as "bottom of the barrel kids" and used this to justify their torture with ECT.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1628,7 +1941,7 @@ const data = {
         id: 'pathways-7',
         text: {
           content:
-            'Psychiatric Hospitals were another pathway to Lake Alice with many children referred across the national network of psychiatric care.',
+            'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals by Leeks.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1696,9 +2009,21 @@ const data = {
       {
         id: 'pathways-11',
         text: {
-          header: '6 - Numbers',
+          header: 'Home',
           content:
-            'The Royal Commission estimated that 400 and 450 children went through Lake Alice between 1970 and 1980. Half of these came from home and half from care placements. Admissions peaked in 1974 at 82. Some children were admitted more than once.',
+            'Children were most commonly referred to Lake Alice from family homes. The Department of Social Welfare monitored families with children they perceived to be at risk and in some cases would refer those children to Lake Alice. Foster care homes were another source of children for Lake Alice and other referrals were simply parents looking to stop their children from getting into trouble at school.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=66',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.siteCamera, isRotating: true }
+      },
+      {
+        id: 'pathways-11',
+        text: {
+          header: 'Numbers',
+          content:
+            'The Royal Commission estimated that between 400 and 450 children went through Lake Alice between 1970 and 1980. Half of these came from home and half from care placements. Admissions peaked in 1974 at 82. Some children were admitted more than once.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=66',
           style: 'scrolling'
         },
@@ -1708,9 +2033,9 @@ const data = {
       {
         id: 'pathways-12',
         text: {
-          header: '7 - Ages',
+          header: 'Ages',
           content:
-            'The median age of children by the Department of Social Welfare at Lake Alice was 13 - the youngest was eight. Although a four-year-old was on site with his mother at Lake Alice the youngest child treated there was just five years old.',
+            'The Department of Social Welfare estimated that the median age of children at the Child and Adolescent Unit was from 8-13. The youngest child treated in the unit was just five years old. Prior to this, a four-year-old child was on site with his mother at Lake Alice.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
           style: 'scrolling'
         },
@@ -1720,9 +2045,9 @@ const data = {
       {
         id: 'pathways-13',
         text: {
-          header: '8 - Maori and Pasifika',
+          header: 'Maori and Pasifika',
           content:
-            'The ethnicity of children at Lake Alice was poorly recorded. Through records the Royal Commission obtained 63 percent European and 34 percent Māori or Māori-Pacific. This showed an over-representation of Māori who had a smaller population base. More Māori admissions came from State, foster care and hospitals.',
+            'Like many records, the ethnicity of children at Lake Alice was poorly documented. The Royal Commission estimated 63% of the children were European and 34% Māori or Māori-Pacific, 2% were of Pacific descent and 1% Indian. This was an over-representation of Māori who had a smaller population base. More Māori admissions came from state, foster care and hospitals.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=74',
           style: 'scrolling'
         },
@@ -1732,7 +2057,7 @@ const data = {
       {
         id: 'pathways-14',
         text: {
-          header: '9 - Gender',
+          header: 'Gender',
           content:
             'There were 165 boys admitted to the Child and Adolescent Unit and 38 girls (including one intersex survivor).',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=73',
@@ -1744,9 +2069,34 @@ const data = {
       {
         id: 'pathways-15',
         text: {
-          header: '10 - Impact',
+          header: 'Reasons',
           content:
-            'Lake Alice had a profound life-long negative impact on the children that it was meant to help. Survivors have experienced severe mental health issues like depression and anxiety. Memory loss from ECT. Some continue to be on medication to help with PTSD. Some have committed suicide.  Survivors have experienced difficulty with relationships, education, employment and some have been incarcerated. The impact of intergenerational trauma on whānau across Aotearoa is seen in the negative statistics of over representation that are so often shared today today of incarceration and child abuse. Survivors have received minimal support from the State and yet many survivors have endured and shown incredible resiliency fighting for decades for redress and accountability.',
+            'The main reason children were referred to the unit was not mental health but behaviour. In the case of state care residences, in many instances this behaviour was in direct response to physical or sexual abuse and also from separation from whānau.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=75',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.siteCamera, isRotating: true }
+      },
+      {
+        id: 'pathways-15',
+        text: {
+          header: 'Impact - Personal',
+          content:
+            'Lake Alice had a profound lifelong negative impact on the children that it was meant to help. Survivors have experienced severe mental health issues like depression, anxiety and memory loss from ECT. Some continue to be on medication to help with PTSD. Some have committed suicide. Survivors have experienced difficulty with relationships, education and employment. Some have been incarcerated.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=1',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.siteCamera, isRotating: true }
+      },
+      {
+        id: 'pathways-15',
+        text: {
+          header: 'Impact - Community',
+          content:
+            'The legacy of intergenerational trauma from Lake Alice and other forms of state care on whānau across Aotearoa are seen in the negative statistics of over-representation of incarceration and child abuse. Survivors have received minimal redress from the state and seen no accountability for the abuse they endured. And yet many survivors have shown incredible resiliency fighting for decades for redress and accountability.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=179',
           style: 'scrolling'
         },
         view: '3d',
@@ -1790,9 +2140,9 @@ const data = {
         id: 'justice-1',
         decade: '1970',
         text: {
-          header: '1 - Intro',
+          header: 'Intro',
           content:
-            'Whilst the experiences of the children at Lake Alice were horrific at the time their experiences as adults of trying to gain accountability against the perpetrators of abuse and redress from the State have an equally horrific aspect. As early as 1973 there was a complaint of abuse at Lake Alice. In 1974 acting chief educational psychologist Don Brown raised concerns about the improper use of ECT with Dr Sydney Pugmire  the hospital’s medical superintendent.',
+            'As adult survivors, the children of Lake Alice endured a different form of failing by the state. Attempting to gain accountability against the perpetrators of abuse and redress from the state have both been difficult processes. Abuse at Lake Alice was an open secret. Multiple police investigations have failed to hold anyone accountable. Compensation and redress have never been fairly distributed. The process of justice stretched across the lifetimes of the survivors.',
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40'
         },
@@ -1805,9 +2155,9 @@ const data = {
         id: 'justice-2',
         decade: '1970',
         text: {
-          header: 'CCHR',
+          header: 'Complaints',
           content:
-            "Lake Alice's isolation contributed to the lack of oversight of Leeks and other staff members. Although independent (?) inspections did occur, as Malcolm recalls staff prepared for them by threatening the children with ECT. The Citizens Commission on Human Rights (CCHR) gained access to Lake Alice in 1976 and were able to raise concerns in national media over how the children there were treated.",
+            'Only a year after it opened in 1972, a boy referred from Holdsworth School made a complaint of abuse at the Child and Adolescent Unit. In 1974, the acting chief educational psychologist raised serious concerns with Dr Sydney Pugmire, Lake Alice’s medical superintendent, about the improper use of ECT. And yet the unit continued to operate as it had. No further investigation was made.',
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40'
         },
@@ -1820,12 +2170,11 @@ const data = {
         id: 'justice-3',
         decade: '1970',
         text: {
-          header: 'Whistleblower',
+          header: 'Citizens Commission on Human Rights',
           content:
-            'In 1976 fourteen year-old Hake Halo and whistle blower Lyn Fry brought conditions at Lake Alice to national attention. Fry was a Department of Education psychologist who had recommended Hakeagapuletama be sent to Hokio Beach School in December 1974. Instead, the Department of Social Welfare sent Hake to Lake Alice. When Fry learned this she approached the Auckland Committee on Racism and Discrimination (ACORD). ',
+            "Lake Alice's isolation contributed to the lack of oversight of Leeks and other staff members. Although inspections did occur, as Malcolm recalls, staff prepared for these by threatening children with ECT if they spoke out about the conditions they were held in. The Citizens Commission on Human Rights (CCHR) gained access to Lake Alice in 1976 and was able to raise concerns in national media over how the children there were treated.",
           style: 'scrolling',
-          source:
-            'Witness-statement-of-Oliver-Sutherland-for-Lake-Alice-Child-and-Adolescent-Unit-hearing-v2-1.pdf#page=4'
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40'
         },
         view: '3d',
         camera: {
@@ -1836,11 +2185,25 @@ const data = {
         id: 'justice-4',
         decade: '1970',
         text: {
+          header: 'The 1976 Ombudsman’s Inquiry',
+          content:
+            "In July 1976, the parents of one of the children complained to the Ombudsman’s office about his detention and treatment at the Adolescent Unit. The Ombudsman's investigation recommended that the use of unmodified ECT should be discontinued and that modified ECT should be discouraged and only given with consent.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=165'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-5',
+        decade: '1970',
+        text: {
           header: 'Hake Halo',
           content:
-            "Hake had already attempted to raise the alarm about Lake Alice. The children at Lake Alice had to write letters home in English. Hakeagapuletama added a drawing of a smiling stickman to his letter with a speech bubble that said: “Fakasoka he faoa au, mo huki au, mamahi, tagi au”. In English this means: “Mum, the people are giving me electric shocks and injections, it’s painful, I’m crying”. Dr Oliver Sutherland from the Auckland Committee on Racism and Discrimination (ACORD) met with the family after Lyn Fry alerted ACORD to what was happening at Lake Alice. Sutherland introduced the family to New Zealand Herald's Medical Correspondent, Peter Trickett. *The front-page feature published on the 15 December 1976 that Trickett wrote lead to questions being raised in Parliament and eventually a national Inquiry.*",
-          style: 'scrolling',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=173'
+            "Fourteen-year-old Hakeagapuletama 'Hake' Halo played a pivotal role in the closure of the Child and Adolescent Unit. The children at Lake Alice were required to regularly write letters home in English. Hake, added a drawing of a smiling stickman to his letter with a speech bubble that said: “Fakasoka he faoa au, mo huki au, mamahi, tagi au”. In English this means: “Mum, the people are giving me electric shocks and injections, it’s painful, I’m crying”.",
+          style: 'scrolling'
         },
         view: '3d',
         camera: {
@@ -1865,14 +2228,16 @@ const data = {
           ...cameras.theLake
         }
       },
+
       {
-        id: 'justice-5',
+        id: 'justice-6',
         decade: '1970',
         text: {
-          header: '6 - Inquiries 1976',
+          header: 'Whistleblower',
           content:
-            'A series of inquiries followed including an Ombudsman inquiry and a Medical Council Inquiry.',
-          style: 'scrolling'
+            "In 1976, on receiving his letter, Hake's parents complained to the Ombudsman. At the same time, Lyn Fry, a Department of Education psychologist, approached the Auckland Committee on Racism and Discrimination (ACORD) after she learned the Department of Social Welfare sent Hake to Lake Alice instead of Hokio Beach School against her recommendation and were about to deport him back to Niue. Dr Oliver Sutherland from ACORD met with the family and introduced them to the New Zealand Herald's medical correspondent, Peter Trickett. The front-page feature that Trickett wrote led to questions being raised in parliament.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=166'
         },
         view: '3d',
         camera: {
@@ -1883,10 +2248,56 @@ const data = {
         id: 'justice-6',
         decade: '1970',
         text: {
-          header: '8 - First Police Investigation 1977 - 1978',
+          header: 'Commission of Inquiry into Mr Hake Halo’s Case 1977',
           content:
-            'The first NZ Police investigation begins in 1977 lead by Detective Senior Sergeant, Rob Butler. Butler interviews Leeks first who describes the complainants and other children as "really the bottom-of-the-barrel kids from Hokio, Kohitere and Holdsworth, who could not manage them. They were anti-social and destructive kids”. Only ten days after, having spoken to three of the six complainants and no staff members Butler says he believes there is “no possibility of [laying] criminal charges”. He still has no expert medical opinion. Staff were then interviewed but allegations were not always put to them. Another 44 children that Leeks gave ECT to were never contacted. His report concluded evidence was insufficient for charges under the Mental Health Act 1969. NZ Police\'s legal advisor also made the same conclusion.',
-          style: 'scrolling'
+            'Hakeagapuletama\'s case led to a Commission of Inquiry known as "The Case of a Niuean Boy". This was led by magistrate William Mitchell who was given only four weeks to investigate and report. Letters were written in support of Dr Leeks from the University of Auckland medical school and the Australian and New Zealand College of Psychiatrists. Mitchell found that ECT was warranted and "accepted medical practice" at the time. Mitchell didn\'t believe ECT was used at Lake Alice as a punishment. Dr Leeks’ superiors, however, were worried enough by the report and the Ombudsman\'s findings to remove Leeks from his position at Lake Alice.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=168'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-6',
+        decade: '1970',
+        text: {
+          header: 'Investigation by Professional Bodies',
+          content:
+            'The Medical Council of New Zealand, the New Zealand Medical Association and the Australian and New Zealand College of Psychiatrists conducted an inquiry in 1977. The Medical Association dismissed a number of allegations against Leeks. However, the allegation that he had allowed a group of boys to administer ECT to another boy was referred to the New Zealand Medical Council’s Penal Cases Committee for investigation of potential disgraceful conduct. The committee dismissed the allegation.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=273'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-6',
+        decade: '1970',
+        text: {
+          header: 'District Inspector Inquiry 1977',
+          content:
+            "Two more families approached the Auckland Committee on Racism and Discrimination (ACORD) after Hake Halo's case. Dr Stanley Mirams, the Department of Health’s director of mental health, commissioned Gordon Vial, a lawyer and district mental health inspector, to investigate the allegations. Vial was initially sceptical but his report concluded that the allegations of ECT used as a punishment called for further investigation. Mirams' copy of the report was sent to commissioner of NZ Police Ken Burnside. In his report to the Minister of Health, Mirams said that if nursing staff had administered shocks of whatever nature then that would breach the Mental Health Act and that the police should investigate. The commissioner of police responded by starting the first police investigation into the Lake Alice Child and Adolescent Unit.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=264'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-6',
+        decade: '1970',
+        text: {
+          header: 'First Police Investigation 1977–1978',
+          content:
+            'The first NZ Police investigation into abuse at the Lake Alice Child and Adolescent Unit began in 1977, led by detective senior sergeant Rob Butler. Butler first interviewed Leeks who described the complainants and other children as "bottom-of-the-barrel kids”. Butler\'s report swiftly concluded there was insufficient evidence for charges. He failed to interview all of the complainants, failed to put allegations to all the staff and failed to interview 44 children that Leeks punished with ECT. Butler still had no expert medical opinion.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=267'
         },
         view: '3d',
         camera: {
@@ -1916,11 +2327,40 @@ const data = {
         id: 'justice-8',
         decade: '1970',
         text: {
-          header: '9 - Police Bias',
+          header: 'First Police Investigation 1977-1978 (Part II)',
           content:
-            "Throughout their investigations in this period police displayed bias against the survivors as credible witnesses, mirroring Leeks' view  of the children as  “bottom-of-the-barrel kids” who were “anti-social and  destructive”. Racism, ableism, homophobia and transphobia all played a part in this.",
+            "Despite Rob Butler’s report, one case required further investigation. Leeks supervised a group of children administering ECT to another child. Deputy police commissioner Bob Walton investigated and asked for expert psychiatric opinion over this use of ECT. Psychiatrist Dr David McLachlan advised that only 'bad judgment' had been exercised. This opinion was decisive for NZ Police. On 27 January 1978, they issued a press release saying their investigation had found no evidence of criminal misconduct. McLachlan, however, failed to disclose a conflict of interest as he knew Leeks personally and it later emerged he had been accused of improper conduct including performing prefrontal lobotomies.",
           style: 'scrolling',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=314'
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=267'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-9',
+        decade: '1970',
+        text: {
+          header: 'Police Bias',
+          content:
+            'According to the Royal Commission, throughout their investigations, police displayed bias against the survivors as credible witnesses. Racism, ableism, homophobia and transphobia all played a part in this.',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-9',
+        decade: '1970',
+        text: {
+          header: 'Leeks',
+          content:
+            'Leeks was cleared by the New Zealand Medical Council of wrongdoing at Lake Alice. He left New Zealand and moved to Australia. Leeks then took a role as director of child psychiatry at a child guidance clinic in Melbourne. He did this one week before the police investigation into abuse at Lake Alice concluded and with a certificate of good standing from the New Zealand Medical Council.',
+          style: 'scrolling'
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40',
         },
         view: '3d',
         camera: {
@@ -1931,9 +2371,10 @@ const data = {
         id: 'justice-9',
         decade: '1990',
         text: {
-          header: '7 - Court cases',
+          header: 'Court Cases',
           content:
-            'In the 1990s, two Lake Alice survivors, Ms Leoni McInroe (1994) and Mr DW (1997), filed claims in the High Court for the abuse they suffered at Lake  Alice. From early 1997, lawyer Grant Cameron also began discussions with the Crown on behalf of a large group of Lake Alice survivors.',
+            "With no accountability offered by the police, two Lake Alice survivors filed civil claims in the High Court against Leeks – Leoni McInroe in 1994 and Mr DW in 1997. In 1997, lawyer Grant Cameron began talks with the Crown on behalf of what was to become a group of 95 survivors. Cameron sought an out-of-court settlement including the payment of compensation and an apology. Despite Crown Law, the state's legal representatives, having overwhelming evidence and advice that the survivors’ claims were true, they insisted the government go to court to test legal liability.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=281',
           style: 'scrolling'
         },
         view: '3d',
@@ -1941,6 +2382,7 @@ const data = {
           ...cameras.theLake
         }
       },
+
       {
         id: 'justice-10',
         decade: '1990',
@@ -1958,11 +2400,41 @@ const data = {
       },
       {
         id: 'justice-11',
+        decade: '1990',
+        text: {
+          header: 'The Gallen Report',
+          content:
+            'A change of government in 1999 saw a change in direction by the state. According to the Royal Commission, Crown Law still wanted to go ahead with an adversarial court process that would pit vulnerable survivors against staff and Leeks represented by Crown Law. However, then prime minister Helen Clark ultimately directed Crown Law to settle out of court. The settlement was to cover improper medical treatment only and not compensation for sexual and physical abuse. Distribution of the $6.5 million compensation among the 95 claimants was to be decided by retired High Court judge Sir Rodney Gallen who interviewed survivors and compiled a report on their experiences.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=281'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-11',
         decade: '2000',
         text: {
-          header: '10 - 2001 -The Gallen Report',
+          header: 'The Gallen Report',
           content:
-            'In 2001, High Court judge Sir Rodney Gallen determines how the $6.5 million would  be distributed among the 95 claimants. Gallen also wrote a report to accompany the compensation. Crown Law attempted to block publication of the report but this was overturned by the High Court and parts of the report that summarised claimants’ evidence were published. In his report retired High Court judge, Sir Rodney Gallen details children living in unimaginable terror at an institution intended for care. It includes many horrific and disturbing revelations. At Lake Alice the hospital used Electroconvulsive Therapy (ECT) as an aversion therapy to punish anything from poor school work to running away. An ECT unit had been brought into the dining room to encourage children to eat their meals if they were reluctant. Several claimants reported ECT being administered to their genitals, imposed when accused of unacceptable sexual behaviour. In addition to ECT the drug paraldehyde, administered by painful injection, was also used as a form of punishment. Children were held naked in solitary confinement with only a mattress and a bucket for toilet facilities. Children were also placed with criminally insane adults as punishment; one 15-year-old boy was locked in a wooden cage with a seriously disturbed adult patient. Many of the children experienced sexual abuse by both staff and adult patients. The report found the majority of children at Lake Alice had behavioural rather than psychiatric issues. Gallen found that these incidents, taken with corroborative evidence, lead him to conclude that these incidents did occur.',
+            'With the out-of-court settlement agreed, Sir Rodney Gallen published his report in 2001. Gallen detailed children living in unimaginable terror at an institution intended for their care. It included many horrific and disturbing revelations. Electroconvulsive therapy (ECT) was used to punish anything from poor school work to running away. Several claimants reported ECT being administered to their genitals. Paraldehyde, administered by painful injection, was also used as a punishment. Children were held naked in solitary confinement with only a mattress and a bucket for the toilet. One 15-year-old boy was locked in a wooden cage with a seriously disturbed adult patient. Many of the children experienced sexual abuse by both staff and adult patients. The report found the majority of children at Lake Alice had behavioural rather than psychiatric issues.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=285'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-11',
+        decade: '2000',
+        text: {
+          header: '2001 - The Gallen Report II',
+          content:
+            "Crown Law attempted to block the publication of Gallen's report but this was overturned by the High Court.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=267'
         },
@@ -1975,9 +2447,9 @@ const data = {
         id: 'justice-12',
         decade: '2000',
         text: {
-          header: '11 - The Apology',
+          header: 'The Apology',
           content:
-            'On the 7 October 2001, Prime Minister Helen Clark and Health Minister Annette King make a qualified apology to each of the 95 claimants for the abuse they suffered.',
+            "On 7 October 2001, then prime minister Helen Clark and health minister Annette King made a qualified apology to each of the 95 Lake Alice Child and Adolescent Unit claimants for the abuse they suffered. The survivors' compensation was swallowed up by Cameron's legal fees and a second round of claimants received even less compensation. In 2003, Grant Cameron passed the survivors’ witness statements and files to NZ Police and asked them to investigate.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=285'
         },
@@ -1990,11 +2462,42 @@ const data = {
         id: 'justice-13',
         decade: '2000',
         text: {
-          header: '12 - Second Police Investigation  2003 - 2005',
+          header: 'Second Police Investigation  2003 - 2005',
           content:
-            'In 2003, Grant Cameron passes the survivors witness statements and files to NZ Police and asks them to investigate the allegations of criminal conduct. Superintendent Graham Emery reviewed the files and believes there are "public interest reasons" for an investigation. 15 months pass Detective  Superintendent Larry Reid is assigned the investigation. Reid doesn\'t believe the investigation is warranted and says so when he contacts the Deputy Solicitor-General Ms Nicola Crutchley, at Crown Law in June 2003. He only passes one file - Hake Halo\'s - to the Deputy Solicitor-General which means the systemic nature of abuse at Lake Alice is not apparent. 10 months pass and the Deputy Solicitor-General finds "insufficient evidence" for laying criminal charges. She does recommend further police conduct further investigation particularly over teh use of ECT. NZ Police fail to do this until 2006.  2004 Inspector Jim Taare interviews Hake Halo and finds sufficent evidence to start a criminal investigation. His report has gone missing. More files including survovor testimony goes "missing" including a surivors statement alleging Leeks raped her. Reid misinterprets Crown Law\'s advice saying they have advised against invetsigating teh use of the ECT machine. Reid doesn\'t contact or interview any of the survivors and none of the six staff accused of abuse. Reid told the Royal Commission that he failed to investigate further as without corrobaroative evidence it was only the word of the survivors and his opinion was that they were not credible witnesses. Even though he hadn\'t interviewed any of them. NZ Police dismiss complaints against Dr Selwyn Leeks and staff at Lake Alice.',
+            'Initially, superintendent Graham Emery believed there were "public interest reasons" for an investigation. Fifteen months passed. Detective superintendent Larry Reid was then assigned to the investigation. Reid didn\'t believe the investigation was warranted. He only passed one file - Hake Halo\'s - to the deputy solicitor-general Nicola Crutchley which hid the systemic nature of abuse at Lake Alice. Time dragged. Crutchley found "insufficient evidence" for laying criminal charges but recommended the police conduct further investigation into the use of ECT.',
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=307'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-13',
+        decade: '2000',
+        text: {
+          header: 'Second Police Investigation 2003-2005 (Part II)',
+          content:
+            "Larry Reid misinterpreted Crutchley's advice and believed Crown Law had advised against investigating the use of the ECT machine. Reid failed to contact or interview any of the survivors later telling the Royal Commission the survivors were not credible witnesses. None of the six staff accused of abuse were interviewed. NZ Police dismissed complaints against Dr Selwyn Leeks and staff at Lake Alice. According to the Royal Commission, files went 'missing'. An interview with Hake Halo that found sufficient evidence to start a criminal investigation went missing. A survivor's statement alleging Leeks raped her went missing. Three years had passed since the start of the investigation.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=307'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-15',
+        decade: '2010',
+        image: {
+          caption: 'Lake Alice Investigation Completed - No Charges Laid',
+          src: '/images/fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
+          URL: 'https://www.police.govt.nz/news/release/22745',
+          date: '30 March, 2010',
+          author: 'New Zealand Police',
+          style: 'scrolling'
         },
         view: '3d',
         camera: {
@@ -2005,10 +2508,11 @@ const data = {
         id: 'justice-14',
         decade: '2000',
         text: {
-          header: '13 - Australia',
+          header: 'Australia',
           content:
-            "In 2003, The Victorian medical board receive legal advice saying it has jurisdiction to investigate Leek's past at Lake Alice. The board were asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks is fit to practise. Separately, in 2004 the Victorian Medical Practitioners Board also investigate claims in Australia by a former female patient accusing Leeks of sexual misconduct when he treated her for anxiety in Melbourne in 1979-80. After a three year investigation, the Victorian Medical Practitioners Board bring thirty-nine disciplinary charges against Leeks. Leeks agrees to stop working as a psychiatrist on the eve of the disciplinary hearing by the Victorian Medical Practitioners Board. By agreeing not to work anymore Leeks escapes a full public investigation.",
-          style: 'scrolling'
+            'In 2003, the Medical Practitioners Board of Victoria investigated Leeks’ past at Lake Alice having been asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks was fit to practice. Separately, in 2004, the board also investigated claims in Australia by a former female patient accusing Leeks of sexual misconduct. After a three-year investigation, 39 disciplinary charges were laid against Leeks. Leeks agreed to stop working as a psychiatrist on the eve of his disciplinary hearing. By agreeing not to work anymore, Leeks escaped a full public investigation.',
+            source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
+            style: 'scrolling'
         },
         view: 'map',
         map: {
@@ -2036,15 +2540,29 @@ const data = {
         }
       },
       {
-        id: 'justice-15',
-        decade: '2010',
-        image: {
-          caption: 'Lake Alice Investigation Completed - No Charges Laid',
-          src: '/images/fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
-          URL: 'https://www.police.govt.nz/news/release/22745',
-          date: '30 March, 2010',
-          author: 'New Zealand Police',
-          style: 'scrolling'
+        id: 'justice-16',
+        decade: '1990',
+        text: {
+          header: 'United Nations Committee Against Torture',
+          content:
+            "Under the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment, New Zealand is required to submit reports to the UN about compliance with the convention. In each of its reports to the UN in 1992, 1997 and 2002, the Crown made no mention of survivors’ complaints or the police investigations into Lake Alice. It wasn't until 2010 that the Crown acknowledged there was any 'improper treatment' at Lake Alice. Although New Zealand didn't ratify the Convention until 1989, the United Nations Committee against Torture (UNCAT) recognised that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        decade: '1990',
+        text: {
+          header: 'Recognition',
+          content:
+            'In 2010, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN sent a please-explain letter to the New Zealand government. The government responded by saying the police act independently and any complaints should be made through the Independent Police Complaints Authority.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
         view: '3d',
         camera: {
@@ -2055,11 +2573,41 @@ const data = {
         id: 'justice-16',
         decade: '2000',
         text: {
-          header: '13 - Third Police Investigation 2006 - 2010',
+          header: 'Third Police Investigation 2006 - 2010',
           content:
-            'Back in New Zealand, Detective Superintendent Malcolm Burgess inherits the investigation from Reid. His plan for a comprehensive investigation is rejected by Assistant Commissioner Peter Marshall and Detective Superintendent Nick Perry as they believe it would take up too many resources. Burgess and Perry decide to focus on Leeks and the misuse of the ECT machine. The allegations against the other staff, and of wider sexual and physical abuse, use of Paraldyhde are not investigated. Again the police fail to speak to the complainants - they only speak with one after the complainant instigated contact and don\'t speak with another who also instigated contact. Again, multiple allegations of sexual assault and rape including that Leeks had raped one of the survivors were dismissed and no interviews were conducted. Without interviewing survivors making a decision about the credibility of their evidence appears deeply flawed but that is exactly what NZ Police did. Staff were interviewed this time but in a "general way" and in regard to Leeks and ECT not the other allegations.',
+            "Back in New Zealand, detective superintendent Malcolm Burgess inherited the investigation. Burgess's plan for a comprehensive investigation was rejected by assistant commissioner Peter Marshall and detective superintendent Nick Perry as they don't want to commit resources. The allegations against staff, of wider sexual and physical abuse, and the use of paraldehyde were not investigated. Instead, the investigation focused on Leeks and the misuse of the ECT machine.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=308'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        decade: '2000',
+        text: {
+          header: 'Third Police Investigation 2006-2010 (Part II)',
+          content:
+            'Again the police failed to speak to survivors – only speaking with one complainant who instigated contact with them and failing to follow up on another who also instigated contact. Staff were interviewed this time but only in regard to Leeks and ECT. Again, multiple allegations of sexual assault and rape - including that Leeks had raped one of the survivors - were dismissed and no interviews were conducted.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=308'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        decade: '2000',
+        text: {
+          header: 'Third Police Investigation 2006-2010 (Part III)',
+          content:
+            'Three years passed. In 2009, Burgess completed his report finding that seven complaints may have grounds for prosecution. The report didn\'t include a summary of a statement from Dr Garry Walter, professor of child and adolescent psychiatry at the University of Sydney, that confirmed treatment at Lake Alice departed "significantly from the standards of the day". NZ Police southern region legal services rejected the report. No further actions are taken against Leeks and in 2010 NZ Police found “insufficient evidence” to justify a prosecution.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=310'
         },
         view: '3d',
         camera: {
@@ -2086,9 +2634,42 @@ const data = {
         id: 'justice-18',
         decade: '2010',
         text: {
-          header: '14 - Fourth Police Investigation - 2018 - 2021',
+          header: 'Waitangi Tribunal 2017',
           content:
-            'In 2017 the National Adult Sexual Assault Team became aware of the Lake Alice file as a result of an Official Information Act request made by an investigative journalist. NZ Police decide to investigate the sexual complaints made by three of the survivors including Malcolm who they had previously dismissed in November 2018 and *when he first reported to them*. The United Nations Committee against Torture released its decision in December 2019 that New Zealand had been in breach of its obligations under the Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment by failing to investigate Mr Zentveld’s complaint. At this point NZ Police decide to launch a wider investigation into all of the Lake Alice allegations.',
+            'A number of kaupapa claims for an independent inquiry into abuse in state care that disproportionately affected Māori come before the Waitangi Tribunal including one from Lake Alice survivor Tyrone Marks of Ngāti Raukawa.',
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=316'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-17',
+        decade: '2020',
+        image: {
+          caption:
+            'Brief of Evidence of Tyrone Marks in Support of an Application for an Urgent Hearing Concerning the Settlement of Grievances of Maori Children Put Into State Care, 20 March 2017',
+          src: '/images/fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
+          author: 'New Zealand Police',
+          URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
+          date: '8 December, 2021',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+
+      {
+        id: 'justice-18',
+        decade: '2010',
+        text: {
+          header: 'Fourth Police Investigation - 2018 - 2021',
+          content:
+            "In 2017, NZ Police's National Adult Sexual Assault Team decided to re-investigate the sexual assault complaints made by survivors who wanted to have their complaints investigated. Three survivors - Paul Zentveld, Sharyn Collis and Malcolm Richards - were interviewed. NZ Police had initially dismissed Malcolm's complaint.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=316'
         },
@@ -2116,13 +2697,73 @@ const data = {
       },
       {
         id: 'justice-20',
+        decade: '2010',
+        text: {
+          header: 'The Commission',
+          content:
+            "In 2018, almost 50 years after allegations of abuse at Lake Alice, the Abuse in Care Royal Commission of Inquiry was formally established. The Commission had a broad remit to investigate abuse in a number of contexts including institutional state care, foster, psychiatric and faith-based care, and specifically Māori and Pacific people's experiences of care. The Commission did not have powers of redress.",
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-20',
+        decade: '2010',
+        text: {
+          header: 'United Nations Committee Against Torture 2019',
+          content:
+            'In 2019, survivor Paul Zentveld’s complaint of torture is accepted by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-20',
         decade: '2020',
         text: {
-          header: '15 - United Nations Committee Against Torture',
+          header: 'Malcolm Richards',
           content:
-            'Although New Zealand didn\'t ratify the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment the United Nations Committee against Torture recognises that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights. In each of its reports to the UN 1992, 1997 and 2002 the Crown made no mention of survivors complaints or the police investigation into Lake Alice. It wasn\'t until 2010 that the Crown acknowlegded there was "improper treatment" at Lake Alice. In the same year, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN send a please explain letter to the NZ Government. The Govt respond by saying the police act independently and complaints should be made through the Independent Police Complaints Authority. In 2019, the committee found in favour of Lake Alice survivor Paul Zentveld, saying New Zealand had failed to adequately investigate his complaint and failed to provide fair and adequate redress for the abuse he suffered. And then, in 12 May 2022 Malcolm Richards complaint to the committee was also recognised.',
-          style: 'scrolling',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+            'On 12 May 2022, UNCAT found in favour of Malcolm Richards against the Crown for a "Lack of prompt and impartial investigation; right to an effective domestic remedy and redress."',
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-20',
+        decade: '2020',
+        text: {
+          header: 'Accountability',
+          content:
+            'Under pressure from the Commission\'s inquiry and UNCAT\'s reports, the police finally made an arrest of an 89-year-old former staff member. Two other members of staff were "medically unfit to stand trial". including Dr Selwyn Leeks. In 2022, Leeks died, never having faced trial and never having apologised for his actions.',
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-20',
+        decade: '2020',
+        text: {
+          header: 'Redress',
+          content:
+            'xxxxx All of the survivors, like Malcolm, are now approaching the end of their lives. This is their last chance to receive any form of meaningful redress. Whilst the Royal Commission The trial is in.',
+          style: 'scrolling'
+          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
         view: '3d',
         camera: {
