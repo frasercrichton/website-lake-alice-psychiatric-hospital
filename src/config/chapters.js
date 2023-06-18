@@ -1320,7 +1320,7 @@ const data = {
 
           {
             id: 'DisturbedPatientsVilla',
-            label: 'Disturbed Patients Villa'
+            label: 'Disturbed Patients\' Villa'
           },
           {
             id: 'DoctorsHouses',
@@ -1685,7 +1685,7 @@ const data = {
         labels: [
           {
             id: 'Villa15',
-            label: "Disturbed Patients's Villa"
+            label: "Disturbed Patients' Villa"
           }
         ],
         view: '3d',
@@ -1704,7 +1704,7 @@ const data = {
         labels: [
           {
             id: 'Villa15',
-            label: "Disturbed Patients's Villa"
+            label: "Disturbed Patients' Villa"
           }
         ],
         view: '3d',
@@ -1736,7 +1736,7 @@ const data = {
         labels: [
           {
             id: 'Villa15',
-            label: "Disturbed Patients's Villa"
+            label: "Disturbed Patients' Villa"
           }
         ],
         view: '3d',
