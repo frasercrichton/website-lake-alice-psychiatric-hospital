@@ -1,18 +1,14 @@
 import React from 'react'
 import WireframeBuilding from './WireframeBuilding.jsx'
+import getLabel from './labelText.js'
 
 const OSMBuildings = ({ meshes, labels }) => {
-  const getLabel = id => {
-    const label = labels?.find(item => item.id === id)
-    return label === undefined ? undefined : label.label
-  }
-
   return meshes.map(mesh => {
     return (
       <WireframeBuilding
         key={mesh.name}
         node={mesh}
-        label={getLabel(mesh.name)}
+        label={getLabel(mesh.name, labels)}
       />
     )
   })

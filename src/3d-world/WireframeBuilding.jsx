@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import Label from './Label.jsx'
 
 const material = new THREE.LineBasicMaterial({
-  color: 0xffffff,
+  color: 0x000000,
   linewidth: 1
 })
 
@@ -13,10 +13,10 @@ const WireframeBuilding = ({ node, label }) => {
 
   return (
     <primitive
-      scale={node.scale}
       name={node.name}
+      scale={node.scale}
       object={wireframe}
-      position={[node.position.x, node.position.y, node.position.z]}
+      position={[node.position.x, node.position.y + 0.5, node.position.z]}
       rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >
       {label && <Label id={node.name} text={label} />}

@@ -1,55 +1,64 @@
 import { useMemo } from 'react'
 import { useControls } from 'leva'
-import angleToRadians from '../3d-world/angleHelper'
-
-const positionDefaults = {
-  value: 20,
-  min: -2000,
-  max: 2000,
-  step: 0.1
-}
-
-const parameters = {
-  position: {
-    x: 0,
-    y: 600,
-    z: 400
-  }
-}
-
-// x: 0,
-// y: 300,
-// z: 1000
+// 180 60 180
 const DirectionalLightControls = () => {
   const options = useMemo(() => {
     return {
-      Intensity: {
-        value: 2.3,
+      DirectionalLightColour: '#ffffff',
+      DirectionalLightIntensity: {
+        value: 2.6,
         min: 0,
         max: 10,
         step: 0.1
       },
-      Position: {
-        value: {
-          x: 600,
-          y: 460,
-          z: 0
-        },
-        x: {
-          min: -10000,
-          max: 10000,
-          step: 10
-        },
-        y: {
-          min: -10000,
-          max: 10000,
-          step: 10
-        },
-        z: {
-          min: -10000,
-          max: 10000,
-          step: 10
-        }
+      DirectionalLightShadowNormalBias: {
+        value: 5.9,
+        min: 0,
+        max: 20,
+        step: 0.1
+      },
+      DirectionalLightShadowRadius: {
+        value: 1,
+        min: 0,
+        max: 20,
+        step: 0.1
+      },
+
+      positionX: {
+        value: 0,
+        min: -360,
+        max: 360,
+        step: 1
+      },
+      positionY: {
+        value: 0,
+        min: 0,
+        max: 360,
+        step: 1
+      },
+      positionZ: {
+        value: 0,
+        min: -360,
+        max: 360,
+        step: 1
+      },
+      Near: {
+        value: 0.1,
+        min: 0,
+        max: 10000,
+        step: 1
+      },
+      Far: {
+        value: 1500,
+        min: 0,
+        max: 10000,
+        step: 1
+      },
+      DirectionalLightShadowCameraExtent: {
+        value: 1000,
+        min: 0,
+        max: 10000,
+        step: 1
       }
     }
   }, [])

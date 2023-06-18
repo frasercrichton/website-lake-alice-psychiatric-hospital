@@ -6,6 +6,7 @@ import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
 import Labels from './Labels.jsx'
 import OSMBuildings from './OSMBuildings.jsx'
+
 import * as THREE from 'three'
 // If you create a material or color in global space - outside of React Three Fiber's Canvas context - you should enable ColorManagement in three.js.
 THREE.ColorManagement.enabled = true
@@ -16,20 +17,6 @@ const hash = window.location.hash
 // TODO work out why this needs defined in the function
 
 const staticMaterials = {
-  roads: new THREE.MeshStandardMaterial({
-    name: 'roads',
-    color: '#585858',
-    roughness: 1,
-    metalness: 0,
-    flatShading: false
-  }),
-  'lake-surface': new THREE.MeshStandardMaterial({
-    name: 'lake-surface',
-    color: 0xc000000,
-    roughness: 0.31599998474121094,
-    metalness: 0.42399996519088745,
-    flatShading: false
-  }),
   roofs: new THREE.MeshStandardMaterial({
     name: 'roofs',
     color: '#4f666a',
@@ -73,7 +60,6 @@ const staticMaterials = {
     flatShading: true,
     roughness: 0.4000000059604645
   }),
-
   'interior-walls': new THREE.MeshStandardMaterial({
     name: 'interior-walls',
     color: '#ffffff',
@@ -109,8 +95,8 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
     isRotating
       ? (group.current.rotation.y += delta * 0.2)
       : (group.current.rotation.y = 0)
-  }) 
-  
+  })
+
   //https://codepen.io/Meds/pen/Mbpqox
 
   // useEffect(() => {
@@ -205,7 +191,6 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
     return (
       <>
         <Meshes meshes={nodeModel.meshes} labels={labels} />
-        <Labels empties={nodeModel.labels} labels={nodeModel.labels} />
         {/* ### 18 - Mutualize geometries
 If you have multiple [Meshes] using the same geometry shape, create only one geometry, and use it on all the meshes: */}
         <Groups
@@ -249,8 +234,6 @@ If you have multiple [Meshes] using the same geometry shape, create only one geo
 
     console.log('Nodes ######################################')
     console.log(nodes)
-    // console.log('Materials ######################################')
-    // console.log(materials)
     console.log('############################################')
   }
 

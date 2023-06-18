@@ -7,6 +7,7 @@ const Labels = ({ empties, labels }) => {
   }
 
   return empties.map(empty => {
+    console.log(empty.name)
     const labelText = getLabel(empty.name)
     return (
       <>
