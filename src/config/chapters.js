@@ -2359,8 +2359,8 @@ const data = {
           header: 'Leeks',
           content:
             'Leeks was cleared by the New Zealand Medical Council of wrongdoing at Lake Alice. He left New Zealand and moved to Australia. Leeks then took a role as director of child psychiatry at a child guidance clinic in Melbourne. He did this one week before the police investigation into abuse at Lake Alice concluded and with a certificate of good standing from the New Zealand Medical Council.',
-          style: 'scrolling'
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40'
         },
         view: '3d',
         camera: {
@@ -2511,8 +2511,8 @@ const data = {
           header: 'Australia',
           content:
             'In 2003, the Medical Practitioners Board of Victoria investigated Leeks’ past at Lake Alice having been asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks was fit to practice. Separately, in 2004, the board also investigated claims in Australia by a former female patient accusing Leeks of sexual misconduct. After a three-year investigation, 39 disciplinary charges were laid against Leeks. Leeks agreed to stop working as a psychiatrist on the eve of his disciplinary hearing. By agreeing not to work anymore, Leeks escaped a full public investigation.',
-            source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
-            style: 'scrolling'
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
+          style: 'scrolling'
         },
         view: 'map',
         map: {
