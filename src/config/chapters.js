@@ -1320,7 +1320,7 @@ const data = {
 
           {
             id: 'DisturbedPatientsVilla',
-            label: 'Disturbed Patients Villa'
+            label: 'Disturbed Patients\' Villa'
           },
           {
             id: 'DoctorsHouses',
