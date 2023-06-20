@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import urls from '../config/navigation.js'
+import React, { useState } from 'react'
 import useHeaderScrollProgress from '../state/scrollProgressStore.js'
+import Navigation from './Navigation.jsx'
 import './Header.css'
+
 const Header = ({ activeChapter, navigateToChapter, isMobile = false }) => {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false)
-  const links = useRef({})
   const linkActiveClassName = isHamburgerActive ? 'display' : ''
   const mobileActiveClassName = isMobile ? 'mobile' : 'main'
   const iconName = isHamburgerActive ? 'close' : 'menu'
@@ -14,26 +13,6 @@ const Header = ({ activeChapter, navigateToChapter, isMobile = false }) => {
     state => [state.headerScrollProgress]
     // shallow
   )
-
-  useEffect(() => {
-    if (!links.current) {
-      return
-    }
-    Object.values(links.current).forEach(element => {
-      element.className = `nav-item ${linkActiveClassName}`
-    })
-    if (links.current[activeChapter]) {
-      const linkActiveClassName = isHamburgerActive ? 'display' : ''
-      links.current[
-        activeChapter
-      ].className = `nav-item ${linkActiveClassName} active`
-    }
-  }, [activeChapter, isHamburgerActive, linkActiveClassName])
-
-  const handleNavigationClick = nav => {
-    navigateToChapter(nav.url)
-    setIsHamburgerActive(!isHamburgerActive)
-  }
 
   const toggleHamburgerNavigation = () => {
     setIsHamburgerActive(!isHamburgerActive)
@@ -56,21 +35,7 @@ const Header = ({ activeChapter, navigateToChapter, isMobile = false }) => {
           )}
         </div>
 
-        {urls
-          .filter(nav => (isMobile ? nav.isMobile : true)) // only display mobile items on mobile and everything on desktop
-          .map((nav, index) => {
-            return (
-              <Link
-                key={nav.url}
-                ref={element => (links.current[nav.url] = element)}
-                role='button'
-                onClick={e => handleNavigationClick(nav)}
-                to={nav.url}
-              >
-                {nav.text}
-              </Link>
-            )
-          })}
+        <Navigation activeChapter={activeChapter} navigateToChapter={navigateToChapter} isMobile={isMobile} isHamburgerActive={isHamburgerActive} setIsHamburgerActive={setIsHamburgerActive} />
       </nav>
       <div
         style={{ transform: `scaleX(${headerScrollProgress})` }}

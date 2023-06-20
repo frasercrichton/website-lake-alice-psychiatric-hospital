@@ -1230,7 +1230,7 @@ const data = {
       {
         id: 'context-3',
         text: {
-          header: '2 - Adult Psychiatric Facility',
+          header: 'Adult Psychiatric Facility',
           content:
             'Lake Alice Psychiatric Hospital opened in 1950. It was originally an adult psychiatric facility specialising in treating men who had returned from the Second World War with post-traumatic stress disorder. It treated male and female patients with a spectrum of psychiatric issues including the criminally insane.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
@@ -1278,6 +1278,8 @@ const data = {
         text: {
           content:
             'The hospital operated as an entirely self-contained community where staff lived on-site with patients. With a farm, laundry, butchery, a community hall and latterly a school, the facility was self-sufficient and those living at Lake Alice had limited contact with the outside world.',
+          source:
+            'https://archivescentral.org.nz/rangitikei-district-council/record/lake-alice-mental-hospital-site-plan',
           style: 'scrolling'
         },
         labels: [
@@ -1320,7 +1322,7 @@ const data = {
 
           {
             id: 'DisturbedPatientsVilla',
-            label: 'Disturbed Patients\' Villa'
+            label: "Disturbed Patients' Villa"
           },
           {
             id: 'DoctorsHouses',
@@ -1356,8 +1358,7 @@ const data = {
           header: '11-bed Villas',
           content:
             "When it opened in 1950, Lake Alice's 11-bed villas were at the heart of a pioneering approach using intensive group therapy to treat adult mental illness.",
-          source:
-            "In Defence of Theodore Gray: Architecture as a Vehicle for Re-evaluating a Doctor's Commitment to Patient Care (January 2017, Rebecca J. McLaughlan)",
+          source: 'https://www.jstor.org/stable/10.5401/healthhist.19.1.0020',
           style: 'scrolling'
         },
         view: '3d',
@@ -1452,6 +1453,7 @@ const data = {
           header: 'Eleven Bed Villa Top Floor',
           content:
             'The first floor of the 11-bed villa comprised two 4-bed dormitories, three single bedrooms, toilets and washrooms.',
+          source: 'https://www.jstor.org/stable/10.5401/healthhist.19.1.0020',
           style: 'scrolling'
         },
         view: '3d',
@@ -1465,7 +1467,8 @@ const data = {
         text: {
           header: 'Eleven Bed Villa Ground Floor',
           content:
-            'The ground floor had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+            'The ground floor had a day room, a kitchen, a laundry and dining room and an office.',
+          source: 'https://www.jstor.org/stable/10.5401/healthhist.19.1.0020',
           style: 'scrolling'
         },
         view: '3d',
@@ -1522,6 +1525,8 @@ const data = {
         text: {
           header: 'Roof',
           content: 'The plans for the 36-bed villa were drawn up in 1944.',
+          source:
+            'https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R23378995/lake-alice-hospital%2C-bulls---villa-8---building-floor-plans-(including-information-if-on-same-sheet-as-floor-plan)---[copy-a]?q=R23378995&source=aims-archive',
           style: 'scrolling'
         },
         view: '3d',
@@ -1535,6 +1540,8 @@ const data = {
           header: 'Top Floor',
           content:
             "The top floor of the boys' villa contained two 16-bed dormitories and four secure solitary cells. On the original plans, there was a third dormitory, but this was ultimately used as a locker room.",
+          source:
+            'https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R23378995/lake-alice-hospital%2C-bulls---villa-8---building-floor-plans-(including-information-if-on-same-sheet-as-floor-plan)---[copy-a]?q=R23378995&source=aims-archive',
           style: 'scrolling'
         },
         view: '3d',
@@ -1553,6 +1560,8 @@ const data = {
           header: 'Ground Floor',
           content:
             'The ground floor of the villa had a day room, a kitchen and dining room, as well as staff quarters and an office.',
+          source:
+            'https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R23378995/lake-alice-hospital%2C-bulls---villa-8---building-floor-plans-(including-information-if-on-same-sheet-as-floor-plan)---[copy-a]?q=R23378995&source=aims-archive',
           style: 'scrolling'
         },
         view: '3d',
@@ -1680,6 +1689,7 @@ const data = {
           header: '9 - Torture',
           content:
             "Dr Leeks introduced 'aversion therapy' to the unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=83',
           style: 'scrolling'
         },
         labels: [
@@ -1699,6 +1709,7 @@ const data = {
           header: 'ECT',
           content:
             "At Lake Alice, Leeks used electroconvulsive therapy (ECT) and excruciatingly painful paraldehyde injections as a punishment primarily for violent and sexual misbehaviour. ECT was used at Lake Alice in two ways. 'Modified ECT', where patients were anaesthetised prior to being treated, and 'unmodified ECT' with no anaesthetic. At Lake Alice, unmodified ECT's use was far removed from any form of therapy; instead it was used as an arbitrary punishment.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=84',
           style: 'scrolling'
         },
         labels: [
@@ -1731,6 +1742,7 @@ const data = {
           header: 'Torture',
           content:
             "ECT's use as an aversion therapy is now acknowledged as torture. Both the Abuse in Care Royal Commission of Inquiry's final report and the United Nations Committee Against Torture have acknowledged that actions by Lake Alice staff under the supervision of Leeks and actions by Leeks himself constituted torture against the children held at Lake Alice.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=86',
           style: 'scrolling'
         },
         labels: [
@@ -1747,9 +1759,10 @@ const data = {
       {
         id: 'context-28',
         text: {
-          header: '10 - Demolition',
+          header: 'Demolition',
           content:
             "The Child and Adolescent Unit was closed around 1980 after an Ombudsman's inquiry into conditions at the unit. Lake Alice Psychiatric Hospital closed in 1999. Demolition of Lake Alice started in 2016 and was completed in 2018. The site is now a private working farm.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40',
           style: 'scrolling'
         },
         view: '3d',
@@ -1774,7 +1787,7 @@ const data = {
         text: {
           content:
             'Children were referred to Lake Alice from family homes, state care residences, foster homes, hospitals and other contexts including faith-based residences.',
-          source: 'Abuse-in-Care-Volume-One.pdf#14',
+          source: '/documents/Abuse-in-Care-Volume-One.pdf#14',
           style: 'scrolling'
         },
         view: '3d',
@@ -1906,7 +1919,8 @@ const data = {
         id: 'pathways-5',
         text: {
           content: 'Network of State Care facilities.',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
+          source:
+            'https://aucklanduniversitypress.co.nz/the-road-to-hell-state-violence-against-children-in-postwar-new-zealand',
           style: 'scrolling'
         },
         view: 'map',
@@ -1942,7 +1956,7 @@ const data = {
         text: {
           content:
             'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals by Leeks.',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=71',
           style: 'scrolling'
         },
         view: 'map',
@@ -2036,7 +2050,7 @@ const data = {
           header: 'Ages',
           content:
             'The Department of Social Welfare estimated that the median age of children at the Child and Adolescent Unit was from 8-13. The youngest child treated in the unit was just five years old. Prior to this, a four-year-old child was on site with his mother at Lake Alice.',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=70',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=73',
           style: 'scrolling'
         },
         view: '3d',
@@ -2152,6 +2166,21 @@ const data = {
         }
       },
       {
+        id: 'justice-3',
+        decade: '1970',
+        text: {
+          header: 'Intro II',
+          content:
+            'This timeline is a summary of some of the findings of the Abuse in Care Royal Commission of Inquiry into Lake Alice.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=40'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-2',
         decade: '1970',
         text: {
@@ -2203,6 +2232,7 @@ const data = {
           header: 'Hake Halo',
           content:
             "Fourteen-year-old Hakeagapuletama 'Hake' Halo played a pivotal role in the closure of the Child and Adolescent Unit. The children at Lake Alice were required to regularly write letters home in English. Hake, added a drawing of a smiling stickman to his letter with a speech bubble that said: “Fakasoka he faoa au, mo huki au, mamahi, tagi au”. In English this means: “Mum, the people are giving me electric shocks and injections, it’s painful, I’m crying”.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=173',
           style: 'scrolling'
         },
         view: '3d',
@@ -2345,6 +2375,7 @@ const data = {
           header: 'Police Bias',
           content:
             'According to the Royal Commission, throughout their investigations, police displayed bias against the survivors as credible witnesses. Racism, ableism, homophobia and transphobia all played a part in this.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=313',
           style: 'scrolling'
         },
         view: '3d',
@@ -2368,12 +2399,27 @@ const data = {
         }
       },
       {
+        id: 'justice-16',
+        decade: '1990',
+        text: {
+          header: 'United Nations Committee Against Torture',
+          content:
+            "Under the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment, New Zealand is required to submit reports to the UN about compliance with the convention. In each of its reports to the UN in 1992, 1997 and 2002, the Crown made no mention of survivors’ complaints or the police investigations into Lake Alice. It wasn't until 2010 that the Crown acknowledged there was any 'improper treatment' at Lake Alice. Although New Zealand didn't ratify the Convention until 1989, the United Nations Committee against Torture (UNCAT) recognised that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights.",
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
         id: 'justice-9',
         decade: '1990',
         text: {
           header: 'Court Cases',
           content:
-            "With no accountability offered by the police, two Lake Alice survivors filed civil claims in the High Court against Leeks – Leoni McInroe in 1994 and Mr DW in 1997. In 1997, lawyer Grant Cameron began talks with the Crown on behalf of what was to become a group of 95 survivors. Cameron sought an out-of-court settlement including the payment of compensation and an apology. Despite Crown Law, the state's legal representatives, having overwhelming evidence and advice that the survivors’ claims were true, they insisted the government go to court to test legal liability.",
+            'With no accountability offered by the police, two Lake Alice survivors filed civil claims for redress in the High Court against Leeks – Leoni McInroe in 1994 and Mr DW in 1997. According to the Royal Commission, Crown Law initially attempted to deny redress using both the Limitation Act and Leeks’ immunity under the Mental Health Act. The High Court rejected this. Crown Law still didn’t settle. They stalled and were ordered by the High Court to comply with deadlines. Crown Law demanded McInroe’s personal diaries which they held onto for six years. The Crown then proposed a ‘mediation’ process where McInroe was forced to physically face her abuser, Leeks, in a secret meeting in Auckland. No settlement resulted.',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=281',
           style: 'scrolling'
         },
@@ -2382,17 +2428,16 @@ const data = {
           ...cameras.theLake
         }
       },
-
       {
-        id: 'justice-10',
+        id: 'justice-9',
         decade: '1990',
-        image: {
-          caption:
-            "The Court of Appeal dismisses Leoni McInroe and Paul Lucas's case against Selwyn Leeks on a technicality.",
-          src: '/images/fc-20230323-00001-Screenshot 2023-03-23 at 2.59.57 PM.jpg',
+        text: {
+          header: 'Court Cases II',
+          content:
+            "In 1997, lawyer Grant Cameron began talks with the Crown on behalf of what was to become a group of 95 survivors. Cameron sought an out-of-court settlement including the payment of compensation and an apology. Despite Crown Law, the state's legal representatives, having overwhelming evidence and advice that the survivors’ claims were true, they insisted the government go to court to test legal liability.",
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=281',
           style: 'scrolling'
         },
-
         view: '3d',
         camera: {
           ...cameras.theLake
@@ -2449,9 +2494,66 @@ const data = {
         text: {
           header: 'The Apology',
           content:
-            "On 7 October 2001, then prime minister Helen Clark and health minister Annette King made a qualified apology to each of the 95 Lake Alice Child and Adolescent Unit claimants for the abuse they suffered. The survivors' compensation was swallowed up by Cameron's legal fees and a second round of claimants received even less compensation. In 2003, Grant Cameron passed the survivors’ witness statements and files to NZ Police and asked them to investigate.",
+            "On 7 October 2001, then prime minister Helen Clark and health minister Annette King made a qualified apology to each of the 95 Lake Alice Child and Adolescent Unit claimants for the abuse they suffered. The survivors' compensation was swallowed up by Cameron's legal fees and a second round of claimants received even less compensation.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=285'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-10',
+        decade: '1990',
+        text: {
+          header: 'Claims for Redress II',
+          content:
+            'Excluded from this apology, however, was Leoni McInroe. According to the Royal Commission, McInroe’s lawyer had requested McInroe be included in the Cameron settlement. Crown Law refused. Instead they demanded she undergo a psychiatric examination to verify her claims. Only in 2002 was a final offer of settlement made. Woefully less than that made to the other survivors, McInroe no longer had the funds to pursue the case. Only at the request of her lawyer did she receive a qualified apology. The Crown took five months to deliver it.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-14',
+        decade: '2000',
+        text: {
+          header: 'Australia',
+          content:
+            'In Australia in 2003, the Medical Practitioners Board of Victoria investigated Leeks’ past at Lake Alice having been asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks was fit to practice. Separately, in 2004, the board also investigated claims in Australia by a former female patient accusing Leeks of sexual misconduct. After a three-year investigation, 39 disciplinary charges were laid against Leeks. Leeks agreed to stop working as a psychiatrist on the eve of his disciplinary hearing. By agreeing not to work anymore, Leeks escaped a full public investigation.',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
+          style: 'scrolling'
+        },
+        view: 'map',
+        map: {
+          ...location.australia,
+          visibleMapLayers: {
+            minorPoints: {
+              points: [
+                lakeAliceLocation,
+                {
+                  label: 'Melbourne',
+                  latitude: -37.971237,
+                  longitude: 144.4926947
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: 'justice-13',
+        decade: '2000',
+        text: {
+          header: 'Grant Cameron passes files to the police',
+          content:
+            'Back in Aotearoa in 2003, Grant Cameron passed the survivors’ witness statements and files to NZ Police and asked them to investigate.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=307'
         },
         view: '3d',
         camera: {
@@ -2462,7 +2564,7 @@ const data = {
         id: 'justice-13',
         decade: '2000',
         text: {
-          header: 'Second Police Investigation  2003 - 2005',
+          header: 'Second Police Investigation 2003 - 2005',
           content:
             'Initially, superintendent Graham Emery believed there were "public interest reasons" for an investigation. Fifteen months passed. Detective superintendent Larry Reid was then assigned to the investigation. Reid didn\'t believe the investigation was warranted. He only passed one file - Hake Halo\'s - to the deputy solicitor-general Nicola Crutchley which hid the systemic nature of abuse at Lake Alice. Time dragged. Crutchley found "insufficient evidence" for laying criminal charges but recommended the police conduct further investigation into the use of ECT.',
           style: 'scrolling',
@@ -2489,93 +2591,12 @@ const data = {
         }
       },
       {
-        id: 'justice-15',
-        decade: '2010',
-        image: {
-          caption: 'Lake Alice Investigation Completed - No Charges Laid',
-          src: '/images/fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
-          URL: 'https://www.police.govt.nz/news/release/22745',
-          date: '30 March, 2010',
-          author: 'New Zealand Police',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-14',
-        decade: '2000',
-        text: {
-          header: 'Australia',
-          content:
-            'In 2003, the Medical Practitioners Board of Victoria investigated Leeks’ past at Lake Alice having been asked by the Royal Australian and New Zealand College of Psychiatrists to assess whether Leeks was fit to practice. Separately, in 2004, the board also investigated claims in Australia by a former female patient accusing Leeks of sexual misconduct. After a three-year investigation, 39 disciplinary charges were laid against Leeks. Leeks agreed to stop working as a psychiatrist on the eve of his disciplinary hearing. By agreeing not to work anymore, Leeks escaped a full public investigation.',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=300',
-          style: 'scrolling'
-        },
-        view: 'map',
-        map: {
-          ...location.australia,
-          visibleMapLayers: {
-            minorPoints: {
-              points: [
-                lakeAliceLocation,
-                {
-                  label: 'Melbourne',
-                  latitude: -37.971237,
-                  longitude: 144.4926947
-                }
-              ]
-            },
-            lines: {
-              target: {
-                label: 'Melbourne',
-                latitude: -37.971237,
-                longitude: 144.4926947
-              },
-              points: [lakeAliceLocation]
-            }
-          }
-        }
-      },
-      {
-        id: 'justice-16',
-        decade: '1990',
-        text: {
-          header: 'United Nations Committee Against Torture',
-          content:
-            "Under the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment, New Zealand is required to submit reports to the UN about compliance with the convention. In each of its reports to the UN in 1992, 1997 and 2002, the Crown made no mention of survivors’ complaints or the police investigations into Lake Alice. It wasn't until 2010 that the Crown acknowledged there was any 'improper treatment' at Lake Alice. Although New Zealand didn't ratify the Convention until 1989, the United Nations Committee against Torture (UNCAT) recognised that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights.",
-          style: 'scrolling',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
-        id: 'justice-16',
-        decade: '1990',
-        text: {
-          header: 'Recognition',
-          content:
-            'In 2010, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN sent a please-explain letter to the New Zealand government. The government responded by saying the police act independently and any complaints should be made through the Independent Police Complaints Authority.',
-          style: 'scrolling',
-          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
         id: 'justice-16',
         decade: '2000',
         text: {
           header: 'Third Police Investigation 2006 - 2010',
           content:
-            "Back in New Zealand, detective superintendent Malcolm Burgess inherited the investigation. Burgess's plan for a comprehensive investigation was rejected by assistant commissioner Peter Marshall and detective superintendent Nick Perry as they don't want to commit resources. The allegations against staff, of wider sexual and physical abuse, and the use of paraldehyde were not investigated. Instead, the investigation focused on Leeks and the misuse of the ECT machine.",
+            "In 2006, detective superintendent Malcolm Burgess inherited the police investigation. Burgess's plan for a comprehensive investigation was rejected by assistant commissioner Peter Marshall and detective superintendent Nick Perry as they don't want to commit resources. The allegations against staff, of wider sexual and physical abuse, and the use of paraldehyde were not investigated. Instead, the investigation focused on Leeks and the misuse of the ECT machine.",
           style: 'scrolling',
           source: '/documents/Redacted-Lake-Alice-Report.pdf#page=308'
         },
@@ -2615,15 +2636,30 @@ const data = {
         }
       },
       {
-        id: 'justice-17',
-        decade: '2020',
+        id: 'justice-15',
+        decade: '2010',
         image: {
-          caption: 'Operation Lake Alice concluded - criminal charges filed',
-          src: '/images/fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
+          caption: 'Lake Alice Investigation Completed - No Charges Laid',
+          src: '/images/fc-20230323-00002-Lake Alice Investigation Completed - No Charges Laid.jpg',
+          URL: 'https://www.police.govt.nz/news/release/22745',
+          date: '30 March, 2010',
           author: 'New Zealand Police',
-          URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
-          date: '8 December, 2021',
           style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        decade: '2010',
+        text: {
+          header: 'Recognition',
+          content:
+            'In 2010, the Citizens Commission on Human Rights wrote to UNCAT to complain that no one had been held accountable. The UN sent a please-explain letter to the New Zealand government. The government responded by saying the police act independently and any complaints should be made through the Independent Police Complaints Authority.',
+          style: 'scrolling',
+          source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
         view: '3d',
         camera: {
@@ -2637,8 +2673,9 @@ const data = {
           header: 'Waitangi Tribunal 2017',
           content:
             'A number of kaupapa claims for an independent inquiry into abuse in state care that disproportionately affected Māori come before the Waitangi Tribunal including one from Lake Alice survivor Tyrone Marks of Ngāti Raukawa.',
-          style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=316'
+          style: 'scrolling',
+          source:
+            'https://forms.justice.govt.nz/search/Documents/WT/wt_DOC_121077713/Wai%202615%2C%20A003.pdf'
         },
         view: '3d',
         camera: {
@@ -2647,14 +2684,14 @@ const data = {
       },
       {
         id: 'justice-17',
-        decade: '2020',
+        decade: '2010',
         image: {
           caption:
             'Brief of Evidence of Tyrone Marks in Support of an Application for an Urgent Hearing Concerning the Settlement of Grievances of Maori Children Put Into State Care, 20 March 2017',
-          src: '/images/fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
-          author: 'New Zealand Police',
-          URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
-          date: '8 December, 2021',
+          src: '/images/fc-20200429-00168-Wai 2615, A003(1).jpg',
+          author: 'The Waitangi Tribunal',
+          URL: 'https://forms.justice.govt.nz/search/Documents/WT/wt_DOC_121077713/Wai%202615%2C%20A003.pdf',
+          date: '20 March, 2017',
           style: 'scrolling'
         },
         view: '3d',
@@ -2679,31 +2716,14 @@ const data = {
         }
       },
       {
-        id: 'justice-19',
-        decade: '2020',
-        image: {
-          caption:
-            '12th May 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint against the Crown for a "Lack of prompt and impartial investigation; right to an effective domestic remedy and redress."',
-          src: '/images/fc-20230601-00002-Screenshot 2023-06-01 at 11.20.10 AM.jpg',
-          author: 'United Nations Committee against Torture',
-          date: '13 July, 2022',
-          URL: 'https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/documents/G2240600.pdf',
-          style: 'scrolling'
-        },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
-        }
-      },
-      {
         id: 'justice-20',
         decade: '2010',
         text: {
           header: 'The Commission',
           content:
             "In 2018, almost 50 years after allegations of abuse at Lake Alice, the Abuse in Care Royal Commission of Inquiry was formally established. The Commission had a broad remit to investigate abuse in a number of contexts including institutional state care, foster, psychiatric and faith-based care, and specifically Māori and Pacific people's experiences of care. The Commission did not have powers of redress.",
-          style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+          style: 'scrolling',
+          source: 'https://www.abuseincare.org.nz/our-progress/timeline/'
         },
         view: '3d',
         camera: {
@@ -2717,8 +2737,8 @@ const data = {
           header: 'United Nations Committee Against Torture 2019',
           content:
             'In 2019, survivor Paul Zentveld’s complaint of torture is accepted by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
-          style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+          style: 'scrolling',
+          source: '/documents/G2001877.pdf'
         },
         view: '3d',
         camera: {
@@ -2732,8 +2752,25 @@ const data = {
           header: 'Malcolm Richards',
           content:
             'On 12 May 2022, UNCAT found in favour of Malcolm Richards against the Crown for a "Lack of prompt and impartial investigation; right to an effective domestic remedy and redress."',
+          style: 'scrolling',
+          source: '/documents/G2240600.pdf'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-19',
+        decade: '2020',
+        image: {
+          caption:
+            '12th May 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint.',
+          src: '/images/fc-20230601-00002-Screenshot 2023-06-01 at 11.20.10 AM.jpg',
+          author: 'United Nations Committee against Torture',
+          date: '13 July, 2022',
+          URL: 'https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/documents/G2240600.pdf',
           style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
         view: '3d',
         camera: {
@@ -2747,8 +2784,25 @@ const data = {
           header: 'Accountability',
           content:
             'Under pressure from the Commission\'s inquiry and UNCAT\'s reports, the police finally made an arrest of an 89-year-old former staff member. Two other members of staff were "medically unfit to stand trial". including Dr Selwyn Leeks. In 2022, Leeks died, never having faced trial and never having apologised for his actions.',
+          style: 'scrolling',
+          source:
+            'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-17',
+        decade: '2020',
+        image: {
+          caption: 'Operation Lake Alice concluded - criminal charges filed',
+          src: '/images/fc-20230323-00001-Operation Lake Alice concluded - criminal charges filed.jpg',
+          author: 'New Zealand Police',
+          URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
+          date: '8 December, 2021',
           style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
         view: '3d',
         camera: {
@@ -2761,9 +2815,10 @@ const data = {
         text: {
           header: 'Redress',
           content:
-            'xxxxx All of the survivors, like Malcolm, are now approaching the end of their lives. This is their last chance to receive any form of meaningful redress. Whilst the Royal Commission The trial is in.',
-          style: 'scrolling'
-          // source: '/documents/Redacted-Lake-Alice-Report.pdf#page=327'
+            'All of the survivors, like Malcolm, are now approaching the end of their lives. This is their last chance to receive any form of meaningful redress from the State. The Royal Commission’s report From Redress to Puretumu Torowhānui sets out 95 recommendations for a new redress scheme. The report concludes that the time for action is now and yet the survivors still wait.',
+          style: 'scrolling',
+          source:
+            'https://www.abuseincare.org.nz/our-progress/reports/from-redress-to-puretumu'
         },
         view: '3d',
         camera: {
