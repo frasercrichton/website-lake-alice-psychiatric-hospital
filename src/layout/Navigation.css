@@ -1,0 +1,148 @@
+header {
+    z-index: 450;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav {
+    background-color: #282c34;
+}
+
+nav.main {
+    background-color: #282c34;
+    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    justify-content: end;
+    vertical-align: middle;
+    align-items: center;
+    height: 50px;
+}
+
+nav.main>[class*="col"], nav.main>[class*="nav"] {
+    display: block;
+    box-sizing: border-box;
+}
+
+nav .nav-item {
+    grid-column-end: span 2;
+    word-break: break-word;
+    vertical-align: middle;
+    height: 50px;
+}
+
+nav .col-4 {
+    color: #ffffff;
+    grid-column-end: span 4;
+    align-items: center;
+    vertical-align: middle;
+}
+
+nav.main a {
+    transition-property: color, background-color;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    padding: .55em 1rem .4em;
+}
+
+.main a:hover, .main .active {
+    color: #282c34;
+    background-color: #ffffff;
+}
+
+nav.home h1 {
+    color: #282c34;
+    background-color: #ffffff;
+    font-size: var(--font-size-4xl);
+    position: fixed;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+.scroller-progress-bar {
+    height: 10px;
+    background-color: red;
+    transform-origin: top left;
+    transition: transform 1s ease-in-out;
+}
+
+header label {
+    display: inline-block;
+    color: white;
+    font-style: normal;
+    font-size: var(--font-size-3xl);
+}
+
+.hamburger {
+    display: none
+}
+
+.material-symbols-outlined {
+    font-size: var(--font-size-3xl);
+    color: #ffffff;
+    font-variation-settings:
+        'FILL'0,
+        'wght'600,
+        'GRAD'0,
+        'opsz'40;
+}
+
+@media (max-width: 1900px) {
+    .nav-item {
+        font-size: var(--font-size-md);
+    }
+
+    nav.home h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+}
+
+@media (max-width: 1360px) {
+    .nav-item {
+        font-size: var(--font-size-xs);
+    }
+
+    nav.home h1 {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+@media only screen and (device-width: 768px) {
+    /* default iPad screens */
+}
+
+@media screen and (max-width: 390px) {
+
+    nav.mobile a:not(:first-child) {
+        display: none;
+        visibility: hidden;
+    }
+
+    nav.mobile .hamburger {
+        display: inline;
+        visibility: visible;
+    }
+
+    nav.mobile a:not(:first-child).display {
+        display: block;
+        visibility: visible;
+    }
+
+    nav .col-4 {
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        padding-right: 10px;
+        font-size: var(--font-size-xl);
+        text-align: right;
+    }
+
+}
