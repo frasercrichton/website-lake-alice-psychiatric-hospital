@@ -9,9 +9,9 @@ const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
     setIsLoaded(isLoaded)
   }
 
-  const archwayRecordID = recordID
-    ? <span>Archway Item ID: {recordID} </span>
-    : null
+  const archwayRecordID = recordID ? (
+    <span>Archway Item ID: {recordID} </span>
+  ) : null
 
   const formattedDate = date ? <span>{date}. </span> : null
   const formattedAuthor = author ? <span>{author}. </span> : null
@@ -29,9 +29,11 @@ const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
             {archwayRecordID}
             {formattedAuthor}
             {formattedDate}
-            <a target='_blank' rel='noreferrer' href={URL}>
-              original
-            </a>
+            {URL && (
+              <a target='_blank' rel='noreferrer' href={URL}>
+                original
+              </a>
+            )}
           </div>
         )}
       </figure>

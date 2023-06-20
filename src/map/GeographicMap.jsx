@@ -93,7 +93,9 @@ const GeographicMap = ({ visibleMapLayers, map }) => {
                     mapType={visibleMapLayers.type}
                     style={minorPointStyle}
                   />
-                  <Highlight minorPoints={visibleMapLayers.minorPoints} />
+                  {visibleMapLayers.type === 'interactive' && (
+                    <Highlight minorPoints={visibleMapLayers.minorPoints} />
+                  )}
                 </>
               )}
             </>

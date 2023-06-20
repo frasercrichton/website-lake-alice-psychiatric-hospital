@@ -228,7 +228,7 @@ const data = {
           visibleMapLayers: {
             majorPoints: [
               {
-                label: 'Hastings Heretaunga',
+                label: 'Heretaunga Hastings',
                 latitude: -39.6394411,
                 longitude: 176.7795431
               }
@@ -252,7 +252,7 @@ const data = {
             minorPoints: {
               points: [
                 {
-                  label: 'Hastings Heretaunga',
+                  label: 'Heretaunga Hastings',
                   latitude: -39.6394411,
                   longitude: 176.7795431
                 }
@@ -694,7 +694,7 @@ const data = {
                   longitude: 176.1375833
                 },
                 {
-                  label: 'Napier',
+                  label: 'Ahuriri Napier',
                   latitude: -39.4794044,
                   longitude: 176.7985016
                 }
@@ -706,9 +706,9 @@ const data = {
       {
         id: 'malcolm-21',
         text: {
-          header: 'Welsford',
+          header: 'Whakapirau Welsford',
           content:
-            'He then moved to Welsford and found more dairy farming work.',
+            'He then moved to Whakapirau Welsford and found more dairy farming work.',
           style: 'scrolling'
         },
         view: 'map',
@@ -793,7 +793,7 @@ const data = {
         text: {
           header: '12 - Runaway',
           content:
-            'Moved to the North Shore at Auckland and worked drain laying.',
+            'Moved to the North Shore at Tāmaki Makaurau Auckland and worked drain laying.',
           style: 'scrolling'
         },
         view: 'map',
@@ -828,7 +828,7 @@ const data = {
                   longitude: 174.3493232
                 },
                 {
-                  label: 'Auckland North Shore',
+                  label: 'Tāmaki Makaurau Auckland North Shore',
                   latitude: -36.7494681,
                   longitude: 174.5825004
                 }
@@ -882,7 +882,7 @@ const data = {
                 },
                 {
                   label:
-                    'The Connelly Unit and Te Whetu Tawera - Auckland Hospital',
+                    'The Connelly Unit and Te Whetu Tawera - Tāmaki Makaurau Auckland Hospital',
                   latitude: -36.8605068,
                   longitude: 174.7674006
                 }
@@ -938,7 +938,7 @@ const data = {
                   longitude: 174.7674006
                 },
                 {
-                  label: 'South Auckland',
+                  label: 'Tāmaki Makaurau South Auckland',
                   latitude: -36.9914801,
                   longitude: 174.8690175
                 }
@@ -952,7 +952,7 @@ const data = {
         text: {
           header: 'Napier',
           content:
-            'Malcolm then moved to Napier and worked in several manual labouring jobs.',
+            'Malcolm then moved to Ahuriri Napier and worked in several manual labouring jobs.',
           style: 'scrolling'
         },
         view: 'map',
@@ -999,7 +999,7 @@ const data = {
                   longitude: 174.8690175
                 },
                 {
-                  label: 'Napier',
+                  label: 'Ahuriri Napier',
                   latitude: -39.4794044,
                   longitude: 176.7985016
                 }
@@ -1011,9 +1011,9 @@ const data = {
       {
         id: 'malcolm-27',
         text: {
-          header: 'Hastings',
+          header: 'Heretaunga Hastings',
           content:
-            'Finally, Malcolm moved to Hastings where he worked in forestry.',
+            'Finally, Malcolm moved to Heretaunga Hastings where he worked in forestry.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1064,7 +1064,7 @@ const data = {
                   longitude: 176.7985016
                 },
                 {
-                  label: 'Hastings',
+                  label: 'Heretaunga Hastings',
                   latitude: -39.6394411,
                   longitude: 176.7794575
                 }
@@ -1129,7 +1129,7 @@ const data = {
                   longitude: 176.7985016
                 },
                 {
-                  label: 'Hastings',
+                  label: 'Heretaunga Hastings',
                   latitude: -39.6394411,
                   longitude: 176.7794575
                 }
@@ -1146,61 +1146,20 @@ const data = {
             'Today, in 2023, Malcolm still suffers from PTSD and physical symptoms from his time in Lake Alice. Malcolm was almost broken by a system that should have been there for his care and protection. Instead, Malcolm is among a small group of survivors - women, men, trans, Māori, Pasifika, Pākehā, disabled and able-bodied - who have fought for accountability and redress for more than fifty years. Their struggle for justice against the state is also a struggle for tamariki who were broken by Lake Alice.',
           style: 'scrolling'
         },
-        view: 'map',
-        map: {
-          ...location.northIsland,
-          visibleMapLayers: {
-            majorPoints: [],
-            lines: {
-              points: [
-                {
-                  latitude: -39.9182277,
-                  longitude: 176.4211438
-                },
-                {
-                  latitude: -40.0309529,
-                  longitude: 176.5278439
-                },
-                {
-                  latitude: -40.7491005,
-                  longitude: 176.1375833
-                },
-                {
-                  latitude: -39.4794044,
-                  longitude: 176.7985016
-                },
-                {
-                  latitude: -36.2858116,
-                  longitude: 174.4447237
-                },
-                {
-                  latitude: -36.2160784,
-                  longitude: 174.3493232
-                },
-                {
-                  latitude: -36.7494681,
-                  longitude: 174.5825004
-                },
-                {
-                  latitude: -36.8605068,
-                  longitude: 174.7674006
-                },
-                {
-                  latitude: -36.9914801,
-                  longitude: 174.8690175
-                },
-                {
-                  latitude: -39.4794044,
-                  longitude: 176.7985016
-                },
-                {
-                  label: 'Hastings',
-                  latitude: -39.6394411,
-                  longitude: 176.7794575
-                }
-              ]
-            }
-          }
+        view: '3d',
+        camera: { ...cameras.default }
+      },
+      {
+        id: 'malcolm-12',
+        image: {
+          src: '/images/fc-20211021-00004-FC22100_FC22100-R5-E110-web-2.jpg',
+          caption: 'Malcolm Richards, 2019 Heretaunga',
+          author: 'Fraser Crichton',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.default
         }
       }
     ]
