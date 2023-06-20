@@ -48,23 +48,23 @@ const CameraControls = ({ camera }) => {
           ...positionDefaults
         }
       },
-      Rotation: {
-        value: {
-          x: parameters.rotation.x,
-          y: parameters.rotation.y,
-          z: parameters.rotation.z
-        },
-        x: {
-          ...rotationDefaults
-        },
-        y: {
-          ...rotationDefaults
-        },
-        z: {
-          ...rotationDefaults
-        }
-      }
-    }
+    //   Rotation: {
+    //     value: {
+    //       x: parameters.rotation.x,
+    //       y: parameters.rotation.y,
+    //       z: parameters.rotation.z
+    //     },
+    //     x: {
+    //       ...rotationDefaults
+    //     },
+    //     y: {
+    //       ...rotationDefaults
+    //     },
+    //     z: {
+    //       ...rotationDefaults
+    //     }
+    //   }
+    // }
   }, [parameters.position.x, parameters.position.y, parameters.position.z])
 
   return useControls('Camera', options)

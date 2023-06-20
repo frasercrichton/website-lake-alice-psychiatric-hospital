@@ -18,7 +18,7 @@ const Circle = ({
   // stroke-width="40"
 
   // am sure this mathematically accurate
-  const iconAnchor = [iconSize / 5, iconSize / 10]
+  const iconAnchor = [iconSize / 8, iconSize / 10]
 
   const svg = `<svg
     viewBox="0 0 100 100"
@@ -40,9 +40,6 @@ const Circle = ({
     iconSize: [iconSize, iconSize],
     iconAnchor: iconAnchor
   })
-
-  // 50 [10, 5] total/5, /10
-  // 150 [30 15]
 
   return (
     <Marker

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect } from 'react'
+import React from 'react'
 import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'

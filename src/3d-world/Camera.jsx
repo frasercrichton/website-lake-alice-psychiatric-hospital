@@ -1,13 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { OrbitControls } from '@react-three/drei'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber'
 import gsap from 'gsap'
 
 // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
-
-const hash = window.location.hash
 
 // https://attackingpixels.com/tips-tricks-optimizing-three-js-performance/
 // let FOV
@@ -73,10 +70,6 @@ const Camera = ({ pageCamera }) => {
   const near = pageCamera ? pageCamera.near : defaultCameraConfig.near
   const far = pageCamera ? pageCamera.far : defaultCameraConfig.far
 
-  // controls = new THREE.OrbitControls( camera, renderer.domElement )
-  // state.camera.lookAt(0, 0, 0)
-  // const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
-
   let alpha = 0
   useFrame((state, delta) => {
     if (pageCamera) {
@@ -108,20 +101,6 @@ const Camera = ({ pageCamera }) => {
     }
   }, [pageCamera, clock, currentCamera])
 
-  // const ZoomIn = () => {
-  //   return useFrame(({ camera }) => {
-  //     let cameraDistance = orbitControlesRef.current.getDistance()
-
-  //     if (cameraDistance > 280) {
-  //       let polarAngle = orbitControlesRef.current.getPolarAngle()
-
-  //       orbitControlesRef.current.maxDistance = cameraDistance -= 0.1
-  //       orbitControlesRef.current.setPolarAngle((polarAngle += 0.003))
-  //       orbitControlesRef.current.update()
-  //     }
-  //   })
-  // }
-
   return (
     <group ref={cameraGroup} position={defaultCameraConfig.position}>
       <PerspectiveCamera
@@ -133,32 +112,6 @@ const Camera = ({ pageCamera }) => {
         near={near}
         far={far}
       />
-      {hash === '#debug' && (
-        <OrbitControls
-          camera={currentCamera}
-          // enableZoom
-          // enableRotate
-          maxDistance={5000}
-          minDistance={10}
-          // maxZoom={1}
-          // zoom
-          // autoRotate
-          // autoRotateSpeed={0.3}
-          // enableDamping
-          // dampingFactor={0.01}
-          // maxAzimuthAngle={Math.PI / 4}
-          // minAzimuthAngle={Math.PI / 2}
-          // maxPolarAngle={angleToRadians(80)}
-          // minPolarAngle={angleToRadians(30)}
-          // makeDefault
-          // // ref={orbitControlesRef}
-          // target == camera.lookat
-          // minZoom
-          // // zoom0
-          // zoomSpeed={0.3}
-          // update
-        />
-      )}
     </group>
   )
 }

@@ -1,43 +1,48 @@
 import { useMemo } from 'react'
 import { useControls } from 'leva'
-// 180 60 180
-const DirectionalLightControls = () => {
+
+const SpotLightControls = () => {
   const options = useMemo(() => {
     return {
-      DirectionalLightColour: '#ffffff',
-      DirectionalLightIntensity: {
-        value: 2.6,
+      Colour: '#ffffff',
+      intensity: {
+        value: 10000,
         min: 0,
-        max: 10,
-        step: 0.1
+        max: 100000,
+        step: 10
       },
-      DirectionalLightShadowNormalBias: {
-        value: 5.9,
+      distance: {
+        value: 1000,
+        min: 0,
+        max: 5000,
+        step: 5
+      },
+      shadowNormalBias: {
+        value: 2.5,
         min: 0,
         max: 20,
         step: 0.1
       },
-      DirectionalLightShadowRadius: {
+      shadowRadius: {
         value: 1,
         min: 0,
         max: 20,
         step: 0.1
       },
-
       positionX: {
-        value: 0,
+        value: 180,
         min: -360,
         max: 360,
         step: 1
       },
       positionY: {
-        value: 0,
+        value: 60,
         min: 0,
         max: 360,
         step: 1
       },
       positionZ: {
-        value: 0,
+        value: 180,
         min: -360,
         max: 360,
         step: 1
@@ -54,8 +59,8 @@ const DirectionalLightControls = () => {
         max: 10000,
         step: 1
       },
-      DirectionalLightShadowCameraExtent: {
-        value: 1000,
+      shadowCameraExtent: {
+        value: 10000,
         min: 0,
         max: 10000,
         step: 1
@@ -63,7 +68,7 @@ const DirectionalLightControls = () => {
     }
   }, [])
 
-  return useControls('Directional Light', options)
+  return useControls('Spotlight', options)
 }
 
-export default DirectionalLightControls
+export default SpotLightControls

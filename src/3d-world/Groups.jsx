@@ -1,19 +1,22 @@
 import React from 'react'
-import Facility from './Facility.jsx'
+import Mesh from './Mesh.jsx'
+import getLabel from './labelText.js'
 
 const Groups = ({ groups, labels }) => {
-  
-  const getLabel = id => {
-    const label = labels?.find(item => item.id === id)
-    return label === undefined ? undefined : label.label
-  }
+  const verticalOffset = -0.1
+
+  // Interactive Transparency for villa floor plans
+  const getMaterial = mesh =>
+    mesh.disabledMaterial !== undefined ? mesh.disabledMaterial : mesh.material
 
   return groups.flat().map(mesh => {
     return (
-      <Facility
+      <Mesh
         key={mesh.name}
         node={mesh}
-        label={getLabel(mesh.name)}
+        material={getMaterial(mesh)}
+        verticalOffset={verticalOffset}
+        label={getLabel(mesh.name, labels)}
       />
     )
   })

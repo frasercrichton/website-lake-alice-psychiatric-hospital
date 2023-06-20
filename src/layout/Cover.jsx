@@ -26,17 +26,17 @@ const Cover = () => {
                 role='button'
                 onClick={e => toggleCoverActive()}
                 className='nav-item'
-                to='/testimony'
+                to='/introduction'
               >
-                <Button action={e => toggleCoverActive()} label='Testimony' />
+                <Button action={e => toggleCoverActive()} label='Explore' />
               </Link>
               <Link
                 role='button'
                 onClick={e => toggleCoverActive()}
                 className='nav-item'
-                to='/introduction'
+                to='/testimony'
               >
-                <Button action={e => toggleCoverActive()} label='Explore' />
+                <Button action={e => toggleCoverActive()} label='Testimony' />
               </Link>
             </div>
           </div>

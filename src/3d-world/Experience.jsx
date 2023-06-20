@@ -4,12 +4,11 @@ import ThreeLoader from './ThreeLoader.jsx'
 import Model from './Model.jsx'
 import Camera from './Camera.jsx'
 import LookAndFeelControls from '../controls/LookAndFeel.jsx'
-import Environment from './Environment.jsx'
+import EnvironmentLighting from './EnvironmentLighting.jsx'
 import Floor from './Floor.jsx'
 
 const Experience = ({
   pageCamera,
-  cameraMoveDuration,
   isRotating,
   labels,
   pageScrollProgress,
@@ -20,7 +19,7 @@ const Experience = ({
   return (
     <>
       <color args={[World]} attach='background' />
-      <Environment />
+      <EnvironmentLighting />
       <Floor />
       <Suspense fallback={<ThreeLoader />}>
         <Model
@@ -29,24 +28,6 @@ const Experience = ({
           labels={labels}
         />
       </Suspense>
-      {/* 
-      <Suspense fallback={<ThreeLoader />}>
-        <Model
-          isRotating={isRotating}
-          disabledMeshes={disabledMeshes}
-          labels={labels}
-        />
-      </Suspense> */}
-      {/* 
-
-      <Suspense fallback={<ThreeLoader />}>
-        <Model
-          isRotating={isRotating}
-          disabledMeshes={disabledMeshes}
-          labels={labels}
-        />
-      </Suspense> */}
-
       <Camera pageCamera={pageCamera} />
     </>
   )

@@ -1,24 +1,24 @@
 import React from 'react'
 import Label from './Label.jsx'
 
-const Mesh = ({ node, label }) => {
-  const facilityId = node.name
-  const hasShadow = !(node.name === 'Road' || node.name === 'Lakes')
-
-  const y = hasShadow ? node.position.y - 0.5 : node.position.y
-
+const Mesh = ({ node, material, verticalOffset = 0, label }) => {
+  const meshName = node.name
   return (
     <mesh
       scale={node.scale}
-      name={facilityId}
+      name={meshName}
       geometry={node.geometry}
-      material={node.material}
+      material={material}
       receiveShadow
       castShadow
-      position={[node.position.x, y, node.position.z]}
+      position={[
+        node.position.x,
+        node.position.y + verticalOffset,
+        node.position.z
+      ]}
       rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
     >
-      {label && <Label id={node.name} text={label} />}
+      {label && <Label id={meshName} text={label} />}
     </mesh>
   )
 }

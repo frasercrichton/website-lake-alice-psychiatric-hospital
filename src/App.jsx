@@ -213,6 +213,8 @@ function App () {
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
+        
+        {/* Visuals */}
         {text &&
           (text?.style === 'static' || text?.style === 'animated') &&
           oddOrEvenPage === 'odd' && (
@@ -269,6 +271,7 @@ function App () {
           </div>
         )}
         <Timeline decade={pageInView.decade} />
+        {/* steps */}
         <Routes>
           <Route
             key={'route-default'}
