@@ -24,11 +24,11 @@
 .timeline-section ul li {
     list-style: none;
     position: relative;
-    /* set width then set background that width */
+    /* set width then set background */
     width: 4px;
     background-color: #ffffff;
     margin: 0 12px;
-    padding-top: 5rem;
+    padding-top: 8vh;
     opacity: 0.4;
     /* background-color: #ff0000; */
 }

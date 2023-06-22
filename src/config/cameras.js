@@ -83,7 +83,15 @@ const cameras = {
     near: 0.10000000149011612,
     far: 1000
   },
-
+  boysVillaAboveAngle: {
+    name: 'boysVillaAboveAngle',
+    position: [117.24929809570312, 32.56351852416992, -220.86318969726562],
+    rotation: [-0.5090140550871015, 0.42185162940219495, 0.22465028834185893],
+    aspect: 1.7777777777777777,
+    fov: 39.76070325000613,
+    near: 0.10000000149011612,
+    far: 3048
+  },
   cellCamera: {
     name: 'CellCamera',
     position: [86.12178039550781, 4.552443981170654, -290.54888916015625],
@@ -160,8 +168,8 @@ const cameras = {
     near: 0.1,
     far: 1000
   },
-  twelveBedVilla: {
-    name: 'twelveBedVilla',
+  twelveBedVillaImage: {
+    name: 'twelveBedVillaImage',
     position: [87.67674255371094, 6.449056148529053, -336.97576904296875],
     rotation: [-3.0367693081017912, -1.0550672386576285, -3.050322145786049],
     aspect: 1.7777777777777777,

@@ -179,7 +179,7 @@ function App () {
   const textBoxContainerStyle = {
     position: 'fixed',
     justifyContent: 'center',
-    fontSize: '50px'
+    fontSize: '50px',
   }
 
   const textBoxStyle = {
@@ -213,7 +213,7 @@ function App () {
           activeChapter={activeChapter}
           navigateToChapter={navigateToChapter}
         />
-        
+
         {/* Visuals */}
         {text &&
           (text?.style === 'static' || text?.style === 'animated') &&
