@@ -2,11 +2,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 350;
   height: 100vh;
-  font-size: var(--font-size-md);
-  opacity: 0.7;
-  animation: textBoxFadeIn 3s;
+  z-index: 350;
 }
 
 @keyframes textBoxFadeIn {
@@ -15,26 +12,31 @@
   }
 
   100% {
-    opacity: 0.7;
+    opacity: 1;
   }
 }
 
 .text-box, .text-box-static {
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.7);
   color: #ffffff;
+  font-size: var(--font-size-md);
   padding: 10px;
   z-index: 380;
 }
 
-.text-box-static {
-  font-size: var(--font-size-md);
+.text-box .source {
+  margin-top: 10px;
+  padding: 4px;
+  text-align: right;
+  font-size: var(--font-size-xs);
+  display: inline-block;
 }
 
-.text-box .source {
-  margin-top: 5px;
-  padding: 5px;
-  text-align: right;
-  display: inline-block;
+.text-box-static .text-box-content {
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+  animation: textBoxFadeIn 3s;
 }

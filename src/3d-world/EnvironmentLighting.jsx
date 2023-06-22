@@ -64,8 +64,6 @@ const EnvironmentLighting = () => {
         ]}
       />
       <BakeShadows />
-{/*  */}
-
       <directionalLight
         ref={light}
         intensity={DirectionalLightIntensity}
@@ -87,8 +85,6 @@ const EnvironmentLighting = () => {
           directionalLightControls.positionY,
           directionalLightControls.positionZ
         ]}
-        //         light.position.set(0, 10, 5)
-        // light.target.position.set(-5, 0, 0)
       />
 
       {/* <spotLight
@@ -105,10 +101,6 @@ const EnvironmentLighting = () => {
         shadow-radius={DirectionalLightShadowRadius}
         shadow-camera-far={directionalLightControls.Far}
         shadow-camera-near={directionalLightControls.Near}
-        // shadow-camera-top={spotLightControls.shadowCameraExtent} // make this small to make sharper shadows
-        // shadow-camera-right={spotLightControls.shadowCameraExtent}
-        // shadow-camera-bottom={-spotLightControls.shadowCameraExtent}
-        // shadow-camera-left={-spotLightControls.shadowCameraExtent}
         position={[
           spotLightControls.positionX,
           spotLightControls.positionY,

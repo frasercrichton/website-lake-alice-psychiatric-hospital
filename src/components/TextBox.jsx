@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import AssetUrlHelper from './AssetUrlHelper.js'
 import './TextBox.css'
 
@@ -20,7 +20,7 @@ const TextBox = ({
             <a
               target='_blank'
               rel='noreferrer'
-              href={new AssetUrlHelper().resolveUrl(text.source, 'documents')}
+              href={new AssetUrlHelper().resolveUrl(text.source)}
             >
               SOURCE
             </a>

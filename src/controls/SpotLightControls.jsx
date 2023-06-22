@@ -6,7 +6,7 @@ const SpotLightControls = () => {
     return {
       Colour: '#ffffff',
       intensity: {
-        value: 10000,
+        value: 1370,
         min: 0,
         max: 100000,
         step: 10
@@ -31,20 +31,20 @@ const SpotLightControls = () => {
       },
       positionX: {
         value: 180,
-        min: -360,
-        max: 360,
+        min: -1000,
+        max: 1000,
         step: 1
       },
       positionY: {
         value: 60,
         min: 0,
-        max: 360,
+        max: 1000,
         step: 1
       },
       positionZ: {
         value: 180,
-        min: -360,
-        max: 360,
+        min: -1000,
+        max: 1000,
         step: 1
       },
       Near: {

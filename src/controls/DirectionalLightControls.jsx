@@ -12,7 +12,7 @@ const DirectionalLightControls = () => {
         step: 0.1
       },
       DirectionalLightShadowNormalBias: {
-        value: 5.9,
+        value: 6.6,
         min: 0,
         max: 20,
         step: 0.1
@@ -25,19 +25,19 @@ const DirectionalLightControls = () => {
       },
 
       positionX: {
-        value: 0,
+        value: 53,
         min: -360,
         max: 360,
         step: 1
       },
       positionY: {
-        value: 0,
+        value: 100,
         min: 0,
         max: 360,
         step: 1
       },
       positionZ: {
-        value: 0,
+        value: -272,
         min: -360,
         max: 360,
         step: 1
