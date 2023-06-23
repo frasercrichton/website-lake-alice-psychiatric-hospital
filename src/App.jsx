@@ -28,6 +28,7 @@ import useHeaderScrollProgress from './state/scrollProgressStore.js'
 const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
+const isLevaHidden = hash !== '#debug'
 
 if (hash === '#debug') {
   const stats = new Stats()
@@ -71,8 +72,6 @@ function App () {
       ]
       // shallow
     )
-
-  const isLevaHidden = hash !== '#debug'
 
   // React Router
   const navigate = useNavigate()

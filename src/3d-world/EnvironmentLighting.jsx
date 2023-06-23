@@ -1,28 +1,23 @@
-import React, { useRef, useEffect } from 'react'
-import * as THREE from 'three'
-import { DirectionalLightHelper, SpotLightHelper } from 'three'
+import React, { useRef } from 'react'
+import { DirectionalLightHelper } from 'three' // SpotLightHelper
 import DirectionalLightControls from '../controls/DirectionalLightControls.jsx'
 import HemisphereLightControls from '../controls/HemisphereLightControls.jsx'
-import SpotLightControls from '../controls/SpotLightControls.jsx'
+// import SpotLightControls from '../controls/SpotLightControls.jsx'
 import { BakeShadows, useHelper } from '@react-three/drei'
 import FogControls from '../controls/FogControls.jsx'
 
 const EnvironmentLighting = () => {
   const light = useRef()
-  // Look and Feel controls
   const directionalLightControls = DirectionalLightControls()
-  const spotLightControls = SpotLightControls()
   const {
     DirectionalLightIntensity,
-    DirectionalLightPosition,
     DirectionalLightColour,
-    DirectionalLightShadowBias,
     DirectionalLightShadowNormalBias,
     DirectionalLightShadowRadius,
     DirectionalLightShadowCameraExtent
   } = DirectionalLightControls()
-
   const { FogColour, FogNear, FogFar } = FogControls()
+
   const {
     HemisphereLightIntensity,
     HemisphereLightGroundColour,
@@ -30,26 +25,9 @@ const EnvironmentLighting = () => {
     HemisphereLightPosition
   } = HemisphereLightControls()
 
-  // useEffect(() => {
-  // const scene = new THREE.Scene()
-  // const shadowCameraHelper = new THREE.CameraHelper(
-  //   directionalLight.current.shadow.camera
-  // )
-  // scene.add(shadowCameraHelper)
-
-  // const directionalLightHelper = new THREE.DirectionalLightHelper(
-  //   directionalLight.current,
-  //   500
-  // )
-  // scene.add(directionalLightHelper)
-  // directionalLightHelper.update()
-
-  // const directionalLightHelper = new THREE.SpotLightHelper(
-  //   directionalLight.current
-  // )
-
+  // const spotLightControls = SpotLightControls()
   // useHelper(light, SpotLightHelper, 'red')
-  useHelper(light, DirectionalLightHelper, 'red')
+  // useHelper(light, // useHelper(light, DirectionalLightHelper, 'red')
 
   return (
     <>
