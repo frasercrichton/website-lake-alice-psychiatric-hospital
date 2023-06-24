@@ -20,6 +20,10 @@ const Cover = () => {
               <h1>Lake Alice Psychiatric Hospital</h1>
               <h2>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h2>
               <h2>Lake Alice Child and Adolescent Unit</h2>
+              <p class='content-warning'>
+                Content Warning: some content included contains explicit
+                descriptions of tūkino – child abuse, harm and trauma.
+              </p>
             </div>
             <div className='navigation'>
               <Link

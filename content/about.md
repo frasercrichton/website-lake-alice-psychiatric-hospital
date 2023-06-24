@@ -36,3 +36,23 @@ Survivors and others who gave testimony to the Royal Commission include:
 Mr AA, ACORD (Oliver Sutherland and Ross Galbreath), Kevin Banks, Ms CC who gave evidence for her deceased partner, CCHR, Sharyn Collis, Deborah Dickson, Hake Halo, Andrew Jane, Walton James Ngatai-Mathieson, Leoni McInroe, Mr JJ, Ms LL, Donald Ku, Bryon Malcolm Nicol, Tyrone Marks, Fred Rawiri, Malcolm Richards, Charles Symes, Ms Y, Rangi Wickliffe, Paul Zentveld
 
 Many survivors were unable or chose not to give testimony to the Royal Commission. Their experiences are equally worthy of recognition.
+
+# If you need help
+
+Where to get help:
+
+For male survivors -
+
+* [Road Forward Trust](https://www.theroadforward.org.nz/), Wellington, contact Richard 021 118 1043
+* [Better Blokes](https://betterblokes.org.nz/) Auckland, 09 990 2553
+* [The Canterbury Men's Centre](https://canmen.org.nz/), 03 377 6747
+* [The Male Room](https://maleroom.co.nz/), Nelson 03 548 0403
+* [Male Survivors]([Male Survivors](https://waikatosurvivors.org.nz/)), Waikato 07 858 4112
+* [Male Survivors](https://www.malesurvivorsotago.nz/), Otago 021 106 4598
+
+For female survivors -
+
+* [Help Wellington](https://www.wellingtonhelp.org.nz/) 04 801 6655
+* [Help Auckland](https://helpauckland.org.nz) 09 623 1296
+
+For urgent help: [Safe To Talk](http://www.safetotalk.nz/) 0800 044 334
