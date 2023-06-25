@@ -369,13 +369,13 @@ const data = {
         },
         labels: [
           {
-            id: 'Villa15',
+            id: 'DisturbedPatientsVilla',
             label: "Disturbed Patient's Villa"
           }
         ],
         view: '3d',
         camera: {
-          ...cameras.adultVilla
+          ...cameras.disturbedPatientsVilla
         }
       },
       {
@@ -393,11 +393,11 @@ const data = {
         view: '3d',
         labels: [
           {
-            id: 'Villa15',
+            id: 'DisturbedPatientsVilla',
             label: "Disturbed Patient's Villa"
           }
         ],
-        camera: { ...cameras.adultVilla }
+        camera: { ...cameras.disturbedPatientsVilla }
       },
       {
         id: 'malcolm-12',
@@ -409,13 +409,13 @@ const data = {
         },
         labels: [
           {
-            id: 'Villa15',
+            id: 'DisturbedPatientsVilla',
             label: "Disturbed Patient's Villa"
           }
         ],
         view: '3d',
         camera: {
-          ...cameras.adultVilla
+          ...cameras.disturbedPatientsVilla
         }
       },
       {
@@ -430,12 +430,12 @@ const data = {
         view: '3d',
         labels: [
           {
-            id: 'Villa15',
+            id: 'DisturbedPatientsVilla',
             label: "Disturbed Patient's Villa"
           }
         ],
         camera: {
-          ...cameras.adultVilla
+          ...cameras.disturbedPatientsVilla
         }
       },
       {
@@ -449,12 +449,12 @@ const data = {
         view: '3d',
         labels: [
           {
-            id: 'Villa15',
+            id: 'DisturbedPatientsVilla',
             label: "Disturbed Patient's Villa"
           }
         ],
         camera: {
-          ...cameras.adultVilla
+          ...cameras.disturbedPatientsVilla
         }
       },
       {

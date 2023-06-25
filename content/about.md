@@ -1,6 +1,6 @@
 ## About
 
-This website was developed as part of an ongoing project - The Moral Drift - examining the history of state care in Aotearoa/New Zealand. In its first phase, it was exhibited at Toi Tauranga/Tauranga Art Gallery in October 2021 - [The Moral Drift](https://www.artgallery.org.nz/exhibitions/id/1751).
+This website was developed as part of an ongoing project - The Moral Drift - examining the history of state care in Aotearoa New Zealand. In its first phase, it was exhibited at Toi Tauranga/Tauranga Art Gallery in October 2021 - [The Moral Drift](https://www.artgallery.org.nz/exhibitions/id/1751).
 
 The project was developed by a collective of investigative researchers, Fraser Crichton — a Te Whanganui-a-Tara-based researcher and documentary photographer, Malcolm Richards — a survivor of abuse in care at the former Lake Alice Child and Adolescent Unit and, briefly, Lachlan Kermode — a Research Fellow at the international human rights agency Forensic Architecture.
 
@@ -16,20 +16,21 @@ Multiple sources contribute to the project including:
 * Site plans and documents from [Te Rua Mahara o te Kāwanatanga Archives New Zealand](https://www.archives.govt.nz/)
 * Photogrammetry of images from [Te Rua Mahara o te Kāwanatanga Archives New Zealand](https://www.archives.govt.nz/) and [http://www.lakealicehospital.com/](http://www.lakealicehospital.com/)
 * The Road to Hell (Elizabeth Stanley, 21 August 2016)
-* Inquiry into the Lake Alice Child and Adolescent Unit Te Uiui o te Manga Tamariki me te Rangatahi ki Lake Alice https://www.abuseincare.org.nz/our-progress/reports/inquiry-into-the-lake-alice-child-and-adolescent-unit/ 2022
-* Beautiful Children Te Uiui o te Manga Tamariki me te Rangatahi ki Lake Alice Inquiry into the Lake Alice Child and Adolescent Unit [Full Lake Alice Report at 15 Dec 2022 (PDF)](https://www.abuseincare.org.nz/assets/Document-Library/Redacted-Lake-Alice-Report.pdf) 2022
+* [Inquiry into the Lake Alice Child and Adolescent Unit Te Uiui o te Manga Tamariki me te Rangatahi ki Lake Alice](https://www.abuseincare.org.nz/our-progress/reports/inquiry-into-the-lake-alice-child-and-adolescent-unit)
+* Beautiful Children Te Uiui o te Manga Tamariki me te Rangatahi ki Lake Alice Inquiry into the Lake Alice Child and Adolescent Unit [Full Lake Alice Report at 15 Dec 2022 (PDF)](https://www.abuseincare.org.nz/assets/Document-Library/Redacted-Lake-Alice-Report.pdf) (as a criminal trial is in progress the final report has been temporarily redacted)
 * investigative journalism by Aaron Smale and Mike Wesley Smith
 
 ## Thanks
 
-* Pat McNair - CLAN Aotearoa/New Zealand
+* Pat McNair - CLAN Aotearoa New Zealand
 * Elizabeth Stanley - Acting Head, School of Social and Cultural Studies, Victoria University of Wellington
 * Mike Ferriss - Citizens Commission on Human Rights (CCHR) 
 * Trisha, Tinnie, Del-Ray, Dana, Luana, Nebs, Rachel Campbell and Lizzie Makalio
+* Dylan Owen
 
 ## Recognition
 
-Survivors' testimony will be available in full on the Abuse in Care Royal Commission of Inquiry website. As a criminal trial is in progress.
+Survivors' testimony will be available in full on the Abuse in Care Royal Commission of Inquiry website.
 
 Survivors and others who gave testimony to the Royal Commission include:
 
