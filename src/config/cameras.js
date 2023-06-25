@@ -223,8 +223,8 @@ const cameras = {
     near: 10,
     far: fars.site
   },
-  angled: {
-    name: 'default',
+  siteAngled: {
+    name: 'siteAngled',
     position: [0, 600, 400],
     rotation: [-0.8726646, 0, 0],
     aspect: size,
