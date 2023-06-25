@@ -1,5 +1,6 @@
 const fars = { site: 3000, building: 100 }
 const nears = { site: 1000, building: 10 }
+const size = { width: window.innerWidth, height: window.innerHeight }
 
 const cameras = {
   staffHousingSingle: {
@@ -157,8 +158,6 @@ const cameras = {
     near: 0.1,
     far: 1000
   },
-
-  twelveBedVillaGirls: {},
   singleStaffVillas: {
     name: 'singleStaffVillas',
     position: [138.8545684814453, 44.5850715637207, 168.08799743652344],
@@ -217,19 +216,19 @@ const cameras = {
   },
   default: {
     name: 'default',
-    position: [160, 460, -220],
+    position: [160, 480, -220],
     rotation: [-1.7, 0, 0],
-    aspect: 1.7777777777777777,
-    fov: 75,
+    aspect: size,
+    fov: 80,
     near: 10,
     far: fars.site
   },
-  siteCamera: {
-    name: 'siteCamera',
+  angled: {
+    name: 'default',
     position: [0, 600, 400],
     rotation: [-0.8726646, 0, 0],
-    aspect: 1.7777777777777777,
-    fov: 75,
+    aspect: size,
+    fov: 80,
     near: 10,
     far: fars.site
   },

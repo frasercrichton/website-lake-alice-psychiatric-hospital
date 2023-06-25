@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber'
+import cameras from '../config/cameras.js'
 import gsap from 'gsap'
 
 // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
-
 // https://attackingpixels.com/tips-tricks-optimizing-three-js-performance/
 // let FOV
 // let FAR
@@ -28,22 +28,6 @@ import gsap from 'gsap'
 const euler = new THREE.Euler(0, 0, 0, 'XYZ')
 const toQuaternion = new THREE.Quaternion()
 const fromQuaternion = new THREE.Quaternion()
-const size = { width: window.innerWidth, height: window.innerHeight }
-// A default perspective camera: fov: 75, near: 0.1, far: 1000, z: 5, lookAt: [0,0,0]
-const defaultCameraConfig = {
-  name: 'default',
-  position: [0, 600, 400],
-  rotation: [-0.8726646, 0, 0],
-  aspect: size.height / size.width,
-  fov: 80,
-  near: 10,
-  far: 1000, //TODO make smaller
-  focus: 2
-  // aspect: 1.7777777777777777,
-  // fov: 39.76070325000613,
-  // near: 10,
-  // far: 10000
-}
 
 const Camera = ({ pageCamera }) => {
   const cameraGroup = useRef()
@@ -66,9 +50,9 @@ const Camera = ({ pageCamera }) => {
     return toQuaternion
   }
 
-  const fov = pageCamera ? pageCamera.fov : defaultCameraConfig.fov
-  const near = pageCamera ? pageCamera.near : defaultCameraConfig.near
-  const far = pageCamera ? pageCamera.far : defaultCameraConfig.far
+  const fov = pageCamera ? pageCamera.fov : cameras.default.fov
+  const near = pageCamera ? pageCamera.near : cameras.default.near
+  const far = pageCamera ? pageCamera.far : cameras.default.far
 
   let alpha = 0
   useFrame((state, delta) => {
@@ -102,15 +86,16 @@ const Camera = ({ pageCamera }) => {
   }, [pageCamera, clock, currentCamera])
 
   return (
-    <group ref={cameraGroup} position={defaultCameraConfig.position}>
+    <group ref={cameraGroup} position={cameras.default.position}>
       <PerspectiveCamera
         makeDefault
         name='default'
-        rotation={defaultCameraConfig.rotation}
-        aspect={defaultCameraConfig.aspect}
+        rotation={cameras.default.rotation}
+        aspect={cameras.default.aspect}
         fov={fov}
         near={near}
         far={far}
+        // focus={2}
       />
     </group>
   )

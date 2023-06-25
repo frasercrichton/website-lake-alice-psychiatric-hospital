@@ -1311,7 +1311,7 @@ const data = {
           }
         ],
         view: '3d',
-        camera: cameras.sitePlan
+        camera: cameras.default
       },
       {
         id: 'context-4',
@@ -1939,7 +1939,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-12',
@@ -1951,7 +1951,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-13',
@@ -1963,7 +1963,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-14',
@@ -1975,7 +1975,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-15',
@@ -1987,7 +1987,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-16',
@@ -1999,7 +1999,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       },
       {
         id: 'pathways-17',
@@ -2011,7 +2011,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        camera: { ...cameras.default, isRotating: true }
       }
     ]
   },

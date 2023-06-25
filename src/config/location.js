@@ -85,7 +85,7 @@ const location = {
     }
   },
   lakeAliceSite: {
-    zoom: 17.0,
+    zoom: 17.5,
     centre: {
       latitude: -40.1261,
       longitude: 175.33743
