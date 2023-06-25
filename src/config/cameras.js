@@ -39,6 +39,15 @@ const cameras = {
     near: 0.1,
     far: 3048
   },
+  disturbedPatientsVilla: {
+    name: 'disturbedPatientsVilla',
+    position: [19.928375244140625, 42.48586654663086, -303.12908935546875],
+    rotation: [-2.213136465964757, 1.1657827872366138, 2.254090363457764],
+    aspect: 1.7777777777777777,
+    fov: 39.76070325000613,
+    near: 0.10000000149011612,
+    far: 3048
+  },
   boysVilla: {
     name: 'boysVilla',
     position: [120.17782592773438, 6.7427144050598145, -243.90260314941406],
