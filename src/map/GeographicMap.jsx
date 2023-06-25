@@ -27,7 +27,7 @@ const createLatLng = item => new LatLng(item[0], item[1])
 
 const GeographicMap = ({ visibleMapLayers, map }) => {
   const { bounds, zoom } = mapDisplay
-
+  
   const defaultBounds = new LatLngBounds(
     createLatLng(bounds.southWest),
     createLatLng(bounds.northEast)

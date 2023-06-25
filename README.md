@@ -1,9 +1,14 @@
 # Website Lake Alice Psychiatric Hospital
 
-
 [![Cover image](./documentation/images/Screenshot%202023-06-01%20at%2012.35.58%20PM.png)](./documentation/images/Screenshot%202023-06-01%20at%2012.35.58%20PM.png)
 
+The project uses 3D Blender models and three.js.
+
 [![Cover image](./documentation/images/Screenshot%202023-06-01%20at%2012.35.41%20PM.png)](./documentation/images/Screenshot%202023-06-01%20at%2012.35.58%20PM.png)
+
+## Technical
+
+Scrolly-telling framework used:
 
 https://github.com/jsonkao/react-scrollama
 
@@ -19,7 +24,7 @@ A chapter is a discrete section of content made up of pages, for example: Introd
 
 A page defines both scrolling text content and the background content with options for 3D model camera views, maps, images or text content.
 
-## Technical
+## Running
 
 In the project directory, you can run:
 

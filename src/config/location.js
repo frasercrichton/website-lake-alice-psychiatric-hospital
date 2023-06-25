@@ -85,15 +85,20 @@ const location = {
     }
   },
   lakeAliceSite: {
-    zoom: 17.0,
+    zoom: 17.5,
     centre: {
       latitude: -40.1261,
       longitude: 175.33743
     },
+    // bounds: {
+    //   southWest: [-40.19096, 175.29079],
+    //   northEast: [-40.05852, 175.45207]
+    // }
     bounds: {
-      southWest: [-40.19096, 175.29079],
-      northEast: [-40.05852, 175.45207]
+      southWest: [-40.128745, 175.33124],
+      northEast: [-40.123741, 175.342489]
     }
   }
 }
+
 export default location
