@@ -94,20 +94,20 @@ const cameras = {
   },
   cellCamera: {
     name: 'CellCamera',
-    position: [86.12178039550781, 4.552443981170654, -290.54888916015625],
+    position: [86.12178039550781, 5.552443981170654, -290.54888916015625],
     rotation: [-0.482578629102942, 0.7422889927286265, 0.34036439276294767],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.1,
+    near: 0.10000000149011612,
     far: 1000
   },
   dayRoomBoysVilla: {
-    name: 'boysDayRoomVilla',
-    position: [60.64279556274414, 3.7494311332702637, -365.0039367675781],
-    rotation: [3.0446525351872, 0.8633121703037142, -3.0677820746194904],
+    name: 'MalcolmVilla',
+    position: [133.61831665039062, 2.6923305988311768, -337.0742492675781],
+    rotation: [-3.13337005933913, 0.558629386369739, 3.137234401876895],
     aspect: 1.7777777777777777,
-    fov: 39.76070325000613,
-    near: 0.1,
+    fov: 22.89519204617112,
+    near: 0.10000000149011612,
     far: 1000
   },
   doctorsVillas: {
@@ -168,7 +168,7 @@ const cameras = {
     near: 0.1,
     far: 1000
   },
-  twelveBedVillaImage: {
+  elevenBedVillaImage: {
     name: 'twelveBedVillaImage',
     position: [87.67674255371094, 6.449056148529053, -336.97576904296875],
     rotation: [-3.0367693081017912, -1.0550672386576285, -3.050322145786049],
@@ -177,7 +177,7 @@ const cameras = {
     near: 0.1,
     far: 1000
   },
-  twelveBedVillaAbove: {
+  elevenBedVillaAbove: {
     name: 'ElevenBedVillaCamera010',
     position: [254.4232940673828, 31.82072830200195, -290.8634948730469],
     rotation: [
@@ -188,13 +188,22 @@ const cameras = {
     near: 0.1,
     far: fars.building
   },
-  twelveBedVillasWide: {
+  elevenBedVillasWide: {
     name: 'twelveBedVillasWide',
     position: [312.54022216796875, 24.06130599975586, -331.59326171875],
     rotation: [-2.892491745565581, 1.0051282948218239, 2.9300868773631823],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
     near: 0.1,
+    far: 1000
+  },
+  elevenBedVillaII: {
+    name: 'elevenBedVillasII',
+    position: [110.64131927490234, 3.5452535152435303, -281.40679931640625],
+    rotation: [3.1314395908787995, -0.8029151403813032, 3.1342954446118556],
+    aspect: 1.7777777777777777,
+    fov: 39.76070325000613,
+    near: 0.10000000149011612,
     far: 1000
   },
   sitePlan: {

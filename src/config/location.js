@@ -1,29 +1,15 @@
 const location = {
-  hubLocation: {
-    zoom: 9.5,
+  national: {
+    zoom: 6,
     centre: {
-      latitude: -40.28187,
-      longitude: 175.24732
+      latitude: -40.7670087,
+      longitude: 173.4506545
     },
-
-    // {lng: 175.24732, lat: -40.28187}
     bounds: {
-      southWest: [-40.692093, 173.9328],
-      northEast: [-39.821194, 176.009216]
+      southWest: [-45.59589790007943, 157.09106084377453],
+      northEast: [-35.574503782518356, 189.78093879433226]
     }
   },
-
-  // {lng: 174.75841, lat: -36.88588}
-  // [174.45889, -37.15314, 175.05871, -36.71825]
-  auckland: {
-    zoom: 9.83,
-    centre: { longitude: 174.7574, latitude: -36.88183 },
-    bounds: {
-      southWest: [-37.15314, 174.45889],
-      northEast: [-36.71825, 175.05871]
-    }
-  },
-
   northIsland: {
     zoom: 7,
     centre: {
@@ -46,22 +32,6 @@ const location = {
       northEast: [-40.31135, 175.25421]
     }
   },
-
-  // {lng: 170.80368, lat: -43.70685}
-  // [165.86028, -48.02951, 175.25421, -40.31135]
-
-  national: {
-    zoom: 6,
-    centre: {
-      latitude: -40.7670087,
-      longitude: 173.4506545
-    },
-    bounds: {
-      southWest: [-45.59589790007943, 157.09106084377453],
-      northEast: [-35.574503782518356, 189.78093879433226]
-    }
-  },
-
   australia: {
     zoom: 5,
     centre: {
@@ -73,11 +43,27 @@ const location = {
       northEast: [-6.620957, 192.963867]
     }
   },
-
-  lakeAliceLocal: {
-    zoom: 12.5,
-
-    // [175.33743, -40.12610]
+  auckland: {
+    zoom: 9.83,
+    centre: { longitude: 174.7574, latitude: -36.88183 },
+    bounds: {
+      southWest: [-37.15314, 174.45889],
+      northEast: [-36.71825, 175.05871]
+    }
+  },
+  hubLocation: {
+    zoom: 9.5,
+    centre: {
+      latitude: -40.28187,
+      longitude: 175.24732
+    },
+    bounds: {
+      southWest: [-40.692093, 173.9328],
+      northEast: [-39.821194, 176.009216]
+    }
+  },
+  lakeAliceMediumLocal: {
+    zoom: 8.0,
     centre: {
       latitude: -40.1261,
       longitude: 175.33743
@@ -87,10 +73,19 @@ const location = {
       northEast: [-40.05852, 175.45207]
     }
   },
-  lakeAliceMediumLocal: {
-    zoom: 8.0,
-
-    // [175.33743, -40.12610]
+  lakeAliceLocal: {
+    zoom: 12.5,
+    centre: {
+      latitude: -40.1261,
+      longitude: 175.33743
+    },
+    bounds: {
+      southWest: [-40.19096, 175.29079],
+      northEast: [-40.05852, 175.45207]
+    }
+  },
+  lakeAliceSite: {
+    zoom: 17.0,
     centre: {
       latitude: -40.1261,
       longitude: 175.33743
@@ -102,5 +97,3 @@ const location = {
   }
 }
 export default location
-
-// [[-40.19096, 175.29079],[-40.05852, 175.45207]]

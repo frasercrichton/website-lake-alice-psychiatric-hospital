@@ -62,7 +62,7 @@ const staticMaterials = {
   }),
   'interior-walls': new THREE.MeshStandardMaterial({
     name: 'interior-walls',
-    color: '#ffffff',
+    color: '#6F7378',
     side: THREE.DoubleSide,
     flatShading: true,
     roughness: 0.4000000059604645

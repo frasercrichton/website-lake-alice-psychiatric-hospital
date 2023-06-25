@@ -219,7 +219,7 @@ const data = {
         text: {
           header: 'Family',
           content:
-            "Malcolm grew up in Hastings, Heretaunga. His family life was difficult. Both his parents were physically abusive. Malcolm's behaviour at home became disruptive and was exacerbated by being sexually abused by his teacher. This ultimately led to an incident where Malcolm assaulted his father following a domestic violence assault on Malcolm's mother. After the assault, Malcolm's mum took him to see a psychiatrist at Hastings Hospital.",
+            "Malcolm grew up in Heretaunga Hastings. His family life was difficult. Both his parents were physically abusive. Malcolm's behaviour at home became disruptive and was exacerbated by being sexually abused by his teacher. This ultimately led to an incident where Malcolm assaulted his father following a domestic violence assault on Malcolm's mother. After the assault, Malcolm's mum took him to see a psychiatrist at Hastings Hospital.",
           style: 'scrolling'
         },
         view: 'map',
@@ -293,7 +293,7 @@ const data = {
         camera: cameras.boysVillaRearCamera001
       },
       {
-        id: 'malcolm-5',
+        id: 'malcolm-6',
         text: {
           header: 'First night',
           content:
@@ -301,13 +301,18 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
+        disable: [
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
+        ],
         camera: {
           ...cameras.boysVillaAbove
         }
       },
-
       {
-        id: 'malcolm-6',
+        id: 'malcolm-7',
         image: {
           src: '/images/fc-20210621-00007-Scan 1.jpg',
           caption:
@@ -316,23 +321,33 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
+        disable: [
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
+        ],
         camera: {
           ...cameras.boysVillaAbove
         }
       },
-
       {
-        id: 'malcolm-7',
+        id: 'malcolm-8',
         content:
           "The boy's unit comprised of a kitchen, dinning room, day room and upstairs a dormitory and four secure solitary confinement cells. The unit housed x number of boys at that time.",
         view: '3d',
+        disable: [
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
+        ],
         camera: {
           ...cameras.boysVillaAbove
         }
       },
-
       {
-        id: 'malcolm-8',
+        id: 'malcolm-9',
         text: {
           header: 'A Typical day',
           content:
@@ -344,13 +359,12 @@ const data = {
           ...cameras.dayRoomBoysVilla
         }
       },
-
       {
-        id: 'malcolm-9',
+        id: 'malcolm-10',
         text: {
-          header: 'ECT',
+          header: 'ECT - Villa',
           content:
-            "Electroconvulsive therapy (ECT) was used at Lake Alice in two ways. Modified ECT where patients were anaesthetised prior to being treated and un-modified ECT with no anaesthetic. Un-modified ECT was introduced as an aversion therapy by Leeks in 1972. Controversial even at the time aversion therapy was a punishment reward system that was used ‘treat’ addiction, homosexuality, trans-people. At Lake Alice un-modified ECT's use was far removed from any form of therapy. ECT was used as an arbitrary punishment.",
+            "Malcolm recalled being given ECT in a ward in the Disturbed Patient's Villa.",
           style: 'scrolling'
         },
         labels: [
@@ -360,10 +374,12 @@ const data = {
           }
         ],
         view: '3d',
-        camera: { ...cameras.adultVilla }
+        camera: {
+          ...cameras.adultVilla
+        }
       },
       {
-        id: 'malcolm-10',
+        id: 'malcolm-11',
         image: {
           src: '/images/fc-20210828-00008-FL59130374(1).jpg',
           caption:
@@ -371,15 +387,20 @@ const data = {
           author:
             'Archives New Zealand Te Rua Mahara o te Kāwanatanga, Wellington',
           recordID: 'R23378991',
-
           URL: 'https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE59119710',
           style: 'scrolling'
         },
         view: '3d',
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Disturbed Patient's Villa"
+          }
+        ],
         camera: { ...cameras.adultVilla }
       },
       {
-        id: 'malcolm-11',
+        id: 'malcolm-12',
         text: {
           header: 'ECT - Villa',
           content:
@@ -398,7 +419,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-12',
+        id: 'malcolm-13',
         image: {
           src: '/images/fc-20210619-00006-Scan 2.jpg ',
           caption:
@@ -407,12 +428,18 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Disturbed Patient's Villa"
+          }
+        ],
         camera: {
           ...cameras.adultVilla
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-14',
         text: {
           header: 'ECT Ward',
           content:
@@ -420,12 +447,18 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
+        labels: [
+          {
+            id: 'Villa15',
+            label: "Disturbed Patient's Villa"
+          }
+        ],
         camera: {
           ...cameras.adultVilla
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-15',
         text: {
           header: 'Escape',
           content:
@@ -441,7 +474,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-16',
         text: {
           header: 'Closest Towns',
           content:
@@ -471,23 +504,40 @@ const data = {
         }
       },
       {
-        id: 'malcolm-13',
+        id: 'malcolm-17',
         text: {
           header: 'Escape',
-          content:
-            "Malcolm didn't get far before he was caught. He was thrown into a solitary secure cell back in the boys' unit.",
+          content: "Malcolm didn't get far before he was caught.",
           style: 'scrolling'
         },
         disable: [
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
-          'ChildrensVillaRoof_2'
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
         ],
         view: '3d',
         camera: { ...cameras.boysVillaAboveAngle }
       },
       {
-        id: 'malcolm-14',
+        id: 'malcolm-17',
+        text: {
+          header: 'Escape',
+          content:
+            "He was thrown into a solitary secure cell back in the boys' unit.",
+          style: 'scrolling'
+        },
+        disable: [
+          'ChildrensVillaRoof',
+          'ChildrensVillaRoof_1',
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
+        ],
+        view: '3d',
+        camera: { ...cameras.dormitoryVilla }
+      },
+      {
+        id: 'malcolm-18',
         text: {
           header: 'Consequences',
           content:
@@ -497,14 +547,15 @@ const data = {
         disable: [
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
-          'ChildrensVillaRoof_2'
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
         ],
         view: '3d',
-        camera: { ...cameras.dormitoryVilla }
+        camera: { ...cameras.cellCamera }
       },
 
       {
-        id: 'malcolm-16',
+        id: 'malcolm-19',
         text: {
           header: 'Afterwards',
           content:
@@ -514,17 +565,18 @@ const data = {
         disable: [
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
-          'ChildrensVillaRoof_2'
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
         ],
         view: '3d',
         camera: { ...cameras.cellCamera }
       },
       {
-        id: 'malcolm-17',
+        id: 'malcolm-20',
         text: {
           header: 'Runaway',
           content:
-            "Not long after this, Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after Christmas he ran away and this time wasn't caught.",
+            "Not long after this, Malcolm was sent home for Christmas. Knowing he would be sent back to Lake Alice after the holidays he ran away and this time wasn't caught.",
           style: 'scrolling'
         },
         view: 'map',
@@ -545,7 +597,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-17',
+        id: 'malcolm-21',
         text: {
           header: 'Waipawa',
           content:
@@ -570,7 +622,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-18',
+        id: 'malcolm-22',
         text: {
           header: 'Waipukurau',
           content:
@@ -599,7 +651,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-19',
+        id: 'malcolm-23',
         text: {
           header: '12 - Runaway',
           content:
@@ -632,9 +684,9 @@ const data = {
         }
       },
       {
-        id: 'malcolm-20',
+        id: 'malcolm-24',
         text: {
-          header: '12 - Napier',
+          header: 'Napier',
           content:
             'His next move was to Napier where he worked in a factory. Napier was also the first place where Malcolm reported his experience at Lake Alice to the police.',
           style: 'scrolling'
@@ -669,7 +721,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-21',
+        id: 'malcolm-25',
         text: {
           header: 'Whakapirau Welsford',
           content:
@@ -700,7 +752,7 @@ const data = {
                   longitude: 176.7985016
                 },
                 {
-                  label: 'Welsford',
+                  label: 'Whakapirau Welsford',
                   latitude: -36.2858116,
                   longitude: 174.4447237
                 }
@@ -710,7 +762,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-22',
+        id: 'malcolm-26',
         text: {
           header: 'Kaiwaka',
           content: 'From Welsford to Kaiwaka and worked on a dairy farm.',
@@ -754,9 +806,9 @@ const data = {
         }
       },
       {
-        id: 'malcolm-23',
+        id: 'malcolm-27',
         text: {
-          header: '12 - Runaway',
+          header: 'Runaway',
           content:
             'Moved to the North Shore at Tāmaki Makaurau Auckland and worked drain laying.',
           style: 'scrolling'
@@ -803,7 +855,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-24',
+        id: 'malcolm-28',
         text: {
           header: 'Connolly Mental Health Unit',
           content:
@@ -857,7 +909,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-25',
+        id: 'malcolm-29',
         text: {
           header: 'South Auckland',
           content: "In South Auckland, Malcolm found work in a butcher's shop.",
@@ -913,7 +965,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-26',
+        id: 'malcolm-30',
         text: {
           header: 'Napier',
           content:
@@ -974,7 +1026,7 @@ const data = {
         }
       },
       {
-        id: 'malcolm-27',
+        id: 'malcolm-31',
         text: {
           header: 'Heretaunga Hastings',
           content:
@@ -1039,11 +1091,11 @@ const data = {
         }
       },
       {
-        id: 'malcolm-27',
+        id: 'malcolm-32',
         text: {
           header: 'Afterwards',
           content:
-            'After escaping on a home trip, it was four years before Malcolm reported his abuse to the police. “They told me, ‘No way would any of that stuff happen in New Zealand. You are just making this up.’” The police threatened to arrest him for wasting police time.',
+            'Four years after his escape, Malcolm reported his abuse to the police. “They told me, ‘No way would any of that stuff happen in New Zealand. You are just making this up.’” The police threatened to arrest him for wasting police time.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1104,18 +1156,22 @@ const data = {
         }
       },
       {
-        id: 'malcolm-27',
+        id: 'malcolm-33',
         text: {
           header: 'Malcolm today',
           content:
             'Today, in 2023, Malcolm still suffers from PTSD and physical symptoms from his time in Lake Alice. Malcolm was almost broken by a system that should have been there for his care and protection. Instead, Malcolm is among a small group of survivors - women, men, trans, Māori, Pasifika, Pākehā, disabled and able-bodied - who have fought for accountability and redress for more than fifty years. Their struggle for justice against the state is also a struggle for tamariki who were broken by Lake Alice.',
           style: 'scrolling'
         },
-        view: '3d',
-        camera: { ...cameras.default }
+        // view: '3d',
+        // camera: { ...cameras.default }
+        image: {
+          src: '/images/fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg',
+          style: 'static'
+        }
       },
       {
-        id: 'malcolm-12',
+        id: 'malcolm-34',
         image: {
           src: '/images/fc-20211021-00004-FC22100_FC22100-R5-E110-web-2.jpg',
           caption: 'Malcolm Richards, 2019 Heretaunga',
@@ -1152,7 +1208,7 @@ const data = {
         }
       },
       {
-        id: 'context-3',
+        id: 'context-1',
         text: {
           header: 'Adult Psychiatric Facility',
           content:
@@ -1169,36 +1225,17 @@ const data = {
         }
       },
       {
-        id: 'context-4',
+        id: 'context-2',
         text: {
           content:
             'Located in rural farmland on Te Ika-a-Māui, the North Island, Lake Alice was a sprawling complex isolated from the world and particularly from oversight by health authorities.',
           style: 'scrolling'
         },
         view: 'map',
-        map: {
-          ...location.lakeAliceLocal,
-          visibleMapLayers: {
-            majorPoints: [lakeAliceLocation],
-            minorPoints: {
-              points: [
-                {
-                  label: 'Bulls',
-                  latitude: -40.1756233,
-                  longitude: 175.3815803
-                },
-                {
-                  label: 'Marton',
-                  latitude: -40.086845,
-                  longitude: 175.3722454
-                }
-              ]
-            }
-          }
-        }
+        map: location.lakeAliceSite
       },
       {
-        id: 'context-4',
+        id: 'context-3',
         text: {
           content:
             'The hospital operated as an entirely self-contained community where staff lived on-site with patients. With a farm, laundry, butchery, a community hall and latterly a school, the facility was self-sufficient and those living at Lake Alice had limited contact with the outside world.',
@@ -1274,7 +1311,7 @@ const data = {
           }
         ],
         view: '3d',
-        camera: { ...cameras.sitePlan }
+        camera: cameras.sitePlan
       },
       {
         id: 'context-4',
@@ -1286,65 +1323,15 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.twelveBedVillasWide }
+        camera: cameras.elevenBedVillasWide
       },
       {
         id: 'context-5',
-        text: {
-          header: 'Adult Psychiatric Facility',
-          content:
-            'From 1971, Dr Selwyn Leeks accepted responsibility as the psychiatric consultant for all patients at Lake Alice under the age of 17. Dr Sydney Pugmire remained the hospital’s medical superintendent. Leeks also worked at two other child health clinics, one in Whanganui and another at Palmerston North Hospital. Although never directly appointed, Leeks’ de facto role found him responsible for running Lake Alice’s Child and Adolescent Unit.',
-          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=70',
-          style: 'scrolling'
-        },
         view: '3d',
-        camera: { ...cameras.twelveBedVillasWide }
+        camera: cameras.elevenBedVillaImage
       },
       {
         id: 'context-6',
-        image: {
-          src: '/images/fc-20130307-00001-2013P_Pi293_006718.jpg',
-          style: 'scrolling',
-          caption:
-            'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
-          author: 'Stuff Limited',
-          date: 'August 12, 1975',
-          URL: 'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
-        },
-        view: '3d',
-        camera: cameras.twelveBedVillasWide
-      },
-      {
-        id: 'context-7',
-        view: '3d',
-        camera: { ...cameras.twelveBedVillasWide }
-      },
-      {
-        id: 'context-8',
-        text: {
-          header: "4 - 11-bed Villas - Children's unit",
-          content:
-            'In 1972, the Lake Alice Child and Adolescent Unit opened. Initially, it housed a small number of boys in an 11-bed villa which was known as Villa 10. A second 11-bed villa was added later in 1972 which was known as Villa 11.',
-          style: 'scrolling',
-          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=62'
-        },
-        view: '3d',
-        camera: { ...cameras.twelveBedVillaImage }
-      },
-      {
-        id: 'context-8',
-        text: {
-          header: "11-bed Villas - Children's unit",
-          content:
-            'The boys - and later girls - in the Child and Adolescent Unit were a mix of Pakeha, Māori and Pasifika. Many were referred to the Unit from state care institutions across Aotearoa.',
-          style: 'scrolling',
-          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=62'
-        },
-        view: '3d',
-        camera: { ...cameras.twelveBedVillaImage }
-      },
-      {
-        id: 'context-9',
         image: {
           src: '/images/fc-20230321-00001-R26288977-0001.jpg',
           caption: 'The original eleven bed villas',
@@ -1357,22 +1344,22 @@ const data = {
         },
 
         view: '3d',
-        camera: { ...cameras.twelveBedVillaImage }
+        camera: { ...cameras.elevenBedVillaImage }
       },
       {
-        id: 'context-10',
+        id: 'context-7',
         view: '3d',
-        camera: { ...cameras.twelveBedVillaImage }
+        camera: cameras.elevenBedVillaImage
       },
       {
-        id: 'context-11',
+        id: 'context-8',
         view: '3d',
         camera: {
-          ...cameras.twelveBedVillaAbove
+          ...cameras.elevenBedVillaAbove
         }
       },
       {
-        id: 'context-12',
+        id: 'context-9',
         text: {
           header: 'Eleven Bed Villa Top Floor',
           content:
@@ -1383,11 +1370,11 @@ const data = {
         view: '3d',
         disable: ['ElevenBedVillaRoof020_20', 'ElevenBedVillaRoof020_21'],
         camera: {
-          ...cameras.twelveBedVillaAbove
+          ...cameras.elevenBedVillaAbove
         }
       },
       {
-        id: 'context-13',
+        id: 'context-10',
         text: {
           header: 'Eleven Bed Villa Ground Floor',
           content:
@@ -1406,11 +1393,71 @@ const data = {
           'ElevenBedVillaFirstFloor020_4'
         ],
         camera: {
-          ...cameras.twelveBedVillaAbove
+          ...cameras.elevenBedVillaAbove
         }
       },
       {
+        id: 'context-11',
+        image: {
+          src: '/images/fc-20130307-00001-2013P_Pi293_006718.jpg',
+          style: 'scrolling',
+          caption:
+            'Dr Selwyn Robert Leeks, Director of the Manawaroa Centre for Psychological Medicine',
+          author: 'Stuff Limited',
+          date: 'August 12, 1975',
+          URL: 'https://manawatuheritage.pncc.govt.nz/item/b4f42c5b-15c9-4425-98ce-992873e5525f#tab-item-description'
+        },
+        view: '3d',
+        camera: cameras.elevenBedVillasWide
+      },
+      {
+        id: 'context-12',
+        text: {
+          header: 'Adult Psychiatric Facility',
+          content:
+            'From 1971, Dr Selwyn Leeks accepted responsibility as the psychiatric consultant for all patients at Lake Alice under the age of 17. Dr Sydney Pugmire remained the hospital’s medical superintendent. Leeks also worked at two other child health clinics, one in Whanganui and another at Palmerston North Hospital.',
+          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=70',
+          style: 'scrolling'
+        },
+        view: '3d',
+        camera: { ...cameras.elevenBedVillasWide }
+      },
+      {
+        id: 'context-13',
+        view: '3d',
+        camera: { ...cameras.elevenBedVillasWide }
+      },
+      {
         id: 'context-14',
+        text: {
+          header: "11-bed Villas - Children's unit",
+          content:
+            'In 1972, the Lake Alice Child and Adolescent Unit opened. Initially, it housed a small number of boys in an 11-bed villa which was known as Villa 10. A second 11-bed villa was added later in 1972 which was known as Villa 11.  Although never directly appointed, Leeks’ de facto role found him responsible for running the Unit.',
+          style: 'scrolling',
+          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=62'
+        },
+        view: '3d',
+        camera: cameras.elevenBedVillaII
+      },
+      {
+        id: 'context-15',
+        text: {
+          header: "11-bed Villas - Children's unit",
+          content:
+            'The boys - and later girls - in the Child and Adolescent Unit were a mix of Pakeha, Māori and Pasifika. Many were referred to the Unit from state care institutions across Aotearoa.',
+          style: 'scrolling',
+          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=62'
+        },
+        view: '3d',
+        camera: { ...cameras.elevenBedVillaII }
+      },
+      {
+        id: 'context-16',
+        view: '3d',
+        camera: { ...cameras.elevenBedVillaII }
+      },
+      {
+        id: 'context-17',
         text: {
           header: '6 - Girls Unit',
           content:
@@ -1419,22 +1466,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          name: 'cam 2',
-          position: [
-            149.15101623535156, 11.380169868469238, -236.31446838378906
-          ],
-          rotation: [
-            -0.23121113940855711, 0.536190233484002, 0.11427681276845893
-          ],
-          aspect: 1.7777777777777777,
-          fov: 39.76070325000613,
-          near: 0.10000000149011612,
-          far: 1000
-        }
+        camera: { ...cameras.girlsVilla }
       },
       {
-        id: 'context-15',
+        id: 'context-18',
         text: {
           content:
             'As the number of children in the Child and Adolescent Unit grew, the use of the 11-bed villas was superseded. In 1975, the boys were transferred to a dedicated 36-bed villa known as Villa 7.',
@@ -1445,7 +1480,7 @@ const data = {
         camera: { ...cameras.boysVilla }
       },
       {
-        id: 'context-16',
+        id: 'context-19',
         text: {
           header: 'Roof',
           content: 'The plans for the 36-bed villa were drawn up in 1944.',
@@ -1459,7 +1494,7 @@ const data = {
         }
       },
       {
-        id: 'context-17',
+        id: 'context-20',
         text: {
           header: 'Top Floor',
           content:
@@ -1472,14 +1507,15 @@ const data = {
         disable: [
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
-          'ChildrensVillaRoof_2'
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
         ],
         camera: {
           ...cameras.boysVillaAbove
         }
       },
       {
-        id: 'context-18',
+        id: 'context-21',
         text: {
           header: 'Ground Floor',
           content:
@@ -1499,15 +1535,15 @@ const data = {
           'ChildrensVillaFirstFloor_6',
           'ChildrensVillaRoof',
           'ChildrensVillaRoof_1',
-          'ChildrensVillaRoof_2'
+          'ChildrensVillaRoof_2',
+          'ChildrensVillaRoof_3'
         ],
         camera: {
           ...cameras.boysVillaAbove
         }
       },
-
       {
-        id: 'context-19',
+        id: 'context-22',
         text: {
           header: 'Maximum Security Villa',
           content:
@@ -1519,7 +1555,7 @@ const data = {
         camera: { ...cameras.maximumSecurity }
       },
       {
-        id: 'context-20',
+        id: 'context-23',
         image: {
           src: '/images/fc-20230314-00003-R26288153-0001.jpg',
           caption:
@@ -1536,12 +1572,12 @@ const data = {
         camera: { ...cameras.maximumSecurityClose }
       },
       {
-        id: 'context-21',
+        id: 'context-24',
         view: '3d',
         camera: { ...cameras.maximumSecurityClose }
       },
       {
-        id: 'context-22',
+        id: 'context-25',
         text: {
           header: 'Staff on Site - I',
           content:
@@ -1560,7 +1596,7 @@ const data = {
         }
       },
       {
-        id: 'context-25',
+        id: 'context-26',
         text: {
           header: 'Staff on Site - II',
           content: 'Single staff were housed at the south of the site.',
@@ -1578,7 +1614,7 @@ const data = {
         }
       },
       {
-        id: 'context-25',
+        id: 'context-27',
         text: {
           header: 'Staff on Site - III',
           content: 'Staff were housed at the north east of the site.',
@@ -1596,7 +1632,7 @@ const data = {
         }
       },
       {
-        id: 'context-26',
+        id: 'context-28',
         text: {
           header: '7 - Adults and Children',
           content:
@@ -1608,27 +1644,21 @@ const data = {
         camera: { ...cameras.boysVillaRearCamera }
       },
       {
-        id: 'context-27',
+        id: 'context-29',
         text: {
           header: '9 - Torture',
           content:
-            "Dr Leeks introduced 'aversion therapy' to the unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
+            "Dr Leeks introduced 'aversion therapy' to the Lake Alice Child and Adolescent Unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=83',
           style: 'scrolling'
         },
-        labels: [
-          {
-            id: 'Villa15',
-            label: "Disturbed Patients' Villa"
-          }
-        ],
         view: '3d',
         camera: {
-          ...cameras.adultVilla
+          ...cameras.sitePlan
         }
       },
       {
-        id: 'context-27',
+        id: 'context-30',
         text: {
           header: 'ECT',
           content:
@@ -1636,19 +1666,13 @@ const data = {
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=84',
           style: 'scrolling'
         },
-        labels: [
-          {
-            id: 'Villa15',
-            label: "Disturbed Patients' Villa"
-          }
-        ],
         view: '3d',
         camera: {
-          ...cameras.adultVilla
+          ...cameras.sitePlan
         }
       },
       {
-        id: 'context-14',
+        id: 'context-31',
         image: {
           src: '/images/large_1980_1389.jpg',
           caption:
@@ -1658,10 +1682,10 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.adultVilla }
+        camera: { ...cameras.sitePlan }
       },
       {
-        id: 'context-27',
+        id: 'context-32',
         text: {
           header: 'Torture',
           content:
@@ -1669,19 +1693,13 @@ const data = {
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=86',
           style: 'scrolling'
         },
-        labels: [
-          {
-            id: 'Villa15',
-            label: "Disturbed Patients' Villa"
-          }
-        ],
         view: '3d',
         camera: {
-          ...cameras.adultVilla
+          ...cameras.sitePlan
         }
       },
       {
-        id: 'context-28',
+        id: 'context-33',
         text: {
           header: 'Demolition',
           content:
@@ -1691,7 +1709,7 @@ const data = {
         },
         view: '3d',
         camera: {
-          ...cameras.default
+          ...cameras.sitePlan
         }
       }
     ]
@@ -1703,8 +1721,8 @@ const data = {
         text: {
           content: 'Pathways'
         },
-        view: '3d',
-        camera: { ...cameras.default }
+        view: 'map',
+        map: location.lakeAliceSite
       },
       {
         id: 'pathways-1',
@@ -1714,42 +1732,9 @@ const data = {
           source: 'documents/Abuse-in-Care-Volume-One.pdf#14',
           style: 'scrolling'
         },
-        view: '3d',
-        camera: { ...cameras.default }
+        view: 'map',
+        map: location.lakeAliceSite
       },
-      // {
-      //   id: 'pathways-7',
-      //   text: {
-      //     header: '4 - State Residences',
-      //     content:
-      //       'Children in the the State care system were often transferred between residences. The system operated as a network with Lake Alice used as a final destination for the children how caused most trouble rebelling against abuse in the system imposed on them. By 1976, Lake Alice was receiving children from all over the country.',
-      //     source: 'documents/Redacted-Lake-Alice-Report.pdf#page=70',
-      //     style: 'scrolling'
-      //   },
-      //   view: 'map-animated',
-      //   map: {
-      //     ...locations.national,
-      //     visibleMapLayers: {
-      //       majorPoints: [
-      //         {
-      //           label: 'Lake Alice',
-      //           latitude: -40.1254336,
-      //           longitude: 175.3369864
-      //         }
-      //       ],
-      //       minorPoints:  [...stateCareFacilities]
-      //       ,
-      //       style: 'animated'
-      //     }
-      //   }
-      // },
-      // {
-      //   id: 'pathways-3',
-      //   view: 'map',
-      //   map: {
-      //               ...locations.national
-      //   }
-      // },
       {
         id: 'pathways-2',
         text: {
@@ -1849,7 +1834,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-6',
+        id: 'pathways-5',
         view: 'map-animated',
         map: {
           ...location.national,
@@ -1864,7 +1849,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-7',
+        id: 'pathways-6',
         text: {
           content:
             'Many children were referred from psychiatric and psychopaedic hospitals across Aotearoa. Child health clinics also referred children to Lake Alice including the child health clinic at Whanganui where Leeks worked. Whanganui was a major source of referrals by Leeks.',
@@ -1888,7 +1873,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-8',
+        id: 'pathways-7',
         view: 'map-animated',
         map: {
           ...location.auckland,
@@ -1903,7 +1888,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-9',
+        id: 'pathways-8',
         view: 'map-animated',
         map: {
           ...location.northIsland,
@@ -1918,7 +1903,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-10',
+        id: 'pathways-9',
         view: 'map-animated',
         map: {
           ...location.southIsland,
@@ -1933,7 +1918,7 @@ const data = {
         }
       },
       {
-        id: 'pathways-11',
+        id: 'pathways-10',
         text: {
           header: 'Home',
           content:
@@ -1941,8 +1926,8 @@ const data = {
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=66',
           style: 'scrolling'
         },
-        view: '3d',
-        camera: { ...cameras.siteCamera, isRotating: true }
+        view: 'map',
+        map: location.national
       },
       {
         id: 'pathways-11',
@@ -2005,7 +1990,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-15',
+        id: 'pathways-16',
         text: {
           header: 'Impact - Personal',
           content:
@@ -2017,7 +2002,7 @@ const data = {
         camera: { ...cameras.siteCamera, isRotating: true }
       },
       {
-        id: 'pathways-15',
+        id: 'pathways-17',
         text: {
           header: 'Impact - Community',
           content:
