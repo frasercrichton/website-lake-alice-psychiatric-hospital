@@ -68,14 +68,13 @@ const GeographicMap = ({ visibleMapLayers, map }) => {
           <a  target="_blank" rel="noreferrer" href="https://www.mapbox.com/">Mapbox</a>'
         />
         <>
+          <AnimateZoom
+            center={new LatLng(map.centre.latitude, map.centre.longitude)}
+            zoom={map.zoom}
+            bounds={activeBounds}
+          />
           {visibleMapLayers && (
             <>
-              <AnimateZoom
-                center={new LatLng(map.centre.latitude, map.centre.longitude)}
-                zoom={map.zoom}
-                bounds={activeBounds}
-              />
-
               {visibleMapLayers.lines && (
                 <Lines
                   target={visibleMapLayers.lines.target}
