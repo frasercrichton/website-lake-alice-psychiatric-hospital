@@ -186,15 +186,15 @@ const cameras = {
     far: 1000
   },
   elevenBedVillaAbove: {
-    name: 'ElevenBedVillaCamera010',
-    position: [254.4232940673828, 31.82072830200195, -290.8634948730469],
+    name: 'ElevenBedVillaCamera006',
+    position: [134.22805786132812, 31.036693572998047, -309.7185974121094],
     rotation: [
-      -1.5707962289753654, -7.330926976578667e-9, -0.17415773961651546
+      -1.5707962317244637, -7.330928308846296e-9, -0.17415777158324186
     ],
     aspect: 1.7777777777777777,
     fov: 39.76070325000613,
-    near: 0.1,
-    far: fars.building
+    near: 0.10000000149011612,
+    far: 1000
   },
   elevenBedVillasWide: {
     name: 'twelveBedVillasWide',

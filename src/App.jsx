@@ -19,7 +19,6 @@ import MobileCover from './layout/MobileView.jsx'
 // Config
 import headerNavUrls from './config/navigation.js'
 import chapters from './config/chapters.js'
-import Stats from 'stats.js'
 import AssetUrlHelper from './components/AssetUrlHelper.js'
 // state
 import useStaticPageStore from './state/staticPageStore.js'
@@ -29,12 +28,6 @@ const assetUrlHelper = new AssetUrlHelper()
 
 const hash = window.location.hash
 const isLevaHidden = hash !== '#debug'
-
-if (hash === '#debug') {
-  const stats = new Stats()
-  stats.showPanel(0)
-  document.body.appendChild(stats.dom)
-}
 
 function App () {
   // Page and chapter State
@@ -178,7 +171,7 @@ function App () {
   const textBoxContainerStyle = {
     position: 'fixed',
     justifyContent: 'center',
-    fontSize: '50px',
+    fontSize: '50px'
   }
 
   const textBoxStyle = {

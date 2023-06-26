@@ -3,7 +3,7 @@ import Label from './Label.jsx'
 const Labels = ({ empties, labels }) => {
   const getLabel = id => {
     const label = labels?.find(item => item.id === id)
-    return label === undefined ? undefined : label.label
+    return label ?? label.label
   }
 
   return empties.map(empty => {

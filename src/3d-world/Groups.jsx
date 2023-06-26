@@ -10,7 +10,7 @@ const Groups = ({ groups, labels }) => {
       <Mesh
         key={mesh.name}
         node={mesh}
-        material={mesh.disabledMaterial || mesh.material} // Interactive Transparency for villa floor plans
+        material={mesh.disabledMaterial ?? mesh.material} // Interactive Transparency for villa floor plans
         verticalOffset={verticalOffset}
         label={getLabel(mesh.name, labels)}
       />

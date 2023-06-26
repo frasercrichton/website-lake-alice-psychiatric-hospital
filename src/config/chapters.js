@@ -123,7 +123,7 @@ const data = {
         id: 'intro-8',
         text: {
           content:
-            'After civil cases were brought against the Crown, minimal compensation was paid to a group of 95 survivors in 2001. Legal fees swallowed up the majority of this payment.',
+            'After civil cases were brought against the Crown, minimal compensation was paid to a group of 95 survivors in 2001. Legal fees swallowed up over a third of this payment.',
           style: 'static'
         },
         view: '3d',
@@ -1228,7 +1228,7 @@ const data = {
         id: 'context-2',
         text: {
           content:
-            'Located in rural farmland on Te Ika-a-Māui, the North Island, Lake Alice was a sprawling complex isolated from the world and particularly from oversight by health authorities.',
+            'Located in rural farmland on Te Ika-a-Māui, the North Island, Lake Alice was a sprawling geographically isolated complex.',
           style: 'scrolling'
         },
         view: 'map',
@@ -1368,7 +1368,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ElevenBedVillaRoof020_20', 'ElevenBedVillaRoof020_21'],
+        disable: ['ElevenBedVillaRoof016_', 'ElevenBedVillaRoof016_1'],
         camera: {
           ...cameras.elevenBedVillaAbove
         }
@@ -1384,13 +1384,13 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof020_20',
-          'ElevenBedVillaRoof020_21',
-          'ElevenBedVillaFirstFloor020_',
-          'ElevenBedVillaFirstFloor020_1',
-          'ElevenBedVillaFirstFloor020_2',
-          'ElevenBedVillaFirstFloor020_3',
-          'ElevenBedVillaFirstFloor020_4'
+          'ElevenBedVillaRoof016_',
+          'ElevenBedVillaRoof016_1',
+          'ElevenBedVillaFirstFloor016_',
+          'ElevenBedVillaFirstFloor016_1',
+          'ElevenBedVillaFirstFloor016_2',
+          'ElevenBedVillaFirstFloor016_3',
+          'ElevenBedVillaFirstFloor016_4'
         ],
         camera: {
           ...cameras.elevenBedVillaAbove
@@ -1648,7 +1648,7 @@ const data = {
         text: {
           header: '9 - Torture',
           content:
-            "Dr Leeks introduced 'aversion therapy' to the Lake Alice Child and Adolescent Unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
+            "Dr Leeks introduced his own brand of 'aversion therapy' to the Lake Alice Child and Adolescent Unit in 1972. Controversial even at the time, aversion therapy was a punishment/reward system. It was used to ‘treat’  addiction or moderate 'deviant behaviour' (which included gay and transgender people).",
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=83',
           style: 'scrolling'
         },
@@ -2301,6 +2301,21 @@ const data = {
         text: {
           header: 'United Nations Committee Against Torture',
           content:
+            "In 1991 a Lake Alice survivor filed a complaint with the New Zealand Medical Council alleging that other boys at the Unit were encouraged by Leeks to administer shocks to him. The Medical Council did not uphold his complaint.",
+          style: 'scrolling',
+          source: 'documents/Redacted-Lake-Alice-Report.pdf#page=327'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-16',
+        decade: '1990',
+        text: {
+          header: 'United Nations Committee Against Torture',
+          content:
             "Under the United Nations Convention against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment, New Zealand is required to submit reports to the UN about compliance with the convention. In each of its reports to the UN in 1992, 1997 and 2002, the Crown made no mention of survivors’ complaints or the police investigations into Lake Alice. It wasn't until 2010 that the Crown acknowledged there was any 'improper treatment' at Lake Alice. Although New Zealand didn't ratify the Convention until 1989, the United Nations Committee against Torture (UNCAT) recognised that a prohibition against torture exists from the inception of the Universal Declaration of Human Rights.",
           style: 'scrolling',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=327'
@@ -2391,7 +2406,7 @@ const data = {
         text: {
           header: 'The Apology',
           content:
-            "On 7 October 2001, then prime minister Helen Clark and health minister Annette King made a qualified apology to each of the 95 Lake Alice Child and Adolescent Unit claimants for the abuse they suffered. The survivors' compensation was swallowed up by Cameron's legal fees and a second round of claimants received even less compensation.",
+            "On 7 October 2001, then prime minister Helen Clark and health minister Annette King made a qualified apology to each of the 95 Lake Alice Child and Adolescent Unit claimants for the abuse they suffered. Over a third of the survivors' compensation was swallowed up by Cameron's legal fees and a second round of claimants received even less compensation.",
           style: 'scrolling',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=285'
         },
@@ -2448,7 +2463,7 @@ const data = {
         text: {
           header: 'Grant Cameron passes files to the police',
           content:
-            'Back in Aotearoa in 2003, Grant Cameron passed the survivors’ witness statements and files to NZ Police and asked them to investigate.',
+            'Back in Aotearoa in 2003, the Citizens Commission on Human Rights and Grant Cameron passed the survivors’ witness statements and files to NZ Police and asked them to investigate.',
           style: 'scrolling',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=307'
         },
@@ -2633,7 +2648,7 @@ const data = {
         text: {
           header: 'United Nations Committee Against Torture 2019',
           content:
-            'In 2019, survivor Paul Zentveld’s complaint of torture is accepted by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
+            'In December 2019, survivor Paul Zentveld’s complaint of torturetorture, filed by CCHR, is upheld by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
           style: 'scrolling',
           source: 'documents/G2001877.pdf'
         },
