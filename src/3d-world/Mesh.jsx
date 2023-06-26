@@ -9,14 +9,14 @@ const Mesh = ({ node, material, verticalOffset = 0, label }) => {
       name={meshName}
       geometry={node.geometry}
       material={material}
-      receiveShadow
-      castShadow
       position={[
         node.position.x,
         node.position.y + verticalOffset,
         node.position.z
       ]}
       rotation={[node.rotation.x, node.rotation.y, node.rotation.z]}
+      receiveShadow
+      castShadow
     >
       {label && <Label id={meshName} text={label} />}
     </mesh>

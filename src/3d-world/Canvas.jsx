@@ -3,6 +3,7 @@ import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
+import { Perf } from 'r3f-perf'
 import Experience from './Experience.jsx'
 Globals.assign({
   frameLoop: 'always'
@@ -33,7 +34,6 @@ const CanvasWrapper = ({
     <div className='canvas-wrapper'>
       <Canvas
         colormanagement='true'
-        shadows
         dpr={[1, 2]} //the default
         gl={{
           antialias: true, // tweak for performance
@@ -46,7 +46,11 @@ const CanvasWrapper = ({
           sizes: sizes,
           powerPreference: 'high-performance'
         }}
+        shadows
       >
+        {window.location.hash === '#debug' && (
+          <Perf style={{zIndex: 1000}} position='bottom-left' />
+        )}
         <Experience
           pageCamera={pageCamera}
           cameraMoveDuration={cameraMoveDuration}

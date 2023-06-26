@@ -46,7 +46,12 @@ const EnvironmentLighting = () => {
         ref={light}
         intensity={DirectionalLightIntensity}
         color={DirectionalLightColour}
-        castShadow
+        position={[
+          directionalLightControls.positionX,
+          directionalLightControls.positionY,
+          directionalLightControls.positionZ
+        ]}
+        // shadows
         shadow-normalBias={DirectionalLightShadowNormalBias}
         shadow-bias={0.00001}
         shadow-radius={DirectionalLightShadowRadius}
@@ -58,11 +63,7 @@ const EnvironmentLighting = () => {
         shadow-camera-left={-DirectionalLightShadowCameraExtent}
         shadow-camera-far={directionalLightControls.Far}
         shadow-camera-near={directionalLightControls.Near}
-        position={[
-          directionalLightControls.positionX,
-          directionalLightControls.positionY,
-          directionalLightControls.positionZ
-        ]}
+        castShadow
       />
 
       {/* <spotLight

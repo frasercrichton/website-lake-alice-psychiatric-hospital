@@ -24,7 +24,7 @@ const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
           <figcaption className='caption'>{caption}</figcaption>
         )}
         {/* {!isLoaded && <Loader />} */}
-        {(URL || author) && (
+        {(URL ?? author) && (
           <div className='source'>
             {archwayRecordID}
             {formattedAuthor}

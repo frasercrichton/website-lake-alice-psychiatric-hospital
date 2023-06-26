@@ -6,16 +6,14 @@ import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
 import Labels from './Labels.jsx'
 import OSMBuildings from './OSMBuildings.jsx'
-
 import * as THREE from 'three'
-// If you create a material or color in global space - outside of React Three Fiber's Canvas context - you should enable ColorManagement in three.js.
-THREE.ColorManagement.enabled = true
+
 THREE.ColorManagement.legacyMode = false
 // const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
-const GLB_LOCATION = 'geography-detailed.glb'
-const hash = window.location.hash
-// TODO work out why this needs defined in the function
+const GLB_LOCATION = 'geography-detailed-2023-06-26.glb'
 
+// If you create a material or color in global space - outside of React Three Fiber's Canvas context - you should enable ColorManagement in three.js.
+THREE.ColorManagement.enabled = true
 const staticMaterials = {
   roofs: new THREE.MeshStandardMaterial({
     name: 'roofs',
@@ -120,8 +118,8 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
   })
 
   const getMaterial = name => {
-    const materialName = name === undefined ? '' : name.split('.')[0]
-    return materialName !== ''
+    const materialName = name.split('.')[0]
+    return materialName
       ? staticMaterials[materialName]
       : staticMaterials.default
   }
@@ -135,7 +133,7 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
     }
 
     const updateMesh = (mesh, name) => {
-      if (disabledMeshes !== undefined && disabledMeshes.includes(name)) {
+      if (disabledMeshes?.includes(name)) {
         return { ...mesh, disabledMaterial: staticMaterials.transparent }
       }
       return mesh
@@ -146,10 +144,10 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       const position = group.position
       const rotation = group.rotation
       const childWithPosition = group.children.map(child => {
-        // TODO update to suffix with names not numbers
-        const nameSuffix = child.name.split('_')[1]
-        const childName = nameSuffix === undefined ? '' : nameSuffix
-        const name = `${parentName}_${childName}`
+        const name = `${parentName}_${child.name.split('_')[1] ?? ''}`
+        if (name.includes('16')) {
+          console.log(name)
+        }
         const mesh = updateMesh(child, name)
         return {
           ...mesh,
@@ -204,7 +202,7 @@ If you have multiple [Meshes] using the same geometry shape, create only one geo
     )
   }, [nodes, labels, disabledMeshes])
 
-  if (hash === '#debug') {
+  if (window.location.hash === '#debug') {
     const cameras = Array.from(Object.values(nodes)).filter(element => {
       return element.type === 'PerspectiveCamera' && element.name !== 'Scene'
     })
