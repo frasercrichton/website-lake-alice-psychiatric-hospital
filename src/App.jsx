@@ -34,6 +34,7 @@ function App () {
   const [chapterInView, setChapterInView] = useState(chapters['/introduction'])
   const [activeChapter, setActiveChapter] = useState('/introduction')
   const [hasChapterReset, setHasChapterReset] = useState(false)
+  const [mobile, setMobile] = useState(false)
 
   const [pageInView, setPageInView] = useState('') // TODO -  useState('') >  useState(null)
   const [pageNumber, setPageNumber] = useState(0)
@@ -183,116 +184,100 @@ function App () {
       ? `container-${pageInView.view} active`
       : 'container-3d'
 
-  const containerScroll = isCoverActive
-    ? { overflow: 'hidden' }
-    : { overflowY: 'scroll' }
+  const containerScroll =
+    isCoverActive && !mobile ? { overflow: 'hidden' } : { overflowY: 'scroll' }
 
   const { text, image, video } = pageInView
 
   return (
-    <div className='site-container' style={containerScroll}>
+    <>
       <MobileCover
         activeChapter={activeChapter}
         navigateToChapter={navigateToChapter}
         pageInView={pageInView}
         pageNumber={pageNumber}
+        setMobile={setMobile}
+        mobile={mobile}
+        toggleCoverActive={toggleCoverActive}
       />
-
       <BrowserView>
-        <Leva oneLineLabels collapsed hidden={isLevaHidden} />
-        <Cover key='cover' />
-        <Header
-          activeChapter={activeChapter}
-          navigateToChapter={navigateToChapter}
-        />
-
-        {/* Visuals */}
-        {text &&
-          (text?.style === 'static' || text?.style === 'animated') &&
-          oddOrEvenPage === 'odd' && (
-            <TextBox
-              pageNumber={pageNumber}
-              text={text}
-              textBoxContainerStyle={textBoxContainerStyle}
-              textBoxStyle={textBoxStyle}
-              isStatic={text.style === 'static'}
-            />
-          )}
-        {text &&
-          (text?.style === 'static' || text?.style === 'animated') &&
-          oddOrEvenPage === 'even' && (
-            <TextBox
-              pageNumber={pageNumber}
-              text={text}
-              textBoxContainerStyle={textBoxContainerStyle}
-              textBoxStyle={textBoxStyle}
-              isStatic={text.style === 'static'}
-            />
-          )}
-
-        <div className={canvasClassName}>
-          <Canvas
-            key='canvas'
-            pageCamera={pageCamera}
-            cameraMoveDuration={cameraMoveDuration}
-            isRotating={isRotating}
-            // pageScrollProgress={pageScrollProgress}
-            disabledMeshes={disabledMeshes}
-            labels={labels}
+        <div className='site-container' style={containerScroll}>
+          <Leva oneLineLabels collapsed hidden={isLevaHidden} />
+          <Cover key='cover' />
+          <Header
+            activeChapter={activeChapter}
+            navigateToChapter={navigateToChapter}
           />
-        </div>
-        {pageInView.view?.includes('map') && (
-          <GeographicMap
-            visibleMapLayers={visibleMapLayers}
-            map={pageInView.map}
-          />
-        )}
-        {video !== undefined && (
-          <VideoVimeo id={video.id} caption={video.caption} />
-        )}
-        {image && (image?.style === 'static' || image?.style === 'document') && (
-          <div className={`${image?.style}-image-container`}>
-            <Image
-              caption={image.caption}
-              src={imageURL}
-              author={image.author}
-              recordID={image.recordID}
-              date={image.date}
-              URL={image.URL}
+
+          {/* Visuals */}
+          {text &&
+            (text?.style === 'static' || text?.style === 'animated') &&
+            oddOrEvenPage === 'odd' && (
+              <TextBox
+                pageNumber={pageNumber}
+                text={text}
+                textBoxContainerStyle={textBoxContainerStyle}
+                textBoxStyle={textBoxStyle}
+                isStatic={text.style === 'static'}
+              />
+            )}
+          {text &&
+            (text?.style === 'static' || text?.style === 'animated') &&
+            oddOrEvenPage === 'even' && (
+              <TextBox
+                pageNumber={pageNumber}
+                text={text}
+                textBoxContainerStyle={textBoxContainerStyle}
+                textBoxStyle={textBoxStyle}
+                isStatic={text.style === 'static'}
+              />
+            )}
+
+          <div className={canvasClassName}>
+            <Canvas
+              key='canvas'
+              pageCamera={pageCamera}
+              cameraMoveDuration={cameraMoveDuration}
+              isRotating={isRotating}
+              // pageScrollProgress={pageScrollProgress}
+              disabledMeshes={disabledMeshes}
+              labels={labels}
             />
           </div>
-        )}
-        <Timeline decade={pageInView.decade} />
-        {/* steps */}
-        <Routes>
-          <Route
-            key={'route-default'}
-            path='/'
-            element={
-              <Chapter
-                chapterInView={chapterInView}
-                nextChapter='/introduction'
-                setNextChapter={updateChapter}
-                pageInView={pageInView}
-                setPageInView={setPageInView}
-                pageScrollProgress={pageScrollProgress}
-                updateStepProgress={updateStepProgress}
-                hasChapterReset={hasChapterReset}
-                setChapterReset={setHasChapterReset}
-                pageNumber={pageNumber}
-                setPageNumber={setPageNumber}
+          {pageInView.view?.includes('map') && (
+            <GeographicMap
+              visibleMapLayers={visibleMapLayers}
+              map={pageInView.map}
+            />
+          )}
+          {video !== undefined && (
+            <VideoVimeo id={video.id} caption={video.caption} />
+          )}
+          {image && (image?.style === 'static' || image?.style === 'document') && (
+            <div className={`${image?.style}-image-container`}>
+              <Image
+                caption={image.caption}
+                src={imageURL}
+                author={image.author}
+                recordID={image.recordID}
+                date={image.date}
+                URL={image.URL}
               />
-            }
-          />
-          {headerNavUrls.map(nav => {
-            const chapters =
-              nav.url !== '/about' ? (
+            </div>
+          )}
+          <Timeline decade={pageInView.decade} />
+          {/* steps */}
+          <Routes>
+            <Route
+              key={'route-default'}
+              path='/'
+              element={
                 <Chapter
                   chapterInView={chapterInView}
-                  nextChapter={nav.next}
-                  setPageInView={setPageInView}
-                  pageInView={pageInView}
+                  nextChapter='/introduction'
                   setNextChapter={updateChapter}
+                  pageInView={pageInView}
+                  setPageInView={setPageInView}
                   pageScrollProgress={pageScrollProgress}
                   updateStepProgress={updateStepProgress}
                   hasChapterReset={hasChapterReset}
@@ -300,24 +285,43 @@ function App () {
                   pageNumber={pageNumber}
                   setPageNumber={setPageNumber}
                 />
-              ) : (
-                <MarkdownPage fileName={pageInView?.content?.file} />
+              }
+            />
+            {headerNavUrls.map(nav => {
+              const chapters =
+                nav.url !== '/about' ? (
+                  <Chapter
+                    chapterInView={chapterInView}
+                    nextChapter={nav.next}
+                    setPageInView={setPageInView}
+                    pageInView={pageInView}
+                    setNextChapter={updateChapter}
+                    pageScrollProgress={pageScrollProgress}
+                    updateStepProgress={updateStepProgress}
+                    hasChapterReset={hasChapterReset}
+                    setChapterReset={setHasChapterReset}
+                    pageNumber={pageNumber}
+                    setPageNumber={setPageNumber}
+                  />
+                ) : (
+                  <MarkdownPage fileName={pageInView?.content?.file} />
+                )
+
+              return (
+                <Route
+                  key={`route-${nav.url}`}
+                  exact
+                  path={nav.url}
+                  element={chapters}
+                />
               )
+            })}
+          </Routes>
 
-            return (
-              <Route
-                key={`route-${nav.url}`}
-                exact
-                path={nav.url}
-                element={chapters}
-              />
-            )
-          })}
-        </Routes>
-
-        <Footer />
+          <Footer />
+        </div>
       </BrowserView>
-    </div>
+    </>
   )
 }
 

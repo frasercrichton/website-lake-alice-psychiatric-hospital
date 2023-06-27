@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MobileView } from 'react-device-detect'
+import { useLocation } from 'react-router-dom'
+import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 import VideoVimeo from '../components/VideoVimeo.jsx'
 import Header from './Header.jsx'
+import Cover from './Cover.jsx'
 import MarkdownPage from './MarkdownPage.jsx'
 import Image from '../components/Image.jsx'
 import './MobileView.css'
 
-const MobileCover = ({ activeChapter, navigateToChapter, pageInView }) => {
+const MobileCover = ({
+  activeChapter,
+  navigateToChapter,
+  pageInView,
+  setMobile,
+  toggleCoverActive
+}) => {
   const { pageId, text, image, content, view } = pageInView
+  const location = useLocation()
+
+  // useEffect(() => {
+  //   // toggleCoverActive()
+  //   location.pathname = 'mobile'
+  // }, [location.pathname])
 
   return (
-    <MobileView viewClassName='mobile'>
+    <MobileView className='mobile'>
       <Header
         activeChapter={activeChapter}
         navigateToChapter={navigateToChapter}
@@ -20,12 +36,29 @@ const MobileCover = ({ activeChapter, navigateToChapter, pageInView }) => {
         {view === 'markdown' && content.file !== undefined && (
           <MarkdownPage key={pageId} fileName={content.file} />
         )}
-        {view !== 'markdown' && (
+        {view !== 'markdown' && location.pathname !== '/introduction' && (
           <div className='intro-text-container'>
             <h2>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h2>
             <h2>Lake Alice Child and Adolescent Unit</h2>
             <div className='mobile-image-container'>
               <Image src='https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/images/fc-20230314-00001-R26288154-0001.jpg' />
+            </div>
+            <Link
+              role='button'
+              onClick={e => toggleCoverActive()}
+              className='nav-item'
+              to='/introduction'
+            >
+              <Button action={e => toggleCoverActive()} label='Explore' />
+            </Link>
+          </div>
+        )}
+        {location.pathname === '/introduction' && (
+          <div className='intro-text-container'>
+            <h2>Te Wāhanga Tamaiti, Taitamariki o Lake Alice</h2>
+            <h2>Lake Alice Child and Adolescent Unit</h2>
+            <div className='mobile-image-container'>
+              <Image src='https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/images/Screenshot 2023-06-01 at 12.35.41 PM.png' />
             </div>
             <p>
               The United Nations Committee Against Torture (UNCAT) found New

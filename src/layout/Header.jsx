@@ -24,18 +24,26 @@ const Header = ({ activeChapter, navigateToChapter, isMobile = false }) => {
         <div className='col-4'>
           {isMobile && (
             <>
-              <span>Lake Alice Psychiatric Hospital</span>
-              <span
+              <h3>
+                <a href='/'>Lake Alice Psychiatric Hospital</a>
+              </h3>
+              {/* <span
                 onClick={toggleHamburgerNavigation}
                 class={`material-symbols-outlined hamburger ${linkActiveClassName}`}
               >
                 {iconName}
-              </span>
+              </span> */}
             </>
           )}
         </div>
 
-        <Navigation activeChapter={activeChapter} navigateToChapter={navigateToChapter} isMobile={isMobile} isHamburgerActive={isHamburgerActive} setIsHamburgerActive={setIsHamburgerActive} />
+        <Navigation
+          activeChapter={activeChapter}
+          navigateToChapter={navigateToChapter}
+          isMobile={isMobile}
+          isHamburgerActive={isHamburgerActive}
+          setIsHamburgerActive={setIsHamburgerActive}
+        />
       </nav>
       <div
         style={{ transform: `scaleX(${headerScrollProgress})` }}
