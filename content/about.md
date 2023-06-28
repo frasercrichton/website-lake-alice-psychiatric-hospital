@@ -1,10 +1,10 @@
 ## About
 
-This website was developed as part of an ongoing project - The Moral Drift - examining the history of state care in Aotearoa New Zealand. In its first phase, it was exhibited at Toi Tauranga/Tauranga Art Gallery in October 2021 - [The Moral Drift](https://www.artgallery.org.nz/exhibitions/id/1751).
+This website was developed as part of an ongoing project - [The Moral Drift](https://www.frasercrichton.com/the-moral-drift-1) - examining the history of state care in Aotearoa New Zealand. In its first phase, it was exhibited at [Toi Tauranga/Tauranga Art Gallery in October 2021](https://www.artgallery.org.nz/exhibitions/id/1751).
 
-The project was developed by a collective of investigative researchers, Fraser Crichton — a Te Whanganui-a-Tara-based researcher and documentary photographer, Malcolm Richards — a survivor of abuse in care at the former Lake Alice Child and Adolescent Unit and, briefly, Lachlan Kermode — a Research Fellow at the international human rights agency Forensic Architecture.
+The project was developed by a collective of investigative researchers, Fraser Crichton — a Te Whanganui-a-Tara-based researcher and documentary photographer, Malcolm Richards — a survivor of abuse in care at the former Lake Alice Child and Adolescent Unit and, briefly, Lachlan Kermode — a Research Fellow at the international human rights agency [Forensic Architecture](https://forensic-architecture.org/).
 
-In this online phase, Fraser Crichton has worked with Malcolm Richards to visualise testimony of Malcolm's experiences at Lake Alice and visualise the now demolished Te Wāhanga Tamaiti, Taitamariki o Lake Alice – The Lake Alice Child and Adolescent Unit site.
+In this online phase, [Fraser Crichton](https://www.frasercrichton.com/) has worked with Malcolm Richards to visualise testimony of Malcolm's experiences at Lake Alice and visualise the now demolished Te Wāhanga Tamaiti, Taitamariki o Lake Alice – The Lake Alice Child and Adolescent Unit site.
 
 ![Malclom Richards](https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/images/fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg)
 *Malcolm Richards 2021*
