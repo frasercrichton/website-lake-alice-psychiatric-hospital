@@ -4,35 +4,32 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import Groups from './Groups.jsx'
 import Meshes from './Meshes.jsx'
-import Labels from './Labels.jsx'
 import OSMBuildings from './OSMBuildings.jsx'
 import * as THREE from 'three'
 
-THREE.ColorManagement.legacyMode = false
-// const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
-const GLB_LOCATION = 'geography-detailed-2023-06-26.glb'
-
-// If you create a material or color in global space - outside of React Three Fiber's Canvas context - you should enable ColorManagement in three.js.
 THREE.ColorManagement.enabled = true
+// const GLB_LOCATION = process.env.REACT_APP_GLB_LOCATION
+const GLB_LOCATION = 'geography-detailed-2023-06-30.glb'
+// If you create a material or color in global space - outside of React Three Fiber's Canvas context - you should enable ColorManagement in three.js.
+
+// favour the default THREE.FrontSide over THREE.DoubleSide
 const staticMaterials = {
   roofs: new THREE.MeshStandardMaterial({
     name: 'roofs',
     color: '#4f666a',
-    side: THREE.DoubleSide,
     roughness: 0.5,
     metalness: 0,
+    side: THREE.DoubleSide,
     flatShading: false
   }),
   walls: new THREE.MeshStandardMaterial({
     name: 'walls',
     color: 0xcccccc,
-    side: THREE.DoubleSide,
     flatShading: true
   }),
   floors: new THREE.MeshStandardMaterial({
     name: 'floors',
     color: '#4f666a',
-    side: THREE.DoubleSide,
     roughness: 0.5,
     metalness: 0,
     flatShading: false
@@ -41,34 +38,29 @@ const staticMaterials = {
     name: 'buildings',
     color: '#d2c1cd',
     roughness: 0.4000000059604645,
-    side: THREE.DoubleSide,
     flatShading: true
   }),
   bedframe: new THREE.MeshStandardMaterial({
     name: 'bedframe',
     color: '#343434',
     roughness: 0.4000000059604645,
-    side: THREE.DoubleSide,
     flatShading: true
   }),
   mattress: new THREE.MeshStandardMaterial({
     name: 'mattress',
     color: '#ffffff',
-    side: THREE.DoubleSide,
     flatShading: true,
     roughness: 0.4000000059604645
   }),
   'interior-walls': new THREE.MeshStandardMaterial({
     name: 'interior-walls',
     color: '#6F7378',
-    side: THREE.DoubleSide,
     flatShading: true,
     roughness: 0.4000000059604645
   }),
   ExteriorWalls: new THREE.MeshStandardMaterial({
     name: 'default',
     color: '#d2c1cd',
-    side: THREE.DoubleSide,
     roughness: 0.4000000059604645
   }),
   transparent: new THREE.MeshBasicMaterial({
@@ -81,7 +73,6 @@ const staticMaterials = {
   default: new THREE.MeshStandardMaterial({
     name: 'default',
     color: '#d2c1cd',
-    side: THREE.DoubleSide,
     roughness: 0.4000000059604645
   })
 }

@@ -1,7 +1,7 @@
 .canvas-wrapper {
   cursor: pointer;
-  position: fixed;
   background-color: #d2d5d5;
+  position: fixed;
   top: 50px;
   left: 0;
   width: 100%;

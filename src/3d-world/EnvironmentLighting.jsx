@@ -21,8 +21,7 @@ const EnvironmentLighting = () => {
   const {
     HemisphereLightIntensity,
     HemisphereLightGroundColour,
-    HemisphereLightSkyColour,
-    HemisphereLightPosition
+    HemisphereLightSkyColour
   } = HemisphereLightControls()
 
   // const spotLightControls = SpotLightControls()
@@ -35,11 +34,6 @@ const EnvironmentLighting = () => {
         skyColor={HemisphereLightSkyColour}
         groundColor={HemisphereLightGroundColour}
         intensity={HemisphereLightIntensity}
-        position={[
-          HemisphereLightPosition.x,
-          HemisphereLightPosition.y,
-          HemisphereLightPosition.z
-        ]}
       />
       <BakeShadows />
       <directionalLight
@@ -53,8 +47,8 @@ const EnvironmentLighting = () => {
         ]}
         // shadows
         shadow-normalBias={DirectionalLightShadowNormalBias}
-        shadow-bias={0.00001}
-        shadow-radius={DirectionalLightShadowRadius}
+        shadow-bias={0.0001}
+        // shadow-radius={DirectionalLightShadowRadius}  //THREE.PCFSoftShadowMap: radius has no effect 
         shadow-mapSize={[1024, 1024]}
         // reload page
         shadow-camera-top={DirectionalLightShadowCameraExtent} // make this small to make sharper shadows
@@ -66,7 +60,8 @@ const EnvironmentLighting = () => {
         castShadow
       />
 
-      {/* <spotLight
+      {/* 
+      <spotLight
         ref={light}
         color='#ffffff'
         intensity={spotLightControls.intensity}

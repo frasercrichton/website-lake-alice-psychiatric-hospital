@@ -1368,7 +1368,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        disable: ['ElevenBedVillaRoof016_', 'ElevenBedVillaRoof016_1'],
+        disable: ['ElevenBedVillaRoof016_2', 'ElevenBedVillaRoof016_3'],
         camera: {
           ...cameras.elevenBedVillaAbove
         }
@@ -1384,8 +1384,8 @@ const data = {
         },
         view: '3d',
         disable: [
-          'ElevenBedVillaRoof016_',
-          'ElevenBedVillaRoof016_1',
+          'ElevenBedVillaRoof016_2',
+          'ElevenBedVillaRoof016_3',
           'ElevenBedVillaFirstFloor016_',
           'ElevenBedVillaFirstFloor016_1',
           'ElevenBedVillaFirstFloor016_2',
@@ -2301,7 +2301,7 @@ const data = {
         text: {
           header: 'United Nations Committee Against Torture',
           content:
-            "In 1991 a Lake Alice survivor filed a complaint with the New Zealand Medical Council alleging that other boys at the Unit were encouraged by Leeks to administer shocks to him. The Medical Council did not uphold his complaint.",
+            'In 1991 a Lake Alice survivor filed a complaint with the New Zealand Medical Council alleging that other boys at the Unit were encouraged by Leeks to administer shocks to him. The Medical Council did not uphold his complaint.',
           style: 'scrolling',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=327'
         },
