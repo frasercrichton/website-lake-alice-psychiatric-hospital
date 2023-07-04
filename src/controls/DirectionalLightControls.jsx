@@ -6,7 +6,7 @@ const DirectionalLightControls = () => {
     return {
       DirectionalLightColour: '#ffffff',
       DirectionalLightIntensity: {
-        value: 2.6,
+        value: 0.8,
         min: 0,
         max: 10,
         step: 0.1
