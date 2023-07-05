@@ -8,7 +8,7 @@ const Line = ({ start, end }) => {
       color='#E6E6E3'
       weight={3}
       stroke-linecap='round'
-      key={1}
+      key={start.lat + start.lng}
       positions={[
         [start.lat, start.lng],
         [end.lat, end.lng]

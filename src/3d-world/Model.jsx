@@ -136,9 +136,9 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       const rotation = group.rotation
       const childWithPosition = group.children.map(child => {
         const name = `${parentName}_${child.name.split('_')[1] ?? ''}`
-        if (name.includes('16')) {
-          console.log(name)
-        }
+        // if (name.includes('16')) {
+        //   console.log(name)
+        // }
         const mesh = updateMesh(child, name)
         return {
           ...mesh,

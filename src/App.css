@@ -41,7 +41,6 @@ a {
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  /* background-color: antiquewhite; */
 }
 
 .document-image-container .image-container {

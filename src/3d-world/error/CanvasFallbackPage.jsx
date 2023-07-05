@@ -1,17 +1,39 @@
 import './CanvasFallbackPage.css'
 import Image from '../../components/Image'
-const CanvasFallbackPage = ({ pageCamera }) => {
-  // console.log(pageCamera.name)
+import AssetUrlHelper from '../../components/AssetUrlHelper.js'
+const assetUrlHelper = new AssetUrlHelper()
+
+const getFloor = disabledMeshes => {
+  // Roof is default
+  return disabledMeshes?.find(a => a.includes('FirstFloor'))
+    ? 'GroundFloor'
+    : 'FirstFloor'
+}
+
+const CanvasFallbackPage = ({ pageCamera, disabledMeshes, labels }) => {
+  let camera = pageCamera?.name.includes('-')
+    ? pageCamera?.name.substring(0, pageCamera?.name.indexOf('-'))
+    : pageCamera?.name
+
+  camera = labels ? `${camera}Labeled` : camera
+
+  camera = disabledMeshes ? `${camera}${getFloor(disabledMeshes)}` : camera
+
+  const imageName = assetUrlHelper.resolveUrl(
+    `${camera}.png`,
+    'lake-alice.space/images/'
+  )
+
   return (
     <div className='canvas-fallback-page-wrapper'>
       <div className='mobile-image-container'>
-        <Image src='https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/images/fc-20230314-00001-R26288154-0001.jpg' />
+        <Image src={imageName} />
       </div>
 
       <div className='performance-warning'>
         The animated 3D version of this website has been disabled for
-        performance reasons.
-        {/* {pageCamera?.name} */}
+        performance reasons. If you can access a machine with a GPU you'll see
+        the animated version.
       </div>
     </div>
   )

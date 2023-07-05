@@ -9,7 +9,7 @@ const assetUrlHelper = new AssetUrlHelper()
 
 const textBoxStyle = {
   margin: '50px',
-  width: '45%'
+  width: '45%',
 }
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {

@@ -6,8 +6,7 @@ const Labels = ({ empties, labels }) => {
     return label ?? label.label
   }
 
-  return empties.map(empty => {
-    console.log(empty.name)
+  return empties.map(empty => 
     const labelText = getLabel(empty.name)
     return (
       <>
