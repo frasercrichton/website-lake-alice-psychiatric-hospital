@@ -1328,7 +1328,7 @@ const data = {
       {
         id: 'context-5',
         view: '3d',
-        camera: cameras.elevenBedVillaImage
+        camera: cameras.elevenBedVilla
       },
       {
         id: 'context-6',
@@ -1344,12 +1344,12 @@ const data = {
         },
 
         view: '3d',
-        camera: { ...cameras.elevenBedVillaImage }
+        camera: cameras.elevenBedVilla
       },
       {
         id: 'context-7',
         view: '3d',
-        camera: cameras.elevenBedVillaImage
+        camera: cameras.elevenBedVilla
       },
       {
         id: 'context-8',
@@ -1641,7 +1641,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.boysVillaRearCamera }
+        camera: cameras.boysVillaRearCamera
       },
       {
         id: 'context-29',
@@ -1653,9 +1653,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          ...cameras.sitePlan
-        }
+        camera: cameras.sitePlan
       },
       {
         id: 'context-30',
@@ -1682,7 +1680,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.sitePlan }
+        camera: cameras.sitePlan
       },
       {
         id: 'context-32',
@@ -1694,9 +1692,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          ...cameras.sitePlan
-        }
+        camera: cameras.sitePlan
       },
       {
         id: 'context-33',
@@ -1708,9 +1704,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: {
-          ...cameras.sitePlan
-        }
+        camera: cameras.sitePlan
       }
     ]
   },
@@ -1939,7 +1933,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-12',
@@ -1951,7 +1945,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-13',
@@ -1963,7 +1957,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-14',
@@ -1975,7 +1969,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-15',
@@ -1987,7 +1981,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-16',
@@ -1999,7 +1993,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       },
       {
         id: 'pathways-17',
@@ -2011,7 +2005,7 @@ const data = {
           style: 'scrolling'
         },
         view: '3d',
-        camera: { ...cameras.siteAngled, isRotating: true }
+        camera: { ...cameras.sitePlanAngled, isRotating: true }
       }
     ]
   },

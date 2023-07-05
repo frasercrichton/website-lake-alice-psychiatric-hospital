@@ -19,7 +19,7 @@ const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
   return (
     <div className='image-container'>
       <figure className='figure'>
-        <img src={src} alt={caption} onLoad={e => handleLoading(true)} />
+        <img key={src} src={src} alt={caption} onLoad={e => handleLoading(true)} />
         {caption !== '' && (
           <figcaption className='caption'>{caption}</figcaption>
         )}

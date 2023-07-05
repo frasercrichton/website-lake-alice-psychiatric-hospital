@@ -31,7 +31,15 @@ const CanvasWrapper = ({
 
   return (
     <div className='canvas-wrapper'>
-      <ErrorBoundary fallback={<CanvasFallbackPage pageCamera={pageCamera} />}>
+      <ErrorBoundary
+        fallback={
+          <CanvasFallbackPage
+            pageCamera={pageCamera}
+            disabledMeshes={disabledMeshes}
+            labels={labels}
+          />
+        }
+      >
         <Canvas
           colormanagement='true'
           dpr={[1, 2]} //the default

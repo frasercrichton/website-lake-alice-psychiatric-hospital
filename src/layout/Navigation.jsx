@@ -12,9 +12,6 @@ const Navigation = ({
   const links = useRef({})
   const linkActiveClassName = isHamburgerActive ? 'display' : ''
 
-  const location = useLocation()
-  console.log('active', location.pathname === '/testimony')
-
   useEffect(() => {
     if (!links.current) {
       return

@@ -44,12 +44,12 @@ Where to get help:
 
 For male survivors -
 
-* [Road Forward Trust](https://www.theroadforward.org.nz/), Wellington, contact Richard 021 118 1043
+* [Road Forward Trust](https://www.theroadforward.org.nz/) Wellington, contact Richard 021 118 1043
 * [Better Blokes](https://betterblokes.org.nz/) Auckland, 09 990 2553
-* [The Canterbury Men's Centre](https://canmen.org.nz/), 03 377 6747
-* [The Male Room](https://maleroom.co.nz/), Nelson 03 548 0403
-* [Male Survivors]([Male Survivors](https://waikatosurvivors.org.nz/)), Waikato 07 858 4112
-* [Male Survivors](https://www.malesurvivorsotago.nz/), Otago 021 106 4598
+* [The Canterbury Men's Centre](https://canmen.org.nz/) 03 377 6747
+* [The Male Room](https://maleroom.co.nz/) Nelson 03 548 0403
+* [Male Survivors](https://waikatosurvivors.org.nz/) Waikato 07 858 4112
+* [Male Survivors](https://www.malesurvivorsotago.nz/) Otago 021 106 4598
 
 For female survivors -
 

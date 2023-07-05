@@ -8,7 +8,7 @@ const Timeline = ({ decade: selectedDecade }) => {
     const className = Number(decade) <= Number(selectedDecade) ? 'active' : null
 
     return (
-      <li className={className}>
+      <li key={decade} className={className}>
         <time>{decade}s</time>
       </li>
     )
