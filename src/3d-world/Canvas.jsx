@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Suspense, useRef, createRef, useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+// import WebGL from 'three/addons/capabilities/WebGL.js'
 import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
@@ -7,6 +8,7 @@ import * as THREE from 'three'
 import { Perf } from 'r3f-perf'
 import Experience from './Experience.jsx'
 import CanvasFallbackPage from './error/CanvasFallbackPage.jsx'
+import WebGL from 'three/addons/capabilities/WebGL.js'
 Globals.assign({
   frameLoop: 'always'
 })
@@ -19,14 +21,39 @@ const CanvasWrapper = ({
   disabledMeshes,
   labels
 }) => {
-  const aspectRatio = {
-    width: 1920,
-    height: 1080
-  }
+  const canvas = useRef()
 
   const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
+  }
+
+  const handleContextCreationError = event => {
+    console.log('ContextCreationError', event)
+
+    if (
+      event.statusMessage
+        .toLowerCase()
+        .includes(
+          'allowwebgl2:false restricts context creation on this system.'
+        )
+    ) {
+      console.log('allowwebgl2:false restricts context creation on this system')
+    }
+    // event.preventDefault()
+  }
+
+  useEffect(() => {
+    // if context is lost this: const gl = canvas.current.getContext('webgl')  will no longer work
+    canvas.current.addEventListener(
+      'webglcontextcreationerror',
+      handleContextCreationError
+    )
+  }, [canvas])
+
+  if (!WebGL.isWebGLAvailable()) {
+    const warning = WebGL.getWebGLErrorMessage()
+    console.error('WebGL NOT Available ', warning)
   }
 
   return (
@@ -41,7 +68,7 @@ const CanvasWrapper = ({
         }
       >
         <Canvas
-          colormanagement='true'
+          ref={canvas}
           dpr={[1, 2]} //the default
           gl={{
             antialias: true, // tweak for performance

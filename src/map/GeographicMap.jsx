@@ -23,11 +23,13 @@ const minorPointStyle = {
   iconSize: 50
 }
 
-const createLatLng = item => new LatLng(item[0], item[1])
+const createLatLng = item => {
+  return new LatLng(item[0], item[1])
+}
 
 const GeographicMap = ({ visibleMapLayers, map }) => {
   const { bounds, zoom } = mapDisplay
-  
+
   const defaultBounds = new LatLngBounds(
     createLatLng(bounds.southWest),
     createLatLng(bounds.northEast)
@@ -46,12 +48,12 @@ const GeographicMap = ({ visibleMapLayers, map }) => {
     <div className='map-container'>
       <MapContainer
         className='map'
-        maxBounds={defaultBounds}
-        center={defaultMapCentre}
+        // maxBounds={defaultBounds}
+        //center={defaultMapCentre}
         zoom={zoom.default}
         zoomSnap={zoom.zoomSnap} // allows decimal points
-        maxZoom={zoom.maxZoomCountry}
-        minZoom={zoom.minZoomCityBlock}
+        // maxZoom={zoom.maxZoomCountry}
+        // minZoom={zoom.minZoomCityBlock}
         zoomControl={false}
         touchZoom={false}
         scrollWheelZoom={false}
@@ -59,7 +61,7 @@ const GeographicMap = ({ visibleMapLayers, map }) => {
         antialias={true} // check
       >
         <TileLayer
-          url={`https://api.mapbox.com/styles/v1/${MAP_BOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${MAP_BOX_KEY}&fresh=true`}
+          url={`https://api.mapbox.com/styles/v1/${MAP_BOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${MAP_BOX_KEY}`}
           attribution='Map data &copy;
           <a target="_blank" rel="noreferrer" href="https://www.openstreetmap.org/">OpenStreetMap</a>
           contributors,

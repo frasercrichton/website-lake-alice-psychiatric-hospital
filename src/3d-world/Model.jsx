@@ -175,6 +175,7 @@ const Model = ({ labels, isRotating, disabledMeshes }) => {
       if (isNotBuildingMesh) {
         nodeModel.meshes = [...nodeModel.meshes, node]
       }
+      return null
     })
 
     return (

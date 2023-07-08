@@ -11,14 +11,16 @@ const location = {
     }
   },
   northIsland: {
-    zoom: 7,
+    zoom: 7.22,
+    // {lng: 174.74487, lat: -37.98820}
     centre: {
-      latitude: -38.71357,
-      longitude: 175.82181
+      latitude: -37.98820,
+      longitude: 174.74487
     },
+    // [[162.84997, -42.36806], [186.63976, -33.33041]]
     bounds: {
-      southWest: [-41.96648, 170.6778],
-      northEast: [-34.16916, 179.50721]
+      southWest: [-42.36806, 162.84997],
+      northEast: [-33.33041, 186.63976]
     }
   },
   southIsland: {
@@ -34,13 +36,15 @@ const location = {
   },
   australia: {
     zoom: 5,
+    // [156.65420, -40.46845]
     centre: {
-      latitude: -40.7670087,
-      longitude: 173.4506545
+      latitude: -40.46845,
+      longitude: 156.65420
     },
+    // [[104.10778, -52.95244], [209.20062, -17.46661]]
     bounds: {
-      southWest: [-51.481383, 100.810547],
-      northEast: [-6.620957, 192.963867]
+      southWest: [-52.95244, 104.10778],
+      northEast: [-17.46661, 209.20062]
     }
   },
   auckland: {
@@ -85,20 +89,19 @@ const location = {
     }
   },
   lakeAliceSite: {
-    zoom: 17.5,
+    zoom: 17.34,
+
     centre: {
-      latitude: -40.1261,
-      longitude: 175.33743
+      latitude: -40.12589,
+      longitude: 175.33547
     },
-    // bounds: {
-    //   southWest: [-40.19096, 175.29079],
-    //   northEast: [-40.05852, 175.45207]
-    // }
     bounds: {
-      southWest: [-40.128745, 175.33124],
-      northEast: [-40.123741, 175.342489]
+      southWest: [-40.12984, 175.32481],
+      northEast: [-40.12194, 175.34614]
     }
   }
 }
 
 export default location
+
+// [[175.32481, -40.12984], [175.34614, -40.12194]]

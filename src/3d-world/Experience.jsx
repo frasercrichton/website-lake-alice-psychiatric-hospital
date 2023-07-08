@@ -17,19 +17,17 @@ const Experience = ({
   const { World } = LookAndFeelControls()
 
   return (
-    <>
-      <color args={[World]} attach='background' />
-      <EnvironmentLighting />
-      <Floor />
       <Suspense fallback={<ThreeLoader />}>
+        <Camera pageCamera={pageCamera} />
+        <EnvironmentLighting />
+        <color args={[World]} attach='background' />
+        <Floor />
         <Model
           isRotating={isRotating}
           disabledMeshes={disabledMeshes}
           labels={labels}
         />
       </Suspense>
-      <Camera pageCamera={pageCamera} />
-    </>
   )
 }
 
