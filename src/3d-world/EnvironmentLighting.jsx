@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
-import { DirectionalLightHelper } from 'three' // SpotLightHelper
+// import { DirectionalLightHelper } from 'three' // SpotLightHelper
 import DirectionalLightControls from '../controls/DirectionalLightControls.jsx'
 import HemisphereLightControls from '../controls/HemisphereLightControls.jsx'
 // import SpotLightControls from '../controls/SpotLightControls.jsx'
-import { BakeShadows, useHelper } from '@react-three/drei'
+import { BakeShadows } from '@react-three/drei' //useHelper
 import FogControls from '../controls/FogControls.jsx'
 
 const EnvironmentLighting = () => {
@@ -13,7 +13,7 @@ const EnvironmentLighting = () => {
     DirectionalLightIntensity,
     DirectionalLightColour,
     DirectionalLightShadowNormalBias,
-    DirectionalLightShadowRadius,
+    // DirectionalLightShadowRadius,
     DirectionalLightShadowCameraExtent
   } = DirectionalLightControls()
   const { FogColour, FogNear, FogFar } = FogControls()

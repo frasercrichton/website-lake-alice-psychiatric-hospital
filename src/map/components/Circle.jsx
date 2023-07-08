@@ -4,6 +4,7 @@ import { Marker, Tooltip } from 'react-leaflet'
 import './Circle.css'
 
 const Circle = ({
+  key,
   markerCoordinates,
   label,
   fill,
@@ -13,10 +14,7 @@ const Circle = ({
   strokeColor
 }) => {
   // using an SVG here as it the CircleMarker has scaling issues on zoom
-  // stroke="${strokeColor}"
-  // stroke-color="${strokeColor}"
-  // stroke-width="40"
-
+  
   // am sure this mathematically accurate
   const iconAnchor = [iconSize / 8, iconSize / 10]
 
@@ -25,7 +23,8 @@ const Circle = ({
     xmlns="http://www.w3.org/2000/svg"
   >
     <circle 
-      cx="10" 
+
+    cx="10" 
       cy="10" 
       r="10" 
       fill="${fillColor}" 
@@ -44,7 +43,7 @@ const Circle = ({
   return (
     <Marker
       className='map-circle-marker'
-      key={markerCoordinates.lat}
+      key={key}
       position={markerCoordinates}
       icon={icon}
     >

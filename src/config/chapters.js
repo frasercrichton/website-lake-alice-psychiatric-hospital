@@ -2284,9 +2284,21 @@ const data = {
           style: 'scrolling',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=40'
         },
-        view: '3d',
-        camera: {
-          ...cameras.theLake
+        view: 'map',
+        map: {
+          ...location.australia,
+          visibleMapLayers: {
+            minorPoints: {
+              points: [
+                lakeAliceLocation,
+                {
+                  label: 'Melbourne',
+                  latitude: -37.971237,
+                  longitude: 144.4926947
+                }
+              ]
+            }
+          }
         }
       },
       {

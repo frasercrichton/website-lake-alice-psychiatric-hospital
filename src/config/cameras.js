@@ -1,10 +1,9 @@
 const fars = { site: 3000, building: 100 }
 const nears = { site: 1000, building: 10 }
-const size = { width: window.innerWidth, height: window.innerHeight }
+const size = { width: window.innerWidth / 2, height: window.innerHeight }
 
 const cameras = {
   // context: eleven bed villas
-
   elevenBedVillasWide: {
     name: 'contextElevenBedVillasWide',
     position: [312.54022216796875, 24.06130599975586, -331.59326171875],
@@ -162,7 +161,7 @@ const cameras = {
     rotation: [-1.7, 0, 0],
     aspect: 1.7777777777777777,
     fov: 70,
-    near: 10,
+    near: nears.building,
     far: fars.site
   },
   // all
@@ -200,16 +199,16 @@ const cameras = {
     rotation: [-1.7, 0, 0],
     aspect: 1.7777777777777777,
     fov: 75,
-    near: 10,
+    near: nears.building,
     far: fars.site
   },
   default: {
     name: 'sitePlan',
-    position: [160, 480, -220],
+    position: [50, 510, -220],
     rotation: [-1.7, 0, 0],
     aspect: size,
     fov: 80,
-    near: 10,
+    near: nears.building,
     far: fars.site
   },
   sitePlanAngled: {
@@ -218,7 +217,7 @@ const cameras = {
     rotation: [-0.8726646, 0, 0],
     aspect: size,
     fov: 80,
-    near: 10,
+    near: nears.building,
     far: fars.site
   }
 }

@@ -5,11 +5,9 @@ const AnimateZoom = ({ center, zoom, bounds }) => {
   const map = useMap()
 
   useEffect(() => {
-    map.flyTo(center, zoom, {
-      animate: true,
-      duration: 2
-    })
-  }, [center, map, zoom, bounds])
-
+    if (bounds) {
+      map.fitBounds(bounds)
+    }
+  }, [map, bounds])
 }
 export default AnimateZoom

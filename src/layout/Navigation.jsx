@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import urls from '../config/navigation.js'
 import './Navigation.css'
 const Navigation = ({

@@ -7,7 +7,6 @@ import Header from './layout/Header.jsx'
 import MarkdownPage from './layout/MarkdownPage.jsx'
 import Cover from './layout/Cover.jsx'
 import Canvas from './3d-world/Canvas.jsx'
-import Loader from './components/Loader.jsx'
 import GeographicMap from './map/GeographicMap.jsx'
 import VideoVimeo from './components/VideoVimeo.jsx'
 import Chapter from './layout/Chapter.jsx'
@@ -16,6 +15,7 @@ import Footer from './layout/Footer.jsx'
 import TextBox from './components/TextBox.jsx'
 import Timeline from './components/Timeline.jsx'
 import MobileCover from './layout/MobileView.jsx'
+
 // Config
 import headerNavUrls from './config/navigation.js'
 import chapters from './config/chapters.js'
@@ -317,7 +317,6 @@ function App () {
               )
             })}
           </Routes>
-
           <Footer />
         </div>
       </BrowserView>
