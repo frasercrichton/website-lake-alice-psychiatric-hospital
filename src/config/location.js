@@ -12,12 +12,10 @@ const location = {
   },
   northIsland: {
     zoom: 7.22,
-    // {lng: 174.74487, lat: -37.98820}
     centre: {
       latitude: -37.98820,
       longitude: 174.74487
     },
-    // [[162.84997, -42.36806], [186.63976, -33.33041]]
     bounds: {
       southWest: [-42.36806, 162.84997],
       northEast: [-33.33041, 186.63976]
@@ -36,12 +34,10 @@ const location = {
   },
   australia: {
     zoom: 5,
-    // [156.65420, -40.46845]
     centre: {
       latitude: -40.46845,
       longitude: 156.65420
     },
-    // [[104.10778, -52.95244], [209.20062, -17.46661]]
     bounds: {
       southWest: [-52.95244, 104.10778],
       northEast: [-17.46661, 209.20062]
@@ -90,7 +86,6 @@ const location = {
   },
   lakeAliceSite: {
     zoom: 17.34,
-
     centre: {
       latitude: -40.12589,
       longitude: 175.33547
@@ -103,5 +98,3 @@ const location = {
 }
 
 export default location
-
-// [[175.32481, -40.12984], [175.34614, -40.12194]]

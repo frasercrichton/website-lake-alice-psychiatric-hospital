@@ -2,8 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber'
-import cameras from '../config/cameras.js'
 import gsap from 'gsap'
+import cameras from '../config/cameras.js'
+import Sizes from '../3d-world/Sizes'
+const sizes = new Sizes()
+
 
 // https://codesandbox.io/s/three-fiber-zoom-to-object-camera-controls-solution-final-sbgx0?file=/src/App.js:1189-1199
 // https://attackingpixels.com/tips-tricks-optimizing-three-js-performance/
@@ -91,7 +94,7 @@ const Camera = ({ pageCamera }) => {
         makeDefault
         name='default'
         rotation={cameras.default.rotation}
-        aspect={cameras.default.aspect}
+        aspect={sizes.width / sizes.height}
         fov={fov}
         near={near}
         far={far}
