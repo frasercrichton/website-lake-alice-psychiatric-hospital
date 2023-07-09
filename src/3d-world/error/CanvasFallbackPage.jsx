@@ -26,7 +26,7 @@ const CanvasFallbackPage = ({ pageCamera, disabledMeshes, labels }) => {
 
   return (
     <div className='canvas-fallback-page-wrapper'>
-      <div className='mobile-image-container'>
+      <div className='canvas-fallback-image-container'>
         <Image src={imageName} />
       </div>
 

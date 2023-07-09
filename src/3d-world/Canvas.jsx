@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 // import WebGL from 'three/addons/capabilities/WebGL.js'
 import './Canvas.css'
@@ -25,6 +25,7 @@ const CanvasWrapper = ({
   labels
 }) => {
   const canvas = useRef()
+  const [contextActive, setContextActive] = useState(true)
 
   const handleContextCreationError = event => {
     console.log('ContextCreationError', event)
@@ -36,6 +37,7 @@ const CanvasWrapper = ({
           'allowwebgl2:false restricts context creation on this system.'
         )
     ) {
+      setContextActive(false)
       console.log('allowwebgl2:false restricts context creation on this system')
     }
     // event.preventDefault()
@@ -65,49 +67,57 @@ const CanvasWrapper = ({
           />
         }
       >
-        <Canvas
-          ref={canvas}
-          dpr={[1, 2]} //the default
-          gl={{
-            antialias: true, // tweak for performance
-            alpha: true,
-            useLegacyLights: true,
-            outputColorSpace: THREE.SRGBColorSpace,
-            // ACESFilmicToneMapping
-            // THREE.ReinhardToneMapping
-            toneMapping: THREE.ACESFilmicToneMapping,
-            toneMappingExposure: 1.5,
-            // frameLoop
-            // frameLoop: 'demand',
-            shadowMap: {
-              enabled: true,
-              autoUpdate: false,
-              needsUpdate: true,
-              type: THREE.PCFSoftShadowMap
-            }, // static scene where lights don't move so no need to update
-            pixelRatio: sizes.pixelRatio,
-            powerPreference: 'high-performance',
-            failIfMajorPerformanceCaveat: true
-          }}
-          shadows
-        >
-          {window.location.hash === '#debug' && (
-            <Perf
-              style={{ zIndex: 1000 }}
-              position='bottom-left'
-              deepAnalyz
-              colorBlind
-            />
-          )}
-          <Experience
+        {!contextActive && (
+          <CanvasFallbackPage
             pageCamera={pageCamera}
-            cameraMoveDuration={cameraMoveDuration}
-            isRotating={isRotating}
-            labels={labels}
-            // pageScrollProgress={pageScrollProgress}
             disabledMeshes={disabledMeshes}
+            labels={labels}
           />
-        </Canvas>
+        )}
+        {contextActive && (
+          <Canvas
+            ref={canvas}
+            dpr={[1, 2]} //the default
+            gl={{
+              antialias: true, // tweak for performance
+              alpha: true,
+              useLegacyLights: true,
+              outputColorSpace: THREE.SRGBColorSpace,
+              // ACESFilmicToneMapping
+              // THREE.ReinhardToneMapping
+              toneMapping: THREE.ACESFilmicToneMapping,
+              toneMappingExposure: 1.5,
+              // frameLoop
+              // frameLoop: 'demand',
+              shadowMap: {
+                enabled: true,
+                autoUpdate: false,
+                needsUpdate: true,
+                type: THREE.PCFSoftShadowMap
+              }, // static scene where lights don't move so no need to update
+              pixelRatio: sizes.pixelRatio,
+              powerPreference: 'high-performance',
+              failIfMajorPerformanceCaveat: true
+            }}
+            shadows
+          >
+            {window.location.hash === '#debug' && (
+              <Perf
+                style={{ zIndex: 1000 }}
+                position='bottom-left'
+                deepAnalyz
+                colorBlind
+              />
+            )}
+            <Experience
+              pageCamera={pageCamera}
+              cameraMoveDuration={cameraMoveDuration}
+              isRotating={isRotating}
+              labels={labels}
+              disabledMeshes={disabledMeshes}
+            />
+          </Canvas>
+        )}
       </ErrorBoundary>
     </div>
   )
