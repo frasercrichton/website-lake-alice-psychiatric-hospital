@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, createRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 // import WebGL from 'three/addons/capabilities/WebGL.js'
 import './Canvas.css'
@@ -6,9 +6,12 @@ import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
 import * as THREE from 'three'
 import { Perf } from 'r3f-perf'
+import Sizes from './Sizes.js'
 import Experience from './Experience.jsx'
 import CanvasFallbackPage from './error/CanvasFallbackPage.jsx'
 import WebGL from 'three/addons/capabilities/WebGL.js'
+const sizes = new Sizes()
+
 Globals.assign({
   frameLoop: 'always'
 })
@@ -22,11 +25,6 @@ const CanvasWrapper = ({
   labels
 }) => {
   const canvas = useRef()
-
-  const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-  }
 
   const handleContextCreationError = event => {
     console.log('ContextCreationError', event)
@@ -87,8 +85,7 @@ const CanvasWrapper = ({
               needsUpdate: true,
               type: THREE.PCFSoftShadowMap
             }, // static scene where lights don't move so no need to update
-            sizes: sizes,
-            pixelRatio: Math.min(window.devicePixelRatio, 2),
+            pixelRatio: sizes.pixelRatio,
             powerPreference: 'high-performance',
             failIfMajorPerformanceCaveat: true
           }}
@@ -98,8 +95,8 @@ const CanvasWrapper = ({
             <Perf
               style={{ zIndex: 1000 }}
               position='bottom-left'
-              deepAnalyze={true}
-              colorBlind={true}
+              deepAnalyz
+              colorBlind
             />
           )}
           <Experience
