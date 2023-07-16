@@ -20,6 +20,8 @@ Multiple sources contribute to the project including:
 * Beautiful Children Te Uiui o te Manga Tamariki me te Rangatahi ki Lake Alice Inquiry into the Lake Alice Child and Adolescent Unit [Full Lake Alice Report at 15 Dec 2022 (PDF)](https://www.abuseincare.org.nz/assets/Document-Library/Redacted-Lake-Alice-Report.pdf) (as a criminal trial is in progress the final report has been temporarily redacted)
 * investigative journalism by Aaron Smale and Mike Wesley Smith
 
+Website code available: [https://github.com/frasercrichton/website-lake-alice-psychiatric-hospital](https://github.com/frasercrichton/website-lake-alice-psychiatric-hospital)
+
 ## Thanks
 
 * Pat McNair - CLAN Aotearoa New Zealand
