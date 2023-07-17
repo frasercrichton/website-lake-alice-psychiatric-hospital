@@ -2654,7 +2654,7 @@ const data = {
         text: {
           header: 'United Nations Committee Against Torture 2019',
           content:
-            'In December 2019, survivor Paul Zentveld’s complaint of torturetorture, filed by CCHR, is upheld by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
+            'In December 2019, survivor Paul Zentveld’s complaint of torture, filed by CCHR, is upheld by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
           style: 'scrolling',
           source: 'documents/G2001877.pdf'
         },
