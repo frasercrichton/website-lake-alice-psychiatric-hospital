@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-// import WebGL from 'three/addons/capabilities/WebGL.js'
 import './Canvas.css'
 import { Canvas } from '@react-three/fiber'
 import { Globals } from '@react-spring/shared'
