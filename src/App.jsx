@@ -90,6 +90,7 @@ function App () {
     }
   }, [location, toggleCoverActive])
 
+  // 3D set rotation of camera 
   useEffect(() => {
     if (pageInView.view === '3d') {
       pageInView?.camera?.isRotating === true

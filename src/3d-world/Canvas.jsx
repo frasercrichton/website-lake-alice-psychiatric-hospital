@@ -25,35 +25,10 @@ const CanvasWrapper = ({
   labels
 }) => {
   const canvas = useRef()
-  const [contextActive, setContextActive] = useState(true)
-
-  const handleContextCreationError = event => {
-    console.log('ContextCreationError', event)
-
-    if (
-      event.statusMessage
-        .toLowerCase()
-        .includes(
-          'allowwebgl2:false restricts context creation on this system.'
-        )
-    ) {
-      setContextActive(false)
-      console.log('allowwebgl2:false restricts context creation on this system')
-    }
-    // event.preventDefault()
-  }
-
-  useEffect(() => {
-    // if context is lost this: const gl = canvas.current.getContext('webgl')  will no longer work
-    canvas.current.addEventListener(
-      'webglcontextcreationerror',
-      handleContextCreationError
-    )
-  }, [canvas])
 
   if (!WebGL.isWebGLAvailable()) {
     const warning = WebGL.getWebGLErrorMessage()
-    console.error('WebGL NOT Available ', warning)
+    console.error('WebGL NOT Available: ', warning)
   }
 
   return (
@@ -67,57 +42,48 @@ const CanvasWrapper = ({
           />
         }
       >
-        {!contextActive && (
-          <CanvasFallbackPage
-            pageCamera={pageCamera}
-            disabledMeshes={disabledMeshes}
-            labels={labels}
-          />
-        )}
-        {contextActive && (
-          <Canvas
-            ref={canvas}
-            dpr={[1, 2]} //the default
-            gl={{
-              antialias: true, // tweak for performance
-              alpha: true,
-              useLegacyLights: true,
-              outputColorSpace: THREE.SRGBColorSpace,
-              // ACESFilmicToneMapping
-              // THREE.ReinhardToneMapping
-              toneMapping: THREE.ACESFilmicToneMapping,
-              toneMappingExposure: 1.5,
-              // frameLoop
-              // frameLoop: 'demand',
-              shadowMap: {
-                enabled: true,
-                autoUpdate: false,
-                needsUpdate: true,
-                type: THREE.PCFSoftShadowMap
-              }, // static scene where lights don't move so no need to update
-              pixelRatio: sizes.pixelRatio,
-              powerPreference: 'high-performance',
-              failIfMajorPerformanceCaveat: true
-            }}
-            shadows
-          >
-            {window.location.hash === '#debug' && (
-              <Perf
-                style={{ zIndex: 1000 }}
-                position='bottom-left'
-                deepAnalyz
-                colorBlind
-              />
-            )}
-            <Experience
-              pageCamera={pageCamera}
-              cameraMoveDuration={cameraMoveDuration}
-              isRotating={isRotating}
-              labels={labels}
-              disabledMeshes={disabledMeshes}
+        <Canvas
+          ref={canvas}
+          dpr={[1, 2]} //the default
+          gl={{
+            antialias: true, // tweak for performance
+            alpha: true,
+            useLegacyLights: true,
+            outputColorSpace: THREE.SRGBColorSpace,
+            // ACESFilmicToneMapping
+            // THREE.ReinhardToneMapping
+            toneMapping: THREE.ACESFilmicToneMapping,
+            toneMappingExposure: 1.5,
+            // frameLoop
+            // frameLoop: 'demand',
+            shadowMap: {
+              enabled: true,
+              autoUpdate: false,
+              needsUpdate: true,
+              type: THREE.PCFSoftShadowMap
+            }, // static scene where lights don't move so no need to update
+            pixelRatio: sizes.pixelRatio,
+            powerPreference: 'high-performance',
+            failIfMajorPerformanceCaveat: true
+          }}
+          shadows
+        >
+          {window.location.hash === '#debug' && (
+            <Perf
+              style={{ zIndex: 1000 }}
+              position='bottom-left'
+              deepAnalyz
+              colorBlind
             />
-          </Canvas>
-        )}
+          )}
+          <Experience
+            pageCamera={pageCamera}
+            cameraMoveDuration={cameraMoveDuration}
+            isRotating={isRotating}
+            labels={labels}
+            disabledMeshes={disabledMeshes}
+          />
+        </Canvas>
       </ErrorBoundary>
     </div>
   )
