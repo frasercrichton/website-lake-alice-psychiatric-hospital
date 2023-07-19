@@ -1,4 +1,3 @@
-
 import { create } from 'zustand'
 
 const useStaticPageStore = create(set => ({

@@ -2562,7 +2562,7 @@ const data = {
           URL: 'https://www.police.govt.nz/news/release/22745',
           date: '30 March, 2010',
           author: 'New Zealand Police',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2606,11 +2606,11 @@ const data = {
         image: {
           caption:
             'Brief of Evidence of Tyrone Marks in Support of an Application for an Urgent Hearing Concerning the Settlement of Grievances of Maori Children Put Into State Care, 20 March 2017',
-          src: '/images/fc-20200429-00168-Wai 2615, A003(1).jpg',
+          src: '/images/fc-20230323-00001-Screenshot 2023-03-23 at 5.27.37 PM.jpg',
           author: 'The Waitangi Tribunal',
           URL: 'https://forms.justice.govt.nz/searchdocuments/WT/wt_DOC_121077713/Wai%202615%2C%20A003.pdf',
           date: '20 March, 2017',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2634,7 +2634,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-§9',
         decade: '2010',
         text: {
           header: 'The Commission',
@@ -2684,11 +2684,11 @@ const data = {
         image: {
           caption:
             '12th May 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint.',
-          src: '/images/fc-20230601-00002-Screenshot 2023-06-01 at 11.20.10 AM.jpg',
+          src: '/images/fc-20220628.jpg',
           author: 'United Nations Committee against Torture',
           date: '13 July, 2022',
           URL: 'https://d10yslqdemxz8r.cloudfront.net/lake-alice.spacedocuments/G2240600.pdf',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2720,7 +2720,7 @@ const data = {
           author: 'New Zealand Police',
           URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
           date: '8 December, 2021',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
