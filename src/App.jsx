@@ -253,7 +253,7 @@ function App () {
           {video !== undefined && (
             <VideoVimeo id={video.id} caption={video.caption} />
           )}
-          {image && (image?.style === 'static' || image?.style === 'document') && (
+          {image && image?.style === 'static' && (
             <div className={`${image?.style}-image-container`}>
               <Image
                 caption={image.caption}

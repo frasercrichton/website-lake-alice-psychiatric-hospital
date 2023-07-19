@@ -1,15 +1,3 @@
-figure {
-  display: flex;
-  flex-flow: column;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-}
-
-img {
-  margin-bottom: 0;
-}
-
 @keyframes imageFadeIn {
   0% {
     opacity: 0;
@@ -20,27 +8,104 @@ img {
   }
 }
 
+.image-container {
+  padding: 0;
+  margin: 0;
+}
+
+figure {
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+img {
+  margin-bottom: 0;
+}
+
+.image-container figure img {
+  padding: 15px;
+  /* height and object-fit: contain makes the image responsive to the container */
+  object-fit: contain;
+}
+
 figcaption {
-  font-size: var(--font-size-md);
-  padding: 2px;
   background-color: #ffffff;
   opacity: 0.7;
+  font-size: var(--font-size-md);
+  padding: 2px;
   align-self: center;
+  text-align: center;
   max-width: 60%;
 }
 
-.source {
-  font-size: var(--font-size-xs);
-  font-style: italic;
-  background-color: #ffffff;
-  opacity: 0.7;
-  align-self: center;
-  text-align: center;
-  display: inline-block;
+
+/* Images: Static */
+
+.static-image-container {
+  position: fixed;
+  top: 35px;
+  left: 0;
 }
 
-.source a {
-  color: #000000;
-  text-transform: uppercase;
-  text-decoration: underline;
+.static-image-container figure {
+  margin: 0;
+  width: 100vw;
+}
+
+.static-image-container img {
+  width: 100vw;
+  animation: imageFadeIn 5s;
+  -webkit-animation: imageFadeIn 5s;
+  -moz-animation: imageFadeIn 5s;
+  -o-animation: imageFadeIn 5s;
+  -ms-animation: imageFadeIn 5s;
+}
+
+/* Full page image */
+
+.full-page-image-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 50px;
+  width: 90vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.full-page-image-container figure img {
+  width: 60vw;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.full-page-image-container figure {
+  padding: 100px;
+}
+
+/* Scrolling and Document Images */
+
+.scrolling-image-container, .document-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.scrolling-image-container .image-container figure img {
+  height: 70vh;
+}
+
+.document-image-container .image-container figure img {
+  height: 50vh;
+  cursor: pointer;
+}
+
+.overflow-container {
+  overflow: scroll;
+  height: 100vh;
+  width: auto;
 }

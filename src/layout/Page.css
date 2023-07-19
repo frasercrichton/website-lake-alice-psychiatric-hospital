@@ -27,11 +27,3 @@
 .content-introduction.active {
   opacity: 0.5;
 }
-
-/* Images: Scrolling */
-
-.scrolling-image figure {
-  width: 50vw;
-  justify-content: center;
-  flex-flow: column;
-}

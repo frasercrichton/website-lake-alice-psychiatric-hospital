@@ -7,11 +7,6 @@
   overflow-x: hidden;
 }
 
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
 .container-3d {
   visibility: hidden;
   opacity: 0
@@ -23,58 +18,3 @@ a {
   opacity: 1;
 }
 
-/* Images: Static */
-
-.static-image-container {
-  position: fixed;
-  top: 50px;
-  left: 0;
-}
-
-.static-image-container img {
-  animation: imageFadeIn 5s;
-  -webkit-animation: imageFadeIn 5s;
-  -moz-animation: imageFadeIn 5s;
-  -o-animation: imageFadeIn 5s;
-  -ms-animation: imageFadeIn 5s;
-}
-
-/* Images: Document */
-
-.document-image-container {
-  position: fixed;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-}
-
-.document-image-container .image-container {
-  /* background-color: black; */
-}
-
-.document-image-container figure {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.document-image-container figcaption {
-  width: 25vw;
-  display: flex;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-
-}
-
-.document-image-container figure img, .scrolling-image-container figure img {
-  padding: 15px;
-  /* height and object-fit: contain makes the image responsive to the container */
-  height: 75vh;
-  object-fit: contain;
-}

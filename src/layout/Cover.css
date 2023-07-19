@@ -1,15 +1,25 @@
+@keyframes coverFadeIn {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .cover-container {
-  width: 100%;
-  height: 100%;
+  z-index: 500;
   background-color: #ffffff;
   color: white;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  z-index: 500;
   visibility: hidden;
   opacity: 0;
   transition: visibility 1s, opacity 1s linear;
@@ -25,17 +35,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
   height: 100%;
 }
 
 .cover-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 800px;
-  /* background-color: aqua; */
 }
 
 .cover-content {
@@ -44,16 +48,6 @@
   -moz-animation: coverFadeIn 5s;
   -o-animation: coverFadeIn 5s;
   -ms-animation: coverFadeIn 5s;
-}
-
-@keyframes coverFadeIn {
-  0% {
-    opacity: 0.2;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .cover-container .header {
@@ -78,7 +72,6 @@
   background-color: rgb(0, 0, 0, 0.7);
   font-style: italic;
   font-size: var(--font-size-sm);
-  /* margin-top: 30px; */
 }
 
 @media all and (max-width: 428px) {
