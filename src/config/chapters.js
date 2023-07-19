@@ -2634,7 +2634,7 @@ const data = {
         }
       },
       {
-        id: 'justice-§9',
+        id: 'justice-19',
         decade: '2010',
         text: {
           header: 'The Commission',
@@ -2664,7 +2664,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-21',
         decade: '2020',
         text: {
           header: 'Malcolm Richards',
@@ -2679,7 +2679,7 @@ const data = {
         }
       },
       {
-        id: 'justice-19',
+        id: 'justice-22',
         decade: '2020',
         image: {
           caption:
@@ -2696,7 +2696,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-23',
         decade: '2020',
         text: {
           header: 'Accountability',
@@ -2712,7 +2712,7 @@ const data = {
         }
       },
       {
-        id: 'justice-17',
+        id: 'justice-24',
         decade: '2020',
         image: {
           caption: 'Operation Lake Alice concluded - criminal charges filed',
@@ -2728,7 +2728,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-25',
         decade: '2020',
         text: {
           header: 'Redress',
