@@ -93,7 +93,7 @@ header label {
 
 @media (max-width: 1900px) {
     .nav-item {
-        font-size: var(--font-size-md);
+        font-size: 1.0rem;
     }
 
     nav.home h1 {

@@ -1,0 +1,14 @@
+.source {
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  background-color: #ffffff;
+  opacity: 0.7;
+  align-self: center;
+  display: inline-block;
+}
+
+.source a {
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: underline;
+}

@@ -9,13 +9,12 @@ const assetUrlHelper = new AssetUrlHelper()
 
 const textBoxStyle = {
   margin: '50px',
-  width: '45%',
+  width: '45%'
 }
 
 const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
   const { pageId, text, image = {}, content, view, map } = page
   const { src, style, recordID, author, caption, date, URL } = image
-
   const [introActive, setIntroActive] = useState(true)
 
   useEffect(() => {
@@ -25,6 +24,11 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
       setIntroActive(false)
     }
   }, [pageInView])
+
+  const isImageDisplayed =
+    image != null && (style === 'scrolling' || style === 'document')
+
+  const isImageExpandable = style === 'document'
 
   const introClassName = introActive
     ? 'content-introduction active'
@@ -44,7 +48,7 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
           pageScrollProgress={pageScrollProgress}
         />
       )}
-      {image != null && style === 'scrolling' && (
+      {isImageDisplayed && (
         <div className={`${style}-image-container`}>
           <Image
             caption={caption}
@@ -53,6 +57,7 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
             author={author}
             date={date}
             URL={URL}
+            isExpandable={isImageExpandable}
           />
         </div>
       )}
@@ -61,7 +66,10 @@ const Page = ({ page, isIntroduction, pageInView, pageScrollProgress }) => {
       )}
       {view === 'map-animated' &&
         map?.visibleMapLayers?.minorPoints?.points !== undefined && (
-          <InteractiveMenu minorPoints={map?.visibleMapLayers?.minorPoints} pageInView={pageInView} />
+          <InteractiveMenu
+            minorPoints={map?.visibleMapLayers?.minorPoints}
+            pageInView={pageInView}
+          />
         )}
     </div>
   )

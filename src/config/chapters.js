@@ -2562,7 +2562,7 @@ const data = {
           URL: 'https://www.police.govt.nz/news/release/22745',
           date: '30 March, 2010',
           author: 'New Zealand Police',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2606,11 +2606,11 @@ const data = {
         image: {
           caption:
             'Brief of Evidence of Tyrone Marks in Support of an Application for an Urgent Hearing Concerning the Settlement of Grievances of Maori Children Put Into State Care, 20 March 2017',
-          src: '/images/fc-20200429-00168-Wai 2615, A003(1).jpg',
+          src: '/images/fc-20230323-00001-Screenshot 2023-03-23 at 5.27.37 PM.jpg',
           author: 'The Waitangi Tribunal',
           URL: 'https://forms.justice.govt.nz/searchdocuments/WT/wt_DOC_121077713/Wai%202615%2C%20A003.pdf',
           date: '20 March, 2017',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2634,7 +2634,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-19',
         decade: '2010',
         text: {
           header: 'The Commission',
@@ -2654,7 +2654,7 @@ const data = {
         text: {
           header: 'United Nations Committee Against Torture 2019',
           content:
-            'In December 2019, survivor Paul Zentveld’s complaint of torturetorture, filed by CCHR, is upheld by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
+            'In December 2019, survivor Paul Zentveld’s complaint of torture, filed by CCHR, is upheld by the United Nations Committee against Torture (UNCAT) who found New Zealand had failed to adequately investigate Zentveld’s complaint and failed to provide fair and adequate redress for the abuse he suffered.',
           style: 'scrolling',
           source: 'documents/G2001877.pdf'
         },
@@ -2664,7 +2664,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-21',
         decade: '2020',
         text: {
           header: 'Malcolm Richards',
@@ -2679,16 +2679,16 @@ const data = {
         }
       },
       {
-        id: 'justice-19',
+        id: 'justice-22',
         decade: '2020',
         image: {
           caption:
             '12th May 2022 the United Nations Committee against Torture adopt Malcolm Richards complaint.',
-          src: '/images/fc-20230601-00002-Screenshot 2023-06-01 at 11.20.10 AM.jpg',
+          src: '/images/fc-20220628.jpg',
           author: 'United Nations Committee against Torture',
           date: '13 July, 2022',
           URL: 'https://d10yslqdemxz8r.cloudfront.net/lake-alice.spacedocuments/G2240600.pdf',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2696,7 +2696,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-23',
         decade: '2020',
         text: {
           header: 'Accountability',
@@ -2712,7 +2712,7 @@ const data = {
         }
       },
       {
-        id: 'justice-17',
+        id: 'justice-24',
         decade: '2020',
         image: {
           caption: 'Operation Lake Alice concluded - criminal charges filed',
@@ -2720,7 +2720,7 @@ const data = {
           author: 'New Zealand Police',
           URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
           date: '8 December, 2021',
-          style: 'scrolling'
+          style: 'document'
         },
         view: '3d',
         camera: {
@@ -2728,7 +2728,7 @@ const data = {
         }
       },
       {
-        id: 'justice-20',
+        id: 'justice-25',
         decade: '2020',
         text: {
           header: 'Redress',
