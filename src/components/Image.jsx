@@ -1,39 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Source from './Source'
+import MaterialIcon from './MaterialIcon.jsx'
 import './Image.css'
 
-const Image = ({ caption = '', src, recordID, URL, author, date, id }) => {
+const Image = ({
+  caption = '',
+  src,
+  recordID,
+  URL,
+  author,
+  date,
+  id,
+  isExpandable
+}) => {
+  const [isIconAdd, setIsIconAdd] = useState(true)
+  const onIconClick = () => {
+    setIsIconAdd(!isIconAdd)
+  }
 
-  const archwayRecordID = recordID ? (
-    <span>Archway Item ID: {recordID} </span>
-  ) : null
+  const expandableClassName = isExpandable ? 'expandable' : ''
+  const overflowClassName =
+    isExpandable && !isIconAdd ? 'overflow-container' : null
 
-  const formattedDate = date ? <span>{date}. </span> : null
-  const formattedAuthor = author ? <span>{author}. </span> : null
+  const containerClassName = isIconAdd
+    ? `${expandableClassName} image-container`.trim()
+    : 'full-page-image-container'
+
+  const imageSrc = isIconAdd ? src : `${src.split('.jpg')[0]}-max.jpg`
 
   return (
-    <div className='image-container'>
-      <figure className='figure'>
-        <img
-          key={src}
-          src={src}
-          alt={caption}
-        />
-        {caption !== '' && (
-          <figcaption className='caption'>{caption}</figcaption>
+    <div className={containerClassName}>
+      <div className={overflowClassName}>
+        {isExpandable && (
+          <MaterialIcon onExpandClick={onIconClick} isIconAdd={isIconAdd} />
         )}
-        {(URL ?? author) && (
-          <div className='source'>
-            {archwayRecordID}
-            {formattedAuthor}
-            {formattedDate}
-            {URL && (
-              <a target='_blank' rel='noreferrer' href={URL}>
-                original
-              </a>
-            )}
-          </div>
-        )}
-      </figure>
+        <figure className='figure'>
+          <img
+            key={imageSrc}
+            src={imageSrc}
+            alt={caption}
+            onClick={onIconClick}
+          />
+          {caption !== '' && (
+            <figcaption className='caption'>{caption}</figcaption>
+          )}
+          {(URL ?? author) && (
+            <Source recordID={recordID} URL={URL} author={author} date={date} />
+          )}
+        </figure>
+      </div>
     </div>
   )
 }
