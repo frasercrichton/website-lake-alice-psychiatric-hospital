@@ -32,11 +32,6 @@ const removeLabels = list => {
   return list.map(({ label, ...list }) => list)
 }
 
-//   // const newArray = array.map(({dropAttr1, dropAttr2, ...keepAttrs}) => keepAttrs)
-// return list.map(({labels, ...list}) => list)
-
-//   })
-
 const data = {
   '/testimony': {
     pages: [
@@ -172,7 +167,7 @@ const data = {
         id: 'intro-9',
         text: {
           content:
-            'Fifty years on, justice remains outstanding for the survivors of Lake Alice.',
+            'Fifty years on, when will there be justice for the survivors of Lake Alice?',
           style: 'static'
         },
         view: '3d',
@@ -351,7 +346,7 @@ const data = {
         text: {
           header: 'A Typical day',
           content:
-            'After his first day, Malcolm described life in the Boys’ Villa as like being in the military, "If you weren\'t on time, you got punished. If you made too much noise, you got punished." Punishment could mean anything from solitary confinement, ECT given without anaesthetic or painful paraldehyde injections. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
+            'After his first day, Malcolm described life in the Boys’ Villa as like being in the military, "If you weren\'t on time, you got punished. If you made too much noise, you got punished." Punishment could mean anything from solitary confinement, ECT given without anaesthetic or paraldehyde injections. Paraldehyde was a sedative administered as an excruciatingly painful injection, it was so corrosive that glass syringes were used. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
           style: 'scrolling'
         },
         view: '3d',
@@ -1928,7 +1923,7 @@ const data = {
         text: {
           header: 'Numbers',
           content:
-            'The Royal Commission estimated that between 400 and 450 children went through Lake Alice between 1970 and 1980. Half of these came from home and half from care placements. Admissions peaked in 1974 at 82. Some children were admitted more than once.',
+            'The Royal Commission estimated that between 400 and 450 children in total went through Lake Alice between 1970 and 1980. Half of these came from home and half from care placements. The peak year for admissions was 1974 when 82 children were admitted to Lake Alice. Some children were admitted more than once.',
           source: 'documents/Redacted-Lake-Alice-Report.pdf#page=66',
           style: 'scrolling'
         },
@@ -2700,8 +2695,7 @@ const data = {
         decade: '2020',
         text: {
           header: 'Accountability',
-          content:
-            'Under pressure from the Commission\'s inquiry and UNCAT\'s reports, the police finally made an arrest of an 89-year-old former staff member. Two other members of staff were "medically unfit to stand trial". including Dr Selwyn Leeks. In 2022, Leeks died, never having faced trial and never having apologised for his actions.',
+          content: 'Under pressure from the Commission\'s inquiry and UNCAT\'s reports, the police finally made an arrest of an 89-year-old former staff member John Richard Corkran. Two other members of staff were "medically unfit to stand trial", including Dr Selwyn Leeks.',
           style: 'scrolling',
           source:
             'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed'
@@ -2721,6 +2715,21 @@ const data = {
           URL: 'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed',
           date: '8 December, 2021',
           style: 'document'
+        },
+        view: '3d',
+        camera: {
+          ...cameras.theLake
+        }
+      },
+      {
+        id: 'justice-24',
+        decade: '2020',
+        text: {
+          header: 'Accountability',
+          content: 'In 2022, Leeks died, never having faced trial and never having apologised for his actions. The judge in Corkran\'s trial ordered a stay of proceedings as Corkran had terminal cancer.',
+          style: 'scrolling',
+          source:
+            'https://www.police.govt.nz/news/release/operation-lake-alice-concluded-criminal-charges-filed'
         },
         view: '3d',
         camera: {

@@ -57,11 +57,13 @@
 .cover-container h1 {
   font-size: var(--font-size-4xl);
   margin-bottom: 100px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .cover-container h2 {
   text-transform: uppercase;
   font-style: italic;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .navigation .button {
