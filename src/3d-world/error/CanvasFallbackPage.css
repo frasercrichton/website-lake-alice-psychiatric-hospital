@@ -21,6 +21,7 @@
 }
 
 .canvas-fallback-image-container img {
+  height: 100vh;
   animation: imageFadeIn 3s;
   -webkit-animation: imageFadeIn 3s;
   -moz-animation: imageFadeIn 3s;
