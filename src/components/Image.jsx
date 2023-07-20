@@ -39,7 +39,7 @@ const Image = ({
             key={imageSrc}
             src={imageSrc}
             alt={caption}
-            onClick={onIconClick}
+            onClick={isExpandable ? onIconClick : null}
           />
           {caption !== '' && (
             <figcaption className='caption'>{caption}</figcaption>

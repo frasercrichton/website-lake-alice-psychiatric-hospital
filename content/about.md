@@ -44,8 +44,6 @@ Many survivors were unable or chose not to give testimony to the Royal Commissio
 
 ## If you need help
 
-Where to get help:
-
 For male survivors -
 
 * [Road Forward Trust](https://www.theroadforward.org.nz/) Wellington, contact Richard 021 118 1043
