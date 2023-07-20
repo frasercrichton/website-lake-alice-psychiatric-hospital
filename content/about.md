@@ -2,9 +2,9 @@
 
 This website was developed as part of an ongoing project - [The Moral Drift](https://www.frasercrichton.com/the-moral-drift-1) - examining the history of state care in Aotearoa New Zealand. In its first phase, it was exhibited at [Toi Tauranga/Tauranga Art Gallery in October 2021](https://www.artgallery.org.nz/exhibitions/id/1751).
 
-The project was developed by a collective of investigative researchers, Fraser Crichton — a Te Whanganui-a-Tara-based researcher and documentary photographer, Malcolm Richards — a survivor of abuse in care at the former Lake Alice Child and Adolescent Unit and, briefly, Lachlan Kermode — a Research Fellow at the international human rights agency [Forensic Architecture](https://forensic-architecture.org/).
+The project was developed by a collective of investigative researchers, [Fraser Crichton](https://www.frasercrichton.com/) — a Te Whanganui-a-Tara-based researcher and documentary photographer, Malcolm Richards — a survivor of abuse in care at the former Lake Alice Child and Adolescent Unit and, briefly, Lachlan Kermode — a Research Fellow at the international human rights agency [Forensic Architecture](https://forensic-architecture.org/).
 
-In this online phase, [Fraser Crichton](https://www.frasercrichton.com/) has worked with Malcolm Richards to visualise testimony of Malcolm's experiences at Lake Alice and visualise the now demolished Te Wāhanga Tamaiti, Taitamariki o Lake Alice – The Lake Alice Child and Adolescent Unit site.
+In this online phase, Fraser Crichton has worked with Malcolm Richards to share testimony of Malcolm's experiences at Lake Alice and visualise the now demolished Te Wāhanga Tamaiti, Taitamariki o Lake Alice – The Lake Alice Child and Adolescent Unit site.
 
 ![Malclom Richards](https://d10yslqdemxz8r.cloudfront.net/lake-alice.space/images/fc-20211029-00028-FCC2910_FCC2910-R1-E001.jpg)
 *Malcolm Richards 2021*
@@ -25,14 +25,16 @@ Website code available: [https://github.com/frasercrichton/website-lake-alice-ps
 ## Thanks
 
 * Pat McNair - CLAN Aotearoa New Zealand
-* Elizabeth Stanley - Acting Head, School of Social and Cultural Studies, Victoria University of Wellington
+* Claire Andrews, Netta Christian, Herbert Lawson and Helen Beauchamp (survivors of State care)
+* [Elizabeth Stanley](https://people.wgtn.ac.nz/elizabeth.stanley) - Acting Head, School of Social and Cultural Studies, Victoria University of Wellington
 * Mike Ferriss - Citizens Commission on Human Rights (CCHR) 
 * Trisha, Tinnie, Del-Ray, Dana, Luana, Nebs, Rachel Campbell and Lizzie Makalio
+* Members of Bellingcat's Discord Community
 * Dylan Owen
 
 ## Recognition
 
-Survivors' testimony will be available in full on the Abuse in Care Royal Commission of Inquiry website.
+Survivors' testimony in full is available on the Abuse in Care Royal Commission of Inquiry website at [public-hearing-lake-alice-child and Adolescent Unit](https://www.abuseincare.org.nz/investigations-and-hearings/abuse-in-state-psychiatric-care/public-hearing-lake-alice-child-and-adolescent-unit/) including [Malcolm's statement](https://www.abuseincare.org.nz/our-progress/library/v/268/statement-of-malcolm-richards-for-lake-alice-child-and-adolescent-unit-hearing).
 
 Survivors and others who gave testimony to the Royal Commission include:
 
