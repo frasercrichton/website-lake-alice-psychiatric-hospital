@@ -33,6 +33,9 @@
   cursor: default;
 }
 
+.markdown-page-container div {
+  margin-bottom: 5px;  
+}
 
 .markdown-page-container h2 {
   text-transform: uppercase;
@@ -45,7 +48,7 @@
 @media screen and (max-width: 390px) {
 
   .markdown-page-container img {
-    width: 80%;
+    width: 80vw;
   }
 
 }

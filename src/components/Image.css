@@ -88,7 +88,7 @@ figcaption {
 
 /* Scrolling and Document Images */
 
-.scrolling-image-container, .document-image-container {
+.scrolling-image-container, .document-image-container, .mobile-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,6 +102,10 @@ figcaption {
 .document-image-container .image-container figure img {
   height: 50vh;
   cursor: pointer;
+}
+
+.mobile-container .image-container figure img {
+  width: 90vw;
 }
 
 .overflow-container {

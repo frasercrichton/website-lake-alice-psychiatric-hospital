@@ -5,7 +5,6 @@ import Button from '../components/Button'
 import { Link } from 'react-router-dom'
 import VideoVimeo from '../components/VideoVimeo.jsx'
 import Header from './Header.jsx'
-import Cover from './Cover.jsx'
 import MarkdownPage from './MarkdownPage.jsx'
 import Image from '../components/Image.jsx'
 import './MobileView.css'
@@ -19,11 +18,6 @@ const MobileCover = ({
 }) => {
   const { pageId, text, image, content, view } = pageInView
   const location = useLocation()
-
-  // useEffect(() => {
-  //   // toggleCoverActive()
-  //   location.pathname = 'mobile'
-  // }, [location.pathname])
 
   return (
     <MobileView className='mobile'>
@@ -97,10 +91,9 @@ const MobileCover = ({
             </p>
             <p>New Zealand is still in breach of the convention. </p>
             <p>
-              Fifty years on, justice remains outstanding for the survivors of
-              Lake Alice.
+              Fifty years on, when will there be justice for the survivors of
+              Lake Alice?
             </p>
-
             <VideoVimeo
               id={689154638}
               caption={'Malcolm Richards - Lake Alice Survivor'}
