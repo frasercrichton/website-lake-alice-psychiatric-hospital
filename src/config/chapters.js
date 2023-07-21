@@ -346,7 +346,7 @@ const data = {
         text: {
           header: 'A Typical day',
           content:
-            'After his first day, Malcolm described life in the Boys’ Villa as like being in the military, "If you weren\'t on time, you got punished. If you made too much noise, you got punished." Punishment could mean anything from solitary confinement, ECT given without anaesthetic or paraldehyde injections. Paraldehyde was a sedative administered as an excruciatingly painful injection, it was so corrosive that glass syringes were used. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
+            'After his first day, Malcolm described life in the Boys’ Villa as like being in the military, "If you weren\'t on time, you got punished. If you made too much noise, you got punished." Punishment could mean any of the following: solitary confinement, ECT without anaesthetic, or a paraldehyde injection. Paraldehyde was a sedative, but when administered as an injection, was excruciatingly painful. It was so corrosive that it was kept in glass syringes. Malcolm\'s life at Lake Alice was lonely and brutal, "You kept yourself to yourself."',
           style: 'scrolling'
         },
         view: '3d',
